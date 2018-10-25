@@ -1,0 +1,29 @@
+@import '../../../styles/app';
+
+.list-groups-page {
+  .list-element {
+    border-radius: $border-radius;
+
+    .drag {
+      margin: -1rem 0 -1rem -1.5rem;
+
+      &:hover {
+        cursor: move;
+      }
+    }
+  }
+
+  .tree-node {
+    & > .tree-node-children {
+      padding-left: 0;
+    }
+
+    .tree-node-children {
+      padding-left: 1.8rem;
+    }
+  }
+
+  .no-child {
+    margin-left: 2.2rem;
+  }
+}

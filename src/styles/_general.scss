@@ -1,0 +1,47 @@
+html {
+  font-weight: 100;
+  font-size: $font-size-initial;
+}
+
+body {
+  overflow-x: hidden;
+  color: $text-color;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+a,
+.dropdown-item,
+.btn {
+  cursor: pointer;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+  font-family: $font-family-base;
+}
+
+th {
+  font-weight: 600;
+}
+
+label {
+  font-weight: 400;
+}
+
+strong {
+  font-weight: 700;
+}
+
+ul ul,
+ol ul {
+  list-style: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+

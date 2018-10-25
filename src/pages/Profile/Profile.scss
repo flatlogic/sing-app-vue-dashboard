@@ -1,0 +1,87 @@
+@import '../../styles/app';
+
+.profileContactContainer {
+  margin-top: -75px;
+}
+
+.profileContacts {
+  @include list-unstyled();
+
+  display: inline-block;
+  text-align: left;
+
+  > li {
+    margin-bottom: $spacer / 2;
+  }
+
+  > li > a {
+    color: lighten($text-color, 30%);
+    text-decoration: none;
+
+    @include hover-focus {
+      color: $text-color;
+    }
+  }
+}
+
+.profileAvatar {
+  border: 3px solid $white;
+}
+
+.profileStat {
+  border-left: none !important;
+  padding-right: 0 !important;
+}
+
+.profileStatValue {
+  font-size: 28px;
+  font-weight: $font-weight-base !important;
+  margin-bottom: 0;
+}
+
+.event {
+  background: $white;
+  border-radius: $border-radius;
+  padding: 20px 20px 0;
+  position: relative;
+  margin-bottom: $spacer;
+  box-shadow: $widget-shadow;
+}
+
+.eventTitle {
+  margin-bottom: 2px;
+  font-weight: $font-weight-semi-bold;
+
+  a {
+    text-decoration: none;
+    color: #7ca9dd;
+  }
+
+  small > a {
+    color: $text-muted;
+  }
+}
+
+.eventAvatar {
+  float: left;
+  margin-right: $spacer;
+}
+
+.eventAvatar > img {
+  width: 34px;
+}
+
+.eventBody {
+  font-size: 0.9rem;
+  margin-bottom: $spacer;
+}
+
+.eventFooter {
+  background-color: $gray-100;
+  margin: 20px -20px 0;
+  padding: 10px 20px;
+}
+
+.eventTimestamp {
+  color: $text-muted;
+}

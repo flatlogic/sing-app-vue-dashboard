@@ -1,0 +1,52 @@
+@import '../../../../styles/app';
+
+.mapael {
+  position: relative;
+  margin: (-$widget-padding-vertical) (-$widget-padding-horizontal) 0;
+
+  /* Mapael */
+  .mapTooltip {
+    position: absolute;
+    padding: 2px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    font-size: $font-size-sm;
+    color: $text-color;
+  }
+
+  .zoomIn,
+  .zoomOut {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    box-sizing: content-box;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: $text-color;
+    line-height: 20px;
+    text-align: center;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    user-select: none;
+  }
+
+  .zoomOut {
+    left: 36px;
+  }
+
+  .map {
+    position: relative;
+  }
+
+  .stats {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin: 5% 10%;
+  }
+}

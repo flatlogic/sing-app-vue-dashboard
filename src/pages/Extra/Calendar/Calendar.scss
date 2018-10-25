@@ -1,0 +1,66 @@
+@import '../../../styles/app';
+@import '../../../../node_modules/fullcalendar/dist/fullcalendar';
+
+.calendar-page {
+  h4 {
+    font-size: 14px;
+  }
+
+  :global {
+    .fc-grid th {
+      text-transform: uppercase;
+    }
+
+    .fc-event {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      border: none;
+      font-weight: $font-weight-normal;
+      background-color: $gray-200;
+      color: $text-color;
+    }
+
+    .fc-today {
+      background-color: #fff1b8;
+    }
+
+    a.fc-event {
+      height: auto;
+      line-height: $line-height-base;
+    }
+
+    /* ****  Full Calendar Custom   **** */
+    .full-calendar {
+      margin-top: 10px;
+    }
+
+    .calendar-controls {
+      .btn {
+        font-size: $font-size-mini;
+      }
+    }
+
+    .calendar-external-events {
+      margin-top: 20px;
+
+      .external-event {
+        margin: 10px 0;
+        padding: 6px;
+        font-size: $font-size-mini;
+        cursor: pointer;
+        border-radius: $border-radius;
+        background-color: $white;
+        border: 1px solid #ccc;
+        box-shadow: $widget-shadow;
+      }
+    }
+
+    .widget-calendar {
+      @include media-breakpoint-up(xl) {
+        margin-top: -100px;
+      }
+    }
+  }
+}
+

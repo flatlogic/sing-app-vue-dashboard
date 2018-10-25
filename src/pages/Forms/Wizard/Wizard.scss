@@ -1,0 +1,60 @@
+@import '../../../styles/app';
+
+.vue-form-wizard {
+  .wizard-icon-circle.tab_shape {
+    display: none !important;
+  }
+
+  .wizard-header {
+    padding: 0;
+  }
+
+  .wizard-nav li {
+    margin-right: 0.5rem;
+    border-radius: $border-radius;
+    background-color: $gray-300 !important;
+    padding: 1rem;
+
+    &.active {
+      background-color: theme-color('primary') !important;
+
+      span {
+        color: white !important;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    span {
+      color: $text-color !important;
+    }
+  }
+
+  .wizard-progress-with-circle {
+    display: none;
+  }
+
+  .wizard-tab-content {
+    padding: 0.5rem 0 1rem !important;
+  }
+  
+  .wizard-tab-container {
+    background: $gray-300;
+    border-radius: $border-radius;
+    padding: 1rem;
+  }
+
+  .progress {
+    margin-bottom: 1rem;
+  }
+
+  .wizard-card-footer {
+    padding: 0;
+  }
+
+  .v-select .dropdown-toggle {
+    background: white;
+  }
+}

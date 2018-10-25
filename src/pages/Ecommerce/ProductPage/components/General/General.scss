@@ -1,0 +1,56 @@
+@import '../../../../../styles/app';
+
+.general {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-top: $content-padding / 2;
+  font-weight: $font-weight-normal;
+  text-transform: uppercase;
+  font-size: $font-size-lg;
+  color: theme-color('dark');
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-normal;
+  color: $gray-500;
+  text-transform: capitalize;
+  margin: 5px 0 25px;
+}
+
+.price {
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-lg;
+  margin-bottom: 25px;
+  color: theme-color('dark');
+}
+
+.ratingWrapper {
+  display: flex;
+
+  @include media-breakpoint-down(sm) {
+    justify-content: flex-end;
+  }
+}
+
+.dataWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column-reverse;
+    margin-top: -31px;
+
+    & :global .title {
+      margin-bottom: 25px;
+      margin-top: 5px;
+    }
+
+    & :global .subtitle {
+      margin-bottom: 0;
+    }
+  }
+}

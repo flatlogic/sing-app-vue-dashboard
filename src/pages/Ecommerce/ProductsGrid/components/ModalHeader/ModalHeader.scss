@@ -1,0 +1,36 @@
+@import '../../../../../styles/app';
+
+.mobileModalTitle {
+  position: relative;
+  width: 100%;
+  height: $navbar-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $addition-bg;
+
+  button {
+    left: 35px;
+    padding: 0;
+    border: none;
+    position: absolute;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    img {
+      height: 15px;
+    }
+
+    & .back {
+      height: 17px;
+    }
+  }
+
+  h5 {
+    margin: 0;
+    font-weight: $font-weight-normal;
+  }
+}

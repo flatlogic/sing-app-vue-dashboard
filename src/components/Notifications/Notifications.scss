@@ -1,0 +1,29 @@
+@import '../../styles/app';
+
+.notifications {
+  @include media-breakpoint-up(md) {
+   width: 343px;
+ }
+
+  height: 100%;
+  border: none;
+}
+
+.cardHeader {
+  border-radius: 0;
+}
+
+.cardFooter {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-top: none;
+}
+
+.btnNotificationsReload {
+  color: $navbar-link-color;
+  outline: none;
+
+  i::before {
+    top: 2px;
+  }
+}

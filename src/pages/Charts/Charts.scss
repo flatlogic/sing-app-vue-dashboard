@@ -1,0 +1,72 @@
+@import '../../styles/app';
+
+.charts-overview {
+  /*       NVD3      */
+  .nvtooltip {
+    padding: $padding-small-vertical $padding-small-horizontal;
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    text-align: center;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      background: none;
+      border-bottom: 0;
+    }
+  }
+
+  svg text {
+    font: $font-weight-base $font-size-sm $font-family-base;
+    fill: $text-color;
+  }
+
+  svg .title {
+    font: $font-weight-bold $font-size-base $font-family-base;
+  }
+
+  .nvd3.nv-noData {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+
+  .nvd3 .nv-axis path.domain {
+    stroke-opacity: 0;
+  }
+
+  .nv-controlsWrap {
+    .nv-legend-symbol {
+      fill: #666 !important;
+      stroke: #666 !important;
+    }
+  }
+
+  /*         Flot        */
+  .chart-tooltip {
+    position: fixed;
+    padding: $padding-small-vertical $padding-small-horizontal;
+    border: 1px solid $gray-600;
+    font-size: $font-size-mini;
+    background-color: $white;
+  }
+
+  /*   Easy Pie Chart    */
+  .easy-pie-chart {
+    position: relative;
+    display: inline-block;
+    line-height: 120px;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    color: $gray-600;
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

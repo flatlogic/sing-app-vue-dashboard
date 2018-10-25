@@ -1,0 +1,107 @@
+@import '../../../../styles/app';
+
+.years-map {
+  /* Mapael  */
+  .mapTooltip {
+    position: absolute;
+    padding: 2px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    font-size: $font-size-sm;
+    color: $text-color;
+  }
+
+  .areaLegend,
+  .zoomReset {
+    display: none;
+  }
+
+  .zoomIn,
+  .zoomOut {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    box-sizing: content-box;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: $text-color;
+    line-height: 20px;
+    text-align: center;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    user-select: none;
+  }
+
+  .zoomOut {
+    left: 36px;
+  }
+
+  .mapael {
+    position: relative;
+    margin: (-$widget-padding-vertical) (-$widget-padding-horizontal) 0;
+
+    .map {
+      position: relative;
+    }
+
+    .stats {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      margin: 5% 10%;
+    }
+  }
+
+  /*  Part:Map Controls  */
+  .map-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #bbb;
+    background-color: $addition-bg;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    > .nav-item > .nav-link {
+      border-radius: 0;
+      padding: 0.7143rem 0;
+      color: $text-color;
+
+      &:hover {
+        background-color: $gray-200;
+        color: $text-color;
+      }
+    }
+
+    > .nav-item > .nav-link.active {
+      &,
+      &:hover {
+        background-color: $white;
+        color: $text-color;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    > .nav-item:first-child > a {
+      border-bottom-left-radius: $border-radius;
+    }
+
+    > .nav-item:last-child > a {
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+
+  .map svg {
+    height: 100%;
+    width: 100%;
+  }
+}

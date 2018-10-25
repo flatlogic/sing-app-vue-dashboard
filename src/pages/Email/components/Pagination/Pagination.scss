@@ -1,0 +1,51 @@
+@import '../../../../styles/app';
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.paginationText {
+  color: #868e96;
+  font-size: $font-size-mini;
+}
+
+.paginationPages {
+  border-left: 1px solid #868e96;
+  padding-left: 11px;
+  margin-left: 10px;
+  display: flex;
+
+  button {
+    margin-left: 4px;
+  }
+}
+
+.button {
+  transition: 0.3s;
+  padding: 0.45rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: $font-weight-normal;
+  border-radius: 0.2rem;
+  color: #888;
+  background: #fff;
+  border: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.buttonActive {
+  background: $gray-300;
+}
+
+.buttonDisabled {
+  &:hover {
+    background-color: #fff;
+  }
+}

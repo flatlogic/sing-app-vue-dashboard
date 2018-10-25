@@ -1,0 +1,23 @@
+.email-page {
+  .pageTopLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    & .close {
+      margin-left: 25px;
+    }
+  }
+  
+  .alertTransform {
+    transition: 0.6s;
+    transition-timing-function: ease;
+    transform: translateX(-130vw);
+    padding-right: 1.25rem;
+  }
+  
+  .alertAfter {
+    transform: translateX(0);
+  }  
+}

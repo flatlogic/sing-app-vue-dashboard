@@ -1,0 +1,36 @@
+@import '../../../../styles/app';
+
+.button {
+  border: none;
+  width: 100%;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: $font-weight-normal;
+  border-radius: 0.2rem;
+  color: #868e96;
+  background: transparent;
+
+  &:hover,
+  &:active {
+    background-color: #e5e5e5;
+    color: $gray-700;
+  }
+
+  & .badge {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 10px;
+  }
+}
+
+.buttonActive {
+  background-color: $white;
+  color: #555;
+  font-weight: 600;
+}

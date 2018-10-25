@@ -1,0 +1,159 @@
+@import '../../../../../styles/app';
+
+.productCard {
+  margin-bottom: $spacer * 5;
+  width: 100%;
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: $spacer;
+  }
+}
+
+.productCardPhoto {
+  width: 100%;
+  height: 320px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  border-radius: $border-radius;
+  box-shadow: $widget-shadow;
+
+  @include media-breakpoint-down(sm) {
+    height: 200px;
+  }
+
+  @include media-breakpoint-down(md) {
+    height: 250px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 150px;
+  }
+
+  .label {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    padding: 1px 11px;
+    color: $white;
+  }
+
+  .star {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+    background: $white;
+    display: flex;
+
+    @include media-breakpoint-down(sm) {
+      top: auto;
+      bottom: 12px;
+      padding: 8px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    img {
+      height: 15px;
+      width: 15px;
+    }
+  }
+}
+
+.productCardDataWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column-reverse;
+
+    & .productsCardTitle {
+      margin: 2px 0 8px;
+    }
+
+    & .productsCardDescription {
+      margin-top: 10px;
+    }
+  }
+}
+
+.productsCardTitle {
+  text-transform: uppercase;
+  margin-top: $spacer;
+  letter-spacing: 0.1px;
+  font-weight: $font-weight-normal;
+  color: theme-color('dark');
+}
+
+.productsCardDescription {
+  text-transform: capitalize;
+  color: theme-color('inverce');
+  margin: 1.5px 0;
+}
+
+.productsCardPrice {
+  display: flex;
+  font-size: $font-size-larger;
+  font-weight: $font-weight-semi-bold;
+  align-items: center;
+  justify-content: space-between;
+
+  .sale {
+    font-weight: $font-weight-normal;
+  }
+
+  .old {
+    color: $border-color;
+    position: relative;
+    margin-right: $spacer;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      transform: translateY(-10px);
+      background-color: $border-color;
+      position: absolute;
+    }
+
+    &::after {
+      content: '';
+      bottom: 2px;
+      position: absolute;
+      width: 1px;
+      height: 15px;
+      background-color: theme-color('light');
+      margin: 0 7.5px;
+    }
+  }
+
+  .new {
+    color: theme-color('danger');
+    font-weight: $font-weight-semi-bold;
+  }
+
+  & .rating {
+    flex-direction: row-reverse;
+
+    svg {
+      margin-right: 7.5px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    & .rating {
+      display: none;
+    }
+  }
+}

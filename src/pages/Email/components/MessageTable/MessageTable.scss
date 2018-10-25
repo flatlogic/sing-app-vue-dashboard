@@ -1,0 +1,32 @@
+@import '../../../../styles/app';
+
+.unreadedMessage {
+  td {
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+.messageCheckbox {
+  width: 50px;
+  padding-right: 0;
+}
+
+.messageStarred {
+  color: theme-color('warning');
+}
+
+.messageFrom,
+.messageClip {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.messageDate {
+  display: flex;
+  justify-content: flex-end;
+
+  @include media-breakpoint-down(sm) {
+    width: 65px;
+  }
+}

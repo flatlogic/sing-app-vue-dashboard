@@ -1,0 +1,263 @@
+.page-title {
+  margin: 0 0 calc(1rem + 6px);
+}
+
+.input-group.focus {
+  .input-group-addon,
+  input {
+    background-color: #f1f1f1;
+  }
+}
+
+.animated {
+  animation-duration: 0.5s;
+}
+
+.chat-notification-sing {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: theme-color('danger');
+}
+
+#notification-buttons {
+  display: flex;
+
+  button {
+    flex: 1;
+    font-family: $font-family-base;
+    font-size: 0.875rem;
+    background-color: #f8f8f8;
+
+    &.active {
+      color: #343434;
+      background-color: #dfdfdf;
+      background-image: none;
+      border-color: #adadad;
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+.btn-toolbar .btn {
+  margin-left: 0.5rem;
+}
+
+/* --------- Forms --------- */
+.form-action {
+  background-color: #f5f5f5;
+  margin: $spacer 0 0;
+  padding: $spacer/2 $spacer;
+}
+
+.widget-top-overflow,
+.widget-middle-overflow {
+  position: relative;
+  margin: 0 (-$widget-padding-horizontal);
+
+  > img {
+    max-width: 100%;
+  }
+}
+
+.widget-top-overflow {
+  margin-top: 2 * (-$widget-padding-vertical);
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  overflow: hidden;
+
+  > img {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  > .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin-right: $widget-padding-horizontal;
+
+    @include media-breakpoint-up(md) {
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
+
+.widget-table-overflow {
+  margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+
+  th:first-child,
+  td:first-child {
+    padding-left: $widget-padding-horizontal;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: $widget-padding-horizontal;
+  }
+}
+
+.table-bordered th {
+  background-color: $gray-300;
+}
+
+table > thead > tr > th {
+  border-top: none !important;
+  border-bottom-width: 1px !important;
+  text-transform: uppercase;
+}
+
+/* --------- Pagination --------- */
+.pagination {
+  font-weight: $font-weight-normal;
+
+  > .page-item {
+    display: inline; // Remove list-style and block-level defaults
+
+    > .page-link,
+    > span {
+      border-radius: $border-radius;
+      margin: 0 2px;
+    }
+
+    > .page-link {
+      text-decoration: none;
+      border: none;
+    }
+  }
+}
+
+/* --------- Stats Row --------- */
+.stats-row {
+  margin-bottom: 1.25rem;
+}
+
+.stat-item {
+  display: inline-block;
+  padding-right: 1.25rem;
+
+  & + .stat-item {
+    padding-left: 1.25rem;
+    border-left: 1px solid $hr-border-color;
+  }
+
+  .name {
+    margin-bottom: 0.25rem;
+    font-size: $font-size-sm;
+  }
+
+  &.stat-item-mini-chart {
+    position: relative;
+    top: -1rem;
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+/*         Widgets Grid          */
+
+.widget-container {
+  min-height: 30px;
+
+  .widget:not(.fullscreened) > header {
+    cursor: move;
+  }
+}
+
+.widget-placeholder {
+  background: rgba($white, 0.4);
+  border: 1px dashed $gray-600;
+  margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
+}
+
+/*         Post Links           */
+
+.post-links {
+  margin-bottom: 0;
+  font-size: $font-size-sm;
+  padding-left: 0;
+
+  @include clearfix();
+
+  > li {
+    float: left;
+    list-style: none;
+
+    + li {
+      &::before {
+        color: #999;
+        content: '\25cf';
+        padding: 0 8px;
+      }
+    }
+
+    > a {
+      text-decoration: none;
+      color: $text-muted;
+
+      &:hover {
+        color: $text-muted;
+      }
+    }
+  }
+
+  &.no-separator > li + li {
+    margin-left: 12px;
+
+    &::before {
+      content: normal;
+    }
+  }
+}
+
+/*          Post Comments           */
+
+.post-comments {
+  margin-bottom: $spacer / 2;
+  margin-left: -20px;
+  margin-right: -20px;
+  font-size: $font-size-sm;
+
+  @include clearfix();
+
+  > li {
+    padding: 10px;
+    border-top: 1px solid #e7e7e7;
+    list-style: none;
+
+    @include clearfix();
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .avatar {
+    margin-top: 1px;
+  }
+
+  .author {
+    margin-top: 0;
+    margin-bottom: 2px;
+    color: #7ca9dd;
+  }
+
+  .comment-body {
+    overflow: auto;
+  }
+
+  h6.author > small {
+    font-size: 11px;
+  }
+
+  .widget > footer & {
+    margin-left: -$widget-padding-horizontal;
+    margin-right: -$widget-padding-horizontal;
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../../../styles/app';
+
+.changes-chart {
+  .chart {
+    margin: -$widget-padding-vertical (-$widget-padding-horizontal) 0;
+    padding: $widget-padding-vertical 0 0;
+  }
+
+  .chartTitle {
+    margin: 20px 0 0;
+  }
+
+  .chartValue,
+  .chartValueChange {
+    padding: 0 $widget-padding-horizontal;
+  }
+
+  .chartValue {
+    margin-bottom: 0;
+    font-weight: $font-weight-bold;
+    font-size: 21px;
+    line-height: 1;
+    color: $white;
+  }
+
+  .chartValueChange {
+    color: rgba($white, 0.7);
+    font-size: $small-font-size;
+    margin-bottom: $spacer;
+  }
+}

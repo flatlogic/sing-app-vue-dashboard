@@ -1,0 +1,19 @@
+@import '../../../styles/app';
+
+.dynamic-tables {
+  #vueWayTable {
+    th {
+      font-size: $font-size-sm;
+
+      &:after {
+        color: $gray-200;
+      }
+    }
+
+    .btn-default {
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}

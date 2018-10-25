@@ -1,0 +1,59 @@
+@import '../../../styles/app';
+
+.products-page {
+  .productsListFilters,
+  .productsListFilters > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: calc(#{$spacer} - 4px);
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .mobileFilterButtons {
+    display: none;
+    margin: auto -15px 25px;
+    padding: 10px 0;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+    }
+
+    button {
+      width: 50%;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+
+      i {
+        color: $border-color;
+        margin-left: $content-padding / 4;
+      }
+
+      &:first-child {
+        border-right: 1px solid $border-color;
+      }
+    }
+  }
+
+  .productsListElements {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../../../../styles/app';
+
+.option {
+  span {
+    margin: 0 $content-padding / 2 0 -10px;
+    transition: $sidebar-transition-time;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid $addition-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      transition: 0.3s;
+      width: 15px;
+      opacity: 0;
+    }
+  }
+}
+
+.active {
+  span {
+    img {
+      width: 15px;
+      opacity: 1;
+    }
+  }
+}

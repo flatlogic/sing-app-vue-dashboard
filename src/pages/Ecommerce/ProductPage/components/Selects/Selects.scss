@@ -1,0 +1,24 @@
+@import '../../../../../styles/app';
+
+.selects {
+  display: flex;
+  margin: $spacer / 2 0;
+
+  .btn {
+    min-width: 100% !important;
+    margin-right: 0;
+  }
+
+  .btn-group {
+    height: 50px;
+
+    &:first-child {
+      width: 65%;
+    }
+
+    &:last-child {
+      width: calc(35% - #{$spacer / 2});
+      margin-left: $spacer / 2;
+    }
+  }
+}

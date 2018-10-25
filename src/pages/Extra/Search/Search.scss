@@ -1,0 +1,92 @@
+@import '../../../styles/app';
+
+.search-page {
+  .searchResultCategories {
+    > li > a {
+      color: $gray-600;
+      font-weight: $font-weight-normal;
+
+      &:hover {
+        color: $gray-700;
+        background-color: $gray-400;
+      }
+    }
+  }
+
+  .searchResultsCount {
+    margin-top: 10px;
+  }
+
+  .searchResultItem {
+    padding: 20px;
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $widget-shadow;
+
+    &:first-of-type {
+      overflow: hidden;
+    }
+
+    @include clearfix();
+
+    .imageLink {
+      display: block;
+      overflow: hidden;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+        margin: -20px 0 -20px -20px;
+        float: left;
+        width: 200px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        max-height: 200px;
+      }
+    }
+
+    .image {
+      max-width: 100%;
+    }
+
+    .info {
+      margin-top: 2px;
+      font-size: $font-size-sm;
+      color: $text-muted;
+    }
+
+    .description {
+      font-size: $font-size-mini;
+    }
+
+    + .searchResultItem {
+      margin-top: 20px;
+    }
+
+    .searchResultItemBody {
+      height: auto;
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 10px;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-left: 200px;
+      }
+    }
+
+    .searchResultItemHeading {
+      font-weight: $font-weight-normal;
+
+      > a {
+        color: $text-color;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import '../../../styles/app';
+
+.gallery-page {
+  .tile {
+    display: inline-block;
+  }
+
+  .galleryControls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacer;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 15px;
+  }
+
+  .picture {
+    padding: 3px;
+    border-radius: $border-radius;
+    background-color: $white;
+
+    .img-wrapper {
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .figure-img {
+      width: 100%;
+      transition: $transition-base;
+    }
+
+    &:hover .figure-img {
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  .description {
+    padding: ($spacer * 0.85) ($spacer * 0.5);
+  }
+
+  // .flip-list-enter, .flip-list-leave-to, .flip-list-move {
+  //   transition: 1s;
+  // }
+
+  // .flip-list-leave-to, {
+  //   transform: scale(0.9);
+  //   opacity: 0;
+  // }
+
+  // .flip-list-enter, {
+  //   transform: scale(1);
+  //   opacity: 1;
+  // }
+
+  .flip-list-move {
+    transition: 1s;
+  }
+
+  .flip-list-leave-to {
+    transition: .5s;
+    transform: scale(.5);
+    opacity: 0;
+  }
+
+  .flip-list-enter {
+    transform: scale(.5);
+    opacity: 0;
+  }
+
+  .flip-list-enter-to {
+    transition: .5s;
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../../../../styles/app';
+
+.mobileModal {
+  display: none;
+  margin: -#{$content-padding / 2} -15px;
+  min-height: calc(100vh - #{$navbar-height});
+}
+
+.mobileModalActive {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileModalBody {
+  min-height: calc(100vh - #{$navbar-height * 2});
+  background-color: $white;
+  padding-left: 35px;
+
+  li {
+    display: flex;
+    align-items: center;
+    height: $navbar-height;
+    border-bottom: 2px solid $addition-bg;
+    font-weight: $font-weight-normal;
+  }
+
+  & :global .option {
+    border: none;
+  }
+}

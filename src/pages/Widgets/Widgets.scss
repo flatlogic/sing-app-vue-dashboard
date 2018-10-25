@@ -1,0 +1,142 @@
+@import '../../styles/app';
+
+.widgets-page {
+  /*          Post User           */
+  .post-user {
+    position: relative;
+
+    @include clearfix();
+
+    img {
+      border: 3px solid white;
+    }
+  }
+
+  /*            Tags              */
+  .tags {
+    padding-left: 0;
+    list-style: none;
+
+    @include clearfix();
+
+    > li {
+      float: left;
+
+      > a {
+        padding: 2px 8px;
+        font-size: $font-size-mini;
+        border-radius: 6px;
+        border: 1px solid white;
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .fa {
+          font-size: 8px;
+          margin-right: 3px;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    > li + li > a {
+      margin-left: 6px;
+    }
+  }
+
+  .widget-top-overflow > img + .tags {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+  }
+
+  /*           Weather             */
+  .widget-image .forecast {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+  }
+
+  /*       Chat List Group         */
+  .widget-chat-list-group {
+    padding-top: $spacer/2;
+
+    .list-group-item {
+      margin-left: $widget-padding-horizontal;
+      margin-right: $widget-padding-horizontal;
+      padding: 0;
+      border: 0;
+      display: flex;
+
+      div {
+        width: 100%;
+      }
+
+      &:nth-child(even) {
+        margin-left: 75px;
+      }
+
+      &:hover {
+        background: none;
+      }
+
+      & + .list-group-item {
+        margin-top: 20px;
+      }
+
+      .thumb,
+      .thumb-sm {
+        float: left;
+        margin-right: 15px;
+      }
+
+      .time {
+        font-size: $font-size-sm;
+        color: $text-muted;
+      }
+
+      .sender {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: $font-size-mini;
+        font-weight: $font-weight-normal;
+        color: theme-color('primary');
+      }
+
+      .body {
+        font-size: $font-size-mini;
+        margin-bottom: 0;
+      }
+
+      &.on-right {
+        div {
+          padding-right: 1rem;
+        }
+
+        .thumb,
+        .thumb-sm {
+          order: 1;
+          margin-left: auto;
+          margin-right: 0;
+        }
+
+        .time {
+          float: left;
+        }
+
+        .sender {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

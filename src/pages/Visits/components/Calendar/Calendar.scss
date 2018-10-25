@@ -1,0 +1,114 @@
+@import '../../../../styles/app';
+
+/*
+ * Bootstrap calendar
+ */
+
+.calendar {
+  font-size: $font-size-mini;
+  padding: $spacer/2 0;
+  background: $gray-light;
+}
+
+.calendar-white {
+  background: $white;
+
+  .calendar {
+    background: inherit;
+  }
+}
+
+.calendar a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $gray-800 !important;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+
+.calendar td {
+  text-align: center;
+}
+
+.calendar .header {
+  padding: 100px 0;
+  color: #666;
+
+  i {
+    cursor: pointer;
+  }
+}
+
+.calendar .prev_month {
+  float: left;
+}
+
+.calendar .next_month {
+  float: right;
+}
+
+.calendar .year {
+  text-align: center;
+  font-weight: 500;
+}
+
+.calendar .week_days {
+  color: $gray-600;
+}
+
+.calendar .event {
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+
+  &:hover {
+    > a {
+      background-color: $gray-200;
+    }
+  }
+
+  > a {
+    background-color: $white;
+
+    @include border-radius(50%);
+
+    > span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+
+      @include border-radius(50%);
+    }
+  }
+
+  .popover {
+    color: $text-color;
+  }
+}
+
+.calendar .table td {
+  padding: 3px 0;
+  border-top: 0;
+}
+
+.calendar .table {
+  margin-bottom: 3px;
+
+  &.header {
+    margin-bottom: $spacer/2;
+  }
+}
+
+.calendar .visualmonthyear {
+  color: $gray-600;
+}
+
+.dropdown-menu .calendar td a {
+  padding: 0;
+}

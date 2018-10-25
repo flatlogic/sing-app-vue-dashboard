@@ -1,0 +1,21 @@
+@import '../../../../../styles/app';
+
+.rating {
+  display: flex;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semi-bold;
+  color: theme-color('warning');
+  align-items: center;
+
+  svg {
+    margin: -2px 0 0 10px;
+  }
+}
+
+.rating-sm {
+  font-size: $font-size-base;
+
+  svg {
+    height: 14px;
+  }
+}

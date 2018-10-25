@@ -1,0 +1,46 @@
+@import '../../styles/app';
+
+.login-page {
+  padding-top: 20vh;
+  height: 100%;
+
+  .widget {
+    max-width: 460px;
+    padding: 30px !important;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .footer {
+    margin-bottom: 25px;
+    font-size: 13px;
+    color: #636c72;
+    text-align: center;
+
+    @media (min-height: 600px) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .logo {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: $font-weight-normal;
+
+    i {
+      font-size: 13px;
+      margin: 0 20px;
+    }
+  }
+}

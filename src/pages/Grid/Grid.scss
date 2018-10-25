@@ -1,0 +1,75 @@
+@import '../../styles/app';
+
+/*          NEWS LIST          */
+.grid-page {
+  .news-list {
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      box-sizing: content-box;
+      border-top: 1px solid $gray-200;
+      padding: 12px;
+      cursor: pointer;
+
+      @include transition(background-color 0.2s ease-out);
+
+      &:hover {
+        background: $body-bg-light;
+      }
+
+      &:last-child {
+        margin-bottom: -10px;
+      }
+    }
+
+    img,
+    .icon {
+      float: left;
+      height: 50px;
+      width: 50px;
+    }
+
+    .icon {
+      line-height: 50px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 28px;
+
+      .fa {
+        vertical-align: baseline;
+      }
+    }
+
+    .news-item-info {
+      margin-left: 62px; /* 50 + 12px padding */
+    }
+
+    .name {
+      text-transform: uppercase;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+
+/*          SHARES LIST          */
+:global {
+  .shares-widget {
+    :global {
+      .list-group {
+        .list-group-item {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

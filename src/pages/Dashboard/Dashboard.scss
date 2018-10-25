@@ -1,0 +1,77 @@
+@import '../../styles/app';
+
+.dashboard-page {
+  .requests-table {
+    td, th {
+      font-weight: $font-weight-normal;
+    }
+  
+    tbody tr {
+      &:nth-child(odd) {
+        background: $gray-100;
+      }
+  
+      td {
+        min-width: 100px;
+      }
+    }
+  }
+  
+  .sidesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .analyticsSide {
+    width: 80%;
+  
+    &:last-child {
+      width: 20%;
+      padding-left: $grid-gutter-width;
+    }
+  
+    @media (max-width: 1620px) {
+      width: 100% !important;
+  
+      &:last-child {
+        padding-left: 0;
+      }
+    }
+  
+    @media (min-width: 1200px) and (max-width: 1440px) {
+      .lastSideElement {
+        max-width: 50%;
+      }
+    }
+  
+    @media (min-width: 1440px) and (max-width: 1620px) {
+      .lastSideElement {
+        max-width: 1 / 3 * 100%;
+      }
+    }
+  }
+  
+  .visitElement {
+    max-width: 50%;
+    width: 33%;
+    min-width: 65px;
+  }
+  
+  .sparklineWrapper {
+    display: flex;
+    justify-content: center;
+    min-width: calc(100% - 150px);
+  }
+  
+  .notifications {
+    :global .la {
+      font-size: $font-size-lg;
+      margin-top: 0.15rem;
+    }
+  
+    p {
+      margin-bottom: 1.4rem;
+    }
+  }
+  
+}

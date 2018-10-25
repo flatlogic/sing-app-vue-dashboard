@@ -1,0 +1,246 @@
+@import '../../styles/app';
+
+.chat {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  right: -250px;
+  width: 250px;
+  background-color: $chat-sidebar-bg-color;
+  color: #aaa;
+  transition: right 0.3s ease-in-out;
+
+  @include media-breakpoint-down(md) {
+    right: -275px;
+    width: 275px;
+  }
+
+  &.chatOpen {
+    right: 0;
+  }
+
+  .chatSearch {
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 0.75rem;
+      top: 0.75rem;
+      color: $text-color;
+    }
+  }
+
+  .chatHeader {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+    padding: 10px;
+    background-color: $chat-sidebar-bg-color;
+
+    input {
+      padding: 0.6rem 2.25rem 0.6rem 0.85rem;
+      line-height: 1.5;
+    }
+
+    .chatTitle {
+      margin: 10px;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+
+  .chatPanel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+    :global .list-group-item {
+      border: 0;
+      padding: 10px 20px;
+      z-index: 1;
+
+      .cirle {
+        font-size: 11px;
+        line-height: 37px;
+        margin-left: auto;
+      }
+    }
+
+    .navTitle {
+      margin: 35px 10px 5px 20px;
+      font-size: 14px;
+    }
+
+    .navTitle:first-child {
+      margin-top: 0;
+    }
+
+    .messageSender {
+      text-overflow: ellipsis;
+    }
+
+    .messagePreview {
+      margin: 0;
+      width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 85%;
+      color: #999;
+    }
+  }
+
+  .chatContacts {
+    padding-top: 105px;
+    left: -100%;
+    transition: left 0.2s ease-in-out;
+
+    :global .list-group {
+      margin-top: 10px;
+
+      :global .list-group-item {
+        cursor: pointer;
+      }
+    }
+
+    &.chatMessageOpen {
+      left: 0;
+      overflow-y: auto;
+
+      @include scroll-bar(rgba($white, 0.3));
+    }
+  }
+
+  .chatMessages {
+    padding-top: 100px;
+    right: -100%;
+    transition: right 0.2s ease-in-out;
+    background-color: $gray-light;
+
+    :global .list-group {
+      position: absolute;
+      top: 134px; // header height
+      bottom: 47px; // footer height
+      width: 100%;
+      padding-top: 0.5rem;
+      overflow-y: auto;
+
+      @include scroll-bar(rgba($white, 0.3));
+
+      :global .list-group-item {
+        align-items: flex-start;
+      }
+
+      :global .thumb-sm {
+        float: left;
+      }
+    }
+
+    .messageBody {
+      position: relative;
+      margin-left: 50px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: $font-weight-normal;
+      background-color: $gray-200;
+      color: $text-color;
+      border-radius: 0.25rem;
+
+      &::before {
+        right: 100%;
+        top: 8px;
+        content: '';
+        height: 0;
+        width: 0;
+        position: absolute;
+        border: 10px solid rgba(0, 0, 0, 0);
+        border-right-color: $gray-200;
+      }
+    }
+
+    .fromMe {
+      flex-direction: row-reverse;
+
+      :global .thumb-sm {
+        float: right;
+      }
+
+      .messageBody {
+        margin-left: 0;
+        margin-right: 50px;
+        background-color: theme-color('warning');
+        color: $gray-800;
+
+        &::before {
+          right: auto;
+          left: 100%;
+          border-right-color: rgba(0, 0, 0, 0);
+          border-left-color: theme-color('warning');
+        }
+      }
+    }
+
+    .chatFooter {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 10px;
+      background-color: $white;
+    }
+
+    &.chatMessageOpen {
+      right: 0;
+    }
+
+    .messagesTitle {
+      margin-bottom: 0;
+
+      a {
+        display: block;
+        margin-top: -7px;
+        padding: 17px 16px;
+        background-color: $white;
+      }
+    }
+  }
+
+  .chatSidebarUserGroup {
+    :global .list-group-item {
+      transition: $transition-base;
+    }
+
+    :global .list-group-item.active {
+      background: rgba($white, 0.1);
+    }
+
+    :global .list-group-item.active h6 {
+      color: theme-color('warning');
+      font-weight: $badge-font-weight;
+    }
+
+    :global .list-group-item:hover {
+      background: $gray-100;
+    }
+
+    :global .badge {
+      margin: 8px 5px 0 0;
+      padding: 3px 5px;
+    }
+
+    :global .fa {
+      margin-top: 11px;
+    }
+  }
+
+  .messageItem {
+    &:hover {
+      background: transparent;
+    }
+  }
+}

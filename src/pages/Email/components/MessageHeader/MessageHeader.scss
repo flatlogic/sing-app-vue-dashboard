@@ -1,0 +1,32 @@
+@import '../../../../styles/app';
+
+.messageHeader {
+  width: 100%;
+}
+
+.messageHeaderLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.messageFrom {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.messageFromInfo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.messageHeaderDate button {
+  font-size: $font-size-sm;
+}

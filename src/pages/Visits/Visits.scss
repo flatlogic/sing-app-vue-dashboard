@@ -1,0 +1,21 @@
+@import '../../styles/app';
+
+.visits-page {
+  .post-comments footer {
+    margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+    padding: $widget-padding-vertical $widget-padding-horizontal;
+  }
+
+  .stat-item .name {
+    margin-top: 10px;
+  }
+
+  .table {
+    .table.table-sm {
+      td {
+        font-size: 1rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import '../../../../styles/app';
+
+/*      Live Tiles     */
+.live-tile,
+.list-tile,
+.copy-tile,
+.tile-strip .flip-list > li {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  color: inherit;
+
+  &.fade {
+    opacity: 1;
+  }
+}
+
+.live-tile p,
+.list-tile p,
+.copy-tile p {
+  padding: 0;
+}
+
+.live-tile p,
+.list-tile p,
+.copy-tile p,
+.live-tile .face,
+.list-tile .face,
+.copy-tile .face {
+  &.h1 {
+    font-size: $h1-font-size;
+  }
+
+  &.h2 {
+    font-size: $h2-font-size;
+  }
+
+  &.h3 {
+    font-size: $h3-font-size;
+  }
+
+  &.h4 {
+    font-size: $h4-font-size;
+  }
+
+  &.h5 {
+    font-size: $h5-font-size;
+  }
+
+  &.h6 {
+    font-size: $h6-font-size;
+  }
+
+  $font-sizes: $h1-font-size, $h2-font-size, $h3-font-size, $h4-font-size, $h5-font-size, $h6-font-size;
+  $i: 1;
+
+  @each $font-size in $font-sizes {
+    &.value#{$i} {
+      font-size: $font-size;
+    }
+    $i: $i + 1;
+  }
+}
