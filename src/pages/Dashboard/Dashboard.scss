@@ -1,0 +1,17 @@
+@import '../../styles/app';
+
+table {
+  td, th {
+    font-weight: $font-weight-normal;
+  }
+
+  tbody tr {
+    &:nth-child(odd) {
+      background: $gray-100;
+    }
+
+    td {
+      min-width: 100px;
+    }
+  }
+}

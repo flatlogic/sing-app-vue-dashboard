@@ -1,0 +1,61 @@
+@import '../../styles/app.scss';
+
+.root {
+  height: 100%;
+  position: relative;
+  left: 0;
+  transition: left $sidebar-transition-time ease-in-out;
+
+  &.chatOpen {
+    left: -($sidebar-width-open + $sidebar-width-closed);
+  }
+}
+
+.wrap {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  margin-left: 50px;
+  flex-direction: column;
+  left: $sidebar-width-open - $sidebar-width-closed;
+  right: 0;
+  transition: left $sidebar-transition-time ease-in-out;
+
+  @media (max-width: breakpoint-max(sm)) {
+    margin-left: 0;
+    left: $sidebar-width-open;
+  }
+}
+
+.sidebarClose div.wrap {
+  left: 0;
+}
+
+.sidebarStatic .wrap {
+  transition: none;
+  left: 0;
+  margin-left: $sidebar-width-open;
+}
+
+.content {
+  position: relative;
+  flex-grow: 1;
+  // 20px for footer height
+  padding: $content-padding $content-padding ($content-padding + 20px);
+  background-color: $body-bg;
+
+  @media (max-width: breakpoint-max(sm)) {
+    padding: 20px 15px;
+  }
+
+  // hammers disallows text selection, allowing it for large screens
+  @media (min-width: breakpoint-min(sm)) {
+    user-select: auto !important;
+  }
+}
+
+.contentFooter {
+  position: absolute;
+  bottom: 15px;
+  color: $text-muted;
+}

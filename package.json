@@ -1,0 +1,83 @@
+{
+  "name": "sing-app-vue",
+  "version": "4.5.0",
+  "private": true,
+  "scripts": {
+    "install": "napa",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "awesome-bootstrap-checkbox": "^1.0.1",
+    "bootstrap": "^4.1.1",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "css-loader": "^1.0.0",
+    "d3": "3.5.17",
+    "easy-pie-chart": "^2.1.7",
+    "expose-loader": "^0.7.5",
+    "express": "^4.16.4",
+    "flot": "^0.8.0-alpha",
+    "font-awesome": "4.7.0",
+    "glyphicons-halflings": "1.9.1",
+    "govpredict-morris": "0.5.1",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.3.1",
+    "jquery-sparkline": "2.4.0",
+    "jquery-ui": "^1.12.1",
+    "line-awesome": "icons8/line-awesome",
+    "messenger": "git+https://github.com/HubSpot/messenger.git#v1.4.2",
+    "napa": "^3.0.0",
+    "node-sass": "^4.9.0",
+    "nvd3": "1.8.6",
+    "rickshaw": "1.6.6",
+    "sass-loader": "^7.0.1",
+    "vee-validate": "^2.1.0-beta.6",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vue-touch": "2.0.0-beta.4",
+    "vue2-google-maps": "^0.10.2",
+    "vuetrend": "^0.3.2",
+    "vuex": "^3.0.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-raphael": "^2.1.4",
+    "widgster": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-service": "^3.0.5",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "napa": {
+    "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
+    "flot.dashes": "https://github.com/cquartier/flot.dashes.git",
+    "jquery.flot-orderBars": "https://github.com/emmerich/flot-orderBars.git"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

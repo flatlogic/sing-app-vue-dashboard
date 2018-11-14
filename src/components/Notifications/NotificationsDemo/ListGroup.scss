@@ -1,0 +1,55 @@
+@import '../../../styles/app';
+
+.listGroup {
+  display: block;
+  height: 320px;
+  overflow-y: scroll;
+
+  .listGroupItem:first-child {
+    border: none;
+  }
+}
+
+.listGroupItem {
+  transition: background-color 0.15s ease-in-out;
+  text-decoration: none;
+  color: $gray-700;
+  border-left: none;
+  border-right: none;
+  display: block;
+
+  .progress {
+    transition: background 0.15s ease-in-out;
+
+    &:hover {
+      background: $black;
+    }
+  }
+
+  &:hover {
+    background-color: $list-group-hover-bg;
+
+    .progress {
+      background: $white !important;
+    }
+  }
+
+  &:first-child {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.notificationIcon {
+  margin-right: 1rem;
+  float: left;
+
+  @include clearfix;
+}
