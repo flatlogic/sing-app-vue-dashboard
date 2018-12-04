@@ -135,8 +135,7 @@ export default {
         .css({
           borderWidth: 1,
           borderRadius: 0,
-          width: 10,
-          height: 10,
+          width: 30,
         });
 
       this.$chartLegend.find('tbody td').css({
