@@ -1,6 +1,6 @@
 # 🚀 Sing App Vue Dashboard - free and open source admin dashboard
 
-Responsive admin dashboard template built with Vue.js and Bootstrap 4. Developed with ❤️ by [Flatlogic](https://flatlogic.com/).
+Responsive admin dashboard template built with Vue.js and Bootstrap 4. Developed with ❤️ by [Flatlogic](https://flatlogic.com/). If you love our project please star ⭐️ our repo!
 
 [View Demo](https://demo.flatlogic.com/sing-app-vue-dashboard/) | [Download](https://github.com/flatlogic/sing-app-vue-dashboard/archive/master.zip) | [More templates](https://flatlogic.com/admin-dashboards)
 
