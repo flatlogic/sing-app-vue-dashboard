@@ -3,7 +3,7 @@
     <b-container>
       <h5 class="logo">
         <i class="fa fa-circle text-gray" />
-        sing
+        Sing App
         <i class="fa fa-circle text-warning" />
       </h5>
       <Widget class="mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
@@ -49,7 +49,7 @@
       </Widget>
     </b-container>
     <footer class="footer">
-      2017 &copy; Sing. Admin Dashboard Template.
+      2019 &copy; Sing App Vue Admin Dashboard Template.
     </footer>
   </div>
 </template>

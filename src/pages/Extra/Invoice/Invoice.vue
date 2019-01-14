@@ -25,7 +25,7 @@
                   <b-col sm='6' class="b-col-print-6">
                     <h5 class="text-muted no-margin">Company Information</h5>
                     <h3 class="company-name m-t-1">
-                      Wrapbootstrap LLC
+                      Flatlogic LLC
                     </h3>
                     <address>
                       <strong>2 Infinite Loop</strong><br />

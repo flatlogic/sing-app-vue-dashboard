@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-page">
-    <h1 class="page-title">Analytics</h1>
+    <h1 class="page-title">Analytics <small>Company Performance</small></h1>
     <div class="sidesWrapper">
       <div class="analyticsSide">
         <b-row>

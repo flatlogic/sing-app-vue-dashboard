@@ -86,6 +86,8 @@ $body-bg-light: lighten($body-bg, 3%);
 //== Components
 //
 
+$grid-gutter-width: 40px;
+
 $content-padding: 40px;
 
 $nav-link-padding: 10px;
@@ -118,8 +120,8 @@ $breadcrumb-bg: transparent;
 
 $widget-bg: #fff;
 $widget-title-color: #444;
-$widget-shadow: 0 0 40px darken($body-bg, 2%);
-$widget-shadow-designated: -1px 0 8px $gray-400;
+$widget-shadow: 0 23px 20px -20px rgba(darken($body-bg, 25%),0.1), 0 0 15px rgba(darken($body-bg, 25%),0.06);
+$widget-shadow-designated: -1px 0 8px rgba(0,0,0,.4);
 
 $input-btn-line-height: 1.5;
 
@@ -129,7 +131,7 @@ $input-btn-padding-x-sm: 0.8rem;
 //== Navbar
 //
 
-$navbar-height:  50px !default;
+$navbar-height:  60px !default;
 $navbar-padding-y: 0 !default;
 $navbar-padding-x: 0 !default;
 

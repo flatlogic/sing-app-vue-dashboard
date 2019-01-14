@@ -21,7 +21,7 @@
                     <a href="http://demo.flatlogic.com/sing-app/documentation/"
                     target="_blank"
                     role="button"
-                    class="btn btn-secondary btn-rounded-f btn-block fs-mini">
+                    class="btn btn-inverse btn-rounded-f btn-block fs-mini">
                         Documentation
                     </a>
                 </div>

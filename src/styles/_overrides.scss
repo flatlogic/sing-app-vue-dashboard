@@ -208,21 +208,6 @@ legend {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-weight: 300;
-}
-
 .small,
 small {
   font-size: 85%;
@@ -1061,4 +1046,8 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   border: 1px solid $gray-light;
   font-size: $font-size-mini;
   background-color: $white;
+}
+
+.card {
+  box-shadow: $widget-shadow;
 }

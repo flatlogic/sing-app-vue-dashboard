@@ -6,9 +6,11 @@
     <Header />
     <Chat />
     <v-touch class="content" @swipe="handleSwipe" :swipe-options="{direction: 'horizontal'}">
-      <router-view />
+      <transition name="router-animation">
+        <router-view />
+      </transition>
       <footer class="contentFooter">
-        Sing Vue Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
+        Sing App Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
         </footer>
     </v-touch>
   </div>

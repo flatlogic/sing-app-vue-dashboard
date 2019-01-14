@@ -3,8 +3,8 @@
     <h2 class="page-title">Sing - <span class="fw-semi-bold">Package</span>&nbsp;
       <small>More than 2000 man-hours already invested!</small>
     </h2>
-    <p class="lead">You will get access to all those versions
-      listed below after you purchase any Sing licence!</p>
+    <p class="lead">Over 8,000 developers worldwide chose our bootstrap admin templates to build their
+      web applications, SAAS and E-Commerce platforms faster. Jump in to burn through your gig too!</p>
     <b-row>
       <b-col lg="5" md="6">
         <Widget

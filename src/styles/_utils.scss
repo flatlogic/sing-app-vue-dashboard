@@ -536,3 +536,32 @@ $i: 0;
   background-size: cover;
   background-position: center;
 }
+
+.router-animation-enter-active {
+  animation: coming .2s;
+  animation-delay: .1s;
+  opacity: 0;
+}
+.router-animation-leave-active {
+  animation: going .2s;
+}
+
+@keyframes going {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(0, 4%, 0) scale(.93);
+    opacity: 0;
+  }
+}
+@keyframes coming {
+  from {
+    transform: translate3d(0, 4%, 0) scale(.93);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}

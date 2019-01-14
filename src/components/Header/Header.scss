@@ -2,7 +2,7 @@
 
 .header {
   z-index: 100;
-  padding: 7px 1.85rem 0;
+  padding: 0 1.85rem 0;
   background: $body-bg;
 
   @include media-breakpoint-down(md) {
