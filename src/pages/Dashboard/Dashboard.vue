@@ -6,7 +6,7 @@
         <b-row>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Visits Today">
+              <Widget class="h-100 mb-0" title="Visits Today" close>
                 <div class="d-flex justify-content-between align-items-center mb-lg">
                   <h2>4,332</h2>
                   <i class="la la-arrow-right text-success rotate-315" />
@@ -27,12 +27,12 @@
           </b-col>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Revenue Breakdown">
+              <Widget class="h-100 mb-0" title="Revenue Breakdown" close>
                 <b-row>
                   <b-col xs="12" md="6" lg="7" class="text-center">
                     <div ref="chartContainer" style="width: 100%; height: 100px" />
                   </b-col>
-                  <b-col xs="12" md="5" lg="4">
+                  <b-col xs="12" md="5" lg="4" class="display-flex flex-column justify-content-center">
                     <div ref="chartLegend" />
                   </b-col>
                 </b-row>
@@ -41,7 +41,7 @@
           </b-col>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="App Perfomance">
+              <Widget class="h-100 mb-0" title="App Perfomance" close>
                 <p class="text-muted d-flex flex-wrap">
                   <small class="mr-lg d-flex align-items-center">
                     <span class="circle bg-success text-success mr-xs" style="font-size: 4px;">
@@ -71,7 +71,7 @@
           </b-col>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Server Overview">
+              <Widget class="h-100 mb-0" title="Server Overview" close>
                 <div class="d-flex align-items-center mb-sm">
                   <p class="width-150"><small>60% / 37°С / 3.3 Ghz</small></p>
                   <div style="width: calc(100% - 150px)">

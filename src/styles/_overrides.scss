@@ -215,6 +215,10 @@ small {
 
 ///////// Buttons //////////
 
+.btn {
+  background-image: linear-gradient(to right, #ffffff26, #fff0);
+}
+
 .btn-link {
   &:focus {
     box-shadow: none;
@@ -302,6 +306,17 @@ small {
 .dropdown-menu-right {
   left: auto;
   right: 0;
+}
+
+.dropdown-toggle::after {
+  font-family: LineAwesome;
+  content: "\F110";
+  border: none;
+  width: auto;
+  height: auto;
+  vertical-align: baseline;
+  opacity: .8;
+  font-size: 85%;
 }
 
 .nav-item.dropdown {

@@ -16,6 +16,7 @@
         </div>
       "
       customHeader
+    collapse close
     >
     <div ref="chartContainer" style="width: 100%; height: 250px" />
     <div class="chart-tooltip" ref="chartTooltip" />

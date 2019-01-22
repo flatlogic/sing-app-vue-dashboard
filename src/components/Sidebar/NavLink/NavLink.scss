@@ -6,7 +6,7 @@
 
   @media (min-width: map_get($grid-breakpoints, lg))
   and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-    font-size: $font-size-base;
+    font-size: 13px;
   }
 
   a {

@@ -32,7 +32,7 @@
             manager are under the hood.</p>
           <a
             class="btn btn-default btn-lg btn-block"
-            href="https://sing-app.herokuapp.com/"
+            href="https://demo.flatlogic.com/sing-app-react/#/app/main/analytics"
           >
             Go to Demo
           </a>
