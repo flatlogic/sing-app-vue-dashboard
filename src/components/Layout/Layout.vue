@@ -32,8 +32,16 @@ export default {
   components: { Sidebar, Header, Chat, Helper },
   methods: {
     ...mapActions(
-      'layout', ['switchSidebar', 'handleSwipe', 'changeSidebarActive'],
+      'layout', ['switchSidebar', 'handleSwipe', 'changeSidebarActive', 'toggleSidebar'],
     ),
+    handleWindowResize() {
+      const width = window.innerWidth;
+
+      if (width <= 768 && this.sidebarStatic) {
+        this.toggleSidebar();
+        this.changeSidebarActive(null);
+      }
+    },
   },
   computed: {
     ...mapState('layout', {
@@ -53,7 +61,13 @@ export default {
         this.changeSidebarActive(null);
       }, 2500);
     }
+
+    this.handleResize();
+    window.addEventListener('resize', this.handleWindowResize);
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleWindowResize);
+  }
 };
 </script>
 
