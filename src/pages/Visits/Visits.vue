@@ -151,7 +151,7 @@
               <p class="value">104.85%</p>
             </div>
             <div class="stat-item">
-              <h6 class="name fs-sm">Takeoff Angle</h6>
+              <h6 class="name fs-sm">Takeoff</h6>
               <p class="value">14.29&deg;</p>
             </div>
             <div class="stat-item">

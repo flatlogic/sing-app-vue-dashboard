@@ -136,6 +136,7 @@ table > thead > tr > th {
 /* --------- Stats Row --------- */
 .stats-row {
   margin-bottom: 1.25rem;
+  display: flex;
 }
 
 .stat-item {
@@ -145,6 +146,10 @@ table > thead > tr > th {
   & + .stat-item {
     padding-left: 1.25rem;
     border-left: 1px solid $hr-border-color;
+  }
+
+  &:last-child {
+    padding-right: 0;
   }
 
   .name {
