@@ -62,7 +62,7 @@ export default {
       }, 2500);
     }
 
-    this.handleResize();
+    this.handleWindowResize();
     window.addEventListener('resize', this.handleWindowResize);
   },
   beforeDestroy() {
