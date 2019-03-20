@@ -4,7 +4,7 @@ Responsive admin dashboard template built with Vue.js and Bootstrap 4. Developed
 
 **Development at risk! Our developer wants to eat and accepted a job offer from McDonalds! Buy a [full version of Sing App](https://flatlogic.com/admin-dashboards/sing-app-vue) to help us hire him again!** *
 
-[View Demo](https://demo.flatlogic.com/sing-app-vue-dashboard/) | [Download](https://github.com/flatlogic/sing-app-vue-dashboard/archive/master.zip) | [More templates](https://flatlogic.com/admin-dashboards)
+[View Demo](https://flatlogic.com/admin-dashboards/sing-app-vue-dashboard/demo) | [Download](https://github.com/flatlogic/sing-app-vue-dashboard/archive/master.zip) | [More templates](https://flatlogic.com/admin-dashboards)
 
 ![image](https://user-images.githubusercontent.com/24964748/48494482-05a3ba80-e83f-11e8-95e6-4a6d2e76687b.png)
 
