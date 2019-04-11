@@ -1066,3 +1066,9 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 .card {
   box-shadow: $widget-shadow;
 }
+
+.v-select {
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
