@@ -4,10 +4,7 @@
     <header v-if="title && customHeader" class="title" v-html="title" />
     <div v-if="!customControls && mainControls"
       class="widgetControls widget-controls">
-      <a v-if="settings" href="#"><i class="la la-cog" /></a>
-      <a v-if="settingsInverse" href="#" class="bg-gray-transparent inverse">
-        <i class="la la-cog text-white"/>
-      </a>
+      <a v-if="settings || settingsInverse" href="#"><i class="la la-cog" /></a>
       <a v-if="refresh" href="#" data-widgster="load" :id="`reloadId-${randomId}`">
         <strong v-if="typeof refresh === 'string'" class="text-gray-light">{{refresh}}</strong>
         <i v-else class="la la-refresh" />
