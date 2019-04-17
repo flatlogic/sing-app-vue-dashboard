@@ -300,9 +300,8 @@
               </tbody>
             </table>
           </div>
-          <div class="widget-body mt-xlg chart-overflow-bottom"
-            :style="{ height: '100px' }">
-            <RickshawCH :height="100" />
+          <div class="widget-body mt-xlg chart-overflow-bottom">
+            <area-chart class="area-chart" height="100px" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}}"  :chart-data="dataCollection"></area-chart>
           </div>
         </Widget>
       </b-col>
@@ -333,16 +332,17 @@ import Widget from '@/components/Widget/Widget';
 import Map from './components/Map/Map';
 import AnimateNumber from './components/AnimateNumber/AnimateNumber';
 import Calendar from './components/Calendar/Calendar';
-import RickshawCH from './components/Rickshaw/Rickshaw';
+import AreaChart from './components/AreaChart/AreaChart';
 
 export default {
   name: 'Visits',
   components: {
-    Widget, Map, AnimateNumber, Calendar, RickshawCH,
+    Widget, Map, AnimateNumber, Calendar, AreaChart,
   },
   data() {
     return {
       checkedArr: [false, false, false],
+      dataCollection: null,
     };
   },
   methods: {
@@ -370,6 +370,30 @@ export default {
       }
       Vue.set(this, 'checkedArr', arr);
     },
+    fillData () {
+      this.dataCollection = {
+        labels: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()],
+        datasets: [
+          {
+            label: 'Data One',
+            backgroundColor: '#ffc247',
+            borderColor: 'transparent',
+            data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+          }, {
+            label: 'Data Two',
+            backgroundColor: '#e9ecef',
+            borderColor: 'transparent',
+            data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+          }
+        ]
+      }
+    },
+    getRandomInt () {
+      return Math.floor(Math.random() * (50 - 5 + 1)) + 5
+    }
+  },
+  mounted () {
+    this.fillData();
   },
 };
 </script>
