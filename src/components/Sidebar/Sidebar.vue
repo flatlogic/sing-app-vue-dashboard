@@ -117,7 +117,6 @@
           { header: 'Charts Overview', link: '/app/charts/overview' },
           { header: 'Flot Charts', link: '/app/charts/flot' },
           { header: 'Morris Charts', link: '/app/charts/morris' },
-          { header: 'Rickshaw Charts', link: '/app/charts/rickshaw' },
           { header: 'Sparkline Charts', link: '/app/charts/sparkline' },
           { header: 'Easy Pie Charts', link: '/app/charts/easy-pie' },
         ]"

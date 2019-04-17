@@ -40,7 +40,6 @@
     "napa": "^3.0.0",
     "node-sass": "^4.9.0",
     "nvd3": "1.8.6",
-    "rickshaw": "1.6.6",
     "sass-loader": "^7.0.1",
     "skycons": "^1.0.0",
     "v-mask": "^1.3.2",

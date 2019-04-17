@@ -20,7 +20,6 @@ import WidgetsPage from '@/pages/Widgets/Widgets';
 import ChartsPage from '@/pages/Charts/Charts';
 import FlotPage from '@/pages/Charts/Flot/Flot';
 import MorrisPage from '@/pages/Charts/Morris/Morris';
-import RickshawPage from '@/pages/Charts/Rickshaw/Rickshaw';
 import SparklinePage from '@/pages/Charts/Sparkline/Sparkline';
 import EasyPiePage from '@/pages/Charts/EasyPie/EasyPie';
 import ProfilePage from '@/pages/Profile/Profile';
@@ -250,11 +249,6 @@ export default new Router({
           path: 'charts/morris',
           name: 'MorrisPage',
           component: MorrisPage,
-        },
-        {
-          path: 'charts/rickshaw',
-          name: 'RickshawPage',
-          component: RickshawPage,
         },
         {
           path: 'charts/sparkline',
