@@ -12,6 +12,10 @@
     }
   }
 
+  .post-comments .comment-body {
+    overflow: auto;
+  }
+
   /*            Tags              */
   .tags {
     padding-left: 0;

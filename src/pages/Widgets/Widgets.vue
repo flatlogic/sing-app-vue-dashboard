@@ -7,7 +7,7 @@
             <b-row class="flex-nowrap">
               <b-col xs="3">
                 <span class="widget-icon">
-                  <i class="glyphicon glyphicon-globe text-primary" />
+                  <i class="fi flaticon-like text-primary" />
                 </span>
               </b-col>
               <b-col xs="9">
@@ -34,7 +34,7 @@
             <b-row class="flex-nowrap">
               <b-col xs="3">
                 <span class="widget-icon">
-                  <i class="glyphicon glyphicon-user text-info" />
+                  <i class="fi flaticon-magic-wand text-info" />
                 </span>
               </b-col>
               <b-col xs="9">
@@ -99,17 +99,17 @@
         <Widget>
           <div class="clearfix">
             <LiveTile :options="{
-              'data-mode': 'fade',
+              'data-mode': 'carousel',
               'data-speed': '750',
               'data-delay': '3000',
               'data-height': '104'
             }"
             >
-              <div class="bg-white text-gray">
+              <div>
                 <b-row class="flex-nowrap">
                   <b-col xs="3">
                     <span class="widget-icon">
-                      <i class="glyphicon glyphicon-globe" />
+                      <i class="fi flaticon-notebook-4" />
                     </span>
                   </b-col>
                   <b-col xs="9">
@@ -128,11 +128,11 @@
                   </b-col>
                 </b-row>
               </div>
-              <div class="text-gray">
+              <div>
                 <b-row class="flex-nowrap">
                   <b-col xs="3">
                     <span class="widget-icon">
-                      <i class="glyphicon glyphicon-certificate" />
+                      <i class="fi flaticon-shuffle" />
                     </span>
                   </b-col>
                   <b-col xs="9">
@@ -161,7 +161,7 @@
             <b-row class="flex-nowrap">
               <b-col xs="3">
                 <span class="widget-icon">
-                  <i class="glyphicon glyphicon-usd text-success" />
+                  <i class="fi flaticon-diamond text-success" />
                 </span>
               </b-col>
               <b-col xs="9">
