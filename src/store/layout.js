@@ -85,8 +85,6 @@ export default {
       commit('changeSidebarActive', index);
     },
     changeTheme({commit}, theme) {
-        // eslint-disable-next-line
-        console.log(theme);
       commit('changeTheme', theme);
     }
   },
