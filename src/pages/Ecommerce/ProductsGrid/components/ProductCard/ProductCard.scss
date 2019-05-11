@@ -16,7 +16,7 @@
   background-size: cover;
   position: relative;
   border-radius: $border-radius;
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
 
   @include media-breakpoint-down(sm) {
     height: 200px;

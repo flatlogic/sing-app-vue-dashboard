@@ -11,7 +11,7 @@
 
   a {
     display: block;
-    color: $sidebar-color;
+    color: var(--sidebar-color);
     text-decoration: none;
     cursor: pointer;
   }
@@ -28,7 +28,7 @@
     border-top: 1px solid $sidebar-item-border-color;
 
     &:hover {
-      background-color: $sidebar-item-hover-bg-color;
+      background-color: var(--sidebar-item-hover-bg-color);
     }
 
     > i {
@@ -95,7 +95,7 @@ a.router-link-active {
     background-color: $sidebar-item-active-color;
 
     i {
-      color: $white;
+      color: var(--sidebar-bg-color);
     }
   }
 }
@@ -106,19 +106,19 @@ a.router-link-active {
   box-shadow: none;
   margin: 0;
   border-radius: 0;
-  background-color: lighten($sidebar-bg-color, 5%);
+  background-color: var(--sidebar-panel-bg-color);
 
   a {
     line-height: 20px !important;
 
     &.router-link-active {
       font-weight: $font-weight-semi-bold;
-      color: $sidebar-color;
+      color: var(--sidebar-color);
     }
   }
 
   ul {
-    background: $sidebar-action-bg;
+    background: var(--sidebar-action-bg);
     padding: $spacer;
 
     li {
@@ -130,7 +130,7 @@ a.router-link-active {
       font-size: $font-size-mini;
 
       &:hover {
-        background-color: $sidebar-item-hover-bg-color;
+        background-color: var(--sidebar-item-hover-bg-color);
       }
     }
   }

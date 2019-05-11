@@ -2,7 +2,7 @@
 
 .productDescription {
   background-color: $white;
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
   border-radius: $border-radius;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -148,7 +148,7 @@
   font-weight: $font-weight-normal;
   padding: 5px 20px 10px;
   box-shadow: none;
-  border-radius: none;
+  border-radius: 0;
 
   @include media-breakpoint-down(sm) {
     display: block;

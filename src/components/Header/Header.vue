@@ -112,7 +112,7 @@ import $ from 'jquery';
 import Notifications from '@/components/Notifications/Notifications';
 
 export default {
-  name: 'Headed',
+  name: 'Header',
   components: { Notifications },
   computed: {
     ...mapState('layout', {

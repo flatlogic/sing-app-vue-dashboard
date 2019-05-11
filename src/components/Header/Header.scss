@@ -3,7 +3,8 @@
 .header {
   z-index: 100;
   padding: 0 1.85rem 0;
-  background: $body-bg;
+  background: var(--navbar-bg);
+  box-shadow: var(--navbar-shadow);
 
   @include media-breakpoint-down(md) {
     padding: 7px 10px;

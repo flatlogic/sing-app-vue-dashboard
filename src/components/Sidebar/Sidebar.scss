@@ -5,8 +5,8 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: $sidebar-bg-color;
-  color: $sidebar-color;
+  background-color: var(--sidebar-bg-color);
+  color: var(--sidebar-color);
   overflow-y: auto;
 
   @include scroll-bar($sidebar-scrollbar-bg);
@@ -21,7 +21,7 @@
   transition: width $sidebar-transition-time ease-in-out;
 
   a {
-    color: $gray-800;
+    color: var(--logo-color);
     padding: 0 5px;
     text-decoration: none;
     white-space: nowrap;
@@ -48,6 +48,8 @@
   margin: 35px 0 5px 11px;
   font-size: $font-size-larger;
   transition: opacity $sidebar-transition-time ease-in-out;
+  color: var(--sidebar-nav-title-color);
+
 
   @media (min-width: breakpoint-min(lg)) {
     opacity: 1;
@@ -104,7 +106,7 @@
 
   li > a {
     font-size: $font-size-mini;
-    color: $sidebar-color;
+    color: var(--sidebar-color);
     text-decoration: none;
 
     > i {
@@ -152,7 +154,7 @@
 }
 
 .sidebarProgress {
-  background: lighten($sidebar-bg-color, 10%);
+  background: var(--sidebar-progress-bg-color);
 }
 
 .groupTitle {

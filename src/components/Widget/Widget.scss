@@ -14,7 +14,7 @@
   padding: $widget-padding-vertical $widget-padding-horizontal;
   background: $widget-bg-color;
   border-radius: $border-radius-sm;
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
 
   > header {
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);

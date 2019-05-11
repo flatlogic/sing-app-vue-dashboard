@@ -1,6 +1,13 @@
 import $ from 'jquery';
 import isScreen from '@/core/screenHelper';
 
+export const DashboardThemes = {
+  LIGHT: "light",
+  DARK: "dark"
+};
+
+Object.freeze(DashboardThemes);
+
 export default {
   namespaced: true,
   state: {
@@ -8,6 +15,7 @@ export default {
     sidebarStatic: false,
     sidebarActiveElement: null,
     chatOpen: false,
+    dashboardTheme: DashboardThemes.DARK,
   },
   mutations: {
     toggleChat(state) {
@@ -41,9 +49,6 @@ export default {
         state.sidebarClose = !state.sidebarClose;
       }
     },
-    setSidebarState(state, value) {
-      state.sedebarClose = value;
-    },
     handleSwipe(state, e) {
       if (e.direction === 4 && !state.chatOpen) {
         state.sidebarClose = false;
@@ -59,6 +64,9 @@ export default {
     changeSidebarActive(state, index) {
       state.sidebarActiveElement = index;
     },
+    changeTheme(state, payload) {
+      state.dashboardTheme = payload;
+    }
   },
   actions: {
     toggleChat({ commit }) {
@@ -76,5 +84,10 @@ export default {
     changeSidebarActive({ commit }, index) {
       commit('changeSidebarActive', index);
     },
+    changeTheme({commit}, theme) {
+        // eslint-disable-next-line
+        console.log(theme);
+      commit('changeTheme', theme);
+    }
   },
 };

@@ -4,7 +4,7 @@
   display: flex;
   margin: $content-padding 0 75px;
   border-radius: $border-radius;
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
 
   @include media-breakpoint-down(sm) {
     flex-direction: column;

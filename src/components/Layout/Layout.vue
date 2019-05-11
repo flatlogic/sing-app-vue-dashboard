@@ -1,5 +1,5 @@
 <template>
-<div :class="{root: true, chatOpen, sidebarClose, sidebarStatic}">
+<div :class="[{root: true, chatOpen, sidebarClose, sidebarStatic}, dashboardThemeClass, 'sing-dashboard']">
   <Sidebar />
   <Helper />
   <div class="wrap">
@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { createNamespacedHelpers } from 'vuex';
+const { mapState, mapActions } = createNamespacedHelpers('layout');
 
 import Sidebar from '@/components/Sidebar/Sidebar';
 import Header from '@/components/Header/Header';
@@ -31,9 +32,7 @@ export default {
   name: 'Layout',
   components: { Sidebar, Header, Chat, Helper },
   methods: {
-    ...mapActions(
-      'layout', ['switchSidebar', 'handleSwipe', 'changeSidebarActive', 'toggleSidebar'],
-    ),
+    ...mapActions(['switchSidebar', 'handleSwipe', 'changeSidebarActive', 'toggleSidebar']),
     handleWindowResize() {
       const width = window.innerWidth;
 
@@ -44,11 +43,8 @@ export default {
     },
   },
   computed: {
-    ...mapState('layout', {
-      sidebarClose: state => state.sidebarClose,
-      sidebarStatic: state => state.sidebarStatic,
-      chatOpen: state => state.chatOpen,
-    }),
+    ...mapState(["sidebarClose", "sidebarStatic", "chatOpen", "dashboardTheme"]),
+    dashboardThemeClass: function () {return "dashboard-" + this.dashboardTheme}
   },
   created() {
     const staticSidebar = JSON.parse(localStorage.getItem('sidebarStatic'));

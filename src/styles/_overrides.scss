@@ -309,7 +309,7 @@ small {
 }
 
 .dropdown-toggle::after {
-  font-family: LineAwesome;
+  font-family: LineAwesome, sans-serif;
   content: "\F110";
   border: none;
   width: auto;
@@ -688,9 +688,6 @@ pre {
   border: 1px solid $gray-400;
   border-radius: $border-radius;
   white-space: pre-line;       /* css-3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
 
   // Account for some code outputs that place code tags in pre tags
   code {
@@ -896,12 +893,10 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   height: 100%;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
-  -ms-animation-iteration-count: infinite;
   -o-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
-  -ms-animation-timing-function: linear;
   -o-animation-timing-function: linear;
   animation-timing-function: linear;
 }
@@ -918,7 +913,6 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   border-bottom-left-radius: 0;
   -webkit-animation-name: ui-spinner-rotate-left;
   -moz-animation-name: ui-spinner-rotate-left;
-  -ms-animation-name: ui-spinner-rotate-left;
   -o-animation-name: ui-spinner-rotate-left;
   animation-name: ui-spinner-rotate-left;
   -webkit-transform-origin: 0 50%;
@@ -940,7 +934,6 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   border-bottom-right-radius: 0;
   -webkit-animation-name: ui-spinner-rotate-right;
   -moz-animation-name: ui-spinner-rotate-right;
-  -ms-animation-name: ui-spinner-rotate-right;
   -o-animation-name: ui-spinner-rotate-right;
   animation-name: ui-spinner-rotate-right;
   -webkit-transform-origin: 100% 50%;
@@ -1064,7 +1057,7 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 }
 
 .card {
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
 }
 
 .v-select {

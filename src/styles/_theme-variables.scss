@@ -1,0 +1,42 @@
+.root {
+  &.sing-dashboard,
+  &.dashboard-light {
+    --logo-color: #3c484f;
+
+    --sidebar-bg-color: #fff;
+    --sidebar-color: #6c757d;
+    --sidebar-action-bg: #f9fafe;
+
+    --sidebar-panel-bg-color: white;
+    --sidebar-nav-title-color: #0e1113;
+
+    --widget-shadow-color: 153, 187, 221;
+
+    --navbar-bg: #f9fbfd; // $body-bg
+    --navbar-shadow: none;
+  }
+
+  &.dashboard-dark {
+    --logo-color: white;
+
+    --sidebar-bg-color: #313947;
+    --sidebar-color: #a6b2c1;
+    --sidebar-action-bg: #2e3542;
+
+    --sidebar-panel-bg-color: #2e3542;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: #fff;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  // dependable variables
+  &.sing-dashboard {
+    --chat-sidebar-bg-color: var(--sidebar-bg-color);
+    --sidebar-progress-bg-color: var(--sidebar-action-bg);
+    --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
+    --widget-shadow: 0 23px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+}

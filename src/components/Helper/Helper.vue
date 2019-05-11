@@ -8,9 +8,37 @@
                         <i class="la la-cog fs-smaller"></i>
                     </div>
                 </div>
-                <h6>Configuration</h6>
+                <h6>Theme</h6>
             </header>
             <div class="widget-body mt-3">
+                <div class="theme-switcher">
+                    <div class="theme mb-3">
+                        <input :checked="dashboardTheme === dashboardThemes.LIGHT"
+                               v-on:click="changeTheme(dashboardThemes.LIGHT)"
+                               type="radio"
+                               id="css-light"
+                               :value="dashboardThemes.LIGHT"
+                               name="theme-variant"
+                               aria-label="Sing Light"
+                        />
+                        <label for="css-light">
+                            <img class="theme-image" src="../../assets/theme-light.png" alt="light theme"/>
+                        </label>
+                    </div>
+                    <div class="theme mb-3">
+                        <input :checked="dashboardTheme === dashboardThemes.DARK"
+                               v-on:click="changeTheme(dashboardThemes.DARK)"
+                               type="radio"
+                               id="css-dark"
+                               :value="dashboardThemes.DARK"
+                               name="theme-variant"
+                               aria-label="Sing Dark"
+                        />
+                        <label for="css-dark">
+                            <img class="theme-image" src="../../assets/theme-dark.png" alt="dark theme"/>
+                        </label>
+                    </div>
+                </div>
                 <div class="mt-4">
                     <a href="https://flatlogic.com/admin-dashboards/sing-app-vue"
                     target="_blank"
@@ -62,17 +90,24 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
+const { mapState, mapActions } = createNamespacedHelpers('layout');
+
 export default {
     name: 'Helper',
     data() {
         return {
-            opened: false,
+            opened: false
         }
+    },
+    computed: {
+        ...mapState(['dashboardTheme'])
     },
     methods: {
         toggle() {
             this.opened = !this.opened;
-        }
+        },
+        ...mapActions(['changeTheme'])
     }
 };
 </script>

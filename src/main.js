@@ -18,6 +18,7 @@ import VueFormWizard from 'vue-form-wizard';
 import store from './store';
 import router from './Routes';
 import App from './App';
+import layoutMixin from './mixins/layout';
 
 Vue.use(BootstrapVue);
 Vue.use(VueTouch);
@@ -34,6 +35,7 @@ Vue.use(mavonEditor);
 Vue.directive('mask', VueMaskDirective);
 Vue.use(VeeValidate, { fieldsBagName: 'fieldsbag' });
 Vue.use(VueFormWizard);
+Vue.mixin(layoutMixin);
 
 Vue.config.productionTip = false;
 
