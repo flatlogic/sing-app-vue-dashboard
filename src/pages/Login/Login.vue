@@ -1,54 +1,52 @@
 <template>
-  <div class="login-page">
+  <div class="auth-page">
     <b-container>
-      <h5 class="logo">
-        <i class="fa fa-circle text-gray" />
+      <h5 class="auth-logo">
+        <i class="fa fa-circle text-gray"></i>
         Sing App
-        <i class="fa fa-circle text-warning" />
+        <i class="fa fa-circle text-warning"></i>
       </h5>
-      <Widget class="mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
-        <p class="text-muted mb-0 mt fs-sm">
-          Use Facebook, Twitter or your email to sign in.
+      <Widget class="widget-auth mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
+        <p class="widget-auth-info">
+            Use your email to sign in.
         </p>
-        <p class="text-muted fs-sm">
-          Don't have an account? Sign up now!
-        </p>
+        <b-alert class="alert-sm text-center mt-2" variant="secondary" show>
+          This is a real app with Node.js backend - use
+          <br/>
+          <span class="font-weight-bold">"admin@flatlogic.com / password"</span>
+          <br/>
+          to login!
+        </b-alert>
         <form class="mt" @submit.prevent="login">
           <b-alert class="alert-sm" variant="danger" :show="!!errorMessage">
             {{errorMessage}}
           </b-alert>
           <div class="form-group">
-            <input class="form-control no-border" ref="username"
-              required type="text" name="username" placeholder="Username" />
+            <input class="form-control no-border" ref="email" required type="email" name="email" placeholder="Email" />
           </div>
           <div class="form-group">
-            <input class="form-control no-border" ref="password"
-            required type="password" name="password" placeholder="Password" />
+            <input class="form-control no-border" ref="password" required type="password" name="password" placeholder="Password" />
           </div>
-          <div class="clearfix">
-            <div class="btn-toolbar float-right">
-              <b-button type="reset" size="sm" variant="default">Create an Account</b-button>
-              <b-button type="submit" size="sm" variant="inverse">Login</b-button>
-            </div>
-          </div>
-          <div class="row no-gutters mt-3">
-            <div class="col">
-              <div class="abc-checkbox">
-                <input
-                  type="checkbox"
-                  id="checkbox"
-                />
-                <label for="checkbox" class="text-muted fs-sm">Keep me signed in</label>
-              </div>
-            </div>
-            <div class="col">
-              <a class="mt-sm" href="">Trouble with account?</a>
-            </div>
+          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="inverse">{{this.isFetching ? 'Loading...' : 'Login'}}</b-button>
+          <p class="widget-auth-info">or sign in with</p>
+          <div class="social-buttons">
+            <b-button @click="googleLogin" variant="primary" class="social-button mb-2">
+              <i class="social-icon social-google"></i>
+              <p class="social-text">GOOGLE</p>
+            </b-button>
+            <b-button @click="microsoftLogin" variant="success" class="social-button">
+              <i class="social-icon social-microsoft"></i>
+              <p class="social-text">MICROSOFT</p>
+            </b-button>
           </div>
         </form>
+        <p class="widget-auth-info">
+          Don't have an account? Sign up now!
+        </p>
+        <router-link class="d-block text-center" to="register">Create an Account</router-link>
       </Widget>
     </b-container>
-    <footer class="footer">
+    <footer class="auth-footer">
       2019 &copy; Sing App Vue Admin Dashboard Template.
     </footer>
   </div>
@@ -56,32 +54,48 @@
 
 <script>
 import Widget from '@/components/Widget/Widget';
+import {mapState, mapActions} from 'vuex';
+
+import config from '../../config';
 
 export default {
   name: 'LoginPage',
   components: { Widget },
-  data() {
-    return {
-      errorMessage: null,
-    };
+  computed: {
+    ...mapState('auth', {
+      isFetching: state => state.isFetching,
+      errorMessage: state => state.errorMessage,
+    }),
   },
   methods: {
+    ...mapActions('auth', ['loginUser', 'receiveToken', 'receiveLogin']),
     login() {
-      const username = this.$refs.username.value;
+      const email = this.$refs.email.value;
       const password = this.$refs.password.value;
 
-      if (username.length !== 0 && password.length !== 0) {
-        window.localStorage.setItem('authenticated', true);
-        this.$router.push('/app/main/analytics');
+      if (email.length !== 0 && password.length !== 0) {
+        this.loginUser({email, password});
       }
     },
-  },
-  created() {
-    if (window.localStorage.getItem('authenticated') === 'true') {
-      this.$router.push('/app/main/analytics');
+    googleLogin() {
+      this.loginUser({social: "google"});
+    },
+    microsoftLogin() {
+      this.loginUser({social: "microsoft"});
     }
   },
+  created() {
+    const token = this.$route.query.token;
+    if (token) {
+      this.receiveToken(token);
+    } else if (this.isAuthenticated(localStorage.getItem('token'))) {
+      this.receiveLogin();
+    }
+  },
+  mounted() {
+    const creds = config.auth;
+    this.$refs.email.value = creds.email;
+    this.$refs.password.value = creds.password;
+  }
 };
 </script>
-
-<style src="./Login.scss" lang="scss" scoped />

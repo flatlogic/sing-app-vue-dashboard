@@ -43,6 +43,7 @@ import SearchPage from '@/pages/Extra/Search/Search';
 import TimelinePage from '@/pages/Extra/Timeline/Timeline';
 import GalleryPage from '@/pages/Extra/Gallery/Gallery';
 import Login from '@/pages/Login/Login';
+import Register from '@/pages/Register/Register';
 import ErrorPage from '@/pages/Error/Error';
 // Ui
 import AlertsPage from '@/pages/Ui/Alerts/Alerts';
@@ -61,15 +62,21 @@ import PopoversPage from '@/pages/Ui/Popovers/Popovers';
 import ProgressPage from '@/pages/Ui/Progress/Progress';
 import TabsPage from '@/pages/Ui/Tabs/Tabs';
 
+import { isAuthenticated } from './mixins/auth';
+
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
   routes: [
     {
       path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register,
     },
     {
       path: '/error',
@@ -80,6 +87,10 @@ export default new Router({
       path: '/app',
       name: 'Layout',
       component: Layout,
+      beforeEnter: (to, from, next) => {
+        let token = localStorage.getItem('token');
+        isAuthenticated(token) ? next() : next({path: '/login'});
+      },
       children: [
         // main pages
         {

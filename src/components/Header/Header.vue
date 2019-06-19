@@ -73,7 +73,7 @@
           Inbox &nbsp;&nbsp;<b-badge variant="danger" pill class="animated bounceIn">9</b-badge>
         </b-dropdown-item>
         <b-dropdown-divider />
-        <b-dropdown-item-button @click="logout">
+        <b-dropdown-item-button @click="logoutUser">
           <i class="la la-sign-out" /> Log Out
         </b-dropdown-item-button>
       </b-nav-item-dropdown>
@@ -122,6 +122,7 @@ export default {
   },
   methods: {
     ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive']),
+    ...mapActions('auth', ['logoutUser']),
     switchSidebarMethod() {
       if (!this.sidebarClose) {
         this.switchSidebar(true);
@@ -143,11 +144,7 @@ export default {
         paths.pop();
         this.changeSidebarActive(paths.join('/'));
       }
-    },
-    logout() {
-      window.localStorage.setItem('authenticated', false);
-      this.$router.push('/login');
-    },
+    }
   },
   created() {
     if (window.innerWidth > 576) {
