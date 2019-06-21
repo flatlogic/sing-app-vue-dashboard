@@ -68,6 +68,7 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
+    {path: '/', redirect: '/app/main/analytics'},
     {
       path: '/login',
       name: 'Login',

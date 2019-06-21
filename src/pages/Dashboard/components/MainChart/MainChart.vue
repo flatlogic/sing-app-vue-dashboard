@@ -17,6 +17,7 @@
       "
       customHeader
     collapse close
+    :fetchingData="isReceiving"
     >
     <div ref="chartContainer" style="width: 100%; height: 250px" />
     <div class="chart-tooltip" ref="chartTooltip" />
@@ -43,85 +44,11 @@ export default {
       chartLegend: $('#main-chart .chart-legend'),
     };
   },
+  props: {
+    data: {default: []},
+    isReceiving: {type: Boolean, default: false}
+  },
   methods: {
-    getMainChartData() {
-      function generateRandomPicks(minPoint, maxPoint, picksAmount, xMax) {
-        let x = 0;
-        let y = 0;
-        const result = [];
-        const xStep = 1;
-        const smoothness = 0.3;
-        const pointsPerPick = Math.ceil(xMax / ((picksAmount * 2) + 1) / 2);
-
-        const maxValues = [];
-        const minValues = [];
-
-        for (let i = 0; i < picksAmount; i += 1) {
-          const minResult = minPoint + Math.random();
-          const maxResult = maxPoint - Math.random();
-
-          minValues.push(minResult);
-          maxValues.push(maxResult);
-        }
-
-        let localMax = maxValues.shift(0);
-        let localMin = 0;
-        let yStep = parseFloat(((localMax - localMin) / pointsPerPick).toFixed(2));
-
-        for (let j = 0; j < Math.ceil(xMax); j += 1) {
-          result.push([x, y]);
-
-          if ((y + yStep >= localMax) || (y + yStep <= localMin)) {
-            y += yStep * smoothness;
-          } else if ((result[result.length - 1][1] === localMax)
-          || (result[result.length - 1][1] === localMin)) {
-            y += yStep * smoothness;
-          } else {
-            y += yStep;
-          }
-
-          if (y > localMax) {
-            y = localMax;
-          } else if (y < localMin) {
-            y = localMin;
-          }
-
-          if (y === localMin) {
-            localMax = maxValues.shift(0) || localMax;
-
-            const share = (localMax - localMin) / localMax;
-            const p = share > 0.5
-              ? Math.round(pointsPerPick * 1.2)
-              : Math.round(pointsPerPick * share);
-
-            yStep = parseFloat(((localMax - localMin) / p).toFixed(2));
-            yStep *= Math.abs(yStep);
-          }
-
-          if (y === localMax) {
-            localMin = minValues.shift(0) || localMin;
-
-            const share = (localMax - localMin) / localMax;
-            const p = share > 0.5
-              ? Math.round(pointsPerPick * 1.5)
-              : Math.round(pointsPerPick * 0.5);
-
-            yStep = parseFloat(((localMax - localMin) / p).toFixed(2));
-            yStep *= -1;
-          }
-
-          x += xStep;
-        }
-
-        return result;
-      }
-
-      const d1 = generateRandomPicks(0.2, 3, 4, 90);
-      const d2 = generateRandomPicks(0.4, 3.8, 4, 90);
-      const d3 = generateRandomPicks(0.2, 4.2, 3, 90);
-
-      return [d1, d2, d3];
-    },
     onDrawHook() {
       this.$chartLegend
         .find('.legendColorBox > div')
@@ -150,7 +77,7 @@ export default {
       this.$chartLegend.find('tbody tr:eq(0)').append(labels);
     },
     initChart() {
-      const data = this.getMainChartData();
+      const data = this.data;
 
       const ticks = ['Dec 19', 'Dec 25', 'Dec 31', 'Jan 10', 'Jan 14',
         'Jan 20', 'Jan 27', 'Jan 30', 'Feb 2', 'Feb 8', 'Feb 15',
@@ -159,9 +86,8 @@ export default {
       // check the screen size and either show tick for every 4th tick on large screens, or
       // every 8th tick on mobiles
       const tickInterval = screen.width < 500 ? 10 : 6; // eslint-disable-line
-      let counter = 0;
 
-      return $.plot(this.$chartContainer, [{
+      return $.plotAnimator(this.$chartContainer, [{
         width: '100%',
         label: 'Light Blue',
         data: data[0],
@@ -172,12 +98,6 @@ export default {
         },
         points: {
           fillColor: '#A7BEFF',
-          symbol: (ctx, x, y) => {
-            // count for every 8nd point to show on line
-            if (counter % 8 === 0) { ctx.arc(x, y, 2, 0, Math.PI * 2, false); }
-
-            counter += 1;
-          },
         },
         shadowSize: 0,
       }, {
@@ -193,6 +113,7 @@ export default {
         },
         shadowSize: 0,
       }, {
+        animator: {steps: 100, duration: 30 * 14, start: 0},
         label: 'Sing App',
         data: data[2],
         lines: {
@@ -201,7 +122,6 @@ export default {
         },
         points: {
           fillColor: '#f55d5d',
-
         },
         shadowSize: 0,
       }], {
@@ -225,14 +145,8 @@ export default {
         points: {
           show: true,
           fill: true,
-          lineWidth: 1,
-          radius: 1,
-          symbol: (ctx, x, y) => {
-            // show every 5th point on line
-            if (counter % 5 === 0) { ctx.arc(x, y, 2, 0, Math.PI * 2, false); }
-
-            counter += 1;
-          },
+          lineWidth: 5,
+          radius: 0,
         },
         grid: {
           backgroundColor: { colors: ['#ffffff', '#ffffff'] },
@@ -275,13 +189,14 @@ export default {
       });
     },
   },
-  mounted() {
+  updated() {
     this.$chartContainer = $(this.$refs.chartContainer);
     this.$chartLegend = $('#main-chart  .chart-legend');
     this.$chartTooltip = $(this.$refs.chartTooltip);
-
-    this.initChart();
-    this.initEventListeners();
-  },
+    if (this.$chartContainer.length && this.$chartLegend.length && this.$chartTooltip.length) {
+      this.initChart();
+      this.initEventListeners();
+    }
+  }
 };
 </script>

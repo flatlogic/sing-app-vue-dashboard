@@ -6,20 +6,20 @@
         <b-row>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Visits Today" close>
+              <Widget class="h-100 mb-0" title="Visits Today" close :fetchingData="isReceiving">
                 <div class="d-flex justify-content-between align-items-center mb-lg">
-                  <h2>4,332</h2>
+                  <h2>{{visits.count}}</h2>
                   <i class="la la-arrow-right text-success rotate-315" />
                 </div>
                 <div class="d-flex flex-wrap justify-content-between">
                   <div class="mt">
-                    <h6>+830</h6><p class="text-muted mb-0 mr"><small>Logins</small></p>
+                    <h6>+{{visits.logins}}</h6><p class="text-muted mb-0 mr"><small>Logins</small></p>
                   </div>
                   <div class="mt">
-                    <h6>0.5%</h6><p class="text-muted mb-0"><small>Sign Out</small></p>
+                    <h6>{{visits.sign_out_pct}}%</h6><p class="text-muted mb-0"><small>Sign Out</small></p>
                   </div>
                   <div class="mt">
-                    <h6>4.5%</h6><p class="text-muted mb-0 mr"><small>Rate</small></p>
+                    <h6>{{visits.rate_pct}}%</h6><p class="text-muted mb-0 mr"><small>Rate</small></p>
                   </div>
                 </div>
               </Widget>
@@ -27,7 +27,7 @@
           </b-col>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Revenue Breakdown" close>
+              <Widget class="h-100 mb-0" title="Revenue Breakdown" close :fetchingData="isReceiving">
                 <b-row>
                   <b-col xs="12" md="6" lg="7" class="text-center">
                     <div ref="chartContainer" style="width: 100%; height: 100px" />
@@ -41,7 +41,7 @@
           </b-col>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="App Perfomance" close>
+              <Widget class="h-100 mb-0" title="App Perfomance" close :fetchingData="isReceiving">
                 <p class="text-muted d-flex flex-wrap">
                   <small class="mr-lg d-flex align-items-center">
                     <span class="circle bg-success text-success mr-xs" style="font-size: 4px;">
@@ -58,22 +58,22 @@
                 </p>
                 <h6>SDK</h6>
                 <b-progress class="mb-xs" style="height: 5px"
-                  variant="success" :value="60" :max="100" />
+                  variant="success" :value="performance.sdk.this_period_pct" :max="100" />
                 <b-progress class="mb" style="height: 5px"
-                  variant="warning" :value="35" :max="100" />
+                  variant="warning" :value="performance.sdk.last_period_pct" :max="100" />
                 <h6>Integration</h6>
                 <b-progress class="mb-xs" style="height: 5px"
-                  variant="success" :value="40" :max="100" />
+                  variant="success" :value="performance.integration.this_period_pct" :max="100" />
                 <b-progress style="height: 5px"
-                  variant="warning" :value="55" :max="100" />
+                  variant="warning" :value="performance.integration.last_period_pct" :max="100" />
               </Widget>
             </div>
           </b-col>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Server Overview" close>
+              <Widget class="h-100 mb-0" title="Server Overview" close :fetchingData="isReceiving">
                 <div class="d-flex align-items-center mb-sm">
-                  <p class="width-150"><small>60% / 37°С / 3.3 Ghz</small></p>
+                  <p class="width-150"><small>{{server[1].pct}}% / {{server[1].temp}}°С / {{server[1].frequency}} Ghz</small></p>
                   <div style="width: calc(100% - 150px)">
                     <trend
                       :data="getRandomData()"
@@ -83,7 +83,7 @@
                   </div>
                 </div>
                 <div class="d-flex align-items-center mb-sm">
-                  <p class="width-150"><small>54% / 31°С / 3.3 Ghz</small></p>
+                  <p class="width-150"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
                   <div style="width: calc(100% - 150px)">
                     <trend
                       :data="getRandomData()"
@@ -93,7 +93,7 @@
                   </div>
                 </div>
                 <div class="d-flex align-items-center">
-                  <p class="width-150"><small>57% / 21°С / 3.3 Ghz</small></p>
+                  <p class="width-150"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
                   <div style="width: calc(100% - 150px)">
                     <trend
                       :data="getRandomData()"
@@ -106,7 +106,7 @@
             </div>
           </b-col>
           <b-col xs="12">
-            <MainChart />
+            <MainChart :data="mainChart" :isReceiving="isReceiving" />
           </b-col>
         </b-row>
         <b-row>
@@ -210,6 +210,7 @@
 
 <script>
 import $ from 'jquery';
+import {mapState, mapActions} from 'vuex';
 /* eslint-disable */
 import 'imports-loader?jQuery=jquery,this=>window!flot';
 import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.pie';
@@ -283,6 +284,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions('dashboard', ['receiveDataRequest']),
     getRandomData() {
       const arr = [];
 
@@ -292,22 +294,8 @@ export default {
 
       return arr;
     },
-    getData() {
-      const data = [];
-      const seriesCount = 3;
-      const accessories = ['SMX', 'Direct', 'Networks'];
-
-      for (let i = 0; i < seriesCount; i += 1) {
-        data.push({
-          label: accessories[i],
-          data: Math.floor(Math.random() * 100) + 1,
-        });
-      }
-
-      return data;
-    },
     initChart() {
-      $.plot($(this.$refs.chartContainer), this.getData(), {
+      $.plot($(this.$refs.chartContainer), this.revenue, {
         series: {
           pie: {
             innerRadius: 0.8,
@@ -324,9 +312,21 @@ export default {
       });
     },
   },
+  computed: {
+  ...mapState('dashboard', [
+      'visits',
+      'performance',
+      'server',
+      'revenue',
+      'mainChart',
+      'isReceiving',
+    ])
+  },
   mounted() {
+    this.receiveDataRequest();
+  },
+  updated() {
     this.initChart();
-
     window.addEventListener('resize', this.initChart);
   },
   unmounted() {

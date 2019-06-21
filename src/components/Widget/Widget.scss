@@ -15,6 +15,11 @@
   background: $widget-bg-color;
   border-radius: $border-radius-sm;
   box-shadow: var(--widget-shadow);
+  min-height: 150px;
+
+  &.collapsed {
+    min-height: unset;
+  }
 
   > header {
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
@@ -220,4 +225,10 @@
     line-height: 45px;
     display: inline-block;
   }
+}
+
+.widget-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
