@@ -1,0 +1,19 @@
+.product-management {
+  .promo-alert {
+    transition: 0.6s;
+    transition-timing-function: ease;
+    transform: translateX(-130vw);
+  }
+
+  .show-alert {
+    transform: translateX(0);
+  }
+
+  .image {
+    width: 100px;
+  }
+
+  .table tbody td {
+    vertical-align: middle;
+  }
+}

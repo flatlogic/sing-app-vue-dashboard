@@ -4,7 +4,7 @@
       <span class="icon">
         <i :class="fullIconName"></i>
       </span>
-      {{header}} <sup v-if="label" class="headerLabel">{{label}}</sup>
+      {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
       <b-badge v-if="badge" class="badge rounded-f" variant="warning" pill>{{badge}}</b-badge>
     </router-link>
   </li>
@@ -14,7 +14,7 @@
         <span class="icon">
           <i :class="fullIconName"></i>
         </span>
-        {{header}} <sup v-if="label" class="headerLabel">{{label}}</sup>
+        {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{label}}</sup>
         <div :class="{caretWrapper: true, carretActive: isActive}">
           <i class="fa fa-angle-left" />
         </div>
@@ -35,7 +35,7 @@
   </li>
   <li v-else>
     <router-link :to="index !== 'menu' && link">
-      {{header}} <sup v-if="label" class="headerLabel">{{label}}</sup>
+      {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
     </router-link>
   </li>
 </template>
@@ -57,6 +57,7 @@ export default {
     deep: { type: Number, default: 0 },
     activeItem: { type: String, default: '' },
     label: { type: String },
+    labelColor: { type: String, default: 'warning' },
     index: { type: String },
   },
   data() {

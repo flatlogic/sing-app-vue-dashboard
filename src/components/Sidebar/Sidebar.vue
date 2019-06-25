@@ -21,6 +21,20 @@
         ]"
       />
       <NavLink
+          :activeItem="activeItem"
+          header="E-commerce"
+          link="/app/ecommerce"
+          iconName="flaticon-diamond"
+          index="ecommerce"
+          label="NodeJS"
+          labelColor="danger"
+          :childrenLinks="[
+          { header: 'Product Management', link: '/app/ecommerce/management' },
+          { header: 'Products Grid', link: '/app/ecommerce/products' },
+          { header: 'Product Page', link: '/app/ecommerce/product' },
+        ]"
+      />
+      <NavLink
         :activeItem="activeItem"
         header="Sing Package"
         link="/app/package"
@@ -45,17 +59,6 @@
         index="email"
         badge="9"
         isHeader
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="E-commerce"
-        link="/app/ecommerce"
-        iconName="flaticon-diamond"
-        index="ecommerce"
-        :childrenLinks="[
-          { header: 'Products Grid', link: '/app/ecommerce/products' },
-          { header: 'Product Page', link: '/app/ecommerce/product' },
-        ]"
       />
       <h5 class="navTitle">TEMPLATE</h5>
       <NavLink

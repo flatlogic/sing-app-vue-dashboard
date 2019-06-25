@@ -1071,3 +1071,26 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 .v-toaster {
   top: 10px;
 }
+
+///// Vue Input Tag /////
+.vue-input-tag-wrapper {
+  appearance: none;
+  height: max-content;
+
+  .input-tag {
+    border-radius: $border-radius;
+    background-color: $purple;
+    color: white;
+    border-color: darken($purple, 10%);
+
+    .remove:before {
+      content: " ×" !important;
+      color: white;
+    }
+  }
+
+  .input-tag,
+  .new-tag {
+    margin: 2px;
+  }
+}

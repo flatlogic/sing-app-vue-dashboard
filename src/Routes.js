@@ -28,6 +28,8 @@ import PackagePage from '@/pages/Package/Package';
 // Email
 import EmailPage from '@/pages/Email/Email';
 // Ecommerce
+import ProductsManagement from '@/pages/Ecommerce/Management/Management';
+import ProductEdit from '@/pages/Ecommerce/Management/components/ProductEdit/ProductEdit';
 import ProductsPage from '@/pages/Ecommerce/ProductsGrid/ProductsGrid';
 import ProductPage from '@/pages/Ecommerce/ProductPage/ProductPage';
 // Grid
@@ -129,6 +131,21 @@ export default new Router({
         },
         // ecommerce pages
         {
+          path: 'ecommerce/management',
+          name: 'ProductsManagement',
+          component: ProductsManagement,
+        },
+        {
+          path: 'ecommerce/management/:id',
+          name: 'ProductEdit',
+          component: ProductEdit,
+        },
+        {
+          path: 'ecommerce/management/create',
+          name: 'ProductCreate',
+          component: ProductEdit,
+        },
+        {
           path: 'ecommerce/products',
           name: 'ProductsPage',
           component: ProductsPage,
@@ -136,6 +153,11 @@ export default new Router({
         {
           path: 'ecommerce/product',
           name: 'ProductPage',
+          component: ProductPage,
+        },
+        {
+          path: 'ecommerce/product/:id',
+          name: 'DefiniteProductPage',
           component: ProductPage,
         },
         // core pages
