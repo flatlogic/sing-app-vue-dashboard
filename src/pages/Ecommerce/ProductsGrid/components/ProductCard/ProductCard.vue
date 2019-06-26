@@ -1,6 +1,6 @@
 <template>
   <div class="productCard">
-    <div class="productCardPhoto" :style="{ backgroundImage: `url(${image})` }"
+    <div class="productCardPhoto" :style="{ backgroundImage: `url(${product.img})` }"
          @click="$router.push('/app/ecommerce/product/' + product.id)">
       <div
         v-if="label"
@@ -30,7 +30,6 @@
 </template>
 
 <script>
-  import bannerImage from '@/assets/products/img1.jpg';
   import Rating from '../../../ProductPage/components/Rating/Rating';
   export default {
     name: 'ProductCard',
@@ -38,7 +37,6 @@
     props: ['product'],
     data() {
       return {
-        image: bannerImage,
         favourite: this.product.favourite,
       };
     },

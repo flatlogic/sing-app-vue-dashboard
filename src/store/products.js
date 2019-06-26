@@ -5,6 +5,7 @@ export default {
   namespaced: true,
   state: {
     products: [],
+    images: [],
     isReceiving: false,
     isUpdating: false,
     isDeleting: false,
@@ -55,8 +56,10 @@ export default {
     DELETING_PRODUCT(state, payload) {
       state.isDeleting = true;
       state.idToDelete = payload.id;
+    },
+    RECEIVED_IMAGES(state, payload) {
+      state.images = payload;
     }
-
   },
   actions: {
     getProductsRequest({dispatch}) {
@@ -95,6 +98,14 @@ export default {
         }
         payload.$toaster.success("Product has been Deleted!");
       })
+    },
+    getProductsImagesRequest({dispatch}) {
+      axios.get('/products/images-list').then(images => {
+        dispatch("receiveProductImages", images);
+      })
+    },
+    receiveProductImages({commit}, payload) {
+      commit("RECEIVED_IMAGES", payload)
     },
     receiveProducts({commit}, payload) {
       commit("RECEIVED_PRODUCTS", payload)

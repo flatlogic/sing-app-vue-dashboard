@@ -1,6 +1,6 @@
 <template>
   <div class="productDetailsBanner">
-    <div class="productPhoto" :style="{ 'background-image': 'url(' + image || data.img  + ')' }"></div>
+    <div class="productPhoto" :style="{ 'background-image': 'url(' + data.img  + ')' }"></div>
     <div class="productInfo">
       <General :rating="data.rating" :title="data.title" :subtitle="data.subtitle" :price="data.price" />
       <a href="#" class="productGuide">Size Guide</a>
@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import bannerImage from '@/assets/products/img1.jpg';
 import visa from '@/assets/payments/visa.svg';
 import mastercard from '@/assets/payments/mastercard.svg';
 import aexpress from '@/assets/payments/aexpress.svg';
@@ -34,7 +33,6 @@ export default {
   },
   data() {
     return {
-      image: bannerImage,
       payments: [visa, mastercard, aexpress, paypal],
     };
   }

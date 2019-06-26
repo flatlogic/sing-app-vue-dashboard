@@ -11,7 +11,7 @@
               <template slot="button-content">
                 <img class="product-image" alt="img" :src="product.img"/>
               </template>
-              <b-dropdown-item v-for="img in ['1', '2', '3', '4', '5', '6']" :key="img" @click="updateProductProperty(img, 'img')">
+              <b-dropdown-item v-for="img in images" :key="img" @click="updateProductProperty(img, 'img')">
                 <img class="product-image" :alt="img" :src="img"/>
               </b-dropdown-item>
             </b-dropdown>
@@ -133,6 +133,7 @@
       }
     },
     mounted() {
+      this.getProductsImagesRequest();
       let product = this.findProduct(this.getId());
       if (this.getId() > -1) {
         this.loadProductRequest(this.getId());
@@ -150,7 +151,7 @@
       }
     },
     computed: {
-      ...mapState("products", ["products", "isReceiving", "isDeleting", "isUpdating"]),
+      ...mapState("products", ["products", "isReceiving", "isDeleting", "isUpdating", "images"]),
       isNew() { return this.getId() === -1},
       product() {
         return this.findProduct(this.getId()) || {technology: []}
@@ -163,7 +164,8 @@
         "createProductRequest",
         "deleteProductRequest",
         "receiveProduct",
-        "updateProduct"
+        "updateProduct",
+        "getProductsImagesRequest"
       ]),
       goBack() {
         this.$router.push('/app/ecommerce/management');
