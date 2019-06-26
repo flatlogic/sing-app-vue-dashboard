@@ -319,6 +319,10 @@ small {
   font-size: 85%;
 }
 
+.dropdown-toggle-no-caret:after {
+  content: none;
+}
+
 .nav-item.dropdown {
   &.show {
     .nav-link.active {

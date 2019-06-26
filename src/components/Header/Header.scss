@@ -40,7 +40,15 @@
 }
 
 .avatar {
-  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+  background: #ffc247;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .chatNotification {

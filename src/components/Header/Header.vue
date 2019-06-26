@@ -54,10 +54,16 @@
         extra-menu-classes="notificationsWrapper py-0 animated animated-fast fadeInUp"
         right>
         <template slot="button-content">
-          <span class="avatar thumb-sm float-left mr-2">
-            <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
+          <span class="avatar rounded-circle thumb-sm float-left mr-2">
+            <img
+                v-if="user.avatar || user.email === 'admin@flatlogic.com'"
+                class="rounded-circle"
+                :src="user.avatar || avatarImage"
+                alt="..."
+            />
+            <span v-else>{{firstUserLetter}}</span>
           </span>
-          <span class="small">Philip <span class="fw-semi-bold">Smith</span></span>
+          <span class="small">{{user.name || user.email || "Philip smith"}}</span>
           <span class="ml-1 circle bg-warning text-white fw-bold">13</span>
         </template>
         <Notifications />
@@ -108,17 +114,25 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import avatarImage from '@/assets/people/a5.jpg';
 import $ from 'jquery';
 import Notifications from '@/components/Notifications/Notifications';
 
 export default {
   name: 'Header',
   components: { Notifications },
+  data() {
+    return {
+      avatarImage,
+      user: JSON.parse(localStorage.getItem('user') || {})
+    }
+  },
   computed: {
     ...mapState('layout', {
       sidebarClose: state => state.sidebarClose,
       sidebarStatic: state => state.sidebarStatic,
     }),
+    firstUserLetter() { return (this.user.name || this.user.email || "P")[0].toUpperCase(); }
   },
   methods: {
     ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive']),
