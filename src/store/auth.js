@@ -26,7 +26,7 @@ export default {
         loginUser({dispatch}, creds) {
             dispatch('requestLogin');
             if (creds.social) {
-                window.location.href = config.baseURLApi + "/user/signin/" + creds.social + (process.env.NODE_ENV === "production" ? "?app=sing-app-react" : "");
+                window.location.href = config.baseURLApi + "/user/signin/" + creds.social + (process.env.NODE_ENV === "production" ? "?app=sing-app-vue" : "");
             }
             else if (creds.email.length > 0 && creds.password.length > 0) {
                 axios.post("/user/signin/local", creds).then(res => {
