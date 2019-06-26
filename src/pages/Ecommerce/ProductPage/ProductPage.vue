@@ -8,83 +8,72 @@
       E-commerce -
       <span class="fw-semi-bold">Product Detail</span>
     </h1>
-    <Banner />
+    <Banner :data="product"></Banner>
     <div class="section">
       <h2 class="sectionTitle hide-sm">Product Description</h2>
-      <Description :description="description" />
+      <Description :data="product"></Description>
     </div>
     <div class="section">
       <h2 class="sectionTitle">You may also like</h2>
-      <!-- <Slider slides={cardsMock} /> -->
-      <div class="slider" >
-        <slick
-          ref="slick"
-          :options="sliderOptions"
+      <div class="slider">
+        <carousel
+            class="slider"
+            :perPageCustom="[[480, 2], [768, 3], [1024, 4]]"
+            :navigationEnabled="true"
+            :paginationEnabled="false"
+            :navigationNextLabel="nextArrow"
+            :navigationPrevLabel="prevArrow"
+            :speed="500"
+            :scrollPerPage="false"
         >
-          <div v-for="slide in slides" class="sliderItem" :key="slide.id">
-            <ProductCard :product="slide" />
-          </div>)}
-        </slick>
-      </div >
+          <slide v-for="slide in products" class="sliderItem" :key="slide.id">
+            <ProductCard :product="slide"></ProductCard>
+          </slide>
+        </carousel>
+      </div>
     </div>
   </div >
 </template>
 
 <script>
-import Slick from 'vue-slick';
+import { Carousel, Slide } from 'vue-carousel';
+import {mapState, mapActions} from 'vuex';
 import arrow from '@/assets/arrow.svg';
 import Banner from './components/Banner/Banner';
 import Description from './components/Description/Description';
 import ProductCard from '../ProductsGrid/components/ProductCard/ProductCard';
 
-import mock from './mock';
-import slides from '../ProductsGrid/mock';
-
 export default {
   name: 'ProductPage',
   components: {
-    Banner, Description, Slick, ProductCard,
+    Banner, Description, ProductCard, Carousel, Slide
   },
   data() {
     return {
-      description: mock.description,
-      slides,
-      sliderOptions: {
-        className: 'slider',
-        infinite: false,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        nextArrow: `<button class="arrow arrow-right">
-          <img src="${arrow}" alt="arrow" />
-        </button>`,
-        prevArrow: `<button class="arrow arrow-left">
-          <img src="${arrow}" alt="arrow" />
-        </button>`,
-        responsive: [{
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3,
-          },
-        },
-        {
-          breakpoint: 575,
-          settings: {
-            slidesToShow: 2,
-            infinite: true,
-          },
-        },
-        {
-          breakpoint: 360,
-          settings: {
-            slidesToShow: 1,
-            infinite: true,
-          },
-        }],
-      },
+      nextArrow: `<button class="arrow arrow-right">
+        <img src="${arrow}" alt="arrow" />
+      </button>`,
+      prevArrow: `<button class="arrow arrow-left">
+        <img src="${arrow}" alt="arrow" />
+      </button>`,
     };
   },
+  computed: {
+    ...mapState('products', ['products']),
+    product() {return this.findProduct(this.getId())}
+  },
+  methods: {
+    ...mapActions('products', ['getProductsRequest']),
+    findProduct(id) {
+      return this.products.find(p => p.id === id);
+    },
+    getId() {
+      return parseInt(this.$route.params.id);
+    }
+  },
+  mounted() {
+    this.getProductsRequest();
+  }
 };
 </script>
 

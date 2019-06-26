@@ -1,6 +1,6 @@
 @import '../../../../../styles/app';
 
-.productDescription {
+.product-description {
   background-color: $white;
   box-shadow: var(--widget-shadow);
   border-radius: $border-radius;
@@ -32,12 +32,12 @@
     color: $link-color;
   }
 
-  .productDescriptionInfo {
+  .product-description-info {
     grid-row: 1 / 3;
     grid-column: 1;
   }
 
-  .socialList {
+  .social-list {
     display: flex;
     margin-top: $spacer;
 
@@ -131,7 +131,7 @@
   }
 }
 
-.productDescriptionBlock {
+.product-description-block {
   padding: 30px $content-padding / 2;
   font-weight: $font-weight-normal;
   display: flex;
@@ -142,7 +142,7 @@
   }
 }
 
-.productDescriptionMobile {
+.product-description-mobile {
   display: none;
   margin: 0;
   font-weight: $font-weight-normal;

@@ -22,18 +22,18 @@
           size="lg"
           @click="openModal(0)"
         >
-          Sort <i class="fa fa-2x fa-angle-down" />
+          Sort <i class="fa fa-2x fa-angle-down"></i>
         </b-button>
         <b-button
           variant="transparent"
           size="lg"
           @click="openModal(1)"
         >
-          Filter <i class="fa fa-2x fa-angle-down" />
+          Filter <i class="fa fa-2x fa-angle-down"></i>
         </b-button>
       </div>
       <div class="productsListElements">
-        <ProductCard v-for="product in data" :key="product.id" :product="product" />
+        <ProductCard v-for="product in products" :key="product.id" :product="product" />
       </div>
     </div>
     <MobileModal :active="isModalActive && modalId === 0"
@@ -45,7 +45,7 @@
 
 <script>
 import Vue from 'vue';
-import mock from './mock';
+import {mapActions, mapState} from 'vuex';
 
 import FilterElement from './components/FilterElement/FilterElement';
 import ProductCard from './components/ProductCard/ProductCard';
@@ -56,7 +56,6 @@ export default {
   components: { FilterElement, ProductCard, MobileModal },
   data() {
     return {
-      data: mock,
       filtersData: [{
         title: 'Filter',
         data: [{
@@ -94,7 +93,11 @@ export default {
       modalId: null,
     };
   },
+  mounted() {
+    this.getProductsRequest();
+  },
   methods: {
+    ...mapActions('products', ['getProductsRequest']),
     openModal(id) {
       Vue.set(this, 'modalId', id);
       Vue.set(this, 'isModalActive', true);
@@ -104,6 +107,9 @@ export default {
       Vue.set(this, 'isModalActive', false);
     },
   },
+  computed: {
+    ...mapState('products', ['products'])
+  }
 };
 </script>
 

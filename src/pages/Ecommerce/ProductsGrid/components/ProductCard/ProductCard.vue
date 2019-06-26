@@ -1,11 +1,12 @@
 <template>
   <div class="productCard">
-    <div class="productCardPhoto" :style="{ backgroundImage: `url(${product.img})` }">
+    <div class="productCardPhoto" :style="{ backgroundImage: `url(${image})` }"
+         @click="$router.push('/app/ecommerce/product/' + product.id)">
       <div
-        v-if="product.label"
-        :class="{label: true, 'bg-danger': product.label === 'Sale',
-          'bg-success': product.label !== 'Sale'}">
-        {{product.label}}
+        v-if="label"
+        :class="{label: true, 'bg-danger': label === 'Sale',
+          'bg-success': label !== 'Sale'}">
+        {{label}}
       </div>
       <button class="star" @click="toggleFavourite()">
         <img v-if="favourite" src="../../../../../assets/stars/star-filled.svg" alt="star" />
@@ -17,31 +18,50 @@
       <div class="productsCardDescription">{{product.description}}</div>
     </div>
     <div class="productsCardPrice">
-      <span v-if="typeof product.price === 'number'">${{product.price}}</span>
+      <span v-if="!product.discount">${{product.price}}</span>
       <div v-else class="sale">
-        <span class="old">${{product.price.old}}</span> {{product.price.percents}}% off
-        <span class="new"> ${{product.price.new}}</span>
+        <span class="old">${{product.price}}</span>
+        {{product.discount}}% off
+        <span class="new"> ${{newPrice}}</span>
       </div>
-      <!-- <Rating v-if="rating" :rating="rating" size="sm" />} -->
+      <Rating v-if="product.rating" :rating="product.rating" size="sm"></Rating>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'ProductCard',
-  props: ['product'],
-  data() {
-    return {
-      favourite: this.product.favourite,
-    };
-  },
-  methods: {
-    toggleFavourite() {
-      this.favourite = !this.favourite;
+  import bannerImage from '@/assets/products/img1.jpg';
+  import Rating from '../../../ProductPage/components/Rating/Rating';
+  export default {
+    name: 'ProductCard',
+    components: {Rating},
+    props: ['product'],
+    data() {
+      return {
+        image: bannerImage,
+        favourite: this.product.favourite,
+      };
     },
-  },
-};
+    methods: {
+      toggleFavourite() {
+        this.favourite = !this.favourite;
+      },
+    },
+    computed: {
+      newPrice() {
+        return this.product.discount ?
+          this.product.price - (this.product.price * this.product.discount / 100) :
+          this.product.price;
+      },
+      label() {
+        return this.product.discount ?
+          "Sale" :
+          this.product.createdAt === this.product.updatedAt ?
+            "New" :
+            null
+      }
+    }
+  };
 </script>
 
 <style src="./ProductCard.scss" lang="scss" scoped />

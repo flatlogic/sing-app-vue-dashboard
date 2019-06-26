@@ -30,6 +30,13 @@
     height: 150px;
   }
 
+  cursor: pointer;
+  transition: $transition-base;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
   .label {
     position: absolute;
     left: 0;
