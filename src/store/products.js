@@ -100,8 +100,8 @@ export default {
       })
     },
     getProductsImagesRequest({dispatch}) {
-      axios.get('/products/images-list').then(images => {
-        dispatch("receiveProductImages", images);
+      axios.get('/products/images-list').then(res => {
+        dispatch("receiveProductImages", res.data);
       })
     },
     receiveProductImages({commit}, payload) {
