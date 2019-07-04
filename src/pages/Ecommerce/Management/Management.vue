@@ -25,7 +25,7 @@
         </div>
         <div slot="title" slot-scope="props">
           <router-link :to="'/app/ecommerce/product/' + props.row.id">
-            {{props.row.title[0].toUpperCase() + props.row.title.slice(1)}}
+            {{props.row.title ? (props.row.title[0].toUpperCase() + props.row.title.slice(1)) : "No Title"}}
           </router-link>
         </div>
         <div slot="rating" slot-scope="props">

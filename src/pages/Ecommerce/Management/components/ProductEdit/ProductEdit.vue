@@ -9,7 +9,7 @@
           <div class="col-md-5">
             <b-dropdown variant="info" id="productImage">
               <template slot="button-content">
-                <img class="product-image" alt="img" :src="product.img"/>
+                <img v-if="product.img" class="product-image" alt="img" :src="product.img"/>
               </template>
               <b-dropdown-item v-for="img in images" :key="img" @click="updateProductProperty(img, 'img')">
                 <img class="product-image" :alt="img" :src="img"/>
@@ -133,22 +133,22 @@
       }
     },
     mounted() {
-      this.getProductsImagesRequest();
+      let newProduct = {
+        id: -1,
+        price: '0.01',
+        rating: '5',
+        technology: []
+      };
       let product = this.findProduct(this.getId());
       if (this.getId() > -1) {
         this.loadProductRequest(this.getId());
       } else {
         if (!product) {
-          this.receiveProduct({
-            id: -1,
-            img: 'img1',
-            price: '0.01',
-            rating: '5',
-            technology: []
-          });
+          this.receiveProduct(newProduct);
         }
 
       }
+      this.getProductsImagesRequest(newProduct);
     },
     computed: {
       ...mapState("products", ["products", "isReceiving", "isDeleting", "isUpdating", "images"]),

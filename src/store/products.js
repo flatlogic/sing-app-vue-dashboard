@@ -33,7 +33,7 @@ export default {
       state = Object.assign(state, {
         products: state.products.map((p, i) => {
           if (i === index) {
-            return payload;
+            return Object.assign({}, p, payload);
           }
           return p;
         }),
@@ -99,9 +99,12 @@ export default {
         payload.$toaster.success("Product has been Deleted!");
       })
     },
-    getProductsImagesRequest({dispatch}) {
+    getProductsImagesRequest({dispatch}, payload) {
       axios.get('/products/images-list').then(res => {
         dispatch("receiveProductImages", res.data);
+        if (!payload.img && res.data.length) {
+          dispatch("updateProduct", {id: payload.id, img: res.data[0]});
+        }
       })
     },
     receiveProductImages({commit}, payload) {
