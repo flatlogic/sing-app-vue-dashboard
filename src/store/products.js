@@ -1,5 +1,7 @@
 import axios from "axios";
 import router from '../Routes';
+import mock from "../pages/Ecommerce/mock";
+import config from "../config";
 
 export default {
   namespaced: true,
@@ -63,18 +65,35 @@ export default {
   },
   actions: {
     getProductsRequest({dispatch}) {
-      dispatch("receivingProducts");
-      axios.get('/products').then(res => {
-        dispatch("receiveProducts", res.data);
-      })
+      // We check if app runs with backend mode
+      if (!config.isBackend) {
+        dispatch("receiveProducts", mock);
+      }
+
+      else {
+        dispatch("receivingProducts");
+        axios.get('/products').then(res => {
+          dispatch("receiveProducts", res.data);
+        })
+      }
     },
     loadProductRequest({dispatch}, id) {
-      dispatch("receivingProduct");
-      axios.get('/products/' + id).then(res => {
-        dispatch("receiveProduct", res.data);
-      })
+      // We check if app runs with backend mode
+      if (!config.isBackend) {
+        dispatch("receiveProduct", mock.find(arr => arr.id === id));
+      }
+
+      else {
+        dispatch("receivingProduct");
+        axios.get('/products/' + id).then(res => {
+          dispatch("receiveProduct", res.data);
+        })
+      }
     },
     updateProductRequest({dispatch}, payload) {
+      // We check if app runs with backend mode
+      if (!config.isBackend) return;
+
       dispatch("updatingProduct");
       axios.put('/products/' + payload.product.id, payload.product).then(res => {
         dispatch("updateProduct", res.data);
@@ -82,6 +101,9 @@ export default {
       })
     },
     createProductRequest({dispatch}, payload) {
+      // We check if app runs with backend mode
+      if (!config.isBackend) return;
+
       dispatch("updatingProduct");
       axios.post('/products', payload.product).then(res => {
         dispatch("updateProduct", res.data);
@@ -90,6 +112,9 @@ export default {
       })
     },
     deleteProductRequest({dispatch}, payload) {
+      // We check if app runs with backend mode
+      if (!config.isBackend) return;
+
       dispatch("deletingProduct", payload);
       axios.delete('/products/' + payload.id).then(() => {
         dispatch("deleteProduct", {id: payload.id});
@@ -100,6 +125,9 @@ export default {
       })
     },
     getProductsImagesRequest({dispatch}, payload) {
+      // We check if app runs with backend mode
+      if (!config.isBackend) return;
+
       axios.get('/products/images-list').then(res => {
         dispatch("receiveProductImages", res.data);
         if (!payload.img && res.data.length) {

@@ -24,29 +24,44 @@ export default {
     },
     actions: {
         loginUser({dispatch}, creds) {
-            dispatch('requestLogin');
-            if (creds.social) {
-                window.location.href = config.baseURLApi + "/user/signin/" + creds.social + (process.env.NODE_ENV === "production" ? "?app=sing-app-vue" : "");
+            // We check if app runs with backend mode
+            if (!config.isBackend) {
+              dispatch('receiveToken', 'token');
             }
-            else if (creds.email.length > 0 && creds.password.length > 0) {
+
+            else {
+              dispatch('requestLogin');
+              if (creds.social) {
+                window.location.href = config.baseURLApi + "/user/signin/" + creds.social + (process.env.NODE_ENV === "production" ? "?app=sing-app-vue" : "");
+              } else if (creds.email.length > 0 && creds.password.length > 0) {
                 axios.post("/user/signin/local", creds).then(res => {
-                    const token = res.data.token;
-                    dispatch('receiveToken', token);
+                  const token = res.data.token;
+                  dispatch('receiveToken', token);
                 }).catch(err => {
-                    dispatch('loginError', err.response.data);
+                  dispatch('loginError', err.response.data);
                 })
 
-            } else {
+              } else {
                 dispatch('loginError', 'Something was wrong. Try again');
+              }
             }
         },
         receiveToken({dispatch}, token) {
-            let user = jwt.decode(token).user;
+          let user = {};
+          // We check if app runs with backend mode
+          if (config.isBackend) {
+            user = jwt.decode(token).user;
             delete user.id;
-            localStorage.setItem('token', token);
-            localStorage.setItem('user', JSON.stringify(user));
-            axios.defaults.headers.common['Authorization'] = "Bearer " + token;
-            dispatch('receiveLogin');
+          } else {
+            user = {
+              email: config.auth.email
+            }
+          }
+
+          localStorage.setItem('token', token);
+          localStorage.setItem('user', JSON.stringify(user));
+          axios.defaults.headers.common['Authorization'] = "Bearer " + token;
+          dispatch('receiveLogin');
         },
         logoutUser() {
             localStorage.removeItem('token');

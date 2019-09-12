@@ -5,6 +5,7 @@
   "scripts": {
     "install": "napa",
     "serve": "vue-cli-service serve --port 3000",
+    "serve:backend": "VUE_APP_BACKEND=true vue-cli-service serve --port 3000",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "node server.js"
