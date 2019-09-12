@@ -10,6 +10,11 @@ yarn install
 yarn run serve
 ```
 
+### If you use app with backend support, please use
+```
+yarn run serve:backend
+```
+
 ### Compiles and minifies for production
 ```
 yarn run build
