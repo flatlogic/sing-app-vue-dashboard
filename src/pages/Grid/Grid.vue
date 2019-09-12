@@ -253,15 +253,9 @@ import Widget from '@/components/Widget/Widget';
 import 'imports-loader?window.jQuery=jquery,this=>window!jquery-ui/ui/widgets/sortable'; //eslint-disable-line
 import mock from './mock';
 
-import { SlickList, SlickItem } from 'vue-slicksort';
-
 export default {
   name: 'Grid',
-  components: {
-    Widget,
-    SlickItem,
-    SlickList
-  },
+  components: {Widget},
   data() {
     return {
       items: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8'],
