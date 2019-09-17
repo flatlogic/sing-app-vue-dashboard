@@ -11,6 +11,11 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@fullcalendar/core": "^4.3.1",
+    "@fullcalendar/daygrid": "^4.3.0",
+    "@fullcalendar/interaction": "^4.3.0",
+    "@fullcalendar/timegrid": "^4.3.0",
+    "@fullcalendar/vue": "^4.3.1",
     "animate.css": "^3.6.1",
     "awesome-bootstrap-checkbox": "^1.0.1",
     "axios": "^0.19.0",
@@ -24,7 +29,6 @@
     "express": "^4.16.4",
     "flot": "^0.8.0-alpha",
     "font-awesome": "4.7.0",
-    "fullcalendar": "^3.9.0",
     "glyphicons-halflings": "^1.9.1",
     "govpredict-morris": "^0.5.1",
     "imports-loader": "^0.8.0",

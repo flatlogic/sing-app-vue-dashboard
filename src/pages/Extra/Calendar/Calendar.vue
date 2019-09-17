@@ -11,25 +11,40 @@
         </h1>
         <h3>Draggable <span class="fw-semi-bold">Events</span></h3>
         <p>Just drap and drop events from there directly into the calendar.</p>
-        <div class="calendar-external-events mb-lg">
-          <div class="external-event draggable" data-event-class="bg-success text-white">
-            <i class="fa fa-circle fa-fw text-success ml-xs mr-xs" />
+        <div ref="externalEvents" class="calendar-external-events mb-lg">
+          <div
+              class="external-event"
+              data-event='{ "classNames": ["bg-success", "text-white"], "title": "Make a tea" }'
+          >
+            <i class="fa fa-circle fa-fw text-success ml-xs mr-xs"></i>
             Make a tea
           </div>
-          <div class="external-event draggable" data-event-class="bg-warning text-white">
-            <i class="fa fa-circle fa-fw text-warning ml-xs mr-xs" />
+          <div
+              class="external-event"
+              data-event='{ "classNames": ["bg-warning", "text-white"], "title": "Open windows" }'
+          >
+            <i class="fa fa-circle fa-fw text-warning ml-xs mr-xs"></i>
             Open windows
           </div>
-          <div class="external-event draggable" data-event-class="bg-gray text-white">
-            <i class="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
+          <div
+              class="external-event"
+              data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Some stuff" }'
+          >
+            <i class="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs"></i>
             Some stuff
           </div>
-          <div class="external-event draggable" data-event-class="bg-danger text-white">
-            <i class="fa fa-square fa-fw text-danger ml-xs mr-xs" />
+          <div
+              class="external-event"
+              data-event='{ "classNames": ["bg-danger", "text-white"], "title": "Study UX engineering" }'
+          >
+            <i class="fa fa-square fa-fw text-danger ml-xs mr-xs"></i>
             Study UX engineering
           </div>
-          <div class="external-event draggable" data-event-class="bg-gray text-white">
-            <i class="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs" />
+          <div
+              class="external-event"
+              data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Another stuff" }'
+          >
+            <i class="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs"></i>
             Another stuff
           </div>
         </div>
@@ -40,48 +55,96 @@
             <b-col md='3'>
               <b-button-group class="mr-sm">
                 <b-button variant="default" @click="prev">
-                  <i class="fa fa-angle-left" />
+                  <i class="fa fa-angle-left"></i>
                 </b-button>
                 <b-button variant="default" @click="next">
-                  <i class="fa fa-angle-right" />
+                  <i class="fa fa-angle-right"></i>
                 </b-button>
               </b-button-group>
+              <b-button variant="default" @click="today">
+                Today
+              </b-button>
             </b-col>
             <b-col md='9' class="calendar-controls text-right">
               <b-button-group>
                 <b-button
-                  variant="default" @click="changeView('month')"
-                  :class="{ active: calendarView === 'month' }"
+                  variant="default" @click="changeView('dayGridMonth')"
+                  :class="{ active: calendarView === 'dayGridMonth' }"
                 >Month</b-button>
                 <b-button
-                  variant="default" @click="changeView('agendaWeek')"
-                  :class="{ active: calendarView === 'agendaWeek' }"
+                  variant="default" @click="changeView('timeGridWeek')"
+                  :class="{ active: calendarView === 'timeGridWeek' }"
                 >Week</b-button>
                 <b-button
-                  variant="default" @click="changeView('agendaDay')"
-                  :class="{ active: calendarView === 'agendaDay' }"
+                  variant="default" @click="changeView('timeGridDay')"
+                  :class="{ active: calendarView === 'timeGridDay' }"
                 >Day</b-button>
               </b-button-group>
             </b-col>
           </b-row>
-          <div id="calendar" class="calendar" />
+          <FullCalendar
+              ref="fullCalendar"
+              defaultView="dayGridMonth"
+              :plugins="calendarPlugins"
+              v-bind="calendarOptions"
+              @select="select"
+              @eventClick="eventClick"
+              @drop="drop"
+          />
         </Widget>
       </b-col>
     </b-row>
+    <b-modal id="create-new-event">
+      <template slot="modal-title">
+        Create New Event
+        <br>
+        <small class="text-muted">
+          Just enter event name to create a new one
+        </small>
+      </template>
+      <b-row>
+        <b-col>
+          <b-form-input v-model="event.title" placeholder="Title"></b-form-input>
+        </b-col>
+      </b-row>
+      <template slot="modal-footer">
+        <b-button variant="success" class="mt-3" @click="createEvent">Create</b-button>
+        <b-button variant="default" class="mt-3" @click="$bvModal.hide('create-new-event')">Close</b-button>
+      </template>
+    </b-modal>
+    <b-modal id="show-event">
+      <template slot="modal-title">
+        {{event.title}}
+      </template>
+      <b-row>
+        <b-col>
+          <p class="text-muted">
+            <i class="la la-calendar"></i>
+            {{getFormattedDate(event.start)}}
+          </p>
+          <p>{{event.extendedProps && event.extendedProps.description}}</p>
+        </b-col>
+      </b-row>
+      <template slot="modal-footer">
+        <b-button variant="default" class="mt-3" @click="$bvModal.hide('show-event')">OK</b-button>
+      </template>
+    </b-modal>
   </div>
 </template>
 
 <script>
-import $ from 'jquery';
 import Vue from 'vue';
 import Widget from '@/components/Widget/Widget';
 import moment from 'moment/moment';
-import 'fullcalendar/dist/fullcalendar';
-import 'jquery-ui/ui/widgets/draggable';
+
+import FullCalendar from '@fullcalendar/vue'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
+import interactionPlugin, {Draggable} from '@fullcalendar/interaction'
 
 export default {
   name: 'CalendarPage',
-  components: { Widget },
+  components: { Widget, FullCalendar },
   data() {
     const date = new Date();
     const d = date.getDate();
@@ -89,7 +152,8 @@ export default {
     const y = date.getFullYear();
 
     return {
-      calendarView: 'month',
+      event: {},
+      calendarView: 'dayGridMonth',
       currentMonth: moment().format('MMM YYYY'),
       currentDay: moment().format('dddd'),
       calendarOptions: {
@@ -162,92 +226,64 @@ export default {
         ],
         selectable: true,
         selectHelper: true,
-        select: (start, end, allDay) => {
-          this.createEvent = () => {
-            const { title } = this.event;
-            if (title) {
-              this.$calendar.fullCalendar('renderEvent',
-                {
-                  title,
-                  start,
-                  end,
-                  allDay,
-                  backgroundColor: '#64bd63',
-                  textColor: '#fff',
-                },
-                true); // make the event "stick"
-            }
-            this.$calendar.fullCalendar('unselect');
-            $('#create-event-modal').modal('hide');
-          };
-
-          $('#create-event-modal').modal('show');
-        },
-        eventClick: (event) => {
-          this.event = event;
-          $('#show-event-modal').modal('show');
-        },
         editable: true,
         droppable: true,
-
-        drop: (dateItem, event) => { // this function is called when something is dropped
-          // retrieve the dropped element's stored Event Object
-          const originalEventObject = {
-            // use the element's text as the event title
-            title: $.trim($(event.target).text()),
-          };
-
-          // we need to copy it, so that multiple events don't have a reference to the same object
-          const copiedEventObject = $.extend({}, originalEventObject);
-
-          // assign it the date that was reported
-          copiedEventObject.start = dateItem;
-          copiedEventObject.allDay = !dateItem.hasTime();
-
-          const $categoryClass = $(event.target).data('event-class');
-          if ($categoryClass) {
-            copiedEventObject.class = [$categoryClass];
-          }
-
-          // render the event on the calendar
-          // the last `true` argument determines if
-          // the event 'sticks'
-          // http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-          this.$calendar.fullCalendar('renderEvent', copiedEventObject, true);
-
-          $(event.target).remove();
-        },
       },
+      calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
       dragOptions: { zIndex: 999, revert: true, revertDuration: 0 },
     };
   },
   methods: {
-    getCurrentMonth() {
-      return moment(this.$calendar.fullCalendar('getDate')).format('MMM YYYY');
+    createEvent() {
+      this.calendar.addEvent(this.event);
+      this.calendar.unselect();
+      this.$bvModal.hide('create-new-event');
     },
-    getCurrentDay() {
-      return moment(this.$calendar.fullCalendar('getDate')).format('dddd');
+    select({start, end, allDay}) {
+      this.$bvModal.show('create-new-event');
+      this.event = {
+        start,
+        end,
+        allDay,
+        backgroundColor: '#64bd63',
+        textColor: '#fff',
+        editable: true
+      }
+    },
+    eventClick(e) {
+      this.event = e.event;
+      this.$bvModal.show('show-event');
+    },
+    drop(info) {
+      info.draggedEl.parentNode.removeChild(info.draggedEl);
     },
     prev() {
-      this.$calendar.fullCalendar('prev');
+      this.calendar.prev();
     },
     next() {
-      this.$calendar.fullCalendar('next');
+      this.calendar.next();
     },
     today() {
-      this.$calendar.fullCalendar('today');
+      this.calendar.today();
     },
     changeView(view) {
-      this.$calendar.fullCalendar('changeView', view);
-
+      this.calendar.changeView(view);
       Vue.set(this, 'calendarView', view);
     },
+    getFormattedDate(date) {
+      return moment(date).format('YYYY-MM-DD');
+    }
+  },
+  computed: {
+    calendar() {
+      return this.$refs.fullCalendar.getApi();
+    }
   },
   mounted() {
-    this.$calendar = $('#calendar');
-    this.$calendar.fullCalendar(this.calendarOptions);
-    $('.draggable').draggable(this.dragOptions);
-  },
+    new Draggable(this.$refs.externalEvents, {
+      itemSelector: '.external-event'
+    })
+  }
 };
 </script>
 
