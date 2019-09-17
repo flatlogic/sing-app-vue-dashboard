@@ -77,7 +77,7 @@
         if (!this.isPasswordValid()) {
           this.checkPassword();
         } else {
-          this.registerUser({creds: {email, password}, $toaster: this.$toaster});
+          this.registerUser({creds: {email, password}, $toasted: this.$toasted});
         }
       },
       googleLogin() {

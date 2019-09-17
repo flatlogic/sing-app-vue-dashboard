@@ -97,7 +97,7 @@ export default {
       dispatch("updatingProduct");
       axios.put('/products/' + payload.product.id, payload.product).then(res => {
         dispatch("updateProduct", res.data);
-        payload.$toaster.success("Product has been Updated!");
+        payload.$toasted.success("Product has been Updated!");
       })
     },
     createProductRequest({dispatch}, payload) {
@@ -108,7 +108,7 @@ export default {
       axios.post('/products', payload.product).then(res => {
         dispatch("updateProduct", res.data);
         router.push('/app/ecommerce/management');
-        payload.$toaster.success("Product has been Created!");
+        payload.$toasted.success("Product has been Created!");
       })
     },
     deleteProductRequest({dispatch}, payload) {
@@ -121,7 +121,7 @@ export default {
         if (router.history.current.pathname !== '/app/ecommerce/management') {
           router.push('/app/ecommerce/management');
         }
-        payload.$toaster.success("Product has been Deleted!");
+        payload.$toasted.success("Product has been Deleted!");
       })
     },
     getProductsImagesRequest({dispatch}, payload) {

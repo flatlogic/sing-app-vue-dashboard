@@ -55,7 +55,7 @@
               </template>
               <div class="px-5 d-flex justify-content-center">
                 <b-button-toolbar>
-                  <b-button variant="success" size="xs" @click="deleteProductRequest({id:props.row.id, $toaster})">
+                  <b-button variant="success" size="xs" @click="deleteProductRequest({id:props.row.id, $toasted})">
                     Yes
                   </b-button>
                   <b-button variant="danger" size="xs" @click="closePopover(props.row.id)">

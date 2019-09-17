@@ -1098,3 +1098,37 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
     margin: 2px;
   }
 }
+
+////// VUE TOASTED //////
+.toasted-container {
+  .toasted {
+    box-shadow: none;
+    font-size: $font-size-sm;
+    border-radius: $border-radius;
+
+    &.default {
+      background: theme-color('default');
+      color: $text-color;
+    }
+
+    &.error {
+      background: theme-color('error');
+    }
+
+    &.success {
+      background: theme-color('success');
+    }
+
+    &.info {
+      background: theme-color('info');
+    }
+
+    &.warning {
+      background: theme-color('warning');
+    }
+
+    .action {
+      color: $text-color;
+    }
+  }
+}

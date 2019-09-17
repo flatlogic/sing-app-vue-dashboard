@@ -190,6 +190,10 @@ table > thead > tr > th {
   background: rgba($white, 0.4);
   border: 1px dashed $gray-600;
   margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
+
+  * {
+    opacity: 0;
+  }
 }
 
 /*         Post Links           */

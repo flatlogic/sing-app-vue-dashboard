@@ -25,7 +25,7 @@ export default {
     registerUser({dispatch}, payload) {
       // We check if app runs with backend mode
       if (!config.isBackend) {
-        payload.$toaster.success("You've been registered successfully");
+        payload.$toasted.success("You've been registered successfully");
         router.push('/login');
       }
 
@@ -35,7 +35,7 @@ export default {
         if (creds.email.length > 0 && creds.password.length > 0) {
           axios.post("/user/signup", creds).then(() => {
             dispatch('receiveRegister');
-            payload.$toaster.success("You've been registered successfully");
+            payload.$toasted.success("You've been registered successfully");
             router.push('/login');
           }).catch(err => {
             dispatch('registerError', err.response.data);

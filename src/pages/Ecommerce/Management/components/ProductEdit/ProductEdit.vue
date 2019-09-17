@@ -85,7 +85,7 @@
           </div>
         </div>
         <b-button-toolbar>
-          <b-button variant="success" @click="!isNew ? updateProductRequest({product, $toaster}) : createProductRequest({product, $toaster})">
+          <b-button variant="success" @click="!isNew ? updateProductRequest({product, $toasted}) : createProductRequest({product, $toaster})">
             <Loader v-if="isUpdating"></Loader>
             <span v-else>Save</span>
           </b-button>
@@ -103,7 +103,7 @@
               </template>
               <div class="px-5 d-flex justify-content-center">
                 <b-button-toolbar>
-                  <b-button variant="success" size="xs" @click="deleteProductRequest({id: product.id, $toaster})">
+                  <b-button variant="success" size="xs" @click="deleteProductRequest({id: product.id, $toasted})">
                     Yes
                   </b-button>
                   <b-button variant="danger" size="xs" @click="popover = false">

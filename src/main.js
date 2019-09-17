@@ -15,7 +15,7 @@ import { VueMaskDirective } from 'v-mask';
 import VeeValidate from 'vee-validate';
 import VueFormWizard from 'vue-form-wizard';
 import axios from 'axios';
-import Toaster from 'v-toaster';
+import Toasted from 'vue-toasted';
 
 import store from './store';
 import router from './Routes';
@@ -48,7 +48,7 @@ Vue.use(VeeValidate, { fieldsBagName: 'fieldsbag' });
 Vue.use(VueFormWizard);
 Vue.mixin(layoutMixin);
 Vue.mixin(AuthMixin);
-Vue.use(Toaster, {timeout: 5000});
+Vue.use(Toasted, {duration: 10000});
 
 Vue.config.productionTip = false;
 
