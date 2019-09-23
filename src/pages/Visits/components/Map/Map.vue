@@ -1,137 +1,94 @@
 <template>
-  <div class="mapael" id="mapael" ref="map">
+  <div>
+    <div class="map" ref="map">
+
+    </div>
     <div class="stats">
       <h6 class="mt-1">GEO-LOCATIONS</h6>
       <p class="h3 m-0">
-        <span class="mr-xs fw-normal"><AnimateNumber number="1 656 843" /></span>
-        <i class="fa fa-map-marker" />
+      <span class="mr-xs fw-normal"><AnimatedNumber value="1656843"
+                                                    v-bind="animateNumberOptions"></AnimatedNumber></span>
+        <i class="fa fa-map-marker"/>
       </p>
     </div>
-    <div class="map">
-      <span>Alternative content for the map</span>
-    </div>
   </div>
+
 </template>
 
 <script>
-/* eslint-disable */
-import $ from 'jquery';
-import 'imports-loader?$=jquery,this=>window!jquery-mapael/js/maps/usa_states';
-import 'imports-loader?$=jquery,this=>window!jquery-mapael/js/jquery.mapael';
-/* eslint-enable */
-import AnimateNumber from '../AnimateNumber/AnimateNumber';
+import AnimatedNumber from "animated-number-vue";
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4maps from "@amcharts/amcharts4/maps";
+import am4geodata_usaHigh from "@amcharts/amcharts4-geodata/usaHigh";
+
+import cities from './mock';
 
 export default {
   name: 'Map',
-  components: { AnimateNumber },
+  components: { AnimatedNumber },
+  data() {
+    return {
+      animateNumberOptions: {
+        duration: 2000,
+        easing: 'easeInQuad',
+        formatValue(value) {
+          let number = value.toFixed(0);
+          let numberAsArrayWithSapces = [];
+          while (number >= 1) {
+            numberAsArrayWithSapces.unshift(number % 1000);
+            number = (number/1000).toFixed();
+          }
+          return numberAsArrayWithSapces.join(' ');
+        }
+      }
+    }
+  },
   mounted() {
-    let state = '';
-    const geoLocationData = {
-      map: {
-        name: 'usa_states',
-        defaultArea: {
-          attrs: {
-            fill: '#e5e7f1',
-            stroke: '#fafbff',
-          },
-          attrsHover: {
-            fill: '#e9ebf6',
-            animDuration: 50,
-          },
-          tooltip: {
-            content: () => `<strong>${state}</strong>`,
-          },
-          eventHandlers: {
-            mouseover: (e, id) => {
-              state = id;
-            },
-          },
-        },
-        defaultPlot: {
-          size: 17,
-          attrs: {
-            fill: '#ffc247',
-            stroke: '#fff',
-            'stroke-width': 0,
-            'stroke-linejoin': 'round',
-          },
-          attrsHover: {
-            'stroke-width': 1,
-            animDuration: 100,
-          },
-        },
-        zoom: {
-          enabled: true,
-          step: 0.75,
-          mousewheel: false,
-        },
-      },
-      plots: {
-        ny: {
-          latitude: 40.717079,
-          longitude: -74.00116,
-          tooltip: { content: 'New York' },
-        },
-        on: {
-          latitude: 33.145235,
-          longitude: -83.811834,
-          size: 18,
-          tooltip: { content: 'Oconee National Forest' },
-        },
-        sf: {
-          latitude: 37.792032,
-          longitude: -122.394613,
-          size: 12,
-          tooltip: { content: 'San Francisco' },
-        },
-        la: {
-          latitude: 26.935080,
-          longitude: -80.851766,
-          size: 26,
-          tooltip: { content: 'Lake Okeechobee' },
-        },
-        gc: {
-          latitude: 36.331308,
-          longitude: -83.336050,
-          size: 10,
-          tooltip: { content: 'Grainger County' },
-        },
-        cc: {
-          latitude: 36.269356,
-          longitude: -76.587477,
-          size: 22,
-          tooltip: { content: 'Chowan County' },
-        },
-        ll: {
-          latitude: 30.700644,
-          longitude: -95.145249,
-          tooltip: { content: 'Lake Livingston' },
-        },
-        tc: {
-          latitude: 34.546708,
-          longitude: -90.211471,
-          size: 14,
-          tooltip: { content: 'Tunica County' },
-        },
-        lc: {
-          latitude: 32.628599,
-          longitude: -103.675115,
-          tooltip: { content: 'Lea County' },
-        },
-        uc: {
-          latitude: 40.456692,
-          longitude: -83.522688,
-          size: 11,
-          tooltip: { content: 'Union County' },
-        },
-        lm: {
-          latitude: 33.844630,
-          longitude: -118.157483,
-          tooltip: { content: 'Lakewood Mutual' },
-        },
-      },
-    };
-    $(this.$refs.map).mapael(geoLocationData);
+    let map = am4core.create(this.$refs.map, am4maps.MapChart);
+    map.geodata = am4geodata_usaHigh;
+    map.projection = new am4maps.projections.AlbersUsa();
+    let polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
+    polygonSeries.useGeodata = true;
+    map.homeZoomLevel = 1.2;
+
+    map.zoomControl = new am4maps.ZoomControl();
+    map.zoomControl.align = 'left';
+    map.zoomControl.valign = 'bottom';
+    map.zoomControl.dy = -20;
+    map.zoomControl.layout = 'horizontal';
+    map.zoomControl.minusButton.background.fill = am4core.color("#fff");
+    map.zoomControl.minusButton.background.stroke = am4core.color("#ccc");
+    map.zoomControl.plusButton.background.fill = am4core.color("#fff");
+    map.zoomControl.plusButton.background.stroke = am4core.color("#ccc");
+    let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
+    plusButtonHoverState.properties.fill = am4core.color("#e9ecef");
+    let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");
+    minusButtonHoverState.properties.fill = am4core.color("#e9ecef");
+
+    let polygonTemplate = polygonSeries.mapPolygons.template;
+    polygonTemplate.tooltipText = "{name}";
+    polygonTemplate.fill = am4core.color("#e5e7f1");
+    let hs = polygonTemplate.states.create("hover");
+    hs.properties.fill = am4core.color("#e9ebf6");
+
+    let citySeries = map.series.push(new am4maps.MapImageSeries());
+    citySeries.data = cities;
+    citySeries.dataFields.value = "size";
+
+    let city = citySeries.mapImages.template;
+    city.nonScaling = true;
+    city.propertyFields.latitude = "latitude";
+    city.propertyFields.longitude = "longitude";
+    let circle = city.createChild(am4core.Circle);
+    circle.fill = am4core.color("#ffc247");
+    circle.stroke = am4core.color("#ffffff");
+    circle.strokeWidth = 0;
+    let circleHoverState = circle.states.create("hover");
+    circleHoverState.properties.strokeWidth = 1;
+    circle.tooltipText = '{tooltip}';
+    circle.propertyFields.radius = 'size';
+
+    this.map = map;
   },
 };
 </script>

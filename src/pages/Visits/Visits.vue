@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-body-light">
-                <span><AnimateNumber number="75" />%</span>
+                <span><AnimatedNumber :value="75" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-body-light">
-                <span><AnimateNumber number="84" />%</span>
+                <span><AnimatedNumber :value="84" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-body-light">
-                <span><AnimateNumber number="92" />%</span>
+                <span><AnimatedNumber :value="92" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
@@ -330,17 +330,24 @@
 import Vue from 'vue';
 import Widget from '@/components/Widget/Widget';
 import Map from './components/Map/Map';
-import AnimateNumber from './components/AnimateNumber/AnimateNumber';
 import Calendar from './components/Calendar/Calendar';
 import AreaChart from './components/AreaChart/AreaChart';
+import AnimatedNumber from "animated-number-vue";
 
 export default {
   name: 'Visits',
   components: {
-    Widget, Map, AnimateNumber, Calendar, AreaChart,
+    Widget, Map, Calendar, AreaChart, AnimatedNumber
   },
   data() {
     return {
+      animateNumberOptions: {
+        duration: 2000,
+        easing: 'easeInQuad',
+        formatValue(value) {
+          return value.toFixed(0);
+        }
+      },
       checkedArr: [false, false, false],
       dataCollection: null,
     };

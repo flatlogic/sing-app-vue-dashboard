@@ -16,6 +16,7 @@ import VeeValidate from 'vee-validate';
 import VueFormWizard from 'vue-form-wizard';
 import axios from 'axios';
 import Toasted from 'vue-toasted';
+import VCalendar from 'v-calendar';
 
 import store from './store';
 import router from './Routes';
@@ -32,6 +33,9 @@ if (token) {
 }
 
 Vue.use(BootstrapVue);
+Vue.use(VCalendar, {
+  firstDayOfWeek: 2
+});
 Vue.use(VueTouch);
 Vue.use(Trend);
 Vue.use(VueGoogleMaps, {

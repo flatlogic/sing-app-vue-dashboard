@@ -152,7 +152,7 @@
         index="maps"
         :childrenLinks="[
           { header: 'Google Maps', link: '/app/maps/google' },
-          { header: 'Vector Maps', link: '/app/maps/vector' },
+          { header: 'Amcharts Maps', link: '/app/maps/amcharts' },
         ]"
       />
       <NavLink

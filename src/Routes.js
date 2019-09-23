@@ -11,7 +11,7 @@ import TablesBasicPage from '@/pages/Tables/Basic/Basic';
 import TablesDynamicPage from '@/pages/Tables/Dynamic/Dynamic';
 // Maps
 import GoogleMapPage from '@/pages/Maps/Google/Google';
-import VectorMapPage from '@/pages/Maps/Vector/Vector';
+import AmchartsMapPage from '@/pages/Maps/Amcharts/Amcharts';
 // Main
 import VisitsPage from '@/pages/Visits/Visits';
 import AnalyticsPage from '@/pages/Dashboard/Dashboard';
@@ -318,9 +318,9 @@ export default new Router({
           component: GoogleMapPage,
         },
         {
-          path: 'maps/vector',
-          name: 'VectorMapPage',
-          component: VectorMapPage,
+          path: 'maps/amcharts',
+          name: 'AmchartsMapPage',
+          component: AmchartsMapPage,
         },
         // extra pages
         {

@@ -1,22 +1,15 @@
 <template>
   <div class="years-map">
-    <div class="mapael" id="mapael" ref="map">
-      <div class="stats">
-        <h6 class="text-gray-dark">YEARLY <span class="fw-semi-bold">DISTRIBUTIONS</span></h6>
-        <span class="pull-left mr-xs">
+    <div class="map" ref="map"></div>
+    <div class="stats">
+      <h6 class="text-gray-dark">YEARLY <span class="fw-semi-bold">DISTRIBUTIONS</span></h6>
+      <span class="pull-left mr-xs">
           <small><span class="circle bg-warning text-gray-dark">
-            <i class="fa fa-plus" /></span></small>
+            <i class="fa fa-plus"/></span></small>
         </span>
-        <p class="h4 m-0">
-          <strong>17% last year</strong>
-        </p>
-      </div>
-      <div class="map">
-        <span>Alternative content for the map</span>
-      </div>
-      <div class="areaLegend">
-        <span>Alternative content for the legend</span>
-      </div>
+      <p class="h4 m-0">
+        <strong>17% last year</strong>
+      </p>
     </div>
     <b-nav class="map-controls" pills fill>
       <b-nav-item :active="this.activeYear === 2012" @click="changeYear(2012)">
@@ -43,13 +36,13 @@
 
 <script>
 import Vue from 'vue';
-import $ from 'jquery';
 import fakeWorldData from './MapData';
 
-/* eslint-disable */
-import 'imports-loader?$=jquery,this=>window!jquery-mapael/js/maps/world_countries';
-import 'imports-loader?$=jquery,this=>window!jquery-mapael/js/jquery.mapael';
-/* eslint-enable */
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4maps from "@amcharts/amcharts4/maps";
+import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
+import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+am4core.useTheme(am4themes_animated);
 
 export default {
   name: 'YearsMap',
@@ -61,100 +54,70 @@ export default {
   methods: {
     changeYear(year) {
       Vue.set(this, 'activeYear', year);
-
-      const $map = $(this.$refs.map);
-      $map.trigger('update', [{
-        mapOptions: fakeWorldData[year],
-        animDuration: 300,
-      }]);
-    },
-    init() {
-      const $map = $(this.$refs.map);
-      const data = {
-        map: {
-          name: 'world_countries',
-          defaultArea: {
-            attrs: {
-              fill: '#eee', // gray-lighter
-              stroke: '#666', // 'gray'
-              'stroke-width': 0.1,
-            },
-            attrsHover: {
-              fill: '#999', // gray-light,
-              animDuration: 100,
-            },
-          },
-          defaultPlot: {
-            size: 17,
-            attrs: {
-              fill: '#f0b518', // brand-warning,
-              stroke: '#fff',
-              'stroke-width': 0,
-              'stroke-linejoin': 'round',
-            },
-            attrsHover: {
-              'stroke-width': 1,
-              animDuration: 100,
-            },
-          },
-          zoom: {
-            enabled: true,
-            step: 1,
-            maxLevel: 10,
-            mousewheel: false,
-          },
-        },
-        legend: {
-          area: {
-            display: false,
-            slices: [
-              {
-                max: 5000000,
-                attrs: {
-                  fill: 'rgb(245, 249, 251)', // lightenColor('#ebeff1', .04)
-                },
-                label: 'Less than 5M',
-              },
-              {
-                min: 5000000,
-                max: 10000000,
-                attrs: {
-                  fill: '#ebeff1',
-                },
-                label: 'Between 5M and 10M',
-              },
-              {
-                min: 10000000,
-                max: 50000000,
-                attrs: {
-                  fill: '#eee', // gray-lighter
-                },
-                label: 'Between 10M and 50M',
-              },
-              {
-                min: 50000000,
-                attrs: {
-                  fill: 'rgb(209, 213, 215)', // darkenColor('#ebeff1', .1)
-                },
-                label: 'More than 50M',
-              },
-            ],
-          },
-        },
-        areas: fakeWorldData[this.activeYear].areas,
-      };
-      const height = 394;
-      $map.css('height', height);
-      if ($map.parents('.widget')[0]) {
-        $map.find('.map').css('height', parseInt($map.parents('.widget').css('height'), 10) - 35);
-      }
-      $map.mapael(data);
-      $map.trigger('zoom', { level: 6, latitude: 59.599254, longitude: 8.863224 });
+      this.polygonSeries.data = fakeWorldData[year].areas;
     },
   },
   mounted() {
-    this.init();
+    let map = am4core.create(this.$refs.map, am4maps.MapChart);
+    map.geodata = am4geodata_worldLow;
+    map.projection = new am4maps.projections.Miller();
+    map.homeZoomLevel = 6;
+    map.homeGeoPoint = {
+      longitude: 8.863224,
+      latitude: 39.599254
+    };
+    this.polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
+    this.polygonSeries.useGeodata = true;
+    this.polygonSeries.exclude = ["AQ"];
+
+    this.polygonSeries.data = fakeWorldData[this.activeYear].areas;
+
+    this.polygonSeries.tooltip.background.fill = am4core.color("#fff");
+    this.polygonSeries.tooltip.getFillFromObject = false;
+    this.polygonSeries.tooltip.label.fill = am4core.color("#495057");
+    this.polygonSeries.tooltip.autoTextColor = false;
+
+    map.zoomControl = new am4maps.ZoomControl();
+    map.zoomControl.align = 'left';
+    map.zoomControl.valign = 'bottom';
+    map.zoomControl.dx = 10;
+    map.zoomControl.dy = -30;
+    map.zoomControl.layout = 'horizontal';
+
+    map.zoomControl.minusButton.background.fill = am4core.color("#fff");
+    map.zoomControl.plusButton.background.fill = am4core.color("#fff");
+    map.zoomControl.minusButton.background.stroke = am4core.color("#ccc");
+    map.zoomControl.plusButton.background.stroke = am4core.color("#ccc");
+    map.zoomControl.plusButton.background.cornerRadius(16,16,16,16);
+    map.zoomControl.minusButton.background.cornerRadius(16,16,16,16);
+    map.zoomControl.plusButton.dx = 5;
+    let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
+    plusButtonHoverState.properties.fill = am4core.color("#ccc");
+    let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");
+    minusButtonHoverState.properties.fill = am4core.color("#ccc");
+
+    let polygonTemplate = this.polygonSeries.mapPolygons.template;
+    polygonTemplate.tooltipHTML = "{tooltip}";
+    polygonTemplate.fill = am4core.color("#eee");
+    polygonTemplate.stroke = am4core.color("#666");
+    polygonTemplate.strokeWidth = 0.1;
+    let hs = polygonTemplate.states.create("hover");
+    hs.properties.fill = am4core.color("#999");
+
+    this.polygonSeries.heatRules.push({
+      "property": "fill",
+      "target": polygonTemplate,
+      "min": am4core.color("#eee"),
+      "max": am4core.color("#aaa")
+    });
+
+    this.map = map;
   },
+  beforeDestroy() {
+    if (this.map) {
+      this.map.dispose();
+    }
+  }
 };
 </script>
 

@@ -1,91 +1,73 @@
 <template>
-  <div ref="calendar" :class="{calendar: true, 'calendar-white': white }" />
+  <v-calendar is-expanded :attributes="attrs">
+    <div slot="day-popover" slot-scope="{dayTitle, attributes}">
+      <header class="fs-sm text-light fw-semi-bold text-center">
+        {{ dayTitle }}
+      </header>
+      <v-popover-row :attribute="attr" class="text-white" v-for="attr in attributes" :key="attr.key">
+        <p v-if="attr.popover.title" class="fw-normal m-0">{{attr.popover.title}}</p>
+        <p v-if="attr.popover.title" class="fw-thin m-0">{{attr.popover.description}}</p>
+        <a v-if="attr.popover.link" class="fw-thin m-0" :href="attr.popover.href">{{attr.popover.link}}</a>
+      </v-popover-row>
+    </div>
+  </v-calendar>
 </template>
 
 <script>
-/* eslint-disable */
-import $ from 'jquery';
-import 'imports-loader?jQuery=jquery,this=>window!bootstrap';
-import 'imports-loader?jQuery=jquery,this=>window!bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar';
-/* eslint-enable */
-
-const monthNames = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
-const dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 export default {
   name: 'Calendar',
-  props: {
-    white: { type: Boolean },
+  data() {
+    return {
+      attrs: []
+    }
   },
   mounted() {
-    const $calendar = $(this.$refs.calendar);
     const now = new Date();
-    const month = now.getMonth() + 1;
+    const month = now.getMonth();
     const year = now.getFullYear();
-    const events = [
-      [
-        `2/${month}/${year}`,
-        'The flower bed',
-        '#',
-        '#5d8fc2',
-        'Contents here',
-      ],
-      [
-        `5/${month}/${year}`,
-        'Stop world water pollution',
-        '#',
-        '#f0b518',
-        'Have a kick off meeting with .inc company',
-      ],
-      [
-        `18/${month}/${year}`,
-        'Light Blue 2.2 release',
-        '#',
-        '#64bd63',
-        'Some contents here',
-      ],
-      [
-        `29/${month}/${year}`,
-        'A link',
-        'http://www.flatlogic.com',
-        '#dd5826',
-      ],
-    ];
-    $calendar.calendar({
-      months: monthNames,
-      days: dayNames,
-      events,
-      popover_options: {
-        placement: 'top',
-        html: true,
+    this.attrs = [
+      {
+        key: 1,
+        dot: 'blue',
+        dates: new Date(year, month, 2),
+        popover: {
+          title: 'The flower bed',
+          description: 'Contents here',
+          visibility: 'hover'
+        }
       },
-    });
-    $calendar.find('.icon-arrow-left').addClass('la la-arrow-left');
-    $calendar.find('.icon-arrow-right').addClass('la la-arrow-right');
-    const restyleCalendar = () => {
-      $calendar.find('.event').each((index, el) => {
-        const $eventIndicator = $('<span></span>');
-        $eventIndicator
-          .css('background-color', $(el).css('background-color'))
-          .appendTo($(el).find('a'));
-        $(el).css('background-color', '');
-      });
-    };
-    $calendar.find('.icon-arrow-left, .icon-arrow-right').parent().on('click', restyleCalendar);
-    restyleCalendar();
+      {
+        key: 2,
+        dot: 'orange',
+        dates: new Date(year, month, 5),
+        popover: {
+          title: 'Stop world water pollution',
+          description: 'Have a kick off meeting with .inc company',
+          visibility: 'hover'
+        }
+      },
+      {
+        key: 3,
+        dot: 'green',
+        dates: new Date(year, month, 18),
+        popover: {
+          title: 'Light Blue 2.2 release',
+          description: 'Some contents here',
+          visibility: 'hover'
+        }
+      },
+      {
+        key: 4,
+        dot: 'red',
+        dates: new Date(year, month, 29),
+        popover: {
+          link: 'A link',
+          href: 'http://www.flatlogic.com',
+          visibility: 'hover'
+        }
+      }
+    ];
   },
 };
 </script>
