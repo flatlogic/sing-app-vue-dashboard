@@ -18,7 +18,7 @@ import AnalyticsPage from '@/pages/Dashboard/Dashboard';
 import WidgetsPage from '@/pages/Widgets/Widgets';
 // Charts
 import ChartsPage from '@/pages/Charts/Charts';
-import FlotPage from '@/pages/Charts/Flot/Flot';
+import ApexPage from '@/pages/Charts/Apex/Apex';
 import MorrisPage from '@/pages/Charts/Morris/Morris';
 import SparklinePage from '@/pages/Charts/Sparkline/Sparkline';
 import EasyPiePage from '@/pages/Charts/EasyPie/EasyPie';
@@ -275,9 +275,9 @@ export default new Router({
           component: ChartsPage,
         },
         {
-          path: 'charts/flot',
-          name: 'FlotPage',
-          component: FlotPage,
+          path: 'charts/apex',
+          name: 'ApexPage',
+          component: ApexPage,
         },
         {
           path: 'charts/morris',

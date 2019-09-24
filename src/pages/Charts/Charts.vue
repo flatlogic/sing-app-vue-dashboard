@@ -265,7 +265,6 @@
             customHeader
           >
             <div>
-              <FlotBars/>
               <p class="fs-mini text-muted">
                 Flot is a
                 <span class="fw-semi-bold">pure</span>
@@ -314,7 +313,6 @@ import "imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.time";
 import Widget from "@/components/Widget/Widget";
 import d3 from "d3";
 import nv from "nvd3";
-import FlotBars from "./Flot/charts/BarsChart";
 import AreaChart from "../Visits/components/AreaChart/AreaChart";
 
 const FlotChartData = [
@@ -349,7 +347,7 @@ const { Morris } = window;
 
 export default {
   name: "Charts",
-  components: { Widget, FlotBars, AreaChart },
+  components: { Widget, AreaChart },
   data() {
     return {
       dataCollection: null
@@ -597,111 +595,6 @@ export default {
         }
       };
       $(this.$refs.flotChart).plot(FlotChartData, option);
-    },
-    initFlotBarChart() {
-      const barCustomised1 = [
-        [1388534400000, 120],
-        [1391212800000, 70],
-        [1393632000000, 100],
-        [1396310400000, 60],
-        [1398902400000, 35]
-      ];
-      const barCustomised2 = [
-        [1388534400000, 90],
-        [1391212800000, 60],
-        [1393632000000, 30],
-        [1396310400000, 73],
-        [1398902400000, 30]
-      ];
-      const barCustomised3 = [
-        [1388534400000, 80],
-        [1391212800000, 40],
-        [1393632000000, 47],
-        [1396310400000, 22],
-        [1398902400000, 24]
-      ];
-      const flotBarsData = [
-        {
-          label: "Apple",
-          data: barCustomised1,
-          bars: {
-            show: true,
-            barWidth: 12 * 24 * 60 * 60 * 300,
-            fill: true,
-            lineWidth: 0,
-            order: 1
-          }
-        },
-        {
-          label: "Google",
-          data: barCustomised2,
-          bars: {
-            show: true,
-            barWidth: 12 * 24 * 60 * 60 * 300,
-            fill: true,
-            lineWidth: 0,
-            order: 2
-          }
-        },
-        {
-          label: "Facebook",
-          data: barCustomised3,
-          bars: {
-            show: true,
-            barWidth: 12 * 24 * 60 * 60 * 300,
-            fill: true,
-            lineWidth: 0,
-            order: 3
-          }
-        }
-      ];
-      const flotBarsOptions = {
-        series: {
-          bars: {
-            show: true,
-            barWidth: 12 * 24 * 60 * 60 * 350,
-            lineWidth: 0,
-            order: 1,
-            fillColor: {
-              colors: [
-                {
-                  opacity: 1
-                },
-                {
-                  opacity: 0.7
-                }
-              ]
-            }
-          }
-        },
-        xaxis: {
-          mode: "time",
-          min: 1387497600000,
-          max: 1400112000000,
-          tickLength: 0,
-          tickSize: [1, "month"],
-          axisLabel: "Month",
-          axisLabelUseCanvas: true,
-          axisLabelFontSizePixels: 13,
-          axisLabelPadding: 15
-        },
-        yaxis: {
-          axisLabel: "Value",
-          axisLabelUseCanvas: true,
-          axisLabelFontSizePixels: 13,
-          axisLabelPadding: 5
-        },
-        grid: {
-          hoverable: true,
-          borderWidth: 0
-        },
-        legend: {
-          backgroundColor: "transparent",
-          labelBoxBorderColor: "none"
-        },
-        colors: ["#64bd63", "#f0b518", "#F7653F"]
-      };
-      $(this.$refs.flotBarChart).plot(flotBarsData, flotBarsOptions);
     },
     initEasyPieChart() {
       $(this.$refs.easyPieChart).easyPieChart({

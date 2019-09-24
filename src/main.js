@@ -17,6 +17,7 @@ import VueFormWizard from 'vue-form-wizard';
 import axios from 'axios';
 import Toasted from 'vue-toasted';
 import VCalendar from 'v-calendar';
+import VueApexCharts from 'vue-apexcharts';
 
 import store from './store';
 import router from './Routes';
@@ -47,6 +48,8 @@ Vue.use(trumbowyg);
 Vue.use(ClientTable, { theme: 'bootstrap4' });
 Vue.use(VueTextareaAutosize);
 Vue.use(mavonEditor);
+Vue.use(VueApexCharts);
+Vue.component('apexchart', VueApexCharts);
 Vue.directive('mask', VueMaskDirective);
 Vue.use(VeeValidate, { fieldsBagName: 'fieldsbag' });
 Vue.use(VueFormWizard);

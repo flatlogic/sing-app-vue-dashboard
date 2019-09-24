@@ -118,7 +118,7 @@
         index="charts"
         :childrenLinks="[
           { header: 'Charts Overview', link: '/app/charts/overview' },
-          { header: 'Flot Charts', link: '/app/charts/flot' },
+          { header: 'Apex Charts', link: '/app/charts/apex' },
           { header: 'Morris Charts', link: '/app/charts/morris' },
           { header: 'Sparkline Charts', link: '/app/charts/sparkline' },
           { header: 'Easy Pie Charts', link: '/app/charts/easy-pie' },
