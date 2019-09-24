@@ -19,9 +19,6 @@ import WidgetsPage from '@/pages/Widgets/Widgets';
 // Charts
 import ChartsPage from '@/pages/Charts/Charts';
 import ApexPage from '@/pages/Charts/Apex/Apex';
-import MorrisPage from '@/pages/Charts/Morris/Morris';
-import SparklinePage from '@/pages/Charts/Sparkline/Sparkline';
-import EasyPiePage from '@/pages/Charts/EasyPie/EasyPie';
 import ProfilePage from '@/pages/Profile/Profile';
 // Profile
 import PackagePage from '@/pages/Package/Package';
@@ -278,21 +275,6 @@ export default new Router({
           path: 'charts/apex',
           name: 'ApexPage',
           component: ApexPage,
-        },
-        {
-          path: 'charts/morris',
-          name: 'MorrisPage',
-          component: MorrisPage,
-        },
-        {
-          path: 'charts/sparkline',
-          name: 'SparklinePage',
-          component: SparklinePage,
-        },
-        {
-          path: 'charts/easy-pie',
-          name: 'EasyPiePage',
-          component: EasyPiePage,
         },
         // grid page
         {

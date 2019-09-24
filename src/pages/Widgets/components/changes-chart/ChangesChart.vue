@@ -26,8 +26,7 @@
           <p class="deemphasize">Yearly Change</p>
         </b-col>
         <b-col xs='6' class="text-right">
-          <div class="sparkline" ref="sparkline" />
-          <Sparklines :data="sparklineData" :options="sparklineOptions" />
+          <Sparklines :data="sparklineData" :options="sparklineOptions" :width="80" :height="25" />
           <p class="deemphasize">GOOG</p>
         </b-col>
       </b-row>
@@ -36,7 +35,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
 import Rickshaw from 'rickshaw';
 import Sparklines from '@/components/Sparklines/Sparklines';
 
@@ -45,8 +43,15 @@ export default {
   components: { Sparklines },
   data() {
     return {
-      sparklineData: [],
-      sparklineOptions: {},
+      sparklineData: [{data: [3, 6, 2, 4, 5, 8, 6, 8]}],
+      sparklineOptions: {
+        colors: ["#64bd63"],
+        plotOptions: {
+          bar: {
+            columnWidth: '50%'
+          }
+        }
+      },
     };
   },
   methods: {
@@ -92,31 +97,6 @@ export default {
 
       hoverDetail.show();
       this.graph.render();
-    },
-    initSparkline() {
-      const data = [3, 6, 2, 4, 5, 8, 6, 8];
-      const dataMax = Math.max.apply(null, data);
-      const backgroundData = data.map(() => dataMax);
-
-      this.sparklineData = [backgroundData, data];
-      this.sparklineOptions = [
-        {
-          type: 'bar',
-          height: 26,
-          barColor: '#eee',
-          barWidth: 7,
-          barSpacing: 5,
-          chartRangeMin: Math.min.apply(null, data),
-          tooltipFormat: new $.SPFormatClass(''),
-        },
-        {
-          composite: true,
-          type: 'bar',
-          barColor: '#64bd63',
-          barWidth: 7,
-          barSpacing: 5,
-        },
-      ];
     },
   },
   mounted() {
