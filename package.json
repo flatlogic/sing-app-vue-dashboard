@@ -36,6 +36,8 @@
     "font-awesome": "4.7.0",
     "glyphicons-halflings": "^1.9.1",
     "govpredict-morris": "^0.5.1",
+    "highcharts": "^7.2.0",
+    "highcharts-vue": "^1.3.5",
     "imports-loader": "^0.8.0",
     "jquery": "^3.3.1",
     "jquery-mapael": "^2.2.0",
