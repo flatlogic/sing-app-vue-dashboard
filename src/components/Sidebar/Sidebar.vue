@@ -118,6 +118,7 @@
         index="charts"
         :childrenLinks="[
           { header: 'Apex Charts', link: '/app/charts/apex' },
+          { header: 'Echarts', link: '/app/charts/echarts' },
         ]"
       />
 

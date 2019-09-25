@@ -48,7 +48,6 @@ Vue.use(trumbowyg);
 Vue.use(ClientTable, { theme: 'bootstrap4' });
 Vue.use(VueTextareaAutosize);
 Vue.use(mavonEditor);
-Vue.use(VueApexCharts);
 Vue.component('apexchart', VueApexCharts);
 Vue.directive('mask', VueMaskDirective);
 Vue.use(VeeValidate, { fieldsBagName: 'fieldsbag' });

@@ -19,6 +19,8 @@ import WidgetsPage from '@/pages/Widgets/Widgets';
 // Charts
 import ChartsPage from '@/pages/Charts/Charts';
 import ApexPage from '@/pages/Charts/Apex/Apex';
+import EchartsPage from '@/pages/Charts/Echarts/Echarts';
+
 import ProfilePage from '@/pages/Profile/Profile';
 // Profile
 import PackagePage from '@/pages/Package/Package';
@@ -275,6 +277,11 @@ export default new Router({
           path: 'charts/apex',
           name: 'ApexPage',
           component: ApexPage,
+        },
+        {
+          path: 'charts/echarts',
+          name: 'EchartsPage',
+          component: EchartsPage,
         },
         // grid page
         {
