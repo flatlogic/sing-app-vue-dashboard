@@ -28,14 +28,7 @@
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
               <Widget class="h-100 mb-0" title="Revenue Breakdown" close :fetchingData="isReceiving">
-                <b-row>
-                  <b-col xs="12" md="6" lg="7" class="text-center">
-                    <div ref="chartContainer" style="width: 100%; height: 100px" />
-                  </b-col>
-                  <b-col xs="12" md="5" lg="4" class="display-flex flex-column justify-content-center">
-                    <div ref="chartLegend" />
-                  </b-col>
-                </b-row>
+                <highcharts :options="donut"></highcharts>
               </Widget>
             </div>
           </b-col>
@@ -211,11 +204,6 @@
 <script>
 import $ from 'jquery';
 import {mapState, mapActions} from 'vuex';
-/* eslint-disable */
-import 'imports-loader?jQuery=jquery,this=>window!flot';
-import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.pie';
-import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.resize';
-/* eslint-enable */
 import Widget from '@/components/Widget/Widget';
 import MainChart from './components/MainChart/MainChart';
 import BigStat from './components/BigStat/BigStat';
@@ -223,10 +211,12 @@ import Calendar from '../Visits/components/Calendar/Calendar';
 import TaskContainer from './components/TaskContainer/TaskContainer';
 import mock from './mock';
 
+import { Chart } from 'highcharts-vue';
+
 export default {
   name: 'Dashboard',
   components: {
-    Widget, MainChart, BigStat, Calendar, TaskContainer,
+    Widget, MainChart, BigStat, Calendar, TaskContainer, highcharts: Chart
   },
   data() {
     return {
@@ -280,7 +270,7 @@ export default {
         date: '1 Mar 2018',
         city: 'Hanoverton',
         status: 'Sent',
-      }],
+      }]
     };
   },
   methods: {
@@ -320,17 +310,64 @@ export default {
       'revenue',
       'mainChart',
       'isReceiving',
-    ])
+    ]),
+    donut() {
+      let series = [
+        {
+          name: 'Revenue',
+          data: this.revenue.map(s => {
+            return {
+              name: s.label,
+              y: s.data
+            }
+          })
+        }
+      ];
+      return {
+        chart: {
+          type: 'pie',
+          height: 120
+        },
+        title: false,
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              enabled: false
+            },
+            showInLegend: true,
+            innerSize: 80,
+            size: 100,
+            states: {
+              hover: {
+                halo: {
+                  size: 1
+                }
+              }
+            }
+          }
+        },
+        colors: ['#ffc247', '#f55d5d', '#9964e3'],
+        legend: {
+          align: 'right',
+          verticalAlign: 'middle',
+          layout: 'vertical',
+          itemStyle: {
+            color: '#495057',
+            fontWeight: 100,
+            fontFamily: 'Montserrat'
+          },
+          itemMarginBottom: 5,
+          symbolRadius: 0
+        },
+        exporting: {
+          enabled: false
+        },
+        series
+      };
+    }
   },
   mounted() {
     this.receiveDataRequest();
-  },
-  updated() {
-    this.initChart();
-    window.addEventListener('resize', this.initChart);
-  },
-  unmounted() {
-    window.removeEventListener('resize', this.initChart);
   },
 };
 </script>

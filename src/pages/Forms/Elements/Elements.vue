@@ -932,7 +932,7 @@
           <b-row>
             <b-col lg="4">
               <h4>Color Options</h4>
-              <p>Sing extends Bootstrap Slider and provides different color options:</p>
+              <p>Sing extends Vue Bootstrap Slider and provides different color options:</p>
               <b-form>
                 <div class="mb-sm">
                   <b-form-slider
@@ -970,7 +970,7 @@
               <h4>Slider Orientation</h4>
               <p>
                 Vertical orientation is also possible. Simply changing <strong>
-                data-slider-orientation </strong>
+                orientation </strong>
                 attribute does the thing.
               </p>
               <b-row>
@@ -1019,7 +1019,7 @@
             </b-col>
             <b-col lg="4">
               <h4>Range Selector</h4>
-              <p>Range selector, options specified via <strong>data-slider-value</strong>
+              <p>Range selector, options specified via <strong>value</strong>
                 attribute as
                 an array. Price range selector:</p>
               <span class="slider-warning">
