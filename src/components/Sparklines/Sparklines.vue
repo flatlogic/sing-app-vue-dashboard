@@ -42,7 +42,7 @@ export default {
           },
           y: {
             title: {
-              formatter: function (seriesName) {
+              formatter: function () {
                 return ''
               }
             }
@@ -53,9 +53,6 @@ export default {
         }, ...this.options
       }
     }
-  },
-  mounted() {
-    console.log(this.data);
   }
 }
 </script>

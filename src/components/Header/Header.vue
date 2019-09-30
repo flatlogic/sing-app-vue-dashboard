@@ -87,7 +87,8 @@
         <a class="d-sm-down-none px-2" id="toggle-chat" href="#" @click="toggleChat">
           <i class="la la-globe" />
         </a>
-        <div id="chat-notification" class="chatNotification hide">
+        <i v-if="chatNotificationIcon" class="chat-notification-sing animated bounceIn"></i>
+        <div id="chat-notification" class="chat-notification" :class="{'notification-hidden': !chatNotificationPopover}">
           <div class="chatNotificationInner">
             <h6 class="title d-flex text-white">
               <span class="thumb-xs">
@@ -115,7 +116,6 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import avatarImage from '@/assets/people/a5.jpg';
-import $ from 'jquery';
 import Notifications from '@/components/Notifications/Notifications';
 
 export default {
@@ -128,14 +128,11 @@ export default {
     }
   },
   computed: {
-    ...mapState('layout', {
-      sidebarClose: state => state.sidebarClose,
-      sidebarStatic: state => state.sidebarStatic,
-    }),
+    ...mapState('layout', ['sidebarClose', 'sidebarStatic', 'chatNotificationIcon', 'chatNotificationPopover']),
     firstUserLetter() { return (this.user.name || this.user.email || "P")[0].toUpperCase(); }
   },
   methods: {
-    ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive']),
+    ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive', 'initApp']),
     ...mapActions('auth', ['logoutUser']),
     switchSidebarMethod() {
       if (!this.sidebarClose) {
@@ -162,22 +159,7 @@ export default {
   },
   created() {
     if (window.innerWidth > 576) {
-      setTimeout(() => {
-        const $chatNotification = $('#chat-notification');
-        $chatNotification.removeClass('hide').addClass('animated fadeIn')
-          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
-            $chatNotification.removeClass('animated fadeIn');
-            setTimeout(() => {
-              $chatNotification.addClass('animated fadeOut')
-                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd'
-                + ' oanimationend animationend', () => {
-                  $chatNotification.addClass('hide');
-                });
-            }, 6000);
-          });
-        $chatNotification.siblings('#toggle-chat')
-          .append('<i class="chat-notification-sing animated bounceIn"></i>');
-      }, 4000);
+      this.initApp();
     }
   },
 };

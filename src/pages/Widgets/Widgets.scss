@@ -143,4 +143,35 @@
       }
     }
   }
+
+  .carousel-enter {
+    transform: translateY(100%);
+  }
+
+  .carousel-leave-to {
+    transform: translateY(-100%);
+  }
+
+  .carousel-enter-active, .carousel-leave-active {
+    transition: all .75s;
+  }
+
+  .carousel-feature-widget {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .flip-enter {
+    transform: rotateY(-90deg);
+  }
+
+  .flip-leave-to {
+    transform: rotateY(90deg);
+  }
+
+  .flip-enter-active, .flip-leave-active {
+    transition: all .5s;
+  }
 }

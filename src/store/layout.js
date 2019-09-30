@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import isScreen from '@/core/screenHelper';
 
 export const DashboardThemes = {
@@ -6,7 +5,14 @@ export const DashboardThemes = {
   DARK: "dark"
 };
 
+export const MessageStates = {
+  READ: "read",
+  NEW: "new",
+  HIDDEN: "hidden"
+};
+
 Object.freeze(DashboardThemes);
+Object.freeze(MessageStates);
 
 export default {
   namespaced: true,
@@ -16,21 +22,35 @@ export default {
     sidebarActiveElement: null,
     chatOpen: false,
     dashboardTheme: DashboardThemes.DARK,
+    chatNotificationIcon: false,
+    chatNotificationPopover: false,
+    chatNotificationMessageState: MessageStates.HIDDEN,
   },
   mutations: {
+    initApp(state) {
+      setTimeout(() => {
+        state.chatNotificationIcon = true;
+        state.chatNotificationPopover = true;
+        setTimeout(() => {
+          state.chatNotificationPopover = false;
+        }, 1000 * 6);
+      }, 1000 * 4);
+    },
+    readMessage(state) {
+      if (state.chatNotificationMessageState !== MessageStates.READ)
+      state.chatNotificationMessageState = MessageStates.READ;
+    },
     toggleChat(state) {
       state.chatOpen = !state.chatOpen;
-      $('.chat-notification-sing').remove();
+      if (state.chatNotificationIcon) {
+        state.chatNotificationIcon = false;
+      }
 
-      setTimeout(() => {
-      // demo: add class & badge to indicate incoming messages from contact
-      // .js-notification-added ensures notification added only once
-        $('#chat-sidebar-user-group').find('.list-group-item:first-child:not(.js-notification-added)')
-          .addClass('active js-notification-added')
-          .find('.fa-circle')
-          .after('<span class="badge badge-danger badge-pill '
-          + 'float-right animated bounceInDown">3</span>');
-      }, 1000);
+      if (state.chatNotificationMessageState === MessageStates.HIDDEN) {
+        setTimeout(() => {
+          state.chatNotificationMessageState = MessageStates.NEW;
+        }, 1000);
+      }
     },
     toggleSidebar(state) {
       const nextState = !state.sidebarStatic;
@@ -69,6 +89,12 @@ export default {
     }
   },
   actions: {
+    initApp({commit}) {
+      commit('initApp');
+    },
+    readMessage({commit}) {
+      commit('readMessage');
+    },
     toggleChat({ commit }) {
       commit('toggleChat');
     },

@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="chart bg-body-light">
-            <div ref="chartFirst" :style="{ height: '200px' }"/>
+            <highcharts :options="chart_one"></highcharts>
           </div>
         </Widget>
       </b-col>
@@ -87,7 +87,7 @@
             </div>
           </div>
           <div class="chart bg-body-light">
-            <div ref="chartSecond" :style="{ height: '200px' }"/>
+            <highcharts :options="chart_two"></highcharts>
           </div>
         </Widget>
       </b-col>
@@ -96,45 +96,66 @@
 </template>
 
 <script>
-import $ from 'jquery';
 import Widget from '@/components/Widget/Widget';
-/* eslint-disable */
-import 'imports-loader?jQuery=jquery,this=>window!flot';
-import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.resize.js';
-/* eslint-enable */
+import { Chart } from 'highcharts-vue';
 
 export default {
   name: 'FlotCharts',
-  components: { Widget },
+  components: { Widget, highcharts: Chart },
   data() {
-    return {
-      flotOptions: {
-        width: '100%',
+    let options = {
+      title: false,
+      chart: {
+        height: 200,
+        margin: 0
+      },
+      exporting: {
+        enabled: false
+      },
+      plotOptions: {
         series: {
-          lines: {
-            show: true,
-            lineWidth: 1,
-            fill: false,
-            fillColor: { colors: [{ opacity: 0.001 }, { opacity: 0.5 }] },
+          lineWidth: 1,
+          marker: {
+            enabled: false,
+            symbol: 'circle'
           },
-          points: {
-            show: false,
-            fill: true,
-          },
-          shadowSize: 0,
-        },
-        legend: false,
-        grid: {
-          show: false,
-          margin: 0,
-          labelMargin: 0,
-          axisMargin: 0,
-          hoverable: true,
-          clickable: true,
-          tickColor: 'rgba(255,255,255,1)',
-          borderWidth: 0,
+          states: {
+            hover: {
+              lineWidth: 1
+            }
+          }
         },
       },
+      legend: false,
+      xAxis: {
+        visible: false,
+        minPadding: 0,
+        maxPadding: 0
+      },
+      yAxis: {
+        visible: false,
+        minPadding: 0,
+        maxPadding: 0
+      }
+    };
+
+    return {
+      chart_one: {
+        ...options,
+        series: this.generateRandomData([{
+          name: 'Visitors', color: '#777',
+        }, {
+          name: 'Charts', color: '#dd5826',
+        }])
+      } ,
+      chart_two: {
+        ...options,
+        series: this.generateRandomData([{
+          name: 'Controllers', color: '#777',
+        }, {
+          name: 'Scopes', color: '#f0b518',
+        }])
+      }
     };
   },
   methods: {
@@ -154,30 +175,13 @@ export default {
         maxValueIndex -= 1;
         data.push({
           data: randomSeries,
-          showLabels: true,
-          label: labels[i].label,
-          labelPlacement: 'below',
-          canvasRender: true,
-          cCcolor: 'red',
           color: labels[i].color,
+          name: labels[i].name
         });
       }
       return data;
     },
-  },
-  mounted() {
-    $.plot($(this.$refs.chartFirst), this.generateRandomData([{
-      label: 'Visitors', color: '#777',
-    }, {
-      label: 'Charts', color: '#dd5826',
-    }]), this.flotOptions);
-
-    $.plot($(this.$refs.chartSecond), this.generateRandomData([{
-      label: 'Controllers', color: '#777',
-    }, {
-      label: 'Scopes', color: '#f0b518',
-    }]), this.flotOptions);
-  },
+  }
 };
 </script>
 

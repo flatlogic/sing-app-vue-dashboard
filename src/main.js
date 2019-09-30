@@ -1,13 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import 'expose-loader?jQuery!jquery' // eslint-disable-line
-import 'expose-loader?$!jquery' // eslint-disable-line
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import * as VueGoogleMaps from 'vue2-google-maps';
 import VueTouch from 'vue-touch';
 import Trend from 'vuetrend';
-import trumbowyg from 'vue-trumbowyg';
 import { ClientTable } from 'vue-tables-2';
 import VueTextareaAutosize from 'vue-textarea-autosize';
 import mavonEditor from 'mavon-editor';
@@ -18,6 +15,7 @@ import axios from 'axios';
 import Toasted from 'vue-toasted';
 import VCalendar from 'v-calendar';
 import VueApexCharts from 'vue-apexcharts';
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
 import store from './store';
 import router from './Routes';
@@ -44,9 +42,9 @@ Vue.use(VueGoogleMaps, {
     key: 'AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg',
   },
 });
-Vue.use(trumbowyg);
 Vue.use(ClientTable, { theme: 'bootstrap4' });
 Vue.use(VueTextareaAutosize);
+Vue.use(CKEditor);
 Vue.use(mavonEditor);
 Vue.component('apexchart', VueApexCharts);
 Vue.directive('mask', VueMaskDirective);

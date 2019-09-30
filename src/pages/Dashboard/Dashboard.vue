@@ -202,7 +202,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
 import {mapState, mapActions} from 'vuex';
 import Widget from '@/components/Widget/Widget';
 import MainChart from './components/MainChart/MainChart';
@@ -283,23 +282,6 @@ export default {
       }
 
       return arr;
-    },
-    initChart() {
-      $.plot($(this.$refs.chartContainer), this.revenue, {
-        series: {
-          pie: {
-            innerRadius: 0.8,
-            show: true,
-            fill: 0.5,
-          },
-        },
-        colors: ['#ffc247', '#f55d5d', '#9964e3'],
-        legend: {
-          noColumns: 1,
-          container: $(this.$refs.chartLegend),
-          labelBoxBorderColor: '#ffffff',
-        },
-      });
     },
   },
   computed: {

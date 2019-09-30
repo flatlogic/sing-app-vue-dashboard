@@ -38,58 +38,40 @@
                 </span>
               </b-col>
               <b-col xs="9">
-                <LiveTile :options="{
-                  'data-mode': 'carousel',
-                  'data-speed': '750',
-                  'data-delay': '3000',
-                  'data-height': '57'
-                }"
-                >
-                  <div>
-                    <h6 class="m-0">VISITS TODAY</h6>
-                    <p class="h2 m-0 fw-normal">12,324</p>
-                  </div>
-                  <div>
-                    <h6 class="m-0">VISITS YESTERDAY</h6>
-                    <p class="h2 m-0 fw-normal">11,885</p>
-                  </div>
-                </LiveTile>
+                <div class="overflow-hidden">
+                  <transition name="carousel" mode="out-in">
+                    <div v-if="carouselFirstGroup" key="first">
+                      <h6 class="m-0">VISITS TODAY</h6>
+                      <p class="h2 m-0 fw-normal">12,324</p>
+                    </div>
+                    <div v-else key="second">
+                      <h6 class="m-0">VISITS YESTERDAY</h6>
+                      <p class="h2 m-0 fw-normal">11,885</p>
+                    </div>
+                  </transition>
+                </div>
               </b-col>
             </b-row>
             <b-row class="flex-nowrap">
               <b-col xs="6">
                 <h6 class="m-0">New Visitors</h6>
-                <LiveTile :options="{
-                  'data-mode': 'carousel',
-                  'data-speed': '750',
-                  'data-delay': '3000',
-                  'data-height': '25'
-                }"
-                >
-                  <div>
-                    <p class="value5">1,332</p>
-                  </div>
-                  <div>
-                    <p class="value5">20.1%</p>
-                  </div>
-                </LiveTile>
+                <div class="overflow-hidden">
+                  <transition name="carousel" mode="out-in">
+                      <p v-bind:key="carouselFirstGroup" class="value5">
+                        {{carouselFirstGroup ? '1,332' : '20.1%'}}
+                      </p>
+                  </transition>
+                </div>
               </b-col>
               <b-col xs="6">
                 <h6 class="m-0">Bounce Rate</h6>
-                <LiveTile :options="{
-                  'data-mode': 'carousel',
-                  'data-speed': '750',
-                  'data-delay': '3000',
-                  'data-height': '26'
-                }"
-                >
-                  <div>
-                    <p class="value5">217</p>
-                  </div>
-                  <div>
-                    <p class="value5">2.3%</p>
-                  </div>
-                </LiveTile>
+                <div class="overflow-hidden">
+                  <transition name="carousel" mode="out-in">
+                    <p v-bind:key="carouselFirstGroup" class="value5">
+                      {{carouselFirstGroup ? '217' : '2.3%'}}
+                    </p>
+                  </transition>
+                </div>
               </b-col>
             </b-row>
           </div>
@@ -97,19 +79,13 @@
       </b-col>
       <b-col lg="3" md="6" xs="12">
         <Widget>
-          <div class="clearfix">
-            <LiveTile :options="{
-              'data-mode': 'carousel',
-              'data-speed': '750',
-              'data-delay': '3000',
-              'data-height': '104'
-            }"
-            >
-              <div>
+          <div class="overflow-hidden">
+            <transition name="carousel" mode="out-in">
+              <div v-if="carouselFirstGroup" key="first">
                 <b-row class="flex-nowrap">
                   <b-col xs="3">
                     <span class="widget-icon">
-                      <i class="fi flaticon-notebook-4" />
+                      <i class="fi flaticon-notebook-4"/>
                     </span>
                   </b-col>
                   <b-col xs="9">
@@ -128,11 +104,11 @@
                   </b-col>
                 </b-row>
               </div>
-              <div>
+              <div v-else key="second">
                 <b-row class="flex-nowrap">
                   <b-col xs="3">
                     <span class="widget-icon">
-                      <i class="fi flaticon-shuffle" />
+                      <i class="fi flaticon-shuffle"/>
                     </span>
                   </b-col>
                   <b-col xs="9">
@@ -151,7 +127,7 @@
                   </b-col>
                 </b-row>
               </div>
-            </LiveTile>
+            </transition>
           </div>
         </Widget>
       </b-col>
@@ -539,10 +515,7 @@
         >
           <div class="widget-body">
             <div class="widget-middle-overflow">
-              <ul
-                class="list-group widget-chat-list-group" data-ui-jq="slimscroll"
-                data-ui-options="{ height: '287px', size: '4px', borderRadius: '1px', opacity: .3 }"
-              >
+              <ul class="list-group widget-chat-list-group">
                 <li class="list-group-item">
                   <span class="thumb">
                     <img class="rounded-circle" src='../../assets/people/a6.jpg' alt="..." />
@@ -613,44 +586,46 @@
     <b-row>
       <b-col lg='3' xs='12'>
         <Widget class="widget-padding-lg">
-          <div class="clearfix">
-            <LiveTile :options="{
-              'data-mode': 'carousel',
-              'data-speed': '750',
-              'data-delay': '3000',
-              'data-height': '313'
-              }"
-            >
-              <div>
-                <h3>Basic & <span class="fw-semi-bold">Advanced</span> Features</h3>
-                <p class="value4 mt-lg">All you need in one app</p>
+          <div class="overflow-hidden">
+            <transition name="carousel" mode="out-in">
+              <div v-if="carouselFirstGroup" key="first" class="carousel-feature-widget">
+                <header>
+                  <h3>Basic & <span class="fw-semi-bold">Advanced</span> Features</h3>
+                  <p class="value4 mt-lg">All you need in one app</p>
+                </header>
+
                 <div class="h5 mt-lg mb-lg">
-                  <i class="fa fa-quote-left opacity-50" />
-                  &nbsp;That&apos;s awesome!  &nbsp;
-                  <i class="fa fa-quote-right opacity-50" />
+                  <i class="fa fa-quote-left opacity-50"/>
+                  &nbsp;That&apos;s awesome! &nbsp;
+                  <i class="fa fa-quote-right opacity-50"/>
                 </div>
-                <div class="widget-footer-bottom">
+
+                <footer>
                   <p>Attention to what&apos;s really important</p>
                   <button class="btn btn-info btn-block mt">Order Now!</button>
-                </div>
+                </footer>
               </div>
-              <div>
-                <h3>Beautiful <span class="fw-semi-bold">Thing</span></h3>
-                <p class="value4 mt-lg">Life-time package support</p>
+              <div v-else key="second" class="carousel-feature-widget">
+                <header>
+                  <h3>Beautiful <span class="fw-semi-bold">Thing</span></h3>
+                  <p class="value4 mt-lg">Life-time package support</p>
+                </header>
+
                 <div class="h5 mt-lg mb-lg">
-                  <i class="fa fa-quote-left opacity-50" />
-                  &nbsp;That&apos;s awesome!  &nbsp;
-                  <i class="fa fa-quote-right opacity-50" />
+                  <i class="fa fa-quote-left opacity-50"/>
+                  &nbsp;That&apos;s awesome! &nbsp;
+                  <i class="fa fa-quote-right opacity-50"/>
                 </div>
-                <div class="widget-footer-bottom">
+
+                <footer>
                   <p>Attention to what&apos;s really important</p>
                   <button class="btn btn-inverse btn-block mt"><span
-                    class="fw-semi-bold text-warning"
+                      class="fw-semi-bold text-warning"
                   >Ready?</span>
                   </button>
-                </div>
+                </footer>
               </div>
-            </LiveTile>
+            </transition>
           </div>
         </Widget>
       </b-col>
@@ -661,79 +636,65 @@
       </b-col>
       <b-col lg='3' xs='12'>
         <Widget class="widget-padding-lg bg-primary text-white">
-          <div class="clearfix">
-            <LiveTile :options="{
-              'data-mode': 'carousel',
-              'data-speed': '300',
-              'data-delay': '3000',
-              'data-height': '313'
-              }"
-            >
-              <div>
+          <div class="overflow-hidden">
+            <transition name="carousel" mode="out-in">
+              <div v-if="carouselFirstGroup" key="first" class="carousel-feature-widget">
                 <p class="h4 mt-xs">
-                  <i class="fa fa-quote-left opacity-50" />
+                  <i class="fa fa-quote-left opacity-50"/>
                   &nbsp;Thanks for the awesome support. That&apos;s awesome!&nbsp;
-                  <i class="fa fa-quote-right opacity-50" />
+                  <i class="fa fa-quote-right opacity-50"/>
                 </p>
-                <div class="widget-footer-bottom">
+                <footer>
                   <span class="thumb pull-left mr">
-                    <img class="rounded-circle" src='../../assets/people/a4.jpg' alt="..." />
+                    <img class="rounded-circle" src='../../assets/people/a4.jpg' alt="..."/>
                   </span>
                   <h4 class="m-0 mb-xs"><span class="fw-semi-bold">Miha</span> Koshir</h4>
                   <p class="text-light">@miha</p>
-                </div>
+                </footer>
               </div>
-              <div>
+              <div v-else key="second" class="carousel-feature-widget">
                 <div class="clearfix mt-xs">
                   <span class="thumb pull-left mr">
-                    <img class="rounded-circle" src='../../assets/people/a3.jpg' alt="..." />
+                    <img class="rounded-circle" src='../../assets/people/a3.jpg' alt="..."/>
                   </span>
                   <h4 class="m-0 mb-xs"><span class="fw-semi-bold">Maryna</span> Ess</h4>
                   <p class="text-light">@ess</p>
                 </div>
-                <div class="widget-footer-bottom">
+                <footer>
                   <p class="h4">
-                    <i class="fa fa-quote-left opacity-50" />
+                    <i class="fa fa-quote-left opacity-50"/>
                     &nbsp;Could have never imagined it would be so great!&nbsp;
-                    <i class="fa fa-quote-right opacity-50" />
+                    <i class="fa fa-quote-right opacity-50"/>
                   </p>
-                </div>
+                </footer>
               </div>
-            </LiveTile>
+            </transition>
           </div>
         </Widget>
       </b-col>
       <b-col lg='3' xs='12'>
-        <LiveTile :options="{
-          'data-mode': 'flip',
-          'data-direction': 'horizontal',
-          'data-speed': '600',
-          'data-delay': '3000',
-          'data-height': '373',
-          'data-play-onhover': 'true',
-          }"
-        >
-          <div>
+        <transition name="flip" mode="out-in">
+          <div v-if="flipFirstGroup" key="first">
             <Widget
-              class="widget-padding-lg widget-md bg-gray-dark text-white"
-              bodyClass="widget-body-container"
+                class="widget-padding-lg widget-md bg-gray-dark text-white"
+                bodyClass="widget-body-container"
             >
               <div class="text-center">
-                <i class="fa fa-child text-warning fa-5x" />
+                <i class="fa fa-child text-warning fa-5x"/>
               </div>
               <h3 class="fw-normal">Sing Web App</h3>
               <div class="widget-footer-bottom">
                 <div class="mb-sm">Cutting-edge tech and design delivered</div>
                 <p>
-                  <button class="btn btn-default btn-block">Hover over me!</button>
+                  <button @mouseover="flipWidget()" class="btn btn-default btn-block">Hover over me!</button>
                 </p>
               </div>
             </Widget>
           </div>
-          <div>
+          <div v-else key="second">
             <Widget class="widget-padding-lg widget-md" bodyClass="widget-body-container">
               <div class="text-center">
-                <i class="fa fa-globe text-primary fa-5x" />
+                <i class="fa fa-globe text-primary fa-5x"/>
               </div>
               <h3 class="fw-normal">Join The Web Now!</h3>
               <div class="widget-footer-bottom">
@@ -744,7 +705,7 @@
               </div>
             </Widget>
           </div>
-        </LiveTile>
+        </transition>
       </b-col>
     </b-row>
   </div>
@@ -753,7 +714,6 @@
 <script>
 import Skycon from '@/components/Skycon/Skycon';
 import Widget from '@/components/Widget/Widget';
-import LiveTile from './components/live-tile/LiveTile';
 import FlotCharts from './components/flot-charts/FlotCharts';
 import Nasdaq from './components/nasdaq/Nasdaq';
 import YearsMap from './components/years-map/YearsMap';
@@ -764,7 +724,6 @@ export default {
   name: 'Widgets',
   components: {
     Widget,
-    LiveTile,
     FlotCharts,
     Skycon,
     Nasdaq,
@@ -772,6 +731,30 @@ export default {
     RealtimeTraffic,
     ChangesChart,
   },
+  data() {
+    return {
+      carouselFirstGroup: true,
+      flipFirstGroup: true,
+      animationInterval: null
+    }
+  },
+  mounted() {
+    this.animationInterval = setInterval(() => {
+      this.slideWidget();
+      this.flipWidget();
+    }, 1000 * 4);
+  },
+  methods: {
+    flipWidget() {
+      this.flipFirstGroup = !this.flipFirstGroup
+    },
+    slideWidget() {
+      this.carouselFirstGroup = !this.carouselFirstGroup
+    }
+  },
+  beforeDestroy() {
+    clearInterval(this.animationInterval);
+  }
 };
 </script>
 

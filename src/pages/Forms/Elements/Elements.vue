@@ -405,7 +405,7 @@
                   Wysiwyg
                   <span class="help-block">With bottom toolbar appended</span>
                 </div>
-                <trumbowyg  id="wysiwyg-textarea" v-model="wygContent"></trumbowyg>
+                <ckeditor :editor="wygEditor" v-model="wygContent"></ckeditor>
                 <div class="text-md-right mt-sm">
                   <b-button variant="danger">Save</b-button>
                   <b-button variant="default">Clear</b-button>
@@ -1163,6 +1163,7 @@ import { bFormSlider } from 'vue-bootstrap-slider';
 import vueDropzone from 'vue2-dropzone';
 import { Chrome } from 'vue-color';
 import Widget from '@/components/Widget/Widget';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default {
   name: 'FormElements',
@@ -1171,6 +1172,7 @@ export default {
   },
   data() {
     return {
+      wygEditor: ClassicEditor,
       typesDropdown: 'Type one',
       wygContent: '',
       mdContent: '',
