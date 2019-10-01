@@ -37,6 +37,7 @@
 <script>
 import Rickshaw from 'rickshaw';
 import Sparklines from '@/components/Sparklines/Sparklines';
+import { mapState } from 'vuex';
 
 export default {
   name: 'ChangesChart',
@@ -53,6 +54,17 @@ export default {
         }
       },
     };
+  },
+  computed: {
+    ...mapState('layout', ['sidebarClose', 'sidebarStatic'])
+  },
+  watch: {
+    sidebarClose() {
+      this.onResizeRickshaw();
+    },
+    sidebarStatic() {
+      this.onResizeRickshaw();
+    }
   },
   methods: {
     onResizeRickshaw() {

@@ -515,7 +515,7 @@
         >
           <div class="widget-body">
             <div class="widget-middle-overflow">
-              <ul class="list-group widget-chat-list-group">
+              <ul class="list-group widget-chat-list-group thin-scroll" style="height: 300px;">
                 <li class="list-group-item">
                   <span class="thumb">
                     <img class="rounded-circle" src='../../assets/people/a6.jpg' alt="..." />
@@ -566,14 +566,12 @@
             </div>
           </div>
           <footer class="bg-body-light bt">
-            <div class="input-group input-group-sm">
-              <input type="text" class="form-control" placeholder="Your message" />
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-default">
-                  Send
-                </button>
-              </span>
-            </div>
+            <b-input-group class="input-group-sm">
+              <b-form-input type="text" placeholder="Your message"></b-form-input>
+              <b-input-group-append>
+                <b-button type="submit" variant="default">Send</b-button>
+              </b-input-group-append>
+            </b-input-group>
           </footer>
         </Widget>
       </b-col>

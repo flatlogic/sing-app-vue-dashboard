@@ -26,9 +26,21 @@
 
 <script>
 import Rickshaw from 'rickshaw';
+import {mapState} from 'vuex';
 
 export default {
   name: 'RealtimeTraffic',
+  computed: {
+    ...mapState('layout', ['sidebarClose', 'sidebarStatic'])
+  },
+  watch: {
+    sidebarClose() {
+      this.onResizeRickshaw();
+    },
+    sidebarStatic() {
+      this.onResizeRickshaw();
+    }
+  },
   methods: {
     initChart() {
       const seriesData = [[], []];
