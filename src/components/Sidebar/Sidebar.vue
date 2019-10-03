@@ -117,6 +117,7 @@
         iconName="flaticon-controls"
         index="charts"
         :childrenLinks="[
+          { header: 'Charts Overview', link: '/app/charts/overview' },
           { header: 'Apex Charts', link: '/app/charts/apex' },
           { header: 'Echarts', link: '/app/charts/echarts' },
           { header: 'Highcharts', link: '/app/charts/highcharts' },

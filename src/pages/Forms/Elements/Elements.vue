@@ -190,9 +190,9 @@
                     <b-input-group>
                       <b-form-input id="bar-field" type="text"></b-form-input>
                       <b-input-group-append>
-                        <b-btn variant="danger"><i class="fa fa-pencil"/></b-btn>
-                        <b-btn variant="warning"><i class="fa fa-plus"/></b-btn>
-                        <b-btn variant="success"><i class="fa fa-refresh"/></b-btn>
+                        <b-btn variant="danger"><i class="la la-pencil"/></b-btn>
+                        <b-btn variant="warning"><i class="la la-plus"/></b-btn>
+                        <b-btn variant="success"><i class="la la-refresh"/></b-btn>
                       </b-input-group-append>
                     </b-input-group>
                   </b-col>
@@ -336,7 +336,7 @@
             <b-form-group>
               <b-input-group>
                 <b-input-group-text slot="prepend" class="bg-transparent">
-                  <i class="fa fa-github-alt" />
+                  <i class="la la-github-alt" />
                 </b-input-group-text>
                 <b-form-input type="text" placeholder="First Name" size="16" />
               </b-input-group>
@@ -344,7 +344,7 @@
             <b-form-group>
               <b-input-group size="lg">
                 <b-input-group-text slot="prepend">
-                  <i class="fa fa-bars" />
+                  <i class="la la-bars" />
                 </b-input-group-text>
                 <b-form-input type="text" placeholder="Username" size="16" />
               </b-input-group>
@@ -353,7 +353,7 @@
               <b-input-group size="sm">
                 <b-form-input type="text" placeholder="City" />
                 <b-input-group-text slot="append" class="bg-danger text-white">
-                  <i class="fa fa-code-fork" />
+                  <i class="la la-code-fork" />
                 </b-input-group-text>
               </b-input-group>
             </b-form-group>
@@ -364,7 +364,7 @@
     <b-row>
       <b-col lg='6' md='12'>
         <Widget
-          title="<h6><i class='fa fa-font'></i>Textareas</h6>"
+          title="<h6><i class='la la-font'></i>Textareas</h6>"
           customHeader settings refresh close
         >
           <b-form>

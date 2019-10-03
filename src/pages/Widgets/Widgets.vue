@@ -254,7 +254,7 @@
               <li><a href="#"><span class="text-danger">
                 <i class="fa fa-heart" /> 427
               </span></a></li>
-              <li><a href="#"><i class="glyphicon glyphicon-comment" /> 98</a></li>
+              <li><a href="#"><i class="la la-comment" /> 98</a></li>
             </ul>
           </footer>
         </Widget>
@@ -566,8 +566,8 @@
             </div>
           </div>
           <footer class="bg-body-light bt">
-            <b-input-group class="input-group-sm">
-              <b-form-input type="text" placeholder="Your message"></b-form-input>
+            <b-input-group size="sm">
+              <b-form-input id="search-field" type="text" placeholder="Your message"></b-form-input>
               <b-input-group-append>
                 <b-button type="submit" variant="default">Send</b-button>
               </b-input-group-append>
