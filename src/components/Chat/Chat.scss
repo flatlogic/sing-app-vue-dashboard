@@ -5,15 +5,15 @@
   overflow: hidden;
   top: 0;
   bottom: 0;
-  right: -250px;
-  width: 250px;
+  right: -$chat-sidebar-width-open;
+  width: $chat-sidebar-width-open;
   background-color: var(--chat-sidebar-bg-color);
   color: #aaa;
   transition: right 0.3s ease-in-out;
 
   @include media-breakpoint-down(md) {
-    right: -275px;
-    width: 275px;
+    right: -(calc(#{$chat-sidebar-width-open} + 25px));
+    width: calc(#{$chat-sidebar-width-open} + 25px);
   }
 
   &.chatOpen {

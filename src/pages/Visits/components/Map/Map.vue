@@ -55,11 +55,14 @@ export default {
     map.zoomControl.align = 'left';
     map.zoomControl.valign = 'bottom';
     map.zoomControl.dy = -20;
-    map.zoomControl.layout = 'horizontal';
     map.zoomControl.minusButton.background.fill = am4core.color("#fff");
     map.zoomControl.minusButton.background.stroke = am4core.color("#ccc");
+    map.zoomControl.minusButton.label.fontWeight = 600;
+    map.zoomControl.minusButton.label.fontSize = 16;
     map.zoomControl.plusButton.background.fill = am4core.color("#fff");
     map.zoomControl.plusButton.background.stroke = am4core.color("#ccc");
+    map.zoomControl.plusButton.label.fontWeight = 600;
+    map.zoomControl.plusButton.label.fontSize = 16;
     let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
     plusButtonHoverState.properties.fill = am4core.color("#e9ecef");
     let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");

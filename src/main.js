@@ -16,6 +16,7 @@ import Toasted from 'vue-toasted';
 import VCalendar from 'v-calendar';
 import VueApexCharts from 'vue-apexcharts';
 import CKEditor from '@ckeditor/ckeditor5-vue';
+import bFormSlider from 'vue-bootstrap-slider';
 
 import store from './store';
 import router from './Routes';
@@ -37,6 +38,7 @@ Vue.use(VCalendar, {
 });
 Vue.use(VueTouch);
 Vue.use(Trend);
+Vue.use(bFormSlider);
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg',

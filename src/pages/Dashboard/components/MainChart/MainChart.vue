@@ -33,6 +33,9 @@ export default {
   data() {
     return {
       chartOptions: {
+        credits: {
+          enabled: false
+        },
         chart: {
           height: 350
         },

@@ -104,6 +104,9 @@ export default {
   components: { Widget, highcharts: Chart },
   data() {
     let options = {
+      credits: {
+        enabled: false
+      },
       title: false,
       chart: {
         height: 200,

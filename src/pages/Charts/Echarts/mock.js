@@ -20,7 +20,8 @@ export default {
     },
     xAxis: {type: 'category'},
     yAxis: {},
-    series: [{type: 'bar'}, {type: 'bar'}, {type: 'bar'}]
+    series: [{type: 'bar'}, {type: 'bar'}, {type: 'bar'}],
+    color: ['#547fff', '#3abf94', '#f55d5d', '#3c484f', ]
   },
   pie: {
     tooltip: {

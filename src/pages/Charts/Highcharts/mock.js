@@ -3,7 +3,7 @@ import usdeur from './usdeur';
 import sunburstData from './sunburstData';
 
 let wordCloudText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum erat ac justo sollicitudin, quis lacinia ligula fringilla. Pellentesque hendrerit, nisi vitae posuere condimentum, lectus urna accumsan libero, rutrum commodo mi lacus pretium erat. Phasellus pretium ultrices mi sed semper.';
-let wordCloudLines = wordCloudText.split(/[,\. ]+/g),
+let wordCloudLines = wordCloudText.split(/[,. ]+/g),
   wordCloudData = Highcharts.reduce(wordCloudLines, function (arr, word) {
     var obj = Highcharts.find(arr, function (obj) {
       return obj.name === word;
@@ -44,6 +44,10 @@ function generateVectorData() {
 
 export default {
   line: {
+    credits: {
+      enabled: false
+    },
+    colors: ['#547fff'],
     chart: {
       zoomType: 'x'
     },
@@ -99,6 +103,9 @@ export default {
     }]
   },
   pie: {
+    credits: {
+      enabled: false
+    },
     chart: {
       type: 'variablepie'
     },
@@ -114,6 +121,7 @@ export default {
         'Area (square km): <b>{point.y}</b><br/>' +
         'Population density (people per square km): <b>{point.z}</b><br/>'
     },
+    colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8'],
     series: [{
       minPointSize: 10,
       innerSize: '20%',
@@ -151,6 +159,10 @@ export default {
     }]
   },
   column3D: {
+    credits: {
+      enabled: false
+    },
+    colors: ['#f55d5d'],
     chart: {
       type: 'column',
       options3d: {
@@ -191,6 +203,9 @@ export default {
     }]
   },
   sunburst: {
+    credits: {
+      enabled: false
+    },
     chart: {
       height: '100%'
     },
@@ -201,6 +216,7 @@ export default {
     subtitle: {
       text: 'Source <href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>'
     },
+    colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8'],
     series: [{
       type: "sunburst",
       data: sunburstData,
@@ -249,6 +265,10 @@ export default {
     }
   },
   vector: {
+    credits: {
+      enabled: false
+    },
+    colors: ['#495057'],
     title: {
       text: 'Highcharts Vector plot'
     },
@@ -269,6 +289,10 @@ export default {
     }]
   },
   wordCloud: {
+    credits: {
+      enabled: false
+    },
+    colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8'],
     series: [{
       type: 'wordcloud',
       data: wordCloudData,

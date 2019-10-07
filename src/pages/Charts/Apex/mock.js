@@ -59,7 +59,8 @@ export default {
       },
       xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-      }
+      },
+      colors: ['#547fff']
     }
   },
   area: {
@@ -89,7 +90,7 @@ export default {
       chart: {
         stacked: true,
       },
-      colors: ['#008FFB', '#00E396', '#CED4DC'],
+      colors: ['#547fff', '#3abf94', '#c1ccd3'],
       dataLabels: {
         enabled: false
       },
@@ -118,6 +119,7 @@ export default {
       data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
     }],
     options: {
+      colors: ['#547fff'],
       chart: {
         height: 350,
         type: 'bar',
@@ -208,7 +210,7 @@ export default {
           color: '#444'
         }
       }
-    }
+    },
   },
   bar: {
     series: [{
@@ -228,7 +230,7 @@ export default {
       chart: {
         stacked: true
       },
-      colors: ['#008FFB', '#FF4560'],
+      colors: ['#547fff', '#e54e9a'],
       plotOptions: {
         bar: {
           horizontal: true,
@@ -306,7 +308,7 @@ export default {
       dataLabels: {
         enabled: false
       },
-
+      colors: ['#547fff', '#3abf94', '#ffc247'],
       stroke: {
         width: [1, 1, 4]
       },
@@ -324,17 +326,17 @@ export default {
         },
         axisBorder: {
           show: true,
-          color: '#008FFB'
+          color: '#547fff'
         },
         labels: {
           style: {
-            color: '#008FFB',
+            color: '#547fff',
           }
         },
         title: {
           text: "Income (thousand crores)",
           style: {
-            color: '#008FFB',
+            color: '#547fff',
           }
         },
         tooltip: {
@@ -350,17 +352,17 @@ export default {
           },
           axisBorder: {
             show: true,
-            color: '#00E396'
+            color: '#3abf94'
           },
           labels: {
             style: {
-              color: '#00E396',
+              color: '#3abf94',
             }
           },
           title: {
             text: "Operating Cashflow (thousand crores)",
             style: {
-              color: '#00E396',
+              color: '#3abf94',
             }
           },
         },
@@ -372,17 +374,17 @@ export default {
           },
           axisBorder: {
             show: true,
-            color: '#FEB019'
+            color: '#ffc247'
           },
           labels: {
             style: {
-              color: '#FEB019',
+              color: '#ffc247',
             },
           },
           title: {
             text: "Revenue (thousand crores)",
             style: {
-              color: '#FEB019',
+              color: '#ffc247',
             }
           }
         },
@@ -415,7 +417,8 @@ export default {
             position: 'bottom'
           }
         }
-      }]
+      }],
+      colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3'],
     }
   },
   donut: {
@@ -431,7 +434,8 @@ export default {
             position: 'bottom'
           }
         }
-      }]
+      }],
+      colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3'],
     }
   },
   radar: {
@@ -443,7 +447,8 @@ export default {
       labels: ['January', 'February', 'March', 'April', 'May', 'June'],
       title: {
         text: 'Basic Radar Chart'
-      }
+      },
+      colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d'],
     }
   },
   radial: {
@@ -578,25 +583,25 @@ export default {
               from: -30,
               to: 5,
               name: 'low',
-              color: '#00A100'
+              color: '#3abf94'
             },
               {
                 from: 6,
                 to: 20,
                 name: 'medium',
-                color: '#128FD9'
+                color: '#547fff'
               },
               {
                 from: 21,
                 to: 45,
                 name: 'high',
-                color: '#FFB200'
+                color: '#ffc247'
               },
               {
                 from: 46,
                 to: 55,
                 name: 'extreme',
-                color: '#FF0000'
+                color: '#f55d5d'
               }
             ]
           }

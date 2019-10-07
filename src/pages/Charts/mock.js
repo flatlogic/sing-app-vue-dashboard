@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts';
 
-let columnColors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a', '#D10CE8'];
-let lineColors = ['#5793f3', '#d14a61', '#675bba'];
+let columnColors = ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8', '#e54e9a'];
+let lineColors = ['#547fff', '#3abf94', '#ffc247'];
 
 export const chartData = {
   apex: {
@@ -41,7 +41,8 @@ export const chartData = {
         labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         theme: {
           monochrome: {
-            enabled: true
+            enabled: true,
+            color: '#547fff',
           }
         },
         legend: false,
@@ -148,6 +149,7 @@ export const chartData = {
       legend: {
         show: false
       },
+      color: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3'],
       series: [
         {
           name: 'Access source',
@@ -198,7 +200,7 @@ export const chartData = {
       legend: {
         data: ['DQ', 'TY', 'SS', 'QG', 'SY', 'DD']
       },
-
+      color: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f'],
       singleAxis: {
         top: 50,
         bottom: 50,
@@ -444,6 +446,7 @@ export let liveChartInterval = null;
 
 export const liveChart = {
   liveChartInterval: null,
+  colors: ['#547fff'],
   chart: {
     height: 170,
     type: 'spline',

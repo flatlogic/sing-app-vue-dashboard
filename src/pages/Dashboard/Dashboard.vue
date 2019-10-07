@@ -310,6 +310,9 @@ export default {
           type: 'pie',
           height: 120
         },
+        credits: {
+          enabled: false
+        },
         title: false,
         plotOptions: {
           pie: {

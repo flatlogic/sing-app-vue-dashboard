@@ -49,7 +49,7 @@
     "vee-validate": "^2.1.0-beta.6",
     "vue": "^2.5.17",
     "vue-apexcharts": "^1.5.0",
-    "vue-bootstrap-slider": "^1.2.0",
+    "vue-bootstrap-slider": "2.1.8",
     "vue-carousel": "^0.18.0",
     "vue-chartjs": "^3.4.2",
     "vue-color": "^2.4.6",

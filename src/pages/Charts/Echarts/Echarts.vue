@@ -13,7 +13,7 @@
             title="<h5>Echarts <span class='fw-semi-bold'>Bar Chart</span></h5>"
             close collapse customHeader
         >
-          <echart :options="ed.bar" :init-options="initOptions" theme="ovilia-green"></echart>
+          <echart :options="ed.bar" :init-options="initOptions"></echart>
         </Widget>
       </b-col>
       <b-col xs='12' lg='6'>
@@ -72,10 +72,6 @@
   import 'echarts/lib/component/title';
   import 'echarts/lib/component/tooltip';
   import 'echarts/lib/component/legend';
-
-  import theme from './theme.json'
-
-  ECharts.registerTheme('ovilia-green', theme);
 
   import echartsData from './mock';
 

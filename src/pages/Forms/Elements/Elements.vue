@@ -1159,7 +1159,6 @@
 import Vue from 'vue';
 import vSelect from 'vue-select';
 import DatePicker from 'vue2-datepicker';
-import { bFormSlider } from 'vue-bootstrap-slider';
 import vueDropzone from 'vue2-dropzone';
 import { Chrome } from 'vue-color';
 import Widget from '@/components/Widget/Widget';
@@ -1168,7 +1167,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default {
   name: 'FormElements',
   components: {
-    Widget, vSelect, DatePicker, bFormSlider, vueDropzone, Chrome,
+    Widget, vSelect, DatePicker, vueDropzone, Chrome,
   },
   data() {
     return {
