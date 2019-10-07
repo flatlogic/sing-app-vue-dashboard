@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="map" ref="chartdiv"></div>
+    <div class="amchartsMap" ref="chartdiv"></div>
     <header class="page-title">
       <h1 class="m-0 mb-sm">Vector <span class="fw-semi-bold">Maps</span></h1>
       <p class="page-title fs-sm m-0">

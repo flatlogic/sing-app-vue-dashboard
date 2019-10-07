@@ -81,7 +81,7 @@
             title="<h5>Apex <span class='fw-semi-bold'>Radial Chart</span></h5>"
             close collapse customHeader
         >
-          <apexchart type="radialBar" :series="cd.radial.series" :options="cd.radar.options"/>
+          <apexchart type="radialBar" :series="cd.radial.series" :options="cd.radial.options"/>
         </Widget>
       </b-col>
     </b-row>
