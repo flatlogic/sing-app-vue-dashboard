@@ -15,7 +15,10 @@
   background: $widget-bg-color;
   border-radius: $border-radius-sm;
   box-shadow: var(--widget-shadow);
-  min-height: 150px;
+
+  &.loading {
+    min-height: 150px;
+  }
 
   [control='collapse'] {
     display: unset;

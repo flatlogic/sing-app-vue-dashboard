@@ -9,7 +9,7 @@
           <span :class="`circle bg-${color} mr-sm`" :style="{ fontSize: '6px' }" />
             Statistic <span class="fw-normal ml-xs">{{product}}</span>
         </h4>
-        <b-dropdown :text="text" variant="default">
+        <b-dropdown :text="text" variant="default" size="sm">
           <b-dropdown-item-button @click="changeText('Daily')">Daily</b-dropdown-item-button>
           <b-dropdown-item-button @click="changeText('Weekly')">Weekly</b-dropdown-item-button>
           <b-dropdown-item-button @click="changeText('Yearly')">Yearly</b-dropdown-item-button>

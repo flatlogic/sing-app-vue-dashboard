@@ -1,5 +1,11 @@
 <template>
-  <section :class="{ widget: true, className, collapsed: state === 'collapse', fullscreened: state === 'fullscreen' }" ref="widget">
+  <section :class="{
+    widget: true,
+    className,
+    collapsed: state === 'collapse',
+    fullscreened: state === 'fullscreen',
+    loading: fetchingData
+  }" ref="widget">
     <h5 v-if="title && typeof title === 'string' && !customHeader" class="title">{{title}}</h5>
     <header v-if="title && customHeader" class="title" v-html="title"></header>
     <div v-if="!customControls && mainControls"
@@ -71,7 +77,7 @@
           :style="{display: state === 'collapse' ? 'none' : ''}"
     >
       <Loader v-if="fetchingData && showLoader" :class="'widget-loader'" :size="40"></Loader>
-      <slot v-else>hello</slot>
+      <slot v-else></slot>
     </div>
   </section>
 </template>
