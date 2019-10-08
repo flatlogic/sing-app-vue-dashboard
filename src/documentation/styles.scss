@@ -1,0 +1,120 @@
+@import '../styles/app';
+
+$body-bg: #FFFBF8;
+
+.documentation-page {
+  position: relative;
+
+   .content {
+      background-color: #FFFBF8;
+      padding-top: $navbar-height*2;
+      min-height: 100vh;
+
+      & :global(.widget) {
+        box-shadow: none;
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+     @include media-breakpoint-up(md) {
+       margin-left: $sidebar-width-open;
+     }
+  }
+
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    height: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    z-index: 1;
+  }
+
+  .company {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    width: inherit;
+    max-width: inherit;
+
+    color: #495057;
+    font-size: 11px;
+    font-weight: 400;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    background-size: contain;
+    border-radius: 50px;
+    padding: 0 25px;
+
+    img {
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: -4px;
+      width: 50px;
+    }
+  }
+
+  .sidebar {
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      width: auto;
+      background: transparent;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: $sidebar-width-open;
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      padding-top: $navbar-height * 2;
+      background: #fff;
+
+      .nav {
+        position: fixed;
+        width: inherit;
+        max-width: inherit;
+        overflow-y: auto;
+        max-height: calc(100vh - 200px);
+      }
+    }
+
+    .headerLink {
+      .sidebar-link {
+        padding-left: 25px;
+        font-weight: $font-weight-semi-bold;
+        color: var(--sidebar-color);
+
+        &:hover {
+          background: $body-bg;
+        }
+
+        .icon {
+          display: none;
+        }
+      }
+
+      .sub-menu {
+        background: $body-bg;
+      }
+    }
+
+    .sidebar-link.router-link-exact-active,
+    a.router-link-exact-active {
+      color: theme-color('warning');
+    }
+  }
+
+  .scrollSpy {
+    color: #32373b;
+  }
+
+  .activeScrollSpy > a,
+  .activeScrollSpy > a:hover,
+  .activeScrollSpy > a:focus {
+    color: theme-color('warning');
+  }
+}

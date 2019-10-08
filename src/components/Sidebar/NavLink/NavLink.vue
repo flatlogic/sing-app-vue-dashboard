@@ -1,6 +1,6 @@
 <template>
   <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, className}">
-    <router-link :to="link">
+    <router-link :to="link" class="sidebar-link">
       <span class="icon">
         <i :class="fullIconName"></i>
       </span>
@@ -10,7 +10,7 @@
   </li>
   <li v-else-if="childrenLinks" :class="{headerLink: true, className}">
     <div @click="() => togglePanelCollapse(link)">
-      <router-link :to="link" event="" class="d-flex">
+      <router-link :to="link" event="" class="d-flex sidebar-link">
         <span class="icon">
           <i :class="fullIconName"></i>
         </span>
@@ -21,7 +21,7 @@
       </router-link>
     </div>
     <b-collapse :id="'collapse' + index" :visible="isActive">
-      <ul>
+      <ul class="sub-menu">
         <NavLink v-for="link in childrenLinks"
           :activeItem="activeItem"
           :header="link.header"

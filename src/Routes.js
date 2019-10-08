@@ -64,6 +64,24 @@ import PopoversPage from '@/pages/Ui/Popovers/Popovers';
 import ProgressPage from '@/pages/Ui/Progress/Progress';
 import TabsPage from '@/pages/Ui/Tabs/Tabs';
 
+import Documentation from '@/documentation/DocumentationLayout';
+import DocLicensesPage from '@/documentation/pages/getting-started/Licenses';
+import DocQuickStartPage from '@/documentation/pages/getting-started/QuickStart';
+import DocOverviewPage from '@/documentation/pages/getting-started/Overview';
+import DocLibsPage from '@/documentation/pages/Libs';
+import DocPagesPage from '@/documentation/pages/Pages';
+import DocAlertsPage from '@/documentation/pages/components/Alerts';
+import DocBadgePage from '@/documentation/pages/components/Badge';
+import DocButtonsPage from '@/documentation/pages/components/Buttons';
+import DocCardPage from '@/documentation/pages/components/Card';
+import DocCarouselPage from '@/documentation/pages/components/Carousel';
+import DocModalPage from '@/documentation/pages/components/Modal';
+import DocNavPage from '@/documentation/pages/components/Nav';
+import DocNavbarPage from '@/documentation/pages/components/Navbar';
+import DocPopoversPage from '@/documentation/pages/components/Popovers';
+import DocProgressPage from '@/documentation/pages/components/Progress';
+import DocTabsPage from '@/documentation/pages/components/Tabs';
+
 import { isAuthenticated } from './mixins/auth';
 
 Vue.use(Router);
@@ -85,6 +103,93 @@ export default new Router({
       path: '/error',
       name: 'Error',
       component: ErrorPage,
+    },
+    {
+      path: '/documentation',
+      name: 'Documentation',
+      component: Documentation,
+      children: [
+        {
+          path: 'getting-started/overview',
+          name: 'Overview',
+          component: DocOverviewPage,
+        },
+        {
+          path: 'getting-started/licenses',
+          name: 'Licenses',
+          component: DocLicensesPage,
+        },
+        {
+          path: 'getting-started/quick-start',
+          name: 'QuickStart',
+          component: DocQuickStartPage,
+        },
+        {
+          path: 'components/alerts',
+          name: 'Alerts',
+          component: DocAlertsPage,
+        },
+        {
+          path: 'components/badge',
+          name: 'Badge',
+          component: DocBadgePage,
+        },
+        {
+          path: 'components/buttons',
+          name: 'Buttons',
+          component: DocButtonsPage,
+        },
+        {
+          path: 'components/card',
+          name: 'Card',
+          component: DocCardPage,
+        },
+        {
+          path: 'components/carousel',
+          name: 'Carousel',
+          component: DocCarouselPage,
+        },
+        {
+          path: 'components/modal',
+          name: 'Modal',
+          component: DocModalPage,
+        },
+        {
+          path: 'components/nav',
+          name: 'Nav',
+          component: DocNavPage,
+        },
+        {
+          path: 'components/navbar',
+          name: 'Navbar',
+          component: DocNavbarPage,
+        },
+        {
+          path: 'components/popovers',
+          name: 'Popovers',
+          component: DocPopoversPage,
+        },
+        {
+          path: 'components/progress',
+          name: 'Progress',
+          component: DocProgressPage,
+        },
+        {
+          path: 'components/tabs',
+          name: 'Tabs',
+          component: DocTabsPage,
+        },
+        {
+          path: 'libs',
+          name: 'Libs',
+          component: DocLibsPage,
+        },
+        {
+          path: 'pages',
+          name: 'Pages',
+          component: DocPagesPage,
+        }
+      ]
     },
     {
       path: '/app',
