@@ -8,7 +8,7 @@ $doc-navbar-height: 80px;
 
    .content {
       background-color: #FFFBF8;
-      padding-top: calc(#{$doc-navbar-height} + #{$spacer});
+      padding-top: calc(#{$doc-navbar-height} + #{2 * $spacer});
       min-height: 100vh;
 
       & :global(.widget) {
@@ -110,18 +110,29 @@ $doc-navbar-height: 80px;
     }
 
     .sidebar-link.router-link-exact-active,
-    a.router-link-exact-active {
+    .sub-menu .router-link-active {
       color: theme-color('warning');
     }
   }
-
-  .scrollSpy {
+  .scrollspy {
     color: #32373b;
-  }
+    position: fixed;
+    overflow-y: auto;
+    max-height: calc(100vh - 130px);
 
-  .activeScrollSpy > a,
-  .activeScrollSpy > a:hover,
-  .activeScrollSpy > a:focus {
-    color: theme-color('warning');
+    .list-group-item {
+      border: none;
+      padding: 5px 0;
+      transition: $transition-base;
+
+      &:hover {
+        color: #32373b;
+        background: none;
+      }
+
+      &.active {
+        color: theme-color('warning');
+      }
+    }
   }
 }

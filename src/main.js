@@ -24,6 +24,8 @@ import App from './App';
 import layoutMixin from './mixins/layout';
 import { AuthMixin } from './mixins/auth';
 import config from './config';
+import Widget from './components/Widget/Widget';
+import Scrollspy from './documentation/pages/ScrollSpyComponent';
 
 axios.defaults.baseURL = config.baseURLApi;
 axios.defaults.headers.common['Content-Type'] = "application/json";
@@ -38,6 +40,8 @@ Vue.use(VCalendar, {
 });
 Vue.use(VueTouch);
 Vue.use(Trend);
+Vue.component('Widget', Widget);
+Vue.component('Scrollspy', Scrollspy);
 Vue.use(bFormSlider);
 Vue.use(VueGoogleMaps, {
   load: {
