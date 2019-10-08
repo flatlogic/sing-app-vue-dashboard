@@ -1,13 +1,14 @@
 @import '../styles/app';
 
 $body-bg: #FFFBF8;
+$doc-navbar-height: 80px;
 
 .documentation-page {
   position: relative;
 
    .content {
       background-color: #FFFBF8;
-      padding-top: $navbar-height*2;
+      padding-top: calc(#{$doc-navbar-height} + #{$spacer});
       min-height: 100vh;
 
       & :global(.widget) {
@@ -20,6 +21,10 @@ $body-bg: #FFFBF8;
      @include media-breakpoint-up(md) {
        margin-left: $sidebar-width-open;
      }
+
+     @include media-breakpoint-down(sm) {
+       padding-top: $doc-navbar-height / 2;
+     }
   }
 
   .header {
@@ -27,7 +32,7 @@ $body-bg: #FFFBF8;
     left: 0;
     right: 0;
     background-color: #fff;
-    height: 80px;
+    height: $doc-navbar-height;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     z-index: 1;
   }
@@ -58,6 +63,11 @@ $body-bg: #FFFBF8;
   }
 
   .sidebar {
+    padding-top: $doc-navbar-height;
+    width: $sidebar-width-open;
+    background: #fff;
+    position: absolute;
+
     @include media-breakpoint-down(sm) {
       position: relative;
       width: auto;
@@ -65,15 +75,12 @@ $body-bg: #FFFBF8;
     }
 
     @include media-breakpoint-up(md) {
-      width: $sidebar-width-open;
-      position: absolute;
       height: 100%;
       left: 0;
       top: 0;
-      padding-top: $navbar-height * 2;
-      background: #fff;
 
       .nav {
+        padding: $spacer 0;
         position: fixed;
         width: inherit;
         max-width: inherit;
