@@ -52,6 +52,7 @@
     "vue-bootstrap-slider": "2.1.8",
     "vue-carousel": "^0.18.0",
     "vue-chartjs": "^3.4.2",
+    "vue-code-highlight": "^0.7.2",
     "vue-color": "^2.4.6",
     "vue-draggable-nested-tree": "^2.0.2",
     "vue-echarts": "^4.0.4",

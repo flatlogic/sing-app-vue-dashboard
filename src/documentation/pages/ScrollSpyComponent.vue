@@ -12,7 +12,6 @@
     name: 'Scrollspy',
     props: {
       title: {type: String},
-      prefix: {type: String},
       ids: {type: Array}
     },
     methods: {

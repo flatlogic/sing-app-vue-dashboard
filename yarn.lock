@@ -6639,6 +6639,10 @@ printj@~1.1.0, printj@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/printj/-/printj-1.1.2.tgz#d90deb2975a8b9f600fb3a1c94e3f4c53c78a222"
 
+prism-es6@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/prism-es6/-/prism-es6-1.2.0.tgz#ead4e0d7809fefc36b9636f1ea4b2cebad074e63"
+
 private@^0.1.6:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
@@ -8419,6 +8423,13 @@ vue-chartjs@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.4.2.tgz#0323e6a99a10a68f38d426899c3994f48596fd23"
 
+vue-code-highlight@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/vue-code-highlight/-/vue-code-highlight-0.7.2.tgz#c19775a47c450af1afa8abc1c66203f2e4fcbb84"
+  dependencies:
+    prism-es6 "^1.2.0"
+    vue "^2.5.16"
+
 vue-color@^2.4.6:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/vue-color/-/vue-color-2.7.0.tgz#31e898370a5786fd6c3007388cb7242db6ba6988"
@@ -8585,7 +8596,7 @@ vue2-google-maps@^0.10.2:
     babel-runtime "^6.26.0"
     marker-clusterer-plus "^2.1.4"
 
-vue@>=2.0.0, vue@^2.5.13, vue@^2.5.17, vue@^2.5.21:
+vue@>=2.0.0, vue@^2.5.13, vue@^2.5.16, vue@^2.5.17, vue@^2.5.21:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
 
