@@ -68,7 +68,7 @@
           </b-card-body>
         </b-collapse>
       </b-card>
-      <h4>Code</h4>
+      <h4 class="mt-5">Code</h4>
       <vue-code-highlight>{{decodeHtml(accordionCode)}}</vue-code-highlight>
       <p class="py-4">For more examples please refer to <a href="https://bootstrap-vue.js.org/docs/components/collapse/"
                                                           target="_blank"
