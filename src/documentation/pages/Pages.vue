@@ -17,25 +17,26 @@
         <vue-code-highlight>// @/Routes.js
 import { isAuthenticated } from './mixins/auth';
 import Layout from '@/components/Layout/Layout';
-
 ...
-
-{
-  path: '/app',
-  name: 'Layout',
-  component: Layout,
-  beforeEnter: (to, from, next) => {
-    let token = localStorage.getItem('token');
-    isAuthenticated(token) ? next() : next({path: '/login'});
-  },
-  children: [...]
-}
-
-...</vue-code-highlight>
+export default new Router({
+routes: [
+  {
+    path: '/app',
+    name: 'Layout',
+    component: Layout,
+    beforeEnter: (to, from, next) => {
+      let token = localStorage.getItem('token');
+      isAuthenticated(token) ? next() : next({path: '/login'});
+    },
+    children: [...]
+  }
+...
+]</vue-code-highlight>
         <p>We are getting <code>token</code> from local storage, that must be saved in local storage after successful
           loginUser function completion. Depends on the result of this action, <code>beforeEnter</code> hook validates token and
           decides to let go further or redirect to the login page. If you don’t need login functionality in your app, you can
           remove this hook.</p>
+        <p>More about vue navigation hooks you can read here: <router-link to="https://router.vuejs.org/guide/advanced/navigation-guards.html">Vue Navigation Guards</router-link></p>
       </Widget>
       <Widget id="Inbox">
         <h3>Inbox</h3>
@@ -107,8 +108,6 @@ import Layout from '@/components/Layout/Layout';
   </b-row>
 </template>
 <script>
-  import { component as VueCodeHighlight } from 'vue-code-highlight';
-
   import ProductCard from '../../pages/Ecommerce/ProductsGrid/components/ProductCard/ProductCard';
   import mock from '../../pages/Ecommerce/mock';
 
@@ -120,8 +119,7 @@ import Layout from '@/components/Layout/Layout';
       }
     },
     components: {
-      ProductCard,
-      VueCodeHighlight
+      ProductCard
     }
   }
 </script>

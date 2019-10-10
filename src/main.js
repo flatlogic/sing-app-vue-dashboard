@@ -17,6 +17,7 @@ import VCalendar from 'v-calendar';
 import VueApexCharts from 'vue-apexcharts';
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import bFormSlider from 'vue-bootstrap-slider';
+import { component as VueCodeHighlight } from 'vue-code-highlight';
 
 import store from './store';
 import router from './Routes';
@@ -40,6 +41,7 @@ Vue.use(VCalendar, {
 });
 Vue.use(VueTouch);
 Vue.use(Trend);
+Vue.component('vue-code-highlight', VueCodeHighlight);
 Vue.component('Widget', Widget);
 Vue.component('Scrollspy', Scrollspy);
 Vue.use(bFormSlider);

@@ -34,7 +34,7 @@ $doc-navbar-height: 80px;
     background-color: #fff;
     height: $doc-navbar-height;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    z-index: 1;
+    z-index: 100;
   }
 
   .company {

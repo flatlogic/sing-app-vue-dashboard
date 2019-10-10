@@ -35,7 +35,7 @@
           { header: 'Navbar', link: '/documentation/components/navbar' },
           { header: 'Popovers & Tooltips', link: '/documentation/components/popovers' },
           { header: 'Progress', link: '/documentation/components/progress' },
-          { header: 'Tabs & Accordion', link: '/documentation/components/tabs-accordion' },
+          { header: 'Tabs & Accordion', link: '/documentation/components/tabs' },
         ]"
       />
       <NavLink
