@@ -280,3 +280,17 @@ table > thead > tr > th {
     margin-right: -$widget-padding-horizontal;
   }
 }
+
+/////// Check List ///////
+.check-list {
+  padding-left: $spacer * 2;
+  & > li {
+    position: relative;
+  }
+  & > li:before {
+    position: absolute;
+    left: -$spacer * 1.5;
+    font-family: LineAwesome;
+    content: "\f17b";
+  }
+}
