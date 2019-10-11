@@ -11,11 +11,6 @@
   color: #aaa;
   transition: right 0.3s ease-in-out;
 
-  @include media-breakpoint-down(md) {
-    right: -(calc(#{$chat-sidebar-width-open} + 25px));
-    width: calc(#{$chat-sidebar-width-open} + 25px);
-  }
-
   &.chatOpen {
     right: 0;
   }

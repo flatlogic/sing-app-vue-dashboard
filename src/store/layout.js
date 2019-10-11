@@ -70,16 +70,18 @@ export default {
       }
     },
     handleSwipe(state, e) {
-      if (e.direction === 4 && !state.chatOpen) {
-        state.sidebarClose = false;
-      }
+      if ('ontouchstart' in window) {
+        if (e.direction === 4 && !state.chatOpen) {
+          state.sidebarClose = false;
+        }
 
-      if (e.direction === 2 && !state.sidebarClose) {
-        state.sidebarClose = true;
-        return;
-      }
+        if (e.direction === 2 && !state.sidebarClose) {
+          state.sidebarClose = true;
+          return;
+        }
 
-      state.chatOpen = e.direction === 2;
+        state.chatOpen = e.direction === 2;
+      }
     },
     changeSidebarActive(state, index) {
       state.sidebarActiveElement = index;
