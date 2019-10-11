@@ -2,7 +2,7 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  publicPath: 'sing-app-vue/',
+  // publicPath: 'sing-app-vue/',
   productionSourceMap: false,
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
