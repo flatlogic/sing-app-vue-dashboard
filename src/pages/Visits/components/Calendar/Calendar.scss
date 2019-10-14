@@ -4,10 +4,11 @@
  * Vue calendar
  */
 
-.vc-container {
+.sing-calendar .vc-container {
   border: none;
   font-family: $font-family-base;
   color: $text-color;
+  border-radius: 0;
 
   .vc-header {
     padding: $widget-padding-vertical $widget-padding-horizontal 0;

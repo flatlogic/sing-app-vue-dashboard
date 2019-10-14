@@ -820,7 +820,7 @@
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-3.12.0.tgz#eb6afe93bcc42488ab99dd80692ef3afbb09ef77"
 
-"@vue/cli-plugin-babel@3.12.0":
+"@vue/cli-plugin-babel@^3.12.0":
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-3.12.0.tgz#2a8ce3d5a030bc5256c3fb212b0cf32ff1de8ea5"
   dependencies:
@@ -830,7 +830,7 @@
     babel-loader "^8.0.5"
     webpack "^4.0.0"
 
-"@vue/cli-plugin-eslint@3.12.0":
+"@vue/cli-plugin-eslint@^3.12.0":
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-3.12.0.tgz#f02990b693bd1f52127f13ce14a1e06d8ad84164"
   dependencies:
@@ -844,7 +844,7 @@
     eslint "^4.19.1"
     eslint-plugin-vue "^4.7.1"
 
-"@vue/cli-service@3.12.0":
+"@vue/cli-service@^3.12.0":
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-3.12.0.tgz#d4578c39b7084793f2b8a5375b4d746295aa36fb"
   dependencies:
@@ -8547,7 +8547,7 @@ vue-tables-2@^1.4.63:
     vue-pagination-2 "^1.6"
     vue-resource "^0.9.0"
 
-vue-template-compiler@2.6.10:
+vue-template-compiler@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.10.tgz#323b4f3495f04faa3503337a82f5d6507799c9cc"
   dependencies:
