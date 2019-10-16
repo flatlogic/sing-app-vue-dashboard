@@ -1,7 +1,8 @@
 const path = require('path');
+let publicPath = process.env.NODE_ENV === 'production' ? 'sing-app-vue/' : '/';
 
 module.exports = {
-  // publicPath: 'sing-app-vue/',
+  publicPath,
   productionSourceMap: false,
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {

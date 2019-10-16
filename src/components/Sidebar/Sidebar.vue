@@ -60,6 +60,14 @@
         badge="9"
         isHeader
       />
+      <NavLink
+          :activeItem="activeItem"
+          header="Documentation"
+          link="/documentation"
+          iconName="flaticon-file"
+          index="documentation"
+          isHeader
+      />
       <h5 class="navTitle">TEMPLATE</h5>
       <NavLink
         :activeItem="activeItem"
