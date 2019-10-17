@@ -241,7 +241,7 @@
                 <td>On the Road</td>
                 <td class="text-right">$25 224.2</td>
                 <td class="text-center">
-                  <div class="sparkline-chart" />
+                  <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
               </tr>
               <tr>
@@ -257,7 +257,7 @@
                 <td>HP Core i7</td>
                 <td class="text-right">$87 346.1</td>
                 <td class="text-center">
-                  <div class="sparkline-chart" />
+                  <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
               </tr>
               <tr>
@@ -273,7 +273,7 @@
                 <td>Let&apos;s Dance</td>
                 <td class="text-right">$57 944.6</td>
                 <td class="text-center">
-                  <div class="sparkline-chart" />
+                  <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
               </tr>
               <tr>
@@ -289,7 +289,7 @@
                 <td>Air Pro</td>
                 <td class="text-right">$118 533.1</td>
                 <td class="text-center">
-                  <div class="sparkline-chart" />
+                  <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
               </tr>
               <tr>
@@ -305,7 +305,7 @@
                 <td>Version Control</td>
                 <td class="text-right">$72 854.5</td>
                 <td class="text-center">
-                  <div class="sparkline-chart" />
+                  <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
               </tr>
             </tbody>
@@ -354,7 +354,7 @@
                   <td>On the Road</td>
                   <td class="text-right">$25 224.2</td>
                   <td class="text-center">
-                    <div class="sparkline-chart" />
+                    <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
                 </tr>
                 <tr>
@@ -370,7 +370,7 @@
                   <td>HP Core i7</td>
                   <td class="text-right">$87 346.1</td>
                   <td class="text-center">
-                    <div class="sparkline-chart" />
+                    <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
                 </tr>
                 <tr>
@@ -386,7 +386,7 @@
                   <td>Let&apos;s Dance</td>
                   <td class="text-right">$57 944.6</td>
                   <td class="text-center">
-                    <div class="sparkline-chart" />
+                    <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
                 </tr>
                 <tr>
@@ -402,7 +402,7 @@
                   <td>Air Pro</td>
                   <td class="text-right">$118 533.1</td>
                   <td class="text-center">
-                    <div class="sparkline-chart" />
+                    <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
                 </tr>
                 <tr>
@@ -418,7 +418,7 @@
                   <td>Version Control</td>
                   <td class="text-right">$72 854.5</td>
                   <td class="text-center">
-                    <div class="sparkline-chart" />
+                    <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
                 </tr>
               </tbody>
@@ -431,14 +431,13 @@
 </template>
 
 <script>
-import $ from 'jquery';
 import Vue from 'vue';
 import Widget from '@/components/Widget/Widget';
-import 'imports-loader?jQuery=jquery,this=>window!jquery-sparkline'; // eslint-disable-line
+import Sparklines from '../../components/Sparklines/Sparklines'
 
 export default {
   name: 'Tables',
-  components: { Widget },
+  components: { Widget, Sparklines },
   data() {
     return {
       tableStyles: [
@@ -549,21 +548,12 @@ export default {
         result.push(Math.floor(Math.random() * 20) + 1);
       }
 
-      return result;
+      return [{data: result}];
     },
-    initCharts() {
+    getRandomColor() {
       const colors = ['#547fff', '#9964e3', '#f55d5d', '#ffc247', '#3abf94'];
-
-      $.each($('.sparkline-chart'), (id, chart) => {
-        $(chart).sparkline(this.getRandomData(), {
-          type: 'bar',
-          barColor: colors[Math.floor(Math.random() * colors.length)],
-        });
-      });
-    },
-  },
-  mounted() {
-    this.initCharts();
+      return {colors: [colors[Math.floor(Math.random() * colors.length)]]}
+    }
   },
 };
 </script>

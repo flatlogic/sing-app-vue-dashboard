@@ -30,14 +30,7 @@
       <b-col lg="3" sm="6" xs="12">
         <div class="pb-xlg h-100">
           <Widget class="h-100 mb-0" title="Revenue Breakdown">
-            <b-row>
-              <b-col xs="12" md="6" lg="7" class="text-center">
-                <div ref="chartContainer" style="height: 100px" />
-              </b-col>
-              <b-col xs="12" md="5" lg="4">
-                <div ref="chartLegend" />
-              </b-col>
-            </b-row>
+            <highcharts :options="donut"></highcharts>
           </Widget>
         </div>
       </b-col>
@@ -248,16 +241,12 @@
 </template>
 
 <script>
-import $ from 'jquery';
-/* eslint-disable */
-import 'imports-loader?jQuery=jquery,this=>window!flot';
-import 'imports-loader?jQuery=jquery,this=>window!flot/jquery.flot.pie';
-/* eslint-enable */
 import Widget from '@/components/Widget/Widget';
+import { Chart } from 'highcharts-vue';
 
 export default {
   name: 'Dashboard',
-  components: { Widget },
+  components: { Widget, highcharts: Chart },
   data() {
     return {
       table: [{
@@ -322,7 +311,7 @@ export default {
 
       return arr;
     },
-    getData() {
+    getRevenueData() {
       const data = [];
       const seriesCount = 3;
       const accessories = ['SMX', 'Direct', 'Networks'];
@@ -335,30 +324,68 @@ export default {
       }
 
       return data;
-    },
-    initChart() {
-      $.plot(this.$refs.chartContainer, this.getData(), {
-        series: {
+    }
+  },
+  computed: {
+    donut() {
+      let revenueData = this.getRevenueData();
+      let series = [
+        {
+          name: 'Revenue',
+          data: revenueData.map(s => {
+            return {
+              name: s.label,
+              y: s.data
+            }
+          })
+        }
+      ];
+      return {
+        chart: {
+          type: 'pie',
+          height: 120
+        },
+        credits: {
+          enabled: false
+        },
+        title: false,
+        plotOptions: {
           pie: {
-            innerRadius: 0.8,
-            show: true,
-            fill: 0.5,
-          },
+            dataLabels: {
+              enabled: false
+            },
+            showInLegend: true,
+            innerSize: 80,
+            size: 100,
+            states: {
+              hover: {
+                halo: {
+                  size: 1
+                }
+              }
+            }
+          }
         },
         colors: ['#ffc247', '#f55d5d', '#9964e3'],
         legend: {
-          noColumns: 1,
-          container: this.$refs.chartLegend,
-          labelBoxBorderColor: '#ffffff',
+          align: 'right',
+          verticalAlign: 'middle',
+          layout: 'vertical',
+          itemStyle: {
+            color: '#495057',
+            fontWeight: 100,
+            fontFamily: 'Montserrat'
+          },
+          itemMarginBottom: 5,
+          symbolRadius: 0
         },
-      });
-    },
-  },
-  mounted() {
-    this.initChart();
-
-    window.addEventListener('resize', this.initChart);
-  },
+        exporting: {
+          enabled: false
+        },
+        series
+      };
+    }
+  }
 };
 </script>
 

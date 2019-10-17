@@ -1,55 +1,46 @@
 <template>
-  <div class="login-page">
+  <div class="auth-page">
     <b-container>
-      <h5 class="logo">
-        <i class="fa fa-circle text-gray" />
-        sing
-        <i class="fa fa-circle text-warning" />
+      <h5 class="auth-logo">
+        <i class="fa fa-circle text-gray"></i>
+        Sing App
+        <i class="fa fa-circle text-warning"></i>
       </h5>
-      <Widget class="mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
-        <p class="text-muted mb-0 mt fs-sm">
-          Use Facebook, Twitter or your email to sign in.
-        </p>
-        <p class="text-muted fs-sm">
-          Don't have an account? Sign up now!
+      <Widget class="widget-auth mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
+        <p class="widget-auth-info">
+            Use your email to sign in.
         </p>
         <form class="mt" @submit.prevent="login">
           <b-alert class="alert-sm" variant="danger" :show="!!errorMessage">
             {{errorMessage}}
           </b-alert>
           <div class="form-group">
-            <input class="form-control no-border" ref="username"
-              required type="text" name="username" placeholder="Username" />
+            <input class="form-control no-border" ref="email" required type="email" name="email" placeholder="Email" />
           </div>
           <div class="form-group">
-            <input class="form-control no-border" ref="password"
-            required type="password" name="password" placeholder="Password" />
+            <input class="form-control no-border" ref="password" required type="password" name="password" placeholder="Password" />
           </div>
-          <div class="clearfix">
-            <div class="btn-toolbar float-right">
-              <b-button type="reset" size="sm" variant="default">Create an Account</b-button>
-              <b-button type="submit" size="sm" variant="inverse">Login</b-button>
-            </div>
-          </div>
-          <div class="row no-gutters mt-3">
-            <div class="col">
-              <div class="abc-checkbox">
-                <input
-                  type="checkbox"
-                  id="checkbox"
-                />
-                <label for="checkbox" class="text-muted fs-sm">Keep me signed in</label>
-              </div>
-            </div>
-            <div class="col">
-              <a class="mt-sm" href="">Trouble with account?</a>
-            </div>
+          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="inverse">Login</b-button>
+          <p class="widget-auth-info">or sign in with</p>
+          <div class="social-buttons">
+            <b-button variant="primary" class="social-button mb-2">
+              <i class="social-icon social-google"></i>
+              <p class="social-text">GOOGLE</p>
+            </b-button>
+            <b-button variant="success" class="social-button">
+              <i class="social-icon social-microsoft"></i>
+              <p class="social-text">MICROSOFT</p>
+            </b-button>
           </div>
         </form>
+        <p class="widget-auth-info">
+          Don't have an account? Sign up now!
+        </p>
+        <router-link class="d-block text-center" to="login">Create an Account</router-link>
       </Widget>
     </b-container>
-    <footer class="footer">
-      2017 &copy; Sing. Admin Dashboard Template.
+    <footer class="auth-footer">
+      2019 &copy; Sing App Vue Admin Dashboard Template.
     </footer>
   </div>
 </template>
@@ -67,12 +58,12 @@ export default {
   },
   methods: {
     login() {
-      const username = this.$refs.username.value;
+      const email = this.$refs.email.value;
       const password = this.$refs.password.value;
 
-      if (username.length !== 0 && password.length !== 0) {
+      if (email.length !== 0 && password.length !== 0) {
         window.localStorage.setItem('authenticated', true);
-        this.$router.push('/app/main/analytics');
+        this.$router.push('/app/dashboard');
       }
     },
   },
@@ -83,5 +74,3 @@ export default {
   },
 };
 </script>
-
-<style src="./Login.scss" lang="scss" scoped />
