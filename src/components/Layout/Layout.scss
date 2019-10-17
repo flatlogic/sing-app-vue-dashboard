@@ -7,7 +7,7 @@
   transition: left $sidebar-transition-time ease-in-out;
 
   &.chatOpen {
-    left: -($sidebar-width-open + $sidebar-width-closed);
+    left: -($chat-sidebar-width-open);
   }
 }
 

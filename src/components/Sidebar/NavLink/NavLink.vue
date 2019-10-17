@@ -1,27 +1,27 @@
 <template>
   <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, className}">
-    <router-link :to="link">
+    <router-link :to="link" class="sidebar-link">
       <span class="icon">
         <i :class="fullIconName"></i>
       </span>
-      {{header}} <sup v-if="label" class="headerLabel">{{label}}</sup>
+      {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
       <b-badge v-if="badge" class="badge rounded-f" variant="warning" pill>{{badge}}</b-badge>
     </router-link>
   </li>
   <li v-else-if="childrenLinks" :class="{headerLink: true, className}">
     <div @click="() => togglePanelCollapse(link)">
-      <router-link :to="link" event="" class="d-flex">
+      <router-link :to="link" event="" class="d-flex sidebar-link">
         <span class="icon">
           <i :class="fullIconName"></i>
         </span>
-        {{header}} <sup v-if="label" class="headerLabel">{{label}}</sup>
+        {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{label}}</sup>
         <div :class="{caretWrapper: true, carretActive: isActive}">
           <i class="fa fa-angle-left" />
         </div>
       </router-link>
     </div>
     <b-collapse :id="'collapse' + index" :visible="isActive">
-      <ul>
+      <ul class="sub-menu">
         <NavLink v-for="link in childrenLinks"
           :activeItem="activeItem"
           :header="link.header"
@@ -35,7 +35,7 @@
   </li>
   <li v-else>
     <router-link :to="index !== 'menu' && link">
-      {{header}} <sup v-if="label" class="headerLabel">{{label}}</sup>
+      {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
     </router-link>
   </li>
 </template>
@@ -57,6 +57,7 @@ export default {
     deep: { type: Number, default: 0 },
     activeItem: { type: String, default: '' },
     label: { type: String },
+    labelColor: { type: String, default: 'warning' },
     index: { type: String },
   },
   data() {
@@ -76,7 +77,7 @@ export default {
     fullIconName() {
       return `fi ${this.iconName}`;
     },
-    isActive() {  
+    isActive() {
       return (this.activeItem
       && this.activeItem.includes(this.index)
       && this.headerLinkWasClicked);

@@ -11,11 +11,13 @@
       <h5 class="navTitle">TODAY</h5>
       <b-list-group id="chat-sidebar-user-group" class="chatSidebarUserGroup">
         <b-list-group-item
-          v-for="conversation in todayConversations.filter(filterConversations)"
-          @click="(e) => openMessages(conversation, e)"
+          v-for="(conversation, index) in todayConversations.filter(filterConversations)"
+          @click="(e) => openMessages(conversation, index)"
           :key="conversation.name"
+          :class="{active: index === 0 && chatNotificationMessageState === messageStates.NEW}"
         >
           <i :class="`fa fa-circle float-right text-${conversation.status}`" />
+          <span v-if="index === 0 && chatNotificationMessageState === messageStates.NEW" class="badge badge-danger badge-pill float-right animated bounceInDown">3</span>
           <span class="thumb-sm float-left mr">
             <img class="rounded-circle" :src="conversation.image" alt="..." />
           </span>
@@ -29,7 +31,7 @@
       <b-list-group id="chat-sidebar-user-group" class="chatSidebarUserGroup">
         <b-list-group-item
           v-for="conversation in lastWeekConversations.filter(filterConversations)"
-          @click="(e) => openMessages(conversation, e)"
+          @click="(e) => openMessages(conversation)"
           :key="conversation.name"
         >
           <i :class="`fa fa-circle float-right text-${conversation.status}`" />
@@ -75,8 +77,7 @@
 
 <script>
 import Vue from 'vue';
-import { mapState } from 'vuex';
-import $ from 'jquery';
+import { mapState, mapActions } from 'vuex';
 
 import a1 from '../../assets/people/a1.jpg';
 import a2 from '../../assets/people/a2.jpg';
@@ -84,11 +85,13 @@ import a3 from '../../assets/people/a3.jpg';
 import a4 from '../../assets/people/a4.jpg';
 import a5 from '../../assets/people/a5.jpg';
 import a6 from '../../assets/people/a6.jpg';
+import { MessageStates } from '../../store/layout';
 
 export default {
   name: 'Chat',
   data() {
     return {
+      messageStates: MessageStates,
       todayConversations: [{
         name: 'Chris Gray',
         status: 'success',
@@ -156,6 +159,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions('layout', ['readMessage']),
     filterConversations(item) {
       const isFindName = item.name.toLowerCase()
         .indexOf(this.searchValue.toLowerCase()) !== -1;
@@ -166,11 +170,13 @@ export default {
     handleSearchInput(value) {
       Vue.set(this, 'searchValue', value);
     },
-    openMessages(conversation, e) {
+    openMessages(conversation, index) {
       Vue.set(this, 'conversation', conversation);
       Vue.set(this, 'chatMessageOpened', false);
 
-      $(e.currentTarget).removeClass('active').find('.badge').remove();
+      if (index === 0) {
+        this.readMessage();
+      }
     },
     addMessage(e) {
       if (e.key === 'Enter' && e.target.value) {
@@ -191,9 +197,7 @@ export default {
     },
   },
   computed: {
-    ...mapState('layout', {
-      chatOpen: state => state.chatOpen,
-    }),
+    ...mapState('layout', ['chatOpen', 'chatNotificationMessageState']),
   },
 };
 </script>

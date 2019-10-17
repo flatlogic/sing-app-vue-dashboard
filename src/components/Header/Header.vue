@@ -38,7 +38,7 @@
         </b-form-group>
       </b-form>
     </b-nav>
-    <a  class="navbarBrand d-md-none">
+    <a  class="navbar-brand d-md-none">
       <i class="fa fa-circle text-gray mr-n-sm" />
       <i class="fa fa-circle text-warning" />
       &nbsp;
@@ -50,8 +50,8 @@
     <b-nav class="ml-auto">
       <b-nav-item-dropdown
         id="basic-nav-dropdown"
-        class="notificationsMenu d-sm-down-none mr-2"
-        extra-menu-classes="notificationsWrapper py-0 animated animated-fast fadeInUp"
+        class="notifications-menu d-sm-down-none mr-2"
+        extra-menu-classes="notifications-wrapper py-0 animated animated-fast fadeInUp"
         right>
         <template slot="button-content">
           <span class="avatar thumb-sm float-left mr-2">
@@ -62,7 +62,7 @@
         </template>
         <Notifications />
       </b-nav-item-dropdown>
-      <b-nav-item-dropdown class="settingsDropdown d-sm-down-none" no-caret right>
+      <b-nav-item-dropdown class="settings-dropdown d-sm-down-none" no-caret right>
         <template slot="button-content">
           <i class="la la-cog px-2" />
         </template>
@@ -81,8 +81,9 @@
         <a class="d-sm-down-none px-2" id="toggle-chat" href="#" @click="toggleChat">
           <i class="la la-globe" />
         </a>
-        <div id="chat-notification" class="chatNotification hide">
-          <div class="chatNotificationInner">
+        <i v-if="chatNotificationIcon" class="chat-notification-sing animated bounceIn"></i>
+        <div id="chat-notification" class="chat-notification" :class="{'notification-hidden': !chatNotificationPopover}">
+          <div class="chat-notification-inner">
             <h6 class="title d-flex text-white">
               <span class="thumb-xs">
                 <img src="../../assets/people/a6.jpg" alt=""
@@ -108,20 +109,16 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import $ from 'jquery';
 import Notifications from '@/components/Notifications/Notifications';
 
 export default {
-  name: 'Headed',
+  name: 'Header',
   components: { Notifications },
   computed: {
-    ...mapState('layout', {
-      sidebarClose: state => state.sidebarClose,
-      sidebarStatic: state => state.sidebarStatic,
-    }),
+    ...mapState('layout', ['sidebarClose', 'sidebarStatic', 'chatNotificationIcon', 'chatNotificationPopover']),
   },
   methods: {
-    ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive']),
+    ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive', 'initApp']),
     switchSidebarMethod() {
       if (!this.sidebarClose) {
         this.switchSidebar(true);
@@ -151,22 +148,7 @@ export default {
   },
   created() {
     if (window.innerWidth > 576) {
-      setTimeout(() => {
-        const $chatNotification = $('#chat-notification');
-        $chatNotification.removeClass('hide').addClass('animated fadeIn')
-          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
-            $chatNotification.removeClass('animated fadeIn');
-            setTimeout(() => {
-              $chatNotification.addClass('animated fadeOut')
-                .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd'
-                + ' oanimationend animationend', () => {
-                  $chatNotification.addClass('hide');
-                });
-            }, 6000);
-          });
-        $chatNotification.siblings('#toggle-chat')
-          .append('<i class="chat-notification-sing animated bounceIn"></i>');
-      }, 4000);
+      this.initApp();
     }
   },
 };
