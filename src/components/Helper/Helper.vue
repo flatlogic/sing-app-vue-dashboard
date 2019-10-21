@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <a href="https://flatlogic.com/admin-dashboards/sing-app-vue"
+                    <a href="https://flatlogic.com/templates/sing-app-vue"
                     target="_blank"
                     role="button"
                     class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">

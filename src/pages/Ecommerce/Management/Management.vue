@@ -13,7 +13,7 @@
           show dismissible
       >
         This page is only available in <a class="text-white font-weight-bold" rel="noreferrer noopener"
-                                          href="https://flatlogic.com/admin-dashboards/sing-app-vue-node-js"
+                                          href="https://flatlogic.com/templates/sing-app-vue-node-js"
                                           target="_blank">Sing App Vue with Node.js</a> integration!
       </b-alert>
     </div>

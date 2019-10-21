@@ -12,7 +12,7 @@
         </p>
         <p class="lead">
           Moreover, there is a version of <a rel="noreferrer noopener"
-                                             href="https://flatlogic.com/admin-dashboards/sing-app-vue-nodejs"
+                                             href="https://flatlogic.com/templates/sing-app-vue-nodejs"
                                              target="_blank">Sing App Vue with Node.js</a>, enhanced with working
           node.js
           backend with authentication, login strategies and basic CRUD functions. Please refer to <a
