@@ -46,7 +46,7 @@
                     class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">
                         Purchase
                     </a>
-                    <a href="http://demo.flatlogic.com/sing-app/documentation/"
+                    <a href="http://demo.flatlogic.com/sing-app-vue/#/documentation/"
                     target="_blank"
                     role="button"
                     class="btn btn-inverse btn-rounded-f btn-block fs-mini">
