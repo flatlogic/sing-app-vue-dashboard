@@ -1,93 +1,94 @@
 <template>
-  <nav
-    :class="{sidebar: true, sidebarStatic, sidebarOpened}"
-    @mouseenter="sidebarMouseEnter"
-    @mouseleave="sidebarMouseLeave"
-  >
-    <header class="logo">
-      <router-link to="/app"><span class="text-warning">Sing</span> App</router-link>
-    </header>
-    <ul class="nav">
-      <NavLink
-        :activeItem="activeItem"
-        header="Dashboard"
-        link="/app/main"
-        iconName="flaticon-home"
-        index="main"
-        :childrenLinks="[
+  <div class="sidebar-wrapper">
+    <nav
+        :class="{sidebar: true, sidebarStatic, sidebarOpened}"
+        @mouseenter="sidebarMouseEnter"
+        @mouseleave="sidebarMouseLeave"
+    >
+      <header class="logo">
+        <router-link to="/app"><span class="text-warning">Sing</span> App</router-link>
+      </header>
+      <ul class="nav">
+        <NavLink
+            :activeItem="activeItem"
+            header="Dashboard"
+            link="/app/main"
+            iconName="flaticon-home"
+            index="main"
+            :childrenLinks="[
           { header: 'Analytics', link: '/app/main/analytics' },
           { header: 'Visits', link: '/app/main/visits' },
           { header: 'Widgets', link: '/app/main/widgets' },
         ]"
-      />
-      <NavLink
-          :activeItem="activeItem"
-          header="E-commerce"
-          link="/app/ecommerce"
-          iconName="flaticon-diamond"
-          index="ecommerce"
-          label="NodeJS"
-          labelColor="danger"
-          :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="E-commerce"
+            link="/app/ecommerce"
+            iconName="flaticon-diamond"
+            index="ecommerce"
+            label="NodeJS"
+            labelColor="danger"
+            :childrenLinks="[
           { header: 'Product Management', link: '/app/ecommerce/management' },
           { header: 'Products Grid', link: '/app/ecommerce/products' },
           { header: 'Product Page', link: '/app/ecommerce/product' },
         ]"
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Sing Package"
-        link="/app/package"
-        iconName="flaticon-database-1"
-        index="package"
-        label="new"
-        isHeader
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Profile"
-        link="/app/profile"
-        iconName="flaticon-user"
-        index="profile"
-        isHeader
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Email"
-        link="/app/email"
-        iconName="flaticon-paper-plane"
-        index="email"
-        badge="9"
-        isHeader
-      />
-      <NavLink
-          :activeItem="activeItem"
-          header="Documentation"
-          link="/documentation"
-          iconName="flaticon-file"
-          index="documentation"
-          isHeader
-      />
-      <h5 class="navTitle">TEMPLATE</h5>
-      <NavLink
-        :activeItem="activeItem"
-        header="Core"
-        link="/app/core"
-        iconName="flaticon-network"
-        index="core"
-        :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Sing Package"
+            link="/app/package"
+            iconName="flaticon-database-1"
+            index="package"
+            label="new"
+            isHeader
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Profile"
+            link="/app/profile"
+            iconName="flaticon-user"
+            index="profile"
+            isHeader
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Email"
+            link="/app/email"
+            iconName="flaticon-paper-plane"
+            index="email"
+            badge="9"
+            isHeader
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Documentation"
+            link="/documentation"
+            iconName="flaticon-file"
+            index="documentation"
+            isHeader
+        />
+        <h5 class="navTitle">TEMPLATE</h5>
+        <NavLink
+            :activeItem="activeItem"
+            header="Core"
+            link="/app/core"
+            iconName="flaticon-network"
+            index="core"
+            :childrenLinks="[
           { header: 'Typography', link: '/app/core/typography' },
           { header: 'Colors', link: '/app/core/colors' },
           { header: 'Grid', link: '/app/core/grid' },
         ]"
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="UI Elements"
-        link="/app/ui"
-        iconName="flaticon-layers"
-        index="ui"
-        :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="UI Elements"
+            link="/app/ui"
+            iconName="flaticon-layers"
+            index="ui"
+            :childrenLinks="[
           { header: 'Alerts', link: '/app/ui/alerts' },
           { header: 'Badge', link: '/app/ui/badge' },
           { header: 'Buttons', link: '/app/ui/buttons' },
@@ -105,70 +106,70 @@
           { header: 'Progress', link: '/app/ui/progress' },
           { header: 'Tabs & Accordion', link: '/app/ui/tabs' },
         ]"
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Forms"
-        link="/app/forms"
-        iconName="flaticon-list"
-        index="forms"
-        :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Forms"
+            link="/app/forms"
+            iconName="flaticon-list"
+            index="forms"
+            :childrenLinks="[
           { header: 'Form Elements', link: '/app/forms/elements' },
           { header: 'Form Validation', link: '/app/forms/validation' },
           { header: 'Forms Wizard', link: '/app/forms/wizard' },
         ]"
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Charts"
-        link="/app/charts"
-        iconName="flaticon-controls"
-        index="charts"
-        :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Charts"
+            link="/app/charts"
+            iconName="flaticon-controls"
+            index="charts"
+            :childrenLinks="[
           { header: 'Charts Overview', link: '/app/charts/overview' },
           { header: 'Apex Charts', link: '/app/charts/apex' },
           { header: 'Echarts', link: '/app/charts/echarts' },
           { header: 'Highcharts', link: '/app/charts/highcharts' },
         ]"
-      />
+        />
 
-      <NavLink
-        :activeItem="activeItem"
-        header="Grid"
-        link="/app/grid"
-        iconName="flaticon-menu-4"
-        index="grid"
-        isHeader
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Tables"
-        link="/app/tables"
-        iconName="flaticon-equal-1"
-        index="tables"
-        :childrenLinks="[
+        <NavLink
+            :activeItem="activeItem"
+            header="Grid"
+            link="/app/grid"
+            iconName="flaticon-menu-4"
+            index="grid"
+            isHeader
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Tables"
+            link="/app/tables"
+            iconName="flaticon-equal-1"
+            index="tables"
+            :childrenLinks="[
           { header: 'Tables Basic', link: '/app/tables/basic' },
           { header: 'Tables Dynamic', link: '/app/tables/dynamic' },
         ]"
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Maps"
-        link="/app/maps"
-        iconName="flaticon-map-location"
-        index="maps"
-        :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Maps"
+            link="/app/maps"
+            iconName="flaticon-map-location"
+            index="maps"
+            :childrenLinks="[
           { header: 'Google Maps', link: '/app/maps/google' },
           { header: 'Amcharts Maps', link: '/app/maps/amcharts' },
         ]"
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Extra"
-        link="/app/extra"
-        iconName="flaticon-star"
-        index="extra"
-        :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Extra"
+            link="/app/extra"
+            iconName="flaticon-star"
+            index="extra"
+            :childrenLinks="[
           { header: 'Calendar', link: '/app/extra/calendar' },
           { header: 'Invoice', link: '/app/extra/invoice' },
           { header: 'Login Page', link: '/login' },
@@ -177,14 +178,14 @@
           { header: 'Search Result', link: '/app/extra/search' },
           { header: 'Time Line', link: '/app/extra/time-line' },
         ]"
-      />
-      <NavLink
-        :activeItem="activeItem"
-        header="Menu Levels"
-        link="/app/menu"
-        iconName="flaticon-folder-10"
-        index="menu"
-        :childrenLinks="[
+        />
+        <NavLink
+            :activeItem="activeItem"
+            header="Menu Levels"
+            link="/app/menu"
+            iconName="flaticon-folder-10"
+            index="menu"
+            :childrenLinks="[
           {
             header: 'Level 1.1', link: '/app/menu/level1',
           },
@@ -223,52 +224,53 @@
             ],
           },
         ]"
-      />
-    </ul>
-    <p>
-    <h5 class="navTitle">
-      LABELS
-      <a class="actionLink">
-        <i class="la la-plus float-right" />
-      </a>
-    </h5>
-    <ul class="sidebarLabels">
-      <li>
-        <a href="#">
-          <i class="fa fa-circle text-warning mr-2" />
-          <span class="labelName">My Recent</span>
+        />
+      </ul>
+      <p>
+      <h5 class="navTitle">
+        LABELS
+        <a class="actionLink">
+          <i class="la la-plus float-right"/>
         </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-circle text-gray mr-2" />
-          <span class="labelName">Starred</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-circle text-danger mr-2" />
-          <span class="labelName">Background</span>
-        </a>
-      </li>
-    </ul>
-    <h5 class="navTitle">
-      PROJECTS
-    </h5>
-    <div class="sidebarAlerts">
-      <b-alert
-        v-for="alert in alerts"
-        :key="alert.id"
-        class="sidebarAlert" variant="transparent"
-        show dismissible
-      >
-        <span>{{alert.title}}</span><br />
-        <b-progress class="sidebarProgress progress-xs mt-1"
-          :variant="alert.color" :value="alert.value" :max="100" />
-        <small>{{alert.footer}}</small>
-      </b-alert>
-    </div>
-  </nav>
+      </h5>
+      <ul class="sidebarLabels">
+        <li>
+          <a href="#">
+            <i class="fa fa-circle text-warning mr-2"/>
+            <span class="labelName">My Recent</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-circle text-gray mr-2"/>
+            <span class="labelName">Starred</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-circle text-danger mr-2"/>
+            <span class="labelName">Background</span>
+          </a>
+        </li>
+      </ul>
+      <h5 class="navTitle">
+        PROJECTS
+      </h5>
+      <div class="sidebarAlerts">
+        <b-alert
+            v-for="alert in alerts"
+            :key="alert.id"
+            class="sidebarAlert" variant="transparent"
+            show dismissible
+        >
+          <span>{{alert.title}}</span><br/>
+          <b-progress class="sidebarProgress progress-xs mt-1"
+                      :variant="alert.color" :value="alert.value" :max="100"/>
+          <small>{{alert.footer}}</small>
+        </b-alert>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>

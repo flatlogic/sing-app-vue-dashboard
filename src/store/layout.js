@@ -1,4 +1,5 @@
 import isScreen from '@/core/screenHelper';
+import config from '../config';
 
 export const DashboardThemes = {
   LIGHT: "light",
@@ -11,14 +12,36 @@ export const MessageStates = {
   HIDDEN: "hidden"
 };
 
+export const NavbarTypes = {
+  STATIC: "static",
+  FLOATING: "floating",
+};
+
+export const SidebarTypes = {
+  SOLID: "solid",
+  TRANSPARENT: "transparent",
+};
+
+export const LayoutComponents = {
+  NAVBAR: "navbar",
+  SIDEBAR: "sidebar",
+};
+
 Object.freeze(DashboardThemes);
 Object.freeze(MessageStates);
+Object.freeze(NavbarTypes);
+Object.freeze(SidebarTypes);
+Object.freeze(LayoutComponents);
 
 export default {
   namespaced: true,
   state: {
     sidebarClose: false,
     sidebarStatic: false,
+    sidebarColor: config.app.colors.sidebar,
+    navbarColor: config.app.colors.navbar,
+    navbarType: NavbarTypes.STATIC,
+    sidebarType: SidebarTypes.SOLID,
     sidebarActiveElement: null,
     chatOpen: false,
     dashboardTheme: DashboardThemes.DARK,
@@ -88,6 +111,13 @@ export default {
     },
     changeTheme(state, payload) {
       state.dashboardTheme = payload;
+    },
+    updateLayoutComponentType(state, payload) {
+      state[payload.component + 'Type'] = payload.type;
+    },
+    updateLayoutComponentColor(state, payload) {
+      state[payload.component + 'Color'] = payload.color;
+      document.querySelector('.root.sing-dashboard').style.setProperty(`--${payload.component}-bg`, payload.color);
     }
   },
   actions: {
@@ -114,6 +144,12 @@ export default {
     },
     changeTheme({commit}, theme) {
       commit('changeTheme', theme);
-    }
+    },
+    updateLayoutComponentType({commit}, payload) {
+      commit('updateLayoutComponentType', payload)
+    },
+    updateLayoutComponentColor({commit}, payload) {
+      commit('updateLayoutComponentColor', payload)
+    },
   },
 };

@@ -1,10 +1,12 @@
 @import '../../styles/app';
 
 .header {
+  height: $navbar-height;
   z-index: 100;
   padding: 0 1.85rem 0;
   background: var(--navbar-bg);
   box-shadow: var(--navbar-shadow);
+  transition: $transition-base;
 
   @include media-breakpoint-down(md) {
     padding: 7px 10px;
@@ -12,6 +14,16 @@
 
   .la-globe {
     padding-top: 5px;
+  }
+
+  &.navbar-floating-type {
+    margin: $spacer $content-padding 0;
+    border-radius: $border-radius;
+
+    @media (max-width: breakpoint-max(sm)) {
+      margin-left: $content-padding-sm;
+      margin-right: $content-padding-sm;
+    }
   }
 }
 

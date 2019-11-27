@@ -1,16 +1,14 @@
 <template>
     <div :class="{ 'theme-helper': true, 'theme-helper-opened': opened }">
+        <div class="theme-helper-toggler" @click="toggle">
+            <div class="theme-helper-spinner bg-warning text-white">
+                <i class="la la-cog"></i>
+                <i class="la la-cog fs-smaller"></i>
+            </div>
+        </div>
         <section class="widget theme-helper-content">
-            <header class="theme-helper-header d-flex p-0">
-                <div class="theme-helper-toggler" @click="toggle">
-                    <div class="theme-helper-spinner bg-warning text-white">
-                        <i class="la la-cog"></i>
-                        <i class="la la-cog fs-smaller"></i>
-                    </div>
-                </div>
-                <h6>Theme</h6>
-            </header>
             <div class="widget-body mt-3">
+                <h5>Theme</h5>
                 <div class="theme-switcher">
                     <div class="theme mb-3">
                         <input :checked="dashboardTheme === dashboardThemes.LIGHT"
@@ -38,6 +36,51 @@
                             <img class="theme-image" src="../../assets/theme-dark.png" alt="dark theme"/>
                         </label>
                     </div>
+                </div>
+                <div class="theme-settings">
+                    <h5>Navbar Type</h5>
+                    <div class="form-group row">
+                      <div class="abc-radio">
+                        <input type="radio" name="navbar-type" :value="navbarTypes.STATIC" id="navbar_static"
+                               :checked="navbarType === navbarTypes.STATIC" @change="updateLayoutComponentType({component: layoutComponents.NAVBAR, type: navbarTypes.STATIC})">
+                        <label for="navbar_static">Static</label>
+                      </div>
+                      <div class="abc-radio">
+                        <input type="radio" name="navbar-type" :value="navbarTypes.FLOATING" id="navbar_floating"
+                               :checked="navbarType === navbarTypes.FLOATING" @change="updateLayoutComponentType({component: layoutComponents.NAVBAR, type: navbarTypes.FLOATING})">
+                        <label for="navbar_floating">Floating</label>
+                      </div>
+                    </div>
+
+                    <h5>Navbar Color</h5>
+                    <colorpicker
+                        :colors="Object.values(appConfig.colors)"
+                        :activeColor="navbarColor"
+                        @change="updateLayoutComponentColor({component: layoutComponents.NAVBAR, color: $event})"
+                    ></colorpicker>
+
+                    <h5>Sidebar Type</h5>
+                    <div class="form-group row">
+                      <div class="abc-radio">
+                        <input type="radio" name="sidebar-type" :value="sidebarTypes.TRANSPARENT" id="sidebar_transparent"
+                               :checked="sidebarType === sidebarTypes.TRANSPARENT"
+                               @change="updateLayoutComponentType({component: layoutComponents.SIDEBAR, type: sidebarTypes.TRANSPARENT})">
+                        <label for="sidebar_transparent">Transparent</label>
+                      </div>
+                      <div class="abc-radio">
+                        <input type="radio" name="sidebar-type" :value="sidebarTypes.SOLID" id="sidebar_solid"
+                               :checked="sidebarType === sidebarTypes.SOLID"
+                               @change="updateLayoutComponentType({component: layoutComponents.SIDEBAR, type: sidebarTypes.SOLID})">
+                        <label for="sidebar_solid">Solid</label>
+                      </div>
+                    </div>
+
+                    <h5>Sidebar Color</h5>
+                    <colorpicker
+                        :colors="Object.values(appConfig.colors)"
+                        :activeColor="sidebarColor"
+                        @change="updateLayoutComponentColor({component: layoutComponents.SIDEBAR, color: $event})"
+                    ></colorpicker>
                 </div>
                 <div class="mt-4">
                     <a href="https://flatlogic.com/templates/sing-app-vue"
@@ -91,23 +134,25 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
+import Colorpicker from '../Colorpicker/Colorpicker';
 const { mapState, mapActions } = createNamespacedHelpers('layout');
 
 export default {
     name: 'Helper',
-    data() {
+  components: {Colorpicker},
+  data() {
         return {
-            opened: false
+            opened: false,
         }
     },
     computed: {
-        ...mapState(['dashboardTheme'])
+        ...mapState(['dashboardTheme', 'navbarColor', 'sidebarColor', 'navbarType', 'sidebarType'])
     },
     methods: {
         toggle() {
             this.opened = !this.opened;
         },
-        ...mapActions(['changeTheme'])
+        ...mapActions(['changeTheme', 'updateLayoutComponentType', 'updateLayoutComponentColor'])
     }
 };
 </script>

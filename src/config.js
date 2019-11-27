@@ -11,5 +11,17 @@ export default {
   auth: {
       email: 'admin@flatlogic.com',
       password: 'password'
+  },
+  app: {
+    colors: {
+      sidebar: "#313947",
+      navbar: "#ffffff",
+      primary: "#547fff",
+      secondary: "#798892",
+      success: "#3abf94",
+      info: "#9964e3",
+      warning: "#ffc247",
+      danger: "#f55d5d",
+    },
   }
 };

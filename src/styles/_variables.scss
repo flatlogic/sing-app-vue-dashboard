@@ -89,6 +89,7 @@ $body-bg-light: lighten($body-bg, 3%);
 $grid-gutter-width: 40px;
 
 $content-padding: 40px;
+$content-padding-sm: 15px;
 
 $nav-link-padding: 10px;
 
@@ -123,6 +124,11 @@ $input-btn-line-height: 1.5;
 
 $input-btn-padding-y-sm: 0.4rem;
 $input-btn-padding-x-sm: 0.8rem;
+
+//== Theme Helper
+//
+
+$helper-width: 300px;
 
 //== Navbar
 //

@@ -115,7 +115,7 @@
     padding-top: 100px;
     right: -100%;
     transition: right 0.2s ease-in-out;
-    background-color: var(--sidebar-bg-color);
+    background-color: var(--sidebar-bg);
 
     :global .list-group {
       position: absolute;

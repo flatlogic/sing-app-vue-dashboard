@@ -1,9 +1,14 @@
-import { DashboardThemes } from '../store/layout';
+import { DashboardThemes, NavbarTypes, SidebarTypes, LayoutComponents } from '../store/layout';
+import config from '../config';
 
 export default {
     data: () => {
         return {
-            dashboardThemes: DashboardThemes
+            dashboardThemes: DashboardThemes,
+            navbarTypes: NavbarTypes,
+            sidebarTypes: SidebarTypes,
+            layoutComponents: LayoutComponents,
+            appConfig: config.app,
         }
     },
   methods: {

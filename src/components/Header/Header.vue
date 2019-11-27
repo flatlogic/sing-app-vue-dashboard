@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="header d-print-none">
+  <b-navbar class="header d-print-none" :class="[navbarTypeClass]">
     <b-nav>
       <b-nav-item>
         <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod" id="barsTooltip">
@@ -50,7 +50,7 @@
     <b-nav class="ml-auto">
       <b-nav-item-dropdown
         id="basic-nav-dropdown"
-        class="notificationsMenu d-sm-down-none mr-2"
+        class="notificationsMenu d-md-down-none mr-2"
         extra-menu-classes="notificationsWrapper py-0 animated animated-fast fadeInUp"
         right>
         <template slot="button-content">
@@ -128,8 +128,11 @@ export default {
     }
   },
   computed: {
-    ...mapState('layout', ['sidebarClose', 'sidebarStatic', 'chatNotificationIcon', 'chatNotificationPopover']),
-    firstUserLetter() { return (this.user.name || this.user.email || "P")[0].toUpperCase(); }
+    ...mapState('layout', ['sidebarClose', 'sidebarStatic', 'chatNotificationIcon', 'chatNotificationPopover', "navbarType"]),
+    firstUserLetter() { return (this.user.name || this.user.email || "P")[0].toUpperCase(); },
+    navbarTypeClass: function () {
+      return "navbar-" + this.navbarType + "-type"
+    }
   },
   methods: {
     ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive', 'initApp']),

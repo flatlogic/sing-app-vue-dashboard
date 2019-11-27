@@ -1,15 +1,29 @@
 @import '../../styles/app';
 .sidebar {
+  position: absolute;
   width: $sidebar-width-open;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-color);
+}
+
+.sidebar-wrapper {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: var(--sidebar-bg-color);
-  color: var(--sidebar-color);
   overflow-y: auto;
+  overflow-x: hidden;
+  width: $sidebar-width-open;
+  transition: width $sidebar-transition-time ease-in-out;
+  //@include scroll-bar($sidebar-scrollbar-bg);
+}
 
-  @include scroll-bar($sidebar-scrollbar-bg);
+.sidebarClose .sidebar-wrapper {
+  width: $sidebar-width-closed;
+
+  @include media-breakpoint-down(sm) {
+    width: 0;
+  }
 }
 
 .logo {
@@ -29,7 +43,7 @@
 }
 
 .sidebarClose .logo {
-  width: 50px;
+  width: $sidebar-width-closed;
 }
 
 .sidebarStatic .logo {
