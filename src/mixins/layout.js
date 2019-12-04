@@ -1,11 +1,11 @@
-import { DashboardThemes, NavbarTypes, SidebarTypes, LayoutComponents } from '../store/layout';
+import { NavbarTypes, SidebarTypes, LayoutComponents, NavbarColorSchemes } from '../store/layout';
 import config from '../config';
 
 export default {
     data: () => {
         return {
-            dashboardThemes: DashboardThemes,
             navbarTypes: NavbarTypes,
+            navbarColorSchemes: NavbarColorSchemes,
             sidebarTypes: SidebarTypes,
             layoutComponents: LayoutComponents,
             appConfig: config.app,

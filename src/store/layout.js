@@ -1,10 +1,6 @@
 import isScreen from '@/core/screenHelper';
 import config from '../config';
-
-export const DashboardThemes = {
-  LIGHT: "light",
-  DARK: "dark"
-};
+import chroma from 'chroma-js';
 
 export const MessageStates = {
   READ: "read",
@@ -17,6 +13,11 @@ export const NavbarTypes = {
   FLOATING: "floating",
 };
 
+export const NavbarColorSchemes = {
+  LIGHT: "light",
+  DARK: "dark",
+};
+
 export const SidebarTypes = {
   SOLID: "solid",
   TRANSPARENT: "transparent",
@@ -27,9 +28,9 @@ export const LayoutComponents = {
   SIDEBAR: "sidebar",
 };
 
-Object.freeze(DashboardThemes);
 Object.freeze(MessageStates);
 Object.freeze(NavbarTypes);
+Object.freeze(NavbarColorSchemes);
 Object.freeze(SidebarTypes);
 Object.freeze(LayoutComponents);
 
@@ -40,11 +41,11 @@ export default {
     sidebarStatic: false,
     sidebarColor: config.app.colors.sidebar,
     navbarColor: config.app.colors.navbar,
+    navbarColorScheme: NavbarColorSchemes.LIGHT,
     navbarType: NavbarTypes.STATIC,
     sidebarType: SidebarTypes.SOLID,
     sidebarActiveElement: null,
     chatOpen: false,
-    dashboardTheme: DashboardThemes.DARK,
     chatNotificationIcon: false,
     chatNotificationPopover: false,
     chatNotificationMessageState: MessageStates.HIDDEN,
@@ -109,15 +110,13 @@ export default {
     changeSidebarActive(state, index) {
       state.sidebarActiveElement = index;
     },
-    changeTheme(state, payload) {
-      state.dashboardTheme = payload;
-    },
     updateLayoutComponentType(state, payload) {
       state[payload.component + 'Type'] = payload.type;
     },
     updateLayoutComponentColor(state, payload) {
       state[payload.component + 'Color'] = payload.color;
       document.querySelector('.root.sing-dashboard').style.setProperty(`--${payload.component}-bg`, payload.color);
+      state.navbarColorScheme = chroma(payload.color).luminance() < 0.4 ? NavbarColorSchemes.DARK : NavbarColorSchemes.LIGHT;
     }
   },
   actions: {

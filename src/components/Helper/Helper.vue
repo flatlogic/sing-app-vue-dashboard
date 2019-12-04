@@ -8,35 +8,7 @@
         </div>
         <section class="widget theme-helper-content">
             <div class="widget-body mt-3">
-                <h5>Theme</h5>
-                <div class="theme-switcher">
-                    <div class="theme mb-3">
-                        <input :checked="dashboardTheme === dashboardThemes.LIGHT"
-                               v-on:click="changeTheme(dashboardThemes.LIGHT)"
-                               type="radio"
-                               id="css-light"
-                               :value="dashboardThemes.LIGHT"
-                               name="theme-variant"
-                               aria-label="Sing Light"
-                        />
-                        <label for="css-light">
-                            <img class="theme-image" src="../../assets/theme-light.png" alt="light theme"/>
-                        </label>
-                    </div>
-                    <div class="theme mb-3">
-                        <input :checked="dashboardTheme === dashboardThemes.DARK"
-                               v-on:click="changeTheme(dashboardThemes.DARK)"
-                               type="radio"
-                               id="css-dark"
-                               :value="dashboardThemes.DARK"
-                               name="theme-variant"
-                               aria-label="Sing Dark"
-                        />
-                        <label for="css-dark">
-                            <img class="theme-image" src="../../assets/theme-dark.png" alt="dark theme"/>
-                        </label>
-                    </div>
-                </div>
+                <h3 class="mb-3">Theme</h3>
                 <div class="theme-settings">
                     <h5>Navbar Type</h5>
                     <div class="form-group row">
@@ -146,7 +118,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['dashboardTheme', 'navbarColor', 'sidebarColor', 'navbarType', 'sidebarType'])
+        ...mapState(['navbarColor', 'sidebarColor', 'navbarType', 'sidebarType'])
     },
     methods: {
         toggle() {
@@ -157,4 +129,4 @@ export default {
 };
 </script>
 
-<style src="./Helper.scss" lang="scss" scoped />
+<style src="./Helper.scss" lang="scss"></style>

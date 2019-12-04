@@ -1,19 +1,66 @@
 @import '../../styles/app';
 
-.header {
+.app-header.navbar {
   height: $navbar-height;
   z-index: 100;
   padding: 0 1.85rem 0;
   background: var(--navbar-bg);
   box-shadow: var(--navbar-shadow);
   transition: $transition-base;
+  border: none;
+  font-weight: 500;
+  justify-content: flex-start;
+
+  .nav {
+    height: 100%;
+    padding: 0;
+
+    .nav-item {
+      .nav-link, a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        padding: 0.5rem;
+        color: $navbar-link-color;
+
+        @include hover {
+          color: $navbar-link-hover-color;
+          background: $navbar-link-hover-bg;
+          text-decoration: none;
+        }
+
+        .la {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  &.header-dark {
+    .nav {
+      .nav-item {
+        .nav-link, a {
+          color: $white;
+
+          @include hover {
+            color: rgba($white, 0.7);
+          }
+        }
+      }
+    }
+
+    .input-group-text {
+      color: $white;
+    }
+
+    input::placeholder {
+      color: rgba($white, 0.7);
+    }
+  }
 
   @include media-breakpoint-down(md) {
     padding: 7px 10px;
-  }
-
-  .la-globe {
-    padding-top: 5px;
   }
 
   &.navbar-floating-type {
@@ -25,133 +72,130 @@
       margin-right: $content-padding-sm;
     }
   }
-}
 
-.navbarForm {
-  padding: 6px 0 6px 1rem;
-  margin-left: 10px;
-  display: inline-block;
-  top: 2px;
-  width: auto;
+  .form-group {
+    width: 300px;
 
-  .inputAddon {
-    position: relative;
-    display: inline;
-    border: none;
-    background-color: #fff;
-    transition: background-color ease-in-out 0.15s;
-  }
+    .input-group-prepend {
+      margin-right: 0;
+    }
 
-  input {
-    border: none;
-    padding: 0.6rem 0.85rem 0.6rem 0;
-    display: inline !important;
-    width: 250px !important;
-    top: 2px;
-  }
-}
+    .input-group-text {
+      border: none;
+      background-color: rgba(0,0,0,0.03);
+      transition: background-color ease-in-out 0.15s;
+    }
 
-.avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  height: 40px;
-  width: 40px;
-  background: #ffc247;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.chat-notification {
-  position: absolute;
-  right: 2px;
-  width: 300px;
-  top: 35px;
-  z-index: 20;
-  margin-top: 3px;
-  padding: 5px 0;
-  cursor: pointer;
-  opacity: 1;
-  transition: $transition-base;
-
-  &.notification-hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &::before {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    right: 18px;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid #343434;
-  }
-
-  .chatNotificationInner {
-    min-width: 120px;
-    padding: 8px;
-    font-size: 12px;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    background-color: #343434;
-    color: #fff;
-  }
-
-  .text {
-    margin-top: 5px;
-    margin-bottom: 0;
-    color: $gray-600;
-  }
-
-  .title {
-    margin: 0;
-    font-weight: 600;
-    line-height: 28px;
-    font-size: 0.875rem;
-
-    span {
-      margin-right: 5px;
+    input, input:focus {
+      background: rgba(0, 0, 0, 0.03);;
+      border: none;
     }
   }
-}
 
-.navbarBrand {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 1.25rem;
-  pointer-events: none;
+  .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    background: #ffc247;
+    font-weight: 600;
+    font-size: 18px;
+  }
 
-  i {
-    font-size: 10px;
+  .chat-notification {
+    position: absolute;
+    right: 2px;
+    width: 300px;
+    top: 35px;
+    z-index: 20;
+    margin-top: 3px;
+    padding: 5px 0;
+    cursor: pointer;
+    opacity: 1;
+    transition: $transition-base;
+
+    &.notification-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      right: 18px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #343434;
+    }
+
+    .chatNotificationInner {
+      min-width: 120px;
+      padding: 8px;
+      font-size: 12px;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      background-color: #343434;
+      color: #fff;
+    }
+
+    .text {
+      margin-top: 5px;
+      margin-bottom: 0;
+      color: $gray-600;
+    }
+
+    .title {
+      margin: 0;
+      font-weight: 600;
+      line-height: 28px;
+      font-size: 0.875rem;
+
+      span {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .navbarBrand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    pointer-events: none;
+
+    i {
+      font-size: 10px;
+    }
+  }
+
+  .notificationsMenu {
+    .dropdown-menu {
+      left: auto !important;
+      right: 0 !important;
+      top: $navbar-height !important;
+    }
+  }
+
+  .settingsDropdown {
+    .dropdown-item:focus {
+      outline: none;
+    }
+  }
+
+  .notificationsWrapper {
+    width: min-content;
   }
 }
 
-.notificationsMenu {
-  .dropdown-menu {
-    left: auto !important;
-    right: 0 !important;
-    top: $navbar-height !important;
-  }
-}
 
-.settingsDropdown {
-  .dropdown-item:focus {
-    outline: none;
-  }
-}
-
-.notificationsWrapper {
-  width: min-content;
-}

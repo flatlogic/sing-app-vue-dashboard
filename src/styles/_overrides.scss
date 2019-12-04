@@ -3,69 +3,6 @@
   padding-right: 30px;
 }
 
-.navbar {
-  border: none;
-  font-weight: 500;
-  justify-content: flex-start;
-
-  .nav {
-    height: 100%;
-    padding: 0;
-
-    .nav-item {
-      .nav-link {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        position: relative;
-        padding: 0.5rem;
-        color: $navbar-link-color;
-
-        @include hover {
-          color: $navbar-link-hover-color;
-          background: $navbar-link-hover-bg;
-          text-decoration: none;
-        }
-
-        a {
-          color: $navbar-link-color;
-
-          @include hover {
-            color: $navbar-link-hover-color;
-            background: $navbar-link-hover-bg;
-            text-decoration: none;
-          }
-        }
-
-        .la {
-          font-size: 20px;
-        }
-      }
-    }
-  }
-
-  .nav > .nav-item > .nav-link.bs-tether-target.show {
-    display: flex !important;
-  }
-
-  .input-group {
-    width: 245px;
-  }
-
-  .form-control {
-    line-height: 1.7;
-    padding: 0.6rem 0.85rem;
-  }
-
-  .dropdown-menu {
-    margin: 0;
-  }
-
-  @include media-breakpoint-down(sm) {
-    font-size: $font-size-lg;
-  }
-}
-
 .progress-bar {
   @include box-shadow(none);
 }

@@ -1,5 +1,5 @@
-<template>
-  <b-navbar class="header d-print-none" :class="[navbarTypeClass]">
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+  <b-navbar class="app-header d-print-none" :class="[navbarTypeClass, 'header-' + navbarColorScheme]">
     <b-nav>
       <b-nav-item>
         <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod" id="barsTooltip">
@@ -30,10 +30,10 @@
       <b-form class="d-sm-down-none ml-5" inline>
         <b-form-group>
           <b-input-group class="input-group-no-border">
-            <div class="input-group-addon d-flex align-items-center">
-              <i class="la la-search px-3" />
-            </div>
-            <b-input id="search-input" placeholder="Search Dashboard" />
+            <template v-slot:prepend>
+              <b-input-group-text><i class="la la-search"/></b-input-group-text>
+            </template>
+            <b-form-input id="search-input" placeholder="Search Dashboard" />
           </b-input-group>
         </b-form-group>
       </b-form>
@@ -63,7 +63,7 @@
             />
             <span v-else>{{firstUserLetter}}</span>
           </span>
-          <span class="small">{{user.name || user.email || "Philip smith"}}</span>
+          <span class="small">{{user.name || user.email || 'Philip smith'}}</span>
           <span class="ml-1 circle bg-warning text-white fw-bold">13</span>
         </template>
         <Notifications />
@@ -128,14 +128,27 @@ export default {
     }
   },
   computed: {
-    ...mapState('layout', ['sidebarClose', 'sidebarStatic', 'chatNotificationIcon', 'chatNotificationPopover', "navbarType"]),
+    ...mapState('layout', [
+      'sidebarClose',
+      'sidebarStatic',
+      'chatNotificationIcon',
+      'chatNotificationPopover',
+      'navbarType',
+      'navbarColorScheme'
+    ]),
     firstUserLetter() { return (this.user.name || this.user.email || "P")[0].toUpperCase(); },
     navbarTypeClass: function () {
       return "navbar-" + this.navbarType + "-type"
     }
   },
   methods: {
-    ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive', 'initApp']),
+    ...mapActions('layout', [
+      'toggleSidebar',
+      'toggleChat',
+      'switchSidebar',
+      'changeSidebarActive',
+      'initApp'
+    ]),
     ...mapActions('auth', ['logoutUser']),
     switchSidebarMethod() {
       if (!this.sidebarClose) {
@@ -168,4 +181,4 @@ export default {
 };
 </script>
 
-<style src="./Header.scss" lang="scss" scoped />
+<style src="./Header.scss" lang="scss"></style>
