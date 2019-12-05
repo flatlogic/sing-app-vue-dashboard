@@ -16,7 +16,7 @@
     padding: 0;
 
     .nav-item {
-      .nav-link, a {
+      .nav-link, .nav-link > a {
         display: flex;
         align-items: center;
         height: 100%;
