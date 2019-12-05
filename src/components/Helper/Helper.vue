@@ -26,7 +26,7 @@
 
                     <h5>Navbar Color</h5>
                     <colorpicker
-                        :colors="Object.values(appConfig.colors)"
+                        :colors="appConfig.themeColors"
                         :activeColor="navbarColor"
                         @change="updateLayoutComponentColor({component: layoutComponents.NAVBAR, color: $event})"
                     ></colorpicker>
@@ -49,7 +49,7 @@
 
                     <h5>Sidebar Color</h5>
                     <colorpicker
-                        :colors="Object.values(appConfig.colors)"
+                        :colors="appConfig.themeColors"
                         :activeColor="sidebarColor"
                         @change="updateLayoutComponentColor({component: layoutComponents.SIDEBAR, color: $event})"
                     ></colorpicker>

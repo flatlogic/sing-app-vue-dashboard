@@ -44,6 +44,7 @@
       text-transform: uppercase;
       font-size: 15px;
       font-weight: 400;
+      color: var(--sidebar-nav-title-color);
     }
   }
 
@@ -68,6 +69,7 @@
     .navTitle {
       margin: 35px 10px 5px 20px;
       font-size: 14px;
+      color: var(--sidebar-nav-title-color);
     }
 
     .navTitle:first-child {

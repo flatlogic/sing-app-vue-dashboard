@@ -4,6 +4,7 @@
   width: $sidebar-width-open;
   background-color: var(--sidebar-bg);
   color: var(--sidebar-color);
+  transition: $transition-base;
 }
 
 .sidebar-wrapper {
@@ -15,7 +16,6 @@
   overflow-x: hidden;
   width: $sidebar-width-open;
   transition: width $sidebar-transition-time ease-in-out;
-  //@include scroll-bar($sidebar-scrollbar-bg);
 }
 
 .sidebarClose .sidebar-wrapper {
@@ -24,6 +24,11 @@
   @include media-breakpoint-down(sm) {
     width: 0;
   }
+}
+
+.sidebarStatic .sidebar-wrapper {
+  transition: none;
+  width: $sidebar-width-open;
 }
 
 .logo {
@@ -39,6 +44,11 @@
     padding: 0 5px;
     text-decoration: none;
     white-space: nowrap;
+  }
+
+  .primary-word {
+    color: var(--sidebar-item-active);
+    font-weight: $font-weight-normal;
   }
 }
 

@@ -2,10 +2,10 @@
   <ul class="colors-list">
     <li
         v-for="color in colors"
-        :key="color"
+        :key="color[1]"
         class="color-box"
-        :class="{'active': activeColor === color}"
-        :style="{backgroundColor: color}"
+        :class="{'active': activeColor === color[1]}"
+        :style="{backgroundColor: color[1]}"
         @click="$emit('change', color)"
     ></li>
   </ul>

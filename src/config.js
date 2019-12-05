@@ -23,5 +23,15 @@ export default {
       warning: "#ffc247",
       danger: "#f55d5d",
     },
+    themeColors: [
+      ['gray','#313947'],
+      ['white','#FFFFFF'],
+      ['purple','#B077FF'],
+      ['blue','#547FFF'],
+      ['red','#F55D5D'],
+      ['yellow','#FFC247'],
+      ['green','#3ABF94'],
+      ['sea','#3D5C70'],
+    ]
   }
 };

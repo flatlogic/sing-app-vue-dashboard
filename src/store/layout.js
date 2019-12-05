@@ -39,11 +39,12 @@ export default {
   state: {
     sidebarClose: false,
     sidebarStatic: false,
-    sidebarColor: config.app.colors.sidebar,
-    navbarColor: config.app.colors.navbar,
+    sidebarColor: config.app.themeColors[0][1],
+    navbarColor: config.app.themeColors[1][1],
     navbarColorScheme: NavbarColorSchemes.LIGHT,
     navbarType: NavbarTypes.STATIC,
     sidebarType: SidebarTypes.SOLID,
+    sidebarClass: SidebarTypes.SOLID,
     sidebarActiveElement: null,
     chatOpen: false,
     chatNotificationIcon: false,
@@ -114,9 +115,15 @@ export default {
       state[payload.component + 'Type'] = payload.type;
     },
     updateLayoutComponentColor(state, payload) {
-      state[payload.component + 'Color'] = payload.color;
-      document.querySelector('.root.sing-dashboard').style.setProperty(`--${payload.component}-bg`, payload.color);
-      state.navbarColorScheme = chroma(payload.color).luminance() < 0.4 ? NavbarColorSchemes.DARK : NavbarColorSchemes.LIGHT;
+      let colorName = payload.color[0];
+      let colorValue = payload.color[1];
+      state[payload.component + 'Color'] = colorValue;
+      document.querySelector('.root.sing-dashboard').style.setProperty(`--${payload.component}-bg`, colorValue);
+      if (payload.component === LayoutComponents.NAVBAR) {
+        state.navbarColorScheme = chroma(colorValue).luminance() < 0.4 ? NavbarColorSchemes.DARK : NavbarColorSchemes.LIGHT;
+      } else {
+        state.sidebarClass = 'sidebar-' + colorName;
+      }
     }
   },
   actions: {

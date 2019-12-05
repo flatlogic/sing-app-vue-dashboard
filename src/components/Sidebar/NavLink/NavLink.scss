@@ -88,11 +88,11 @@
 }
 
 a.router-link-active {
-  color: $sidebar-item-active-color;
+  color: var(--sidebar-item-active);
 
   .icon {
     border-radius: 50%;
-    background-color: $sidebar-item-active-color;
+    background-color: var(--sidebar-item-active);
 
     i {
       color: var(--sidebar-bg);
@@ -106,7 +106,6 @@ a.router-link-active {
   box-shadow: none;
   margin: 0;
   border-radius: 0;
-  background-color: var(--sidebar-panel-bg-color);
 
   a {
     line-height: 20px !important;
