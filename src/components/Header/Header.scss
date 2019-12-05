@@ -44,7 +44,7 @@
   &.header-dark {
     .nav {
       .nav-item {
-        .nav-link, a {
+        .nav-link, .nav-link > a {
           color: $white;
 
           @include hover {
