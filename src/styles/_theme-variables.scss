@@ -19,6 +19,7 @@
     // dependable variables
     --chat-sidebar-bg-color: var(--sidebar-bg-color);
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
+    --sidebar-icon-active: var(--sidebar-bg-color);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     --widget-shadow: 0 23px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
 
@@ -26,25 +27,21 @@
       --sidebar-bg-color: #ffffff;
       --sidebar-color: #6c757d;
       --sidebar-action-bg: #f9fafe;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     }
 
     &.sidebar-purple {
       --sidebar-bg-color: #9964e3;
       --sidebar-action-bg: #8A4BE3;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     }
 
     &.sidebar-blue {
       --sidebar-bg-color: #547FFF;
       --sidebar-action-bg: #247FFF;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     }
 
     &.sidebar-red {
       --sidebar-bg-color: #f55d5d;
       --sidebar-action-bg: #F54C4C;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     }
 
     &.sidebar-yellow {
@@ -52,20 +49,17 @@
       --sidebar-item-active: #f4f4f5;
       --sidebar-bg-color: #ffc247;
       --sidebar-action-bg: #FFC758;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
       --sidebar-nav-title-color: #dedede;
     }
 
     &.sidebar-green {
       --sidebar-bg-color: #3abf94;
       --sidebar-action-bg: #12BF88;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     }
 
     &.sidebar-sea {
       --sidebar-bg-color: #3D5C70;
       --sidebar-action-bg: #334E60;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     }
 
     &.sidebar-purple,
@@ -77,26 +71,15 @@
       --sidebar-color: #f4f4f4;
     }
 
-    &.sidebar-white,
-    &.sidebar-purple,
-    &.sidebar-blue,
-    &.sidebar-red,
-    &.sidebar-yellow,
-    &.sidebar-green,
-    &.sidebar-sea {
-      --chat-sidebar-bg-color: var(--sidebar-bg-color);
-      --sidebar-progress-bg-color: var(--sidebar-action-bg);
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
-    }
-
     &.sidebar-transparent {
       --sidebar-bg-color: transparent;
       --sidebar-color: #6c757d;
       --sidebar-action-bg: transparent;
-      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
       --sidebar-nav-title-color: var(--sidebar-color);
       --logo-color: var(--sidebar-color);
       --chat-sidebar-bg-color: var(--body-bg);
+      --sidebar-icon-active: white;
+
     }
   }
 
