@@ -34,17 +34,20 @@ Object.freeze(NavbarColorSchemes);
 Object.freeze(SidebarTypes);
 Object.freeze(LayoutComponents);
 
+function updateRootCss(cssVar, value) {
+  document.querySelector('.root.sing-dashboard').style.setProperty(cssVar, value);
+}
+
 export default {
   namespaced: true,
   state: {
     sidebarClose: false,
     sidebarStatic: false,
-    sidebarColor: config.app.themeColors[0][1],
-    navbarColor: config.app.themeColors[1][1],
+    sidebarColorName: config.app.themeColors[0][0],
+    navbarColorName: config.app.themeColors[1][0],
     navbarColorScheme: NavbarColorSchemes.LIGHT,
     navbarType: NavbarTypes.STATIC,
     sidebarType: SidebarTypes.SOLID,
-    sidebarClass: SidebarTypes.SOLID,
     sidebarActiveElement: null,
     chatOpen: false,
     chatNotificationIcon: false,
@@ -114,16 +117,15 @@ export default {
     updateLayoutComponentType(state, payload) {
       state[payload.component + 'Type'] = payload.type;
     },
-    updateLayoutComponentColor(state, payload) {
+    updateSidebarColor(state, payload) {
+      state.sidebarColorName = payload.color[0];
+    },
+    updateNavbarColor(state, payload) {
       let colorName = payload.color[0];
       let colorValue = payload.color[1];
-      state[payload.component + 'Color'] = colorValue;
-      document.querySelector('.root.sing-dashboard').style.setProperty(`--${payload.component}-bg`, colorValue);
-      if (payload.component === LayoutComponents.NAVBAR) {
-        state.navbarColorScheme = chroma(colorValue).luminance() < 0.4 ? NavbarColorSchemes.DARK : NavbarColorSchemes.LIGHT;
-      } else {
-        state.sidebarClass = 'sidebar-' + colorName;
-      }
+      state.navbarColorName = colorName;
+      updateRootCss('--navbar-bg', colorValue);
+      state.navbarColorScheme = chroma(colorValue).luminance() < 0.4 ? NavbarColorSchemes.DARK : NavbarColorSchemes.LIGHT;
     }
   },
   actions: {
@@ -155,7 +157,12 @@ export default {
       commit('updateLayoutComponentType', payload)
     },
     updateLayoutComponentColor({commit}, payload) {
-      commit('updateLayoutComponentColor', payload)
+      if (payload.component === LayoutComponents.SIDEBAR) {
+        commit('updateSidebarColor', payload)
+      } else {
+        commit('updateNavbarColor', payload)
+      }
+
     },
   },
 };

@@ -9,10 +9,7 @@
           Turn on/off <br> sidebar <br> collapsing
         </b-tooltip>
         <a class="fs-lg d-lg-none" href="#" @click="switchSidebarMethod">
-          <span class="rounded rounded-lg bg-gray text-white d-md-none">
-            <i class="la la-bars la-lg" />
-          </span>
-          <i class="la la-bars la-lg d-sm-down-none ml-4" />
+          <i class="la la-bars la-lg" />
         </a>
       </b-nav-item>
       <b-nav-item class="d-md-down-none">
@@ -106,7 +103,7 @@
       </b-nav-item>
       <b-nav-item class="fs-lg d-md-none">
         <a href="#" @click="toggleChat">
-          <span class="rounded rounded-lg bg-gray text-white"><i class="la la-globe" /></span>
+          <i class="la la-globe" />
         </a>
       </b-nav-item>
     </b-nav>

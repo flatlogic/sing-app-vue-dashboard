@@ -32,6 +32,10 @@
 
         .la {
           font-size: 20px;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 27px;
+          }
         }
       }
     }
@@ -57,10 +61,14 @@
     input::placeholder {
       color: rgba($white, 0.7);
     }
+
+    .navbarBrand {
+      color: $white;
+    }
   }
 
   @include media-breakpoint-down(md) {
-    padding: 7px 10px;
+    padding: 0 $spacer/2;
   }
 
   &.navbar-floating-type {

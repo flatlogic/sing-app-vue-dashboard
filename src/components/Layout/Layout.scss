@@ -19,7 +19,7 @@
   flex-direction: column;
   left: $sidebar-width-open - $sidebar-width-closed;
   right: 0;
-  transition: left $sidebar-transition-time ease-in-out;
+  transition: left $sidebar-transition-time ease-in-out, margin-left $sidebar-transition-time ease-in-out;
 
   @media (max-width: breakpoint-max(sm)) {
     margin-left: 0;
@@ -32,7 +32,7 @@
 }
 
 .sidebarStatic .wrap {
-  transition: none;
+  //transition: none;
   left: 0;
   margin-left: $sidebar-width-open;
 }

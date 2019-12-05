@@ -88,7 +88,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: 85%;
-      color: #999;
+      color: var(--sidebar-nav-title-color);
     }
   }
 
@@ -117,7 +117,7 @@
     padding-top: 100px;
     right: -100%;
     transition: right 0.2s ease-in-out;
-    background-color: var(--sidebar-bg);
+    background-color: var(--sidebar-bg-color);
 
     :global .list-group {
       position: absolute;

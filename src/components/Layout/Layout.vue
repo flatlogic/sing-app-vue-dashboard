@@ -1,5 +1,5 @@
 <template>
-<div :class="[{root: true, chatOpen, sidebarClose, sidebarStatic}, 'sing-dashboard', sidebarClass]">
+<div :class="[{root: true, chatOpen, sidebarClose, sidebarStatic}, 'sing-dashboard', 'sidebar-' + sidebarColorName, 'sidebar-' + sidebarType]">
   <Sidebar />
   <Helper />
   <div class="wrap">
@@ -43,7 +43,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["sidebarClose", "sidebarStatic", "chatOpen", "sidebarClass"]),
+    ...mapState(["sidebarClose", "sidebarStatic", "chatOpen", "sidebarColorName", "sidebarType"]),
   },
   created() {
     const staticSidebar = JSON.parse(localStorage.getItem('sidebarStatic'));

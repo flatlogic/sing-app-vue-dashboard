@@ -1,8 +1,9 @@
 .root {
   &.sing-dashboard {
     --logo-color: white;
+    --body-bg: #f9fbfd;
 
-    --sidebar-bg: #313947;
+    --sidebar-bg-color: #313947;
     --sidebar-color: #a6b2c1;
     --sidebar-action-bg: #2e3542;
     --sidebar-item-active: #ffc247;
@@ -16,7 +17,7 @@
 
 
     // dependable variables
-    --chat-sidebar-bg-color: var(--sidebar-bg);
+    --chat-sidebar-bg-color: var(--sidebar-bg-color);
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     --widget-shadow: 0 23px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
@@ -62,7 +63,7 @@
     }
 
     &.sidebar-sea {
-      --sidebar-bg-color: #ffffff;
+      --sidebar-bg-color: #3D5C70;
       --sidebar-action-bg: #334E60;
       --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     }
@@ -83,9 +84,19 @@
     &.sidebar-yellow,
     &.sidebar-green,
     &.sidebar-sea {
-      --chat-sidebar-bg-color: var(--sidebar-bg);
+      --chat-sidebar-bg-color: var(--sidebar-bg-color);
       --sidebar-progress-bg-color: var(--sidebar-action-bg);
       --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
+    }
+
+    &.sidebar-transparent {
+      --sidebar-bg-color: transparent;
+      --sidebar-color: #6c757d;
+      --sidebar-action-bg: transparent;
+      --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
+      --sidebar-nav-title-color: var(--sidebar-color);
+      --logo-color: var(--sidebar-color);
+      --chat-sidebar-bg-color: var(--body-bg);
     }
   }
 

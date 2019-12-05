@@ -27,7 +27,7 @@
                     <h5>Navbar Color</h5>
                     <colorpicker
                         :colors="appConfig.themeColors"
-                        :activeColor="navbarColor"
+                        :activeColor="navbarColorName"
                         @change="updateLayoutComponentColor({component: layoutComponents.NAVBAR, color: $event})"
                     ></colorpicker>
 
@@ -50,7 +50,7 @@
                     <h5>Sidebar Color</h5>
                     <colorpicker
                         :colors="appConfig.themeColors"
-                        :activeColor="sidebarColor"
+                        :activeColor="sidebarColorName"
                         @change="updateLayoutComponentColor({component: layoutComponents.SIDEBAR, color: $event})"
                     ></colorpicker>
                 </div>
@@ -118,7 +118,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['navbarColor', 'sidebarColor', 'navbarType', 'sidebarType'])
+        ...mapState(['navbarColorName', 'sidebarColorName', 'navbarType', 'sidebarType'])
     },
     methods: {
         toggle() {

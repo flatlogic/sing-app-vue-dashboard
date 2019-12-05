@@ -1,12 +1,12 @@
 <template>
   <ul class="colors-list">
     <li
-        v-for="color in colors"
-        :key="color[1]"
+        v-for="[colorName, colorValue] in colors"
+        :key="colorValue"
         class="color-box"
-        :class="{'active': activeColor === color[1]}"
-        :style="{backgroundColor: color[1]}"
-        @click="$emit('change', color)"
+        :class="{'active': activeColor === colorName}"
+        :style="{backgroundColor: colorValue}"
+        @click="$emit('change', [colorName, colorValue])"
     ></li>
   </ul>
 </template>
