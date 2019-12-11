@@ -53,6 +53,7 @@ export default {
     chatNotificationIcon: false,
     chatNotificationPopover: false,
     chatNotificationMessageState: MessageStates.HIDDEN,
+    helperOpened: false
   },
   mutations: {
     initApp(state) {
@@ -126,6 +127,9 @@ export default {
       state.navbarColorName = colorName;
       updateRootCss('--navbar-bg', colorValue);
       state.navbarColorScheme = chroma(colorValue).luminance() < 0.4 ? NavbarColorSchemes.DARK : NavbarColorSchemes.LIGHT;
+    },
+    toggleHelper(state, payload) {
+      state.helperOpened = payload;
     }
   },
   actions: {
@@ -162,7 +166,9 @@ export default {
       } else {
         commit('updateNavbarColor', payload)
       }
-
     },
+    toggleHelper({commit}, payload) {
+      commit('toggleHelper', payload)
+    }
   },
 };

@@ -152,7 +152,7 @@ small {
 ///////// Buttons //////////
 
 .btn {
-  background-image: linear-gradient(to right, #ffffff26, #fff0);
+  background-image: none;
 }
 
 .btn-link {
@@ -171,8 +171,9 @@ small {
 .btn-warning {
   color: $white;
 
+  &:active,
   &:hover {
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -911,4 +912,26 @@ $slider-handle-size: 26px;
 //////// Mavon Editor ////////
 .v-note-wrapper {
   z-index: 50;
+}
+
+
+/////// Vue Tour //////////
+.v-tour {
+  .v-step {
+    background: $white !important;
+    z-index: 102;
+    max-width: 240px !important;
+    color: $text-color !important;
+  }
+
+  .v-step[x-placement^=left] {
+    .v-step__arrow {
+      border-left-color: $white !important;
+    }
+  }
+
+
+  .v-step[x-placement^=bottom] .v-step__arrow {
+    border-bottom-color: $white !important;
+  }
 }

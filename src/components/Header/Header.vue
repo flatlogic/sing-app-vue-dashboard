@@ -1,7 +1,7 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
   <b-navbar class="app-header d-print-none" :class="[navbarTypeClass, 'header-' + navbarColorScheme]">
     <b-nav>
-      <b-nav-item>
+      <b-nav-item id="v-step-0">
         <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod" id="barsTooltip">
           <i class='la la-bars la-lg' />
         </a>
@@ -46,7 +46,7 @@
     </a>
     <b-nav class="ml-auto">
       <b-nav-item-dropdown
-        id="basic-nav-dropdown"
+        id="v-step-1"
         class="notificationsMenu d-md-down-none mr-2"
         extra-menu-classes="notificationsWrapper py-0 animated animated-fast fadeInUp"
         right>
@@ -65,7 +65,7 @@
         </template>
         <Notifications />
       </b-nav-item-dropdown>
-      <b-nav-item-dropdown class="settingsDropdown d-sm-down-none" no-caret right>
+      <b-nav-item-dropdown id="v-step-2" class="settingsDropdown d-sm-down-none" no-caret right>
         <template slot="button-content">
           <i class="la la-cog px-2" />
         </template>
@@ -80,7 +80,7 @@
           <i class="la la-sign-out" /> Log Out
         </b-dropdown-item-button>
       </b-nav-item-dropdown>
-      <b-nav-item>
+      <b-nav-item id="v-step-3">
         <a class="d-sm-down-none px-2" id="toggle-chat" href="#" @click="toggleChat">
           <i class="la la-globe" />
         </a>

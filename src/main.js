@@ -18,6 +18,7 @@ import VueApexCharts from 'vue-apexcharts';
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import bFormSlider from 'vue-bootstrap-slider';
 import { component as VueCodeHighlight } from 'vue-code-highlight';
+import VueTour from 'vue-tour';
 
 import store from './store';
 import router from './Routes';
@@ -61,6 +62,7 @@ Vue.use(VueFormWizard);
 Vue.mixin(layoutMixin);
 Vue.mixin(AuthMixin);
 Vue.use(Toasted, {duration: 10000});
+Vue.use(VueTour);
 
 Vue.config.productionTip = false;
 

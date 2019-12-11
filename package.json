@@ -66,6 +66,7 @@
     "vue-textarea-autosize": "^1.0.4",
     "vue-toasted": "^1.1.27",
     "vue-touch": "2.0.0-beta.4",
+    "vue-tour": "^1.1.0",
     "vue2-datepicker": "^2.0.4",
     "vue2-dropzone": "^3.2.2",
     "vue2-google-maps": "^0.10.2",
