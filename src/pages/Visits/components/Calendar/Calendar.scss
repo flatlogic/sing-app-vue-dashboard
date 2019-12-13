@@ -24,6 +24,22 @@
     color: $text-muted;
   }
 
+  .vc-day {
+    .vc-dots {
+      .vc-bg-red-600 {
+        background-color: theme-color("danger");
+      }
+
+      .vc-bg-green-600 {
+        background-color: theme-color("success");
+      }
+
+      .vc-bg-blue-600 {
+        background-color: theme-color("primary");
+      }
+    }
+  }
+
   .vc-day-popover-row-content {
     display: block;
 

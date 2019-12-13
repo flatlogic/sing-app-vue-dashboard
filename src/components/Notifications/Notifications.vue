@@ -1,5 +1,5 @@
 <template>
-  <section class="notifications card navbar-notifications">
+  <section class="notifications navbar-notifications">
     <header class="cardHeader card-header">
       <div class="text-center mb-sm">
         <strong>You have 13 notifications</strong>

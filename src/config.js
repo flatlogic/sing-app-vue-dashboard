@@ -14,14 +14,14 @@ export default {
   },
   app: {
     colors: {
-      sidebar: "#313947",
+      sidebar: "#002B49",
       navbar: "#ffffff",
-      primary: "#547fff",
+      primary: "#005792",
       secondary: "#798892",
-      success: "#3abf94",
-      info: "#9964e3",
-      warning: "#ffc247",
-      danger: "#f55d5d",
+      success: "#21AE8C",
+      info: "#1A86D0",
+      warning: "#FDA700",
+      danger: "#FD5F00",
     },
     themeColors: [
       ['gray','#313947'],

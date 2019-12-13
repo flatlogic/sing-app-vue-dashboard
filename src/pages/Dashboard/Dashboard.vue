@@ -9,7 +9,7 @@
               <Widget class="h-100 mb-0" title="Visits Today" close :fetchingData="isReceiving">
                 <div class="d-flex justify-content-between align-items-center mb-lg">
                   <h2>{{visits.count}}</h2>
-                  <i class="la la-arrow-right text-success rotate-315" />
+                  <i class="la la-arrow-right text-primary la-lg rotate-315" />
                 </div>
                 <div class="d-flex flex-wrap justify-content-between">
                   <div class="mt">
@@ -37,13 +37,13 @@
               <Widget class="h-100 mb-0" title="App Perfomance" close :fetchingData="isReceiving">
                 <p class="text-muted d-flex flex-wrap">
                   <small class="mr-lg d-flex align-items-center">
-                    <span class="circle bg-success text-success mr-xs" style="font-size: 4px;">
+                    <span class="circle bg-danger text-danger mr-xs" style="font-size: 4px;">
                       .
                     </span>
                     This Period
                   </small>
                   <small class="mr-lg d-flex align-items-center">
-                    <span class="circle bg-warning text-warning mr-xs" style="font-size: 4px;">
+                    <span class="circle bg-primary text-primary mr-xs" style="font-size: 4px;">
                       .
                     </span>
                     Last Period
@@ -51,14 +51,14 @@
                 </p>
                 <h6>SDK</h6>
                 <b-progress class="mb-xs" style="height: 5px"
-                  variant="success" :value="performance.sdk.this_period_pct" :max="100" />
+                  variant="danger" :value="performance.sdk.this_period_pct" :max="100" />
                 <b-progress class="mb" style="height: 5px"
-                  variant="warning" :value="performance.sdk.last_period_pct" :max="100" />
+                  variant="primary" :value="performance.sdk.last_period_pct" :max="100" />
                 <h6>Integration</h6>
                 <b-progress class="mb-xs" style="height: 5px"
-                  variant="success" :value="performance.integration.this_period_pct" :max="100" />
+                  variant="danger" :value="performance.integration.this_period_pct" :max="100" />
                 <b-progress style="height: 5px"
-                  variant="warning" :value="performance.integration.last_period_pct" :max="100" />
+                  variant="primary" :value="performance.integration.last_period_pct" :max="100" />
               </Widget>
             </div>
           </b-col>
@@ -66,32 +66,32 @@
             <div class="pb-xlg h-100">
               <Widget class="h-100 mb-0" title="Server Overview" close :fetchingData="isReceiving">
                 <div class="d-flex align-items-center mb-sm">
-                  <p class="width-150"><small>{{server[1].pct}}% / {{server[1].temp}}°С / {{server[1].frequency}} Ghz</small></p>
+                  <p class="width-150 mb-0"><small>{{server[1].pct}}% / {{server[1].temp}}°С / {{server[1].frequency}} Ghz</small></p>
                   <div style="width: calc(100% - 150px)">
                     <trend
                       :data="getRandomData()"
-                      :gradient="['#ffc247']"
-                      :height="30"
+                      :gradient="[appConfig.colors.danger]"
+                      :height="40"
                       smooth />
                   </div>
                 </div>
                 <div class="d-flex align-items-center mb-sm">
-                  <p class="width-150"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
+                  <p class="width-150 mb-0"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
                   <div style="width: calc(100% - 150px)">
                     <trend
                       :data="getRandomData()"
-                      :gradient="['#9964e3']"
-                      :height="30"
+                      :gradient="[appConfig.colors.info]"
+                      :height="40"
                       smooth />
                   </div>
                 </div>
                 <div class="d-flex align-items-center">
-                  <p class="width-150"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
+                  <p class="width-150 mb-0"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
                   <div style="width: calc(100% - 150px)">
                     <trend
                       :data="getRandomData()"
-                      :gradient="['#3abf94']"
-                      :height="30"
+                      :gradient="[appConfig.colors.primary]"
+                      :height="40"
                       smooth />
                   </div>
                 </div>
@@ -178,7 +178,7 @@
               bodyClass="notifications w-100 mt-lg"
               :title="`
                 <h4>Notifications
-                  <span class='badge badge-pill badge-success fw-normal pull-right mt-xs'>
+                  <span class='badge badge-pill badge-primary fw-normal pull-right mt-xs'>
                     ${mock.notifications.length}
                   </span>
                 </h4>
@@ -187,7 +187,7 @@
             >
               <div v-for="notification in mock.notifications"
                 class="d-flex align-items-start" :key="notification.id">
-                <i :class="`la la-${notification.icon} mr text-${notification.color}`" />
+                <i :class="`la la-${notification.icon} mr text-primary`" />
                 <p
                   :class="{ 'mb-0': notification.id === mock.notifications.length - 1 }"
                   v-html="notification.content"
@@ -294,6 +294,7 @@ export default {
       'isReceiving',
     ]),
     donut() {
+      let {danger, info, primary} = this.appConfig.colors;
       let series = [
         {
           name: 'Revenue',
@@ -319,8 +320,9 @@ export default {
             dataLabels: {
               enabled: false
             },
+            borderColor: null,
             showInLegend: true,
-            innerSize: 80,
+            innerSize: 60,
             size: 100,
             states: {
               hover: {
@@ -331,7 +333,7 @@ export default {
             }
           }
         },
-        colors: ['#ffc247', '#f55d5d', '#9964e3'],
+        colors: [danger, info, primary],
         legend: {
           align: 'right',
           verticalAlign: 'middle',

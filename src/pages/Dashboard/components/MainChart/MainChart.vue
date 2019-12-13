@@ -96,23 +96,22 @@ export default {
           {
             name: 'Light Blue',
             data: data[0],
-            color: '#E2E1FF',
+            color: this.appConfig.colors.info,
             type: 'areaspline',
-            fillOpacity: 0.5,
+            fillOpacity: 0.3,
             lineWidth: 0
           },
           {
             type: 'spline',
             name: 'RNS App',
             data: data[1],
-            color: '#3abf94',
-            dashStyle: 'Dash'
+            color: this.appConfig.colors.info,
           },
           {
             type: 'spline',
             name: 'Sing App',
             data: data[2],
-            color: '#ffc247'
+            color: this.appConfig.colors.warning
           }
         ]
       }

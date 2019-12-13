@@ -5,7 +5,7 @@
     :title="`
       <div>
         <h4>Today&apos;s Tasks
-          <span class='badge badge-pill badge-success fw-normal pull-right mt-xs'>
+          <span class='badge badge-pill badge-primary fw-normal pull-right mt-xs'>
             ${tasks.length}
           </span>
         </h4>

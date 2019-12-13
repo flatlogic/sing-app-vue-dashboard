@@ -242,13 +242,13 @@
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-circle text-gray mr-2"/>
+            <i class="fa fa-circle text-primary mr-2"/>
             <span class="labelName">Starred</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-circle text-danger mr-2"/>
+            <i class="fa fa-circle text-default mr-2"/>
             <span class="labelName">Background</span>
           </a>
         </li>
@@ -289,14 +289,14 @@ export default {
           title: 'Sales Report',
           value: 15,
           footer: 'Calculating x-axis bias... 65%',
-          color: 'info',
+          color: 'warning',
         },
         {
           id: 1,
           title: 'Personal Responsibility',
           value: 20,
           footer: 'Provide required notes',
-          color: 'danger',
+          color: 'primary',
         },
       ],
     };

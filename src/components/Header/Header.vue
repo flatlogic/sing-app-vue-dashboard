@@ -48,7 +48,7 @@
       <b-nav-item-dropdown
         id="v-step-1"
         class="notificationsMenu d-md-down-none mr-2"
-        extra-menu-classes="notificationsWrapper py-0 animated animated-fast fadeInUp"
+        menu-class="notificationsWrapper py-0 animated animated-fast fadeIn"
         right>
         <template slot="button-content">
           <span class="avatar rounded-circle thumb-sm float-left mr-2">

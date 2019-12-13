@@ -28,7 +28,7 @@ $font-family-base: 'Montserrat', sans-serif;
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
-$gray-300: #d6dee5 !default;
+$gray-300: #D7DFE6 !default;
 $gray-400: #c1ccd3 !default;
 $gray-500: #a3aeb7 !default;
 $gray-600: #798892 !default;
@@ -38,29 +38,31 @@ $gray-900: #29323a !default;
 $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
-$blue:    #547fff !default;
+$blue:    #005792 !default;
 $indigo:  #7f3ddb !default;
 $purple:  #9964e3 !default;
 $pink:    #e54e9a !default;
-$red:     #f55d5d !default;
+$red:     #FD5F00 !default;
 $orange:  #ff7d47 !default;
-$yellow:  #ffc247 !default;
+$yellow:  #FDA700 !default;
 $green:   #68ca66 !default;
-$teal:    #3abf94 !default;
-$cyan:    #17a2b8 !default;
+$teal:    #21AE8C !default;
+$cyan:    #1A86D0 !default;
+$default: #E9ECEF !default;
+$inverse: #002B49 !default;
 
 $theme-colors: (
   primary: $blue,
   secondary: $gray-600,
   success: $teal,
-  info: $purple,
+  info: $cyan,
   warning: $yellow,
   danger: $red,
   dark: $gray-800,
-  inverse: $gray-700,
+  inverse: $inverse,
   gray: $gray-300,
   light: $gray-100,
-  default: #e9ecef,
+  default: $default,
   primary-light: #dee4ee,
   success-light: #ecfaec,
   info-light: #f2fafa,
