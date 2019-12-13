@@ -200,75 +200,29 @@ function getRevenueData() {
 }
 
 function getMainChartData() {
-  function generateRandomPicks(minPoint, maxPoint, picksAmount, xMax) {
-    let x = 0;
-    let y = 0;
-    const result = [];
-    const xStep = 1;
-    const smoothness = 0.3;
-    const pointsPerPick = Math.ceil(xMax / ((picksAmount * 2) + 1) / 2);
+  function getRandomData(length, min, max, multiplier = 10, maxDiff = 10) {
+    var array = new Array(length).fill();
+    let lastValue;
 
-    const maxValues = [];
-    const minValues = [];
+    return array.map((item, index) => {
+      let randomValue = Math.floor(Math.random() * multiplier + 1);
 
-    for (let i = 0; i < picksAmount; i += 1) {
-      const minResult = minPoint + Math.random();
-      const maxResult = maxPoint - Math.random();
-
-      minValues.push(minResult);
-      maxValues.push(maxResult);
-    }
-
-    let localMax = maxValues.shift(0);
-    let localMin = 0;
-    let yStep = parseFloat(((localMax - localMin) / pointsPerPick).toFixed(2));
-
-    for (let j = 0; j < Math.ceil(xMax); j += 1) {
-      result.push([x, y]);
-
-      if ((y + yStep >= localMax) || (y + yStep <= localMin)) {
-        y += yStep * smoothness;
-      } else if ((result[result.length - 1][1] === localMax) || (result[result.length - 1][1] === localMin)) {
-        y += yStep * smoothness;
-      } else {
-        y += yStep;
+      while (
+        randomValue <= min ||
+        randomValue >= max ||
+        (lastValue && randomValue - lastValue > maxDiff)
+        ) {
+        randomValue = Math.floor(Math.random() * multiplier + 1);
       }
 
-      if (y > localMax) {
-        y = localMax;
-      } else if (y < localMin) {
-        y = localMin;
-      }
+      lastValue = randomValue;
 
-      if (y === localMin) {
-        localMax = maxValues.shift(0) || localMax;
-
-        const share = (localMax - localMin) / localMax;
-        const p = share > 0.5 ? Math.round(pointsPerPick * 1.2) : Math.round(pointsPerPick * share);
-
-        yStep = parseFloat(((localMax - localMin) / p).toFixed(2));
-        yStep *= Math.abs(yStep);
-      }
-
-      if (y === localMax) {
-        localMin = minValues.shift(0) || localMin;
-
-        const share = (localMax - localMin) / localMax;
-        const p = share > 0.5 ? Math.round(pointsPerPick * 1.5) : Math.round(pointsPerPick * 0.5);
-
-        yStep = parseFloat(((localMax - localMin) / p).toFixed(2));
-        yStep *= -1;
-      }
-
-      x += xStep;
-    }
-
-    return result;
+      return [index, randomValue];
+    });
   }
 
-  const d1 = generateRandomPicks(0.2, 3, 4, 90);
-  const d2 = generateRandomPicks(0.4, 3.8, 4, 90);
-  const d3 = generateRandomPicks(0.2, 4.2, 3, 90);
-
+  const d1 = getRandomData(31, 3500, 6500, 7500, 1000);
+  const d2 = getRandomData(31, 1500, 7500, 7500, 1500);
+  const d3 = getRandomData(31, 1500, 7500, 7500, 1500);
   return [d1, d2, d3];
 }
