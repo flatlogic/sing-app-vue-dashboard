@@ -103,63 +103,68 @@ export default {
   name: 'FlotCharts',
   components: { Widget, highcharts: Chart },
   data() {
-    let options = {
-      credits: {
-        enabled: false
-      },
-      title: false,
-      chart: {
-        height: 200,
-        margin: 0
-      },
-      exporting: {
-        enabled: false
-      },
-      plotOptions: {
-        series: {
-          lineWidth: 1,
-          marker: {
-            enabled: false,
-            symbol: 'circle'
-          },
-          states: {
-            hover: {
-              lineWidth: 1
-            }
-          }
-        },
-      },
-      legend: false,
-      xAxis: {
-        visible: false,
-        minPadding: 0,
-        maxPadding: 0
-      },
-      yAxis: {
-        visible: false,
-        minPadding: 0,
-        maxPadding: 0
-      }
-    };
-
     return {
-      chart_one: {
-        ...options,
+      options: {
+        credits: {
+          enabled: false
+        },
+        title: false,
+        chart: {
+          height: 200,
+          margin: 0
+        },
+        exporting: {
+          enabled: false
+        },
+        plotOptions: {
+          series: {
+            lineWidth: 1,
+            marker: {
+              enabled: false,
+              symbol: 'circle'
+            },
+            states: {
+              hover: {
+                lineWidth: 1
+              }
+            }
+          },
+        },
+        legend: false,
+        xAxis: {
+          visible: false,
+          minPadding: 0,
+          maxPadding: 0
+        },
+        yAxis: {
+          visible: false,
+          minPadding: 0,
+          maxPadding: 0
+        }
+      }
+    }
+  },
+  computed: {
+    chart_one() {
+      return {
+        ...this.options,
         series: this.generateRandomData([{
-          name: 'Visitors', color: '#777',
+          name: 'Visitors', color: this.appConfig.colors.primary,
         }, {
-          name: 'Charts', color: '#dd5826',
-        }])
-      } ,
-      chart_two: {
-        ...options,
-        series: this.generateRandomData([{
-          name: 'Controllers', color: '#777',
-        }, {
-          name: 'Scopes', color: '#f0b518',
+          name: 'Charts', color: this.appConfig.colors.danger,
         }])
       }
-    };
+    },
+    chart_two() {
+      return {
+        ...this.options,
+        series: this.generateRandomData([{
+          name: 'Controllers', color: this.appConfig.colors.primary,
+        }, {
+          name: 'Scopes', color: this.appConfig.colors.info,
+        }])
+      }
+    }
   },
   methods: {
     generateRandomData(labels) {

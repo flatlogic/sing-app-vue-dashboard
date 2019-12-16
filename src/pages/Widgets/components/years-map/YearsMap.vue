@@ -4,33 +4,21 @@
     <div class="stats">
       <h6 class="text-gray-dark">YEARLY <span class="fw-semi-bold">DISTRIBUTIONS</span></h6>
       <span class="pull-left mr-xs">
-          <small><span class="circle bg-warning text-gray-dark">
-            <i class="fa fa-plus"/></span></small>
+          <small><span class="circle bg-primary text-white">
+            <i class="la la-plus"/></span></small>
         </span>
       <p class="h4 m-0">
         <strong>17% last year</strong>
       </p>
     </div>
-    <b-nav class="map-controls" pills fill>
-      <b-nav-item :active="this.activeYear === 2012" @click="changeYear(2012)">
-        2012
-      </b-nav-item>
-      <b-nav-item :active="this.activeYear === 2013" @click="changeYear(2013)">
-        2013
-      </b-nav-item>
-      <b-nav-item :active="this.activeYear === 2014" @click="changeYear(2014)">
-        2014
-      </b-nav-item>
-      <b-nav-item :active="this.activeYear === 2015" @click="changeYear(2015)">
-        2015
-      </b-nav-item>
-      <b-nav-item :active="this.activeYear === 2016" @click="changeYear(2016)">
-        2016
-      </b-nav-item>
-      <b-nav-item :active="this.activeYear === 2017" @click="changeYear(2017)">
-        2017
-      </b-nav-item>
-    </b-nav>
+    <b-button-group class="map-controls">
+      <b-button variant="default" @click="changeYear(2014)" :class="{'active': this.activeYear===2014}">2014</b-button>
+      <b-button variant="default" @click="changeYear(2015)" :class="{'active': this.activeYear===2015}">2015</b-button>
+      <b-button variant="default" @click="changeYear(2016)" :class="{'active': this.activeYear===2016}">2016</b-button>
+      <b-button variant="default" @click="changeYear(2017)" :class="{'active': this.activeYear===2017}">2017</b-button>
+      <b-button variant="default" @click="changeYear(2018)" :class="{'active': this.activeYear===2018}">2018</b-button>
+      <b-button variant="default" @click="changeYear(2019)" :class="{'active': this.activeYear===2019}">2019</b-button>
+    </b-button-group>
   </div>
 </template>
 
@@ -48,7 +36,7 @@ export default {
   name: 'YearsMap',
   data() {
     return {
-      activeYear: 2012,
+      activeYear: 2014,
     };
   },
   methods: {
@@ -98,17 +86,17 @@ export default {
 
     let polygonTemplate = this.polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipHTML = "{tooltip}";
-    polygonTemplate.fill = am4core.color("#eee");
-    polygonTemplate.stroke = am4core.color("#666");
-    polygonTemplate.strokeWidth = 0.1;
+    polygonTemplate.fill = am4core.color(this.appConfig.colors.info);
+    polygonTemplate.fillOpacity = 0.5;
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#999");
+    hs.properties.fill = am4core.color(this.appConfig.colors.info);
+    hs.properties.fillOpacity = 0.5;
 
     this.polygonSeries.heatRules.push({
       "property": "fill",
       "target": polygonTemplate,
-      "min": am4core.color("#eee"),
-      "max": am4core.color("#aaa")
+      "min": am4core.color("#cde4f3"),
+      "max": am4core.color(this.appConfig.colors.info)
     });
 
     this.map = map;

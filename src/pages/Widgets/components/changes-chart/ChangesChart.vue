@@ -45,18 +45,20 @@ export default {
   data() {
     return {
       sparklineData: [{data: [3, 6, 2, 4, 5, 8, 6, 8]}],
-      sparklineOptions: {
-        colors: ["#64bd63"],
+    };
+  },
+  computed: {
+    ...mapState('layout', ['sidebarClose', 'sidebarStatic']),
+    sparklineOptions() {
+      return {
+        colors: [this.appConfig.colors.info],
         plotOptions: {
           bar: {
             columnWidth: '50%'
           }
         }
-      },
-    };
-  },
-  computed: {
-    ...mapState('layout', ['sidebarClose', 'sidebarStatic'])
+      }
+    }
   },
   watch: {
     sidebarClose() {
@@ -85,7 +87,7 @@ export default {
         series: [{
           name: 'pop',
           data: seriesData.shift().map(d => ({ x: d.x, y: d.y })),
-          color: '#7bd47a', // (#64bd63, 0.9)
+          color: this.appConfig.colors.info, // (#64bd63, 0.9)
           renderer: 'bar',
           gapSize: 2,
           min: 'auto',

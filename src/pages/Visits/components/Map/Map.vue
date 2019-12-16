@@ -73,10 +73,10 @@ export default {
 
     let polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    polygonTemplate.fill = am4core.color("#1A86D0");
+    polygonTemplate.fill = am4core.color(this.appConfig.colors.info);
     polygonTemplate.fillOpacity = 0.2;
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#1A86D0");
+    hs.properties.fill = am4core.color(this.appConfig.colors.info);
     hs.properties.fillOpacity = 0.5;
 
     let citySeries = map.series.push(new am4maps.MapImageSeries());
@@ -88,7 +88,7 @@ export default {
     city.propertyFields.latitude = "latitude";
     city.propertyFields.longitude = "longitude";
     let circle = city.createChild(am4core.Circle);
-    circle.fill = am4core.color("#1A86D0");
+    circle.fill = am4core.color(this.appConfig.colors.info);
     circle.stroke = am4core.color("#ffffff");
     circle.strokeWidth = 0;
     let circleHoverState = circle.states.create("hover");

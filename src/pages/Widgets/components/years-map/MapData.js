@@ -1,5 +1,5 @@
 export default {
-  2012: {
+  2014: {
     areas: [
       {
         id: "AF",
@@ -968,7 +968,7 @@ export default {
       },
     ],
   },
-  2013: {
+  2015: {
     areas: [
       {
         id: "AF",
@@ -1937,7 +1937,7 @@ export default {
       },
     ],
   },
-  2014: {
+  2016: {
     areas: [
       {
         id: "AF",
@@ -2906,7 +2906,7 @@ export default {
       },
     ],
   },
-  2015: {
+  2017: {
     areas: [
       {
         id: "AF",
@@ -3875,7 +3875,7 @@ export default {
       },
     ],
   },
-  2016: {
+  2018: {
     areas: [
       {
         id: "AF",
@@ -4844,7 +4844,7 @@ export default {
       },
     ],
   },
-  2017: {
+  2019: {
     areas: [
       {
         id: "AF",

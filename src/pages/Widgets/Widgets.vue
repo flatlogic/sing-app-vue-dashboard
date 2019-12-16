@@ -34,7 +34,7 @@
             <b-row class="flex-nowrap">
               <b-col xs="3">
                 <span class="widget-icon">
-                  <i class="fi flaticon-magic-wand text-info" />
+                  <i class="fi flaticon-magic-wand text-danger" />
                 </span>
               </b-col>
               <b-col xs="9">
@@ -85,7 +85,7 @@
                 <b-row class="flex-nowrap">
                   <b-col xs="3">
                     <span class="widget-icon">
-                      <i class="fi flaticon-notebook-4"/>
+                      <i class="fi flaticon-notebook-4 text-info"/>
                     </span>
                   </b-col>
                   <b-col xs="9">
@@ -108,7 +108,7 @@
                 <b-row class="flex-nowrap">
                   <b-col xs="3">
                     <span class="widget-icon">
-                      <i class="fi flaticon-shuffle"/>
+                      <i class="fi flaticon-shuffle text-info"/>
                     </span>
                   </b-col>
                   <b-col xs="9">
@@ -163,7 +163,7 @@
     <b-row>
       <b-col lg='4' xs='12'>
         <Widget refresh close bodyClass="mt-0">
-          <div class="widget-top-overflow widget-padding-md clearfix bg-warning text-white">
+          <div class="widget-top-overflow widget-padding-md clearfix bg-info text-white">
             <h3 class="mt-lg mb-lg">Sing - <span class="fw-semi-bold">Next Generation</span> Admin
               Dashboard
               Template</h3>
@@ -401,7 +401,7 @@
                   <p class="text-white fw-normal d-inline-block mb">SUNDAY</p>
                 </div>
                 <div class="col-5">
-                  <Skycon class="mt-3" icon="PARTLY_CLOUDY_DAY" color="#64bd63"
+                  <Skycon class="mt-3" icon="PARTLY_CLOUDY_DAY" :color="appConfig.colors.success"
                     :options="{ width: '60', height: '60' }" />
                   <p class="fw-normal fs-sm text-muted">WINDY</p>
                 </div>
@@ -576,7 +576,7 @@
         </Widget>
       </b-col>
       <b-col lg='4' xs='12'>
-        <Widget class="bg-gray-dark text-white">
+        <Widget>
           <RealtimeTraffic />
         </Widget>
       </b-col>
@@ -633,7 +633,7 @@
         </Widget>
       </b-col>
       <b-col lg='3' xs='12'>
-        <Widget class="widget-padding-lg bg-primary text-white">
+        <Widget class="widget-padding-lg bg-info text-white">
           <div class="overflow-hidden">
             <transition name="carousel" mode="out-in">
               <div v-if="carouselFirstGroup" key="first" class="carousel-feature-widget">
@@ -674,7 +674,7 @@
         <transition name="flip" mode="out-in">
           <div v-if="flipFirstGroup" key="first">
             <Widget
-                class="widget-padding-lg widget-md bg-gray-dark text-white"
+                class="widget-padding-lg widget-md bg-primary text-white"
                 bodyClass="widget-body-container"
             >
               <div class="text-center">

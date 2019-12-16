@@ -4,13 +4,13 @@
     <h6>Node.js <span class="fw-semi-bold">4.0.1 distribution</span></h6>
     <b-progress class="bg-gray-lighter progress-xs" variant="danger" :value="77" :max="100" />
     <p class="mt-sm mb fs-mini ">
-      <small><span class="circle bg-warning text-gray-dark"><i
-        class="glyphicon glyphicon-chevron-up"
+      <small><span class="circle bg-primary text-white"><i
+        class="la la-angle-up"
       /></span></small>
       <strong class="px-1">17% higher</strong>
       than last month
     </p>
-    <p class="fs-sm text-gray-lighter mb-0">Remaining hours</p>
+    <p class="fs-sm mb-0">Remaining hours</p>
     <a class="btn btn-xs btn-gray pull-right ml-xs" href="#">
       <i class="fa fa-compress" /> track
     </a>
@@ -19,7 +19,7 @@
     </a>
     <p class="value4">2h 56m</p>
     <br />
-    <div ref="chart" class="text-gray-dark chart-overflow-bottom" :style="{ height: '130px' }"
+    <div ref="chart" class="chart-overflow-bottom" :style="{ height: '130px' }"
     />
   </div>
 </template>
@@ -55,11 +55,11 @@ export default {
         realtime: true,
         series: [
           {
-            color: '#343434', // 'gray-dark'
+            color: this.appConfig.colors.primary,
             data: seriesData[0],
             name: 'Uploads',
           }, {
-            color: '#666', // gray,
+            color: this.appConfig.colors.info,
             data: seriesData[1],
             name: 'Downloads',
           },
