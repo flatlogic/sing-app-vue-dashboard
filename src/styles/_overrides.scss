@@ -533,7 +533,7 @@ h6,
   }
 
   border-bottom: none;
-  background-color: $gray-400;
+  background-color: $primary;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
 
@@ -543,7 +543,7 @@ h6,
     > .nav-link {
       padding: 12px 18px;
       border: none;
-      color: $text-muted;
+      color: #C2C2C2;
 
       .label {
         margin-bottom: -2px;
