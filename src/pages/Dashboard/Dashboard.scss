@@ -7,10 +7,6 @@
     }
   
     tbody tr {
-      &:nth-child(odd) {
-        background: $gray-100;
-      }
-  
       td {
         min-width: 100px;
       }

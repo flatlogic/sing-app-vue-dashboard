@@ -111,7 +111,7 @@ export default {
             type: 'spline',
             name: 'Sing App',
             data: data[2],
-            color: this.appConfig.colors.warning
+            color: this.appConfig.colors.danger
           }
         ]
       }

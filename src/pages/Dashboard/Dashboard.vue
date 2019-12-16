@@ -124,7 +124,7 @@
               customHeader
             >
               <div class="table-responsive">
-                <table class="table table-lg mb-0 requests-table">
+                <table class="table table-striped table-lg mb-0 requests-table">
                   <thead>
                     <tr class="text-muted">
                       <th>NAME</th>

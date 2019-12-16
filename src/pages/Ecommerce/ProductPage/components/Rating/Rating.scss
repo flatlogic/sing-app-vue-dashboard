@@ -4,11 +4,12 @@
   display: flex;
   font-size: $font-size-lg;
   font-weight: $font-weight-semi-bold;
-  color: theme-color('warning');
+  color: theme-color('primary');
   align-items: center;
 
-  svg {
-    margin: -2px 0 0 10px;
+  .la {
+    margin-left: $spacer / 3;
+    font-size: $font-size-lg;
   }
 }
 
