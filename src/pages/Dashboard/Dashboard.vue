@@ -72,6 +72,7 @@
                       :data="getRandomData()"
                       :gradient="[appConfig.colors.danger]"
                       :height="40"
+                      stroke-width="4"
                       smooth />
                   </div>
                 </div>
@@ -82,6 +83,7 @@
                       :data="getRandomData()"
                       :gradient="[appConfig.colors.info]"
                       :height="40"
+                      stroke-width="4"
                       smooth />
                   </div>
                 </div>
@@ -92,6 +94,7 @@
                       :data="getRandomData()"
                       :gradient="[appConfig.colors.primary]"
                       :height="40"
+                      stroke-width="4"
                       smooth />
                   </div>
                 </div>
