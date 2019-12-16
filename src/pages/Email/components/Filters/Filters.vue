@@ -1,7 +1,7 @@
 <template>
   <div class="col-lg-3 col-xl-2 col-xs-12">
     <b-button
-      variant="danger"
+      variant="info"
       class="btn-block"
       @click="compose(true)"
     >

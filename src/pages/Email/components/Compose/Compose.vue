@@ -4,7 +4,7 @@
       <h4 class="mb-lg">Compose <span class="fw-semi-bold">New</span></h4>
       <b-form-input class="mb" type="text" placeholder="To" :value="data && data.from" />
       <b-form-input class="mb" type="text" placeholder="Subject" :value="data && data.theme" />
-      <trumbowyg v-model="wygContent"></trumbowyg>
+      <ckeditor :editor="wygEditor" v-model="wygContent"></ckeditor>
       <div class="text-md-right mt">
         <b-button class="ml-xs" variant="gray">Discard</b-button>
         <b-button class="ml-xs" variant="gray">Save</b-button>
@@ -16,6 +16,7 @@
 
 <script>
 import Widget from '@/components/Widget/Widget';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default {
   name: 'Compose',
@@ -23,6 +24,7 @@ export default {
   props: ['data'],
   data() {
     return {
+      wygEditor: ClassicEditor,
       wygContent: '',
     };
   },

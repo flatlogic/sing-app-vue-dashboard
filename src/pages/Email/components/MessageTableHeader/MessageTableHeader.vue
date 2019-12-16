@@ -8,7 +8,7 @@
         <b-dropdown-item-button @click="chooseRead">Read</b-dropdown-item-button>
         <b-dropdown-item-button @click="chooseUnread">Unread</b-dropdown-item-button>
       </b-dropdown>
-      <b-dropdown text="Actions" variant="default" size="sm">
+      <b-dropdown text="Actions" variant="default" size="sm" class="ml-2">
         <b-dropdown-item-button>Reply</b-dropdown-item-button>
         <b-dropdown-item-button>Forward</b-dropdown-item-button>
         <b-dropdown-item-button>Archive</b-dropdown-item-button>

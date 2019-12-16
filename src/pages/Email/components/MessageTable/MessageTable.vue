@@ -1,9 +1,16 @@
 <template>
-  <div class="col-lg-9 col-xl-10 col-xs-12">
-    <Pagination v-if="openedMessage === null && !compose" />
-    <b-button v-else variant="default" class="mb" @click="openMessage(null)">
-      <i class="fa fa-angle-left fa-lg" />
-    </b-button>
+  <div class="col-lg-9 col-xl-10 col-xs-12 d-flex flex-column">
+    <b-pagination v-if="openedMessage === null && !compose"
+                  v-model="currentPage"
+                  :total-rows="rows"
+                  :per-page="perPage"
+                  class="ml-auto"
+    ></b-pagination>
+    <span v-else>
+      <b-button variant="default" class="mb" @click="openMessage(null)">
+        <i class="fa fa-angle-left fa-lg"></i>
+      </b-button>
+    </span>
     <Widget v-if="openedMessage === null && !compose">
         <MessageTableHeader
           :search="search"
@@ -55,9 +62,9 @@
                   @click="starItem(message.id)"
                 >
                     <span v-if="message.starred" class="messageStarred">
-                      <i class="fa fa-star" />
+                      <i class="la la-star" />
                     </span>
-                    <span v-else><i class="fa fa-star-o" /></span>
+                    <span v-else><i class="la la-star-o" /></span>
                 </td>
                 <td
                   class="messageFrom"
@@ -82,7 +89,6 @@
 import Vue from 'vue';
 
 import Widget from '@/components/Widget/Widget';
-import Pagination from '../Pagination/Pagination';
 import MessageTableHeader from '../MessageTableHeader/MessageTableHeader';
 import Message from '../Message/Message';
 import Compose from '../Compose/Compose';
@@ -92,7 +98,7 @@ import mock from '../../mock';
 export default {
   name: 'MessageTable',
   components: {
-    Widget, Pagination, MessageTableHeader, Message, Compose,
+    Widget, MessageTableHeader, Message, Compose,
   },
   props: ['filter', 'openedMessage', 'openMessage', 'composeData', 'changeCompose', 'compose'],
   data() {
@@ -100,6 +106,9 @@ export default {
       messages: mock,
       checkedIds: [],
       searchString: '',
+      currentPage: 1,
+      perPage: 10,
+      rows: 96
     };
   },
   methods: {
