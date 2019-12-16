@@ -1,7 +1,7 @@
 <template>
     <div :class="{ 'theme-helper': true, 'theme-helper-opened': helperOpened }">
         <div class="theme-helper-toggler" @click="toggleHelper(!helperOpened)" id="v-step-4">
-            <div class="theme-helper-spinner bg-warning text-white">
+            <div class="theme-helper-spinner bg-primary text-white">
                 <i class="la la-cog"></i>
                 <i class="la la-cog fs-smaller"></i>
             </div>

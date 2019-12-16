@@ -246,14 +246,15 @@ small {
 }
 
 .dropdown-toggle::after {
-  font-family: LineAwesome, sans-serif;
-  content: "\F110";
+  font-family: 'Line Awesome Free', sans-serif;
+  content: "\f107";
   border: none;
   width: auto;
   height: auto;
   vertical-align: baseline;
   opacity: .8;
   font-size: 85%;
+  font-weight: $font-weight-semi-bold;
 }
 
 .dropdown-toggle-no-caret:after {

@@ -19,7 +19,7 @@
         >
           <p>Status: <strong>Live</strong></p>
           <p>
-            <span class="circle bg-warning text-white"><i class="fa fa-map-marker" /></span> &nbsp;
+            <span class="circle bg-primary text-white"><i class="la la-map-marker" /></span> &nbsp;
             146 Countries, 2759 Cities
           </p>
           <div class="row progress-stats">
@@ -61,7 +61,7 @@
           <h6 class="fw-semi-bold mt">Map Distributions</h6>
           <p>Tracking: <strong>Active</strong></p>
           <p>
-            <span class="circle bg-warning text-white"><i class="fa fa-cog" /></span>
+            <span class="circle bg-primary text-white"><i class="la la-cog" /></span>
             &nbsp; 391 elements installed, 84 sets
           </p>
           <b-input-group class="mt">
@@ -99,8 +99,8 @@
             :max="100" class="bg-gray-lighter progress-xs" />
           <p>
             <small>
-              <span class="circle bg-warning text-white">
-                <i class="fa fa-chevron-up" />
+              <span class="circle bg-primary text-white">
+                <i class="la la-angle-up" />
               </span>
             </small>
             <span class="fw-semi-bold">&nbsp;17% higher</span>
@@ -131,8 +131,8 @@
             :value="60" :max="100" class="bg-gray-lighter progress-xs" />
           <p>
             <small>
-              <span class="circle bg-warning text-white">
-                <i class="fa fa-chevron-down" />
+              <span class="circle bg-primary text-white">
+                <i class="la la-angle-down" />
               </span>
             </small>
             <span class="fw-semi-bold">&nbsp;8% lower</span>
@@ -163,8 +163,8 @@
             :max="100" class="bg-gray-lighter progress-xs" />
           <p>
             <small>
-              <span class="circle bg-warning text-white">
-                <i class="fa fa-plus" />
+              <span class="circle bg-primary text-white">
+                <i class="la la-plus" />
               </span>
             </small>
             <span class="fw-semi-bold">&nbsp;8 734 higher</span>
@@ -208,7 +208,7 @@
               <a class="list-group-item" href="#">
                 <span class="thumb-sm float-left mr">
                   <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="..." />
-                  <i class="status status-bottom bg-warning" />
+                  <i class="status status-bottom bg-primary" />
                 </span>
                 <div>
                   <h6 class="m-0">Livia Walsh</h6>
@@ -312,7 +312,7 @@
           <Calendar />
           <div class="list-group fs-mini">
             <a href="#" class="list-group-item text-ellipsis">
-              <span class="badge badge-pill badge-warning float-right">6:45</span>
+              <span class="badge badge-pill badge-info float-right">6:45</span>
               Weed out the flower bed
             </a>
             <a href="#" class="list-group-item text-ellipsis">
@@ -383,12 +383,12 @@ export default {
         datasets: [
           {
             label: 'Data One',
-            backgroundColor: '#ffc247',
+            backgroundColor: this.appConfig.colors.info,
             borderColor: 'transparent',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }, {
             label: 'Data Two',
-            backgroundColor: '#e9ecef',
+            backgroundColor: this.appConfig.colors.primary,
             borderColor: 'transparent',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }

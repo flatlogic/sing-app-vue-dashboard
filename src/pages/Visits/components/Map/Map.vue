@@ -47,6 +47,9 @@ export default {
     let map = am4core.create(this.$refs.map, am4maps.MapChart);
     map.geodata = am4geodata_usaHigh;
     map.projection = new am4maps.projections.AlbersUsa();
+    map.chartContainer.wheelable = false;
+    map.seriesContainer.draggable = false;
+    map.seriesContainer.resizable = false;
     let polygonSeries = map.series.push(new am4maps.MapPolygonSeries());
     polygonSeries.useGeodata = true;
     map.homeZoomLevel = 1.2;
@@ -70,9 +73,11 @@ export default {
 
     let polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    polygonTemplate.fill = am4core.color("#e5e7f1");
+    polygonTemplate.fill = am4core.color("#1A86D0");
+    polygonTemplate.fillOpacity = 0.2;
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#e9ebf6");
+    hs.properties.fill = am4core.color("#1A86D0");
+    hs.properties.fillOpacity = 0.5;
 
     let citySeries = map.series.push(new am4maps.MapImageSeries());
     citySeries.data = cities;
@@ -83,7 +88,7 @@ export default {
     city.propertyFields.latitude = "latitude";
     city.propertyFields.longitude = "longitude";
     let circle = city.createChild(am4core.Circle);
-    circle.fill = am4core.color("#ffc247");
+    circle.fill = am4core.color("#1A86D0");
     circle.stroke = am4core.color("#ffffff");
     circle.strokeWidth = 0;
     let circleHoverState = circle.states.create("hover");
