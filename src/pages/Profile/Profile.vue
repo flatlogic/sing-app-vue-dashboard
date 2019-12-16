@@ -27,7 +27,7 @@
                 </span>
                 <h5 class="fw-normal">Adam <span class="fw-semi-bold">Johns</span></h5>
                 <p>UI/UX designer</p>
-                <a href="#" class="btn btn-danger btn-sm mb-3">
+                <a href="#" class="btn btn-success btn-sm mb-3">
                   &nbsp;Send
                   <i class="fa fa-envelope ml-2" />&nbsp;
                 </a>
@@ -63,8 +63,8 @@
                 </div>
               </div>
               <p>
-                <a href="#" class="badge badge-warning rounded-0"> UI/UX </a>
-                <a href="#" class="badge badge-danger rounded-0 ml-2"> Web Design </a>
+                <a href="#" class="badge badge-info rounded-0"> UI/UX </a>
+                <a href="#" class="badge badge-primary rounded-0 ml-2"> Web Design </a>
                 <a href="#" class="badge badge-default rounded-0 ml-2"> Mobile Apps </a>
               </p>
               <p class="lead mt-xlg">
