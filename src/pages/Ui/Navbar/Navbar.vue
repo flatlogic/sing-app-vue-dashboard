@@ -52,7 +52,7 @@
             for use with light background colors, or
             <code>color=&quot;dark&quot;</code> for dark background
             colors. Then, customize with <code>.bg-*</code> utilities.</p>
-          <b-navbar class="mt px-2" toggleable="md" type="dark" variant="dark">
+          <b-navbar class="mt px-2" toggleable="md" type="dark" variant="inverse">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
             <b-navbar-toggle class="ml-auto" target="nav_collapse2"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse2">

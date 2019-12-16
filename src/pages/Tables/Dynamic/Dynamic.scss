@@ -17,3 +17,13 @@
     }
   }
 }
+
+.VueTables__table {
+  tr {
+    th {
+      background: $primary;
+      color: #C2C2C2;
+      border-color: transparent;
+    }
+  }
+}

@@ -75,4 +75,4 @@ export default {
 };
 </script>
 
-<style src="./Dynamic.scss" lang="scss" scoped />
+<style src="./Dynamic.scss" lang="scss" />
