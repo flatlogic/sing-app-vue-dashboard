@@ -72,17 +72,17 @@
           so if you change that value the inner
           bar will automatically resize accordingly. Also <code>.progress-sm</code> is available.
           </p>
-          <b-progress class="progress-sm mb-sm" :max="100" variant="dark">
+          <b-progress class="progress-sm mb-sm" :max="100" variant="inverse">
             <b-progress-bar :value="25">
               25%
             </b-progress-bar>
           </b-progress>
-          <b-progress class="mb-sm" :max="100" variant="gray">
+          <b-progress class="mb-sm" :max="100" variant="inverse">
             <b-progress-bar :value="50">
               50%
             </b-progress-bar>
           </b-progress>
-          <b-progress :max="100" variant="secondary" :style="{ height: '30px' }">
+          <b-progress :max="100" variant="inverse" :style="{ height: '30px' }">
             <b-progress-bar :value="75">
               75%
             </b-progress-bar>
