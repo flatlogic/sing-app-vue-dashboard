@@ -22,6 +22,9 @@ export default {
       info: "#1A86D0",
       warning: "#FDA700",
       danger: "#FD5F00",
+      inverse: "#002B49",
+      textColor: "#495057",
+      gray: "#D7DFE6"
     },
     themeColors: [
       ['gray','#313947'],
@@ -32,6 +35,9 @@ export default {
       ['yellow','#FFC247'],
       ['green','#3ABF94'],
       ['sea','#3D5C70'],
-    ]
+    ],
+    chartColors: {
+      axisColor: '#8EA1AB'
+    }
   }
 };

@@ -1,6 +1,10 @@
 import Highcharts from 'highcharts';
 import usdeur from './usdeur';
 import sunburstData from './sunburstData';
+import config from '../../../config';
+
+const {inverse, info, primary, danger, warning, success, textColor, gray} = config.app.colors;
+const {axisColor} = config.app.chartColors;
 
 let wordCloudText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum erat ac justo sollicitudin, quis lacinia ligula fringilla. Pellentesque hendrerit, nisi vitae posuere condimentum, lectus urna accumsan libero, rutrum commodo mi lacus pretium erat. Phasellus pretium ultrices mi sed semper.';
 let wordCloudLines = wordCloudText.split(/[,. ]+/g),
@@ -47,23 +51,47 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#547fff'],
+    colors: [info],
     chart: {
       zoomType: 'x'
     },
     title: {
-      text: 'USD to EUR exchange rate over time'
+      text: 'USD to EUR exchange rate over time',
+      style: {
+        color: textColor
+      }
+    },
+    exporting: {
+      enabled: false
     },
     subtitle: {
       text: document.ontouchstart === undefined ?
-        'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+        'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in',
+      style: {
+        color: textColor
+      }
     },
     xAxis: {
-      type: 'datetime'
+      type: 'datetime',
+      labels: {
+        style: {
+          color: axisColor
+        }
+      },
+      lineWidth: 0,
+      tickWidth: 0
     },
     yAxis: {
       title: {
-        text: 'Exchange rate'
+        text: 'Exchange rate',
+        style: {
+          color: axisColor
+        }
+      },
+      labels: {
+        style: {
+          color: axisColor
+        }
       }
     },
     legend: {
@@ -79,11 +107,12 @@ export default {
             y2: 1
           },
           stops: [
-            [0, Highcharts.getOptions().colors[0]],
-            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+            [0, info],
+            [1, Highcharts.Color(info).setOpacity(0).get('rgba')]
           ]
         },
         marker: {
+          enabled: false,
           radius: 2
         },
         lineWidth: 1,
@@ -109,11 +138,17 @@ export default {
     chart: {
       type: 'variablepie'
     },
+    exporting: {
+      enabled: false
+    },
     accessibility: {
       description: 'A variable radius pie chart compares the population density and total land mass for seven European nations: Spain, France, Poland, the Czech Republic, Italy, Switzerland and Germany. The chart visualizes the data by using the width of each section to represent total area and the depth of the section to represent population density. Each section is color-coded according to the country and the chart is interactive: by hovering over each section the data points are exposed in a call-out box. The chart is organized by population density in a counterclockwise direction. Germany has the highest population density at 235.6 people per square kilometer, followed by Switzerland, Italy, the Czech Republic, Poland, France and Spain. France has the largest land mass at 551,500 square kilometers. Spain is the second largest country at 505,370 square kilometers but has the lowest population density at 92.9 people per square kilometer. Switzerland is the smallest nation by land mass at 41,277 square kilometers but it has the second highest population density at 214.5 people per square kilometer.'
     },
     title: {
-      text: 'Countries compared by population density and total area.'
+      text: 'Countries compared by population density and total area.',
+      style: {
+        color: textColor
+      }
     },
     tooltip: {
       headerFormat: '',
@@ -121,7 +156,18 @@ export default {
         'Area (square km): <b>{point.y}</b><br/>' +
         'Population density (people per square km): <b>{point.z}</b><br/>'
     },
-    colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8'],
+    plotOptions: {
+      variablepie: {
+        borderColor: null,
+        dataLabels: {
+          style: {
+            color: axisColor,
+            textOutline: null
+          }
+        }
+      }
+    },
+    colors: [info, success, warning, danger, primary, inverse, '#43adf6'],
     series: [{
       minPointSize: 10,
       innerSize: '20%',
@@ -162,7 +208,7 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#f55d5d'],
+    colors: [primary],
     chart: {
       type: 'column',
       options3d: {
@@ -172,11 +218,25 @@ export default {
         depth: 70
       }
     },
+    exporting: {
+      enabled: false
+    },
     title: {
-      text: '3D chart with null values'
+      text: '3D chart with null values',
+      style: {
+        color: textColor
+      }
+    },
+    legend: {
+      itemStyle: {
+        color: textColor
+      }
     },
     subtitle: {
-      text: 'Notice the difference between a 0 value and a null point'
+      text: 'Notice the difference between a 0 value and a null point',
+      style: {
+        color: textColor
+      }
     },
     plotOptions: {
       column: {
@@ -188,13 +248,19 @@ export default {
       labels: {
         skew3d: true,
         style: {
-          fontSize: '16px'
+          fontSize: '16px',
+          color: axisColor
         }
       }
     },
     yAxis: {
       title: {
         text: null
+      },
+      labels: {
+        style: {
+          color: axisColor
+        }
       }
     },
     series: [{
@@ -209,14 +275,31 @@ export default {
     chart: {
       height: '100%'
     },
-
+    exporting: {
+      enabled: false
+    },
     title: {
-      text: 'World population 2017'
+      text: 'World population 2017',
+      style: {
+        color: textColor
+      }
     },
     subtitle: {
-      text: 'Source <href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>'
+      text: 'Source <href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>',
+      style: {
+        color: textColor
+      }
     },
-    colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8'],
+    plotOptions: {
+      sunburst: {
+        dataLabels: {
+          style: {
+            textOutline: null
+          }
+        }
+      }
+    },
+    colors: [inverse, success, warning, danger, primary, gray, info],
     series: [{
       type: "sunburst",
       data: sunburstData,
@@ -268,23 +351,50 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#495057'],
     title: {
-      text: 'Highcharts Vector plot'
+      text: 'Highcharts Vector plot',
+      style: {
+        color: textColor
+      }
+    },
+    exporting: {
+      enabled: false
     },
     xAxis: {
       min: 0,
       max: 100,
-      gridLineWidth: 1
+      gridLineWidth: 1,
+      labels: {
+        style: {
+          color: axisColor
+        }
+      },
+      lineWidth: 0,
+      tickWidth: 0
     },
     yAxis: {
       min: 0,
-      max: 100
+      max: 100,
+      title: {
+        style: {
+          color: axisColor
+        }
+      },
+      labels: {
+        style: {
+          color: axisColor
+        }
+      },
+    },
+    legend: {
+      itemStyle: {
+        color: textColor
+      }
     },
     series: [{
       type: 'vector',
       name: 'Sample vector field',
-      color: Highcharts.getOptions().colors[1],
+      color: primary,
       data: generateVectorData()
     }]
   },
@@ -292,14 +402,20 @@ export default {
     credits: {
       enabled: false
     },
-    colors: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8'],
+    colors: [info, success, warning, danger, primary, inverse],
+    exporting: {
+      enabled: false
+    },
     series: [{
       type: 'wordcloud',
       data: wordCloudData,
       name: 'Occurrences'
     }],
     title: {
-      text: 'Wordcloud of Lorem Ipsum'
+      text: 'Wordcloud of Lorem Ipsum',
+      style: {
+        color: textColor
+      }
     }
   }
 }

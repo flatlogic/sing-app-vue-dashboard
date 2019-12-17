@@ -1,7 +1,13 @@
 import Highcharts from 'highcharts';
+import config from '../../config';
 
-let columnColors = ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f', '#17a2b8', '#e54e9a'];
-let lineColors = ['#547fff', '#3abf94', '#ffc247'];
+const colors = config.app.colors;
+const {inverse, info, primary, danger, warning, success, textColor} = colors;
+const chartColors = config.app.chartColors;
+const {axisColor} = chartColors;
+
+let columnColors = [inverse, primary, info, success, warning, danger, '#EC2A00', '#FF8C22'];
+let lineColors = [primary, success, warning];
 
 export const chartData = {
   apex: {
@@ -31,8 +37,21 @@ export const chartData = {
               colors: columnColors,
               fontSize: '14px'
             }
+          },
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
           }
-        }
+        },
+        yaxis: {
+          labels: {
+            style: {
+              color: axisColor,
+            }
+          }
+        },
       }
     },
     pie: {
@@ -42,8 +61,12 @@ export const chartData = {
         theme: {
           monochrome: {
             enabled: true,
-            color: '#547fff',
+            color: primary,
           }
+        },
+        stroke: {
+          show: false,
+          width: 0
         },
         legend: false,
         responsive: [{
@@ -70,7 +93,10 @@ export const chartData = {
         }
       },
       legend: {
-        data: ['2015 Precipitation', '2016 Precipitation']
+        data: ['2015 Precipitation', '2016 Precipitation'],
+        textStyle: {
+          color: axisColor
+        }
       },
       grid: {
         top: 70,
@@ -122,7 +148,15 @@ export const chartData = {
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          axisLabel: {
+            color: axisColor
+          },
+          axisLine: {
+            lineStyle: {
+              color: axisColor
+            }
+          },
         }
       ],
       series: [
@@ -149,7 +183,7 @@ export const chartData = {
       legend: {
         show: false
       },
-      color: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3'],
+      color: [primary, success, danger, warning, info],
       series: [
         {
           name: 'Access source',
@@ -198,14 +232,19 @@ export const chartData = {
       },
 
       legend: {
-        data: ['DQ', 'TY', 'SS', 'QG', 'SY', 'DD']
+        data: ['DQ', 'TY', 'SS', 'QG', 'SY', 'DD'],
+        textStyle: {
+          color: axisColor
+        }
       },
-      color: ['#547fff', '#3abf94', '#ffc247', '#f55d5d', '#9964e3', '#3c484f'],
+      color: [primary, success, warning, danger, info, inverse],
       singleAxis: {
         top: 50,
         bottom: 50,
         axisTick: {},
-        axisLabel: {},
+        axisLabel: {
+          color: axisColor
+        },
         type: 'time',
         axisPointer: {
           animation: true,
@@ -219,7 +258,12 @@ export const chartData = {
             type: 'dashed',
             opacity: 0.2
           }
-        }
+        },
+        axisLine: {
+          lineStyle: {
+            color: axisColor
+          }
+        },
       },
 
       series: [
@@ -283,8 +327,14 @@ export const chartData = {
         type: 'spline',
         height: 350
       },
+      exporting: {
+        enabled: false
+      },
       title: {
-        text: 'Snow depth at Vikjafjellet, Norway'
+        text: 'Snow depth at Vikjafjellet, Norway',
+        style: {
+          color: textColor
+        }
       },
       credits: {
         enabled: false
@@ -294,13 +344,23 @@ export const chartData = {
         dateTimeLabelFormats: { // don't display the dummy year
           month: '%e. %b',
           year: '%b'
+        },
+        labels: {
+          style: {
+            color: axisColor
+          }
         }
       },
       yAxis: {
         min: 0,
         title: {
           enabled: false
-        }
+        },
+        labels: {
+          style: {
+            color: axisColor
+          }
+        },
       },
       tooltip: {
         headerFormat: '<b>{series.name}</b><br>',
@@ -317,7 +377,7 @@ export const chartData = {
           }
         }
       },
-      colors: ['#ffc247', '#ffebb2', '#ffc0d9'],
+      colors: [success, primary, info],
 
       series: [{
         name: "Winter 2014-2015",
@@ -446,7 +506,7 @@ export let liveChartInterval = null;
 
 export const liveChart = {
   liveChartInterval: null,
-  colors: ['#547fff'],
+  colors: [primary],
   chart: {
     height: 170,
     type: 'spline',
@@ -475,7 +535,14 @@ export const liveChart = {
   title: false,
   xAxis: {
     type: 'datetime',
-    tickPixelInterval: 150
+    tickPixelInterval: 150,
+    labels: {
+      style: {
+        color: axisColor
+      }
+    },
+    lineWidth: 0,
+    tickWidth: 0
   },
   yAxis: {
     title: {
@@ -484,8 +551,13 @@ export const liveChart = {
     plotLines: [{
       value: 0,
       width: 1,
-      color: '#808080'
-    }]
+      color: axisColor
+    }],
+    labels: {
+      style: {
+        color: axisColor
+      }
+    }
   },
   tooltip: {
     headerFormat: '<b>{series.name}</b><br/>',
