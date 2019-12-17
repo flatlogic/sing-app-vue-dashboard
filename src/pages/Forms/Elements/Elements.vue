@@ -407,7 +407,7 @@
                 </div>
                 <ckeditor :editor="wygEditor" v-model="wygContent"></ckeditor>
                 <div class="text-md-right mt-sm">
-                  <b-button variant="danger">Save</b-button>
+                  <b-button variant="danger" class="mr-2">Save</b-button>
                   <b-button variant="default">Clear</b-button>
                 </div>
             </b-form-group>
@@ -508,7 +508,7 @@
                 Colored ones <br>
                 <span class="help">A bit of Japanese</span>
               </div>
-              <b-dropdown id="danger-select" :text="dangerDropdownVariant" variant="danger">
+              <b-dropdown id="danger-select" :text="dangerDropdownVariant" variant="danger" class="mr-2">
                 <b-dropdown-item-button
                   @click="changeSelectOption('dangerDropdownVariant', 'Ichi')"
                 >Ichi</b-dropdown-item-button>
@@ -519,7 +519,7 @@
                   @click="changeSelectOption('dangerDropdownVariant', 'San')"
                 >San</b-dropdown-item-button>
               </b-dropdown>
-              <b-dropdown :text="warningDropdownVariant" variant="warning">
+              <b-dropdown :text="warningDropdownVariant" variant="warning" class="mr-2">
                 <b-dropdown-item-button
                   @click="changeSelectOption('warningDropdownVariant', 'Shi')"
                 >Shi</b-dropdown-item-button>
@@ -800,7 +800,7 @@
                   checkbox inputs into beautiful iOS 7 style switches in
                   just few simple steps.
                 </p>
-                <b-form-group class="display-inline-block checkbox-ios">
+                <b-form-group class="display-inline-block checkbox-ios mr-2">
                   <label for="checkbox-ios1" class="switch  form-control-label">
                     <input type="checkbox" id="checkbox-ios1"
                       class="ios form-check-input" value="off">
@@ -983,7 +983,7 @@
                     />
                   </span>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span class="slider-inverse">
+                  <span>
                     <b-form-slider
                       :value='18'
                       :max='20'
@@ -999,7 +999,7 @@
                     />
                   </span>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span class="slider-inverse">
+                  <span>
                     <b-form-slider
                       :value='11'
                       :max='20'
@@ -1022,7 +1022,7 @@
               <p>Range selector, options specified via <strong>value</strong>
                 attribute as
                 an array. Price range selector:</p>
-              <span class="slider-warning">
+              <span class="slider-danger">
                 <b-form-slider
                   :max="2000"
                   :value="[200, 1547]" range
