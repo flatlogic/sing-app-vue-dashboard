@@ -35,11 +35,11 @@
         <b-nav pills class="flex-column nav-stacked searchResultCategories mt">
           <b-nav-item href="#">
             Hot Ideas
-            <b-badge variant="default" pill class="float-right">34</b-badge>
+            <b-badge variant="danger" pill class="float-right">34</b-badge>
           </b-nav-item>
           <b-nav-item href="#">
             Latest Pictures
-            <b-badge variant="default" pill class="float-right">9</b-badge>
+            <b-badge variant="success" pill class="float-right">9</b-badge>
           </b-nav-item>
           <b-nav-item href="#">
             Labels of Day
@@ -49,7 +49,7 @@
           </b-nav-item>
            <b-nav-item href="#">
             Globals
-            <b-badge variant="default" pill class="float-right">18</b-badge>
+            <b-badge variant="info" pill class="float-right">18</b-badge>
           </b-nav-item>
         </b-nav>
       </b-col>

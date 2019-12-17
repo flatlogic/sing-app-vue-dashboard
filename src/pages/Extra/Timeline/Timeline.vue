@@ -13,7 +13,7 @@
           <span class="time">8:03 <span class="fw-semi-bold">pm</span></span>
         </time>
         <span class="eventIcon eventIconSuccess">
-          <i class="glyphicon glyphicon-map-marker" />
+          <i class="la la-lg la-map-marker" />
         </span>
         <section class="event">
           <span class="thumb-sm avatar pull-left mr-sm">
@@ -86,7 +86,7 @@
           <span class="time">9:41 <span class="fw-semi-bold">am</span></span>
         </time>
         <span class="eventIcon eventIconPrimary">
-          <i class="glyphicon glyphicon-comments" />
+          <i class="la la-lg la-comment" />
         </span>
         <section class="event">
           <span class="thumb-xs avatar pull-left mr-sm">
@@ -118,7 +118,7 @@
           <span class="time">9:03 <span class="fw-semi-bold">am</span></span>
         </time>
         <span class="eventIcon eventIconDanger">
-          <i class="glyphicon glyphicon-cutlery" />
+          <i class="la la-lg la-utensils"/>
         </span>
         <section class="event">
           <h5 class="eventHeading"><a href="#">Jessica Smith</a>
@@ -194,8 +194,8 @@
           <span class="date">yesterday</span>
           <span class="time">9:03 <span class="fw-semi-bold">am</span></span>
         </time>
-        <span class="eventIcon">
-          <img class="rounded-circle" src="../../../assets/avatar.png" alt="..." />
+        <span class="eventIcon eventIconInfo">
+          <i class="la la-lg la-user"/>
         </span>
         <section class="event">
           <span class="thumb-xs avatar pull-left mr-sm">

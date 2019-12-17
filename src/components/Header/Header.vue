@@ -36,13 +36,13 @@
       </b-form>
     </b-nav>
     <a  class="navbarBrand d-md-none">
-      <i class="fa fa-circle text-gray mr-n-sm" />
-      <i class="fa fa-circle text-warning" />
+      <i class="fa fa-circle text-primary mr-n-sm" />
+      <i class="fa fa-circle text-danger" />
       &nbsp;
       sing
       &nbsp;
-      <i class="fa fa-circle text-warning mr-n-sm" />
-      <i class="fa fa-circle text-gray" />
+      <i class="fa fa-circle text-danger mr-n-sm" />
+      <i class="fa fa-circle text-primary" />
     </a>
     <b-nav class="ml-auto">
       <b-nav-item-dropdown

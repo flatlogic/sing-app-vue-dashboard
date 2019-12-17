@@ -2,9 +2,9 @@
   <div class="auth-page">
     <b-container>
       <h5 class="auth-logo">
-        <i class="fa fa-circle text-gray"></i>
+        <i class="fa fa-circle text-primary"></i>
         Sing App
-        <i class="fa fa-circle text-warning"></i>
+        <i class="fa fa-circle text-danger"></i>
       </h5>
       <Widget class="widget-auth mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
         <p class="widget-auth-info">
@@ -27,7 +27,7 @@
           <div class="form-group">
             <input class="form-control no-border" ref="password" required type="password" name="password" placeholder="Password" />
           </div>
-          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="inverse">{{this.isFetching ? 'Loading...' : 'Login'}}</b-button>
+          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="info">{{this.isFetching ? 'Loading...' : 'Login'}}</b-button>
           <p class="widget-auth-info">or sign in with</p>
           <div class="social-buttons">
             <b-button @click="googleLogin" variant="primary" class="social-button mb-2">

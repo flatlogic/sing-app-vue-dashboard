@@ -116,7 +116,7 @@
 
 .table-bordered th {
   background-color: $primary;
-  color: #F6F6E9;
+  color: var(--light-color);
   border: none;
 }
 
@@ -266,7 +266,7 @@ table > thead > tr > th {
   .author {
     margin-top: 0;
     margin-bottom: 2px;
-    color: #7ca9dd;
+    color: $info;
   }
 
   .comment-body {

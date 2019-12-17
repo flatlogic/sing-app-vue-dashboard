@@ -13,13 +13,17 @@
   .errorBtn {
     padding-left: 35px;
     padding-right: 35px;
+
+    .la-search {
+      color: var(--light-color);
+    }
   }
 
   .errorCode {
     margin: 20px;
     font-size: 80px;
     font-weight: $font-weight-normal;
-    color: $gray-800;
+    color: $primary;
 
     @include media-breakpoint-up(md) {
       font-size: 180px;

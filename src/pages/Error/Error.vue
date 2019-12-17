@@ -14,8 +14,8 @@
             <b-form-input class="input-no-border" type="text" placeholder="Search Pages" />
           </b-form-group>
           <router-link tag="a" to="/app/extra/search">
-            <b-button class="errorBtn" type="submit" variant="inverse">
-                Search <i class="fa fa-search text-warning ml-xs" />
+            <b-button class="errorBtn" type="submit" variant="success">
+                Search <i class="la la-search ml-xs" />
             </b-button>
           </router-link>
         </b-form>

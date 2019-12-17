@@ -34,7 +34,7 @@
   .author {
     margin-top: 0;
     margin-bottom: 2px;
-    color: #7ca9dd;
+    color: $info;
   }
 
   .commentBody {
@@ -293,7 +293,6 @@
 
   > a {
     text-decoration: none;
-    color: #7ca9dd;
   }
 
   > small {
