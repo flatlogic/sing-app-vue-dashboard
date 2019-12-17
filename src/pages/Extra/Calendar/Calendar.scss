@@ -4,36 +4,41 @@
 @import '../../../../node_modules/@fullcalendar/timegrid/main.css';
 
 .calendar-page {
-  :global {
+  .fc {
     .fc-event {
       border: none;
       padding: 2px;
       background-color: $gray-200;
-      color: $text-color;
+      color: $white;
+
+      &:hover {
+        color: white;
+      }
     }
 
     .fc-today {
-      background-color: #fff1b8;
+      background-color: rgba($info, .2);
     }
 
     .fc-content {
       text-overflow: ellipsis;
     }
+  }
 
-    /* ****  Full Calendar Custom   **** */
-    .calendar-external-events {
-      margin-top: $spacer;
 
-      .external-event {
-        margin: ($spacer/2) 0;
-        padding: $spacer / 2;
-        font-size: $font-size-mini;
-        cursor: move;
-        border-radius: $border-radius;
-        background-color: $white;
-        border: 1px solid $border-color;
-        box-shadow: var(--widget-shadow);
-      }
+  /* ****  Full Calendar Custom   **** */
+  .calendar-external-events {
+    margin-top: $spacer;
+
+    .external-event {
+      margin: ($spacer/2) 0;
+      padding: $spacer / 2;
+      font-size: $font-size-mini;
+      cursor: move;
+      border-radius: $border-radius;
+      background-color: $white;
+      border: 1px solid $border-color;
+      box-shadow: var(--widget-shadow);
     }
   }
 }

@@ -146,89 +146,11 @@ export default {
   name: 'CalendarPage',
   components: { Widget, FullCalendar },
   data() {
-    const date = new Date();
-    const d = date.getDate();
-    const m = date.getMonth();
-    const y = date.getFullYear();
-
     return {
       event: {},
       calendarView: 'dayGridMonth',
       currentMonth: moment().format('MMM YYYY'),
       currentDay: moment().format('dddd'),
-      calendarOptions: {
-        header: {
-          left: '',
-          center: '',
-          right: '',
-        },
-        events: [
-          {
-            title: 'All Day Event',
-            start: new Date(y, m, 1),
-            backgroundColor: '#79A5F0',
-            textColor: '#fff',
-            description: 'Will be busy throughout the whole day',
-          },
-          {
-            title: 'Long Event',
-            start: new Date(y, m, d + 5),
-            end: new Date(y, m, d + 7),
-            description: 'This conference should be worse visiting',
-          },
-          {
-            id: 999,
-            title: 'Blah Blah Car',
-            start: new Date(y, m, d - 3, 16, 0),
-            allDay: false,
-            description: 'Agree with this guy on arrival time',
-          },
-          {
-            id: 1000,
-            title: 'Buy this template',
-            start: new Date(y, m, d + 3, 12, 0),
-            allDay: false,
-            backgroundColor: '#555',
-            textColor: '#fff',
-            description: 'Make sure everything is consistent first',
-          },
-          {
-            title: 'Got to school',
-            start: new Date(y, m, d + 16, 12, 0),
-            end: new Date(y, m, d + 16, 13, 0),
-            backgroundColor: '#64bd63',
-            textColor: '#fff',
-            description: 'Time to go back',
-          },
-          {
-            title: 'Study some Node',
-            start: new Date(y, m, d + 18, 12, 0),
-            end: new Date(y, m, d + 18, 13, 0),
-            backgroundColor: '#79A5F0',
-            textColor: '#fff',
-            description: 'Node.js is a platform built '
-            + 'on Chrome\'s JavaScript runtime for easily'
-            + ' building fast, scalable network applications.'
-            + ' Node.js uses an event-driven, non-blocking'
-            + ' I/O model that makes it lightweight and'
-            + ' efficient, perfect for data-intensive real-time'
-            + ' applications that run across distributed devices.',
-          },
-          {
-            title: 'Click for Flatlogic',
-            start: new Date(y, m, 28),
-            end: new Date(y, m, 29),
-            url: 'http://flatlogic.com/',
-            backgroundColor: '#e5603b',
-            textColor: '#fff',
-            description: 'Creative solutions',
-          },
-        ],
-        selectable: true,
-        selectHelper: true,
-        editable: true,
-        droppable: true,
-      },
       calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
       dragOptions: { zIndex: 999, revert: true, revertDuration: 0 },
     };
@@ -245,8 +167,7 @@ export default {
         start,
         end,
         allDay,
-        backgroundColor: '#64bd63',
-        textColor: '#fff',
+        backgroundColor: this.appConfig.colors.success,
         editable: true
       }
     },
@@ -277,6 +198,85 @@ export default {
   computed: {
     calendar() {
       return this.$refs.fullCalendar.getApi();
+    },
+    calendarOptions() {
+      const date = new Date();
+      const d = date.getDate();
+      const m = date.getMonth();
+      const y = date.getFullYear();
+      const {info, danger, primary, gray, success, textColor} = this.appConfig.colors;
+      return {
+        header: {
+          left: '',
+          center: '',
+          right: '',
+        },
+        events: [
+          {
+            title: 'All Day Event',
+            start: new Date(y, m, 1),
+            backgroundColor: info,
+            description: 'Will be busy throughout the whole day',
+          },
+          {
+            title: 'Long Event',
+            start: new Date(y, m, d + 5),
+            end: new Date(y, m, d + 7),
+            textColor: textColor,
+            backgroundColor: gray,
+            description: 'This conference should be worse visiting',
+          },
+          {
+            id: 999,
+            title: 'Blah Blah Car',
+            start: new Date(y, m, d - 3, 16, 0),
+            backgroundColor: gray,
+            textColor: textColor,
+            allDay: false,
+            description: 'Agree with this guy on arrival time',
+          },
+          {
+            id: 1000,
+            title: 'Buy this template',
+            start: new Date(y, m, d + 3, 12, 0),
+            allDay: false,
+            backgroundColor: primary,
+            description: 'Make sure everything is consistent first',
+          },
+          {
+            title: 'Got to school',
+            start: new Date(y, m, d + 16, 12, 0),
+            end: new Date(y, m, d + 16, 13, 0),
+            backgroundColor: success,
+            description: 'Time to go back',
+          },
+          {
+            title: 'Study some Node',
+            start: new Date(y, m, d + 18, 12, 0),
+            end: new Date(y, m, d + 18, 13, 0),
+            backgroundColor: info,
+            description: 'Node.js is a platform built '
+              + 'on Chrome\'s JavaScript runtime for easily'
+              + ' building fast, scalable network applications.'
+              + ' Node.js uses an event-driven, non-blocking'
+              + ' I/O model that makes it lightweight and'
+              + ' efficient, perfect for data-intensive real-time'
+              + ' applications that run across distributed devices.',
+          },
+          {
+            title: 'Click for Flatlogic',
+            start: new Date(y, m, 28),
+            end: new Date(y, m, 29),
+            url: 'http://flatlogic.com/',
+            backgroundColor: danger,
+            description: 'Creative solutions',
+          },
+        ],
+        selectable: true,
+        selectHelper: true,
+        editable: true,
+        droppable: true,
+      }
     }
   },
   mounted() {
