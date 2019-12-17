@@ -18,12 +18,12 @@
   }
 }
 
-.VueTables__table {
+.VueTables__table.table {
   tr {
     th {
       background: $primary;
-      color: #C2C2C2;
-      border-color: transparent;
+      color: #F6F6E9;
+      border: none;
     }
   }
 }

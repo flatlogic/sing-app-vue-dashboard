@@ -115,7 +115,9 @@
 }
 
 .table-bordered th {
-  background-color: $gray-300;
+  background-color: $primary;
+  color: #F6F6E9;
+  border: none;
 }
 
 table > thead > tr > th {

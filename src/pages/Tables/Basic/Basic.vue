@@ -551,7 +551,8 @@ export default {
       return [{data: result}];
     },
     getRandomColor() {
-      const colors = ['#547fff', '#9964e3', '#f55d5d', '#ffc247', '#3abf94'];
+      const {primary, success, info, danger} = this.appConfig.colors;
+      const colors = [info, primary, danger, success];
       return {colors: [colors[Math.floor(Math.random() * colors.length)]]}
     }
   },
