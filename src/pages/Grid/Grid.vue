@@ -219,10 +219,10 @@
           </Widget>
 
           <Widget ref="jumbotronWidget"
-          class="bg-gray"
+          class="bg-inverse"
           bodyClass="p-0"
         >
-          <div class="jumbotron handle bg-gray text-white mb-0">
+          <div class="jumbotron handle text-white mb-0">
             <div class="container">
               <h1>Draggable story!</h1>
               <p class="lead">
