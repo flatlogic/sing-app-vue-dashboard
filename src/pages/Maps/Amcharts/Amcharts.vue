@@ -5,7 +5,7 @@
       <h1 class="m-0 mb-sm">Vector <span class="fw-semi-bold">Maps</span></h1>
       <p class="page-title fs-sm m-0">
         <span class="fw-semi-bold">1 656 843</span>
-        <span class="ml-xs circle bg-gray"><i class="text-gray-lighter fa fa-circle"/></span>
+        <span class="ml-xs circle bg-info"><i class="text-white fa fa-circle"/></span>
       </p>
     </header>
   </div>
@@ -20,6 +20,7 @@
   export default {
     name: 'AmchartsMap',
     mounted() {
+      let infoColor = this.appConfig.colors.info;
       let map = am4core.create(this.$refs.chartdiv, am4maps.MapChart);
       map.geodata = am4geodata_worldLow;
       map.projection = new am4maps.projections.Miller();
@@ -32,18 +33,21 @@
       map.zoomControl.valign = 'top';
       map.zoomControl.dx = 35;
       map.zoomControl.dy = 120;
-      map.zoomControl.minusButton.background.fill = am4core.color("#a3aeb7");
-      map.zoomControl.plusButton.background.fill = am4core.color("#a3aeb7");
+      map.zoomControl.minusButton.background.fill = am4core.color(infoColor);
+      map.zoomControl.minusButton.background.fillOpacity = 0.2;
+      map.zoomControl.plusButton.background.fill = am4core.color(infoColor);
+      map.zoomControl.plusButton.background.fillOpacity = 0.2;
       let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
-      plusButtonHoverState.properties.fill = am4core.color("#798892");
+      plusButtonHoverState.properties.fillOpacity = 0.5;
       let minusButtonHoverState = map.zoomControl.minusButton.background.states.create("hover");
-      minusButtonHoverState.properties.fill = am4core.color("#798892");
+      minusButtonHoverState.properties.fillOpacity = 0.5;
 
       let polygonTemplate = polygonSeries.mapPolygons.template;
       polygonTemplate.tooltipText = "{name}";
-      polygonTemplate.fill = am4core.color("#798892");
+      polygonTemplate.fill = am4core.color(infoColor);
+      polygonTemplate.fillOpacity = 0.2;
       let hs = polygonTemplate.states.create("hover");
-      hs.properties.fill = am4core.color("#29323a");
+      hs.properties.fillOpacity = 0.5;
 
       let placeSeries = map.series.push(new am4maps.MapImageSeries());
       let place = placeSeries.mapImages.template;
@@ -52,9 +56,7 @@
       place.propertyFields.longitude = "longitude";
       let circle = place.createChild(am4core.Circle);
       circle.radius = 5;
-      circle.fill = am4core.color("#f55d5d");
-      circle.stroke = am4core.color("#ffffff");
-      circle.strokeWidth = 2;
+      circle.fill = am4core.color(infoColor);
       placeSeries.data = places;
       circle.tooltipText = '{name}';
 
