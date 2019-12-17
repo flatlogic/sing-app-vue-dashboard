@@ -180,7 +180,7 @@
 
             </fieldset>
             <div class="form-action">
-              <b-button type="submit" variant="danger" class="btn-rounded float-right">
+              <b-button type="submit" variant="success" class="btn-rounded float-right">
                 Validate & Submit
               </b-button>
               <b-button type="button" variant="default" class="btn-rounded">
