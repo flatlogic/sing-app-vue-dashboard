@@ -1,6 +1,6 @@
 <template>
   <div class="visits-page">
-    <h1 class="page-title">Dashboard &nbsp;
+    <h1 class="page-title">Visits &nbsp;
       <small>
         <small>The Lucky One</small>
       </small>

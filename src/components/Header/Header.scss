@@ -90,12 +90,12 @@
 
     .input-group-text {
       border: none;
-      background-color: rgba(0,0,0,0.03);
+      background-color: rgba(0,0,0,0.1);
       transition: background-color ease-in-out 0.15s;
     }
 
     input, input:focus {
-      background: rgba(0, 0, 0, 0.03);;
+      background: rgba(0, 0, 0, 0.1);;
       border: none;
     }
   }
