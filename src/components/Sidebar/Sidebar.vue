@@ -236,7 +236,7 @@
       <ul class="sidebarLabels">
         <li>
           <a href="#">
-            <i class="fa fa-circle text-warning mr-2"/>
+            <i class="fa fa-circle text-danger mr-2"/>
             <span class="labelName">My Recent</span>
           </a>
         </li>
@@ -289,7 +289,7 @@ export default {
           title: 'Sales Report',
           value: 15,
           footer: 'Calculating x-axis bias... 65%',
-          color: 'warning',
+          color: 'danger',
         },
         {
           id: 1,
