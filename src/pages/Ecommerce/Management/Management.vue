@@ -1,7 +1,7 @@
 <template>
   <div class="product-management">
     <div class="page-top-line">
-      <h2 class="page-title">Product - <span class="fw-semi-bold">Management</span></h2>
+      <h1 class="page-title">Product - <span class="fw-semi-bold">Management</span></h1>
       <b-alert
           :variant="'success'"
           class='promo-alert'

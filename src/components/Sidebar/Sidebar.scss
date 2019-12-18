@@ -158,6 +158,7 @@
     > i {
       font-size: 11px;
       vertical-align: 1px;
+      color: var(--sidebar-item-active);
       transition: margin-left $sidebar-transition-time ease-in-out;
     }
   }

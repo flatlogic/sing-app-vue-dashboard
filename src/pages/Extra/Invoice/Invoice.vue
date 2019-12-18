@@ -148,7 +148,7 @@
                     &nbsp;&nbsp;
                     Print
                   </b-button>
-                  <b-button variant="danger">
+                  <b-button variant="success">
                     Proceed with Payment
                     &nbsp;
                     <span class="circle bg-white">

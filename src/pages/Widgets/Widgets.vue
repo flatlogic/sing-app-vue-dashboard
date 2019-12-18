@@ -1,5 +1,8 @@
 <template>
   <div class="widgets-page">
+    <h1 class="page-title">Widgets
+      <small>Company Performance</small>
+    </h1>
     <b-row>
       <b-col lg="3" md="6" xs="12">
         <Widget>

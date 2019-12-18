@@ -26,4 +26,14 @@
       border: none;
     }
   }
+
+  .VueTables__sortable {
+    .VueTables__sort-icon {
+      margin-top: 3px;
+
+      &:before {
+        color: var(--light-color);
+      }
+    }
+  }
 }

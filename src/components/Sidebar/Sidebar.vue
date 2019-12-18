@@ -6,7 +6,7 @@
         @mouseleave="sidebarMouseLeave"
     >
       <header class="logo">
-        <router-link to="/app"><span class="primary-word">Sing</span> App</router-link>
+        <router-link to="/app/main/analytics"><span class="primary-word">Sing</span> App</router-link>
       </header>
       <ul class="nav">
         <NavLink
@@ -42,6 +42,7 @@
             iconName="flaticon-database-1"
             index="package"
             label="new"
+            labelColor="success"
             isHeader
         />
         <NavLink
@@ -248,7 +249,7 @@
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-circle text-default mr-2"/>
+            <i class="fa fa-circle mr-2"/>
             <span class="labelName">Background</span>
           </a>
         </li>

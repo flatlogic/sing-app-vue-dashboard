@@ -245,9 +245,7 @@ export default {
       },
       title: {
         text: 'Monthly Inflation in Argentina, 2002',
-        floating: true,
-        offsetY: 320,
-        align: 'center',
+        align: 'left',
         style: {
           color: textColor
         }
