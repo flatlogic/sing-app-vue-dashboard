@@ -20,7 +20,7 @@
           @on-change="updateProgress"
           @on-loading="updateProgress(1, 1)"
         >
-          <b-progress class="progress-xs" variant="gray-light" :value="progress" :max="4" />
+          <b-progress class="progress-xs" variant="info" :value="progress" :max="4" />
           <b-button slot="prev" variant="primary">
             <i class="fa fa-caret-left" /> Previous
           </b-button>
