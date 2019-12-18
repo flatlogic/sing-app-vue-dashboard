@@ -5,10 +5,9 @@
   flex-wrap: wrap;
 
   .color-box {
-    min-width: 30px;
-    height: 30px;
-    border: 2px solid $border-color;
-    border-radius: $border-radius;
+    min-width: 25px;
+    height: 25px;
+    border: 1px solid $border-color;
     cursor: pointer;
     margin: 3px;
     transition: $transition-base;

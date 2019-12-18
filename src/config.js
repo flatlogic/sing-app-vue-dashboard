@@ -27,14 +27,16 @@ export default {
       gray: "#D7DFE6"
     },
     themeColors: [
-      ['gray','#313947'],
-      ['white','#FFFFFF'],
-      ['purple','#B077FF'],
-      ['blue','#547FFF'],
-      ['red','#F55D5D'],
-      ['yellow','#FFC247'],
-      ['green','#3ABF94'],
-      ['sea','#3D5C70'],
+      ['default','#313947'],
+      ['white', '#FFFFFF'],
+      ['first','#004472'],
+      ['second','#9ad4fc'],
+      ['third','#e9ebef'],
+      ['fourth','#d1e7f5'],
+      ['fifth','#ccdde9'],
+      ['sixth','#d6dfe6'],
+      ['seventh','#13191d'],
+      ['eighth','#20ae8c'],
     ],
     chartColors: {
       axisColor: '#8EA1AB'

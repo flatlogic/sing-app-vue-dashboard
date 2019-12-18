@@ -59,13 +59,13 @@
                     id="v-step-9"
                     target="_blank"
                     role="button"
-                    class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">
+                    class="btn btn-info btn-rounded-f btn-block fs-mini text-white">
                         Purchase
                     </a>
                     <a href="http://demo.flatlogic.com/sing-app-vue/#/documentation/"
                     target="_blank"
                     role="button"
-                    class="btn btn-inverse btn-rounded-f btn-block fs-mini">
+                    class="btn btn-primary btn-rounded-f btn-block fs-mini">
                         Documentation
                     </a>
                 </div>
