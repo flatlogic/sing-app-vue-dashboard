@@ -1,9 +1,5 @@
 <template>
   <div class="list-groups-page">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">YOU ARE HERE</li>
-      <li class="breadcrumb-item active">UI List Groups</li>
-    </ol>
     <h1 class="page-title">Lists - <span class="fw-semi-bold">Sortable Groups</span>
     </h1>
     <Widget

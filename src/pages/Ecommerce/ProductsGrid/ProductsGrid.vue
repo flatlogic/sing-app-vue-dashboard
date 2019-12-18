@@ -1,10 +1,6 @@
 <template>
   <div class="products-page">
     <div v-if="!isModalActive">
-      <b-breadcrumb>
-        <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-        <b-breadcrumb-item active>E-commerce</b-breadcrumb-item>
-      </b-breadcrumb>
       <h1 class="page-title">
         E-commerce - <span class="fw-semi-bold">Product Grid</span>
       </h1>

@@ -1,9 +1,5 @@
 <template>
   <div class='search-page'>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">YOU ARE HERE</li>
-      <li class="breadcrumb-item active">Search Results</li>
-    </ol>
     <h1 class="page-title">Matching - <span class="fw-semi-bold">Results</span></h1>
     <div class="btn-toolbar justify-content-between">
       <div class="d-inline-flex">

@@ -1,10 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item>Charts</b-breadcrumb-item>
-      <b-breadcrumb-item active>Echarts</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">Visual - <span class="fw-semi-bold">Echarts</span></h1>
     <p>For more information please read full <a href="https://ecomfe.github.io/vue-echarts/">documentation</a></p>
     <b-row>

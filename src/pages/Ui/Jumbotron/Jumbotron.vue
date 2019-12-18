@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>UI Jumbotron</b-breadcrumb-item>
-    </b-breadcrumb>
     <b-jumbotron
       header="Fluid jumbotron"
       lead="This is a modified jumbotron that occupies the entire horizontal space of its parent."

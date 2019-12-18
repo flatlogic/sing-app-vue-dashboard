@@ -1,9 +1,5 @@
 <template>
   <div>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">YOU ARE HERE</li>
-      <li class="breadcrumb-item active">Form Validation</li>
-    </ol>
     <h1 class="page-title">Form - <span class="fw-semi-bold">Validation</span>
     </h1>
 

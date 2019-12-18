@@ -1,9 +1,5 @@
 <template>
   <div>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">YOU ARE HERE</li>
-      <li class="breadcrumb-item active">UI Tabs & Accordion</li>
-    </ol>
     <h1 class="page-title">Tabs & Accordion -
       <span class="fw-semi-bold">Components</span>
     </h1>

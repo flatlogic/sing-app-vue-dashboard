@@ -1,9 +1,5 @@
 <template>
   <div class="tables-basic">
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>Tables Basic</b-breadcrumb-item>
-    </b-breadcrumb>
     <h2 class="page-title">Tables - <span class="fw-semi-bold">Static</span></h2>
     <b-row>
       <b-col>

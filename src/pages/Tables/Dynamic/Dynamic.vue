@@ -1,9 +1,5 @@
 <template>
   <div class="dynamic-tables">
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>Tables Dynamic</b-breadcrumb-item>
-    </b-breadcrumb>
     <h2 class="page-title">Tables - <span class="fw-semi-bold">Dynamic</span></h2>
     <Widget
       title="<h4>The <span class='fw-semi-bold'>Vue</span> Way</h4>"

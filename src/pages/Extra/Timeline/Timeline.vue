@@ -1,9 +1,5 @@
 <template>
   <div>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">YOU ARE HERE</li>
-      <li class="breadcrumb-item active">Time Line</li>
-    </ol>
     <h1 class="page-title">Events - <span class="fw-semi-bold">Feed</span></h1>
 
     <ul class="timeline">

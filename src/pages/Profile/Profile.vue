@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>Profile</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">User - <span class="fw-semi-bold">Profile</span>
     </h1>
     <b-row>

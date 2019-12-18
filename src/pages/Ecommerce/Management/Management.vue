@@ -1,9 +1,5 @@
 <template>
   <div class="product-management">
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>E-commerce</b-breadcrumb-item>
-    </b-breadcrumb>
     <div class="page-top-line">
       <h2 class="page-title">Product - <span class="fw-semi-bold">Management</span></h2>
       <b-alert

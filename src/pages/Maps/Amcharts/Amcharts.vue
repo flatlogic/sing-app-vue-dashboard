@@ -32,7 +32,7 @@
       map.zoomControl.align = 'left';
       map.zoomControl.valign = 'top';
       map.zoomControl.dx = 35;
-      map.zoomControl.dy = 120;
+      map.zoomControl.dy = 150;
       map.zoomControl.minusButton.background.fill = am4core.color(infoColor);
       map.zoomControl.minusButton.background.fillOpacity = 0.2;
       map.zoomControl.plusButton.background.fill = am4core.color(infoColor);

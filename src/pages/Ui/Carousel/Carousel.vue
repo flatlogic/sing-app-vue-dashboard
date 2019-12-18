@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>UI Carousel</b-breadcrumb-item>
-    </b-breadcrumb>
     <p>
       The carousel is a slideshow for cycling through a series of content, built with
       CSS 3D transforms and a bit of JavaScript. It works with a series of images, text,

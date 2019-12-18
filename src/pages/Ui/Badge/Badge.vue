@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>UI Badge</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">Badge</h1>
     <b-row>
       <b-col xs='12' md='8'>

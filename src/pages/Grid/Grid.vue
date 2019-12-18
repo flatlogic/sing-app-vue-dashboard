@@ -1,9 +1,5 @@
 <template>
   <div class="grid-page">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">YOU ARE HERE</li>
-      <li class="breadcrumb-item active">Grid</li>
-    </ol>
     <h1 class="page-title">Grid - <span class="fw-semi-bold">Options</span></h1>
     <b-row>
       <b-col xl='7'>

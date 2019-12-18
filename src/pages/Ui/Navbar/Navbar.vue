@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>UI Navbar</b-breadcrumb-item>
-    </b-breadcrumb>
     <b-row>
       <b-col xs='12' md='9'>
         <Widget

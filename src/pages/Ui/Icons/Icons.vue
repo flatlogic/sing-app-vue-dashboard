@@ -1,10 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
   <section>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>Icons</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">UI - <span class="fw-semi-bold">Icons</span></h1>
     <b-tabs>
       <b-tab title="Glyphicons" active>

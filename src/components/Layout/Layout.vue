@@ -6,6 +6,7 @@
     <Header />
     <Chat />
     <v-touch class="content" @swipe="handleSwipe" :swipe-options="{direction: 'horizontal'}">
+      <breadcrumb-history></breadcrumb-history>
       <transition name="router-animation">
         <router-view />
       </transition>
@@ -54,12 +55,13 @@ import Sidebar from '@/components/Sidebar/Sidebar';
 import Header from '@/components/Header/Header';
 import Chat from '@/components/Chat/Chat';
 import Helper from '@/components/Helper/Helper';
+import BreadcrumbHistory from '@/components/BreadcrumbHistory/BreadcrumbHistory';
 
 import './Layout.scss';
 
 export default {
   name: 'Layout',
-  components: { Sidebar, Header, Chat, Helper },
+  components: { Sidebar, Header, Chat, Helper, BreadcrumbHistory },
   data() {
     return {
       steps: [

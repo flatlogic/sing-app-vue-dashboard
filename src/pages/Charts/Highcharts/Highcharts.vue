@@ -1,10 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item>Charts</b-breadcrumb-item>
-      <b-breadcrumb-item active>Highcharts</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">Visual - <span class="fw-semi-bold">Highcharts</span></h1>
     <p>For more information please read full <a href="https://github.com/highcharts/highcharts-vue">documentation</a></p>
     <b-row>

@@ -1,9 +1,5 @@
 <template>
   <div class="email-page">
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>Email</b-breadcrumb-item>
-    </b-breadcrumb>
     <div class="pageTopLine">
       <h1 class="page-title">Email - <span class="fw-semi-bold">Inbox</span></h1>
       <b-alert

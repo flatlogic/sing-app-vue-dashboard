@@ -2,10 +2,6 @@
   <div class='calendar-page'>
     <b-row>
       <b-col lg='4' xs='12' md='6'>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">YOU ARE HERE</li>
-          <li class="breadcrumb-item active">Calendar</li>
-        </ol>
         <h1 class="page-title">
           {{currentMonth}} - <span class="fw-semi-bold">{{currentDay}}</span>
         </h1>

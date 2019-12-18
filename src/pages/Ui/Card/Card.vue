@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>UI Card</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">Cards - <span class="fw-semi-bold">Examples</span></h1>
     <p>
       A card is a flexible and extensible content container.

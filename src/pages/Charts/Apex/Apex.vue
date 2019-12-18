@@ -1,10 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item>Charts</b-breadcrumb-item>
-      <b-breadcrumb-item active>Apex</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">Visual - <span class="fw-semi-bold">Apex Charts</span></h1>
     <p>For more information please read full <a href="https://apexcharts.com/docs/vue-charts/">documentation</a></p>
     <b-row>

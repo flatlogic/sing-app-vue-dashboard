@@ -1,9 +1,5 @@
 <template>
   <div>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">YOU ARE HERE</li>
-      <li class="active breadcrumb-item">UI Buttons</li>
-    </ol>
     <h1 class="page-title">Buttons - <span class="fw-semi-bold">Styles </span></h1>
     <b-row>
       <b-col md='6' xs='12'>
