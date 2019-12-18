@@ -42,7 +42,7 @@ export default {
     {
       product: 'Sing App',
       total: '754',
-      color: 'warning',
+      color: 'danger',
       registrations: {
         value: 30,
         profit: true,
