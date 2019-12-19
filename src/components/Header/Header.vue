@@ -2,12 +2,9 @@
   <b-navbar class="app-header d-print-none" :class="[navbarTypeClass, 'header-' + navbarColorScheme]">
     <b-nav>
       <b-nav-item id="v-step-0">
-        <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod" id="barsTooltip">
+        <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod">
           <i class='la la-bars la-lg' />
         </a>
-        <b-tooltip target="barsTooltip" placement="bottom">
-          Turn on/off <br> sidebar <br> collapsing
-        </b-tooltip>
         <a class="fs-lg d-lg-none" href="#" @click="switchSidebarMethod">
           <i class="la la-bars la-lg" />
         </a>
@@ -85,21 +82,6 @@
           <i class="la la-globe" />
         </a>
         <i v-if="chatNotificationIcon" class="chat-notification-sing animated bounceIn"></i>
-        <div id="chat-notification" class="chat-notification" :class="{'notification-hidden': !chatNotificationPopover}">
-          <div class="chatNotificationInner">
-            <h6 class="title d-flex text-white">
-              <span class="thumb-xs">
-                <img src="../../assets/people/a6.jpg" alt=""
-                  class="rounded-circle mr-xs float-left" />
-              </span>
-              Jess Smith
-            </h6>
-            <p class="text">
-              Hi there! <br /> This is a completely new version of Sing App <br />
-              built with <strong class="text-primary">Vue</strong>
-            </p>
-          </div>
-        </div>
       </b-nav-item>
       <b-nav-item class="fs-lg d-md-none">
         <a href="#" @click="toggleChat">

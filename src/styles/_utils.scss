@@ -331,7 +331,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .thin-scroll {
-  overflow: auto;
 
   &::-webkit-scrollbar {
     height: 8px;

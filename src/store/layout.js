@@ -38,6 +38,16 @@ function updateRootCss(cssVar, value) {
   document.querySelector('.root.sing-dashboard').style.setProperty(cssVar, value);
 }
 
+function updateTourPosition(tour) {
+  if (!tour) return;
+  let interval = setInterval(() => {
+    tour.scheduleUpdate();
+  });
+  setTimeout(() => {
+    clearInterval(interval)
+  }, config.app.sidebarTransitionTime + 100)
+}
+
 export default {
   namespaced: true,
   state: {
@@ -51,18 +61,14 @@ export default {
     sidebarActiveElement: null,
     chatOpen: false,
     chatNotificationIcon: false,
-    chatNotificationPopover: false,
     chatNotificationMessageState: MessageStates.HIDDEN,
-    helperOpened: false
+    helperOpened: false,
+    tourInstance: null,
   },
   mutations: {
     initApp(state) {
       setTimeout(() => {
         state.chatNotificationIcon = true;
-        state.chatNotificationPopover = true;
-        setTimeout(() => {
-          state.chatNotificationPopover = false;
-        }, 1000 * 6);
       }, 1000 * 4);
     },
     readMessage(state) {
@@ -90,6 +96,7 @@ export default {
       if (!nextState && (isScreen('lg') || isScreen('xl'))) {
         state.sidebarClose = true;
       }
+      updateTourPosition(state.tourInstance);
     },
     switchSidebar(state, value) {
       if (value) {
@@ -97,6 +104,7 @@ export default {
       } else {
         state.sidebarClose = !state.sidebarClose;
       }
+      updateTourPosition(state.tourInstance);
     },
     handleSwipe(state, e) {
       if ('ontouchstart' in window) {
@@ -130,6 +138,11 @@ export default {
     },
     toggleHelper(state, payload) {
       state.helperOpened = payload;
+      updateTourPosition(state.tourInstance);
+
+    },
+    applyTourStep(state, payload) {
+      state.tourInstance = payload;
     }
   },
   actions: {
@@ -169,6 +182,9 @@ export default {
     },
     toggleHelper({commit}, payload) {
       commit('toggleHelper', payload)
+    },
+    applyTourStep({commit}, payload) {
+      commit('applyTourStep', payload)
     }
   },
 };

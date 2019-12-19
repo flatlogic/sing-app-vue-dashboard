@@ -109,24 +109,7 @@
       left: 0;
       overflow-y: auto;
 
-      &::-webkit-scrollbar {
-        height: 8px;
-        width: 4px;
-        background: var(--sidebar-bg-color);
-      }
-
-      &::-webkit-scrollbar-track {
-        background: var(--sidebar-bg-color);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        border: none;
-        background-color: transparent;
-      }
-
-      &:hover::-webkit-scrollbar-thumb {
-        background-color: var(--sidebar-color);
-      }
+      @include sidebar-scrollbar();
     }
   }
 
@@ -144,24 +127,7 @@
       padding-top: 0.5rem;
       overflow-y: auto;
 
-      &::-webkit-scrollbar {
-        height: 8px;
-        width: 4px;
-        background: var(--sidebar-bg-color);
-      }
-
-      &::-webkit-scrollbar-track {
-        background: var(--sidebar-bg-color);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        border: none;
-        background-color: transparent;
-      }
-
-      &:hover::-webkit-scrollbar-thumb {
-        background-color: var(--sidebar-color);
-      }
+      @include sidebar-scrollbar();
 
       :global .list-group-item {
         align-items: flex-start;

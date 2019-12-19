@@ -13,6 +13,7 @@ export default {
       password: 'password'
   },
   app: {
+    sidebarTransitionTime: 300, //ms
     colors: {
       sidebar: "#002B49",
       navbar: "#ffffff",

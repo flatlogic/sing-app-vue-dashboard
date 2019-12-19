@@ -76,7 +76,8 @@
     &.sidebar-second,
     &.sidebar-third,
     &.sidebar-fourth,
-    &.sidebar-fifth {
+    &.sidebar-fifth,
+    &.sidebar-transparent {
       --sidebar-color: #004472;
       --sidebar-item-active: var(--sidebar-color);
       --sidebar-nav-title-color: var(--sidebar-color);
@@ -90,13 +91,10 @@
 
     &.sidebar-transparent {
       --sidebar-bg-color: transparent;
-      --sidebar-color: #6c757d;
       --sidebar-action-bg: transparent;
-      --sidebar-nav-title-color: var(--sidebar-color);
       --logo-color: var(--sidebar-color);
       --chat-sidebar-bg-color: var(--body-bg);
       --sidebar-icon-active: white;
-
     }
   }
 

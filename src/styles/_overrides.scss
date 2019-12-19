@@ -930,6 +930,8 @@ $slider-handle-size: 26px;
     z-index: 102;
     max-width: 240px !important;
     color: $text-color !important;
+
+    filter: drop-shadow(0 0 2px rgba(var(--widget-shadow-color), .2)) !important;
   }
 
   .v-step[x-placement^=left] {

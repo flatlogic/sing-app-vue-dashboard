@@ -53,3 +53,24 @@
     @content;
   }
 }
+
+@mixin sidebar-scrollbar() {
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 4px;
+    background: var(--sidebar-bg-color);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--sidebar-bg-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: var(--sidebar-color);
+  }
+}

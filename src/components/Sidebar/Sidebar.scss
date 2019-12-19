@@ -17,24 +17,11 @@
   width: $sidebar-width-open;
   transition: width $sidebar-transition-time ease-in-out, left $sidebar-transition-time ease-in-out;
 
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 4px;
-    background: var(--sidebar-bg-color);
-  }
+  @include sidebar-scrollbar();
+}
 
-  &::-webkit-scrollbar-track {
-    background: var(--sidebar-bg-color);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border: none;
-    background-color: transparent;
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-    background-color: var(--sidebar-color);
-  }
+.sidebar-transparent .sidebar-wrapper:hover::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 .sidebarClose .sidebar-wrapper {
