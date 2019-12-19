@@ -63,15 +63,7 @@ export default {
   components: { Sidebar, Header, Chat, Helper, BreadcrumbHistory },
   data() {
     return {
-      tourOptions: {
-        startTimeout: 3500,
-        labels: {
-          buttonSkip: 'Skip',
-          buttonPrevious: 'Back',
-          buttonNext: 'Next',
-          buttonStop: 'Finish'
-        }
-      }
+      tourStartTimeout: 500
     }
   },
   methods: {
@@ -116,10 +108,21 @@ export default {
     }
   },
   computed: {
-    ...mapState(["sidebarClose", "sidebarStatic", "chatOpen", "sidebarColorName", "sidebarType", "helperOpened"]),
+    ...mapState(["sidebarClose", "sidebarStatic", "chatOpen", "sidebarColorName", "sidebarType", "helperOpened", "tourInstance"]),
     steps() {
       return TourSteps(this.applyTourStep)
     },
+    tourOptions() {
+      return {
+        startTimeout: this.tourStartTimeout,
+        labels: {
+          buttonSkip: 'Skip',
+          buttonPrevious: 'Back',
+          buttonNext: 'Next',
+          buttonStop: 'Finish'
+        }
+      }
+    }
   },
   created() {
     const staticSidebar = JSON.parse(localStorage.getItem('sidebarStatic'));
@@ -138,6 +141,13 @@ export default {
   },
   mounted() {
     this.$tours['app-tour'].start();
+    // fixes issue when sidebar is closing on initial entrance but user is on another tab and then returns back
+    // and sees that first tour step has been misplaced
+    window.addEventListener('focus', () => {
+      if (this.tourInstance) {
+        this.tourInstance.scheduleUpdate();
+      }
+    })
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleWindowResize);

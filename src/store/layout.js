@@ -38,7 +38,7 @@ function updateRootCss(cssVar, value) {
   document.querySelector('.root.sing-dashboard').style.setProperty(cssVar, value);
 }
 
-function updateTourPosition(tour) {
+export function updateTourPosition(tour) {
   if (!tour) return;
   let interval = setInterval(() => {
     tour.scheduleUpdate();
