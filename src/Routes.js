@@ -25,6 +25,8 @@ import HighchartsPage from '@/pages/Charts/Highcharts/Highcharts';
 import ProfilePage from '@/pages/Profile/Profile';
 // Profile
 import PackagePage from '@/pages/Package/Package';
+// Chat
+import ChatPage from '@/pages/Chat/Chat';
 // Email
 import EmailPage from '@/pages/Email/Email';
 // Ecommerce
@@ -222,6 +224,12 @@ export default new Router({
           path: 'package',
           name: 'PackagePage',
           component: PackagePage,
+        },
+        // Chat page
+        {
+          path: 'chat',
+          name: 'ChatPage',
+          component: ChatPage,
         },
         // profile page
         {

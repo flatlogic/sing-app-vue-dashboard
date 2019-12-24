@@ -6,6 +6,7 @@ import auth from './auth';
 import register from './register';
 import dashboard from './dashboard';
 import products from './products';
+import chat from './chat';
 
 Vue.use(Vuex);
 
@@ -16,5 +17,6 @@ export default new Vuex.Store({
     register,
     dashboard,
     products,
+    chat
   },
 });

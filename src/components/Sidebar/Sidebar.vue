@@ -23,6 +23,16 @@
         />
         <NavLink
             :activeItem="activeItem"
+            header="Chat"
+            link="/app/chat"
+            iconName="flaticon-database-1"
+            index="chat"
+            label="awesome"
+            labelColor="info"
+            isHeader
+        />
+        <NavLink
+            :activeItem="activeItem"
             header="E-commerce"
             link="/app/ecommerce"
             iconName="flaticon-diamond"
