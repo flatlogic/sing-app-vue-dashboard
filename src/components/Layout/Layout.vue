@@ -6,7 +6,7 @@
     <Header />
     <Chat />
     <v-touch class="content" @swipe="handleSwipe" :swipe-options="{direction: 'horizontal'}">
-      <breadcrumb-history></breadcrumb-history>
+      <breadcrumb-history :exclude="['chat']"></breadcrumb-history>
       <transition name="router-animation">
         <router-view />
       </transition>

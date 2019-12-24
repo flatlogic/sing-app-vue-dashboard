@@ -1,14 +1,19 @@
 <template>
-  <div>
+  <div v-if="!excluded">
     <b-breadcrumb :items="tree"></b-breadcrumb>
   </div>
 </template>
 <script>
   export default {
     name: 'BreadcrumbHistory',
+    props: {
+      exclude: {type: Array, default: () => []}
+    },
     computed: {
+      excluded() {
+        return this.exclude.indexOf(this.$route.path.split('/').pop()) > -1;
+      },
       tree() {
-        // debugger;
         return ['YOU ARE HERE']
           .concat(this.$route.path
             .split('/')

@@ -1,0 +1,31 @@
+@import "../../styles/app";
+
+.chat-page {
+  flex-grow: 1;
+  display: flex;
+
+  .chat-info-section,
+  .chat-list-section {
+    min-width: 25%;
+  }
+
+  .chat-dialog-section {
+    min-width: 50%;
+  }
+
+  .chat-section {
+    box-shadow: var(--widget-shadow);
+    border-radius: $border-radius;
+    background: $white;
+    padding: $chat-component-padding;
+    margin-bottom: $spacer;
+  }
+
+  .form-control {
+    background-color: $gray-100;
+
+    &:focus {
+      background-color: darken($gray-100, 5%);
+    }
+  }
+}

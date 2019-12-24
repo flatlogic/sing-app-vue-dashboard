@@ -12,7 +12,7 @@
 
     --sidebar-nav-title-color: var(--light-color);
 
-    --widget-shadow-color: 115, 162, 208;
+    --widget-shadow-color: 75, 102, 171;
 
     --navbar-bg: #fff;
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
@@ -23,7 +23,7 @@
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
     --sidebar-icon-active: var(--sidebar-bg-color);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
-    --widget-shadow: 0 23px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+    --widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
 
     &.sidebar-white {
       --sidebar-bg-color: #ffffff;
