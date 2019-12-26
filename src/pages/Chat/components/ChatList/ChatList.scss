@@ -19,3 +19,38 @@
     }
   }
 }
+
+.personal-chats {
+  height: 300px;
+  overflow: auto;
+
+  @include chat-scrollbar();
+}
+
+.chat-list {
+  margin-right: -$chat-component-padding;
+  margin-bottom: 0;
+}
+
+.chat-list-item {
+  display: flex;
+  align-items: center;
+  padding: ($spacer / 2) $chat-component-padding ($spacer / 2) 0;
+
+  .chat-item-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .chat-last-message {
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $text-muted;
+  }
+}
+
+.chat-list-item + .chat-list-item {
+  border-top: 1px solid $border-color;
+}

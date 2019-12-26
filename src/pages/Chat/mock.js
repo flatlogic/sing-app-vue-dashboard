@@ -15,6 +15,11 @@ const positions = ['Operations manager', 'Accountant', 'Office manager', 'Market
 
 const oneOfPosition = () => positions[Math.floor(Math.random() * positions.length)];
 
+function getRandomDayFromPrevMonth() {
+  let randomDay = Math.floor(Math.random() * Math.floor(moment().subtract(1, 'months').daysInMonth() + 1));
+  return moment([moment().year(),moment().month() - 1,randomDay]);
+}
+
 const dialogCommonData = {
   notifications: true,
   images: [],
@@ -100,7 +105,46 @@ export const user = {
           timestamp: moment().subtract(1, 'm')
         }
       ]
-    }
+    },
+    {
+      id: 2,
+      withId: 3,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail m...',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
+    {
+      id: 3,
+      withId: 4,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail m...',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
+    {
+      id: 4,
+      withId: 5,
+      ...dialogCommonData,
+      messages: [
+        {
+          id: 1,
+          owner: false,
+          text: 'If it takes long you can mail m...',
+          timestamp: getRandomDayFromPrevMonth()
+        }
+      ]
+    },
   ]
 };
 
@@ -111,6 +155,7 @@ export const users = [
     surname: 'Rowlis',
     username: 'J_Rowlis',
     avatar: p8,
+    isOnline: true
   },
   {
     id: 3,
@@ -118,6 +163,7 @@ export const users = [
     surname: 'Fisher',
     username: 'S_Fisher',
     avatar: p1,
+    isOnline: false
   },
   {
     id: 4,
@@ -125,6 +171,7 @@ export const users = [
     surname: 'Bredly',
     username: 'J_Bredly',
     avatar: p7,
+    isOnline: false
   },
   {
     id: 5,
@@ -132,6 +179,7 @@ export const users = [
     surname: 'Hubbard',
     username: 'J_Hubbard',
     avatar: p2,
+    isOnline: true
   },
   {
     id: 6,
@@ -139,6 +187,7 @@ export const users = [
     surname: 'Jackson',
     username: 'D_Jackson',
     avatar: p3,
+    isOnline: true
   },
 ];
 
@@ -150,4 +199,4 @@ users.forEach((u) => {
   };
 });
 
-export const groups = {};
+export const groups = [];

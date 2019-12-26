@@ -1,0 +1,40 @@
+@import "../../../../styles/app";
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+  position: relative;
+
+  .image-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: $font-weight-semi-bold;
+    color: $white;
+
+    overflow: hidden;
+    background: $danger;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .status {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: 2px solid $white;
+  }
+}

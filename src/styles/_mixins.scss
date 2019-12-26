@@ -74,3 +74,25 @@
     background-color: var(--sidebar-color);
   }
 }
+
+@mixin chat-scrollbar() {
+  &::-webkit-scrollbar {
+    width: 3px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    border-radius: $border-radius;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: rgba($text-muted, .15);
+  }
+}
