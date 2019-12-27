@@ -13,6 +13,7 @@
 }
 
 .chat-dialog-body {
+  flex: 1;
   overflow: auto;
   @include chat-scrollbar(rgba($text-muted, 0.3));
 
