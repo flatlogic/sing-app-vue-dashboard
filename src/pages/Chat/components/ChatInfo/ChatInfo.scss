@@ -1,0 +1,36 @@
+@import "../../../../styles/app";
+
+.chat-info-header {
+  color: $white;
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+
+    .social-link {
+      a {
+        background: $white;
+        border-radius: 50%;
+        color: $info;
+        font-size: 18px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        .fa-facebook {
+          margin-top: 7px;
+          margin-left: 3px;
+          font-size: 22px;
+        }
+      }
+    }
+
+    .social-link + .social-link {
+      margin-left: $spacer / 1.2;
+    }
+  }
+}

@@ -28,18 +28,25 @@
 }
 
 .chat-list {
-  margin-right: -$chat-component-padding;
-  margin-bottom: 0;
+  margin: 0 (-$chat-component-padding);
 }
 
 .chat-list-item {
-  display: flex;
-  align-items: center;
-  padding: ($spacer / 2) $chat-component-padding ($spacer / 2) 0;
+  padding-left: $chat-component-padding;
+
+  .chat-list-item-wrapper {
+    display: flex;
+    align-items: center;
+    padding: ($spacer/1.5) $chat-component-padding ($spacer/1.5) 0;
+  }
 
   .chat-item-main {
     flex: 1;
     min-width: 0;
+  }
+
+  .chat-title {
+    margin-bottom: 0;
   }
 
   .chat-last-message {
@@ -47,10 +54,49 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  .chat-last-message,
+  .timestamp {
     color: $text-muted;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: lighten($info, 30%);
+  }
+
+  &.active {
+    background: lighten($info, 15%);
+  }
+
+  &:hover,
+  &.active {
+    .chat-title,
+    .chat-last-message,
+    .timestamp {
+      color: $white;
+    }
+
+  }
+
+  &.active {
+    .chat-title {
+      font-weight: $font-weight-semi-bold;
+    }
   }
 }
 
 .chat-list-item + .chat-list-item {
-  border-top: 1px solid $border-color;
+  .chat-list-item-wrapper {
+    border-top: 1px solid $border-color;
+  }
+
+  &:hover .chat-list-item-wrapper {
+    border-top-color: lighten($info, 30%);
+  }
+
+  &.active .chat-list-item-wrapper {
+    border-top-color: lighten($info, 15%);
+  }
 }

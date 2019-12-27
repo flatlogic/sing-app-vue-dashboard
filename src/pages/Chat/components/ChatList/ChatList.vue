@@ -7,7 +7,12 @@
     <section class="chat-section personal-chats">
       <h5>Personal Chats</h5>
       <ul class="chat-list">
-        <ChatListItem v-for="chat of personalChats" :key="chat.id" :chat="chat"></ChatListItem>
+        <chat-list-item
+            v-for="chatUser of personalChats"
+            :key="chatUser.id"
+            :user="chatUser"
+            @click.native="setActiveUser(chatUser.id)"
+        ></chat-list-item>
       </ul>
     </section>
   </div>
@@ -15,6 +20,7 @@
 
 <script>
   import ChatListItem from './ChatListItem';
+  import {mapActions} from 'vuex';
 
   export default {
     name: 'ChatList',
@@ -38,6 +44,9 @@
           return chat;
         });
       }
+    },
+    methods: {
+      ...mapActions('chat', ['setActiveUser'])
     }
   }
 </script>

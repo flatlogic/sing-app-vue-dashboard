@@ -148,7 +148,7 @@ export const user = {
   ]
 };
 
-export const users = [
+export let users = [
   {
     id: 2,
     name: 'Jane',
@@ -191,8 +191,8 @@ export const users = [
   },
 ];
 
-users.forEach((u) => {
-  u = {
+users = users.map((u) => {
+  return {
     ...u,
     ...userCommonData(u.username),
     position: oneOfPosition()

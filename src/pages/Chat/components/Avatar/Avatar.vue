@@ -12,7 +12,7 @@
       <span v-else>{{initials}}</span>
     </div>
 
-    <span v-if="user.isOnline" class="status bg-success"></span>
+    <span v-if="user.isOnline && showStatus" class="status bg-success"></span>
   </div>
 </template>
 
@@ -21,7 +21,8 @@
     name: 'Avatar',
     props: {
       user: Object,
-      size: Number
+      size: Number,
+      showStatus: {type: Boolean, default: true}
     },
     computed: {
       initials() {

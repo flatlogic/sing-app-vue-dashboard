@@ -6,18 +6,18 @@ export default {
     user,
     groups,
     users,
-    activeChat: 1
+    activeChatUser: users[0]
   },
   mutations: {
-    LOGIN_FAILURE(state, payload) {
-      state.isFetching = false;
-      state.errorMessage = payload;
+    SET_ACTIVE_USER(state, payload) {
+      state.activeChatUser = state.users.find(u => u.id === payload);
+      debugger;
     },
 
   },
   actions: {
-    loginUser({commit}, payload) {
-
+    setActiveUser({commit}, payload) {
+      commit('SET_ACTIVE_USER', payload)
     },
   },
 };
