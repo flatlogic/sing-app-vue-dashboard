@@ -75,7 +75,7 @@
   }
 }
 
-@mixin chat-scrollbar() {
+@mixin chat-scrollbar($color) {
   &::-webkit-scrollbar {
     width: 3px;
     background: transparent;
@@ -93,6 +93,6 @@
 
   &:hover::-webkit-scrollbar-thumb {
     border: none;
-    background-color: rgba($text-muted, .15);
+    background-color: $color;
   }
 }

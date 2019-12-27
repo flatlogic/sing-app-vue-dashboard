@@ -13,10 +13,31 @@
 }
 
 .chat-dialog-body {
+  overflow: auto;
+  @include chat-scrollbar(rgba($text-muted, 0.3));
+
   .dialog-divider {
     text-align: center;
     padding: $spacer 0;
     font-size: $font-size-larger;
     color: $text-muted;
+  }
+}
+
+.new-message {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin: 0 $spacer;
+  }
+
+  .attachment {
+    font-size: 24px;
+    color: $text-muted;
+
+    &:hover {
+      color: darken($text-muted, 10%);
+    }
   }
 }

@@ -3,6 +3,7 @@
 .chat-page {
   flex-grow: 1;
   display: flex;
+  height: calc(100vh - #{$navbar-height} - 2 * #{$content-padding} - 20px);
 
   .chat-info-section,
   .chat-list-section {
@@ -26,6 +27,10 @@
 
   .form-control {
     background-color: $gray-100;
+
+    &::placeholder {
+      font-size: $font-size-mini;
+    }
 
     &:focus {
       background-color: darken($gray-100, 5%);

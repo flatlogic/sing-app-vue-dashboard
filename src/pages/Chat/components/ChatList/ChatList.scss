@@ -24,7 +24,7 @@
   height: 300px;
   overflow: auto;
 
-  @include chat-scrollbar();
+  @include chat-scrollbar(rgba($text-muted, 0.15));
 }
 
 .chat-list {
