@@ -1,0 +1,22 @@
+@import "../../../../styles/app";
+
+.chat-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacer;
+
+  .info-icon {
+    font-size: $spacer * 2;
+    color: $text-muted;
+  }
+}
+
+.chat-dialog-body {
+  .dialog-divider {
+    text-align: center;
+    padding: $spacer 0;
+    font-size: $font-size-larger;
+    color: $text-muted;
+  }
+}

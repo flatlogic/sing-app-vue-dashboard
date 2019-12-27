@@ -57,7 +57,8 @@ const userCommonData = (username) => {
       facebook: `https://www.facebook.com/${username}_lorem_ipsum`,
       twitter: `https://twitter.com/${username}_lorem_ipsum`,
       linkedin: `https://www.linkedin.com/in/${username}_lorem_ipsum/`
-    }
+    },
+    prevOnline: moment().subtract(1, 'h')
   }
 };
 
@@ -67,6 +68,7 @@ export const user = {
   surname: 'Lesli',
   username: 'alexlesli',
   ...userCommonData('alexlesli'),
+  avatar: p2,
   dialogs: [
     {
       id: 1,
@@ -99,7 +101,7 @@ export const user = {
           timestamp: moment().subtract(2, 'm')
         },
         {
-          id: 4,
+          id: 5,
           owner: true,
           text: 'Modern admin is the responsive bootstrap 4 admin template!',
           timestamp: moment().subtract(1, 'm')
@@ -163,7 +165,7 @@ export let users = [
     surname: 'Fisher',
     username: 'S_Fisher',
     avatar: p1,
-    isOnline: false
+    isOnline: false,
   },
   {
     id: 4,
@@ -171,14 +173,14 @@ export let users = [
     surname: 'Bredly',
     username: 'J_Bredly',
     avatar: p7,
-    isOnline: false
+    isOnline: false,
   },
   {
     id: 5,
     name: 'John',
     surname: 'Hubbard',
     username: 'J_Hubbard',
-    avatar: p2,
+    avatar: p4,
     isOnline: true
   },
   {

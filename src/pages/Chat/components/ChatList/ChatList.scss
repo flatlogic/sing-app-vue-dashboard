@@ -63,14 +63,13 @@
 
   &:hover {
     cursor: pointer;
-    background: lighten($info, 30%);
+    background: rgba(0,0,0,0.01);
   }
 
   &.active {
     background: lighten($info, 15%);
   }
 
-  &:hover,
   &.active {
     .chat-title,
     .chat-last-message,
@@ -90,10 +89,6 @@
 .chat-list-item + .chat-list-item {
   .chat-list-item-wrapper {
     border-top: 1px solid $border-color;
-  }
-
-  &:hover .chat-list-item-wrapper {
-    border-top-color: lighten($info, 30%);
   }
 
   &.active .chat-list-item-wrapper {

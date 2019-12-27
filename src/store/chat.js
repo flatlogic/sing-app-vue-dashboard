@@ -11,7 +11,6 @@ export default {
   mutations: {
     SET_ACTIVE_USER(state, payload) {
       state.activeChatUser = state.users.find(u => u.id === payload);
-      debugger;
     },
 
   },
