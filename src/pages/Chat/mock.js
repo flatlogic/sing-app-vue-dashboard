@@ -23,6 +23,7 @@ function getRandomDay() {
 }
 
 const dialogCommonData = {
+  isGroup: false,
   notifications: true,
   images: [],
   links: [],
@@ -166,8 +167,8 @@ export const chats = [
   },
   {
     id: 2,
-    name: 'Light Blue Group',
-    users: [1, 2],
+    name: 'React Native',
+    users: [1, 4, 6],
     isGroup: true,
     messages: [
       {
@@ -181,30 +182,31 @@ export const chats = [
         userId: 4,
         text: 'Hi, @Darrell. It\'s too easy. I can explain it too you if you have some minutes.',
         timestamp: moment().subtract(1, 'd').subtract(3, 'm')
-      },
-      {
-        id: 3,
-        userId: 5,
-        text: '',
-        attachments: [
-          {
-            id: 1,
-            type: 'image',
-            src: awesome_image
-          }
-        ],
-        timestamp: moment().subtract(1, 'd').subtract(2, 'm')
-      },
-      {
-        id: 4,
-        userId: 1,
-        text: 'Guys did you see the new update of the Sing App from our competitors?',
-        timestamp: moment().subtract(2, 'm')
       }
     ]
   },
   {
     id: 3,
+    name: 'Common',
+    users: [1, 4, 6],
+    isGroup: true,
+    messages: [
+      {
+        id: 1,
+        userId: 6,
+        text: 'Hello, @John. Can you help me with Light Blue project? I cannot understand how it works.',
+        timestamp: moment().subtract(1, 'd').subtract(5, 'm')
+      },
+      {
+        id: 2,
+        userId: 4,
+        text: 'Hi, @Darrell. It\'s too easy. I can explain it too you if you have some minutes.',
+        timestamp: moment().subtract(1, 'd').subtract(3, 'm')
+      }
+    ]
+  },
+  {
+    id: 4,
     users: [1, 2],
     ...dialogCommonData,
     messages: [
@@ -242,7 +244,7 @@ export const chats = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     users: [1, 3],
     ...dialogCommonData,
     messages: [
@@ -255,7 +257,7 @@ export const chats = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     users: [1, 4],
     ...dialogCommonData,
     messages: [
@@ -268,7 +270,7 @@ export const chats = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     users: [1, 5],
     ...dialogCommonData,
     messages: [

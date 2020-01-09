@@ -7,7 +7,7 @@ export default {
     user,
     chats,
     users,
-    activeChatId: chats[2].id,
+    activeChatId: chats[3].id,
     sendingMessage: false,
   },
   mutations: {

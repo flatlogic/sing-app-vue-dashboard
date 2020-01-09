@@ -5,7 +5,7 @@
       minWidth: size + 'px',
     }"
   >
-    <div class="image-wrapper" :style="{
+    <div class="image-wrapper" :class="{stroke: stroke}" :style="{
       fontSize: size / 3 + 'px'
     }">
       <img v-if="user.avatar" :src="user.avatar">
@@ -22,7 +22,8 @@
     props: {
       user: Object,
       size: Number,
-      showStatus: {type: Boolean, default: true}
+      showStatus: {type: Boolean, default: true},
+      stroke: {type: Boolean, default: false}
     },
     computed: {
       initials() {

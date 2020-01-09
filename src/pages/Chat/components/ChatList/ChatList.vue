@@ -4,22 +4,23 @@
       <b-input placeholder="Search" v-model="search"></b-input>
       <i class="la la-search"></i>
     </section>
-    <section class="chat-section personal-chats">
+    <section class="chat-section group-chats">
       <h5>Group Chats</h5>
-<!--      <ul class="chat-list">-->
-<!--        <chat-list-item-->
-<!--            v-for="chatUser of personalChats"-->
-<!--            :key="chatUser.id"-->
-<!--            :users="chatUser"-->
-<!--            @click.native="setActiveUser(chatUser.id)"-->
-<!--        ></chat-list-item>-->
-<!--      </ul>-->
+      <ul class="chat-list">
+        <chat-list-item
+            v-for="chat of getChats(true)"
+            :key="chat.id"
+            :chat="chat"
+            :isActive="chat.id === activeChatId"
+            @click.native="setActiveChat(chat.id)"
+        ></chat-list-item>
+      </ul>
     </section>
-    <section class="chat-section personal-chats">
+    <section class="chat-section personal-chats mb-0">
       <h5>Personal Chats</h5>
       <ul class="chat-list">
         <chat-list-item
-            v-for="chat of personalChats"
+            v-for="chat of getChats(false)"
             :key="chat.id"
             :chat="chat"
             :isActive="chat.id === activeChatId"
@@ -46,26 +47,32 @@
     },
     computed: {
       ...mapState('chat', ['user', 'chats', 'activeChatId']),
-      personalChats() {
+    },
+    methods: {
+      ...mapActions('chat', ['setActiveChat']),
+      getChats(isGroup) {
         return this.chats
           .filter(chat => {
-            return !chat.isGroup && chat.users.indexOf(this.user.id) > -1
+            return chat.isGroup === isGroup && chat.users.indexOf(this.user.id) > -1
           })
           .map(chat => {
-            let interlocutor = this.findInterlocutor(chat);
+            let interlocutors = [];
+            chat.users.forEach(uid => {
+              if (uid !== this.user.id) {
+                interlocutors.push(this.findUser(uid));
+              }
+            });
             let lastMessage = chat.messages?.[chat.messages.length - 1] || {};
             lastMessage.owner = lastMessage.userId === this.user.id;
             return {
               id: chat.id,
-              title: interlocutor.name + " " + interlocutor.surname,
-              interlocutor,
+              isGroup,
+              title: isGroup ? chat.name : interlocutors[0].name + " " + interlocutors[0].surname,
+              interlocutors,
               lastMessage
             }
           });
-      },
-    },
-    methods: {
-      ...mapActions('chat', ['setActiveChat'])
+      }
     }
   }
 </script>

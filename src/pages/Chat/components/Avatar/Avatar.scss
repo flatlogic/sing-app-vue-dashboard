@@ -19,6 +19,10 @@
 
     overflow: hidden;
     background: $danger;
+
+    &.stroke {
+      border: 2px solid $white;
+    }
   }
 
   img {

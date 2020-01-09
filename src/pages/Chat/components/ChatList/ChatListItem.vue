@@ -1,16 +1,30 @@
 <template>
   <li class="chat-list-item" :class="{active: isActive}">
     <div class="chat-list-item-wrapper">
-      <Avatar :user="chat.interlocutor" :size="45" class="mr-3"></Avatar>
+      <Avatar v-if="!chat.isGroup" :user="chat.interlocutors[0]" :size="45" class="mr-3"></Avatar>
+      <ul v-else class="avatars-column">
+        <li v-for="user of chatUsers" :key="user.id">
+          <Avatar :showStatus="false" :user="user" :size="35" class="mr-3" :stroke="true"></Avatar>
+        </li>
+      </ul>
       <section class="chat-item-main">
         <header class="d-flex align-items-center justify-content-between mb-1">
-          <h6 class="chat-title">{{chat.title}}</h6>
+          <h6 class="chat-title">
+            {{chat.title}}
+            <span v-if="chat.isGroup">({{chat.interlocutors.length + 1}})</span>
+          </h6>
           <span class="ml-auto timestamp">
             {{time}}
           </span>
         </header>
         <p class="chat-last-message">
-          <span v-if="chat.lastMessage.owner" class="owner-indicator mr-1">You:</span>{{chat.lastMessage.text || 'Write a first message'}}
+          <span v-if="chat.lastMessage.owner" class="owner-indicator mr-1">
+            You:
+          </span>
+          <span v-if="!chat.lastMessage.owner && chat.isGroup" class="owner-indicator mr-1">
+            {{findUser(chat.lastMessage.userId).name}}:
+          </span>
+          {{chat.lastMessage.text || 'Write a first message'}}
         </p>
       </section>
     </div>
@@ -20,10 +34,12 @@
 <script>
   import Avatar from '../Avatar/Avatar';
   import moment from 'moment';
+  import { ChatMixin } from '../../../../mixins/chat';
 
   export default {
     name: 'ChatListItem',
     components: {Avatar},
+    mixins: [ChatMixin],
     props: {
       chat: {type: Object, default: () => {}},
       isActive: {type: Boolean, default: false}
@@ -31,6 +47,13 @@
     computed: {
       time() {
         return moment(this.chat.lastMessage?.timestamp).format('d MMM') || "";
+      },
+      chatUsers() {
+        if (this.chat.interlocutors.length <= 2) {
+          return [...this.chat.interlocutors, this.user];
+        } else {
+          return this.chat.interlocutors.slice(0, 3);
+        }
       }
     },
   }

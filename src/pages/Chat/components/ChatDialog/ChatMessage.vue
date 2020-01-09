@@ -1,8 +1,11 @@
 <template>
   <div class="chat-message" :class="{owner: owner}">
     <Avatar class="message-avatar" :user="user" v-if="showAvatar" :size="40" :showStatus="false"></Avatar>
-    <p class="message-body">
+    <p v-if="message.text" class="message-body">
       {{message.text}}
+    </p>
+    <p class="message-body message-attachment" v-for="attachment of message.attachments" :key="attachment.id">
+      <img v-if="attachment.type === 'image'" :src="attachment.src">
     </p>
     <small class="d-block text-muted">
       {{messageDate}}

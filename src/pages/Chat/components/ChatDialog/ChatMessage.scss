@@ -15,6 +15,17 @@
     margin-bottom: $spacer / 2;
     background: $white;
     display: inline-block;
+    overflow: hidden;
+    max-width: 90%;
+
+    &.message-attachment {
+      padding: 0;
+      max-width: 70%;
+    }
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .message-avatar {

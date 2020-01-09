@@ -1,6 +1,9 @@
 @import "../../../../styles/app";
 
 .chat-list-section {
+  display: flex;
+  flex-direction: column;
+
   .chat-search {
     position: relative;
 
@@ -20,15 +23,14 @@
   }
 }
 
-.personal-chats {
-  height: 300px;
+.personal-chats,
+.group-chats {
   overflow: auto;
-
   @include chat-scrollbar(rgba($text-muted, 0.15));
 }
 
 .chat-list {
-  margin: 0 (-$chat-component-padding);
+  margin: 0 (-$chat-component-padding) (-$chat-component-padding);
 }
 
 .chat-list-item {
@@ -37,7 +39,20 @@
   .chat-list-item-wrapper {
     display: flex;
     align-items: center;
-    padding: ($spacer/1.5) $chat-component-padding ($spacer/1.5) 0;
+    padding: ($spacer) $chat-component-padding ($spacer) 0;
+
+    .avatars-column {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        height: 15px;
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 
   .chat-item-main {
