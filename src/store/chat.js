@@ -1,22 +1,22 @@
-import {user, groups, users} from '../pages/Chat/mock';
+import {user, chats, users} from '../pages/Chat/mock';
 import moment from 'moment';
 
 export default {
   namespaced: true,
   state: {
     user,
-    groups,
+    chats,
     users,
-    activeChatUser: users[0],
+    activeChatId: chats[2].id,
     sendingMessage: false,
   },
   mutations: {
-    SET_ACTIVE_USER(state, payload) {
-      state.activeChatUser = state.users.find(u => u.id === payload);
+    SET_ACTIVE_CHAT(state, payload) {
+      state.activeChatId = state.chats.find(chat => chat.id === payload).id;
     },
     NEW_MESSAGE_SUCCESS(state, payload) {
-      let dialog = state.user.dialogs.find(d => d.id === payload.dialogId);
-      dialog.messages.push(payload.message);
+      let chat = state.chats.find(chat => chat.id === state.activeChatId);
+      chat.messages.push(payload.message);
       state.sendingMessage = false;
     },
     NEW_MESSAGE_REQUEST(state) {
@@ -24,10 +24,10 @@ export default {
     }
   },
   actions: {
-    setActiveUser({commit}, payload) {
-      commit('SET_ACTIVE_USER', payload)
+    setActiveChat({commit}, payload) {
+      commit('SET_ACTIVE_CHAT', payload)
     },
-    newMessageRequest({dispatch, commit}, payload) {
+    newMessageRequest({dispatch, commit, state}, payload) {
       if (!payload.message) return;
       commit('NEW_MESSAGE_REQUEST');
       setTimeout(() => {
@@ -35,9 +35,9 @@ export default {
           id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
           text: payload.message,
           timestamp: moment(),
-          owner: true
+          userId: state.user.id
         };
-        dispatch('newMessageSuccess', {dialogId: payload.dialogId, message});
+        dispatch('newMessageSuccess', {chatId: state.activeChatId, message});
       }, 1000)
     },
     newMessageSuccess({commit}, payload) {

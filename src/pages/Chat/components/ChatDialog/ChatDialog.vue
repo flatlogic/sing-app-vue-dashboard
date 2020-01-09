@@ -2,8 +2,8 @@
   <div class="d-flex flex-column">
     <header class="chat-dialog-header">
       <div>
-        <h5 class="fw-normal mb-0">{{activeChatUser.name}} {{activeChatUser.surname}}</h5>
-        <small class="text-muted ">{{activeChatUser.isOnline ? 'Online' : 'Was online ' + wasOnline}}</small>
+        <h5 class="fw-normal mb-0">{{title}}</h5>
+        <small v-if="!chat.isGroup" class="text-muted ">{{interlocutor.isOnline ? 'Online' : 'Was online ' + wasOnline}}</small>
       </div>
       <i class="info-icon la la-ellipsis-v"></i>
     </header>
@@ -13,11 +13,18 @@
           {{part[0]}}
         </div>
         <div v-else class="dialog-messages">
-          <ChatMessage :user="message.owner ? user : activeChatUser" :key="message.id" v-for="(message, j) of part" :message="message" :showAvatar="showAvatar(part, message, j)"></ChatMessage>
+          <ChatMessage
+              v-for="(message, j) of part"
+              :user="message.userId === user.id ? user : findUser(message.userId)"
+              :key="message.id"
+              :message="message"
+              :owner="message.userId === user.id"
+              :showAvatar="showAvatar(part, message, j)"
+          ></ChatMessage>
         </div>
       </div>
     </div>
-    <form class="chat-section new-message mb-0" @submit="newMessageRequest({dialogId: dialog.id, message: newMessage})">
+    <form class="chat-section new-message mb-0" @submit="sendMessage($event)">
       <b-button class="attachment" variant="transparent p-0"><i class="la la-plus"></i></b-button>
       <b-input v-model="newMessage" placeholder="Type Your Message"></b-input>
       <b-button variant="danger" class="px-4 new-message-btn" type="submit">
@@ -33,29 +40,31 @@
   import moment from 'moment';
   import ChatMessage from './ChatMessage';
   import Loader from '../../../../components/Loader/Loader';
+  import { ChatMixin } from '../../../../mixins/chat';
 
   export default {
     name: 'ChatDialog',
     components: {ChatMessage, Loader},
+    mixins: [ChatMixin],
     data() {
       return {
         newMessage: ''
       }
     },
     computed: {
-      ...mapState('chat', ['activeChatUser', 'user', 'sendingMessage']),
-      dialog() {
-        return this.user.dialogs.find(d => d.withId === this.activeChatUser.id);
+      ...mapState('chat', ['activeChatId', 'user', 'sendingMessage', 'chats']),
+      chat() {
+        return this.chats.find(chat => chat.id === this.activeChatId);
       },
       dialogParts() {
-        let firstMessage = this.dialog.messages[0];
+        let firstMessage = this.chat.messages[0];
         let dialogParts = [[this.shortCalendarDate(firstMessage.timestamp)],[firstMessage]];
-        let messagesLength = this.dialog.messages.length;
+        let messagesLength = this.chat.messages.length;
 
         for (let i = 1; i < messagesLength; i++) {
           let lastDialogPart = dialogParts[dialogParts.length - 1];
           let prevMessage = lastDialogPart[lastDialogPart.length - 1];
-          let message = this.dialog.messages[i];
+          let message = this.chat.messages[i];
           let messageDate = moment(message.timestamp).format('YYYY MM dd');
           let prevMessageDate = moment(prevMessage.timestamp).format('YYYY MM dd');
           if (messageDate === prevMessageDate) {
@@ -68,12 +77,21 @@
         return dialogParts;
       },
       wasOnline() {
-        let calendarDate = moment(this.activeChatUser.prevOnline).calendar();
+        let calendarDate = moment(this.interlocutor.prevOnline).calendar();
         let firstLetter = calendarDate[0].toLowerCase();
         let substring = calendarDate.substr(1);
 
         return firstLetter + substring;
       },
+      interlocutor() {
+        if (this.chat.isGroup) {
+          return;
+        }
+        return this.findInterlocutor(this.chat);
+      },
+      title() {
+        return this.chat.isGroup ? this.chat.name : `${this.interlocutor.name} ${this.interlocutor.surname}`
+      }
     },
     watch: {
       dialogParts() {
@@ -88,6 +106,10 @@
     },
     methods: {
       ...mapActions('chat', ['newMessageRequest']),
+      sendMessage(event) {
+        event.preventDefault();
+        this.newMessageRequest({message: this.newMessage});
+      },
       shortCalendarDate(date) {
         return moment(date).calendar(null, {
           sameDay: '[Today]',
@@ -102,7 +124,7 @@
         return typeof dialogPart[0] === 'string';
       },
       showAvatar(dialogPart, message, index) {
-        return index === 0 || dialogPart[index - 1].owner !== message.owner;
+        return index === 0 || dialogPart[index - 1].userId !== message.userId;
       },
     }
   }

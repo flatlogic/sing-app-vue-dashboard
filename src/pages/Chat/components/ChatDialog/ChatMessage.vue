@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-message" :class="{owner: message.owner}">
+  <div class="chat-message" :class="{owner: owner}">
     <Avatar class="message-avatar" :user="user" v-if="showAvatar" :size="40" :showStatus="false"></Avatar>
     <p class="message-body">
       {{message.text}}
@@ -20,6 +20,7 @@
     props: {
       user: Object,
       message: Object,
+      owner: {type: Boolean, default: false},
       showAvatar: {type: Boolean, default: false}
     },
     computed: {

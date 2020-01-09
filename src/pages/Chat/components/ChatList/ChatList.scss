@@ -61,6 +61,10 @@
     color: $text-muted;
   }
 
+  .owner-indicator {
+    color: lighten($text-muted, 20%);
+  }
+
   &:hover {
     cursor: pointer;
     background: rgba(0,0,0,0.01);
@@ -73,7 +77,8 @@
   &.active {
     .chat-title,
     .chat-last-message,
-    .timestamp {
+    .timestamp,
+    .owner-indicator {
       color: $white;
     }
 
