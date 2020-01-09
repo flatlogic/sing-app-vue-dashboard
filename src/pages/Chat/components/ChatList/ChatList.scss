@@ -26,7 +26,7 @@
 .personal-chats,
 .group-chats {
   overflow: auto;
-  @include chat-scrollbar(rgba($text-muted, 0.15));
+  @include chat-scrollbar(rgba($text-muted, 0.15), 0);
 }
 
 .chat-list {
