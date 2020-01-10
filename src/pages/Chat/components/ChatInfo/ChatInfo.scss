@@ -1,36 +1,149 @@
 @import "../../../../styles/app";
 
-.chat-info-header {
-  color: $white;
+$chat-info-padding: 3 * $spacer;
 
-  .social-links {
-    display: flex;
-    align-items: center;
+.chat-info-section {
+  display: flex;
+  flex-direction: column;
+
+  .chat-info-header {
+    color: $white;
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+
+      .social-link {
+        a {
+          background: $white;
+          border-radius: 50%;
+          color: $info;
+          font-size: 18px;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+
+          .fa-facebook {
+            margin-top: 7px;
+            margin-left: 3px;
+            font-size: 22px;
+          }
+        }
+      }
+
+      .social-link + .social-link {
+        margin-left: $spacer / 1.2;
+      }
+    }
+  }
+
+  .chat-info-body {
+    overflow: auto;
     margin-bottom: 0;
+    @include chat-scrollbar($text-muted, 0);
+    flex: 1;
 
-    .social-link {
-      a {
-        background: $white;
-        border-radius: 50%;
-        color: $info;
-        font-size: 18px;
-        width: 25px;
-        height: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
+    .chat-info-list {
+      margin: 0 (-$chat-component-padding) 0 0;
 
-        .fa-facebook {
-          margin-top: 7px;
-          margin-left: 3px;
-          font-size: 22px;
+      .chat-info-item + .chat-info-item {
+        padding: $spacer * 1.5 $chat-component-padding 0 0;
+        border-top: 1px solid $border-color;
+      }
+
+      .chat-info-item {
+        padding-right: $chat-component-padding;
+
+        .item-header {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          margin-bottom: $spacer * 1.5;
+          position: relative;
+
+          .title {
+            padding-left: $chat-info-padding;
+            margin-bottom: 0;
+          }
+
+          .icon {
+            position: absolute;
+            top: 50%;
+            left: $chat-info-padding / 3;
+            transform: translate(-50%, -50%);
+          }
+
+          .la {
+            transition: $transition-base;
+            font-size: $font-size-lg;
+          }
+
+          &.collapsed {
+            .la-angle-up {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+
+        .item-body {
+          padding-left: $chat-info-padding;
+
+          .help-block {
+            margin-top: 0;
+            margin-bottom: $spacer;
+          }
+
+          .files-list {
+            .file-item {
+              position: relative;
+
+              .download-icon {
+                position: absolute;
+                top: 50%;
+                left: calc(#{-$chat-info-padding} + 5px);
+                transform: translateY(-50%);
+              }
+
+              a {
+                color: $text-muted;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: block;
+              }
+            }
+
+            .file-item + .file-item {
+              margin-top: $spacer;
+            }
+          }
         }
       }
     }
 
-    .social-link + .social-link {
-      margin-left: $spacer / 1.2;
+    .switch {
+      i {
+        height: 12px;
+        padding-right: 15px;
+      }
+
+      i::before {
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-top: -2px;
+        box-shadow: none;
+        border: 1px solid $border-color;
+      }
+
+      :checked + i {
+        padding-right: 0;
+        padding-left: 15px;
+        background: darken($success, 15%);
+      }
     }
   }
 }

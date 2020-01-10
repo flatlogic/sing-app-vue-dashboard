@@ -29,22 +29,27 @@ const dialogCommonData = {
   links: [],
   files: [
     {
+      id: 1,
       name: 'Diagram_0126.jpg',
       url: 'Diagram_0126.jpg'
     },
     {
+      id: 2,
       name: 'Diagram_0127.jpg',
       url: 'Diagram_0127.jpg'
     },
     {
+      id: 3,
       name: 'Diagram_0128.jpg',
       url: 'Diagram_0128.jpg'
     },
     {
+      id: 4,
       name: 'Dynamic_tables_result.pdf',
       url: 'Dynamic_tables_result.pdf'
     },
     {
+      id: 5,
       name: 'Diagram_product_management.pdf',
       url: 'Diagram_product_management.pdf'
     }
@@ -130,6 +135,7 @@ export const chats = [
     id: 1,
     name: 'Light Blue Group',
     users: [2,3,4,5,1,6],
+    ...dialogCommonData,
     isGroup: true,
     messages: [
       {
@@ -169,6 +175,7 @@ export const chats = [
     id: 2,
     name: 'React Native',
     users: [1, 4, 6],
+    ...dialogCommonData,
     isGroup: true,
     messages: [
       {
@@ -189,6 +196,7 @@ export const chats = [
     id: 3,
     name: 'Common',
     users: [1, 4, 6],
+    ...dialogCommonData,
     isGroup: true,
     messages: [
       {
