@@ -1,6 +1,14 @@
 import {user, chats, users} from '../pages/Chat/mock';
 import moment from 'moment';
 
+export const MobileChatStates = {
+  LIST: 'list',
+  CHAT: 'chat',
+  INFO: 'info'
+};
+
+Object.freeze(MobileChatStates);
+
 export default {
   namespaced: true,
   state: {
@@ -9,6 +17,7 @@ export default {
     users,
     activeChatId: chats[3].id,
     sendingMessage: false,
+    mobileState: MobileChatStates.CHAT
   },
   mutations: {
     SET_ACTIVE_CHAT(state, payload) {
@@ -21,11 +30,18 @@ export default {
     },
     NEW_MESSAGE_REQUEST(state) {
       state.sendingMessage = true;
+    },
+    CHANGE_MOBILE_STATE(state, payload) {
+      state.mobileState = payload;
+      if (payload === MobileChatStates.LIST) {
+        state.activeChatId = null;
+      }
     }
   },
   actions: {
-    setActiveChat({commit}, payload) {
-      commit('SET_ACTIVE_CHAT', payload)
+    setActiveChat({commit, dispatch}, payload) {
+      commit('SET_ACTIVE_CHAT', payload);
+      dispatch('changeMobileState', MobileChatStates.CHAT);
     },
     newMessageRequest({dispatch, commit, state}, payload) {
       if (!payload.message) return;
@@ -42,6 +58,9 @@ export default {
     },
     newMessageSuccess({commit}, payload) {
       commit('NEW_MESSAGE_SUCCESS', payload);
+    },
+    changeMobileState({commit}, payload) {
+      commit('CHANGE_MOBILE_STATE', payload);
     }
   },
 };

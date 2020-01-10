@@ -4,7 +4,7 @@
       <b-input placeholder="Search" v-model="search"></b-input>
       <i class="la la-search"></i>
     </section>
-    <section class="chat-section group-chats">
+    <section class="chat-section group-chats d-none d-md-block">
       <h5>Group Chats</h5>
       <ul class="chat-list">
         <chat-list-item
@@ -16,7 +16,29 @@
         ></chat-list-item>
       </ul>
     </section>
-    <section class="chat-section personal-chats mb-0">
+    <section class="chat-section personal-chats mb-0 d-none d-md-block">
+      <h5>Personal Chats</h5>
+      <ul class="chat-list">
+        <chat-list-item
+            v-for="chat of getChats(false)"
+            :key="chat.id"
+            :chat="chat"
+            :isActive="chat.id === activeChatId"
+            @click.native="setActiveChat(chat.id)"
+        ></chat-list-item>
+      </ul>
+    </section>
+    <section class="chat-section all-chats mb-0 d-md-none">
+      <h5>Group Chats</h5>
+      <ul class="chat-list mb-3">
+        <chat-list-item
+            v-for="chat of getChats(true)"
+            :key="chat.id"
+            :chat="chat"
+            :isActive="chat.id === activeChatId"
+            @click.native="setActiveChat(chat.id)"
+        ></chat-list-item>
+      </ul>
       <h5>Personal Chats</h5>
       <ul class="chat-list">
         <chat-list-item

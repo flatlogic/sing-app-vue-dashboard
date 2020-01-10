@@ -290,4 +290,17 @@ export const chats = [
       }
     ]
   },
+  {
+    id: 8,
+    users: [1, 6],
+    ...dialogCommonData,
+    messages: [
+      {
+        id: 1,
+        userId: 5,
+        text: 'If it takes long you can mail m...',
+        timestamp: getRandomDay()
+      }
+    ]
+  },
 ];

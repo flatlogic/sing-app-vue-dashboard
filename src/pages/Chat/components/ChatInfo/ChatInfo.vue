@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div v-if="info.name">
+    <div class="d-md-none chat-mobile-navigation" @click="changeMobileState(mobileChatStates.CHAT)">
+      <i class="la la-angle-left la-lg"></i>
+      Dialog
+    </div>
     <section class="chat-info-header chat-section bg-info">
       <div class="d-flex mb-3">
         <header>
@@ -120,7 +124,7 @@
       ...mapState('chat', ['activeChatId', 'chats']),
       info() {
         let chat = this.chats.find(chat => chat.id === this.activeChatId);
-        if (chat.isGroup) {
+        if (chat && chat.isGroup) {
           return {}
         }
         return {...this.findInterlocutor(chat), ...chat};

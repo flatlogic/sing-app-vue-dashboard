@@ -1,11 +1,16 @@
 <template>
   <div class="d-flex flex-column">
+    <div class="d-md-none chat-mobile-navigation px-0" @click="changeMobileState(mobileChatStates.LIST)">
+      <i class="la la-angle-left la-lg"></i>
+      Chats
+    </div>
     <header class="chat-dialog-header">
       <div>
         <h5 class="fw-normal mb-0">{{title}}</h5>
         <small v-if="!chat.isGroup" class="text-muted ">{{interlocutor.isOnline ? 'Online' : 'Was online ' + wasOnline}}</small>
       </div>
-      <i class="info-icon la la-ellipsis-v"></i>
+      <i class="info-icon la la-ellipsis-v d-none d-md-inline-block"></i>
+      <i class="info-icon la la-ellipsis-v d-md-none" @click="changeMobileState(mobileChatStates.INFO)"></i>
     </header>
     <div class="chat-dialog-body" ref="chatDialogBody">
       <div v-for="(part, i) of dialogParts" :key="i">
@@ -24,7 +29,7 @@
         </div>
       </div>
     </div>
-    <form class="chat-section new-message mb-0" @submit="sendMessage($event)">
+    <form class="chat-section new-message mb-0 mx-0" @submit="sendMessage($event)">
       <b-button class="attachment" variant="transparent p-0"><i class="la la-plus"></i></b-button>
       <b-input v-model="newMessage" placeholder="Type Your Message"></b-input>
       <b-button variant="danger" class="px-4 new-message-btn" type="submit">
@@ -54,9 +59,12 @@
     computed: {
       ...mapState('chat', ['activeChatId', 'user', 'sendingMessage', 'chats']),
       chat() {
-        return this.chats.find(chat => chat.id === this.activeChatId);
+        return this.chats.find(chat => chat.id === this.activeChatId) || {};
       },
       dialogParts() {
+        if (!this.chat.id) {
+          return [];
+        }
         let firstMessage = this.chat.messages[0];
         let dialogParts = [[this.shortCalendarDate(firstMessage.timestamp)],[firstMessage]];
         let messagesLength = this.chat.messages.length;
@@ -87,7 +95,7 @@
         if (this.chat.isGroup) {
           return;
         }
-        return this.findInterlocutor(this.chat);
+        return this.findInterlocutor(this.chat) || {};
       },
       title() {
         return this.chat.isGroup ? this.chat.name : `${this.interlocutor.name} ${this.interlocutor.surname}`
