@@ -20,49 +20,49 @@
         <div class="form-group row">
           <label class="col-md-2" for="productTitle">Title</label>
           <div class="col-md-5">
-            <input class="form-control" id="productTitle" type="text" :value="product.title" @change="updateProductProperty($event, 'title')"/>
+            <input class="form-control" id="productTitle" type="text" :value="product.title" @change="updateProductProperty($event.target.value, 'title')"/>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="productSubtitle">Subtitle</label>
           <div class="col-md-5">
-            <input class="form-control" id="productSubtitle" type="text" :value="product.subtitle" @change="updateProductProperty($event, 'subtitle')"/>
+            <input class="form-control" id="productSubtitle" type="text" :value="product.subtitle" @change="updateProductProperty($event.target.value, 'subtitle')"/>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="productPrice">Price</label>
           <div class="col-md-2">
-            <input class="form-control" id="productPrice" type="number" step="0.01" min="0.01" :value="product.price" @change="updateProductProperty($event, 'price')"/>
+            <input class="form-control" id="productPrice" type="number" step="0.01" min="0.01" :value="product.price" @change="updateProductProperty($event.target.value, 'price')"/>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="productDiscount">Discount</label>
           <div class="col-md-2">
-            <input class="form-control" id="productDiscount" type="number" step="1" min="0" max="100" :value="product.discount || 0" @change="updateProductProperty($event, 'discount')"/>
+            <input class="form-control" id="productDiscount" type="number" step="1" min="0" max="100" :value="product.discount || 0" @change="updateProductProperty($event.target.value, 'discount')"/>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="productDescription_1">Description </label>
           <div class="col-md-5">
-            <textarea rows="3" class="form-control" id="productDescription_1" :value="product.description_1" @change="updateProductProperty($event, 'description_1')"></textarea>
+            <textarea rows="3" class="form-control" id="productDescription_1" :value="product.description_1" @change="updateProductProperty($event.target.value, 'description_1')"></textarea>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="productDescription_2">Description </label>
           <div class="col-md-5">
-            <textarea rows="3" class="form-control" id="productDescription_2" :value="product.description_2" @change="updateProductProperty($event, 'description_2')"></textarea>
+            <textarea rows="3" class="form-control" id="productDescription_2" :value="product.description_2" @change="updateProductProperty($event.target.value, 'description_2')"></textarea>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="productCode">Code</label>
           <div class="col-md-2">
-            <input class="form-control" id="productCode" type="text" :value="product.code" @change="updateProductProperty($event, 'code')"/>
+            <input class="form-control" id="productCode" type="text" :value="product.code" @change="updateProductProperty($event.target.value, 'code')"/>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="productHashtag">Hashtag</label>
           <div class="col-md-5">
-            <input class="form-control" id="productHashtag" type="text" :value="product.hashtag" @change="updateProductProperty($event, 'hashtag')"/>
+            <input class="form-control" id="productHashtag" type="text" :value="product.hashtag" @change="updateProductProperty($event.target.value, 'hashtag')"/>
           </div>
         </div>
         <div class="form-group row">
@@ -81,7 +81,7 @@
         <div class="form-group row">
           <label class="col-md-2" for="productRating">Rating</label>
           <div class="col-md-2">
-            <input class="form-control" id="productRating" step="0.1" min="0" max="5" type="number" :value="product.rating" @change="updateProductProperty($event, 'rating')"/>
+            <input class="form-control" id="productRating" step="0.1" min="0" max="5" type="number" :value="product.rating" @change="updateProductProperty($event.target.value, 'rating')"/>
           </div>
         </div>
         <b-button-toolbar>
