@@ -136,6 +136,8 @@ export const chats = [
     name: 'Light Blue Group',
     users: [2,3,4,5,1,6],
     ...dialogCommonData,
+    createdAt: moment().subtract(1, 'd').subtract(5, 'm'),
+    createdBy: 3,
     isGroup: true,
     messages: [
       {
@@ -176,6 +178,8 @@ export const chats = [
     name: 'React Native',
     users: [1, 4, 6],
     ...dialogCommonData,
+    createdAt: moment().subtract(1, 'd').subtract(5, 'm'),
+    createdBy: 4,
     isGroup: true,
     messages: [
       {
@@ -197,6 +201,8 @@ export const chats = [
     name: 'Common',
     users: [1, 4, 6],
     ...dialogCommonData,
+    createdAt: moment().subtract(1, 'd').subtract(5, 'm'),
+    createdBy: 6,
     isGroup: true,
     messages: [
       {

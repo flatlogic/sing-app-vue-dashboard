@@ -39,6 +39,19 @@ $chat-info-padding: 3 * $spacer;
         margin-left: $spacer / 1.2;
       }
     }
+
+    .avatars-row {
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+      margin-bottom: 0;
+
+      li {
+        width: 15px;
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 
   .chat-info-body {

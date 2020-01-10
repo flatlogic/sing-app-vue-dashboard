@@ -230,6 +230,14 @@ small {
   }
 }
 
+.btn-white {
+  @include button-variant($white, $white);
+
+  @include hover-focus() {
+    background-color: rgba($white, 0.9);
+  }
+}
+
 ///////// Dropdowns //////////
 
 .dropdown {

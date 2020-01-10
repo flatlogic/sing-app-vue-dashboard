@@ -4,7 +4,7 @@
       <i class="la la-angle-left la-lg"></i>
       Dialog
     </div>
-    <section class="chat-info-header chat-section bg-info">
+    <section v-if="!info.isGroup" class="chat-info-header chat-section bg-info">
       <div class="d-flex mb-3">
         <header>
           <h3 class="mb-3 fw-semi-bold">{{info.name}} {{info.surname}}</h3>
@@ -28,6 +28,20 @@
         </ul>
       </footer>
     </section>
+    <section v-if="info.isGroup" class="chat-info-header chat-section bg-info">
+      <div class="d-flex align-items-center mb-3">
+        <h4 class="mb-0 fw-semi-bold">{{info.name}}</h4>
+        <ul class="avatars-row ml-auto">
+          <li v-for="user of shortUsersList" :key="user.id">
+            <Avatar :showStatus="false" :user="user" :size="35" :stroke="true"></Avatar>
+          </li>
+        </ul>
+      </div>
+      <footer class="d-flex align-items-center justify-content-between">
+        <h5 class="text-white mb-0">{{info.users.length}} members</h5>
+        <b-button variant="white" class="text-info fw-semi-bold">Add people</b-button>
+      </footer>
+    </section>
     <section class="chat-section chat-info-body">
       <ul class="chat-info-list">
         <li class="chat-info-item">
@@ -42,6 +56,12 @@
               <span class="help-block">Mobile</span>
               <p class="mb-0">@{{info.username}}</p>
               <span class="help-block">Username</span>
+            </div>
+            <div v-else>
+              <p class="mb-0">{{info.name}}</p>
+              <span class="help-block">Name</span>
+              <p class="mb-0">by {{createdBy}} on {{createdAt}}</p>
+              <span class="help-block">Created</span>
             </div>
           </b-collapse>
         </li>
@@ -82,7 +102,7 @@
             <h5 class="title">Files</h5>
             <i class="la la-angle-up ml-auto"></i>
           </header>
-          <b-collapse id="files" role="tabpanel" class="item-body">
+          <b-collapse id="files" visible role="tabpanel" class="item-body">
             <p v-if="!info.files.length" class="text-muted"><i>No links</i></p>
             <ul v-else class="files-list">
               <li class="file-item" v-for="file of info.files" :key="file.id">
@@ -99,6 +119,7 @@
 
 <script>
   import { mapState } from 'vuex';
+  import moment from 'moment';
   import Avatar from '../Avatar/Avatar';
   import { ChatMixin } from '../../../../mixins/chat';
 
@@ -125,9 +146,26 @@
       info() {
         let chat = this.chats.find(chat => chat.id === this.activeChatId);
         if (chat && chat.isGroup) {
-          return {}
+          return {...chat}
         }
         return {...this.findInterlocutor(chat), ...chat};
+      },
+      shortUsersList() {
+        if (this.chatUsers.length <= 3) {
+          return [...this.chatUsers];
+        } else {
+          return this.chatUsers.slice(0, 3);
+        }
+      },
+      chatUsers() {
+        return this.info.users.map(uid => this.findUser(uid));
+      },
+      createdBy() {
+        let user = this.findUser(this.info.createdBy);
+        return `${user.name} ${user.surname}`;
+      },
+      createdAt() {
+        return moment(this.info.createdAt).format('MMMM DD, YYYY');
       }
     }
   }
