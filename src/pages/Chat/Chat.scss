@@ -7,11 +7,11 @@
 
   .chat-info-section,
   .chat-list-section {
-    min-width: 25%;
+    width: 330px;
+    min-width: 330px;
   }
 
   .chat-dialog-section {
-    min-width: 50%;
     padding: 0 $chat-component-padding;
   }
 

@@ -10,8 +10,9 @@
       <section class="chat-item-main">
         <header class="d-flex align-items-center justify-content-between mb-1">
           <h6 class="chat-title">
+            <img class="group-chat-icon mr-1" v-if="chat.isGroup" :src="img.people">
             {{chat.title}}
-            <span v-if="chat.isGroup">({{chat.interlocutors.length + 1}})</span>
+            <span v-if="chat.isGroup" class="ml-1">({{chat.interlocutors.length + 1}})</span>
           </h6>
           <span class="ml-auto timestamp">
             {{time}}
@@ -36,8 +37,17 @@
   import moment from 'moment';
   import { ChatMixin } from '../../../../mixins/chat';
 
+  import people from '../../../../assets/chat/people.svg';
+
   export default {
     name: 'ChatListItem',
+    data() {
+      return {
+        img: {
+          people
+        }
+      }
+    },
     components: {Avatar},
     mixins: [ChatMixin],
     props: {
