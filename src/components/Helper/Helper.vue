@@ -1,6 +1,6 @@
 <template>
     <div :class="{ 'theme-helper': true, 'theme-helper-opened': helperOpened }">
-        <div class="theme-helper-toggler" @click="toggleHelper(!helperOpened)" id="v-step-4">
+        <div class="theme-helper-toggler" @click="toggleHelper(!helperOpened)" id="v-step-3">
             <div class="theme-helper-spinner bg-primary text-white">
                 <i class="la la-cog"></i>
                 <i class="la la-cog fs-smaller"></i>
@@ -10,7 +10,7 @@
             <div class="widget-body mt-3">
                 <h3 class="mb-3">Theme</h3>
                 <div class="theme-settings">
-                    <h5 style="position: static" id="v-step-5">Navbar Type</h5>
+                    <h5 style="position: static" id="v-step-4">Navbar Type</h5>
                     <div class="form-group row">
                       <div class="abc-radio">
                         <input type="radio" name="navbar-type" :value="navbarTypes.STATIC" id="navbar_static"
@@ -24,14 +24,14 @@
                       </div>
                     </div>
 
-                    <h5 id="v-step-6">Navbar Color</h5>
+                    <h5 id="v-step-5">Navbar Color</h5>
                     <colorpicker
                         :colors="appConfig.themeColors"
                         :activeColor="navbarColorName"
                         @change="updateLayoutComponentColor({component: layoutComponents.NAVBAR, color: $event})"
                     ></colorpicker>
 
-                    <h5 id="v-step-7">Sidebar Type</h5>
+                    <h5 id="v-step-6">Sidebar Type</h5>
                     <div class="form-group row">
                       <div class="abc-radio">
                         <input type="radio" name="sidebar-type" :value="sidebarTypes.TRANSPARENT" id="sidebar_transparent"
@@ -47,7 +47,7 @@
                       </div>
                     </div>
 
-                    <h5 id="v-step-8">Sidebar Color</h5>
+                    <h5 id="v-step-7">Sidebar Color</h5>
                     <colorpicker
                         :colors="appConfig.themeColors"
                         :activeColor="sidebarColorName"
@@ -56,7 +56,7 @@
                 </div>
                 <div class="mt-4">
                     <a href="https://flatlogic.com/templates/sing-app-vue"
-                    id="v-step-9"
+                    id="v-step-8"
                     target="_blank"
                     role="button"
                     class="btn btn-info btn-rounded-f btn-block fs-mini text-white">

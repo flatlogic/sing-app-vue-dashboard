@@ -19,10 +19,6 @@ export default function tourSteps(onCreateFn) {
     },
     {
       target: '#v-step-3',
-      content: 'Check out chat, do not miss new ideas 🙂'
-    },
-    {
-      target: '#v-step-4',
       content: 'It\'s a theme customizer sidebar, go inside it! ❤️',
       params: {
         placement: 'left',
@@ -32,7 +28,7 @@ export default function tourSteps(onCreateFn) {
       }
     },
     {
-      target: '#v-step-5',
+      target: '#v-step-4',
       content: 'Easily adjust navbar 😃',
       params: {
         placement: 'left',
@@ -51,7 +47,7 @@ export default function tourSteps(onCreateFn) {
       }
     },
     {
-      target: '#v-step-6',
+      target: '#v-step-5',
       content: "Choose a color for navbar, create unique layout 😃️",
       params: {
         placement: 'left',
@@ -70,7 +66,7 @@ export default function tourSteps(onCreateFn) {
       }
     },
     {
-      target: '#v-step-7',
+      target: '#v-step-6',
       content: "Also customize sidebar type, it's cool 🙂",
       params: {
         placement: 'left',
@@ -88,7 +84,7 @@ export default function tourSteps(onCreateFn) {
       }
     },
     {
-      target: '#v-step-8',
+      target: '#v-step-7',
       content: 'We also have different colors for sidebar, pick one from palette 😃',
       params: {
         placement: 'left',
@@ -107,7 +103,7 @@ export default function tourSteps(onCreateFn) {
       }
     },
     {
-      target: '#v-step-9',
+      target: '#v-step-8',
       content: 'Purchase out template if you like it, we appreciate it 😃!',
       params: {
         placement: 'left',

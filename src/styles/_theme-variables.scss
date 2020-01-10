@@ -19,7 +19,6 @@
 
 
     // dependable variables
-    --chat-sidebar-bg-color: var(--sidebar-bg-color);
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
     --sidebar-icon-active: var(--sidebar-bg-color);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
@@ -93,7 +92,6 @@
       --sidebar-bg-color: transparent;
       --sidebar-action-bg: transparent;
       --logo-color: var(--sidebar-color);
-      --chat-sidebar-bg-color: var(--body-bg);
       --sidebar-icon-active: white;
     }
   }

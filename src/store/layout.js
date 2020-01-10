@@ -2,12 +2,6 @@ import isScreen from '@/core/screenHelper';
 import config from '../config';
 import chroma from 'chroma-js';
 
-export const MessageStates = {
-  READ: "read",
-  NEW: "new",
-  HIDDEN: "hidden"
-};
-
 export const NavbarTypes = {
   STATIC: "static",
   FLOATING: "floating",
@@ -28,7 +22,6 @@ export const LayoutComponents = {
   SIDEBAR: "sidebar",
 };
 
-Object.freeze(MessageStates);
 Object.freeze(NavbarTypes);
 Object.freeze(NavbarColorSchemes);
 Object.freeze(SidebarTypes);
@@ -59,34 +52,10 @@ export default {
     navbarType: NavbarTypes.STATIC,
     sidebarType: SidebarTypes.SOLID,
     sidebarActiveElement: null,
-    chatOpen: false,
-    chatNotificationIcon: false,
-    chatNotificationMessageState: MessageStates.HIDDEN,
     helperOpened: false,
     tourInstance: null,
   },
   mutations: {
-    initApp(state) {
-      setTimeout(() => {
-        state.chatNotificationIcon = true;
-      }, 1000 * 4);
-    },
-    readMessage(state) {
-      if (state.chatNotificationMessageState !== MessageStates.READ)
-      state.chatNotificationMessageState = MessageStates.READ;
-    },
-    toggleChat(state) {
-      state.chatOpen = !state.chatOpen;
-      if (state.chatNotificationIcon) {
-        state.chatNotificationIcon = false;
-      }
-
-      if (state.chatNotificationMessageState === MessageStates.HIDDEN) {
-        setTimeout(() => {
-          state.chatNotificationMessageState = MessageStates.NEW;
-        }, 1000);
-      }
-    },
     toggleSidebar(state) {
       const nextState = !state.sidebarStatic;
 
@@ -108,16 +77,13 @@ export default {
     },
     handleSwipe(state, e) {
       if ('ontouchstart' in window) {
-        if (e.direction === 4 && !state.chatOpen) {
+        if (e.direction === 4) {
           state.sidebarClose = false;
         }
 
         if (e.direction === 2 && !state.sidebarClose) {
           state.sidebarClose = true;
-          return;
         }
-
-        state.chatOpen = e.direction === 2;
       }
     },
     changeSidebarActive(state, index) {
@@ -146,15 +112,6 @@ export default {
     }
   },
   actions: {
-    initApp({commit}) {
-      commit('initApp');
-    },
-    readMessage({commit}) {
-      commit('readMessage');
-    },
-    toggleChat({ commit }) {
-      commit('toggleChat');
-    },
     toggleSidebar({ commit }) {
       commit('toggleSidebar');
     },

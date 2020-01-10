@@ -1,10 +1,9 @@
 <template>
-<div :class="[{root: true, chatOpen, sidebarClose, sidebarStatic}, 'sing-dashboard', 'sidebar-' + sidebarColorName, 'sidebar-' + sidebarType]">
+<div :class="[{root: true, sidebarClose, sidebarStatic}, 'sing-dashboard', 'sidebar-' + sidebarColorName, 'sidebar-' + sidebarType]">
   <Sidebar />
   <Helper />
   <div class="wrap">
     <Header />
-    <Chat />
     <v-touch class="content" @swipe="handleSwipe" :swipe-options="{direction: 'horizontal'}">
       <breadcrumb-history :exclude="['chat']"></breadcrumb-history>
       <transition name="router-animation">
@@ -52,7 +51,6 @@ const { mapState, mapActions } = createNamespacedHelpers('layout');
 
 import Sidebar from '@/components/Sidebar/Sidebar';
 import Header from '@/components/Header/Header';
-import Chat from '@/components/Chat/Chat';
 import Helper from '@/components/Helper/Helper';
 import BreadcrumbHistory from '@/components/BreadcrumbHistory/BreadcrumbHistory';
 
@@ -60,7 +58,7 @@ import TourSteps from './tourSteps';
 
 export default {
   name: 'Layout',
-  components: { Sidebar, Header, Chat, Helper, BreadcrumbHistory },
+  components: { Sidebar, Header, Helper, BreadcrumbHistory },
   data() {
     return {
       tourStartTimeout: 500
@@ -108,7 +106,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["sidebarClose", "sidebarStatic", "chatOpen", "sidebarColorName", "sidebarType", "helperOpened", "tourInstance"]),
+    ...mapState(["sidebarClose", "sidebarStatic", "sidebarColorName", "sidebarType", "helperOpened", "tourInstance"]),
     steps() {
       return TourSteps(this.applyTourStep)
     },

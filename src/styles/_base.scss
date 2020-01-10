@@ -24,17 +24,6 @@
   animation-duration: 0.5s;
 }
 
-.chat-notification-sing {
-  position: absolute;
-  top: 20px;
-  left: 14px;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: theme-color('danger');
-}
-
 #notification-buttons {
   display: flex;
 
