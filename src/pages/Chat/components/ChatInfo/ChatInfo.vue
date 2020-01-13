@@ -1,6 +1,6 @@
 <template>
   <div v-if="info.name">
-    <div class="d-md-none chat-mobile-navigation" @click="changeMobileState(mobileChatStates.CHAT)">
+    <div class="d-lg-none chat-mobile-navigation" @click="changeMobileState(mobileChatStates.CHAT)">
       <i class="la la-angle-left la-lg"></i>
       Dialog
     </div>

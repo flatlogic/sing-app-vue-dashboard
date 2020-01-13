@@ -3,7 +3,7 @@
     <section class="chat-section">
       <chat-search></chat-search>
     </section>
-    <section class="chat-section group-chats d-none d-md-block">
+    <section class="chat-section group-chats d-none d-lg-block">
       <h5>Group Chats</h5>
       <ul class="chat-list">
         <chat-list-item
@@ -15,7 +15,7 @@
         ></chat-list-item>
       </ul>
     </section>
-    <section class="chat-section personal-chats mb-0 d-none d-md-block">
+    <section class="chat-section personal-chats mb-0 d-none d-lg-block">
       <h5>Personal Chats</h5>
       <ul class="chat-list">
         <chat-list-item
@@ -27,7 +27,7 @@
         ></chat-list-item>
       </ul>
     </section>
-    <section class="chat-section all-chats mb-0 d-md-none">
+    <section class="chat-section all-chats mb-0 d-lg-none">
       <h5>Group Chats</h5>
       <ul class="chat-list mb-3">
         <chat-list-item

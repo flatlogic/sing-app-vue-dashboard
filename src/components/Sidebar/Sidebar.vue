@@ -25,7 +25,7 @@
             :activeItem="activeItem"
             header="Chat"
             link="/app/chat"
-            iconName="flaticon-database-1"
+            iconName="flaticon-users"
             index="chat"
             label="awesome"
             labelColor="info"

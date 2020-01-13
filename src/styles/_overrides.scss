@@ -416,16 +416,6 @@ small {
   vertical-align: middle;
 }
 
-///////// Font Awesome //////////
-
-.navbar {
-  .fa {
-    &.fa-lg {
-      line-height: 19px;
-    }
-  }
-}
-
 ///////// Tooltips //////////
 
 .bs-tether-target.show {
@@ -683,6 +673,14 @@ pre {
   .fa {
     vertical-align: middle;
   }
+}
+
+//
+// Line Awesome
+// --------------------------------------------------
+
+.la.la-lg {
+  vertical-align: middle;
 }
 
 ///// Vue Input Tag /////

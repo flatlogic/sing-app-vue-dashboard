@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex flex-column">
-    <div class="d-md-none chat-mobile-navigation px-0" @click="changeMobileState(mobileChatStates.LIST)">
+    <div class="d-lg-none chat-mobile-navigation px-0" @click="changeMobileState(mobileChatStates.LIST)">
       <i class="la la-angle-left la-lg"></i>
       Chats
     </div>
@@ -11,8 +11,8 @@
           <online-status :user="interlocutor"></online-status>
         </small>
       </div>
-      <i class="info-icon la la-ellipsis-v d-none d-md-inline-block"></i>
-      <i class="info-icon la la-ellipsis-v d-md-none" @click="changeMobileState(mobileChatStates.INFO)"></i>
+      <i class="info-icon la la-ellipsis-v d-none d-xl-inline-block"></i>
+      <i class="info-icon la la-ellipsis-v d-xl-none" @click="changeMobileState(mobileChatStates.INFO)"></i>
     </header>
     <div class="chat-dialog-body" ref="chatDialogBody">
       <div v-for="(part, i) of dialogParts" :key="i">

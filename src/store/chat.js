@@ -32,7 +32,11 @@ export default {
       state.sendingMessage = true;
     },
     CHANGE_MOBILE_STATE(state, payload) {
-      state.mobileState = payload;
+      if (state.mobileState === payload && state.mobileState === MobileChatStates.INFO) {
+        state.mobileState = MobileChatStates.CHAT;
+      } else {
+        state.mobileState = payload;
+      }
       if (payload === MobileChatStates.LIST) {
         state.activeChatId = null;
       }

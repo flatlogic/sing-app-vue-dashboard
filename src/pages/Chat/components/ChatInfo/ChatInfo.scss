@@ -206,7 +206,7 @@ $chat-info-padding: 3 * $spacer;
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     width: 100%;
     left: 0;
 

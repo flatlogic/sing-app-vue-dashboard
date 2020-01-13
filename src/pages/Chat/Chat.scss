@@ -8,8 +8,8 @@
 
   .chat-info-section,
   .chat-list-section {
-    width: 330px;
-    min-width: 330px;
+    width: $chat-section-width;
+    min-width: $chat-section-width;
     height: 100%;
   }
 
@@ -39,18 +39,63 @@
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @include  media-breakpoint-only(lg) {
     .chat-info-section,
     .chat-list-section,
     .chat-dialog-section {
       position: absolute;
       left: 0;
       top: 0;
-      width: 100vw;
-      min-width: 100vw;
-      margin: 0 (-$content-padding-sm);
       opacity: 1;
-      //background: var(--body-bg);
+
+      transition: left $sidebar-transition-time ease-in-out,
+      opacity 0.2s ease-in-out,
+      padding-right 0.2s ease-in-out,
+      padding-left 0.2s ease-in-out,
+      width 0.2s ease-in-out;
+    }
+    .chat-info-section {
+      opacity: 0;
+      left: 100vw;
+    }
+
+    .chat-dialog-section {
+      left: $chat-section-width;
+      padding-right: 0;
+      width: calc(100% - #{$chat-section-width});
+    }
+
+    .chat-list-section {
+      left: 0;
+    }
+
+    &.info-state {
+      .chat-info-section {
+        opacity: 1;
+        left: calc(100% - #{$chat-section-width});
+      }
+      .chat-dialog-section {
+        left: 0;
+        padding-right: $chat-component-padding;
+        padding-left: 0;
+      }
+      .chat-list-section {
+        left: -$chat-section-width;
+        opacity: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .chat-info-section,
+    .chat-list-section,
+    .chat-dialog-section {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      min-width: 100%;
+      opacity: 1;
 
       transition: left $sidebar-transition-time ease-in-out, opacity 0.2s ease-in-out;
     }
@@ -61,9 +106,13 @@
       left: 100vw;
     }
 
+    .chat-dialog-section {
+      padding: 0;
+    }
+
     .chat-section {
-      margin-right: $content-padding-sm;
-      margin-left: $content-padding-sm;
+      margin-right: 0;
+      margin-left: 0;
     }
 
     &.chat-state {
@@ -96,7 +145,6 @@
 
     .chat-mobile-navigation {
       margin-bottom: $spacer;
-      padding: 0 $content-padding-sm;
       display: flex;
       align-items: center;
       color: $text-muted;
