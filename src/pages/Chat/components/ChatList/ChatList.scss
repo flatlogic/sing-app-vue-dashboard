@@ -4,24 +4,6 @@
   display: flex;
   flex-direction: column;
 
-  .chat-search {
-    position: relative;
-
-    .la {
-      font-size: $spacer * 1.5;
-      color: $text-muted;
-      position: absolute;
-      right: $chat-component-padding;
-      top: 50%;
-      transform: translateY(-50%) scaleX(-1);
-      padding: $input-padding-y $input-padding-x;
-    }
-
-    .form-control {
-      border: none;
-    }
-  }
-
   .personal-chats,
   .group-chats {
     overflow: auto;

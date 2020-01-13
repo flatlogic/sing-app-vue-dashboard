@@ -1,8 +1,7 @@
 <template>
   <div>
-    <section class="chat-section chat-search">
-      <b-input placeholder="Search" v-model="search"></b-input>
-      <i class="la la-search"></i>
+    <section class="chat-section">
+      <chat-search></chat-search>
     </section>
     <section class="chat-section group-chats d-none d-md-block">
       <h5>Group Chats</h5>
@@ -57,10 +56,11 @@
   import ChatListItem from './ChatListItem';
   import { mapActions, mapState } from 'vuex';
   import { ChatMixin } from '../../../../mixins/chat';
+  import ChatSearch from '../ChatSearch/ChatSearch';
 
   export default {
     name: 'ChatList',
-    components: {ChatListItem},
+    components: {ChatSearch, ChatListItem},
     mixins: [ChatMixin],
     data() {
       return {

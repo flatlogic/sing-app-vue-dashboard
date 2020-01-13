@@ -38,9 +38,17 @@
         </ul>
       </div>
       <footer class="d-flex align-items-center justify-content-between">
-        <h5 class="text-white mb-0">{{info.users.length}} members</h5>
+        <a @click="openedGroupList = true">
+          <h5 class="text-white mb-0">{{info.users.length}} members</h5>
+        </a>
         <b-button variant="white" class="text-info fw-semi-bold">Add people</b-button>
       </footer>
+      <group-list
+          v-if="openedGroupList"
+          class="group-list-modal animated fadeIn"
+          :uids="info.users"
+          @close="openedGroupList = false"
+      ></group-list>
     </section>
     <section class="chat-section chat-info-body">
       <ul class="chat-info-list">
@@ -129,17 +137,19 @@
   import links from '../../../../assets/chat/links.svg';
   import notifications from '../../../../assets/chat/notifications.svg';
   import download from '../../../../assets/chat/download.svg';
+  import GroupList from './GroupList';
 
   export default {
     name: 'ChatInfo',
     data() {
       return {
+        openedGroupList: false,
         img: {
           files, images, information, links, notifications, download
         }
       }
     },
-    components: {Avatar},
+    components: {GroupList, Avatar},
     mixins: [ChatMixin],
     computed: {
       ...mapState('chat', ['activeChatId', 'chats']),

@@ -80,6 +80,7 @@ export const user = {
 };
 
 export let users = [
+  user,
   {
     id: 2,
     name: 'Jane',

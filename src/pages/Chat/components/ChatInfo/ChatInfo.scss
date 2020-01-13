@@ -7,6 +7,7 @@ $chat-info-padding: 3 * $spacer;
   flex-direction: column;
 
   .chat-info-header {
+    position: relative;
     color: $white;
 
     .social-links {
@@ -160,3 +161,69 @@ $chat-info-padding: 3 * $spacer;
     }
   }
 }
+
+.group-list-modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  z-index: 1000;
+
+  .group-list-modal {
+    overflow-y: auto;
+    max-height: 450px;
+
+    @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
+
+    width: 300px;
+    color: $text-color;
+
+    .group-list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $spacer;
+
+      .la-lg {
+        vertical-align: middle;
+      }
+    }
+
+    .group-list {
+      margin: 0;
+      padding: 0;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        border-radius: $border-radius;
+        padding: $spacer / 2;
+
+        &:hover {
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.01);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    left: 0;
+
+    .group-list-modal {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+    z-index: -1;
+  }
+}
+

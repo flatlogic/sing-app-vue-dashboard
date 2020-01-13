@@ -7,7 +7,9 @@
     <header class="chat-dialog-header">
       <div>
         <h5 class="fw-normal mb-0">{{title}}</h5>
-        <small v-if="!chat.isGroup" class="text-muted ">{{interlocutor.isOnline ? 'Online' : 'Was online ' + wasOnline}}</small>
+        <small v-if="!chat.isGroup">
+          <online-status :user="interlocutor"></online-status>
+        </small>
       </div>
       <i class="info-icon la la-ellipsis-v d-none d-md-inline-block"></i>
       <i class="info-icon la la-ellipsis-v d-md-none" @click="changeMobileState(mobileChatStates.INFO)"></i>
@@ -46,10 +48,11 @@
   import ChatMessage from './ChatMessage';
   import Loader from '../../../../components/Loader/Loader';
   import { ChatMixin } from '../../../../mixins/chat';
+  import OnlineStatus from '../OnlineStatus/OnlineStatus';
 
   export default {
     name: 'ChatDialog',
-    components: {ChatMessage, Loader},
+    components: {OnlineStatus, ChatMessage, Loader},
     mixins: [ChatMixin],
     data() {
       return {
@@ -83,13 +86,6 @@
         }
 
         return dialogParts;
-      },
-      wasOnline() {
-        let calendarDate = moment(this.interlocutor.prevOnline).calendar();
-        let firstLetter = calendarDate[0].toLowerCase();
-        let substring = calendarDate.substr(1);
-
-        return firstLetter + substring;
       },
       interlocutor() {
         if (this.chat.isGroup) {
