@@ -138,7 +138,7 @@ export default {
     window.addEventListener('resize', this.handleWindowResize);
   },
   mounted() {
-    // this.$tours['app-tour'].start();
+    this.$tours['app-tour'].start();
     // fixes issue when sidebar is closing on initial entrance but user is on another tab and then returns back
     // and sees that first tour step has been misplaced
     window.addEventListener('focus', () => {
