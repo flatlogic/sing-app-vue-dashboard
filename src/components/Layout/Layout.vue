@@ -28,10 +28,10 @@
             <b-button v-if="tour.currentStep !== tour.steps.length - 1" @click="tour.stop" variant="outline-secondary" size="xs">Stop</b-button>
             <div class="ml-auto">
               <b-button v-if="tour.currentStep !== 0 && tour.currentStep !== tour.steps.length - 1"
-                        @click="tour.currentStep !== 5 ? tour.previousStep() : tourBackOutFromThemeCustomizer(tour)" variant="outline-secondary" size="xs" class="mr-2"
+                        @click="tour.currentStep !== 4 ? tour.previousStep() : tourBackOutFromThemeCustomizer(tour)" variant="outline-secondary" size="xs" class="mr-2"
               >Back</b-button>
               <b-button v-if="tour.currentStep !== tour.steps.length - 1"
-                        @click="tour.currentStep !== 4 ? tour.nextStep() : tourContinueWithinThemeCustomizer(tour)"
+                        @click="tour.currentStep !== 3 ? tour.nextStep() : tourContinueWithinThemeCustomizer(tour)"
                         variant="success" size="xs"
               >Next</b-button>
               <b-button v-else @click="stopTour(tour)" variant="success" size="xs">Finish</b-button>
@@ -83,7 +83,7 @@ export default {
         setTimeout(() => {
           const tour = this.$tours['app-tour'];
           tour.options.startTimeout = 0;
-          tour.start(5);
+          tour.start(4);
         }, 400);
       }
     },
@@ -96,7 +96,7 @@ export default {
         setTimeout(() => {
           const tour = this.$tours['app-tour'];
           tour.options.startTimeout = 0;
-          tour.start(4);
+          tour.start(3);
         }, 400);
       }
     },
