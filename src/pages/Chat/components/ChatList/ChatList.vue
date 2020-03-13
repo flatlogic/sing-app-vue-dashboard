@@ -93,6 +93,16 @@
               interlocutors,
               lastMessage
             }
+          }).sort((a, b) => {
+            var t1 = a.lastMessage.timestamp;
+            var t2 = b.lastMessage.timestamp;
+            if (t1 > t2) {
+              return -1;
+            } else if (t1 < t2) {
+              return 1
+            } else {
+              return 0;
+            }
           });
       }
     }

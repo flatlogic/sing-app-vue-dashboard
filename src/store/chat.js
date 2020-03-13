@@ -54,7 +54,7 @@ export default {
         let message = {
           id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
           text: payload.message,
-          timestamp: moment(),
+          timestamp: moment().format(),
           userId: state.user.id
         };
         dispatch('newMessageSuccess', {chatId: state.activeChatId, message});

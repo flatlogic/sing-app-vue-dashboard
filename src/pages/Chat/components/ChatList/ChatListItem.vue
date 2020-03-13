@@ -56,7 +56,7 @@
     },
     computed: {
       time() {
-        return moment(this.chat.lastMessage?.timestamp).format('d MMM') || "";
+        return moment(this.chat.lastMessage?.timestamp).format('D MMM') || "";
       },
       chatUsers() {
         if (this.chat.interlocutors.length <= 2) {
