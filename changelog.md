@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.4.1]
+
+### New Features
+
+- added new seed version
+- added some chat functionality
+- updated documentation
+
+### Fixed
+
+- fixed bugs
+
 ## [5.4.0]
 
 ### New Features
