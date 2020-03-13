@@ -98,11 +98,29 @@ routes: [
           <router-link class="btn btn-primary" to="/app/ecommerce/product">Details</router-link>
         </p>
       </Widget>
+      <Widget id="Chat">
+        <h3>Chat</h3>
+        <p>Chat is a ready-to-use application with all needed features. It’s easy to understand and customize. The code
+          is divided into components, so you can easily change the layout of your application.</p>
+        <ul>
+          <li><p>&bull; Personal and Group Chats</p></li>
+          <li><p>&bull; Modern design</p></li>
+          <li><p>&bull; Mobile adaptivity</p></li>
+          <li><p>&bull; Ready redux functionality</p></li>
+        </ul>
+        <b-row>
+          <b-col lg="6" xs="12">
+            <router-link to="/app/chat">
+              <img src="../../assets/chat/chat-screen.png" class="img-thumbnail" alt="chat" title="Chat">
+            </router-link>
+          </b-col>
+        </b-row>
+      </Widget>
     </b-col>
     <b-col lg="3" xs="12">
       <Scrollspy
           title="PAGES"
-          :ids="['Auth', 'Inbox', 'Dashboards', 'E-Commerce']"
+          :ids="['Auth', 'Inbox', 'Dashboards', 'E-Commerce', 'Chat']"
       ></Scrollspy>
     </b-col>
   </b-row>

@@ -281,7 +281,8 @@ table > thead > tr > th {
   & > li:before {
     position: absolute;
     left: -$spacer * 1.5;
-    font-family: 'Line Awesome Free';
-    content: "\f17b";
+    font-family: 'Line Awesome Free', sans-serif;
+    content: "\f00c";
+    font-weight: $font-weight-semi-bold;
   }
 }
