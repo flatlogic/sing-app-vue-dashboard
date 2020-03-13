@@ -25,7 +25,7 @@
     "awesome-bootstrap-checkbox": "^1.0.1",
     "axios": "^0.19.0",
     "bootstrap": "^4.1.1",
-    "bootstrap-vue": "^2.0.0-rc.24",
+    "bootstrap-vue": "2.0.3",
     "chart.js": "^2.8.0",
     "chroma-js": "^2.1.0",
     "css-loader": "^1.0.0",
