@@ -1,27 +1,25 @@
 <template>
     <div :class="{ 'theme-helper': true, 'theme-helper-opened': opened }">
-        <section class="widget theme-helper-content">
-            <header class="theme-helper-header d-flex p-0">
-                <div class="theme-helper-toggler" @click="toggle">
-                    <div class="theme-helper-spinner bg-warning text-white">
-                        <i class="la la-cog"></i>
-                        <i class="la la-cog fs-smaller"></i>
-                    </div>
-                </div>
-                <h6>Configuration</h6>
-            </header>
+        <div class="theme-helper-toggler" @click="toggle">
+            <div class="theme-helper-spinner bg-primary text-white">
+                <i class="la la-cog"></i>
+                <i class="la la-cog fs-smaller"></i>
+            </div>
+        </div>
+      <section class="widget theme-helper-content">
             <div class="widget-body mt-3">
+              <h6>Configuration</h6>
                 <div class="mt-4">
                     <a href="https://flatlogic.com/templates/sing-app-vue"
                     target="_blank"
                     role="button"
-                    class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">
+                    class="btn btn-info btn-rounded-f btn-block fs-mini text-white">
                         Purchase
                     </a>
                     <a href="http://demo.flatlogic.com/sing-app-vue/#/documentation/"
                     target="_blank"
                     role="button"
-                    class="btn btn-secondary btn-rounded-f btn-block fs-mini">
+                    class="btn btn-primary btn-rounded-f btn-block fs-mini">
                         Documentation
                     </a>
                 </div>
@@ -77,4 +75,4 @@ export default {
 };
 </script>
 
-<style src="./Helper.scss" lang="scss" scoped />
+<style src="./Helper.scss" lang="scss"></style>

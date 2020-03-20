@@ -1,18 +1,12 @@
 <template>
-  <b-navbar class="header d-print-none">
+  <b-navbar class="header d-print-none app-header">
     <b-nav>
       <b-nav-item>
         <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod" id="barsTooltip">
           <i class='la la-bars la-lg' />
         </a>
-        <b-tooltip target="barsTooltip" placement="bottom">
-          Turn on/off <br> sidebar <br> collapsing
-        </b-tooltip>
         <a class="fs-lg d-lg-none" href="#" @click="switchSidebarMethod">
-          <span class="rounded rounded-lg bg-gray text-white d-md-none">
-            <i class="la la-bars la-lg" />
-          </span>
-          <i class="la la-bars la-lg d-sm-down-none ml-4" />
+          <i class="la la-bars la-lg" />
         </a>
       </b-nav-item>
       <b-nav-item class="d-md-down-none">
@@ -30,39 +24,38 @@
       <b-form class="d-sm-down-none ml-5" inline>
         <b-form-group>
           <b-input-group class="input-group-no-border">
-            <div class="input-group-addon d-flex align-items-center">
-              <i class="la la-search px-3" />
-            </div>
-            <b-input id="search-input" placeholder="Search Dashboard" />
+            <template v-slot:prepend>
+              <b-input-group-text><i class="la la-search"/></b-input-group-text>
+            </template>
+            <b-form-input id="search-input" placeholder="Search Dashboard" />
           </b-input-group>
         </b-form-group>
       </b-form>
     </b-nav>
-    <a  class="navbar-brand d-md-none">
-      <i class="fa fa-circle text-gray mr-n-sm" />
-      <i class="fa fa-circle text-warning" />
+    <a  class="navbarBrand d-md-none">
+      <i class="fa fa-circle text-primary mr-n-sm" />
+      <i class="fa fa-circle text-danger" />
       &nbsp;
       sing
       &nbsp;
-      <i class="fa fa-circle text-warning mr-n-sm" />
-      <i class="fa fa-circle text-gray" />
+      <i class="fa fa-circle text-danger mr-n-sm" />
+      <i class="fa fa-circle text-primary" />
     </a>
     <b-nav class="ml-auto">
       <b-nav-item-dropdown
-        id="basic-nav-dropdown"
-        class="notifications-menu d-sm-down-none mr-2"
-        extra-menu-classes="notifications-wrapper py-0 animated animated-fast fadeInUp"
+        class="notificationsMenu d-md-down-none mr-2"
+        menu-class="notificationsWrapper py-0 animated animated-fast fadeIn"
         right>
         <template slot="button-content">
-          <span class="avatar thumb-sm float-left mr-2">
+          <span class="avatar rounded-circle thumb-sm float-left mr-2">
             <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
           </span>
-          <span class="small">Philip <span class="fw-semi-bold">Smith</span></span>
-          <span class="ml-1 circle bg-warning text-white fw-bold">13</span>
+          <span class="small">Philip Smith</span>
+          <span class="ml-1 circle bg-primary text-white fw-bold">13</span>
         </template>
         <Notifications />
       </b-nav-item-dropdown>
-      <b-nav-item-dropdown class="settings-dropdown d-sm-down-none" no-caret right>
+      <b-nav-item-dropdown id="v-step-2" class="settingsDropdown d-sm-down-none" no-caret right>
         <template slot="button-content">
           <i class="la la-cog px-2" />
         </template>
@@ -77,32 +70,6 @@
           <i class="la la-sign-out" /> Log Out
         </b-dropdown-item-button>
       </b-nav-item-dropdown>
-      <b-nav-item>
-        <a class="d-sm-down-none px-2" id="toggle-chat" href="#" @click="toggleChat">
-          <i class="la la-globe" />
-        </a>
-        <i v-if="chatNotificationIcon" class="chat-notification-sing animated bounceIn"></i>
-        <div id="chat-notification" class="chat-notification" :class="{'notification-hidden': !chatNotificationPopover}">
-          <div class="chat-notification-inner">
-            <h6 class="title d-flex text-white">
-              <span class="thumb-xs">
-                <img src="../../assets/people/a6.jpg" alt=""
-                  class="rounded-circle mr-xs float-left" />
-              </span>
-              Jess Smith
-            </h6>
-            <p class="text">
-              Hi there! <br /> This is a completely new version of Sing App <br />
-              built with <strong class="text-primary">Vue</strong>
-            </p>
-          </div>
-        </div>
-      </b-nav-item>
-      <b-nav-item class="fs-lg d-md-none">
-        <a href="#" @click="toggleChat">
-          <span class="rounded rounded-lg bg-gray text-white"><i class="la la-globe" /></span>
-        </a>
-      </b-nav-item>
     </b-nav>
   </b-navbar>
 </template>
@@ -115,10 +82,10 @@ export default {
   name: 'Header',
   components: { Notifications },
   computed: {
-    ...mapState('layout', ['sidebarClose', 'sidebarStatic', 'chatNotificationIcon', 'chatNotificationPopover']),
+    ...mapState('layout', ['sidebarClose', 'sidebarStatic']),
   },
   methods: {
-    ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive', 'initApp']),
+    ...mapActions('layout', ['toggleSidebar', 'switchSidebar', 'changeSidebarActive']),
     switchSidebarMethod() {
       if (!this.sidebarClose) {
         this.switchSidebar(true);
@@ -145,13 +112,8 @@ export default {
       window.localStorage.setItem('authenticated', false);
       this.$router.push('/login');
     },
-  },
-  created() {
-    if (window.innerWidth > 576) {
-      this.initApp();
-    }
-  },
+  }
 };
 </script>
 
-<style src="./Header.scss" lang="scss" scoped />
+<style src="./Header.scss" lang="scss"></style>

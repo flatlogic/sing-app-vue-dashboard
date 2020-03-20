@@ -5,10 +5,6 @@
   position: relative;
   left: 0;
   transition: left $sidebar-transition-time ease-in-out;
-
-  &.chatOpen {
-    left: -($chat-sidebar-width-open);
-  }
 }
 
 .wrap {
@@ -19,7 +15,7 @@
   flex-direction: column;
   left: $sidebar-width-open - $sidebar-width-closed;
   right: 0;
-  transition: left $sidebar-transition-time ease-in-out;
+  transition: left $sidebar-transition-time ease-in-out, margin-left $sidebar-transition-time ease-in-out;
 
   @media (max-width: breakpoint-max(sm)) {
     margin-left: 0;
@@ -32,20 +28,21 @@
 }
 
 .sidebarStatic .wrap {
-  transition: none;
+  //transition: none;
   left: 0;
   margin-left: $sidebar-width-open;
 }
 
 .content {
   position: relative;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  // 20px for footer height
   padding: $content-padding $content-padding ($content-padding + 20px);
   background-color: $body-bg;
 
   @media (max-width: breakpoint-max(sm)) {
-    padding: 20px 15px;
+    padding: 20px $content-padding-sm ($content-padding + 30px);
   }
 
   // hammers disallows text selection, allowing it for large screens

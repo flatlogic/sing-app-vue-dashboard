@@ -1,9 +1,5 @@
 <template>
   <div>
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>UI Notifications</b-breadcrumb-item>
-    </b-breadcrumb>
     <h1 class="page-title">Messages - <span class="fw-semi-bold">Notifications</span>
     </h1>
 
@@ -98,7 +94,7 @@ export default {
       });
     },
     addErrorNotification() {
-      this.$toasted.error('Launching thermonuclear war...', {
+      this.$toasted.info('Launching thermonuclear war...', {
         action: [
           {
             text: 'Cancel',

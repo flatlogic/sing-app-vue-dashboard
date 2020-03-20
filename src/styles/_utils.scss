@@ -43,19 +43,22 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 .circle,
 .rounded,
 .circle-o {
-  display: inline-block;
   width: #{$line-height-base}em;
   height: #{$line-height-base}em;
-  line-height: #{$line-height-base}em;
-  text-align: center;
 }
 
 .circle,
 .circle-o {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   @include border-radius(50%);
 }
 
 .rounded {
+  display: inline-block;
+  line-height: #{$line-height-base}em;
+  text-align: center;
   @include border-radius(5px);
 }
 
@@ -209,7 +212,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include bg-variant('.bg-gray-lighter', $gray-200);
 @include bg-variant('.bg-transparent', rgba(0,0,0,0));
 @include bg-variant('.bg-white', $white);
-@include bg-variant('.bg-sidebar', $sidebar-bg-color);
 
 .bg-body,
 .bg-body-light,
@@ -239,7 +241,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include text-emphasis-variant('.text-semi-muted', $gray-600);
 @include text-emphasis-variant('.text-gray-darker', $gray-900);
 @include text-emphasis-variant('.text-gray-lighter', $gray-200);
-@include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
+@include text-emphasis-variant('.text-color', $text-color);
 
 .text-ellipsis {
   display: block;
@@ -329,9 +331,10 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .thin-scroll {
+
   &::-webkit-scrollbar {
     height: 8px;
-    width: 8px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar:hover {
@@ -341,13 +344,17 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
   &::-webkit-scrollbar-thumb {
     border: none;
-    background-color: rgba(0, 0, 0, 0.2);
-
-    @include box-shadow(inset 1px 1px 0 rgba(0, 0, 0, 0.1));
+    transition: background-color .2s ease;
   }
 
   &::-webkit-scrollbar-thumb:hover {
     background-color: $gray-600;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -535,4 +542,33 @@ $i: 0;
 .background-cover {
   background-size: cover;
   background-position: center;
+}
+
+.router-animation-enter-active {
+  animation: coming .2s;
+  animation-delay: .1s;
+  opacity: 0;
+}
+.router-animation-leave-active {
+  animation: going .2s;
+}
+
+@keyframes going {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(0, 4%, 0) scale(.93);
+    opacity: 0;
+  }
+}
+@keyframes coming {
+  from {
+    transform: translate3d(0, 4%, 0) scale(.93);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
 }

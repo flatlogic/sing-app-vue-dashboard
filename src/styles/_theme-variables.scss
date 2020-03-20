@@ -1,0 +1,27 @@
+.root {
+  &.sing-dashboard {
+    --logo-color: white;
+    --body-bg: #f9fbfd;
+    --light-color: #F6F6E9;
+
+    --sidebar-bg-color: #002B49;
+    --sidebar-color: #C2C2C2;
+    --sidebar-action-bg: #042338;
+    --sidebar-item-active: var(--light-color);
+    --sidebar-badge-bg: #005792;
+
+    --sidebar-nav-title-color: var(--light-color);
+
+    --widget-shadow-color: 75, 102, 171;
+
+    --navbar-bg: #fff;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+
+
+    // dependable variables
+    --sidebar-progress-bg-color: var(--sidebar-action-bg);
+    --sidebar-icon-active: var(--sidebar-bg-color);
+    --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
+    --widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
+  }
+}

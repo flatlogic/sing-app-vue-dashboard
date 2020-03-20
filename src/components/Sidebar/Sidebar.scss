@@ -1,15 +1,36 @@
 @import '../../styles/app';
 .sidebar {
+  position: absolute;
   width: $sidebar-width-open;
+  height: 100%;
+  background-color: var(--sidebar-bg-color);
+  color: var(--sidebar-color);
+  transition: $transition-base;
+}
+
+.sidebar-wrapper {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: $sidebar-bg-color;
-  color: $sidebar-color;
   overflow-y: auto;
+  overflow-x: hidden;
+  width: $sidebar-width-open;
+  transition: width $sidebar-transition-time ease-in-out, left $sidebar-transition-time ease-in-out;
 
-  @include scroll-bar($sidebar-scrollbar-bg);
+  @include sidebar-scrollbar();
+}
+
+.sidebarClose .sidebar-wrapper {
+  width: $sidebar-width-closed;
+
+  @include media-breakpoint-down(sm) {
+    width: 0;
+  }
+}
+
+.sidebarStatic .sidebar-wrapper {
+  width: $sidebar-width-open;
 }
 
 .logo {
@@ -21,15 +42,20 @@
   transition: width $sidebar-transition-time ease-in-out;
 
   a {
-    color: $gray-800;
+    color: var(--logo-color);
     padding: 0 5px;
     text-decoration: none;
     white-space: nowrap;
   }
+
+  .primary-word {
+    color: var(--sidebar-item-active);
+    font-weight: $font-weight-normal;
+  }
 }
 
 .sidebarClose .logo {
-  width: 50px;
+  width: $sidebar-width-closed;
 }
 
 .sidebarStatic .logo {
@@ -48,6 +74,8 @@
   margin: 35px 0 5px 11px;
   font-size: $font-size-larger;
   transition: opacity $sidebar-transition-time ease-in-out;
+  color: var(--sidebar-nav-title-color);
+
 
   @media (min-width: breakpoint-min(lg)) {
     opacity: 1;
@@ -104,12 +132,13 @@
 
   li > a {
     font-size: $font-size-mini;
-    color: $sidebar-color;
+    color: var(--sidebar-color);
     text-decoration: none;
 
     > i {
       font-size: 11px;
       vertical-align: 1px;
+      color: var(--sidebar-item-active);
       transition: margin-left $sidebar-transition-time ease-in-out;
     }
   }
@@ -152,7 +181,7 @@
 }
 
 .sidebarProgress {
-  background: lighten($sidebar-bg-color, 10%);
+  background: var(--sidebar-progress-bg-color);
 }
 
 .groupTitle {

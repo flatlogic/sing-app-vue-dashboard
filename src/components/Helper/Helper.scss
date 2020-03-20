@@ -1,11 +1,11 @@
 @import '../../styles/app';
 
 .theme-helper {
-  width: $sidebar-width-open;
+  width: $helper-width;
   position: fixed;
-  right: -$sidebar-width-open;
-  top: $navbar-height * 2;
-  z-index: 100;
+  right: -$helper-width;
+  top: 100px;
+  z-index: 101;
   @include transition(right $sidebar-transition-time ease-in-out);
 
   &.theme-helper-opened {
@@ -13,6 +13,9 @@
   }
 
   .theme-helper-toggler {
+    position: absolute;
+    right: 100%;
+    top: 15%;
     width: $sidebar-width-open / 4;
     margin-left: -($sidebar-width-open / 4);
     cursor: pointer;
@@ -88,4 +91,3 @@
     }
   }
 }
-  

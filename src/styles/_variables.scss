@@ -27,8 +27,8 @@ $font-family-base: 'Montserrat', sans-serif;
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #d6dee5 !default;
+$gray-200: #EAF0F6 !default;
+$gray-300: #D7DFE6 !default;
 $gray-400: #c1ccd3 !default;
 $gray-500: #a3aeb7 !default;
 $gray-600: #798892 !default;
@@ -38,29 +38,31 @@ $gray-900: #29323a !default;
 $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
-$blue:    #547fff !default;
+$blue:    #005792 !default;
 $indigo:  #7f3ddb !default;
 $purple:  #9964e3 !default;
 $pink:    #e54e9a !default;
-$red:     #f55d5d !default;
+$red:     #FD5F00 !default;
 $orange:  #ff7d47 !default;
-$yellow:  #ffc247 !default;
+$yellow:  #FDA700 !default;
 $green:   #68ca66 !default;
-$teal:    #3abf94 !default;
-$cyan:    #17a2b8 !default;
+$teal:    #21AE8C !default;
+$cyan:    #1A86D0 !default;
+$default: #E9ECEF !default;
+$inverse: #002B49 !default;
 
 $theme-colors: (
   primary: $blue,
   secondary: $gray-600,
   success: $teal,
-  info: $purple,
+  info: $cyan,
   warning: $yellow,
   danger: $red,
   dark: $gray-800,
-  inverse: $gray-700,
+  inverse: $inverse,
   gray: $gray-300,
   light: $gray-100,
-  default: #e9ecef,
+  default: $default,
   primary-light: #dee4ee,
   success-light: #ecfaec,
   info-light: #f2fafa,
@@ -68,7 +70,7 @@ $theme-colors: (
   danger-light: #fff2ef,
 );
 
-$link-color: #218bc3;
+$link-color: $cyan;
 
 $text-color: $gray-700 !default;
 
@@ -80,23 +82,22 @@ $font-weight-base: $font-weight-thin !default;
 
 $addition-bg: $gray-100 !default;
 
-$body-bg: #fafbff !default;
+$body-bg: #f9fbfd !default;
 $body-bg-light: lighten($body-bg, 3%);
 
 //== Components
 //
 
+$grid-gutter-width: 40px;
+
 $content-padding: 40px;
+$content-padding-sm: 15px;
 
 $nav-link-padding: 10px;
 
-$border-radius:          0.3rem !default;
-$border-radius-lg:       0.35rem !default;
-$border-radius-sm:       0.25rem !default;
-
-//== Chat Sidebar
-//
-$chat-sidebar-width-open: 250px;
+$border-radius:          0.5rem !default;
+$border-radius-lg:       0.55rem !default;
+$border-radius-sm:       0.45rem !default;
 
 //== Sidebar
 //
@@ -105,16 +106,8 @@ $sidebar-width-open: 224px;
 $sidebar-width-closed: 50px;
 $sidebar-transition-time: 0.3s !default;
 
-$sidebar-bg-color: #fff !default;
-$sidebar-color: #6c757d !default;
-$sidebar-action-bg: #f9fafe !default;
-
 $sidebar-item-border-color: transparent !default;
-$sidebar-item-active-color: $yellow !default;
-$sidebar-item-hover-bg-color: $sidebar-action-bg;
 $sidebar-scrollbar-bg: $gray-200;
-
-$chat-sidebar-bg-color: $sidebar-bg-color !default;
 
 $breadcrumb-divider: '>';
 $breadcrumb-padding-y: 0;
@@ -122,18 +115,22 @@ $breadcrumb-bg: transparent;
 
 $widget-bg: #fff;
 $widget-title-color: #444;
-$widget-shadow: 0 0 40px darken($body-bg, 2%);
-$widget-shadow-designated: -1px 0 8px $gray-400;
+$widget-shadow-designated: -1px 0 8px rgba(0,0,0,.2);
 
 $input-btn-line-height: 1.5;
 
 $input-btn-padding-y-sm: 0.4rem;
 $input-btn-padding-x-sm: 0.8rem;
 
+//== Theme Helper
+//
+
+$helper-width: 300px;
+
 //== Navbar
 //
 
-$navbar-height:  50px !default;
+$navbar-height:  60px !default;
 $navbar-padding-y: 0 !default;
 $navbar-padding-x: 0 !default;
 
@@ -163,6 +160,7 @@ $nav-tabs-active-link-hover-color: $gray-700 !default;
 //== Forms
 //
 $input-focus-border-color: #4d90fe !default; //webkit focus color
+$input-color: $text-color !default;
 
 //*  Popover  */
 $popover-bg: #ebeff1 !default;
@@ -180,6 +178,7 @@ $breadcrumb-active-color: $gray-700;
 
 // Progress bars
 $progress-height: 0.65rem !default;
+$progress-box-shadow: none;
 
 // Alerts
 $alert-transparent: 0.25;
@@ -190,9 +189,11 @@ $input-btn-padding-x:       1rem !default;
 
 $btn-default-bg: $addition-bg !default;
 $btn-default-border: $addition-bg !default;
+$btn-focus-width: 0 !default;
 
 // Table
 $table-border-width: 1px;
+$table-accent-bg: $gray-100 !default;
 
 // Pagination
 $pagination-color:                     $gray-700 !default;

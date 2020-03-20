@@ -1,14 +1,16 @@
 <template>
-<div :class="{root: true, chatOpen, sidebarClose, sidebarStatic}">
+<div :class="[{root: true, sidebarClose, sidebarStatic}, 'sing-dashboard']">
   <Sidebar />
   <Helper />
   <div class="wrap">
     <Header />
-    <Chat />
     <v-touch class="content" @swipe="handleSwipe" :swipe-options="{direction: 'horizontal'}">
-      <router-view />
+      <breadcrumb-history></breadcrumb-history>
+      <transition name="router-animation">
+        <router-view />
+      </transition>
       <footer class="contentFooter">
-        Sing Vue Version - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
+        Sing App Vue Dashboard Free Template - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
         </footer>
     </v-touch>
   </div>
@@ -16,29 +18,33 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { createNamespacedHelpers } from 'vuex';
+const { mapState, mapActions } = createNamespacedHelpers('layout');
 
 import Sidebar from '@/components/Sidebar/Sidebar';
 import Header from '@/components/Header/Header';
-import Chat from '@/components/Chat/Chat';
 import Helper from '@/components/Helper/Helper';
+import BreadcrumbHistory from '@/components/BreadcrumbHistory/BreadcrumbHistory';
 
 import './Layout.scss';
 
 export default {
   name: 'Layout',
-  components: { Sidebar, Header, Chat, Helper },
+  components: { Sidebar, Header, Helper, BreadcrumbHistory },
   methods: {
-    ...mapActions(
-      'layout', ['switchSidebar', 'handleSwipe', 'changeSidebarActive'],
+    ...mapActions(['switchSidebar', 'handleSwipe', 'changeSidebarActive', 'toggleSidebar'],
     ),
+    handleWindowResize() {
+      const width = window.innerWidth;
+
+      if (width <= 768 && this.sidebarStatic) {
+        this.toggleSidebar();
+        this.changeSidebarActive(null);
+      }
+    },
   },
   computed: {
-    ...mapState('layout', {
-      sidebarClose: state => state.sidebarClose,
-      sidebarStatic: state => state.sidebarStatic,
-      chatOpen: state => state.chatOpen,
-    }),
+    ...mapState(["sidebarClose", "sidebarStatic"]),
   },
   created() {
     const staticSidebar = JSON.parse(localStorage.getItem('sidebarStatic'));
@@ -51,7 +57,13 @@ export default {
         this.changeSidebarActive(null);
       }, 2500);
     }
+
+    this.handleWindowResize();
+    window.addEventListener('resize', this.handleWindowResize);
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleWindowResize);
+  }
 };
 </script>
 

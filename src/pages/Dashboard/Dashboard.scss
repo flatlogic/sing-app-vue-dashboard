@@ -1,17 +1,21 @@
 @import '../../styles/app';
 
-table {
-  td, th {
-    font-weight: $font-weight-normal;
+.dashboard-page {
+  .requests-table {
+    td, th {
+      font-weight: $font-weight-normal;
+    }
+
+    tbody tr {
+      td {
+        min-width: 100px;
+      }
+    }
   }
 
-  tbody tr {
-    &:nth-child(odd) {
-      background: $gray-100;
-    }
-
-    td {
-      min-width: 100px;
-    }
+  .visitElement {
+    max-width: 50%;
+    width: 33%;
+    min-width: 65px;
   }
 }

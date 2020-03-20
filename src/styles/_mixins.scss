@@ -44,18 +44,6 @@
   border-radius: $radius;
 }
 
-@mixin scroll-bar($color) {
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border: none;
-    background-color: $color;
-  }
-}
-
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content;
@@ -63,5 +51,26 @@
 
   @keyframes #{$name} {
     @content;
+  }
+}
+
+@mixin sidebar-scrollbar() {
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 4px;
+    background: var(--sidebar-bg-color);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--sidebar-bg-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: var(--sidebar-color);
   }
 }

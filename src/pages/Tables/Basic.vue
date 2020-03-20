@@ -1,9 +1,5 @@
 <template>
   <div class="tables-basic">
-    <b-breadcrumb>
-      <b-breadcrumb-item>YOU ARE HERE</b-breadcrumb-item>
-      <b-breadcrumb-item active>Tables Basic</b-breadcrumb-item>
-    </b-breadcrumb>
     <h2 class="page-title">Tables - <span class="fw-semi-bold">Static</span></h2>
     <b-row>
       <b-col>
@@ -551,7 +547,8 @@ export default {
       return [{data: result}];
     },
     getRandomColor() {
-      const colors = ['#547fff', '#9964e3', '#f55d5d', '#ffc247', '#3abf94'];
+      const {primary, success, info, danger} = this.appConfig.colors;
+      const colors = [info, primary, danger, success];
       return {colors: [colors[Math.floor(Math.random() * colors.length)]]}
     }
   },

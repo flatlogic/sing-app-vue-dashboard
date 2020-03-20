@@ -2,6 +2,17 @@
   margin: 0 0 calc(1rem + 6px);
 }
 
+.page-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & .close {
+    margin-left: 25px;
+  }
+}
+
 .input-group.focus {
   .input-group-addon,
   input {
@@ -11,17 +22,6 @@
 
 .animated {
   animation-duration: 0.5s;
-}
-
-.chat-notification-sing {
-  position: absolute;
-  top: 12px;
-  left: 14px;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: theme-color('danger');
 }
 
 #notification-buttons {
@@ -49,7 +49,7 @@
 
 /* --------- Forms --------- */
 .form-action {
-  background-color: #f5f5f5;
+  background-color: $gray-100;
   margin: $spacer 0 0;
   padding: $spacer/2 $spacer;
 }
@@ -104,7 +104,9 @@
 }
 
 .table-bordered th {
-  background-color: $gray-300;
+  background-color: $primary;
+  color: var(--light-color);
+  border: none;
 }
 
 table > thead > tr > th {
@@ -147,6 +149,10 @@ table > thead > tr > th {
     border-left: 1px solid $hr-border-color;
   }
 
+  &:last-child {
+    padding-right: 0;
+  }
+
   .name {
     margin-bottom: 0.25rem;
     font-size: $font-size-sm;
@@ -154,7 +160,6 @@ table > thead > tr > th {
 
   &.stat-item-mini-chart {
     position: relative;
-    top: -1rem;
     padding-left: 0;
     border-left: none;
   }
@@ -174,6 +179,10 @@ table > thead > tr > th {
   background: rgba($white, 0.4);
   border: 1px dashed $gray-600;
   margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
+
+  * {
+    opacity: 0;
+  }
 }
 
 /*         Post Links           */
@@ -245,7 +254,7 @@ table > thead > tr > th {
   .author {
     margin-top: 0;
     margin-bottom: 2px;
-    color: #7ca9dd;
+    color: $info;
   }
 
   .comment-body {

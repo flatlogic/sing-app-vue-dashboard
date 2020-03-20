@@ -3,70 +3,6 @@
   padding-right: 30px;
 }
 
-.navbar {
-  height: $navbar-height;
-  border: none;
-  font-weight: 500;
-  justify-content: flex-start;
-
-  .nav {
-    height: 100%;
-    padding: 0;
-
-    .nav-item {
-      .nav-link {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        position: relative;
-        padding: 0.5rem;
-        color: $navbar-link-color;
-
-        @include hover {
-          color: $navbar-link-hover-color;
-          background: $navbar-link-hover-bg;
-          text-decoration: none;
-        }
-
-        a {
-          color: $navbar-link-color;
-
-          @include hover {
-            color: $navbar-link-hover-color;
-            background: $navbar-link-hover-bg;
-            text-decoration: none;
-          }
-        }
-
-        .la {
-          font-size: 20px;
-        }
-      }
-    }
-  }
-
-  .nav > .nav-item > .nav-link.bs-tether-target.show {
-    display: flex !important;
-  }
-
-  .input-group {
-    width: 245px;
-  }
-
-  .form-control {
-    line-height: 1.7;
-    padding: 0.6rem 0.85rem;
-  }
-
-  .dropdown-menu {
-    margin: 0;
-  }
-
-  @include media-breakpoint-down(sm) {
-    font-size: $font-size-lg;
-  }
-}
-
 .progress-bar {
   @include box-shadow(none);
 }
@@ -208,27 +144,16 @@ legend {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-weight: 300;
-}
-
 .small,
 small {
   font-size: 85%;
 }
 
 ///////// Buttons //////////
+
+.btn {
+  background-image: none;
+}
 
 .btn-link {
   &:focus {
@@ -246,8 +171,9 @@ small {
 .btn-warning {
   color: $white;
 
+  &:active,
   &:hover {
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -304,6 +230,14 @@ small {
   }
 }
 
+.btn-white {
+  @include button-variant($white, $white);
+
+  @include hover-focus() {
+    background-color: rgba($white, 0.9);
+  }
+}
+
 ///////// Dropdowns //////////
 
 .dropdown {
@@ -317,6 +251,22 @@ small {
 .dropdown-menu-right {
   left: auto;
   right: 0;
+}
+
+.dropdown-toggle::after {
+  font-family: 'Line Awesome Free', sans-serif;
+  content: "\f107";
+  border: none;
+  width: auto;
+  height: auto;
+  vertical-align: baseline;
+  opacity: .8;
+  font-size: 85%;
+  font-weight: $font-weight-semi-bold;
+}
+
+.dropdown-toggle-no-caret:after {
+  content: none;
 }
 
 .nav-item.dropdown {
@@ -430,6 +380,13 @@ small {
   }
 }
 
+///////// Jumbotron //////////
+.widget {
+  .jumbotron {
+    background: transparent;
+  }
+}
+
 ///////// Breadcrumbs //////////
 
 .breadcrumb {
@@ -457,16 +414,6 @@ small {
 
 .glyphicon {
   vertical-align: middle;
-}
-
-///////// Font Awesome //////////
-
-.navbar {
-  .fa {
-    &.fa-lg {
-      line-height: 19px;
-    }
-  }
 }
 
 ///////// Tooltips //////////
@@ -591,7 +538,7 @@ h6,
   }
 
   border-bottom: none;
-  background-color: $gray-400;
+  background-color: $gray-200;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
 
@@ -688,9 +635,6 @@ pre {
   border: 1px solid $gray-400;
   border-radius: $border-radius;
   white-space: pre-line;       /* css-3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
 
   // Account for some code outputs that place code tags in pre tags
   code {
@@ -701,52 +645,6 @@ pre {
     background-color: transparent;
     border-radius: 0;
   }
-}
-
-/* ----------- React Bootstrap Table ----------- */
-@include media-breakpoint-down(sm) {
-  .react-bs-table table {
-    table-layout: inherit;
-  }
-
-  .react-bs-table-pagination {
-    .col-xs-6 {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-  }
-}
-
-.rc-color-picker-wrap {
-  line-height: 1;
-}
-
-.rst__rowContents,
-.rst__moveHandle,
-.rst__loadingHandle {
-  box-shadow: none;
-}
-
-.rst__rowContents {
-  border-radius: 0 $border-radius $border-radius 0;
-}
-
-.rst__moveHandle,
-.rst__loadingHandle {
-  border-radius: $border-radius 0 0 $border-radius;
-}
-
-.rst__lineHalfHorizontalRight::before,
-.rst__lineFullVertical::after,
-.rst__lineHalfVerticalTop::after,
-.rst__lineHalfVerticalBottom::after,
-.rst__lineChildren::after {
-  background-color: $gray-500;
-}
-
-.rst__collapseButton,
-.rst__expandButton {
-  box-shadow: 0 0 0 1px $gray-700;
 }
 
 //
@@ -774,6 +672,37 @@ pre {
 .circle {
   .fa {
     vertical-align: middle;
+  }
+}
+
+//
+// Line Awesome
+// --------------------------------------------------
+
+.la.la-lg {
+  vertical-align: middle;
+}
+
+///// Vue Input Tag /////
+.vue-input-tag-wrapper {
+  appearance: none;
+  height: max-content;
+
+  .input-tag {
+    border-radius: $border-radius;
+    background-color: $purple;
+    color: white;
+    border-color: darken($purple, 10%);
+
+    .remove:before {
+      content: " ×" !important;
+      color: white;
+    }
+  }
+
+  .input-tag,
+  .new-tag {
+    margin: 2px;
   }
 }
 
