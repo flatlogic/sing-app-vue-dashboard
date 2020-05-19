@@ -7,12 +7,12 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn run start
 ```
 
 ### If you use app with backend support, please use
 ```
-yarn run serve:backend
+yarn run start:backend
 ```
 
 ### Compiles and minifies for production

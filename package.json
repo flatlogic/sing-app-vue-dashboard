@@ -3,11 +3,11 @@
   "version": "4.5.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --port 3000",
-    "serve:backend": "VUE_APP_BACKEND=true vue-cli-service serve --port 3000",
+    "start": "vue-cli-service serve --port 3000",
+    "start:backend": "VUE_APP_BACKEND=true vue-cli-service serve --port 3000",
     "build": "VUE_APP_BACKEND=true vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js"
+    "node": "node server.js"
   },
   "dependencies": {
     "@amcharts/amcharts4": "^4.6.1",

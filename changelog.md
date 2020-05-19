@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.4.2]
+
+### Fixed
+
+- Fix invalid token validation
+
 ## [5.4.1]
 
 ### New Features

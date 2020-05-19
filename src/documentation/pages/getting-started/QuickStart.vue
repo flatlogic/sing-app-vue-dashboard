@@ -13,8 +13,8 @@
         <h5>Quick Start:</h5>
         <ol>
           <li>1. Run <code>yarn install</code></li>
-          <li>2. Run <code>yarn serve</code></li>
-          <li>2.1 For running the app with backend support please run <code>yarn serve:backend</code>
+          <li>2. Run <code>yarn start</code></li>
+          <li>2.1 For running the app with backend support please run <code>yarn start:backend</code>
             <span class="small text-muted"> (Required only in full stack version)</span>
           </li>
         </ol>
