@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.4.3]
+
+### Fixed
+
+- Update dependency
+- Fix animation class
+- Fix link in them helper
+
 ## [5.4.2]
 
 ### Fixed
