@@ -33,7 +33,7 @@
                     </a>
                     <a role="button"
                     target="_blank"
-                    href="https://github.com/flatlogic/sing-app"
+                    href="https://github.com/flatlogic/sing-app-vue-dashboard"
                     class="btn btn-outline-default btn-rounded-f fs-mini text-muted d-flex align-items-center">
                         <i class="fa fa-github mr-xs"></i>
                         Github

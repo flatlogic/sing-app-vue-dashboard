@@ -1,4 +1,11 @@
 # Changelog
+## [v2.1.1]
+
+### Updated
+
+- Update dependency
+- Fix animation class
+- Fix Echart Donut Chart in charts page 
 
 ## [v2.1.0]
 

@@ -44,7 +44,7 @@
     <b-nav class="ml-auto">
       <b-nav-item-dropdown
         class="notificationsMenu d-md-down-none mr-2"
-        menu-class="notificationsWrapper py-0 animated animated-fast fadeIn"
+        menu-class="notificationsWrapper py-0 animate__animated animate__animated-fast animate__fadeIn"
         right>
         <template slot="button-content">
           <span class="avatar rounded-circle thumb-sm float-left mr-2">
@@ -63,7 +63,7 @@
         <b-dropdown-divider />
         <b-dropdown-item>Calendar</b-dropdown-item>
         <b-dropdown-item>
-          Inbox &nbsp;&nbsp;<b-badge variant="danger" pill class="animated bounceIn">9</b-badge>
+          Inbox &nbsp;&nbsp;<b-badge variant="danger" pill class="animate__animated animate__bounceIn">9</b-badge>
         </b-dropdown-item>
         <b-dropdown-divider />
         <b-dropdown-item-button @click="logout">
