@@ -1,4 +1,9 @@
 # Changelog
+## [5.4.4]
+
+### Fixed
+
+- Update dependency
 
 ## [5.4.3]
 
