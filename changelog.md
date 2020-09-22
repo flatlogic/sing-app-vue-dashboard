@@ -1,4 +1,10 @@
 # Changelog
+## [v2.1.2]
+
+### Updated
+
+- Update dependency
+
 ## [v2.1.1]
 
 ### Updated
