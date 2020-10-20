@@ -148,14 +148,13 @@
                       <td>{{row.date}}</td>
                       <td>{{row.city}}</td>
                       <td>
-                        <b-button
+                        <b-badge
                           :variant="row.status === 'Pending'
                             ? 'success'
                             : row.status === 'Declined' ? 'danger' : 'info'"
-                          class="p-1 px-3 btn-xs"
-                        >
+                          class="m-1 mx-3">
                           {{row.status}}
-                        </b-button>
+                        </b-badge>
                       </td>
                     </tr>
                   </tbody>

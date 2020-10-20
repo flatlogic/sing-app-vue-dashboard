@@ -105,7 +105,7 @@ export default {
             type: 'spline',
             name: 'RNS App',
             data: data[1],
-            color: this.appConfig.colors.info,
+            color: this.appConfig.colors.info
           },
           {
             type: 'spline',

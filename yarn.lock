@@ -748,6 +748,13 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
+"@types/chart.js@^2.7.55":
+  version "2.9.26"
+  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.9.26.tgz#ac1ef4ae313754e510733b804ce0f71d950642ac"
+  integrity sha512-X2I0sRdvRB3QKtC240cYQtQHxPX9c7IPOZ2TRF1VOs1wtGfRsC7/AEUFWxPtJgaWV0SS+zK/Qh8jDEvNfa3KxQ==
+  dependencies:
+    moment "^2.10.2"
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -8684,15 +8691,17 @@ vue-carousel@^0.18.0:
     regenerator-runtime "^0.12.1"
     vue "^2.5.17"
 
-vue-chartjs@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.5.0.tgz#edd0c2be94c521bcbc5357c24afb9f3560855f84"
-  integrity sha512-yWNhG3B6g6lvYqNInP0WaDWNZG/SNb6XnltkjR0wYC5pmLm6jvdiotj8er7Mui8qkJGfLZe6ULjrZdHWjegAUg==
+vue-chartjs@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.5.1.tgz#d25e845708f7744ae51bed9d23a975f5f8fc6529"
+  integrity sha512-foocQbJ7FtveICxb4EV5QuVpo6d8CmZFmAopBppDIGKY+esJV8IJgwmEW0RexQhxqXaL/E1xNURsgFFYyKzS/g==
+  dependencies:
+    "@types/chart.js" "^2.7.55"
 
-vue-code-highlight@^0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/vue-code-highlight/-/vue-code-highlight-0.7.4.tgz#ab7f54960978baca8fdb074a88502a06a9126a55"
-  integrity sha512-TmJ/WPXQnNCIugHkAwMiS3//6BM0UIiUQRyLpoRJ2g6f+coIcoyAXLeGwqP9f1lfFHjlzCRSfmX+4tus4eKhgQ==
+vue-code-highlight@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/vue-code-highlight/-/vue-code-highlight-0.7.6.tgz#12f1f019f45ba79934285816cde3831ebb18ac2b"
+  integrity sha512-AIiB8Wlx93fz3GXtWR83B82Lu9a2I1ui8NtVFkEJfH51xFACvwyCwc5QaBtkX3Ojlw0qIfU6Fatb9+Baryxvfw==
   dependencies:
     prism-es6 "^1.2.0"
     vue "^2.5.16"
@@ -8788,10 +8797,10 @@ vue-pagination-2@^1.6.3:
     vue ">=2.0.0"
     vuex "^2.0.0"
 
-vue-router@^3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.4.tgz#4e38abc34a11c41b6c3d8244449a2e363ba6250b"
-  integrity sha512-SdKRBeoXUjaZ9R/8AyxsdTqkOfMcI5tWxPZOUX5Ie1BTL5rPSZ0O++pbiZCeYeythiZIdLEfkDiQPKIaWk5hDg==
+vue-router@^3.4.3:
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.7.tgz#bf189bafd16f4e4ef783c4a6250a3090f2c1fa1b"
+  integrity sha512-CbHXue5BLrDivOk5O4eZ0WT4Yj8XwdXa4kCnsEIOzYUPF/07ZukayA2jGxDCJxLc9SgVQX9QX0OuGOwGlVB4Qg==
 
 vue-select@^2.6.4:
   version "2.6.4"
@@ -8897,10 +8906,10 @@ vue@^2.6.12:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
 
-vuedraggable@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.24.0.tgz#1ee069eeb91f61fcb540faf20f1c6b2d4d990a26"
-  integrity sha512-IlslPpc+iZ2zPNSJbydFZIDrE+don5u+Nc/bjT2YaF+Azidc+wxxJKfKT0NwE68AKk0syb0YbZneAcnynqREZQ==
+vuedraggable@^2.24.1:
+  version "2.24.2"
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.24.2.tgz#cd98faec99905238469e9b4d235fba5a59fb7da2"
+  integrity sha512-y1NbVhLFOVHHdJl7qsYOtExiTq4zyxF+PxiF9NC8kHEtI6sAFhUHtHYp+ONa8v4S3bAspzGHOHuOq0pNO4fFtA==
   dependencies:
     sortablejs "^1.10.1"
 

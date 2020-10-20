@@ -6,7 +6,7 @@
         <strong>Urgent:</strong>
         &nbsp;Rails 4.1.0 upgrade
       </h6>
-      <b-progress class="m-0" variant="primary" :value="60" :max="100" />
+      <b-progress class="progress-xs m-0" variant="primary" :value="60" :max="100" />
       <span class="help-block">3 notes added by James 2h ago...</span>
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
@@ -15,7 +15,7 @@
         <strong>Primary:</strong>
         &nbsp;Sing Web App
       </h6>
-      <b-progress class="progress-sm m-0" variant="success" :value="83" :max="100"/>
+      <b-progress class="progress-xs m-0" variant="success" :value="83" :max="100"/>
       <span class="help-block">verifying stable probability status</span>
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
@@ -28,7 +28,7 @@
         &nbsp;
         Finish The Road to Hell Song
       </h6>
-      <b-progress class="progress-sm m-0" variant="gray-dark" :value="44" :max="100"/>
+      <b-progress class="progress-xs m-0" variant="gray-dark" :value="44" :max="100"/>
       <span class="help-block">last update: 2h ago</span>
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">

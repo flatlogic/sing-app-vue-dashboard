@@ -16,7 +16,7 @@
         </b-dropdown>
       </div>
       <div class="px-5">
-        <h4 class="fw-semi-bold mb-lg mt-sm">{{total}}</h4>
+        <h4 class="fw-semi-bold mt-sm mb-sm">{{total}}</h4>
         <div class="d-flex">
           <div class="w-50 py-3 pr-2">
             <div class="d-flex align-items-start">

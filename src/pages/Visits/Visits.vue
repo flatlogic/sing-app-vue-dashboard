@@ -13,7 +13,7 @@
       </b-col>
       <b-col lg="4" offset-lg="1">
         <Widget
-          class="bg-transparent"
+          class="bg-transparent mb-4"
           title="<h5>Map<span class='fw-semi-bold'>&nbsp;Statistics</span></h5>"
           settings refresh close customHeader
         >

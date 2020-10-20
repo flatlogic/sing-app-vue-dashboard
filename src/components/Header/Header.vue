@@ -58,7 +58,7 @@
             <span v-else>{{firstUserLetter}}</span>
           </span>
           <span class="small">{{user.name || user.email || 'Philip smith'}}</span>
-          <span class="ml-1 circle bg-primary text-white fw-bold">13</span>
+          <span class="ml-2 mr-3 circle bg-primary text-white fw-bold">13</span>
         </template>
         <Notifications />
       </b-nav-item-dropdown>
