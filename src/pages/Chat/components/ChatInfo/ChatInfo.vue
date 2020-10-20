@@ -79,7 +79,7 @@
             <h5 class="title">Notifications</h5>
             <label for="checkbox-ios1" class="switch ml-auto mb-0">
               <input type="checkbox" id="checkbox-ios1" :checked="info.notifications"
-                     class="ios form-check-input">
+                 class="ios form-check-input">
               <i></i>
             </label>
           </header>

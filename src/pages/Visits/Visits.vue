@@ -227,7 +227,7 @@
               </a>
             </div>
           </div>
-          <footer class="bg-body-light mt">
+          <footer class="bg-body-light mt pb-4">
             <input type="search" class="form-control form-control-sm" placeholder="Search" />
           </footer>
         </Widget>

@@ -213,6 +213,29 @@ export const chats = [
     ]
   },
   {
+    id: 31,
+    name: 'Bugs and Issues',
+    users: [1, 2, 3],
+    ...dialogCommonData,
+    createdAt: moment().subtract(1, 'd').subtract(5, 'm').format(),
+    createdBy: 6,
+    isGroup: true,
+    messages: [
+      {
+        id: 1,
+        userId: 6,
+        text: 'Hello, @John. Can you help me with Light Blue project? I cannot understand how it works.',
+        timestamp: moment().subtract(1, 'd').subtract(5, 'm').format()
+      },
+      {
+        id: 2,
+        userId: 4,
+        text: 'Hi, @Darrell. It\'s too easy. I can explain it too you if you have some minutes.',
+        timestamp: moment().subtract(1, 'd').subtract(3, 'm').format()
+      }
+    ]
+  },
+  {
     id: 4,
     users: [1, 2],
     ...dialogCommonData,
