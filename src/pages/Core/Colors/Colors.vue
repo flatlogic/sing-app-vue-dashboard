@@ -69,14 +69,14 @@
         >
           <p>Use any of the available button classes to quickly create a styled button.
             Semantically distinguishable beauty.</p>
-          <b-button class="width-100 mb-xs mr-xs" variant="default">Default</b-button>
-          <b-button class="width-100 mb-xs mr-xs" variant="primary">Primary</b-button>
-          <b-button class="width-100 mb-xs mr-xs" variant="info">Info</b-button>
-          <b-button class="width-100 mb-xs mr-xs" variant="success">Success</b-button>
-          <b-button class="width-100 mb-xs mr-xs" variant="warning">Warning</b-button>
-          <b-button class="width-100 mb-xs mr-xs" variant="danger">Danger</b-button>
-          <b-button class="width-100 mb-xs mr-xs" variant="gray">Gray</b-button>
-          <b-button class="width-100 mb-xs mr-xs" variant="inverse">Inverse</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="default">Default</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="primary">Primary</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="info">Info</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="success">Success</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="warning">Warning</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="danger">Danger</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="gray">Gray</b-button>
+          <b-button class="width-100 mb-3 mr-3" variant="inverse">Inverse</b-button>
         </Widget>
       </b-col>
     </b-row>

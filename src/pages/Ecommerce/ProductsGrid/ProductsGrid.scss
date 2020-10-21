@@ -13,6 +13,20 @@
     }
   }
 
+  .productsListFilters .filterElement {
+    .filterElementLable {
+      font-size: $font-size-larger;
+    }
+    .dropdown.b-dropdown {
+      .dropdown-toggle {
+
+        &::after {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+
   .mobileFilterButtons {
     display: none;
     margin: auto -15px 25px;

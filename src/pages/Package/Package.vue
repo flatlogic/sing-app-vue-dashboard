@@ -153,7 +153,7 @@
           <p>Creating Vue JS version is a main
             priority of <a href="https://flatlogic.com">Flatlogic</a> for next months,
             so seed version will ready really soon! <br /><br /><br /><br /><br /></p>
-          <a class="btn btn-transparent btn-lg btn-block disabled" href="#">Coming Soon!</a>
+          <a class="btn btn-transparent btn-lg btn-block disabled" href="#">You are here!</a>
         </Widget>
       </b-col>
     </b-row>

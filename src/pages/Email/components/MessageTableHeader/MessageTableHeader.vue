@@ -30,4 +30,4 @@ export default {
 };
 </script>
 
-<style src="./MessageTableHeader.scss" lang="scss" scoped />
+<style src="./MessageTableHeader.scss" lang="scss" />

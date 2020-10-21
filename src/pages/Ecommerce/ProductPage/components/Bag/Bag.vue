@@ -1,6 +1,6 @@
 <template>
   <div class="bag" >
-    <button class="btn add">
+    <button class="btn btn-success add">
       add to bag
       <img src="../../../../../assets/bag.svg" alt="bag" />
     </button>

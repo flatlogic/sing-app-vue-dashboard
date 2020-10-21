@@ -13,14 +13,14 @@
       <h2 class="sectionTitle">You may also like</h2>
       <div class="slider">
         <carousel
-            class="slider"
-            :perPageCustom="[[480, 2], [768, 3], [1024, 4]]"
-            :navigationEnabled="true"
-            :paginationEnabled="false"
-            :navigationNextLabel="nextArrow"
-            :navigationPrevLabel="prevArrow"
-            :speed="500"
-            :scrollPerPage="false"
+          class="slider"
+          :perPageCustom="[[480, 2], [768, 3], [1024, 4]]"
+          :navigationEnabled="true"
+          :paginationEnabled="false"
+          :navigationNextLabel="nextArrow"
+          :navigationPrevLabel="prevArrow"
+          :speed="500"
+          :scrollPerPage="false"
         >
           <slide v-for="slide in products" class="sliderItem" :key="slide.id">
             <ProductCard :product="slide"></ProductCard>

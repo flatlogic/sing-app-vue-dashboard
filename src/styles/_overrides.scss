@@ -60,6 +60,7 @@ legend {
   font-size: $font-size-sm;
 
   .close {
+    font-size: 20px!important;
     color: #fff;
   }
 }
@@ -81,9 +82,10 @@ legend {
 /*  Badge */
 // Add colors for badges
 .badge {
-  padding: 4px;
-  font-weight: $font-weight-bold;
-  font-size: 11px;
+  padding: 4px 12px;
+  font-weight: $font-weight-semi-bold;
+  font-size: 14px;
+  line-height: 19px;
 }
 
 .badge-success,
@@ -103,7 +105,6 @@ legend {
 
 .badge {
   &.badge-pill {
-    padding: 0.4em 0.6em;
     font-weight: 700;
   }
 

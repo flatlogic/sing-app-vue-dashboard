@@ -8,8 +8,8 @@
         :class="{ alertTransform: true, alertAfter: alertAfter }"
         dismissible
       >
-        Hey! This is a <span class="fw-semi-bold">real app</span>
-        with CRUD and Search functions. Have fun!
+        <p class="m-0 mr-4">Hey! This is a <span class="fw-semi-bold">real app</span>
+        with CRUD and Search functions. Have fun!</p>
       </b-alert>
     </div>
     <div class="view">

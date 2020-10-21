@@ -7,6 +7,9 @@
   .btn {
     min-width: 100% !important;
     margin-right: 0;
+    &::after {
+      margin-left: 1.15rem;
+    }
   }
 
   .btn-group {

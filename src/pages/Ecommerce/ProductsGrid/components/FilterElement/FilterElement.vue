@@ -1,7 +1,7 @@
 <template>
   <div class="filterElement">
     <div class="filterElementLable">{{defaultLabel}}</div>
-    <b-dropdown class="mr-xs" :text="currentOption.toString()" variant="default">
+    <b-dropdown class="mr-xs " :text="currentOption.toString()" variant="default">
       <b-dropdown-item-button
         v-for="option in options"
         @click="changeCurrent(option)"

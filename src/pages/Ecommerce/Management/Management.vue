@@ -83,7 +83,11 @@
         optionsDatatable: {
           perPage: 10,
           pagination: {chunk: 10, dropdown: false},
-          texts: {filter: '', count: '', limit: ''},
+          texts: {
+            filter: '',
+            count: '',
+            limit: ''
+          },
           columnsClasses: {id: 'width-100'},
           skin: 'table table-striped',
           sortIcon: {

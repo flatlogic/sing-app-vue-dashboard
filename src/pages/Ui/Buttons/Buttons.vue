@@ -241,7 +241,7 @@
     </b-row>
 
     <b-row>
-      <b-col md='12' xs='12'>
+      <b-col xs='12'>
         <Widget
           title="<h6> Button <span class='fw-semi-bold'>Options</span></h6>"
           close collapse customHeader
