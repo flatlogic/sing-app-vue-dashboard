@@ -6,7 +6,7 @@
       title="<h4> Grouped <span class='fw-semi-bold'>Lists</span></h4>"
       close refresh settings customHeader
     >
-      <h3>Closest <span class="fw-semi-bold">Stars</span></h3>
+      <h5>Closest <span class="fw-semi-bold">Stars</span></h5>
       <p>
         Try to play around with this list. Are you ready to pass an exam on astronomy?
       </p>
@@ -24,7 +24,7 @@
       </draggable>
     </Widget>
     <Widget
-      title="<h3>Nestable <span class='fw-semi-bold'>List</span></h3>"
+      title="<h4>Nestable <span class='fw-semi-bold'>List</span></h4>"
       close refresh settings customHeader
     >
       <p className="fs-mini">

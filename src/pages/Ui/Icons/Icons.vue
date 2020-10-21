@@ -2606,7 +2606,7 @@
           >(alias)</span></a></b-col>
         </b-row>
 
-        <h4>Form Control <span class="fw-semi-bold">Icons</span></h4>
+        <h4 class="mt-3">Form Control <span class="fw-semi-bold">Icons</span></h4>
         <b-row class="icon-list">
           <b-col class="icon-list-item" lg="3" md="4" xs="12"><a
             href="../icon/check-square"
@@ -2657,7 +2657,7 @@
           /> square-o</a></b-col>
         </b-row>
 
-        <h4>Currency <span class="fw-semi-bold">Icons</span></h4>
+        <h4 class="mt-3">Currency <span class="fw-semi-bold">Icons</span></h4>
         <b-row class="icon-list">
           <b-col class="icon-list-item" lg="3" md="4" xs="12"><a href="../icon/btc"><i
             class="fa fa-bitcoin"
@@ -2754,7 +2754,7 @@
           /> yen <span class="text-muted">(alias)</span></a></b-col>
         </b-row>
 
-        <h4>Video Player <span class="fw-semi-bold">Icons</span></h4>
+        <h4 class="mt-3">Video Player <span class="fw-semi-bold">Icons</span></h4>
         <b-row class="icon-list">
 
           <b-col class="icon-list-item" lg="3" md="4" xs="12"><a
@@ -2828,7 +2828,7 @@
             youtube-play</a></b-col>
         </b-row>
 
-        <h4>Medical <span class="fw-semi-bold">Icons</span></h4>
+        <h4 class="mt-3">Medical <span class="fw-semi-bold">Icons</span></h4>
         <b-row class="icon-list">
           <b-col class="icon-list-item" lg="3" md="4" xs="12"><a href="../icon/ambulance"><i
             class="fa fa-ambulance"
