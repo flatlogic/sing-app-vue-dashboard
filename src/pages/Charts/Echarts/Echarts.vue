@@ -3,7 +3,7 @@
     <h1 class="page-title">Visual - <span class="fw-semi-bold">Echarts</span></h1>
     <p>For more information please read full <a href="https://ecomfe.github.io/vue-echarts/">documentation</a></p>
     <b-row>
-      <b-col xs='12' lg='10' offset-lg="1">
+      <b-col xs='12' lg='12'>
         <Widget
             title="<h5>Echarts <span class='fw-semi-bold'>Bar Chart</span></h5>"
             close collapse customHeader

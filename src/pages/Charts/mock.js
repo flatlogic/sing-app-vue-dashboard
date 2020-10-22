@@ -371,13 +371,14 @@ export const chartData = {
       },
       plotOptions: {
         series: {
+          fillOpacity: 1,
           marker: {
             enabled: false,
             symbol: 'circle'
           }
         }
       },
-      colors: [success, primary, info],
+      colors: [success, danger, info],
 
       series: [{
         name: "Winter 2014-2015",

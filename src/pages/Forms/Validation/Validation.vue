@@ -4,7 +4,6 @@
     </h1>
 
     <b-row>
-      <b-col xs='0' lg='1' />
       <b-col lg='8' xs='12'>
         <Widget
           title="<h5>
@@ -175,7 +174,7 @@
               </b-form-group>
 
             </fieldset>
-            <div class="form-action">
+            <div class="form-action bg-transparent px-0">
               <b-button type="submit" variant="success" class="btn-rounded float-right">
                 Validate & Submit
               </b-button>

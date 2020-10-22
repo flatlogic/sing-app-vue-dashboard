@@ -2,7 +2,7 @@
   <div class="grid-page">
     <h1 class="page-title">Grid - <span class="fw-semi-bold">Options</span></h1>
     <b-row>
-      <b-col xl='7'>
+      <b-col xl='12'>
         <Widget title="Draggable Grid">
           <div>
             <p>
