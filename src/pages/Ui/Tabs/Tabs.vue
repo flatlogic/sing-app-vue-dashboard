@@ -73,7 +73,7 @@
           v-for="(element, index) in accordionFirstContent"
           class="card panel mb-xs" :key="`accord-one-${index.toString()}`">
           <div
-            class="card-header panel-header bg-light" role="button"
+            class="card-header panel-header bg-white" role="button"
             @click="toggleAccordion('accordionFirst', index)"
           >
             <div class="mb-0">
@@ -93,7 +93,7 @@
           v-for="(element, index) in accordionSecondContent"
           class="card panel mb-xs" :key="`accord-one-${index.toString()}`">
           <div
-            class="card-header panel-header bg-light" role="button"
+            class="card-header panel-header bg-white" role="button"
             @click="toggleAccordion('accordionSecond', index)"
           >
             <div class="mb-0">
