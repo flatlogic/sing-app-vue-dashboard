@@ -823,14 +823,14 @@
             <b-form-group>
               <b-row>
                 <b-col xs="6">
-                  <label for="datetimepicker">Datepicker</label>
+                  <label for="datetimepicker" class="pr-1">Datepicker</label>
                   <DatePicker lang="en" :placeholder="datepickerText"
                     input-class="form-control" @change="selectDate">
                     <i class="glyphicon glyphicon-th" slot="calendar-icon" />
                   </DatePicker>
                 </b-col>
                 <b-col xs="6">
-                  <label for="datetimepicker">With time</label>
+                  <label for="datetimepicker" class="pr-1">With time</label>
                   <DatePicker lang="en" type="datetime" :placeholder="datetimepickerText"
                     input-class="form-control" @change="selectDatetime">
                     <i class="fa fa-clock-o" slot="calendar-icon" />
@@ -873,7 +873,7 @@
                 Phone
                 <span class="help-block">(123) 456-7890</span>
               </div>
-              <b-col md="9">
+              <b-col md="9" class="pl-0">
                 <input class="form-control" id="phone-mask" type="text"
                   placeholder="(___) ___-____"
                   v-mask="'(###) ###-####'"
@@ -885,7 +885,7 @@
                 International Phone
                 <span class="help-block">+375 123 456 789</span>
               </div>
-              <b-col md="9">
+              <b-col md="9" class="pl-0">
                 <input class="form-control" id="int-phone-mask" type="text"
                   placeholder="+___ ___ ___ ___"
                   v-mask="'+### ### ### ###'"
@@ -897,7 +897,7 @@
                 Date Format
                 <span class="help-block">07-03-2013</span>
               </div>
-              <b-col md="9">
+              <b-col md="9" class="pl-0">
                 <input class="form-control"  id="date-mask" type="text"
                   placeholder="__-__-____"
                   v-mask="'##-##-####'"
@@ -909,7 +909,7 @@
                 Time
                 <span class="help-block">13:43</span>
               </div>
-              <b-col md="9">
+              <b-col md="9" class="pl-0">
                 <input class="form-control" id="time-mask" type="text"
                   placeholder="__:__"
                   v-mask="'##:##'"
