@@ -22,7 +22,7 @@
               them to be printed by adding <code>.d-print</code>
             to the <code>.navbar</code>. See the display utility class.</li>
           </ul>
-          <b-navbar class="mt px-2" toggleable="md" type="light" variant="light">
+          <b-navbar class="mt px-3" toggleable="md" type="light" variant="light" style="height: 60px">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
             <b-navbar-toggle class="ml-auto" target="nav_collapse1"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse1">
@@ -48,7 +48,7 @@
             for use with light background colors, or
             <code>color=&quot;dark&quot;</code> for dark background
             colors. Then, customize with <code>.bg-*</code> utilities.</p>
-          <b-navbar class="mt px-2" toggleable="md" type="dark" variant="inverse">
+          <b-navbar class="mt px-3" toggleable="md" type="dark" variant="inverse" style="height: 60px;">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
             <b-navbar-toggle class="ml-auto" target="nav_collapse2"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse2">
@@ -61,7 +61,7 @@
               </b-navbar-nav>
             </b-collapse>
           </b-navbar>
-          <b-navbar class="mt px-2" toggleable="md" type="dark" variant="primary">
+          <b-navbar class="mt px-3" toggleable="md" type="dark" variant="primary" style="height: 60px;">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
             <b-navbar-toggle class="ml-auto" target="nav_collapse3"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse3">
@@ -74,7 +74,7 @@
               </b-navbar-nav>
             </b-collapse>
           </b-navbar>
-          <b-navbar class="mt px-2" toggleable="md" type="light" variant="light">
+          <b-navbar class="mt px-3" toggleable="md" type="light" variant="light" style="height: 60px;">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
             <b-navbar-toggle class="ml-auto" target="nav_collapse4"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse4">
