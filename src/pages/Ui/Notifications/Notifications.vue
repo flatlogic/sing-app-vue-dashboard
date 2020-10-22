@@ -94,7 +94,7 @@ export default {
       });
     },
     addErrorNotification() {
-      this.$toasted.info('Launching thermonuclear war...', {
+      this.$toasted.error('Launching thermonuclear war...', {
         action: [
           {
             text: 'Cancel',

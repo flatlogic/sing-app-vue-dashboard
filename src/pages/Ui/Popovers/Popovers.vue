@@ -9,7 +9,7 @@
           close collapse customHeader
         >
           <b-button
-            id="p-1" class="mr-xs" size="lg" variant="danger"
+            id="p-1" class="mr-3" size="lg" variant="danger"
             v-b-popover.top="`Sed posuere consectetur est at lobortis. Aenean eu leo quam.
             Pellentesque ornare sem lacinia quam venenatis vestibulum.`"
             title="Popover Title"
@@ -26,25 +26,25 @@
           close collapse customHeader
         >
           <b-button
-            id="p-3" class="mr-xs mb-xs" variant="info"
+            id="p-3" class="mr-3 mb-3" variant="info"
             v-b-popover.top="`Sed posuere consectetur est at lobortis. Aenean eu leo quam.
             Pellentesque ornare sem lacinia quam venenatis vestibulum.`"
             title="Popover Title"
           >Popover on top</b-button>
           <b-button
-            id="p-4" class="mr-xs mb-xs" variant="warning"
+            id="p-4" class="mr-3 mb-3" variant="warning"
             v-b-popover.right="`Sed posuere consectetur est at lobortis. Aenean eu leo quam.
             Pellentesque ornare sem lacinia quam venenatis vestibulum.`"
             title="Popover Title"
           >Popover on right</b-button>
           <b-button
-            id="p-5" class="mr-xs mb-xs" variant="inverse"
+            id="p-5" class="mr-3 mb-3" variant="inverse"
             v-b-popover.bottom="`Sed posuere consectetur est at lobortis. Aenean eu leo quam.
             Pellentesque ornare sem lacinia quam venenatis vestibulum.`"
             title="Popover Title"
           >Popover on bottom</b-button>
           <b-button
-            id="p-6" class="mr-xs mb-xs" variant="default"
+            id="p-6" class="mr-xs mb-3" variant="default"
             v-b-popover.left="`Sed posuere consectetur est at lobortis. Aenean eu leo quam.
             Pellentesque ornare sem lacinia quam venenatis vestibulum.`"
             title="Popover Title"
@@ -57,7 +57,7 @@
           title="<h5>Tooltip <span class='fw-semi-bold'>Example</span></h5>"
           close collapse customHeader
         >
-          <b-button id="t-1" class="mr-sm" size="lg" variant="success"
+          <b-button id="t-1" class="mr-3" size="lg" variant="success"
             v-b-tooltip
             title="Hello World!"
           >Tooltip</b-button>
@@ -70,19 +70,19 @@
           title="<h5>Tooltip <span class='fw-semi-bold'>Directions</span></h5>"
           close collapse customHeader
         >
-          <b-button id="t-3" class="mr-xs mb-xs" variant="info"
+          <b-button id="t-3" class="mr-3 mb-3" variant="info"
             v-b-tooltip.top
             title="Top"
           >Tooltip on top</b-button>
-          <b-button id="t-4" class="mr-xs mb-xs" variant="warning"
+          <b-button id="t-4" class="mr-3 mb-3" variant="warning"
             v-b-tooltip.right
             title="Right"
           >Tooltip on right</b-button>
-          <b-button id="t-5" class="mr-xs mb-xs" variant="inverse"
+          <b-button id="t-5" class="mr-3 mb-3" variant="inverse"
             v-b-tooltip.bottom
             title="Bottom"
           >Tooltip on bottom</b-button>
-          <b-button id="t-6" class="mr-xs mb-xs" variant="default"
+          <b-button id="t-6" class="mr-xs mb-3" variant="default"
             v-b-tooltip.left
             title="Left"
           >Tooltip on left</b-button>

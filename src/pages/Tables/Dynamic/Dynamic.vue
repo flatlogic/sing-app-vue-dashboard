@@ -32,7 +32,7 @@
         Another table built with <a href="https://www.npmjs.com/package/vue-tables-2"
           target="_blank" rel="noopener noreferrer">vue-tables-2</a>
       </p>
-      <v-client-table :data="data" :columns="columns" :options="options" />
+      <v-client-table :data="data" :columns="columns" :options="options" class="vue-table"/>
     </Widget>
   </div>
 </template>

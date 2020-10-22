@@ -26,7 +26,9 @@
       border: none;
     }
   }
-
+  .VueTables__filters-row th {
+    padding-top: 0;
+  }
   .VueTables__sortable {
     .VueTables__sort-icon {
       margin-top: 3px;
