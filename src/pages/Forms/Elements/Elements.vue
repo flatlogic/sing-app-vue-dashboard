@@ -139,13 +139,13 @@
               </b-form-group>
               <b-form-group
                 horizontal
-                class="form-action"
+                class="form-action bg-transparent pl-1"
                 label=""
                 label-for="transparent-field"
                 :label-cols="4"
                 breakpoint="md"
               >
-                <b-button variant="primary" type="submit" class="mr-xs">Save Changes</b-button>
+                <b-button variant="primary" type="submit" class="ml-0 mr-3">Save Changes</b-button>
                 <b-button variant="inverse">Cancel</b-button>
               </b-form-group>
             </b-form>
@@ -176,7 +176,7 @@
                   </b-col>
                 </b-row>
               </b-form-group>
-             <b-form-group
+              <b-form-group
                 label="Whole bar appended"
                 label-for="bar-field"
                 breakpoint="md"
@@ -280,7 +280,7 @@
                   </b-col>
                 </b-row>
               </b-form-group>
-              <b-form-group class="form-action">
+              <b-form-group class="form-action bg-transparent pl-1">
                 <b-button variant="inverse" type="submit" class="mr-xs">Save Changes</b-button>
                 <b-button variant="default">Cancel</b-button>
               </b-form-group>
