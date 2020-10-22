@@ -25,6 +25,16 @@
   .display-none {
     display: none;
   }
+
+  .dropdown.v-select.single.searchable {
+    .dropdown-toggle {
+      .vs__actions {
+        .clear {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
   
   /*  file input */
   

@@ -360,7 +360,7 @@
     <b-row>
       <b-col lg='6' md='12'>
         <Widget
-          title="<h6><i class='la la-font'></i>Textareas</h6>"
+          title="<h6>Textareas</h6>"
           customHeader settings refresh close
         >
           <b-form>
@@ -428,10 +428,9 @@
           </b-form>
         </Widget>
       </b-col>
-
       <b-col lg='6' md='12'>
         <Widget
-          title="<h6><i class='fa fa-list-alt'></i> Selects </h6>"
+          title="<h6> Selects </h6>"
           refresh close settings customHeader
         >
           <b-form class="form-label-left">
