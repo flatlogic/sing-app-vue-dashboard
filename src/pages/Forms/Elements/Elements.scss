@@ -35,7 +35,29 @@
       }
     }
   }
-  
+
+  #simple-select {
+    .btn.dropdown-toggle {
+      padding-right: 0;
+      &::after {
+        margin: 0 16px 0 16px;
+      }
+    }
+
+  }
+
+  .form-row.form-group {
+    .bv-no-focus-ring {
+      .dropdown.b-dropdown {
+        .btn.dropdown-toggle {
+          padding-right: 0;
+          &::after {
+            margin: 0 16px 0 16px;
+          }
+        }
+      }
+    }
+  }
   /*  file input */
   
   .fileinput.fileinput-new {
