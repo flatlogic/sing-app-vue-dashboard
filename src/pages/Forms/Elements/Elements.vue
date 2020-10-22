@@ -297,7 +297,7 @@
         >
           <b-form>
             <legend>Control sizing</legend>
-            <p>
+            <p class="mb-0">
               Set input heights using parameters like <code>size=&apos;lg&apos;</code> and
               <code>size=&apos;sm&apos;</code>.
               Also works with <code>type=&apos;search&apos;</code> inputs, input groups and
@@ -323,7 +323,7 @@
         >
           <b-form>
             <legend> Input Groups</legend>
-            <p>
+            <p class="mb-0">
               Different colors & sizes for any elements including input groups. Elements may be
               easily styled with classes like <code>.bg-primary</code> or
               <code>.bg-transparent</code>
