@@ -33,7 +33,7 @@
         class="picture card"
       >
         <div class="img-wrapper">
-          <img class="figure-img width-200" :src="image.src" alt="..." />
+          <img class="figure-img width-200" :src="image.src" alt="..."/>
         </div>
         <div class="description">
           <h6 class="mt-0 mb-xs">{{image.name}}</h6>

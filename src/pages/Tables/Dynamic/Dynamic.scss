@@ -25,6 +25,9 @@
       color: var(--light-color);
       border: none;
     }
+    td {
+      vertical-align: middle;
+    }
   }
   .VueTables__filters-row th {
     padding-top: 0;

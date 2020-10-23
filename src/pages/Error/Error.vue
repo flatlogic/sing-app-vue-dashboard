@@ -15,7 +15,7 @@
           </b-form-group>
           <router-link tag="a" to="/app/extra/search">
             <b-button class="errorBtn" type="submit" variant="success">
-                Search <i class="la la-search ml-xs" />
+                Search <i class="fa fa-search"></i>
             </b-button>
           </router-link>
         </b-form>

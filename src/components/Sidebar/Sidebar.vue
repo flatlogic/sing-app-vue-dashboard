@@ -143,7 +143,6 @@
           { header: 'Highcharts', link: '/app/charts/highcharts' },
         ]"
         />
-
         <NavLink
             :activeItem="activeItem"
             header="Grid"
@@ -260,7 +259,7 @@
         <li>
           <a href="#">
             <i class="fa fa-circle mr-2"/>
-            <span class="labelName">Background</span>
+            <span  class="labelName">Background</span>
           </a>
         </li>
       </ul>
@@ -331,6 +330,9 @@ export default {
         this.changeSidebarActive(null);
       }
     },
+    test() {
+      console.log(1231241)
+    }
   },
   created() {
     this.setActiveByRoute();

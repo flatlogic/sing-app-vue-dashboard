@@ -152,7 +152,7 @@
                     Proceed with Payment
                     &nbsp;
                     <span class="circle bg-white">
-                      <i class="fa fa-arrow-right text-danger" />
+                      <i class="fa fa-arrow-right text-success" />
                     </span>
                   </b-button>
                 </b-button-toolbar>
