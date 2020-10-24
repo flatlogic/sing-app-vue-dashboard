@@ -1,4 +1,10 @@
 # Changelog
+## [5.4.5]
+
+### Fixed
+
+- Much work has been done to improve and correct a lot of small bugs.
+
 ## [5.4.4]
 
 ### Fixed

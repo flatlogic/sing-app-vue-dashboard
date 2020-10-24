@@ -1,11 +1,11 @@
 {
   "name": "sing-app-vue",
-  "version": "4.5.0",
+  "version": "5.4.5",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve --port 3000",
-    "start:backend": "VUE_APP_BACKEND=true vue-cli-service serve --port 3000",
-    "build": "VUE_APP_BACKEND=true vue-cli-service build",
+    "start:backend": "cross-env VUE_APP_BACKEND=true vue-cli-service serve --port 3000",
+    "build": "cross-env VUE_APP_BACKEND=true vue-cli-service build",
     "lint": "vue-cli-service lint",
     "node": "node server.js"
   },
