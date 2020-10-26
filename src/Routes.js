@@ -47,6 +47,7 @@ import SearchPage from '@/pages/Extra/Search/Search';
 import TimelinePage from '@/pages/Extra/Timeline/Timeline';
 import GalleryPage from '@/pages/Extra/Gallery/Gallery';
 import Login from '@/pages/Login/Login';
+import LoginExample from '@/pages/Extra/LoginExample/LoginExample';
 import Register from '@/pages/Register/Register';
 import ErrorPage from '@/pages/Error/Error';
 // Ui
@@ -96,6 +97,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/extra/login',
+      name: 'LoginExample',
+      component: LoginExample,
     },
     {
       path: '/register',

@@ -69,7 +69,6 @@ export default {
             document.cookie = 'token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             axios.defaults.headers.common['Authorization'] = "";
             router.push('/login');
-            console.log(111)
         },
         loginError({commit}, payload) {
             commit('LOGIN_FAILURE', payload);

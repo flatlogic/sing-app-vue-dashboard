@@ -18,23 +18,20 @@
           to login!
         </b-alert>
         <form class="mt" @submit.prevent="login">
-          <b-alert class="alert-sm" variant="danger" :show="!!errorMessage">
-            {{errorMessage}}
-          </b-alert>
           <div class="form-group">
-            <input class="form-control no-border" ref="email" required type="email" name="email" placeholder="Email" />
+            <input class="form-control no-border" ref="email" required v-model="email" type="email" name="email" placeholder="Email" />
           </div>
           <div class="form-group">
-            <input class="form-control no-border" ref="password" required type="password" name="password" placeholder="Password" />
+            <input class="form-control no-border" ref="password" required v-model="password" type="password" name="password" placeholder="Password" />
           </div>
-          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="info">{{this.isFetching ? 'Loading...' : 'Login'}}</b-button>
+          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="info">Login</b-button>
           <p class="widget-auth-info">or sign in with</p>
           <div class="social-buttons">
-            <b-button @click="googleLogin" variant="primary" class="social-button mb-2">
+            <b-button @click="login" variant="primary" class="social-button mb-2">
               <i class="social-icon social-google"></i>
               <p class="social-text">GOOGLE</p>
             </b-button>
-            <b-button @click="microsoftLogin" variant="success" class="social-button">
+            <b-button @click="login" variant="success" class="social-button">
               <i class="social-icon social-microsoft"></i>
               <p class="social-text">MICROSOFT</p>
             </b-button>
@@ -54,48 +51,22 @@
 
 <script>
 import Widget from '@/components/Widget/Widget';
-import {mapState, mapActions} from 'vuex';
 
-import config from '../../config';
+import router from "@/Routes";
 
 export default {
-  name: 'LoginPage',
+  name: 'LoginExample',
   components: { Widget },
-  computed: {
-    ...mapState('auth', {
-      isFetching: state => state.isFetching,
-      errorMessage: state => state.errorMessage,
-    }),
+  data(){
+    return {
+      email: 'admin@flatlogic.com',
+      password: '123456789'
+    }
   },
   methods: {
-    ...mapActions('auth', ['loginUser', 'receiveToken', 'receiveLogin']),
     login() {
-      const email = this.$refs.email.value;
-      const password = this.$refs.password.value;
-
-      if (email.length !== 0 && password.length !== 0) {
-        this.loginUser({email, password});
-      }
+      router.push('/app/main/analytics');
     },
-    googleLogin() {
-      this.loginUser({social: "google"});
-    },
-    microsoftLogin() {
-      this.loginUser({social: "microsoft"});
-    }
   },
-  created() {
-    const token = this.$route.query.token;
-    if (token) {
-      this.receiveToken(token);
-    } else if (this.isAuthenticated(localStorage.getItem('token'))) {
-      this.receiveLogin();
-    }
-  },
-  mounted() {
-    const creds = config.auth;
-    this.$refs.email.value = creds.email;
-    this.$refs.password.value = creds.password;
-  }
 };
 </script>

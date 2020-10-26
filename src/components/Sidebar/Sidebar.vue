@@ -182,7 +182,7 @@
             :childrenLinks="[
           { header: 'Calendar', link: '/app/extra/calendar' },
           { header: 'Invoice', link: '/app/extra/invoice' },
-          { header: 'Login Page', link: '/login' },
+          { header: 'Login Page', link: '/extra/login' },
           { header: 'Error Page', link: '/error' },
           { header: 'Gallery', link: '/app/extra/gallery' },
           { header: 'Search Result', link: '/app/extra/search' },
@@ -330,9 +330,6 @@ export default {
         this.changeSidebarActive(null);
       }
     },
-    test() {
-      console.log(1231241)
-    }
   },
   created() {
     this.setActiveByRoute();
