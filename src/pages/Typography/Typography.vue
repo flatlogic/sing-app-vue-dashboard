@@ -40,7 +40,7 @@
           </div>
           <h4 class="mt-5">Display</h4>
           <p>Headings to stand out</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-left border rounded overflow-hidden">
             <h1 class="display-1">Display 1</h1>
             <h1 class="display-2">Display 2</h1>
             <h1 class="display-3">Display 3</h1>

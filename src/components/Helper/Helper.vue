@@ -13,7 +13,7 @@
                     <a href="https://flatlogic.com/templates/sing-app-vue"
                     target="_blank"
                     role="button"
-                    class="btn btn-info btn-rounded-f btn-block fs-mini text-white">
+                    class="btn btn-success btn-rounded-f btn-block fs-mini text-white">
                         Purchase
                     </a>
                     <a href="http://demo.flatlogic.com/sing-app-vue/#/documentation/"

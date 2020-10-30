@@ -81,9 +81,9 @@ legend {
 /*  Badge */
 // Add colors for badges
 .badge {
-  padding: 4px;
-  font-weight: $font-weight-bold;
-  font-size: 11px;
+  padding: 4px 8px;
+  font-weight: $font-weight-semi-bold;
+  font-size: 12px;
 }
 
 .badge-success,
@@ -102,11 +102,6 @@ legend {
 }
 
 .badge {
-  &.badge-pill {
-    padding: 0.4em 0.6em;
-    font-weight: 700;
-  }
-
   .list-group-item > & {
     margin-top: 2px;
   }
