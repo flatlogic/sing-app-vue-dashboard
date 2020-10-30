@@ -15,22 +15,22 @@
             to change notifications position:</p>
           <div class="location-selector">
             <div
-              class="bit top left" @click="toggleLocation('top-left')"
+                    class="bit top left" @click="toggleLocation('top-left')"
             />
             <div
-              class="bit top right" @click="toggleLocation('top-right')"
+                    class="bit top right" @click="toggleLocation('top-right')"
             />
             <div
-              class="bit top" @click="toggleLocation('top-center')"
+                    class="bit top" @click="toggleLocation('top-center')"
             />
             <div
-              class="bit bottom left" @click="toggleLocation('bottom-left')"
+                    class="bit bottom left" @click="toggleLocation('bottom-left')"
             />
             <div
-              class="bit bottom right" @click="toggleLocation('bottom-right')"
+                    class="bit bottom right" @click="toggleLocation('bottom-right')"
             />
             <div
-              class="bit bottom" @click="toggleLocation('bottom-center')"
+                    class="bit bottom" @click="toggleLocation('bottom-center')"
             />
           </div>
         </b-col>
