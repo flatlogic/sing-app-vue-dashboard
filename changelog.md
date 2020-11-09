@@ -1,16 +1,25 @@
 # Changelog
-## [v2.1.2]
-
-Navbar: fix adaptive, broken links, add padding;
-Helper: fix icons and colors;
-Dashboard: change icon arrow color;
-Table: fix button margin, add colors to badges;
-Notifications: fix error notification;
-Typography: fix mobile view;
-Charts: fix several colors;
-upd dependencies.
+### [v2.1.3]
 
 ### Updated
+- Header: add more space between badge and arrow, clean logo;
+- Dashboard: switch button to badge in main table;
+- Typography: fixed the typos and adaptive;
+- Notifications: fix error notification and 'close' color;
+- Update dependencies and changelog.
+
+## [v2.1.2]
+
+### Updated
+- Navbar: fix adaptive, broken links, add padding;
+- Helper: fix icons and colors;
+- Dashboard: change icon arrow color;
+- Table: fix button margin, add colors to badges;
+- Notifications: fix error notification;
+- Typography: fix mobile view;
+- Charts: fix several colors;
+- Update dependencies.
+
 
 ## [v2.1.1]
 ### Updated

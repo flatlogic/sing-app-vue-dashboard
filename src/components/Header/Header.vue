@@ -33,12 +33,10 @@
       </b-form>
     </b-nav>
     <a class="navbarBrand d-md-none">
-      <i class="fa fa-circle text-primary mr-n-sm" />
       <i class="fa fa-circle text-danger" />
       &nbsp;
       sing
       &nbsp;
-      <i class="fa fa-circle text-danger mr-n-sm" />
       <i class="fa fa-circle text-primary" />
     </a>
     <b-nav class="ml-auto">
@@ -51,7 +49,7 @@
             <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
           </span>
           <span class="small">Philip Smith</span>
-          <span class="ml-1 mr-2 circle bg-primary text-white fw-bold">13</span>
+          <span class="ml-1 mr-3 circle bg-primary text-white fw-bold">13</span>
         </template>
         <Notifications />
       </b-nav-item-dropdown>

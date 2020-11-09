@@ -4,14 +4,14 @@
       Typography - <span class="fw-semi-bold">Texts & Display</span>
     </h1>
     <b-row>
-      <b-col xs="12" md="6">
+      <b-col xs="12" lg="6">
         <Widget
           title="<h5>Headings <small class='text-muted'>Default and customized</small></h5>"
           customHeader close collapse
         >
           <h4>Default headings</h4>
           <p>Basic headings for everyday use</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-left border rounded overflow-hidden">
             <b-row>
               <b-col sm="6">
                 <h1>h1. Heading</h1>
@@ -53,7 +53,7 @@
           </div>
         </Widget>
       </b-col>
-      <b-col xs="12" md="6">
+      <b-col xs="12" lg="6">
         <Widget
           title="<h5>Body texts <small className='text-muted'>Variations</small></h5>"
           customHeader close collapse
@@ -74,15 +74,15 @@
           <div class="widget-padding-md w-100 h-100 text-left border rounded">
             <p>Thin (default) font weight</p>
             <p class="fw-normal">Normal font weight</p>
-            <p class="fw-semi-bold">Semi bold to empasize important thing</p>
+            <p class="fw-semi-bold">Semi bold to emphasize important thing</p>
             <p class="fw-bold">Bold font as a high priority</p>
           </div>
-          <h4 class="mt-5">colors</h4>
+          <h4 class="mt-5">Colors</h4>
           <p>Bootstrap state colors can be applied to texts too</p>
           <div class="widget-padding-md w-100 h-100 text-left border rounded">
             <p class="text-danger">Some danger text</p>
             <p class="text-warning">Some warning text</p>
-            <p class="text-success">Some succes text</p>
+            <p class="text-success">Some success text</p>
             <p class="text-primary">Some primary text</p>
             <p class="text-info">Some info text</p>
           </div>

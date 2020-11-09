@@ -714,7 +714,7 @@ pre {
     }
 
     &.error {
-      background: theme-color('error');
+      background: theme-color('danger');
     }
 
     &.success {
@@ -730,7 +730,7 @@ pre {
     }
 
     .action {
-      color: $text-color;
+      color: white;
     }
   }
 }
