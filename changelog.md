@@ -1,5 +1,5 @@
 # Changelog
-### [v2.1.3]
+## [v2.1.4]
 
 ### Updated
 - Header: add more space between badge and arrow, clean logo;
@@ -8,7 +8,7 @@
 - Notifications: fix error notification and 'close' color;
 - Update dependencies and changelog.
 
-## [v2.1.2]
+## [v2.1.3]
 
 ### Updated
 - Navbar: fix adaptive, broken links, add padding;
@@ -20,6 +20,10 @@
 - Charts: fix several colors;
 - Update dependencies.
 
+## [v2.1.2]
+### Updated
+
+- Update dependency
 
 ## [v2.1.1]
 ### Updated
