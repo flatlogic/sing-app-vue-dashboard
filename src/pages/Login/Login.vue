@@ -40,7 +40,7 @@
       </Widget>
     </b-container>
     <footer class="auth-footer">
-      2019 &copy; Sing App Vue Admin Dashboard Template.
+      2019 &copy; Sing App Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com/">Flatlogic</a>
     </footer>
   </div>
 </template>
