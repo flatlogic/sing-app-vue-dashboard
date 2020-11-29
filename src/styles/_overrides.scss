@@ -703,7 +703,7 @@ pre {
 
 ////// VUE TOASTED //////
 .toasted-container {
-  .toasted {
+  .toasted.toasted-primary {
     box-shadow: none;
     font-size: $font-size-sm;
     border-radius: $border-radius;
