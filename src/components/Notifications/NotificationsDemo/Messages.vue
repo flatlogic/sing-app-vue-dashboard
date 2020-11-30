@@ -1,17 +1,27 @@
 <template>
   <b-list-group class="listGroup thin-scroll">
-    <b-list-group-item class="listGroupItem bg-warning-light">
+    <b-list-group-item class="listGroupItem bg-primary-light">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="..." />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a2.jpg"
+          alt="..."
+        />
         <i class="status status-bottom bg-success" />
       </span>
       <time class="text-link help float-right">10 sec ago</time>
       <h6 class="m-0 fw-bold mb-1">Chris Gray</h6>
-      <p class="deemphasize text-ellipsis m-0">Hey! What&apos;s up? So many times since we</p>
+      <p class="deemphasize text-ellipsis m-0">
+        Hey! What&apos;s up? So many times since we
+      </p>
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="..." />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a5.jpg"
+          alt="..."
+        />
         <i class="status status-bottom bg-success" />
       </span>
       <time class="text-link help float-right">2 min ago</time>
@@ -22,16 +32,26 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="..." />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a1.jpg"
+          alt="..."
+        />
         <i class="status status-bottom bg-warning" />
       </span>
       <time class="text-link help float-right">9 min ago</time>
       <h6 class="m-0 mb-1">Livia Walsh</h6>
-      <p class="deemphasize text-ellipsis m-0">Check out my latest email plz!</p>
+      <p class="deemphasize text-ellipsis m-0">
+        Check out my latest email plz!
+      </p>
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="..." />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a6.jpg"
+          alt="..."
+        />
         <i class="status status-bottom bg-danger" />
       </span>
       <time class="text-link help float-right">12:56 AM</time>
@@ -40,7 +60,11 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a4.jpg" alt="..." />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a4.jpg"
+          alt="..."
+        />
         <i class="status status-bottom bg-gray-light" />
       </span>
       <time class="text-link help float-right">Yesterday</time>
@@ -51,13 +75,18 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="..." />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a6.jpg"
+          alt="..."
+        />
         <i class="status status-bottom bg-success" />
       </span>
       <time class="text-link help float-right">Apr 23</time>
       <h6 class="m-0 mb-1">Freda Edison</h6>
       <p class="deemphasize text-ellipsis m-0">
-        Hey what&apos;s up? Me and Monica going for a lunch somewhere. Wanna join?
+        Hey what&apos;s up? Me and Monica going for a lunch somewhere. Wanna
+        join?
       </p>
     </b-list-group-item>
   </b-list-group>
@@ -65,7 +94,7 @@
 
 <script>
 export default {
-  name: 'Messages',
+  name: "Messages",
 };
 </script>
 

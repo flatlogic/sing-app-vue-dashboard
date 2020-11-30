@@ -314,11 +314,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 @include keyframes('bg-attention') {
   0% {
-    background-color: lighten(theme-color('warning'), 43%);
+    background-color: lighten(theme-color('primary'), 63%);
   }
 
   5% {
-    background-color: lighten(theme-color('warning'), 33%);
+    background-color: lighten(theme-color('primary'), 53%);
   }
 
   0% {
