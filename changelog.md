@@ -1,5 +1,11 @@
 # Changelog
 
+## [v5.4.7]
+
+### Updated
+- Update dependencies
+- Fix error in icon page
+
 ## [5.4.6]
 
 ### Updated
