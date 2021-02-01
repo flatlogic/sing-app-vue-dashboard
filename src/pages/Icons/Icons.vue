@@ -2873,4 +2873,4 @@ export default {
 };
 </script>
 
-<script src="./Icons.scss" lang="scss" scoped />
+<style src="./Icons.scss" lang="scss" scoped />

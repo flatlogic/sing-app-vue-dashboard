@@ -1,4 +1,11 @@
 # Changelog
+
+## [v2.1.6]
+
+### Updated
+- Update dependencies
+- Fix errors in sidebar and icon page
+
 ## [v2.1.5]
 
 ### Updated

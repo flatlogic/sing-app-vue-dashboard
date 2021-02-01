@@ -54,7 +54,6 @@
             ]"
         />
       </ul>
-      <p>
       <h5 class="navTitle">
         LABELS
         <a class="actionLink">

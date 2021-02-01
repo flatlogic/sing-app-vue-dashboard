@@ -1,6 +1,6 @@
 {
   "name": "sing-app-vue",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --port 3000",
@@ -13,7 +13,7 @@
     "apexcharts": "^3.22.2",
     "awesome-bootstrap-checkbox": "^1.0.1",
     "bootstrap": "^4.5.3",
-    "bootstrap-vue": "2.19.0",
+    "bootstrap-vue": "2.21.2",
     "css-loader": "^1.0.1",
     "echarts": "^4.9.0",
     "expose-loader": "^0.7.5",
