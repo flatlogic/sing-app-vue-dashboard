@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.1.7]
+
+### Updated
+- Update design
+
 ## [v2.1.6]
 
 ### Updated

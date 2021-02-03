@@ -6,8 +6,11 @@
         @mouseleave="sidebarMouseLeave"
     >
       <header class="logo">
-        <router-link to="/app"><span class="primary-word">Sing</span> App</router-link>
+        <router-link to="/app/dashboard"><span class="primary-word">Sing</span> <span class="secondary-word"> App</span></router-link>
       </header>
+      <h5 class="navTitle first">
+        APP
+      </h5>
       <ul class="nav">
         <NavLink
             :activeItem="activeItem"
@@ -37,7 +40,7 @@
             :activeItem="activeItem"
             header="Notifications"
             link="/app/notifications"
-            iconName="flaticon-star"
+            iconName="flaticon-bell"
             index="notifications"
             isHeader
         />
@@ -56,27 +59,24 @@
       </ul>
       <h5 class="navTitle">
         LABELS
-        <a class="actionLink">
-          <i class="la la-plus float-right"/>
-        </a>
       </h5>
       <ul class="sidebarLabels">
         <li>
           <a href="#">
-            <i class="fa fa-circle text-danger mr-2"/>
-            <span class="labelName">My Recent</span>
+            <i class="fa fa-circle text-danger"/>
+            <span class="labelName">Core</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-circle text-primary mr-2"/>
-            <span class="labelName">Starred</span>
+            <i class="fa fa-circle text-primary"/>
+            <span class="labelName">UI Elements</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-circle mr-2"/>
-            <span class="labelName">Background</span>
+            <i class="fa fa-circle text-success"/>
+            <span class="labelName">Forms</span>
           </a>
         </li>
       </ul>

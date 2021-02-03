@@ -1,13 +1,15 @@
 .root {
   &.sing-dashboard {
-    --logo-color: white;
+    --logo-color: #5CB0FF;
     --body-bg: #f9fbfd;
     --light-color: #F6F6E9;
 
     --sidebar-bg-color: #002B49;
     --sidebar-color: #C2C2C2;
+    --sidebar-color-item: #FFFFFF;
     --sidebar-action-bg: #042338;
     --sidebar-item-active: var(--light-color);
+    --sidebar-item-active-bg: #5CB0FF;
     --sidebar-badge-bg: #005792;
 
     --sidebar-nav-title-color: var(--light-color);

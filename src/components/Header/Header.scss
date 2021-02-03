@@ -83,21 +83,23 @@
 
   .form-group {
     width: 300px;
-
+    input {
+      background-color: #F9FAFE;
+      &::placeholder {
+        color: #4A5056;
+        font-weight: $font-weight-normal;
+      }
+    }
     .input-group-prepend {
       margin-right: 0;
     }
 
     .input-group-text {
       border: none;
-      background-color: rgba(0,0,0,0.1);
+      background-color: #F9FAFE!important;
       transition: background-color ease-in-out 0.15s;
     }
 
-    input, input:focus {
-      background: rgba(0, 0, 0, 0.1);;
-      border: none;
-    }
   }
 
   .avatar {
@@ -110,6 +112,10 @@
     background: #ffc247;
     font-weight: 600;
     font-size: 18px;
+  }
+
+  .avatar-badge {
+    background-color: #0D2B47;
   }
 
   .navbarBrand {
@@ -136,6 +142,10 @@
       right: 0 !important;
       top: $navbar-height !important;
     }
+  }
+
+  .dropdown-toggle::after {
+    display: none;
   }
 
   .settingsDropdown {

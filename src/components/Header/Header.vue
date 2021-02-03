@@ -3,20 +3,20 @@
     <b-nav>
       <b-nav-item>
         <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod" id="barsTooltip">
-          <i class='la la-bars la-lg' />
+          <i class='fi flaticon-menu' />
         </a>
         <a class="fs-lg d-lg-none" href="#" @click="switchSidebarMethod">
-          <i class="la la-bars la-lg" />
+          <i class='fi flaticon-menu' />
         </a>
       </b-nav-item>
       <b-nav-item class="d-md-down-none">
         <a href="#" class="px-2">
-          <i class="la la-refresh la-lg" />
+          <i class='fi flaticon-flip' />
         </a>
       </b-nav-item>
       <b-nav-item class="d-md-down-none">
         <a href="#" class="px-2">
-          <i class="la la-times la-lg" />
+          <i class='fi flaticon-close' />
         </a>
       </b-nav-item>
     </b-nav>
@@ -25,7 +25,7 @@
         <b-form-group>
           <b-input-group class="input-group-no-border">
             <template v-slot:prepend>
-              <b-input-group-text><i class="la la-search"/></b-input-group-text>
+              <b-input-group-text><i class='fi flaticon-search-2'/></b-input-group-text>
             </template>
             <b-form-input id="search-input" placeholder="Search Dashboard" />
           </b-input-group>
@@ -46,16 +46,17 @@
         right>
         <template slot="button-content">
           <span class="avatar rounded-circle thumb-sm float-left mr-2">
-            <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
+            <img class="rounded-circle" src="../../assets/people/a7.png" alt="..." />
           </span>
-          <span class="small">Philip Smith</span>
-          <span class="ml-1 mr-3 circle bg-primary text-white fw-bold">13</span>
+          <span class="px-2">Philip Smith</span>
+          <span class="ml-1 mr-2 circle text-white fw-bold avatar-badge">9</span>
+          <i class='fi flaticon-arrow-down px-2' />
         </template>
         <Notifications />
       </b-nav-item-dropdown>
       <b-nav-item-dropdown id="v-step-2" class="settingsDropdown d-sm-down-none" no-caret right>
         <template slot="button-content">
-          <i class="la la-cog px-2" />
+          <i class='fi flaticon-settings-10 px-2' />
         </template>
         <b-dropdown-item><i class="la la-user" /> My Account</b-dropdown-item>
         <b-dropdown-divider />

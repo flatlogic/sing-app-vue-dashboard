@@ -1,3 +1,22 @@
+body:after {
+  content:
+    url(../../src/assets/icons/arrow-down.svg)
+    url(../../src/assets/icons/close.svg)
+    url(../../src/assets/icons/layout.svg)
+    url(../../src/assets/icons/layout-blue.svg)
+    url(../../src/assets/icons/bell.svg)
+    url(../../src/assets/icons/bell-blue.svg)
+    url(../../src/assets/icons/home.svg)
+    url(../../src/assets/icons/home-blue.svg)
+    url(../../src/assets/icons/menu.svg)
+    url(../../src/assets/icons/flip.svg)
+    url(../../src/assets/icons/text.svg)
+    url(../../src/assets/icons/text-blue.svg)
+    url(../../src/assets/icons/cube.svg)
+    url(../../src/assets/icons/cube-blue.svg)
+    url(../../src/assets/icons/search-2.svg)
+    url(../../src/assets/icons/settings-10.svg)
+}
 .page-title {
   margin: 0 0 calc(1rem + 6px);
 }
@@ -269,4 +288,9 @@ table > thead > tr > th {
     margin-left: -$widget-padding-horizontal;
     margin-right: -$widget-padding-horizontal;
   }
+}
+
+.alert.sidebarAlert button.close {
+  color: #5CB0FF;
+  font-size: 20px;
 }
