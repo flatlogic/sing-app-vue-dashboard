@@ -46,9 +46,10 @@ import { mapActions } from 'vuex';
 export default {
   name: 'NavLink',
   props: {
-    badge: { type: String, dafault: '' },
+    badge: { type: String, default: '' },
     header: { type: String, default: '' },
     iconName: { type: String, default: '' },
+    c: { type: String, default: '' },
     headerLink: { type: String, default: '' },
     link: { type: String, default: '' },
     childrenLinks: { type: Array, default: null },

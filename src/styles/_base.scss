@@ -15,7 +15,8 @@ body:after {
     url(../../src/assets/icons/cube.svg)
     url(../../src/assets/icons/cube-blue.svg)
     url(../../src/assets/icons/search-2.svg)
-    url(../../src/assets/icons/settings-10.svg)
+    url(../../src/assets/icons/settings-10.svg);
+  display: none;
 }
 .page-title {
   margin: 0 0 calc(1rem + 6px);
