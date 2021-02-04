@@ -1,5 +1,10 @@
 # Changelog
 
+## [v5.4.8]
+
+### Updated
+- Update sidebar and navbar design
+
 ## [v5.4.7]
 
 ### Updated
