@@ -83,20 +83,23 @@
 
   .form-group {
     width: 300px;
-
+    input {
+      background-color: #F9FAFE;
+      border-radius: 0;
+      &::placeholder {
+        color: #4A5056;
+        font-weight: $font-weight-normal;
+      }
+    }
     .input-group-prepend {
       margin-right: 0;
     }
 
     .input-group-text {
       border: none;
-      background-color: rgba(0,0,0,0.1);
+      background-color: #F9FAFE!important;
       transition: background-color ease-in-out 0.15s;
-    }
-
-    input, input:focus {
-      background: rgba(0, 0, 0, 0.1);;
-      border: none;
+      border-radius: 0;
     }
   }
 
@@ -110,6 +113,10 @@
     background: #ffc247;
     font-weight: 600;
     font-size: 18px;
+  }
+
+  .avatar-badge {
+    background-color: #0D2B47;
   }
 
   .navbarBrand {
@@ -138,13 +145,14 @@
     }
   }
 
+  .dropdown-toggle::after {
+    display: none;
+  }
+
   .settingsDropdown {
     .dropdown-item:focus {
       outline: none;
     }
-  }
-
-  .notificationsWrapper {
   }
 }
 

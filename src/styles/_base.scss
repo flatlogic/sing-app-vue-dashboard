@@ -286,3 +286,8 @@ table > thead > tr > th {
     font-weight: $font-weight-semi-bold;
   }
 }
+
+.alert.sidebarAlert button.close {
+  color: var(--sidebar-item-active-bg);
+  font-size: 20px;
+}

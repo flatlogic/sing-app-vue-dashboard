@@ -1,5 +1,5 @@
 <template>
-<div :class="[{root: true, sidebarClose, sidebarStatic}, 'sing-dashboard', 'sidebar-' + sidebarColorName, 'sidebar-' + sidebarType]">
+<div :class="[{root: true, sidebarClose, sidebarStatic}, 'sing-dashboard', 'sidebar-' + sidebarColorName, 'sidebar-' + sidebarType, 'navbar-' + navbarColorName]">
   <Sidebar />
   <Helper />
   <div class="wrap">
@@ -106,7 +106,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["sidebarClose", "sidebarStatic", "sidebarColorName", "sidebarType", "helperOpened", "tourInstance"]),
+    ...mapState(["sidebarClose", "sidebarStatic", "sidebarColorName", 'navbarColorName', "sidebarType", "helperOpened", "tourInstance"]),
     steps() {
       return TourSteps(this.applyTourStep)
     },

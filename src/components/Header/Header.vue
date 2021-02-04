@@ -3,29 +3,29 @@
     <b-nav>
       <b-nav-item id="v-step-0">
         <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod">
-          <i class='la la-bars la-lg' />
+          <i class='fi flaticon-menu' />
         </a>
         <a class="fs-lg d-lg-none" href="#" @click="switchSidebarMethod">
-          <i class="la la-bars la-lg" />
+          <i class='fi flaticon-menu' />
         </a>
       </b-nav-item>
       <b-nav-item class="d-md-down-none">
         <a href="#" class="px-2">
-          <i class="la la-refresh la-lg" />
+          <i class='fi flaticon-flip' />
         </a>
       </b-nav-item>
       <b-nav-item class="d-md-down-none">
         <a href="#" class="px-2">
-          <i class="la la-times la-lg" />
+          <i class='fi flaticon-close' />
         </a>
       </b-nav-item>
     </b-nav>
     <b-nav>
       <b-form class="d-sm-down-none ml-5" inline>
         <b-form-group>
-          <b-input-group class="input-group-no-border">
+          <b-input-group class="input-group-no-border search-input">
             <template v-slot:prepend>
-              <b-input-group-text><i class="la la-search"/></b-input-group-text>
+              <b-input-group-text><i class='fi flaticon-search-2'/></b-input-group-text>
             </template>
             <b-form-input id="search-input" placeholder="Search Dashboard" />
           </b-input-group>
@@ -58,13 +58,14 @@
             <span v-else>{{firstUserLetter}}</span>
           </span>
           <span class="small">{{user.name || user.email || 'Philip smith'}}</span>
-          <span class="ml-2 mr-3 circle bg-primary text-white fw-bold">13</span>
+          <span class="ml-2 mr-2 circle avatar-badge text-white fw-bold">9</span>
+          <i class='fi flaticon-arrow-down px-2' />
         </template>
         <Notifications />
       </b-nav-item-dropdown>
       <b-nav-item-dropdown id="v-step-2" class="settingsDropdown d-sm-down-none" no-caret right>
         <template slot="button-content">
-          <i class="la la-cog px-2" />
+          <i class='fi flaticon-settings-10 px-2' />
         </template>
         <b-dropdown-item><i class="la la-user" /> My Account</b-dropdown-item>
         <b-dropdown-divider />
@@ -83,7 +84,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import avatarImage from '@/assets/people/a5.jpg';
+import avatarImage from '@/assets/people/a7.png';
 import Notifications from '@/components/Notifications/Notifications';
 
 export default {

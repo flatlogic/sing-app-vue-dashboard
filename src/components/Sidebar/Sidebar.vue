@@ -6,8 +6,11 @@
         @mouseleave="sidebarMouseLeave"
     >
       <header class="logo">
-        <router-link to="/app/main/analytics"><span class="primary-word">Sing</span> App</router-link>
+        <router-link to="/app/main/analytics"><span class="primary-word">Sing</span> <span class="secondary-word"> App</span></router-link>
       </header>
+      <h5 class="navTitle first">
+        APP
+      </h5>
       <ul class="nav">
         <NavLink
             :activeItem="activeItem"
@@ -25,7 +28,7 @@
             :activeItem="activeItem"
             header="Chat"
             link="/app/chat"
-            iconName="flaticon-users"
+            iconName="flaticon-message-circle"
             index="chat"
             label="awesome"
             labelColor="info"
@@ -35,10 +38,8 @@
             :activeItem="activeItem"
             header="E-commerce"
             link="/app/ecommerce"
-            iconName="flaticon-diamond"
+            iconName="flaticon-shopping-bag"
             index="ecommerce"
-            label="NodeJS"
-            labelColor="danger"
             :childrenLinks="[
           { header: 'Product Management', link: '/app/ecommerce/management' },
           { header: 'Products Grid', link: '/app/ecommerce/products' },
@@ -49,7 +50,7 @@
             :activeItem="activeItem"
             header="Sing Package"
             link="/app/package"
-            iconName="flaticon-database-1"
+            iconName="flaticon-layers-2"
             index="package"
             label="new"
             labelColor="success"
@@ -59,7 +60,7 @@
             :activeItem="activeItem"
             header="Profile"
             link="/app/profile"
-            iconName="flaticon-user"
+            iconName="flaticon-person"
             index="profile"
             isHeader
         />
@@ -67,7 +68,7 @@
             :activeItem="activeItem"
             header="Email"
             link="/app/email"
-            iconName="flaticon-paper-plane"
+            iconName="flaticon-email"
             index="email"
             badge="9"
             isHeader
@@ -76,7 +77,7 @@
             :activeItem="activeItem"
             header="Documentation"
             link="/documentation"
-            iconName="flaticon-file"
+            iconName="flaticon-documentation"
             index="documentation"
             isHeader
         />
@@ -85,7 +86,7 @@
             :activeItem="activeItem"
             header="Core"
             link="/app/core"
-            iconName="flaticon-network"
+            iconName="flaticon-core"
             index="core"
             :childrenLinks="[
           { header: 'Typography', link: '/app/core/typography' },
@@ -97,7 +98,7 @@
             :activeItem="activeItem"
             header="UI Elements"
             link="/app/ui"
-            iconName="flaticon-layers"
+            iconName="flaticon-ui"
             index="ui"
             :childrenLinks="[
           { header: 'Alerts', link: '/app/ui/alerts' },
@@ -122,7 +123,7 @@
             :activeItem="activeItem"
             header="Forms"
             link="/app/forms"
-            iconName="flaticon-list"
+            iconName="flaticon-forms"
             index="forms"
             :childrenLinks="[
           { header: 'Form Elements', link: '/app/forms/elements' },
@@ -134,7 +135,7 @@
             :activeItem="activeItem"
             header="Charts"
             link="/app/charts"
-            iconName="flaticon-controls"
+            iconName="flaticon-charts"
             index="charts"
             :childrenLinks="[
           { header: 'Charts Overview', link: '/app/charts/overview' },
@@ -147,7 +148,7 @@
             :activeItem="activeItem"
             header="Grid"
             link="/app/grid"
-            iconName="flaticon-menu-4"
+            iconName="flaticon-grid"
             index="grid"
             isHeader
         />
@@ -166,7 +167,7 @@
             :activeItem="activeItem"
             header="Maps"
             link="/app/maps"
-            iconName="flaticon-map-location"
+            iconName="flaticon-pin-1"
             index="maps"
             :childrenLinks="[
           { header: 'Google Maps', link: '/app/maps/google' },
@@ -177,7 +178,7 @@
             :activeItem="activeItem"
             header="Extra"
             link="/app/extra"
-            iconName="flaticon-star"
+            iconName="flaticon-extra"
             index="extra"
             :childrenLinks="[
           { header: 'Calendar', link: '/app/extra/calendar' },
@@ -193,7 +194,7 @@
             :activeItem="activeItem"
             header="Menu Levels"
             link="/app/menu"
-            iconName="flaticon-folder-10"
+            iconName="flaticon-list-2"
             index="menu"
             :childrenLinks="[
           {
@@ -239,27 +240,24 @@
       <p>
       <h5 class="navTitle">
         LABELS
-        <a class="actionLink">
-          <i class="la la-plus float-right"/>
-        </a>
       </h5>
       <ul class="sidebarLabels">
         <li>
           <a href="#">
-            <i class="fa fa-circle text-danger mr-2"/>
-            <span class="labelName">My Recent</span>
+            <i class="fa fa-circle text-danger"/>
+            <span class="labelName">Core</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-circle text-primary mr-2"/>
-            <span class="labelName">Starred</span>
+            <i class="fa fa-circle text-primary"/>
+            <span class="labelName">UI Elements</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class="fa fa-circle mr-2"/>
-            <span  class="labelName">Background</span>
+            <i class="fa fa-circle text-success"/>
+            <span  class="labelName">Forms</span>
           </a>
         </li>
       </ul>
