@@ -1160,6 +1160,13 @@ i.fi {
 }
 
 .sidebar-seventh {
+  .headerLabel.text-success {
+    color: #8BFFE3!important;
+  }
+  .headerLabel.text-info {
+    color: #FFC0A5!important;
+  }
+
   .flaticon-arrow-down {
     background-image: url('../../src/assets/icons/arrow-down.svg');
   }

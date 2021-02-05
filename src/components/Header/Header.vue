@@ -58,7 +58,7 @@
             <span v-else>{{firstUserLetter}}</span>
           </span>
           <span class="small">{{user.name || user.email || 'Philip smith'}}</span>
-          <span class="ml-2 mr-2 circle avatar-badge text-white fw-bold">9</span>
+          <span class="ml-2 mr-2 circle badge-dark text-white fw-bold">9</span>
           <i class='fi flaticon-arrow-down px-2' />
         </template>
         <Notifications />
@@ -71,7 +71,7 @@
         <b-dropdown-divider />
         <b-dropdown-item>Calendar</b-dropdown-item>
         <b-dropdown-item href="/inbox">
-          Inbox &nbsp;&nbsp;<b-badge variant="danger" pill class="animate__animated animate__bounceIn">9</b-badge>
+          Inbox &nbsp;&nbsp;<b-badge variant="dark" pill class="animate__animated animate__bounceIn" style="padding: 4px 9px">9</b-badge>
         </b-dropdown-item>
         <b-dropdown-divider />
         <b-dropdown-item-button @click="logoutUser">

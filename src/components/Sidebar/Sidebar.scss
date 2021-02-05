@@ -64,6 +64,9 @@
 
 .sidebarClose .logo {
   width: $sidebar-width-closed;
+  .secondary-word {
+    opacity: 0;
+  }
 }
 
 .sidebarStatic .logo {
