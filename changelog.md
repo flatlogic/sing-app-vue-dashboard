@@ -1,5 +1,10 @@
 # Changelog
 
+## [v5.4.9]
+
+### Updated
+- Fix navbar, several icons
+
 ## [v5.4.8]
 
 ### Updated

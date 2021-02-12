@@ -57,25 +57,25 @@
             />
             <span v-else>{{firstUserLetter}}</span>
           </span>
-          <span class="small">{{user.name || user.email || 'Philip smith'}}</span>
-          <span class="ml-2 mr-2 circle badge-dark text-white fw-bold">9</span>
+          <span>{{user.name || user.email || 'Philip smith'}}</span>
+          <span class="ml-2 mr-2 circle badge-dark text-white fw-bold" style="padding: 13px 13px;">9</span>
           <i class='fi flaticon-arrow-down px-2' />
         </template>
         <Notifications />
       </b-nav-item-dropdown>
       <b-nav-item-dropdown id="v-step-2" class="settingsDropdown d-sm-down-none" no-caret right>
         <template slot="button-content">
-          <i class='fi flaticon-settings-10 px-2' />
+          <i class='fi flaticon-settings-10 px-3' />
         </template>
-        <b-dropdown-item><i class="la la-user" /> My Account</b-dropdown-item>
+        <b-dropdown-item><i class='fi flaticon-person px-3 mr-3' /> My Account</b-dropdown-item>
         <b-dropdown-divider />
-        <b-dropdown-item>Calendar</b-dropdown-item>
-        <b-dropdown-item href="/inbox">
+        <b-dropdown-item><i class='fi flaticon-calendar-9 px-3 mr-3' />Calendar</b-dropdown-item>
+        <b-dropdown-item href="/inbox"><i class='fi flaticon-email px-3 mr-3' />
           Inbox &nbsp;&nbsp;<b-badge variant="dark" pill class="animate__animated animate__bounceIn" style="padding: 4px 9px">9</b-badge>
         </b-dropdown-item>
         <b-dropdown-divider />
         <b-dropdown-item-button @click="logoutUser">
-          <i class="la la-sign-out" /> Log Out
+          <i class="fi flaticon-power-1 px-3 mr-3" /> Log Out
         </b-dropdown-item-button>
       </b-nav-item-dropdown>
     </b-nav>

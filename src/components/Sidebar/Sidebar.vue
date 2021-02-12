@@ -47,39 +47,39 @@
         ]"
         />
         <NavLink
-            :activeItem="activeItem"
-            header="Sing Package"
-            link="/app/package"
-            iconName="flaticon-layers-2"
-            index="package"
-            label="new"
-            labelColor="success"
-            isHeader
+          :activeItem="activeItem"
+          header="Sing Package"
+          link="/app/package"
+          iconName="flaticon-layers-2"
+          index="package"
+          isHeader
         />
         <NavLink
-            :activeItem="activeItem"
-            header="Profile"
-            link="/app/profile"
-            iconName="flaticon-person"
-            index="profile"
-            isHeader
+          :activeItem="activeItem"
+          header="Profile"
+          link="/app/profile"
+          iconName="flaticon-person"
+          index="profile"
+          isHeader
         />
         <NavLink
-            :activeItem="activeItem"
-            header="Email"
-            link="/app/email"
-            iconName="flaticon-email"
-            index="email"
-            badge="9"
-            isHeader
+          :activeItem="activeItem"
+          header="Email"
+          link="/app/email"
+          iconName="flaticon-email"
+          index="email"
+          badge="9"
+          isHeader
         />
         <NavLink
-            :activeItem="activeItem"
-            header="Documentation"
-            link="/documentation"
-            iconName="flaticon-documentation"
-            index="documentation"
-            isHeader
+          :activeItem="activeItem"
+          header="Documentation"
+          link="/documentation"
+          iconName="flaticon-documentation"
+          index="documentation"
+          label="new"
+          labelColor="success"
+          isHeader
         />
         <h5 class="navTitle">TEMPLATE</h5>
         <NavLink

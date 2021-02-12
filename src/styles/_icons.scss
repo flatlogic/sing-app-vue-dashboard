@@ -128,7 +128,9 @@ body:after {
     url(../../src/assets/icons/shopping-bag-white.svg)
     url(../../src/assets/icons/text.svg)
     url(../../src/assets/icons/text-blue.svg)
-    url(../../src/assets/icons/settings-10.svg);
+    url(../../src/assets/icons/settings-10.svg)
+    url(../../src/assets/icons/power.svg)
+    url(../../src/assets/icons/calendar.svg);
   display: none;
 }
 
@@ -136,6 +138,7 @@ i.fi {
   width: 20px;
   height: 20px;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .sidebar-default {
   .flaticon-arrow-down {
@@ -1757,3 +1760,6 @@ i.fi {
     background-color: #0D2B47!important;
   }
 }
+
+.flaticon-calendar-9 { background-image: url('../../src/assets/icons/calendar.svg'); }
+.flaticon-power-1 { background-image: url('../../src/assets/icons/power.svg'); }
