@@ -152,9 +152,12 @@
     .dropdown-item:focus {
       outline: none;
     }
-  }
-
-  .notificationsWrapper {
+    ul {
+      width: 12rem;
+      li {
+        padding: 4px 0;
+      }
+    }
   }
 }
 

@@ -10,7 +10,7 @@ export default {
       info: "#1A86D0",
       warning: "#FDA700",
       danger: "#FD5F00",
-      inverse: "#002B49",
+      inverse: "#0D2B47",
       textColor: "#495057",
       gray: "#D7DFE6"
     },

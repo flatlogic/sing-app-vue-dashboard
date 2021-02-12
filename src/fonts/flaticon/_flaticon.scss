@@ -39,6 +39,7 @@
 i.fi {
   width: 20px;
   height: 20px;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -853,6 +854,15 @@ i.fi {
 .flaticon-zoom-in::before { content: '\f27a'; }
 
 .flaticon-zoom-out::before { content: '\f27b'; }
+
+.flaticon-person {
+  background-image: url('../../src/assets/icons/person.svg');
+}
+.flaticon-calendar-9 { background-image: url('../../src/assets/icons/calendar.svg'); }
+.flaticon-power-1 { background-image: url('../../src/assets/icons/power.svg'); }
+.flaticon-email {
+  background-image: url('../../src/assets/icons/email-blue.svg');
+}
 
 $font-Flaticon-add: '\f100';
 $font-Flaticon-add-1: '\f101';
