@@ -35,8 +35,8 @@ Building a project from scratch means that there is a lot of things to keep trac
 You can start by cloning the latest version of Sing App Vue Dashboard on your local machine by running:
 
 ```shell
-$ git clone -o sing-app-lite -b master --single-branch \
-      https://github.com/flatlogic/sing-app.git MyApp
+$ git clone -o sing-app-vue-dashboard -b master --single-branch \
+      https://github.com/flatlogic/sing-app-vue-dashboard.git MyApp
 $ cd MyApp
 ```
 
