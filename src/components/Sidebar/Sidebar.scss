@@ -1,7 +1,8 @@
 @import '../../styles/app';
 .sidebar {
   position: absolute;
-  height: 100%;
+  top: 0;
+  left: 0;
   width: $sidebar-width-open;
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
@@ -13,6 +14,7 @@
   left: 0;
   top: 0;
   bottom: 0;
+  height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   width: $sidebar-width-open;
