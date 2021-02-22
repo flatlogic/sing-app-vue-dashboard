@@ -1,5 +1,9 @@
 # Changelog
 
+## [v5.5.0]
+
+- Updated documentation
+
 ## [v5.4.9]
 
 ### Updated

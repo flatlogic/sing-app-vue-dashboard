@@ -41,6 +41,13 @@
           <li class="lead"><i class="la la-check"></i> And even more coming soon!</li>
         </ul>
       </Widget>
+      <Widget id="Support">
+        <h2>Support forum</h2>
+        <p class="lead">For any additional information please go to our support forum and raise your questions or feedback provide there. We highly appreciate your participation!</p>
+        <a href="https://flatlogic.com/forum" target="_blank" rel="noopener noreferrer" class="btn btn-default fw-semi-bold">
+          Support forum
+        </a>
+      </Widget>
       <b-row>
         <b-col md="5">
           <Widget title="Continue with">
@@ -61,7 +68,7 @@
     <b-col lg="3" xs="12">
       <Scrollspy
           title="OVERVIEW"
-          :ids="['Overview', 'Features']"
+          :ids="['Overview', 'Features', 'Support']"
       ></Scrollspy>
     </b-col>
   </b-row>
