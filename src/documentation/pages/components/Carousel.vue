@@ -21,17 +21,18 @@
         </b-tab>
         <b-tab title="Code">
           <vue-code-highlight>&lt;b-carousel
-  id=&quot;carousel-fade&quot;
-  fade
-  indicators
-  controls
-  img-width=&quot;1024&quot;
-  img-height=&quot;480&quot;
-&gt;
-  &lt;b-carousel-slide :img-src=&quot;p1&quot;&gt;&lt;/b-carousel-slide&gt;
-  &lt;b-carousel-slide :img-src=&quot;p2&quot;&gt;&lt;/b-carousel-slide&gt;
-  &lt;b-carousel-slide :img-src=&quot;p3&quot;&gt;&lt;/b-carousel-slide&gt;
-&lt;/b-carousel&gt;</vue-code-highlight>
+            id=&quot;carousel-fade&quot;
+            fade
+            indicators
+            controls
+            img-width=&quot;1024&quot;
+            img-height=&quot;480&quot;
+            &gt;
+            &lt;b-carousel-slide :img-src=&quot;p1&quot;&gt;&lt;/b-carousel-slide&gt;
+            &lt;b-carousel-slide :img-src=&quot;p2&quot;&gt;&lt;/b-carousel-slide&gt;
+            &lt;b-carousel-slide :img-src=&quot;p3&quot;&gt;&lt;/b-carousel-slide&gt;
+            &lt;/b-carousel&gt;
+          </vue-code-highlight>
         </b-tab>
       </b-tabs>
     </b-col>
@@ -41,16 +42,16 @@
   </b-row>
 </template>
 <script>
-  import p1 from '../../../assets/slides/1.jpg';
-  import p2 from '../../../assets/slides/2.jpg';
-  import p3 from '../../../assets/slides/3.jpg';
+import p1 from '../../../assets/slides/slide-1.jpg';
+import p2 from '../../../assets/slides/slide-2.jpg';
+import p3 from '../../../assets/slides/slide-3.jpg';
 
-  export default {
-    name: 'DocCarousel',
-    data() {
-      return {
-        p1, p2, p3
-      }
+export default {
+  name: 'DocCarousel',
+  data() {
+    return {
+      p1, p2, p3
     }
   }
+}
 </script>

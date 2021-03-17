@@ -1,6 +1,6 @@
-import photo1 from '@/assets/tables/1.jpg';
-import photo2 from '@/assets/tables/2.jpg';
-import photo3 from '@/assets/tables/3.jpg';
+import photo1 from '../../assets/tables/1.jpg';
+import photo2 from '../../assets/tables/2.jpg';
+import photo3 from '../../assets/tables/3.jpg';
 
 export default [
   {

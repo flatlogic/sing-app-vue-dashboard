@@ -183,7 +183,7 @@
             <div class="list-group list-group-lg">
               <a class="list-group-item" href="#">
                 <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a2.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../assets/people/a2.jpg" alt="woman" />
                   <i class="status status-bottom bg-success" />
                 </span>
                 <div>
@@ -195,7 +195,7 @@
               </a>
               <a class="list-group-item" href="#">
                 <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a4.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../assets/people/a4.jpg" alt="woman" />
                   <i class="status status-bottom bg-success" />
                 </span>
                 <div>
@@ -207,7 +207,7 @@
               </a>
               <a class="list-group-item" href="#">
                 <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="woman" />
                   <i class="status status-bottom bg-primary" />
                 </span>
                 <div>
@@ -217,7 +217,7 @@
               </a>
               <a class="list-group-item" href="#">
                 <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="man" />
                   <i class="status status-bottom bg-danger" />
                 </span>
                 <div>

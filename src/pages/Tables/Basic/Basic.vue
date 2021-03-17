@@ -24,7 +24,7 @@
                 <tr v-for="row in tableStyles" :key="row.id">
                   <td>{{row.id}}</td>
                   <td>
-                    <img class="img-rounded" :src="row.picture" alt="" height="50" />
+                    <img class="img-rounded" :src="row.picture" :alt="row.label.text || 'picture'" height="50" />
                   </td>
                   <td>
                     {{row.description}}
@@ -522,6 +522,9 @@ export default {
       checkboxes3: [false, false, false, false, false, false],
     };
   },
+  /**
+   *
+   */
   methods: {
     parseDate(date) {
       const dateSet = date.toDateString().split(' ');

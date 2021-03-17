@@ -8,7 +8,7 @@
     <b-row>
       <b-col>
         <b-carousel id="carousel1" indicators controls :interval="4000">
-          <b-carousel-slide v-for="img in slides" :key="img" :img-src="img" />
+          <b-carousel-slide v-for="img in slides" :key="img" :img-src="img"/>
         </b-carousel>
       </b-col>
     </b-row>
@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import slide1 from '../../../assets/slides/1.jpg';
-import slide2 from '../../../assets/slides/2.jpg';
-import slide3 from '../../../assets/slides/3.jpg';
+import slide1 from '../../../assets/slides/slide-1.jpg';
+import slide2 from '../../../assets/slides/slide-2.jpg';
+import slide3 from '../../../assets/slides/slide-3.jpg';
 
 export default {
   name: 'Carousel',

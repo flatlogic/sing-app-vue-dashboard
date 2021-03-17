@@ -13,7 +13,7 @@
         </span>
         <section class="event">
           <span class="thumb-sm avatar pull-left mr-sm">
-            <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="..." />
+            <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="woman" />
           </span>
           <h4 class="eventHeading"><a href="#">Jessica Nilson</a>
             <small> @jess</small>
@@ -42,7 +42,7 @@
             <ul class="postComments">
               <li>
                 <span class="thumb-xs avatar pull-left mr-sm">
-                  <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="woman" />
                 </span>
                 <div class="commentBody">
                   <h6 class="author fs-sm fw-semi-bold">Radrigo Gonzales
@@ -54,7 +54,7 @@
               </li>
               <li>
                 <span class="thumb-xs avatar pull-left mr-sm">
-                  <img class="rounded-circle" src="../../../assets/people/a4.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/people/a4.jpg" alt="man" />
                 </span>
                 <div class="commentBody">
                   <h6 class="author fs-sm fw-semi-bold">Ignacio Abad
@@ -65,7 +65,7 @@
               </li>
               <li>
                 <span class="thumb-xs avatar pull-left mr-sm">
-                  <img class="rounded-circle" src="../../../assets/avatar.png" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/avatar.png" alt="avatar" />
                 </span>
                 <div class="commentBody">
                   <b-form-input size="sm" placeholder="Write your comment..." />
@@ -86,7 +86,7 @@
         </span>
         <section class="event">
           <span class="thumb-xs avatar pull-left mr-sm">
-            <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="..." />
+            <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="man" />
           </span>
           <h5 class="eventHeading"><a href="#">Bob Nilson</a>
             <small><a href="#"> @nils</a></small>
@@ -128,7 +128,7 @@
           </p>
           <div class="eventImage">
             <a :href="image">
-              <img :src="image" alt="..." />
+              <img :src="image" alt="image" />
             </a>
           </div>
           <footer>
@@ -147,24 +147,24 @@
 
               <span class="thumb thumb-sm pull-right">
                 <a href="#">
-                  <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="woman" />
                 </a>
               </span>
               <span class="thumb thumb-sm pull-right">
                 <a href="#">
-                  <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="man" />
                 </a>
               </span>
               <span class="thumb thumb-sm pull-right">
                 <a href="#">
-                  <img class="rounded-circle" src="../../../assets/people/a3.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/people/a3.jpg" alt="woman" />
                 </a>
               </span>
             </div>
             <ul class="postComments mt-sm">
               <li>
                 <span class="thumb-xs avatar pull-left mr-sm">
-                  <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="woman" />
                 </span>
                 <div class="commentBody">
                   <h6 class="author fs-sm fw-semi-bold">Ignacio Abad
@@ -175,7 +175,7 @@
               </li>
               <li>
                 <span class="thumb-xs avatar pull-left mr-sm">
-                  <img class="rounded-circle" src="../../../assets/avatar.png" alt="..." />
+                  <img class="rounded-circle" src="../../../assets/avatar.png" alt="avatar" />
                 </span>
                 <div class="commentBody">
                   <b-form-input size="sm" placeholder="Write your comment..." />
@@ -195,7 +195,7 @@
         </span>
         <section class="event">
           <span class="thumb-xs avatar pull-left mr-sm">
-            <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="..." />
+            <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="woman" />
           </span>
           <h5 class="eventHeading"><a href="#">Jessica Smith</a>
             <small> @jess</small>

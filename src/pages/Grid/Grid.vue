@@ -63,7 +63,7 @@
             <div class="list-group list-group-lg">
               <a href="#" class="list-group-item" v-for="item in gridData.shares" :key="item.name" :class="item.extraClass">
                 <span class="thumb-sm mr">
-                  <img class="rounded-circle" :src="item.img" alt="..." />
+                  <img class="rounded-circle" :src="item.img" :alt="item.name" />
                 </span>
                 <div>
                   <h6 class="m-0">{{item.name}}</h6>

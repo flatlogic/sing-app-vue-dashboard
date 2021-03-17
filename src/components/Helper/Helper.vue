@@ -111,7 +111,7 @@ import Colorpicker from '../Colorpicker/Colorpicker';
 const { mapState, mapActions } = createNamespacedHelpers('layout');
 
 export default {
-    name: 'Helper',
+  name: 'Helper',
   components: {Colorpicker},
   computed: {
       ...mapState(['navbarColorName', 'sidebarColorName', 'navbarType', 'sidebarType', 'helperOpened'])
