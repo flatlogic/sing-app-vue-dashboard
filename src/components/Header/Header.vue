@@ -35,9 +35,7 @@
     <a  class="navbarBrand d-md-none">
       <i class="fa fa-circle text-primary mr-n-sm" />
       <i class="fa fa-circle text-danger" />
-      &nbsp;
       sing
-      &nbsp;
       <i class="fa fa-circle text-danger mr-n-sm" />
       <i class="fa fa-circle text-primary" />
     </a>
