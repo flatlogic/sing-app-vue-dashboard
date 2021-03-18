@@ -65,13 +65,13 @@
           <div class="clearfix">
             <div class="float-right">
               <b-button variant="default" class="mr-3" size="sm">Send to...</b-button>
-              <b-dropdown variant="inverse" class="mr-xs" size="sm" text="Clear" right>
-                <b-dropdown-item>Clear</b-dropdown-item>
-                <b-dropdown-item>Move ...</b-dropdown-item>
-                <b-dropdown-item>Something else here</b-dropdown-item>
-                <b-dropdown-divider />
-                <b-dropdown-item>Separated link</b-dropdown-item>
-              </b-dropdown>
+<!--              <b-dropdown variant="inverse" class="mr-xs" size="sm" text="Clear" right>-->
+<!--                <b-dropdown-item>Clear</b-dropdown-item>-->
+<!--                <b-dropdown-item>Move ...</b-dropdown-item>-->
+<!--                <b-dropdown-item>Something else here</b-dropdown-item>-->
+<!--                <b-dropdown-divider />-->
+<!--                <b-dropdown-item>Separated link</b-dropdown-item>-->
+<!--              </b-dropdown>-->
             </div>
             <p>Basic table with styled content</p>
           </div>

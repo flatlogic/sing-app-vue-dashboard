@@ -43,6 +43,8 @@
     </a>
     <b-nav class="ml-auto">
       <b-nav-item-dropdown
+        @hide="dropdown = false"
+        @show="dropdown = true"
         id="v-step-1"
         class="notificationsMenu d-md-down-none mr-2"
         menu-class="notificationsWrapper py-0 animate__animated animate__animated-fast animate__fadeIn"
@@ -59,7 +61,7 @@
           </span>
           <span>{{user.name || user.email || 'Philip smith'}}</span>
           <span class="ml-2 mr-2 circle badge-dark text-white fw-bold" style="padding: 13px 13px;">9</span>
-          <i class='fi flaticon-arrow-down px-2' />
+          <i :class="['fi flaticon-arrow-down px-2 dropdown-arrow', {active: dropdown}]" />
         </template>
         <Notifications />
       </b-nav-item-dropdown>
@@ -93,6 +95,7 @@ export default {
   data() {
     return {
       avatarImage,
+      dropdown: false,
       user: JSON.parse(localStorage.getItem('user') || {})
     }
   },

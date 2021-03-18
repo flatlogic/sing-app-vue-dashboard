@@ -11,6 +11,13 @@
   font-weight: 500;
   justify-content: flex-start;
 
+  .dropdown-arrow {
+    transition: transform .3s;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
   .nav {
     height: 100%;
     padding: 0;
