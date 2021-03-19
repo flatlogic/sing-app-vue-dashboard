@@ -1,5 +1,12 @@
 # Changelog
 
+## [v5.5.1]
+
+- Fix icons animation
+- Fix images naming
+- Fix calendar buttons
+- Fix 404 page
+
 ## [v5.5.0]
 
 - Updated documentation

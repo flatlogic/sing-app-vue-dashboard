@@ -90,7 +90,6 @@ import { isAuthenticated } from './mixins/auth';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
   routes: [
     {path: '/', redirect: '/app/main/analytics'},
     {path: '/documentation', redirect: '/documentation/getting-started/overview'},
