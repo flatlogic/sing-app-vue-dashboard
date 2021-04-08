@@ -3,7 +3,7 @@ import config from "../../config";
 export default [
   {
     id: 1,
-    img: config.remote + '/assets/products/img1.jpg',
+    img: config.remote + '/assets/products/1.png',
     title: 'trainers',
     subtitle: 'Trainers In White',
     price: 76,
@@ -22,7 +22,7 @@ export default [
   },
   {
     id: 2,
-    img: config.remote + '/assets/products/img2.jpg',
+    img: config.remote + '/assets/products/2.png',
     title: 'boots',
     subtitle: 'Trainers In Blue',
     price: 45,

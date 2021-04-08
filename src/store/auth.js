@@ -24,27 +24,28 @@ export default {
     },
     actions: {
         loginUser({dispatch}, creds) {
-            // We check if app runs with backend mode
-            if (!config.isBackend) {
-              dispatch('receiveToken', 'token');
+          // We check if app runs with backend mode
+          if (!config.isBackend) {
+            dispatch('receiveToken', 'token');
+          }
+          else {
+            dispatch('requestLogin');
+            if (creds.social) {
+              window.location.href = config.baseURLApi + "/auth/signin/" + creds.social + '?app=' + config.redirectUrl;
             }
-
-            else {
-              dispatch('requestLogin');
-              if (creds.social) {
-                window.location.href = config.baseURLApi + "/user/signin/" + creds.social + (process.env.NODE_ENV === "production" ? "?app=sing-app-vue" : "");
-              } else if (creds.email.length > 0 && creds.password.length > 0) {
-                axios.post("/user/signin/local", creds).then(res => {
-                  const token = res.data.token;
-                  dispatch('receiveToken', token);
-                }).catch(err => {
-                  dispatch('loginError', err.response.data);
-                })
-
-              } else {
-                dispatch('loginError', 'Something was wrong. Try again');
-              }
+            else if (creds.email.length > 0 && creds.password.length > 0) {
+              axios.post("/auth/signin/local", creds).then(res => {
+              const token = res.data;
+              dispatch('receiveToken', token);
+            }).catch(err => {
+              dispatch('loginError', err.response.data);
+            })
             }
+              else
+            {
+              dispatch('loginError', 'Something was wrong. Try again');
+            }
+          }
         },
         receiveToken({dispatch}, token) {
           let user = {};
