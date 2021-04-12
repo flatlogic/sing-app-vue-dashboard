@@ -1,4 +1,13 @@
 # Changelog
+## [v5.5.2] [12/04/2021]
+
+### Updated
+- Update for work with a new backend;
+- Update support links;
+
+### Fixed
+- Fix links in a documentation;
+- Fix footer in a login/register page
 
 ## [v5.5.1]
 

@@ -24,7 +24,7 @@
       </b-nav-item>
     </b-navbar-nav>
     <b-navbar-nav class="ml-auto ml-lg-0 flex-row">
-      <b-nav-item href="/" class="d-sm-down-none mr-md-3 mr-lg-0">
+      <b-nav-item href="https://demo.flatlogic.com/sing-app-vue" class="d-sm-down-none mr-md-3 mr-lg-0">
         <b-button variant="default">
           Live Preview
         </b-button>

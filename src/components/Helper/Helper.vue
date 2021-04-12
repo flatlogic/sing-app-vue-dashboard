@@ -72,7 +72,7 @@
                 <div class="d-flex justify-content-between mt-lg">
                     <a role="button"
                     target="_blank"
-                    href="https://flatlogic.com/contact"
+                    href="https://flatlogic.com/forum"
                     class="btn btn-outline-default btn-rounded-f fs-mini text-muted d-flex align-items-center">
                         <i class="glyphicon glyphicon-headphones mr-xs"></i>
                         Support
