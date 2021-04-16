@@ -1,6 +1,6 @@
 # Changelog
 
-## [v5.5.3]
+## [v5.5.3] - 16/04/2021
 
 ### Updated
 ### Update dependencies
