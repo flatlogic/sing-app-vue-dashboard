@@ -3,7 +3,7 @@
 ## [v5.5.3]
 
 ### Updated
-- Update dependencies
+### Update dependencies
   
     @amcharts/amcharts4: 1.6.0 -> 4.10.17
     @ckeditor/ckeditor5-vue: 1.0.2 -> 1.0.3
