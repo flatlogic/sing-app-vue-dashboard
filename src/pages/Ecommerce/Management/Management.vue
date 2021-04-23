@@ -17,7 +17,7 @@
       <b-button variant="success" @click="createNewProduct()" class="mb-3">Create Product</b-button>
       <v-client-table :data="products" :columns="columnsDatatable" :options="optionsDatatable">
         <div slot="img" slot-scope="props">
-          <img :src="props.row.img" alt="..." class="image" title="image"/>
+          <img :src="props.row.img" :alt="props.row.title || 'image'" class="image" title="image"/>
         </div>
         <div slot="title" slot-scope="props">
           <router-link :to="'/app/ecommerce/product/' + props.row.id">

@@ -4,61 +4,61 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Styles</span></h5>"
-          customHeader settings close
+            title="<h5>Table <span class='fw-semi-bold'>Styles</span></h5>"
+            customHeader settings close
         >
           <div class="table-resposive">
             <table class="table">
               <thead>
-                <tr>
-                  <th class="hidden-sm-down">#</th>
-                  <th>Picture</th>
-                  <th>Description</th>
-                  <th class="hidden-sm-down">Info</th>
-                  <th class="hidden-sm-down">Date</th>
-                  <th class="hidden-sm-down">Size</th>
-                  <th class="hidden-sm-down">Status</th>
-                </tr>
+              <tr>
+                <th class="hidden-sm-down">#</th>
+                <th>Picture</th>
+                <th>Description</th>
+                <th class="hidden-sm-down">Info</th>
+                <th class="hidden-sm-down">Date</th>
+                <th class="hidden-sm-down">Size</th>
+                <th class="hidden-sm-down">Status</th>
+              </tr>
               </thead>
               <tbody>
-                <tr v-for="row in tableStyles" :key="row.id">
-                  <td>{{row.id}}</td>
-                  <td>
-                    <img class="img-rounded" :src="row.picture" alt="" height="50" />
-                  </td>
-                  <td>
-                    {{row.description}}
-                    <div v-if="row.label">
-                      <b-badge :variant="row.label.colorClass">{{row.label.text}}</b-badge>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="mb-0">
-                      <small>
-                        <span class="fw-semi-bold">Type:</span>
-                        <span class="text-muted">&nbsp; {{row.info.type}}</span>
-                      </small>
-                    </p>
-                    <p>
-                      <small>
-                        <span class="fw-semi-bold">Dimensions:</span>
-                        <span class="text-muted">&nbsp; {{row.info.dimensions}}</span>
-                      </small>
-                    </p>
-                  </td>
-                  <td class="text-semi-muted">
-                    {{parseDate(row.date)}}
-                  </td>
-                  <td class="text-semi-muted">
-                    {{row.size}}
-                  </td>
-                  <td class="width-150">
-                    <b-progress
+              <tr v-for="row in tableStyles" :key="row.id">
+                <td>{{row.id}}</td>
+                <td>
+                  <img class="img-rounded" :src="row.picture" :alt="'table-picture'" height="50" />
+                </td>
+                <td>
+                  {{row.description}}
+                  <div v-if="row.label">
+                    <b-badge :variant="row.label.colorClass">{{row.label.text}}</b-badge>
+                  </div>
+                </td>
+                <td>
+                  <p class="mb-0">
+                    <small>
+                      <span class="fw-semi-bold">Type:</span>
+                      <span class="text-muted">&nbsp; {{row.info.type}}</span>
+                    </small>
+                  </p>
+                  <p>
+                    <small>
+                      <span class="fw-semi-bold">Dimensions:</span>
+                      <span class="text-muted">&nbsp; {{row.info.dimensions}}</span>
+                    </small>
+                  </p>
+                </td>
+                <td class="text-semi-muted">
+                  {{parseDate(row.date)}}
+                </td>
+                <td class="text-semi-muted">
+                  {{row.size}}
+                </td>
+                <td class="width-150">
+                  <b-progress
                       :variant="row.progress.colorClass" :value="row.progress.percent" :max="100"
                       class="progress-sm mb-xs"
-                    />
-                  </td>
-                </tr>
+                  />
+                </td>
+              </tr>
               </tbody>
             </table>
           </div>
@@ -522,6 +522,9 @@ export default {
       checkboxes3: [false, false, false, false, false, false],
     };
   },
+  /**
+   *
+   */
   methods: {
     parseDate(date) {
       const dateSet = date.toDateString().split(' ');

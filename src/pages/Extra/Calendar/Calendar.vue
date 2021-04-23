@@ -57,7 +57,7 @@
                   <i class="fa fa-angle-right"></i>
                 </b-button>
               </b-button-group>
-              <b-button variant="default" @click="today">
+              <b-button class="mt-2" variant="default" @click="today">
                 Today
               </b-button>
             </b-col>

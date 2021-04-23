@@ -7,7 +7,7 @@
         <Widget>
           <div class="widget-top-overflow text-white">
             <div class="height-250 overflow-hidden">
-              <img class="img-fluid" src="../../assets/pictures/19.jpg" alt="..." />
+              <img class="img-fluid" src="../../assets/pictures/19.jpg" alt="picture" />
             </div>
             <a href="#" class="btn btn-outline btn-sm mb-2">
               <i class="fa fa-twitter mr-2" />
@@ -19,7 +19,7 @@
               <div class="profileContactContainer">
                 <span class="thumb-xl mb-3">
                   <img class="profileAvatar rounded-circle"
-                    src="../../assets/people/a5.jpg" alt="..." />
+                    src="../../assets/people/a5.jpg" alt="man" />
                 </span>
                 <h5 class="fw-normal">Adam <span class="fw-semi-bold">Johns</span></h5>
                 <p>UI/UX designer</p>
@@ -81,7 +81,7 @@
           <section class="event">
             <header>
               <span class="eventAvatar">
-                <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
+                <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="man" />
               </span>
               <h5 class="eventTitle">
                 <a href="#">Bob Nilson</a> <small><a href="#">@nils</a></small>
@@ -125,22 +125,22 @@
 
                 <span class="thumb thumb-sm pull-right">
                   <a href="#">
-                    <img class="rounded-circle" alt="..." src="../../assets/people/a1.jpg" />
+                    <img class="rounded-circle" alt="woman" src="../../assets/people/a1.jpg" />
                   </a>
                 </span>
                 <span class="thumb thumb-sm pull-right">
                   <a href="#"><img class="rounded-circle"
-                    alt="..." src="../../assets/people/a5.jpg" /></a>
+                    alt="man" src="../../assets/people/a5.jpg" /></a>
                 </span>
                 <span class="thumb thumb-sm pull-right">
                   <a href="#"><img class="rounded-circle"
-                    alt="..." src="../../assets/people/a3.jpg" /></a>
+                    alt="woman" src="../../assets/people/a3.jpg" /></a>
                 </span>
               </div>
               <ul class="post-comments mt-sm">
                 <li>
                   <span class="thumb-xs avatar pull-left mr-sm">
-                    <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="..." />
+                    <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="woman" />
                   </span>
                   <div class="comment-body">
                     <h6 class="author fs-sm fw-semi-bold">
@@ -151,7 +151,7 @@
                 </li>
                 <li>
                   <span class="thumb-xs avatar pull-left mr-sm">
-                    <img class="rounded-circle" src="../../assets/avatar.png" alt="..." />
+                    <img class="rounded-circle" src="../../assets/avatar.png" alt="avatar-photo" />
                   </span>
                   <div class="comment-body">
                     <b-form-input class="form-control form-control-sm"

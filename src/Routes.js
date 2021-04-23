@@ -109,7 +109,7 @@ export default new Router({
       component: Register,
     },
     {
-      path: '/error',
+      path: '*',
       name: 'Error',
       component: ErrorPage,
     },

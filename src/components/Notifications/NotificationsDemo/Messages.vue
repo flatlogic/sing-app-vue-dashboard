@@ -2,7 +2,7 @@
   <b-list-group class="listGroup thin-scroll">
     <b-list-group-item class="listGroupItem bg-warning-light">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="people" />
         <i class="status status-bottom bg-success" />
       </span>
       <time class="text-link help float-right">10 sec ago</time>
@@ -11,7 +11,7 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="people" />
         <i class="status status-bottom bg-success" />
       </span>
       <time class="text-link help float-right">2 min ago</time>
@@ -22,7 +22,7 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="people" />
         <i class="status status-bottom bg-warning" />
       </span>
       <time class="text-link help float-right">9 min ago</time>
@@ -31,7 +31,7 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="people" />
         <i class="status status-bottom bg-danger" />
       </span>
       <time class="text-link help float-right">12:56 AM</time>
@@ -40,7 +40,7 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a4.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a4.jpg" alt="people" />
         <i class="status status-bottom bg-gray-light" />
       </span>
       <time class="text-link help float-right">Yesterday</time>
@@ -51,7 +51,7 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="people" />
         <i class="status status-bottom bg-success" />
       </span>
       <time class="text-link help float-right">Apr 23</time>

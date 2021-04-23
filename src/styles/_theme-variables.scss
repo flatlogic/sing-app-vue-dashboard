@@ -25,7 +25,8 @@
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
     --widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
 
-    &.sidebar-white {
+    &.sidebar-white,
+    &.sidebar-transparent {
       --sidebar-bg-color: #ffffff;
       --sidebar-color: #6c757d;
       --sidebar-action-bg: #f9fafe;
@@ -98,7 +99,7 @@
     &.sidebar-third,
     &.sidebar-fourth,
     &.sidebar-fifth,
-    &.sidebar-seventh
+    &.sidebar-seventh,
     &.sidebar-transparent {
       --sidebar-nav-title-color: rgba(82,135,185, 0.6);
     }
@@ -111,8 +112,7 @@
     &.sidebar-transparent {
       --sidebar-bg-color: transparent;
       --sidebar-action-bg: transparent;
-      --logo-color: var(--sidebar-color);
-      --sidebar-icon-active: white;
+      --sidebar-color: #6c757d;
     }
   }
 }

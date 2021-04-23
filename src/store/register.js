@@ -33,7 +33,7 @@ export default {
         dispatch('requestRegister');
         const creds = payload.creds;
         if (creds.email.length > 0 && creds.password.length > 0) {
-          axios.post("/user/signup", creds).then(() => {
+          axios.post("/auth/signup", creds).then(() => {
             dispatch('receiveRegister');
             payload.$toasted.success("You've been registered successfully");
             router.push('/login');

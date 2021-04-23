@@ -19,6 +19,11 @@
             </b-button>
           </router-link>
         </b-form>
+        <router-link class="mt-3 d-block" to="/">
+          <button class="btn btn-primary" type="button">
+            To main page
+          </button>
+        </router-link>
       </div>
       <footer class="pageFooter">
         2019 &copy; Sing App Vue Admin Dashboard Template.

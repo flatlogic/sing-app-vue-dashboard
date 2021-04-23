@@ -1,5 +1,37 @@
 # Changelog
 
+## [v5.5.3] - 16/04/2021
+
+### Updated
+### Update dependencies
+  
+    @amcharts/amcharts4: 1.6.0 -> 4.10.17
+    @ckeditor/ckeditor5-vue: 1.0.2 -> 1.0.3
+    apexcharts: 3.24.0 -> 3.26.0
+    chroma-js: 2.1.0 -> 2.1.1
+    vue-apexcharts: 1.6.0 -> 1.6.1
+    vue-tour: 1.5.0 -> 1.6.0
+
+### Fixed
+- Fix transparent sidebar
+
+## [v5.5.2]  - 12/04/2021
+
+### Updated
+- Update for work with a new backend;
+- Update support links;
+
+### Fixed
+- Fix links in a documentation;
+- Fix footer in a login/register page
+
+## [v5.5.1]
+
+- Fix icons animation
+- Fix images naming
+- Fix calendar buttons
+- Fix 404 page
+
 ## [v5.5.0]
 
 - Updated documentation
