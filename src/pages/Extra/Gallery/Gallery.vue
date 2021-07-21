@@ -27,9 +27,9 @@
     <gallery :images="images.map(img => img.src)" :index="index" @close="index = null" />
     <transition-group name="flip-list" class="gallery" tag="ul">
       <li
-        v-for="(image, imageIndex) in getImages()"
+        v-for="(image) in getImages()"
         :key="image.id"
-        @click="index = imageIndex"
+        @click="index = image.id"
         class="picture card"
       >
         <div class="img-wrapper">
