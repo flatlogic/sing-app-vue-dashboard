@@ -24,12 +24,12 @@
         ><i class="fa fa-sort-numeric-desc"></i></b-button>
       </b-button-group>
     </div>
-    <gallery :images="images.map(img => img.src)" :index="index" @close="index = null" />
+    <gallery :images="getImages().map(img => img.src)" :index="index" @close="index = null" />
     <transition-group name="flip-list" class="gallery" tag="ul">
       <li
-        v-for="(image) in getImages()"
+        v-for="(image, imageIndex) in getImages()"
         :key="image.id"
-        @click="index = image.id"
+        @click="index = imageIndex"
         class="picture card"
       >
         <div class="img-wrapper">
