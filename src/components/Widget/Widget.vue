@@ -1,7 +1,7 @@
 <template>
   <section :class="{
     widget: true,
-    className,
+    [className]: className,
     collapsed: state === 'collapse',
     fullscreened: state === 'fullscreen',
     loading: fetchingData
