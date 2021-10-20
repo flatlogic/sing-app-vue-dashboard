@@ -61,6 +61,13 @@
   }
 }
 
+.generator-link {
+  display: block;
+  color: var(--sidebar-color-item)!important;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px!important;
+}
 
 .sidebarClose .logo {
   width: $sidebar-width-closed;
