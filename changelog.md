@@ -1,5 +1,10 @@
 # Changelog
 
+## [v5.5.4] - 22/10/2021
+
+### Updated
+### Add link to generator in sidebar
+
 ## [v5.5.3] - 16/04/2021
 
 ### Updated
