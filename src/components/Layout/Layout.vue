@@ -26,9 +26,9 @@
         >
           <div slot="actions" class="d-flex">
             <b-button v-if="tour.currentStep !== tour.steps.length - 1" @click="tour.stop" variant="outline-secondary" size="xs">Stop</b-button>
-            <div class="ml-auto">
+            <div class="ms-auto">
               <b-button v-if="tour.currentStep !== 0 && tour.currentStep !== tour.steps.length - 1"
-                        @click="tour.currentStep !== 4 ? tour.previousStep() : tourBackOutFromThemeCustomizer(tour)" variant="outline-secondary" size="xs" class="mr-2"
+                        @click="tour.currentStep !== 4 ? tour.previousStep() : tourBackOutFromThemeCustomizer(tour)" variant="outline-secondary" size="xs" class="me-2"
               >Back</b-button>
               <b-button v-if="tour.currentStep !== tour.steps.length - 1"
                         @click="tour.currentStep !== 3 ? tour.nextStep() : tourContinueWithinThemeCustomizer(tour)"
