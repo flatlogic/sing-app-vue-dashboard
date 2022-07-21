@@ -8,7 +8,7 @@
     <div class="image-wrapper" :class="{stroke: stroke}" :style="{
       fontSize: size / 3 + 'px'
     }">
-      <img v-if="user.avatar" :src="user.avatar">
+      <img v-if="user.avatar" :src="user.avatar" alt="avatar">
       <span v-else>{{initials}}</span>
     </div>
 
