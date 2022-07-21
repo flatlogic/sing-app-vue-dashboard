@@ -8,16 +8,15 @@
         </div>
         <section class="widget theme-helper-content">
             <div class="widget-body mt-3">
-                <h3 class="mb-3">Theme</h3>
                 <div class="theme-settings">
                     <h5 style="position: static" id="v-step-4">Navbar Type</h5>
-                    <div class="form-group row">
-                      <div class="abc-radio">
+                    <div class="row my-2">
+                      <div class="abc-radio col-auto">
                         <input type="radio" name="navbar-type" :value="navbarTypes.STATIC" id="navbar_static"
                                :checked="navbarType === navbarTypes.STATIC" @change="updateLayoutComponentType({component: layoutComponents.NAVBAR, type: navbarTypes.STATIC})">
                         <label for="navbar_static">Static</label>
                       </div>
-                      <div class="abc-radio">
+                      <div class="abc-radio col-auto">
                         <input type="radio" name="navbar-type" :value="navbarTypes.FLOATING" id="navbar_floating"
                                :checked="navbarType === navbarTypes.FLOATING" @change="updateLayoutComponentType({component: layoutComponents.NAVBAR, type: navbarTypes.FLOATING})">
                         <label for="navbar_floating">Floating</label>
@@ -32,14 +31,14 @@
                     ></colorpicker>
 
                     <h5 id="v-step-6">Sidebar Type</h5>
-                    <div class="form-group row">
-                      <div class="abc-radio">
+                    <div class="row">
+                      <div class="abc-radio col-auto">
                         <input type="radio" name="sidebar-type" :value="sidebarTypes.TRANSPARENT" id="sidebar_transparent"
                                :checked="sidebarType === sidebarTypes.TRANSPARENT"
                                @change="updateLayoutComponentType({component: layoutComponents.SIDEBAR, type: sidebarTypes.TRANSPARENT})">
                         <label for="sidebar_transparent">Transparent</label>
                       </div>
-                      <div class="abc-radio">
+                      <div class="abc-radio col-auto">
                         <input type="radio" name="sidebar-type" :value="sidebarTypes.SOLID" id="sidebar_solid"
                                :checked="sidebarType === sidebarTypes.SOLID"
                                @change="updateLayoutComponentType({component: layoutComponents.SIDEBAR, type: sidebarTypes.SOLID})">
@@ -54,7 +53,7 @@
                         @change="updateLayoutComponentColor({component: layoutComponents.SIDEBAR, color: $event})"
                     ></colorpicker>
                 </div>
-                <div class="mt-4">
+                <div class="mt-4 d-grid">
                     <a href="https://flatlogic.com/templates/sing-app-vue"
                     id="v-step-8"
                     target="_blank"
@@ -65,23 +64,23 @@
                     <a href="http://demo.flatlogic.com/sing-app-vue/#/documentation/"
                     target="_blank"
                     role="button"
-                    class="btn btn-primary btn-rounded-f btn-block fs-mini">
+                    class="btn btn-primary btn-rounded-f btn-block fs-mini mt-4">
                         Documentation
                     </a>
                 </div>
-                <div class="d-flex justify-content-between mt-lg">
+                <div class="d-flex justify-content-between mt-lg-1">
                     <a role="button"
                     target="_blank"
                     href="https://flatlogic.com/forum"
                     class="btn btn-outline-default btn-rounded-f fs-mini text-muted d-flex align-items-center">
-                        <i class="glyphicon glyphicon-headphones mr-xs"></i>
+                        <i class="glyphicon glyphicon-headphones mb-1 me-1"></i>
                         Support
                     </a>
                     <a role="button"
                     target="_blank"
                     href="https://github.com/flatlogic/sing-app-vue-dashboard"
                     class="btn btn-outline-default btn-rounded-f fs-mini text-muted d-flex align-items-center">
-                        <i class="fa fa-github mr-xs"></i>
+                        <i class="fa fa-github me-1"></i>
                         Github
                     </a>
                 </div>
@@ -92,11 +91,11 @@
                     <div class="d-flexjustify-content-center text-light mt-2">
                         <a target="_blank"
                         href="https://twitter.com/intent/tweet?text=Admin%20dashboard%20template%20built%20with%20NodeJS,%20React%20and%20Bootstrap%204!&url=https://demo.flatlogic.com/sing-app/html-bs4/&via=flatlogic">
-                            <i class="fa fa-twitter pr-1"></i>
+                            <i class="fa fa-twitter pe-1"></i>
                         </a>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=https://demo.flatlogic.com/sing-app/html-bs4/"
                         target="_blank">
-                            <i class="fa fa-facebook pl-1"></i>
+                            <i class="fa fa-facebook ps-1"></i>
                         </a>
                     </div>
                 </div>
