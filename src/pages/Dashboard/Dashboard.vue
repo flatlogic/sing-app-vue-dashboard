@@ -1,25 +1,31 @@
 <template>
   <div class="dashboard-page">
-    <h1 class="page-title">Analytics <small>Company Performance</small></h1>
+    <h1 class="page-title">Analytics</h1>
     <div class="sidesWrapper">
       <div class="analyticsSide">
         <b-row>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Visits Today" close :fetchingData="isReceiving">
-                <div class="d-flex justify-content-between align-items-center mb-lg">
+              <Widget
+                  class="h-100 mb-0"
+                  body-class="mt-lg"
+                  title="Visits Today"
+                  close
+                  :fetchingData="isReceiving"
+              >
+                <div class="d-flex justify-content-between align-items-center mb h3">
                   <h2>{{visits.count}}</h2>
-                  <i class="la la-arrow-right text-primary la-lg rotate-315" />
+                  <i class="la la-arrow-right text-success rotate-315" />
                 </div>
                 <div class="d-flex flex-wrap justify-content-between">
-                  <div class="mt">
-                    <h6>+{{visits.logins}}</h6><p class="text-muted mb-0 mr"><small>Logins</small></p>
+                  <div class="mt-3">
+                    <h6>+{{visits.logins}}</h6><p class="text-muted mb-0 me-1"><small>Logins</small></p>
                   </div>
-                  <div class="mt">
+                  <div class="mt-3">
                     <h6>{{visits.sign_out_pct}}%</h6><p class="text-muted mb-0"><small>Sign Out</small></p>
                   </div>
-                  <div class="mt">
-                    <h6>{{visits.rate_pct}}%</h6><p class="text-muted mb-0 mr"><small>Rate</small></p>
+                  <div class="mt-3">
+                    <h6>{{visits.rate_pct}}%</h6><p class="text-muted mb-0 me-1"><small>Rate</small></p>
                   </div>
                 </div>
               </Widget>
@@ -27,7 +33,12 @@
           </b-col>
           <b-col lg="3" sm="6" xs="12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Revenue Breakdown" close :fetchingData="isReceiving">
+              <Widget
+                  class="h-100 mb-0"
+                  title="Revenue Breakdown"
+                  close
+                  :fetchingData="isReceiving"
+              >
                 <highcharts :options="donut"></highcharts>
               </Widget>
             </div>
@@ -37,13 +48,13 @@
               <Widget class="h-100 mb-0" title="App Perfomance" close :fetchingData="isReceiving">
                 <p class="text-muted d-flex flex-wrap">
                   <small class="mr-lg d-flex align-items-center">
-                    <span class="circle bg-danger text-danger mr-xs" style="font-size: 4px;">
+                    <span class="circle bg-danger text-danger me-sm-1" style="font-size: 4px;">
                       .
                     </span>
                     This Period
                   </small>
                   <small class="mr-lg d-flex align-items-center">
-                    <span class="circle bg-primary text-primary mr-xs" style="font-size: 4px;">
+                    <span class="circle bg-primary text-primary me-sm-1" style="font-size: 4px;">
                       .
                     </span>
                     Last Period
@@ -148,13 +159,21 @@
                       <td>{{row.date}}</td>
                       <td>{{row.city}}</td>
                       <td>
-                        <b-badge
-                          :variant="row.status === 'Pending'
+<!--                        <b-badge-->
+<!--                          :variant="row.status === 'Pending'-->
+<!--                            ? 'success'-->
+<!--                            : row.status === 'Declined' ? 'danger' : 'info'"-->
+<!--                          class="m-1 mx-3">-->
+<!--                          {{row.status}}-->
+<!--                        </b-badge>-->
+                        <b-button
+                            :variant="row.status === 'Pending'
                             ? 'success'
                             : row.status === 'Declined' ? 'danger' : 'info'"
-                          class="m-1 mx-3">
+                            class="m-1 text-white"
+                        >
                           {{row.status}}
-                        </b-badge>
+                        </b-button>
                       </td>
                     </tr>
                   </tbody>
@@ -180,7 +199,7 @@
               bodyClass="notifications w-100 mt-lg"
               :title="`
                 <h4>Notifications
-                  <span class='badge badge-pill badge-primary fw-normal pull-right mt-xs'>
+                  <span class='badge rounded-pill bg-primary fw-normal pull-right mt-xs'>
                     ${mock.notifications.length}
                   </span>
                 </h4>
@@ -189,7 +208,7 @@
             >
               <div v-for="notification in mock.notifications"
                 class="d-flex align-items-start" :key="notification.id">
-                <i :class="`la la-${notification.icon} mr text-primary`" />
+                <i :class="`la la-${notification.icon} mr text-${notification.color}`" />
                 <p
                   :class="{ 'mb-0': notification.id === mock.notifications.length - 1 }"
                   v-html="notification.content"
@@ -296,7 +315,7 @@ export default {
       'isReceiving',
     ]),
     donut() {
-      let {danger, info, primary} = this.appConfig.colors;
+      let {danger, warning, primary} = this.appConfig.colors;
       let series = [
         {
           name: 'Revenue',
@@ -335,7 +354,7 @@ export default {
             }
           }
         },
-        colors: [danger, info, primary],
+        colors: [danger, warning, primary],
         legend: {
           align: 'right',
           verticalAlign: 'middle',

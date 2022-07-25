@@ -96,7 +96,7 @@ export default {
           {
             name: 'Light Blue',
             data: data[0],
-            color: this.appConfig.colors.info,
+            color: this.appConfig.colors.primary,
             type: 'areaspline',
             fillOpacity: 0.3,
             lineWidth: 0
@@ -105,13 +105,13 @@ export default {
             type: 'spline',
             name: 'RNS App',
             data: data[1],
-            color: this.appConfig.colors.info
+            color: this.appConfig.colors.warning
           },
           {
             type: 'spline',
             name: 'Sing App',
             data: data[2],
-            color: this.appConfig.colors.danger
+            color: this.appConfig.colors.primary
           }
         ]
       }

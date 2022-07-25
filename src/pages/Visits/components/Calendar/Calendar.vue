@@ -17,8 +17,13 @@
 
 <script>
 
+import config from "../../../../config";
+
 export default {
   name: 'Calendar',
+  components: {
+    config
+  },
   data() {
     return {
       attrs: []
@@ -31,7 +36,11 @@ export default {
     this.attrs = [
       {
         key: 1,
-        dot: 'blue',
+        dot: {
+          style: {
+            backgroundColor: config.app.colors.primary
+          }
+        },
         dates: new Date(year, month, 2),
         popover: {
           title: 'The flower bed',
@@ -41,7 +50,11 @@ export default {
       },
       {
         key: 2,
-        dot: 'orange',
+        dot: {
+          style: {
+            backgroundColor: config.app.colors.info
+          }
+        },
         dates: new Date(year, month, 5),
         popover: {
           title: 'Stop world water pollution',
@@ -51,7 +64,11 @@ export default {
       },
       {
         key: 3,
-        dot: 'green',
+        dot: {
+          style: {
+            backgroundColor: config.app.colors.warning
+          }
+        },
         dates: new Date(year, month, 18),
         popover: {
           title: 'Light Blue 2.2 release',
@@ -61,7 +78,11 @@ export default {
       },
       {
         key: 4,
-        dot: 'red',
+        dot: {
+          style: {
+            backgroundColor: config.app.colors.danger
+          }
+        },
         dates: new Date(year, month, 29),
         popover: {
           link: 'A link',

@@ -5,7 +5,7 @@
     :title="`
       <div>
         <h4>Today&apos;s Tasks
-          <span class='badge badge-pill badge-primary fw-normal pull-right mt-xs'>
+          <span class='badge rounded-pill bg-primary fw-normal pull-right mt-xs fs-6'>
             ${tasks.length}
           </span>
         </h4>
@@ -22,7 +22,7 @@
       :toggle="toggleTaskState"
       :key="task.id"
     />
-    <b-button variant="transparent" class="bg-white w-100 text-center text-muted">
+    <b-button variant="transparent" class="bg-white w-100 text-center text-primary">
       See All <i class="la la-arrow-down" />
     </b-button>
   </Widget>
