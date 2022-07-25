@@ -21,6 +21,7 @@
             link="/app/main"
             iconName="flaticon-home"
             index="main"
+            icon-img="sidebar/Outline/Home.svg"
             :childrenLinks="[
           { header: 'Analytics', link: '/app/main/analytics' },
           { header: 'Visits', link: '/app/main/visits' },
@@ -32,6 +33,7 @@
             header="Chat"
             link="/app/chat"
             iconName="flaticon-message-circle"
+            icon-img="sidebar/Outline/Chat.svg"
             index="chat"
             label="awesome"
             labelColor="info"
@@ -42,6 +44,7 @@
             header="E-commerce"
             link="/app/ecommerce"
             iconName="flaticon-shopping-bag"
+            icon-img="sidebar/Outline/Bank.svg"
             index="ecommerce"
             :childrenLinks="[
           { header: 'Product Management', link: '/app/ecommerce/management' },
@@ -54,6 +57,7 @@
           header="Sing Package"
           link="/app/package"
           iconName="flaticon-layers-2"
+          icon-img="sidebar/Outline/Stack.svg"
           index="package"
           isHeader
         />
@@ -62,6 +66,7 @@
           header="Profile"
           link="/app/profile"
           iconName="flaticon-person"
+          icon-img="sidebar/Outline/User.svg"
           index="profile"
           isHeader
         />
@@ -70,6 +75,7 @@
           header="Email"
           link="/app/email"
           iconName="flaticon-email"
+          icon-img="sidebar/Outline/Menu.svg"
           index="email"
           badge="9"
           isHeader
@@ -79,6 +85,7 @@
           header="Documentation"
           link="/documentation"
           iconName="flaticon-documentation"
+          icon-img="sidebar/Outline/Document.svg"
           index="documentation"
           label="new"
           labelColor="success"
@@ -90,6 +97,7 @@
             header="Core"
             link="/app/core"
             iconName="flaticon-core"
+            icon-img="sidebar/Outline/Envelope.svg"
             index="core"
             :childrenLinks="[
           { header: 'Typography', link: '/app/core/typography' },
@@ -102,6 +110,7 @@
             header="UI Elements"
             link="/app/ui"
             iconName="flaticon-ui"
+            icon-img="sidebar/Outline/Image.svg"
             index="ui"
             :childrenLinks="[
           { header: 'Alerts', link: '/app/ui/alerts' },
@@ -127,6 +136,7 @@
             header="Forms"
             link="/app/forms"
             iconName="flaticon-forms"
+            icon-img="sidebar/Outline/Columns.svg"
             index="forms"
             :childrenLinks="[
           { header: 'Form Elements', link: '/app/forms/elements' },
@@ -139,6 +149,7 @@
             header="Charts"
             link="/app/charts"
             iconName="flaticon-charts"
+            icon-img="sidebar/Outline/Chart-pie-alt.svg"
             index="charts"
             :childrenLinks="[
           { header: 'Charts Overview', link: '/app/charts/overview' },
@@ -152,6 +163,7 @@
             header="Grid"
             link="/app/grid"
             iconName="flaticon-grid"
+            icon-img="sidebar/Outline/Layout.svg"
             index="grid"
             isHeader
         />
@@ -160,6 +172,7 @@
             header="Tables"
             link="/app/tables"
             iconName="flaticon-equal-1"
+            icon-img="sidebar/Outline/Rows.svg"
             index="tables"
             :childrenLinks="[
           { header: 'Tables Basic', link: '/app/tables/basic' },
@@ -171,6 +184,7 @@
             header="Maps"
             link="/app/maps"
             iconName="flaticon-pin-1"
+            icon-img="sidebar/Outline/Location.svg"
             index="maps"
             :childrenLinks="[
           { header: 'Google Maps', link: '/app/maps/google' },
@@ -182,6 +196,7 @@
             header="Extra"
             link="/app/extra"
             iconName="flaticon-extra"
+            icon-img="sidebar/Outline/Fire.svg"
             index="extra"
             :childrenLinks="[
           { header: 'Calendar', link: '/app/extra/calendar' },
@@ -198,6 +213,7 @@
             header="Menu Levels"
             link="/app/menu"
             iconName="flaticon-list-2"
+            icon-img="sidebar/Outline/Menu.svg"
             index="menu"
             :childrenLinks="[
           {
