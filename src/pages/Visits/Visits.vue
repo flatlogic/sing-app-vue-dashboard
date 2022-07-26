@@ -25,8 +25,8 @@
           <div class="row progress-stats">
             <div class="col-md-9 col-12">
               <h6 class="name">Foreign Visits</h6>
-              <p class="description deemphasize mb-xs">Some Cool Text</p>
-              <b-progress variant="primary" :value="60" :max="100" class="bg-white progress-xs" />
+              <p class="description deemphasize mb-sm-2">Some Cool Text</p>
+              <b-progress variant="default" :value="60" :max="100" class="bg-white progress-xs mb-4" />
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-body-light">
@@ -34,11 +34,12 @@
               </span>
             </div>
           </div>
+
           <div class="row progress-stats">
             <div class="col-md-9 col-12">
               <h6 class="name">Local Visits</h6>
-              <p class="description deemphasize mb-xs">P. to C. Conversion</p>
-              <b-progress variant="danger" :value="39" :max="100" class="bg-white progress-xs" />
+              <p class="description deemphasize mb-sm-2">P. to C. Conversion</p>
+              <b-progress variant="warning" :value="39" :max="100" class="bg-white progress-xs mb-4" />
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-body-light">
@@ -46,11 +47,12 @@
               </span>
             </div>
           </div>
+
           <div class="row progress-stats">
             <div class="col-md-9 col-12">
               <h6 class="name">Sound Frequencies</h6>
-              <p class="description deemphasize mb-xs">Average Bitrate</p>
-              <b-progress variant="success" :value="80" :max="100" class="bg-white progress-xs" />
+              <p class="description deemphasize mb-sm-2">Average Bitrate</p>
+              <b-progress variant="danger" :value="80" :max="100" class="bg-white progress-xs mb-4" />
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-body-light">
@@ -58,6 +60,7 @@
               </span>
             </div>
           </div>
+
           <h6 class="fw-semi-bold mt">Map Distributions</h6>
           <p>Tracking: <strong>Active</strong></p>
           <p>
@@ -66,11 +69,9 @@
           </p>
           <b-input-group class="mt">
             <b-form-input />
-            <b-input-group-append>
-              <b-btn variant="default">
-                <i class="fa fa-search text-gray" />
-              </b-btn>
-            </b-input-group-append>
+            <button type="submit" class="btn btn-gray-default">
+                <i class="fa fa-search text-white" />
+            </button>
           </b-input-group>
         </Widget>
       </b-col>
@@ -95,7 +96,7 @@
               <p class="value">3.38%</p>
             </div>
           </div>
-          <b-progress variant="success" :value="60"
+          <b-progress variant="warning" :value="60"
             :max="100" class="bg-gray-lighter progress-xs" />
           <p>
             <small>
@@ -176,55 +177,69 @@
     <b-row>
       <b-col lg="4" xs="12">
         <Widget
-          title="<h6><span class='badge badge-danger'>New</span> Messages</h6>"
+          title="<h6><span class='badge bg-danger text-white fw-semi-bold px-1 py-1'>New</span> Messages</h6>"
           refresh close customHeader
         >
           <div class="widget-body p-0">
             <div class="list-group list-group-lg">
-              <a class="list-group-item" href="#">
-                <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a2.jpg" alt="woman" />
-                  <i class="status status-bottom bg-success" />
-                </span>
-                <div>
-                  <h6 class="m-0">Chris Gray</h6>
-                  <p class="help-block text-ellipsis m-0">
-                    Hey! What&apos;s up? So many times since we
-                  </p>
+              <button class="list-group-item text-start">
+                <div class="d-flex flex-row">
+                  <div>
+                     <span class="thumb-sm float-left me-2">
+                      <img class="rounded-circle" src="../../assets/people/a2.jpg" alt="woman" />
+                      <i class="status status-bottom bg-success" />
+                     </span>
+                  </div>
+                  <div>
+                    <h6 class="m-0">Chris Gray</h6>
+                    <p class="help-block text-ellipsis m-0">Hey! What&apos;s up? So many times since we</p>
+                  </div>
                 </div>
-              </a>
-              <a class="list-group-item" href="#">
-                <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a4.jpg" alt="woman" />
-                  <i class="status status-bottom bg-success" />
-                </span>
-                <div>
-                  <h6 class="m-0">Jamey Brownlow</h6>
-                  <p class="help-block text-ellipsis m-0">
-                    Good news coming tonight. Seems they agreed to proceed
-                  </p>
+              </button>
+              <button class="list-group-item text-start">
+                <div class="d-flex flex-row">
+                  <div>
+                    <span class="thumb-sm float-left me-2">
+                      <img class="rounded-circle" src="../../assets/people/a4.jpg" alt="woman" />
+                      <i class="status status-bottom bg-success" />
+                    </span>
+                  </div>
+                  <div>
+                    <h6 class="m-0">Jamey Brownlow</h6>
+                    <p class="help-block m-0">
+                      Good news coming tonight. Seems they agreed to proceed
+                    </p>
+                  </div>
                 </div>
-              </a>
-              <a class="list-group-item" href="#">
-                <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="woman" />
-                  <i class="status status-bottom bg-primary" />
-                </span>
-                <div>
-                  <h6 class="m-0">Livia Walsh</h6>
-                  <p class="help-block text-ellipsis m-0">Check my latest email plz!</p>
+              </button>
+              <button class="list-group-item text-start">
+                <div class="d-flex flex-row">
+                  <div>
+                    <span class="thumb-sm float-left mr">
+                      <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="woman" />
+                      <i class="status status-bottom bg-warning" />
+                    </span>
+                  </div>
+                  <div>
+                    <h6 class="m-0">Livia Walsh</h6>
+                    <p class="help-block text-ellipsis m-0">Check my latest email plz!</p>
+                  </div>
                 </div>
-              </a>
-              <a class="list-group-item" href="#">
-                <span class="thumb-sm float-left mr">
-                  <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="man" />
-                  <i class="status status-bottom bg-danger" />
-                </span>
-                <div>
-                  <h6 class="m-0">Jaron Fitzroy</h6>
-                  <p class="help-block text-ellipsis m-0">What about summer break?</p>
+              </button>
+              <button class="list-group-item text-start">
+                <div class="d-flex flex-row">
+                  <div>
+                     <span class="thumb-sm float-left mr">
+                      <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="man" />
+                      <i class="status status-bottom bg-danger" />
+                    </span>
+                  </div>
+                  <div>
+                    <h6 class="m-0">Jaron Fitzroy</h6>
+                    <p class="help-block text-ellipsis m-0">What about summer break?</p>
+                  </div>
                 </div>
-              </a>
+              </button>
             </div>
           </div>
           <footer class="bg-body-light mt pb-4">
@@ -244,7 +259,7 @@
               is <span class="fw-semi-bold">96%</span> reached.
             </p>
           </div>
-          <div class="widget-table-overflow">
+          <div class="widget-table-overflow table-row">
             <table class="table table-striped table-sm">
               <thead class="no-bd">
                 <tr>
@@ -301,7 +316,7 @@
             </table>
           </div>
           <div class="widget-body mt-xlg chart-overflow-bottom">
-            <area-chart class="area-chart" height="100px" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}}"  :chart-data="dataCollection"></area-chart>
+            <area-chart class="area-chart" height="100px" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}, responsive: true}"  :chart-data="dataCollection"></area-chart>
           </div>
         </Widget>
       </b-col>
@@ -312,11 +327,11 @@
           <Calendar />
           <div class="list-group fs-mini">
             <a href="#" class="list-group-item text-ellipsis">
-              <span class="badge badge-pill badge-info float-right">6:45</span>
+              <span class="badge bg-pill bg-info float-right">6:45</span>
               Weed out the flower bed
             </a>
             <a href="#" class="list-group-item text-ellipsis">
-              <span class="badge badge-pill badge-success float-right">9:41</span>
+              <span class="badge bg-pill bg-success float-right">9:41</span>
               Stop world water pollution
             </a>
           </div>
@@ -383,7 +398,7 @@ export default {
         datasets: [
           {
             label: 'Data One',
-            backgroundColor: this.appConfig.colors.info,
+            backgroundColor: "rgba(111, 176, 249, 0.5)",
             borderColor: 'transparent',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }, {

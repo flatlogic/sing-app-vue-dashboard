@@ -6,7 +6,7 @@
     <div class="stats">
       <h6 class="mt-1">GEO-LOCATIONS</h6>
       <p class="h3 m-0">
-      <span class="mr-xs fw-normal"><AnimatedNumber value="1656843"
+      <span class="me-sm-1 fw-normal"><AnimatedNumber value="1656843"
                                                     v-bind="animateNumberOptions"></AnimatedNumber></span>
         <i class="fa fa-map-marker"/>
       </p>
@@ -73,10 +73,10 @@ export default {
 
     let polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    polygonTemplate.fill = am4core.color(this.appConfig.colors.info);
+    polygonTemplate.fill = am4core.color(this.appConfig.colors.primary);
     polygonTemplate.fillOpacity = 0.2;
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color(this.appConfig.colors.info);
+    hs.properties.fill = am4core.color("#ACE4F4");
     hs.properties.fillOpacity = 0.5;
 
     let citySeries = map.series.push(new am4maps.MapImageSeries());
@@ -88,7 +88,7 @@ export default {
     city.propertyFields.latitude = "latitude";
     city.propertyFields.longitude = "longitude";
     let circle = city.createChild(am4core.Circle);
-    circle.fill = am4core.color(this.appConfig.colors.info);
+    circle.fill = am4core.color(this.appConfig.colors.primary);
     circle.stroke = am4core.color("#ffffff");
     circle.strokeWidth = 0;
     let circleHoverState = circle.states.create("hover");

@@ -23,3 +23,12 @@
     background-color: $gray-light;
   }
 }
+
+.table-row {
+  :global(.table.table-sm) {
+    td {
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+  }
+}
