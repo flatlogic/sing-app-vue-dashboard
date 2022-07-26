@@ -24,16 +24,16 @@
           settings close customHeader
         >
           <div class="chart-stats">
-            <p class="text-muted fs-mini mt-xs">
+            <p class="text-light fs-mini mt-xs">
               <i class="fa fa-map-marker fa-5x pull-left" />
-              <span class="fw-semi-bold text-gray-dark">Jess:</span>
+              <span class="fw-semi-bold">Jess:</span>
                 Seems like statically it&apos;s getting impossible
                 to achieve any sort of results in nearest future. The
                 only thing we can hope for is pressing one of these two buttons:
               </p>
             <div class="btn-toolbar">
               <b-button variant="success" size="xs">Accept</b-button>
-              <b-button variant="default" size="xs">Reject</b-button>
+              <b-button variant="default" size="xs" class="text-white">Reject</b-button>
             </div>
           </div>
           <div class="chart bg-body-light">
@@ -47,7 +47,7 @@
             <div class='col-12'>
               <h6 class='mb-0'>
                 <span class='fw-semi-bold'>Budget</span>&nbsp;
-                <div class='badge badge-pill badge-danger'>2017</div>
+                <div class='badge rounded-pill bg-danger'>2017</div>
               </h6>
               <span class='text-muted fs-mini'>
                 monthly report will be available in <a href='#'>6 hours</a>
@@ -76,11 +76,11 @@
                   </p>
                 </div>
               </div>
-              <div class="col-md-3 text-right m-t-1">
+              <div class="col-md-3 text-right">
                 <h6 class="text-muted mb-xs">Inqueries</h6>
                 <p class="fw-semi-bold">73 at 14am</p>
               </div>
-              <div class="col-md-4 text-right m-t-1">
+              <div class="col-md-4 text-right">
                 <h6 class="text-muted mb-xs">Last Updated</h6>
                 <p class="fw-semi-bold">23.06.2013</p>
               </div>

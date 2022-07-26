@@ -3,7 +3,7 @@
     <div class="map" ref="map"></div>
     <div class="stats">
       <h6 class="text-gray-dark">YEARLY <span class="fw-semi-bold">DISTRIBUTIONS</span></h6>
-      <span class="pull-left mr-xs">
+      <span class="pull-left me-1">
           <small><span class="circle bg-primary text-white">
             <i class="la la-plus"/></span></small>
         </span>
@@ -12,12 +12,12 @@
       </p>
     </div>
     <b-button-group class="map-controls">
-      <b-button variant="default" @click="changeYear(2014)" :class="{'active': this.activeYear===2014}">2014</b-button>
-      <b-button variant="default" @click="changeYear(2015)" :class="{'active': this.activeYear===2015}">2015</b-button>
-      <b-button variant="default" @click="changeYear(2016)" :class="{'active': this.activeYear===2016}">2016</b-button>
-      <b-button variant="default" @click="changeYear(2017)" :class="{'active': this.activeYear===2017}">2017</b-button>
-      <b-button variant="default" @click="changeYear(2018)" :class="{'active': this.activeYear===2018}">2018</b-button>
-      <b-button variant="default" @click="changeYear(2019)" :class="{'active': this.activeYear===2019}">2019</b-button>
+      <b-button variant="light" @click="changeYear(2014)" :class="{'active': this.activeYear===2014}">2014</b-button>
+      <b-button variant="light" @click="changeYear(2015)" :class="{'active': this.activeYear===2015}">2015</b-button>
+      <b-button variant="light" @click="changeYear(2016)" :class="{'active': this.activeYear===2016}">2016</b-button>
+      <b-button variant="light" @click="changeYear(2017)" :class="{'active': this.activeYear===2017}">2017</b-button>
+      <b-button variant="light" @click="changeYear(2018)" :class="{'active': this.activeYear===2018}">2018</b-button>
+      <b-button variant="light" @click="changeYear(2019)" :class="{'active': this.activeYear===2019}">2019</b-button>
     </b-button-group>
   </div>
 </template>
@@ -49,6 +49,7 @@ export default {
     let map = am4core.create(this.$refs.map, am4maps.MapChart);
     map.geodata = am4geodata_worldLow;
     map.projection = new am4maps.projections.Miller();
+    map.contentHeight = 100;
     map.homeZoomLevel = 6;
     map.homeGeoPoint = {
       longitude: 8.863224,
@@ -86,17 +87,18 @@ export default {
 
     let polygonTemplate = this.polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipHTML = "{tooltip}";
-    polygonTemplate.fill = am4core.color(this.appConfig.colors.info);
-    polygonTemplate.fillOpacity = 0.5;
+    polygonTemplate.fill = am4core.color("#ACE4F4");
+    polygonTemplate.stroke = am4core.color("#f4f4f4");
+    polygonTemplate.strokeWidth = 0.1;
     let hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color(this.appConfig.colors.info);
+    hs.properties.fill = am4core.color("#CCE4F4");
     hs.properties.fillOpacity = 0.5;
 
     this.polygonSeries.heatRules.push({
       "property": "fill",
       "target": polygonTemplate,
-      "min": am4core.color("#cde4f3"),
-      "max": am4core.color(this.appConfig.colors.info)
+      "min": am4core.color("#ACE4F4"),
+      "max": am4core.color("#005792")
     });
 
     this.map = map;

@@ -55,7 +55,7 @@ export default {
       inverse: "#30324C",
       textColor: "#495057",
       gray: "#D7DFE6",
-      default: "#9083F7"
+      default: "#9083F7",
     },
     themeColors: [
       ['default','#002B49'],
@@ -67,6 +67,7 @@ export default {
       ['fifth','#d6dfe6'],
       ['sixth','#13191d'],
       ['seventh','#20ae8c'],
+      ['info', '#10CFD0']
     ],
     chartColors: {
       axisColor: '#8EA1AB'

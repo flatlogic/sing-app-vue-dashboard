@@ -1,13 +1,13 @@
 <template>
   <div class="changes-chart">
-    <div class="chart bg-success btlr btrr">
+    <div class="chart bg-primary btlr btrr">
       <p class="chartValue"><i class="fa fa-caret-up" /> 352.79</p>
       <p class="chartValueChange">+2.04 (1.69%)</p>
       <div ref="rickshawChart"/>
     </div>
     <h4 class="chartTitle"><span class="fw-normal">Salt Lake City</span>, Utah</h4>
     <p class="deemphasize">Today 13:34</p>
-    <div class="mt">
+    <div class="mt-1">
       <b-row>
         <b-col xs='6'>
           <p class="h4 m-0">18.7M</p>
@@ -19,7 +19,7 @@
         </b-col>
       </b-row>
     </div>
-    <div class="mt">
+    <div class="mt-1">
       <b-row>
         <b-col xs='6'>
           <p class="h3 m-0 text-success fw-semi-bold">+120.93</p>
@@ -51,7 +51,7 @@ export default {
     ...mapState('layout', ['sidebarClose', 'sidebarStatic']),
     sparklineOptions() {
       return {
-        colors: [this.appConfig.colors.info],
+        colors: [this.appConfig.colors.primary],
         plotOptions: {
           bar: {
             columnWidth: '50%'
@@ -87,7 +87,7 @@ export default {
         series: [{
           name: 'pop',
           data: seriesData.shift().map(d => ({ x: d.x, y: d.y })),
-          color: this.appConfig.colors.info, // (#64bd63, 0.9)
+          color: this.appConfig.colors.default, // (#64bd63, 0.9)
           renderer: 'bar',
           gapSize: 2,
           min: 'auto',

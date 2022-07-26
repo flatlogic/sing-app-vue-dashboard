@@ -59,7 +59,7 @@ $theme-colors: (
   primary: $blue,
   secondary: $gray-600,
   success: $teal,
-  info: $cyan,
+  info: $purple,
   warning: $yellow,
   danger: $red,
   dark: $gray-800,
@@ -76,7 +76,7 @@ $theme-colors: (
   danger-light: #fff2ef,
 );
 
-$link-color: $cyan;
+$link-color: $blue;
 
 $text-color: #0C2236 !default;
 
@@ -125,8 +125,9 @@ $breadcrumb-padding-y: 0;
 $breadcrumb-bg: transparent;
 
 $widget-bg: #fff;
-$widget-title-color: #444;
+$widget-title-color: $text-color;
 $widget-shadow-designated: -1px 0 8px rgba(0,0,0,.2);
+$widget-border-radius: $border-radius-lg;
 
 $input-btn-line-height: 1.5;
 
@@ -160,7 +161,7 @@ $dropdown-link-color: $text-color;
 // Widgets
 // -------------------------
 $widget-padding-vertical: 15px !default;
-$widget-padding-horizontal: 20px !default;
+$widget-padding-horizontal: 15px !default;
 $widget-bg-color: $white;
 
 //== Navs

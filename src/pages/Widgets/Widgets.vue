@@ -1,46 +1,46 @@
 <template>
   <div class="widgets-page">
     <h1 class="page-title">Widgets
-      <small>Company Performance</small>
+      <small class="fw-semi-bold">Company Performance</small>
     </h1>
     <b-row>
       <b-col lg="3" md="6" xs="12">
         <Widget>
           <div class="clearfix">
-            <b-row class="flex-nowrap">
-              <b-col xs="3">
+            <div class="row flex-nowrap">
+              <div class="col-3">
                 <span class="widget-icon">
                   <i class="fi flaticon-like text-primary" />
                 </span>
-              </b-col>
-              <b-col xs="9">
+              </div>
+              <div class="col-9">
                 <h6 class="m-0">USERS GROWTH</h6>
                 <p class="h2 m-0 fw-normal">4,332</p>
-              </b-col>
-            </b-row>
-            <b-row class="flex-nowrap">
-              <b-col xs="6">
+              </div>
+            </div>
+            <div class="row flex-nowrap">
+              <div class="col-6">
                 <h6 class="m-0">Registrations</h6>
                 <p class="value5">+830</p>
-              </b-col>
-              <b-col xs="6">
+              </div>
+              <div class="col-6">
                 <h6 class="m-0">Bounce Rate</h6>
                 <p class="value5">4.5%</p>
-              </b-col>
-            </b-row>
+              </div>
+            </div>
           </div>
         </Widget>
       </b-col>
       <b-col lg="3" md="6" xs="12">
         <Widget>
           <div class="clearfix">
-            <b-row class="flex-nowrap">
-              <b-col xs="3">
+            <div class="row flex-nowrap">
+              <div class="col-3">
                 <span class="widget-icon">
                   <i class="fi flaticon-magic-wand text-danger" />
                 </span>
-              </b-col>
-              <b-col xs="9">
+              </div>
+              <div class="col-9">
                 <div class="overflow-hidden">
                   <transition name="carousel" mode="out-in">
                     <div v-if="carouselFirstGroup" key="first">
@@ -53,10 +53,10 @@
                     </div>
                   </transition>
                 </div>
-              </b-col>
-            </b-row>
-            <b-row class="flex-nowrap">
-              <b-col xs="6">
+              </div>
+            </div>
+            <div class="row flex-nowrap">
+              <div class="col-6">
                 <h6 class="m-0">New Visitors</h6>
                 <div class="overflow-hidden">
                   <transition name="carousel" mode="out-in">
@@ -65,8 +65,8 @@
                       </p>
                   </transition>
                 </div>
-              </b-col>
-              <b-col xs="6">
+              </div>
+              <div class="col-6">
                 <h6 class="m-0">Bounce Rate</h6>
                 <div class="overflow-hidden">
                   <transition name="carousel" mode="out-in">
@@ -75,8 +75,8 @@
                     </p>
                   </transition>
                 </div>
-              </b-col>
-            </b-row>
+              </div>
+            </div>
           </div>
         </Widget>
       </b-col>
@@ -85,50 +85,50 @@
           <div class="overflow-hidden">
             <transition name="carousel" mode="out-in">
               <div v-if="carouselFirstGroup" key="first">
-                <b-row class="flex-nowrap">
-                  <b-col xs="3">
+                <div class="row flex-nowrap">
+                  <div class="col-3">
                     <span class="widget-icon">
                       <i class="fi flaticon-notebook-4 text-info"/>
                     </span>
-                  </b-col>
-                  <b-col xs="9">
+                  </div>
+                  <div class="col-9">
                     <h6 class="m-0">ORDERS</h6>
                     <p class="h2 m-0 fw-normal">82,765</p>
-                  </b-col>
-                </b-row>
-                <b-row class="flex-nowrap">
-                  <b-col xs="6">
+                  </div>
+                </div>
+                <div class="row flex-nowrap">
+                  <div class="col-6">
                     <h6 class="m-0">Avg. Time</h6>
                     <p class="value5">2:56</p>
-                  </b-col>
-                  <b-col xs="6">
+                  </div>
+                  <div class="col-6">
                     <h6 class="m-0">Last Week</h6>
                     <p class="value5">374</p>
-                  </b-col>
-                </b-row>
+                  </div>
+                </div>
               </div>
               <div v-else key="second">
-                <b-row class="flex-nowrap">
-                  <b-col xs="3">
+                <div class="row flex-nowrap">
+                  <div class="col-3">
                     <span class="widget-icon">
                       <i class="fi flaticon-shuffle text-info"/>
                     </span>
-                  </b-col>
-                  <b-col xs="9">
+                  </div>
+                  <div class="col-9">
                     <h6 class="m-0">PICKED ORDERS</h6>
                     <p class="h2 m-0 fw-normal">13.8%</p>
-                  </b-col>
-                </b-row>
-                <b-row class="flex-nowrap">
-                  <b-col xs="6">
+                  </div>
+                </div>
+                <div class="row flex-nowrap">
+                  <div class="col-6">
                     <h6 class="m-0">Basic</h6>
                     <p class="value5">3,692</p>
-                  </b-col>
-                  <b-col xs="6">
+                  </div>
+                  <div class="col-6">
                     <h6 class="m-0">Advanced</h6>
                     <p class="value5">1,441</p>
-                  </b-col>
-                </b-row>
+                  </div>
+                </div>
               </div>
             </transition>
           </div>
@@ -137,27 +137,27 @@
       <b-col lg="3" md="6" xs="12">
         <Widget>
           <div class="clearfix">
-            <b-row class="flex-nowrap">
-              <b-col xs="3">
+            <div class="row flex-nowrap">
+              <div class="col-3">
                 <span class="widget-icon">
                   <i class="fi flaticon-diamond text-success" />
                 </span>
-              </b-col>
-              <b-col xs="9">
+              </div>
+              <div class="col-9">
                 <h6 class="m-0">TOTAL PROFIT</h6>
                 <p class="h2 m-0 fw-normal">$7,448</p>
-              </b-col>
-            </b-row>
-            <b-row class="flex-nowrap">
-              <b-col xs="6">
+              </div>
+            </div>
+            <div class="row flex-nowrap">
+              <div class="col-6">
                 <h6 class="m-0">Last Month</h6>
                 <p class="value5">$83,541</p>
-              </b-col>
-              <b-col xs="6">
+              </div>
+              <div class="col-6">
                 <h6 class="m-0">Last Week</h6>
                 <p class="value5">$17,926</p>
-              </b-col>
-            </b-row>
+              </div>
+            </div>
           </div>
         </Widget>
       </b-col>
@@ -171,14 +171,14 @@
               Dashboard
               Template</h3>
             <ul class="tags text-white pull-right">
-              <li><a href="#">features</a></li>
+              <li><span class="badge rounded-pill bg-light text-dark px-3 py-1">features</span></li>
             </ul>
           </div>
           <div class="post-user mt-negative-lg">
-            <span class="thumb-lg pull-left mr mt-n-sm">
+            <span class="thumb-lg pull-left me-2 mt-negative-lg">
               <img class="rounded-circle" src='../../assets/people/a4.jpg' alt="man" />
             </span>
-            <h6 class="m-b-1 fw-normal text-white">Jeremy &nbsp;
+            <h6 class="mb-1 fw-normal text-white">Jeremy &nbsp;
               <small class="text-white text-light">@sing</small>
             </h6>
             <p class="fs-mini text-muted">
@@ -191,18 +191,18 @@
             and listen. Colors, sounds,
             thoughts, ideas.
           </p>
-          <footer class="bg-body-light">
+          <footer class="bg-widget-transparent">
             <ul class="post-links">
-              <li><a href="#">1 hour</a></li>
+              <li><a class="text-primary" href="#">1 hour</a></li>
               <li>
                 <a href="#"><span class="text-danger">
                   <i class="fa fa-heart" /> Like</span>
                 </a></li>
-              <li><a href="#">Comment</a></li>
+              <li><a class="text-primary" href="#">Comment</a></li>
             </ul>
             <ul class="post-comments mb-0 mt-2">
               <li>
-                <span class="thumb-xs avatar pull-left mr-sm">
+                <span class="thumb-xs avatar pull-left me-2">
                   <img class="rounded-circle" src='../../assets/people/a1.jpg' alt="woman" />
                 </span>
                 <div class="comment-body">
@@ -233,8 +233,8 @@
             <div class="widget-top-overflow text-white">
               <img src='../../assets/pictures/17.jpg' alt="clouds" />
               <ul class="tags text-white pull-right">
-                <li><a href="#">design</a></li>
-                <li><a href="#">white</a></li>
+                <li><span class="badge rounded-pill bg-light text-dark px-3 py-1">design</span></li>
+                <li><span class="badge rounded-pill bg-light text-dark px-3 py-1">white</span></li>
               </ul>
             </div>
             <div class="post-user mt-sm">
@@ -257,7 +257,7 @@
               <li><a href="#"><span class="text-danger">
                 <i class="fa fa-heart" /> 427
               </span></a></li>
-              <li><a href="#"><i class="la la-comment" /> 98</a></li>
+              <li><a class="text-primary" href="#"><i class="la la-comment" /> 98</a></li>
             </ul>
           </footer>
         </Widget>
@@ -280,7 +280,7 @@
                 Dashboard
                 Template</h3>
               <ul class="tags text-white pull-right">
-                <li><a href="#">design</a></li>
+                <li><a class="px-3 py-1" href="#">design</a></li>
               </ul>
             </div>
             <p class="text-light fs-mini mt-sm">
@@ -290,7 +290,7 @@
           </div>
           <footer class="bg-body-light">
             <ul class="post-links">
-              <li><a href="#">1 hour</a></li>
+              <li><a class="text-primary" href="#">1 hour</a></li>
               <li>
                 <a href="#">
                   <span class="text-danger">
@@ -298,7 +298,7 @@
                   </span>
                 </a>
               </li>
-              <li><a href="#">Comment</a></li>
+              <li><a class="text-primary" href="#">Comment</a></li>
             </ul>
           </footer>
         </Widget>
@@ -309,11 +309,11 @@
         <Widget bodyClass="mt-0">
           <div class="widget-image text-white">
             <img src='../../assets/pictures/18.jpg' alt="mountains" />
-            <h4 class="title">
+            <h4 class="title text-white">
               <span class="fw-normal">Sunnyvale</span>, CA
             </h4>
             <div class="info text-right">
-              <i class="fa fa-map-marker h1 m-0 mr-xs" />
+              <i class="fa fa-map-marker h1 m-0 me-sm-1" />
               <h6 class="m-0 mt-xs">FLORIDA, USA</h6>
               <p class="fs-sm">9:41 am</p>
             </div>
@@ -518,7 +518,7 @@
         >
           <div class="widget-body">
             <div class="widget-middle-overflow">
-              <ul class="list-group widget-chat-list-group thin-scroll" style="height: 300px;">
+              <ul class="list-group widget-chat-list-group thin-scroll">
                 <li class="list-group-item">
                   <span class="thumb">
                     <img class="rounded-circle" src='../../assets/people/a6.jpg' alt="woman" />
@@ -571,9 +571,7 @@
           <footer class="bg-body-light bt">
             <b-input-group size="sm">
               <b-form-input id="search-field" type="text" placeholder="Your message"></b-form-input>
-              <b-input-group-append>
-                <b-button type="submit" variant="default">Send</b-button>
-              </b-input-group-append>
+              <b-button type="submit" variant="default text-white">Send</b-button>
             </b-input-group>
           </footer>
         </Widget>
@@ -677,7 +675,7 @@
         <transition name="flip" mode="out-in">
           <div v-if="flipFirstGroup" key="first">
             <Widget
-                class="widget-padding-lg widget-md bg-primary text-white"
+                class="widget-padding-lg widget-md bg-inverse text-white text-center"
                 bodyClass="widget-body-container"
             >
               <div class="text-center">
@@ -687,7 +685,7 @@
               <div class="widget-footer-bottom">
                 <div class="mb-sm">Cutting-edge tech and design delivered</div>
                 <p>
-                  <button @mouseover="flipWidget()" class="btn btn-default btn-block">Hover over me!</button>
+                  <button @mouseover="flipWidget()" class="btn btn-default btn-block text-white">Hover over me!</button>
                 </p>
               </div>
             </Widget>
@@ -698,10 +696,10 @@
                 <i class="fa fa-globe text-primary fa-5x"/>
               </div>
               <h3 class="fw-normal">Join The Web Now!</h3>
-              <div class="widget-footer-bottom">
+              <div class="widget-footer-bottom text-center">
                 <div class="mb-sm">Cutting-edge tech and design delivered</div>
                 <p>
-                  <button class="btn btn-gray btn-block">Join now!</button>
+                  <button class="btn btn-gray btn-block text-white">Join now!</button>
                 </p>
               </div>
             </Widget>

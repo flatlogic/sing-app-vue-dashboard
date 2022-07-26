@@ -255,7 +255,7 @@ table > thead > tr > th {
   .author {
     margin-top: 0;
     margin-bottom: 2px;
-    color: $info;
+    color: $blue;
   }
 
   .comment-body {
@@ -270,6 +270,14 @@ table > thead > tr > th {
     margin-left: -$widget-padding-horizontal;
     margin-right: -$widget-padding-horizontal;
   }
+}
+
+.btn-link {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: $link-color;
+  padding: 0;
 }
 
 /////// Check List ///////

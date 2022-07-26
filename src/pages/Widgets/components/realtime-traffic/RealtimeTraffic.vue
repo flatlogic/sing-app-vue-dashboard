@@ -11,10 +11,10 @@
       than last month
     </p>
     <p class="fs-sm mb-0">Remaining hours</p>
-    <a class="btn btn-xs btn-gray pull-right ml-xs" href="#">
+    <a class="btn btn-xs btn-gray-default pull-right ms-sm-1" href="#">
       <i class="fa fa-compress" /> track
     </a>
-    <a class="btn btn-xs btn-gray pull-right" href="#">
+    <a class="btn btn-xs btn-gray-default pull-right ms-sm-1" href="#">
       <i class="fa fa-pause" /> pause
     </a>
     <p class="value4">2h 56m</p>
@@ -55,11 +55,11 @@ export default {
         realtime: true,
         series: [
           {
-            color: this.appConfig.colors.primary,
+            color: "rgba(111, 176, 249, 0.2)",
             data: seriesData[0],
             name: 'Uploads',
           }, {
-            color: this.appConfig.colors.info,
+            color: this.appConfig.colors.primary,
             data: seriesData[1],
             name: 'Downloads',
           },
