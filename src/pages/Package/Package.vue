@@ -6,7 +6,7 @@
     <p class="lead">Over 8,000 developers worldwide chose our bootstrap admin templates to build their
       web applications, SAAS and E-Commerce platforms faster. Jump in to burn through your gig too!</p>
     <b-row>
-      <b-col lg="5" md="6">
+      <b-col sm="12" md="6">
         <Widget
           title="<h6>React JS Version</h6>"
           settings collapse close customHeader
@@ -30,15 +30,17 @@
             decide on development approaches that are the best for your project.
             <a href="https://webpack.js.org/">Webpack</a> Module Bundler and Yarn as a package
             manager are under the hood.</p>
-          <a
-            class="btn btn-default btn-lg btn-block"
-            href="https://demo.flatlogic.com/sing-app-react/#/app/main/analytics"
-          >
-            Go to Demo
-          </a>
+          <div class="d-grid">
+            <a
+                class="btn btn-default btn-lg btn-block"
+                href="https://demo.flatlogic.com/sing-app-react/#/app/main/analytics"
+            >
+              Go to Demo
+            </a>
+          </div>
         </Widget>
       </b-col>
-      <b-col lg="5" md="6" xs="12">
+      <b-col md="6" xs="12">
         <Widget
           title="<h6>Angular Version</h6>"
           settings collapse close customHeader
@@ -61,15 +63,17 @@
             uses <a href="https://webpack.js.org/">Webpack</a> Module Bundler and NPM as a package manager,
             so everything
             works out of the box! <br /><br /></p>
-          <a
-            class="btn btn-default btn-lg btn-block"
-            href="http://demo.flatlogic.com/sing-app/angular/"
-          >
-            Go to Demo
-          </a>
+          <div class="d-grid">
+            <a
+              class="btn btn-default btn-lg btn-block"
+              href="http://demo.flatlogic.com/sing-app/angular/"
+            >
+              Go to Demo
+            </a>
+          </div>
         </Widget>
       </b-col>
-      <b-col lg="5" md="6">
+      <b-col xs="12" md="6">
         <Widget
           title="<h6>AngularJS 1.X Version</h6>"
           settings collapse close customHeader
@@ -94,15 +98,17 @@
             among your top considerations when choosing the right framework.</p>
           <p>Angular version makes it possible by letting responsive, fast-loading and
             seamlessly-navigating application.</p>
-          <a
-            class="btn btn-default btn-lg btn-block"
-            href="http://demo.flatlogic.com/sing-app/angularjs/"
-          >
-            Go to Demo
-          </a>
+          <div class="d-grid">
+            <a
+              class="btn btn-default btn-lg btn-block"
+              href="http://demo.flatlogic.com/sing-app/angularjs/"
+            >
+              Go to Demo
+            </a>
+          </div>
         </Widget>
       </b-col>
-      <b-col lg="5" md="6" xs="12">
+      <b-col md="6" xs="12">
         <Widget
           title="<h6>Pure HTML5 Version</h6>"
           settings collapse close customHeader
@@ -126,15 +132,17 @@
             value of &nbsp;<code>window.PJAX_ENABLED</code> global variable.</p>
           <p>Moreover, this version comes with three different color
             schemes which you can easily switch based on your choice.</p>
-          <a
-            class="btn btn-default btn-lg btn-block"
-            href="http://demo.flatlogic.com/sing-app/html-bs4/"
-          >
-            Go to Demo
-          </a>
+          <div class="d-grid">
+            <a
+              class="btn btn-default btn-lg btn-block"
+              href="http://demo.flatlogic.com/sing-app/html-bs4/"
+            >
+              Go to Demo
+            </a>
+          </div>
         </Widget>
       </b-col>
-      <b-col lg="5" md="6">
+      <b-col sm="12" md="6">
         <Widget
           title="<h6>Vue JS Version</h6>"
           settings collapse close customHeader
@@ -153,7 +161,9 @@
           <p>Creating Vue JS version is a main
             priority of <a href="https://flatlogic.com">Flatlogic</a> for next months,
             so seed version will ready really soon! <br /><br /><br /><br /><br /></p>
-          <a class="btn btn-transparent btn-lg btn-block disabled" href="#">You are here!</a>
+          <div class="d-grid">
+            <a class="btn btn-transparent btn-lg btn-block disabled" href="#">You are here!</a>
+          </div>
         </Widget>
       </b-col>
     </b-row>
