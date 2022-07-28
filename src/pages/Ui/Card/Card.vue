@@ -23,7 +23,7 @@
               interests, attitudes, and opinions of a group or a culture. Lifestyle brands
               seek to inspire, guide, and motivate people, with the goal of their products
               contributing to the definition of the consumer&apos;s way of life.</p>
-            <b-button class="btn-rounded-f mt-lg" variant="danger">Full Article</b-button>
+            <b-button class="btn-rounded-f mt-lg text-white" variant="danger">Full Article</b-button>
         </b-card>
       </b-col>
     </b-row>
@@ -40,7 +40,7 @@
               dimensions in technical and engineering drawings.
           </p>
           <div class="w-100 text-center">
-              <b-button class="btn-rounded-f" variant="primary">Full Article</b-button>
+              <b-button class="btn-rounded-f text-white" variant="primary">Full Article</b-button>
             </div>
         </b-card>
       </b-col>
