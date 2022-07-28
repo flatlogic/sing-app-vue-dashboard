@@ -121,3 +121,5 @@ export default {
   },
 };
 </script>
+
+<style src="./Alerts.scss" lang="scss" />

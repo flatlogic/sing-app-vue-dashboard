@@ -1,0 +1,11 @@
+.alert-dismissible button.close {
+  position: absolute !important;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  border: 0;
+  background-color: transparent;
+}
