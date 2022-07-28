@@ -3,10 +3,10 @@
     <div class="page-top-line">
       <h1 class="page-title">Product - <span class="fw-semi-bold">Management</span></h1>
       <b-alert
-          :variant="'success'"
+          color="warning"
           class='promo-alert'
           :class="{'show-alert': showAlert}"
-          show dismissible
+          show
       >
         This page is only available in <a class="text-white font-weight-bold" rel="noreferrer noopener"
                                           href="https://flatlogic.com/templates/sing-app-vue-node-js"
@@ -15,7 +15,7 @@
     </div>
     <Widget title="List of Products" collapse close :fetchingData="isReceiving">
       <b-button variant="success" @click="createNewProduct()" class="mb-3">Create Product</b-button>
-      <v-client-table :data="products" :columns="columnsDatatable" :options="optionsDatatable">
+      <v-client-table :data="this.products" :columns="columnsDatatable" :options="optionsDatatable">
         <div slot="img" slot-scope="props">
           <img :src="props.row.img" :alt="props.row.title || 'image'" class="image" title="image"/>
         </div>
@@ -36,7 +36,7 @@
             <b-button :id="'popoverDelete_' + props.row.id" variant="danger" size="xs">
               <Loader v-if="isDeleting && idToDelete === props.row.id" :size="14"/>
               <span v-else>
-                <span class="d-none d-md-inline-block">Delete</span>
+                <span class="d-none d-md-inline-block text-white">Delete</span>
                 <span class="d-md-none"><i class='la la-remove'></i></span>
               </span>
             </b-button>
