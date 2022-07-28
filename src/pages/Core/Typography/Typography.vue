@@ -11,7 +11,7 @@
         >
           <h4>Default headings</h4>
           <p>Basic headings for everyday use</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <b-row>
               <b-col sm="6">
                 <h1>h1. Heading</h1>
@@ -33,14 +33,14 @@
           </div>
           <h4 class="mt-5">Customized headings</h4>
           <p>Enhanced with additional text</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <h3>
               Headings <small>And some clarification text</small>
             </h3>
           </div>
           <h4 class="mt-5">Display</h4>
           <p>Headings to stand out</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <h1 class="display-1">Display 1</h1>
             <h1 class="display-2">Display 2</h1>
             <h1 class="display-3">Display 3</h1>
@@ -48,7 +48,7 @@
           </div>
           <h4 class="mt-5">Lead</h4>
           <p>Make a paragraph stand out by adding <code class="highlighter-rouge">.lead</code>.</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <p class="lead">Sing App is admin dashboard template built with Bootstrap</p>
           </div>
         </Widget>
@@ -60,7 +60,7 @@
         >
           <h4>Basic texts</h4>
           <p>Styling for common texts</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <p>You can use the mark tag to <mark>highlight</mark> text.</p>
             <p><del>This line of text is meant to be treated as deleted text.</del></p>
             <p><ins>This line of text is meant to be treated as
@@ -71,7 +71,7 @@
           </div>
           <h4 class="mt-5">Font weights</h4>
           <p>Various font weights supported</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <p>Thin (default) font weight</p>
             <p class="fw-normal">Normal font weight</p>
             <p class="fw-semi-bold">Semi bold to empasize important thing</p>
@@ -79,7 +79,7 @@
           </div>
           <h4 class="mt-5">colors</h4>
           <p>Bootstrap state colors can be applied to texts too</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <p class="text-danger">Some danger text</p>
             <p class="text-warning">Some warning text</p>
             <p class="text-success">Some succes text</p>
@@ -88,7 +88,7 @@
           </div>
           <h4 class="mt-5">Blockquotes</h4>
           <p>Citing someone is really easy</p>
-          <div class="widget-padding-md w-100 h-100 text-left border rounded">
+          <div class="widget-padding-md w-100 h-100 text-start border rounded">
             <blockquote class="blockquote">
               <p>Don&apos;t get set into one form, adapt it and build your own, and let
                   it gb-row, be like water. Empty your mind, be formless, shapeless — like water.

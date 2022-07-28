@@ -129,7 +129,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <th class="text-nowrap" scope="b-row">Max container width</th>
+                  <th class="text-nowrap" scope="row">Max container width</th>
                   <td>None (auto)</td>
                   <td>540px</td>
                   <td>720px</td>
@@ -137,7 +137,7 @@
                   <td>1140px</td>
                 </tr>
                 <tr>
-                  <th class="text-nowrap" scope="b-row">Component property</th>
+                  <th class="text-nowrap" scope="row">Component property</th>
                   <td><code>{{'&lt;b-col xs=""&gt;'}}</code></td>
                   <td><code>{{'&lt;b-col sm=""&gt;'}}</code></td>
                   <td><code>{{'&lt;b-col md=""&gt;'}}</code></td>
@@ -145,19 +145,19 @@
                   <td><code>{{'&lt;b-col xl=""&gt;'}}</code></td>
                 </tr>
                 <tr>
-                  <th class="text-nowrap" scope="b-row"># of columns</th>
+                  <th class="text-nowrap" scope="row"># of columns</th>
                   <td colSpan="5">12</td>
                 </tr>
                 <tr>
-                  <th class="text-nowrap" scope="b-row">Gutter width</th>
+                  <th class="text-nowrap" scope="row">Gutter width</th>
                   <td colSpan="5">30px (15px on each side of a column)</td>
                 </tr>
                 <tr>
-                  <th class="text-nowrap" scope="b-row">Nestable</th>
+                  <th class="text-nowrap" scope="row">Nestable</th>
                   <td colSpan="5">Yes</td>
                 </tr>
                 <tr>
-                  <th class="text-nowrap" scope="b-row">column ordering</th>
+                  <th class="text-nowrap" scope="row">column ordering</th>
                   <td colSpan="5">Yes</td>
                 </tr>
               </tbody>
