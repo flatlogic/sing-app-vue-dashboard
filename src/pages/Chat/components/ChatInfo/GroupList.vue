@@ -11,7 +11,7 @@
       <chat-search class="mb-2"></chat-search>
       <ul class="group-list">
         <li v-for="user of groupUsers" :key="user.id">
-          <avatar class="mr-2" :user="user" :size="40" :showStatus="false"></avatar>
+          <avatar class="me-2" :user="user" :size="40" :showStatus="false"></avatar>
           <div>
             <p class="mb-0">{{user.name}} {{user.surname}}</p>
             <small>
@@ -26,7 +26,7 @@
 
 <script>
   import ChatSearch from '../ChatSearch/ChatSearch';
-  import { ChatMixin } from '../../../../mixins/chat';
+  import { ChatMixin } from '@/mixins/chat';
   import Avatar from '../Avatar/Avatar';
   import OnlineStatus from '../OnlineStatus/OnlineStatus';
   export default {

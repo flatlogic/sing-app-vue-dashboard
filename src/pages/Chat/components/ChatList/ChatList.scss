@@ -80,7 +80,7 @@
     }
 
     &.active {
-      background: lighten($info, 15%);
+      background: lighten($purple, 15%);
     }
 
     &.active {
@@ -106,7 +106,7 @@
     }
 
     &.active .chat-list-item-wrapper {
-      border-top-color: lighten($info, 15%);
+      border-top-color: lighten($purple, 15%);
     }
   }
 }

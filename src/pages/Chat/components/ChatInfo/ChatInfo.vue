@@ -11,7 +11,7 @@
           <h5>{{info.company}}</h5>
           <h6>{{info.position}}</h6>
         </header>
-        <Avatar class="ml-auto mr-3" :user="info" :size="70" :showStatus="false"></Avatar>
+        <Avatar class="ms-auto me-3" :user="info" :size="70" :showStatus="false"></Avatar>
       </div>
       <footer class="d-flex align-items-center justify-content-between">
         <a :href="'mailto:' + info.email" class="text-white mt-2">{{info.email}}</a>
@@ -31,16 +31,14 @@
     <section v-if="info.isGroup" class="chat-info-header chat-section bg-info">
       <div class="d-flex align-items-center mb-3">
         <h4 class="mb-0 fw-semi-bold">{{info.name}}</h4>
-        <ul class="avatars-row ml-auto">
+        <ul class="avatars-row ms-auto">
           <li v-for="user of shortUsersList" :key="user.id">
             <Avatar :showStatus="false" :user="user" :size="35" :stroke="true"></Avatar>
           </li>
         </ul>
       </div>
       <footer class="d-flex align-items-center justify-content-between">
-        <a @click="openedGroupList = true">
-          <h5 class="text-white mb-0">{{info.users.length}} members</h5>
-        </a>
+        <h5 class="text-white mb-0" @click="openedGroupList = true">{{info.users.length}} members</h5>
         <b-button variant="white" class="text-info fw-semi-bold">Add people</b-button>
       </footer>
       <group-list
@@ -54,9 +52,9 @@
       <ul class="chat-info-list">
         <li class="chat-info-item">
           <header class="item-header" v-b-toggle.common-info>
-            <img class="icon" :src="img.information">
+            <img class="icon" :src="img.information" alt="icon">
             <h5 class="title">Information</h5>
-            <i class="la la-angle-up ml-auto"></i>
+            <i class="la la-angle-up ms-auto"></i>
           </header>
           <b-collapse id="common-info" visible role="tabpanel" class="item-body">
             <div v-if="!info.isGroup">
@@ -75,9 +73,9 @@
         </li>
         <li class="chat-info-item">
           <header class="item-header">
-            <img class="icon" :src="img.notifications">
+            <img class="icon" :src="img.notifications" alt="notifications">
             <h5 class="title">Notifications</h5>
-            <label for="checkbox-ios1" class="switch ml-auto mb-0">
+            <label for="checkbox-ios1" class="switch ms-auto mb-0">
               <input type="checkbox" id="checkbox-ios1" :checked="info.notifications"
                  class="ios form-check-input">
               <i></i>
@@ -86,9 +84,9 @@
         </li>
         <li class="chat-info-item">
           <header class="item-header" v-b-toggle.images>
-            <img class="icon" :src="img.images">
+            <img class="icon" :src="img.images" alt="icon">
             <h5 class="title">Images</h5>
-            <i class="la la-angle-up ml-auto"></i>
+            <i class="la la-angle-up ms-auto"></i>
           </header>
           <b-collapse id="images" role="tabpanel" class="item-body">
             <p v-if="!info.images.length" class="text-muted"><i>No images</i></p>
@@ -96,9 +94,9 @@
         </li>
         <li class="chat-info-item">
           <header class="item-header" v-b-toggle.links>
-            <img class="icon" :src="img.links">
+            <img class="icon" :src="img.links" alt="links">
             <h5 class="title">Links</h5>
-            <i class="la la-angle-up ml-auto"></i>
+            <i class="la la-angle-up ms-auto"></i>
           </header>
           <b-collapse id="links" role="tabpanel" class="item-body">
             <p v-if="!info.links.length" class="text-muted"><i>No links</i></p>
@@ -106,15 +104,15 @@
         </li>
         <li class="chat-info-item">
           <header class="item-header" v-b-toggle.files>
-            <img class="icon" :src="img.files">
+            <img class="icon" :src="img.files" alt="files">
             <h5 class="title">Files</h5>
-            <i class="la la-angle-up ml-auto"></i>
+            <i class="la la-angle-up ms-auto"></i>
           </header>
           <b-collapse id="files" visible role="tabpanel" class="item-body">
             <p v-if="!info.files.length" class="text-muted"><i>No links</i></p>
             <ul v-else class="files-list">
               <li class="file-item" v-for="file of info.files" :key="file.id">
-                <img class="download-icon" :src="img.download">
+                <img class="download-icon" :src="img.download" alt="download">
                 <a :href="file.url">{{file.name}}</a>
               </li>
             </ul>
@@ -129,7 +127,7 @@
   import { mapState } from 'vuex';
   import moment from 'moment';
   import Avatar from '../Avatar/Avatar';
-  import { ChatMixin } from '../../../../mixins/chat';
+  import { ChatMixin } from '@/mixins/chat';
 
   import files from '../../../../assets/chat/files.svg';
   import images from '../../../../assets/chat/images.svg';

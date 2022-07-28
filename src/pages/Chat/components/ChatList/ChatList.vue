@@ -55,7 +55,7 @@
 <script>
   import ChatListItem from './ChatListItem';
   import { mapActions, mapState } from 'vuex';
-  import { ChatMixin } from '../../../../mixins/chat';
+  import { ChatMixin } from '@/mixins/chat';
   import ChatSearch from '../ChatSearch/ChatSearch';
 
   export default {
@@ -94,8 +94,8 @@
               lastMessage
             }
           }).sort((a, b) => {
-            var t1 = a.lastMessage.timestamp;
-            var t2 = b.lastMessage.timestamp;
+            let t1 = a.lastMessage.timestamp;
+            let t2 = b.lastMessage.timestamp;
             if (t1 > t2) {
               return -1;
             } else if (t1 < t2) {

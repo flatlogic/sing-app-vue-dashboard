@@ -34,7 +34,7 @@
     <form class="chat-section new-message mb-0 mx-0" @submit="sendMessage($event)">
       <b-button class="attachment" variant="transparent p-0"><i class="la la-plus"></i></b-button>
       <b-input v-model="newMessage" placeholder="Type Your Message"></b-input>
-      <b-button variant="danger" class="px-4 new-message-btn" type="submit">
+      <b-button variant="danger" class="px-4 new-message-btn text-white" type="submit">
         <Loader v-if="sendingMessage"></Loader>
         <span v-else>Send</span>
       </b-button>
@@ -47,7 +47,7 @@
   import moment from 'moment';
   import ChatMessage from './ChatMessage';
   import Loader from '../../../../components/Loader/Loader';
-  import { ChatMixin } from '../../../../mixins/chat';
+  import { ChatMixin } from '@/mixins/chat';
   import OnlineStatus from '../OnlineStatus/OnlineStatus';
 
   export default {

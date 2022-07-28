@@ -1,28 +1,28 @@
 <template>
   <li class="chat-list-item" :class="{active: isActive}">
     <div class="chat-list-item-wrapper">
-      <Avatar v-if="!chat.isGroup" :user="chat.interlocutors[0]" :size="45" class="mr-3"></Avatar>
+      <Avatar v-if="!chat.isGroup" :user="chat.interlocutors[0]" :size="45" class="me-3"></Avatar>
       <ul v-else class="avatars-column">
         <li v-for="user of chatUsers" :key="user.id">
-          <Avatar :showStatus="false" :user="user" :size="35" class="mr-3" :stroke="true"></Avatar>
+          <Avatar :showStatus="false" :user="user" :size="35" class="me-3" :stroke="true"></Avatar>
         </li>
       </ul>
       <section class="chat-item-main">
         <header class="d-flex align-items-center justify-content-between mb-1">
           <h6 class="chat-title">
-            <img class="group-chat-icon mr-1" v-if="chat.isGroup" :src="img.people">
+            <img class="group-chat-icon me-1" alt="people" v-if="chat.isGroup" :src="img.people">
             {{chat.title}}
-            <span v-if="chat.isGroup" class="ml-1">({{chat.interlocutors.length + 1}})</span>
+            <span v-if="chat.isGroup" class="ms-1">({{chat.interlocutors.length + 1}})</span>
           </h6>
-          <span class="ml-auto timestamp">
+          <span class="ms-auto timestamp">
             {{time}}
           </span>
         </header>
         <p class="chat-last-message">
-          <span v-if="chat.lastMessage.owner" class="owner-indicator mr-1">
+          <span v-if="chat.lastMessage.owner" class="owner-indicator me-1">
             You:
           </span>
-          <span v-if="!chat.lastMessage.owner && chat.isGroup" class="owner-indicator mr-1">
+          <span v-if="!chat.lastMessage.owner && chat.isGroup" class="owner-indicator me-1">
             {{findUser(chat.lastMessage.userId).name}}:
           </span>
           {{chat.lastMessage.text || 'Write a first message'}}
@@ -35,7 +35,7 @@
 <script>
   import Avatar from '../Avatar/Avatar';
   import moment from 'moment';
-  import { ChatMixin } from '../../../../mixins/chat';
+  import { ChatMixin } from '@/mixins/chat';
 
   import people from '../../../../assets/chat/people.svg';
 
