@@ -1,12 +1,11 @@
 <template>
   <div class="col-lg-3 col-xl-2 col-xs-12">
-    <b-button
-      variant="info"
-      class="btn-block"
+    <button
+      class="btn btn-primary btn-block text-white"
       @click="compose(true)"
     >
       Compose
-    </b-button>
+    </button>
     <div class="mb mt">
       <b-button
         v-for="button in mainButtons"
@@ -16,7 +15,7 @@
         variant="transparent"
       >
         {{button.title}}
-        <b-badge v-if="button.notifications" :variant="button.lable || 'default'"  pill>
+        <b-badge v-if="button.notifications" :class="`btn-${button.lable ? button.lable : 'primary' }`" class="text-white"  pill>
           {{button.notifications}}
         </b-badge>
       </b-button>
@@ -57,9 +56,9 @@ export default {
         { id: 4, title: 'Trash', filter: 'trash' },
       ],
       quickViewButtons: [
-        { id: 0, title: 'Work', colour: 'danger' },
-        { id: 1, title: 'Private', colour: 'white' },
-        { id: 2, title: 'Saved', colour: '' },
+        { id: 0, title: 'Work', colour: 'primary' },
+        { id: 1, title: 'Private', colour: 'info' },
+        { id: 2, title: 'Saved', colour: 'success' },
       ],
     };
   },

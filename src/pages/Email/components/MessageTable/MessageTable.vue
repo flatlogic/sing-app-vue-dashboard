@@ -4,7 +4,7 @@
                   v-model="currentPage"
                   :total-rows="rows"
                   :per-page="perPage"
-                  class="ml-auto"
+                  class="ms-auto"
     ></b-pagination>
     <span v-else>
       <b-button variant="default" class="mb" @click="openMessage(null)">

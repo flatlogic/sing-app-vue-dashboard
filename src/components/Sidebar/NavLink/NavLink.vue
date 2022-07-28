@@ -6,7 +6,7 @@
         <i v-else :class="fullIconName"></i>
       </span>
       {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
-      <b-badge v-if="badge" variant="info" pill>{{badge}}</b-badge>
+      <b-badge v-if="badge" class="badge" variant="info" pill>{{badge}}</b-badge>
     </router-link>
   </li>
   <li v-else-if="childrenLinks" :class="{headerLink: true, className}">

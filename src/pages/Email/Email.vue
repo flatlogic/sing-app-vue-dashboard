@@ -2,15 +2,21 @@
   <div class="email-page">
     <div class="pageTopLine">
       <h1 class="page-title">Email - <span class="fw-semi-bold">Inbox</span></h1>
-      <b-alert
-        :show="isNotificationOpen"
-        variant="success"
-        :class="{ alertTransform: true, alertAfter: alertAfter }"
-        dismissible
-      >
-        <p class="m-0 mr-4">Hey! This is a <span class="fw-semi-bold">real app</span>
-        with CRUD and Search functions. Have fun!</p>
-      </b-alert>
+<!--      <b-alert-->
+<!--        :show="isNotificationOpen"-->
+<!--        color="warning"-->
+<!--        variant="warning"-->
+<!--        :class="{ alertTransform: true, alertAfter: alertAfter }"-->
+<!--        dismissible-->
+<!--      >-->
+<!--        <p class="m-0 ms-4">Hey! This is a <span class="fw-semi-bold">real app</span>-->
+<!--        with CRUD and Search functions. Have fun!</p>-->
+<!--      </b-alert>-->
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" v-if="isNotificationOpen" @click="closeNotification">
+        <p class="me-3 my-1">Hey! This is a <span class="fw-semi-bold">real app</span>
+          with CRUD and Search functions. Have fun!</p>
+        <button type="button" class="btn-close ms-2 my-1" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     </div>
     <div class="view">
       <b-row>

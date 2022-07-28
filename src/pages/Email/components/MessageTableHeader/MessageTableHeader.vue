@@ -1,14 +1,14 @@
 <template>
   <div class="messageTableHeader">
     <div>
-      <b-dropdown text="Select" variant="default" size="sm">
+      <b-dropdown text="Select" variant="gray-default" size="sm">
         <b-dropdown-item-button @click="chooseAll">All</b-dropdown-item-button>
         <b-dropdown-item-button @click="chooseNone">None</b-dropdown-item-button>
         <b-dropdown-divider />
         <b-dropdown-item-button @click="chooseRead">Read</b-dropdown-item-button>
         <b-dropdown-item-button @click="chooseUnread">Unread</b-dropdown-item-button>
       </b-dropdown>
-      <b-dropdown text="Actions" variant="default" size="sm" class="ml-2">
+      <b-dropdown text="Actions" variant="gray-default" size="sm" class="ms-2">
         <b-dropdown-item-button>Reply</b-dropdown-item-button>
         <b-dropdown-item-button>Forward</b-dropdown-item-button>
         <b-dropdown-item-button>Archive</b-dropdown-item-button>
