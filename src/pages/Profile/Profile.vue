@@ -10,7 +10,7 @@
               <img class="img-fluid" src="../../assets/pictures/19.jpg" alt="picture" />
             </div>
             <a href="#" class="btn btn-outline btn-sm mb-2">
-              <i class="fa fa-twitter mr-2" />
+              <i class="fa fa-twitter me-2" />
               Follow
             </a>
           </div>
@@ -25,19 +25,19 @@
                 <p>UI/UX designer</p>
                 <a href="#" class="btn btn-success btn-sm mb-3">
                   &nbsp;Send
-                  <i class="fa fa-envelope ml-2" />&nbsp;
+                  <i class="fa fa-envelope ms-2" />&nbsp;
                 </a>
                 <div>
                   <ul class="profileContacts mt-sm">
                     <li>
-                      <i class="fa fa-lg fa-phone fa-fw mr-2" /><a href="#"> +375 29 555-55-55</a>
+                      <i class="fa fa-lg fa-phone fa-fw me-2" /><a href="#"> +375 29 555-55-55</a>
                     </li>
                     <li>
-                      <i class="fa fa-lg fa-envelope fa-fw mr-2" />
+                      <i class="fa fa-lg fa-envelope fa-fw me-2" />
                       <a href="#"> psmith@example.com</a>
                     </li>
                     <li>
-                      <i class="fa fa-lg fa-map-marker fa-fw mr-2" /><a href="#"> Minsk, Belarus</a>
+                      <i class="fa fa-lg fa-map-marker fa-fw me-2" /><a href="#"> Minsk, Belarus</a>
                     </li>
                   </ul>
                 </div>
@@ -59,9 +59,9 @@
                 </div>
               </div>
               <p>
-                <a href="#" class="badge badge-info rounded-0"> UI/UX </a>
-                <a href="#" class="badge badge-primary rounded-0 ml-2"> Web Design </a>
-                <a href="#" class="badge badge-default rounded-0 ml-2"> Mobile Apps </a>
+                <span class="badge bg-info rounded-pill"> UI/UX </span>
+                <span class="badge bg-primary rounded-pill ms-1"> Web Design </span>
+                <span class="badge bg-default rounded-pill ms-1"> Mobile Apps </span>
               </p>
               <p class="lead mt-xlg">
                 My name is Adam Johns and here is my new Sing user profile page.
@@ -77,14 +77,14 @@
       </b-col>
       <b-col lg="6" xs="12">
         <section class="activities">
-          <h2 class="ml-3">Activities</h2>
+          <h2 class="ms-3">Activities</h2>
           <section class="event">
             <header>
               <span class="eventAvatar">
                 <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="man" />
               </span>
               <h5 class="eventTitle">
-                <a href="#">Bob Nilson</a> <small><a href="#">@nils</a></small>
+                <a href="#">Bob Nilson</a> <small class="ms-2"><button class="btn-link"><a href="#">@nils</a></button></small>
               </h5>
               <p class="eventTimestamp">February 22, 2014 at 01:59 PM</p>
             </header>
@@ -95,17 +95,17 @@
             </div>
             <footer class="eventFooter">
               <ul class="post-links">
-                <li><a href="#">1 hour</a></li>
+                <li><a href="#"><button class="btn-link">1 hour</button></a></li>
                 <li><a href="#">
                   <span class="text-danger"><i class="fa fa-heart" /> Like</span>
                 </a></li>
-                <li><a href="#">Comment</a></li>
+                <li><a href="#"><button class="btn-link">Comment</button></a></li>
               </ul>
             </footer>
           </section>
           <section class="event">
             <header>
-              <h5 class="eventTitle"><a href="#">Jessica Smith</a> <small>@jess</small></h5>
+              <h5 class="eventTitle"><a href="#">Jessica Smith</a> <small class="ms-2 btn-link">@jess</small></h5>
               <p class="eventTimestamp">February 22, 2014 at 01:59 PM</p>
             </header>
             <div class="eventBody">
@@ -116,11 +116,11 @@
             <footer class="eventFooter">
               <div class="clearfix">
                 <ul class="post-links mt-sm pull-left">
-                  <li><a href="#">1 hour</a></li>
+                  <li><a href="#"><button class="btn-link">1 hour</button></a></li>
                   <li><a href="#">
                     <span class="text-danger"><i class="fa fa-heart-o" /> Like</span>
                   </a></li>
-                  <li><a href="#">Comment</a></li>
+                  <li><a href="#"><button class="btn-link">Comment</button></a></li>
                 </ul>
 
                 <span class="thumb thumb-sm pull-right">
@@ -139,7 +139,7 @@
               </div>
               <ul class="post-comments mt-sm">
                 <li>
-                  <span class="thumb-xs avatar pull-left mr-sm">
+                  <span class="thumb-xs avatar pull-left me-sm-1">
                     <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="woman" />
                   </span>
                   <div class="comment-body">
@@ -150,7 +150,7 @@
                   </div>
                 </li>
                 <li>
-                  <span class="thumb-xs avatar pull-left mr-sm">
+                  <span class="thumb-xs avatar pull-left me-sm-1">
                     <img class="rounded-circle" src="../../assets/avatar.png" alt="avatar-photo" />
                   </span>
                   <div class="comment-body">
@@ -169,14 +169,14 @@
             </b-form-group>
             <div class="btn-toolbar">
               <div class="btn-group">
-                <a href="#" class="btn btn-sm btn-default">
+                <a href="#" class="btn btn-sm btn-gray-default">
                   <i class="fa fa-camera fa-lg" />
                 </a>
-                <a href="#" class="btn btn-sm btn-default">
+                <a href="#" class="btn btn-sm btn-gray-default">
                   <i class="fa fa-map-marker fa-lg" />
                 </a>
               </div>
-              <b-button variant="danger" size="sm" type="submit" class="btn ml-auto">Post</b-button>
+              <b-button size="sm" type="submit" class="btn btn-success text-white ms-auto">Post</b-button>
             </div>
           </b-form>
         </section>
