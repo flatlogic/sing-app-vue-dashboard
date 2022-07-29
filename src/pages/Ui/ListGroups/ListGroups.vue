@@ -33,7 +33,7 @@
         in the whole world. Can you? Touch devices supported
       </p>
       <b-row class={s.nestable}>
-        <b-col md="6" xs="12" className="mb-xs">
+        <b-col md="6" xs="12" className="mb-sm-1">
           <DraggableTree class="tree" :data="nestableFirstItems"
             draggable="draggable" cross-tree="cross-tree">
             <div slot-scope="{data, store}">
@@ -43,15 +43,15 @@
                     v-if="data.children && data.children.length"
                     @click="store.toggleOpen(data)"
                   >
-                    <span class="bg-default border circle mr-sm">{{data.open ? '-' : '+'}}</span>
+                    <span class="bg-secondary border circle me-3 text-white">{{data.open ? '-' : '+'}}</span>
                   </div>
-                  <span  :class="{ 'px-4 py-3 border list-element d-flex': true,
+                  <div  :class="{ 'px-3 py-3 border list-element d-flex': true,
                     'no-child': !data.children.length }">
-                    <div class="drag bg-default px-4 py-3">
-                      <i class="fa fa-bars"></i>
+                    <div class="drag bg-secondary px-3 py-3">
+                      <i class="fa fa-bars text-white"></i>
                     </div>
                     <span class="ml">{{data.text}}</span>
-                  </span>
+                  </div>
                 </div>
               </template>
             </div>
@@ -67,15 +67,15 @@
                     v-if="data.children && data.children.length"
                     @click="store.toggleOpen(data)"
                   >
-                    <span class="bg-default border circle mr-sm">{{data.open ? '-' : '+'}}</span>
+                    <span class="bg-secondary border circle me-3 text-white">{{data.open ? '-' : '+'}}</span>
                   </div>
-                  <span  :class="{ 'px-4 py-3 border list-element d-flex': true,
+                  <div  :class="{ 'px-3 py-3 border list-element d-flex': true,
                     'no-child': !data.children.length }">
-                    <div class="drag bg-default px-4 py-3">
-                      <i class="fa fa-bars"></i>
+                    <div class="drag bg-secondary px-3 py-3">
+                      <i class="fa fa-bars text-white"></i>
                     </div>
                     <span class="ml">{{data.text}}</span>
-                  </span>
+                  </div>
                 </div>
               </template>
             </div>

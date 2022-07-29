@@ -67,7 +67,14 @@ export default {
       ['fifth','#d6dfe6'],
       ['sixth','#13191d'],
       ['seventh','#20ae8c'],
-      ['info', '#10CFD0']
+      ['info', '#10CFD0'],
+      ['primary', '#6FB0F9'],
+      ['secondary', '#798892'],
+      ['success', '#26CD5F'],
+      ['warning', '#EBB834'],
+      ['danger', '#FF5574'],
+      ['inverse', '#30324C'],
+      ['default', '#9083F7']
     ],
     chartColors: {
       axisColor: '#8EA1AB'
