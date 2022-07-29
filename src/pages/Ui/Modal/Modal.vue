@@ -12,8 +12,8 @@
             Toggle a working modal demo by clicking the button below. It
             will slide down and fade in from the top of the page.
           </p>
-          <b-button class="mr-sm" variant="primary" v-b-modal.demo>Demo</b-button>
-          <b-button variant="primary" v-b-modal.long>Scrolling long content</b-button>
+          <b-button class="me-2 text-white" variant="primary" v-b-modal.demo>Demo</b-button>
+          <b-button class="text-white" variant="primary" v-b-modal.long>Scrolling long content</b-button>
         </Widget>
         <Widget
           title="<h5>Optional <span class='fw-semi-bold'>Sizes</span></h5>"
@@ -24,8 +24,8 @@
           classes to be placed on a .modal-dialog. These sizes kick in at certain
           breakpoints to avoid horizontal scrollbars on narrower viewports.
           </p>
-          <b-button class="mr-sm" variant="primary" v-b-modal.large>Large modal</b-button>
-          <b-button variant="primary" v-b-modal.small>Small modal</b-button>
+          <b-button class="me-2 text-white" variant="primary" v-b-modal.large>Large modal</b-button>
+          <b-button class="text-white" variant="primary" v-b-modal.small>Small modal</b-button>
         </Widget>
       </b-col>
       <b-col xs='12' md='6'>
@@ -41,28 +41,28 @@
             normal grid system classes as you would anywhere else.
           </p>
           <div class="bg-light p-3">
-            <b-button variant="primary" v-b-modal.launch>Launch</b-button>
+            <b-button variant="primary" class="text-white" v-b-modal.launch>Launch</b-button>
             <pre class="bg-light border-0 w-100 h-100">
               <code class="text-danger">{{'&lt;b-container fluid&gt;'}}</code>
               <code class="text-success">{{'  &lt;b-row&gt;'}}</code>
               <code class="text-info">{{'    &lt;b-col md="4"&gt;'}}</code>
               <code>{{'      .col-md-4'}}</code>
               <code class="text-info">{{'    &lt;/b-col&gt;'}}</code>
-              <code class="text-info">{{'    &lt;b-col md="4" class="ml-auto"&gt;'}}</code>
-              <code>{{'      .col-md-4 .ml-auto'}}</code>
+              <code class="text-info">{{'    &lt;b-col md="4" class="ms-auto"&gt;'}}</code>
+              <code>{{'      .col-md-4 .ms-auto'}}</code>
               <code class="text-info">{{'    &lt;/b-col&gt;'}}</code>
               <code class="text-success">{{'  &lt;/b-row&gt;'}}</code>
               <code class="text-success">{{'  &lt;b-row&gt;'}}</code>
-              <code class="text-info">{{'    &lt;b-col md="3" class="ml-auto"&gt;'}}</code>
-              <code>{{'      .col-md-3 .ml-auto'}}</code>
+              <code class="text-info">{{'    &lt;b-col md="3" class="ms-auto"&gt;'}}</code>
+              <code>{{'      .col-md-3 .ms-auto'}}</code>
               <code class="text-info">{{'    &lt;/b-col&gt;'}}</code>
-              <code class="text-info">{{'    &lt;b-col md="4" class="ml-auto"&gt;'}}</code>
-              <code>{{'      .col-md-4 .ml-auto'}}</code>
+              <code class="text-info">{{'    &lt;b-col md="4" class="ms-auto"&gt;'}}</code>
+              <code>{{'      .col-md-4 .ms-auto'}}</code>
               <code class="text-info">{{'    &lt;/b-col&gt;'}}</code>
               <code class="text-success">{{'  &lt;/b-row&gt;'}}</code>
               <code class="text-success">{{'  &lt;b-row&gt;'}}</code>
-              <code class="text-info">{{'    &lt;b-col md="6" class="ml-auto"&gt;'}}</code>
-              <code>{{'      .col-md-6 .ml-auto'}}</code>
+              <code class="text-info">{{'    &lt;b-col md="6" class="ms-auto"&gt;'}}</code>
+              <code>{{'      .col-md-6 .ms-auto'}}</code>
               <code class="text-info">{{'    &lt;/b-col&gt;'}}</code>
               <code class="text-success">{{'  &lt;/b-row&gt;'}}</code>
               <code class="text-danger">{{'&lt;/b-container&gt;'}}</code>
@@ -128,6 +128,7 @@
         versions of Lorem Ipsum.
       </p>
     </b-modal>
+
     <b-modal id="large" size="lg" body-class="bg-white" title="Large modal" cancel-variant="default">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. In, illum harum?
       Quidem, quisquam, natus repellat debitis veniam quia facilis magni tempora
@@ -139,27 +140,28 @@
       Quidem, quisquam, natus repellat debitis veniam quia facilis magni tempora
       cupiditate odio vitae? Eligendi nisi consequuntur vero tenetur nemo!
     </b-modal>
+
     <b-modal id="launch" body-class="bg-white text-white" title="Modal" cancel-variant="default">
       <b-container fluid>
         <b-row>
           <b-col md='4'>
             <div class="h-100 w-100 bg-primary p-2">.col-md-4</div>
           </b-col>
-          <b-col md='4' class="ml-auto">
-            <div class="h-100 w-100 bg-primary p-2">.col-md-4 .ml-auto</div>
+          <b-col md='4' class="ms-auto">
+            <div class="h-100 w-100 bg-primary p-2">.col-md-4 .ms-auto</div>
           </b-col>
         </b-row>
         <b-row class="mt-sm">
-          <b-col md='3' class="ml-auto">
-            <div class="h-100 w-100 bg-primary p-2">.col-md-3 .ml-auto</div>
+          <b-col md='3' class="ms-auto">
+            <div class="h-100 w-100 bg-primary p-2">.col-md-3 .ms-auto</div>
           </b-col>
-          <b-col md='4' class="ml-auto">
-            <div class="h-100 w-100 bg-primary p-2">.col-md-4 .ml-auto</div>
+          <b-col md='4' class="ms-auto">
+            <div class="h-100 w-100 bg-primary p-2">.col-md-4 .ms-auto</div>
           </b-col>
         </b-row>
         <b-row class="mt-sm">
-          <b-col md='6' class="ml-auto">
-            <div class="h-100 w-100 bg-primary p-2">.col-md-6 .ml-auto</div>
+          <b-col md='6' class="ms-auto">
+            <div class="h-100 w-100 bg-primary p-2">.col-md-6 .ms-auto</div>
           </b-col>
         </b-row>
       </b-container>
@@ -175,3 +177,4 @@ export default {
   components: { Widget },
 };
 </script>
+

@@ -1024,3 +1024,12 @@ $slider-handle-size: 26px;
   //padding: 30px 60px;
   background: rgba(233,236,239,1);
 }
+
+.modal-content {
+  .close {
+    box-sizing: content-box;
+    border: 0;
+    background-color: transparent;
+    border-radius: 0.3rem;
+  }
+}
