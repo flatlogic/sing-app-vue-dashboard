@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-row>
-      <b-col xs='12' md='9'>
+      <b-col sm='12'>
         <Widget
           title="<h5>Navbar <span className='fw-semi-bold'>Example</span></h5>"
           close collapse customHeader
@@ -24,10 +24,10 @@
           </ul>
           <b-navbar class="mt px-3" toggleable="md" type="light" variant="light" style="height: 60px">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ml-auto" target="nav_collapse1"></b-navbar-toggle>
+            <b-navbar-toggle class="ms-auto" target="nav_collapse1"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse1">
               <!-- Right aligned nav items -->
-              <b-navbar-nav class="ml-auto">
+              <b-navbar-nav class="ms-auto">
                 <b-nav-item href="#">Home</b-nav-item>
                 <b-nav-item href="#">Features</b-nav-item>
                 <b-nav-item href="#">Pricing</b-nav-item>
@@ -37,7 +37,7 @@
           </b-navbar>
         </Widget>
       </b-col>
-      <b-col xs='12' md='9'>
+      <b-col sm='12'>
         <Widget
           title="<h5>Navbar <span className='fw-semi-bold'>Example</span></h5>"
           close collapse customHeader
@@ -50,10 +50,10 @@
             colors. Then, customize with <code>.bg-*</code> utilities.</p>
           <b-navbar class="mt px-3" toggleable="md" type="dark" variant="inverse" style="height: 60px;">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ml-auto" target="nav_collapse2"></b-navbar-toggle>
+            <b-navbar-toggle class="ms-auto" target="nav_collapse2"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse2">
               <!-- Right aligned nav items -->
-              <b-navbar-nav class="ml-auto">
+              <b-navbar-nav class="ms-auto">
                 <b-nav-item href="#">Home</b-nav-item>
                 <b-nav-item href="#">Features</b-nav-item>
                 <b-nav-item href="#">Pricing</b-nav-item>
@@ -63,10 +63,10 @@
           </b-navbar>
           <b-navbar class="mt px-3" toggleable="md" type="dark" variant="primary" style="height: 60px;">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ml-auto" target="nav_collapse3"></b-navbar-toggle>
+            <b-navbar-toggle class="ms-auto" target="nav_collapse3"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse3">
               <!-- Right aligned nav items -->
-              <b-navbar-nav class="ml-auto">
+              <b-navbar-nav class="ms-auto">
                 <b-nav-item href="#">Home</b-nav-item>
                 <b-nav-item href="#">Features</b-nav-item>
                 <b-nav-item href="#">Pricing</b-nav-item>
@@ -76,10 +76,10 @@
           </b-navbar>
           <b-navbar class="mt px-3" toggleable="md" type="light" variant="light" style="height: 60px;">
             <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ml-auto" target="nav_collapse4"></b-navbar-toggle>
+            <b-navbar-toggle class="ms-auto" target="nav_collapse4"></b-navbar-toggle>
             <b-collapse is-nav id="nav_collapse4">
               <!-- Right aligned nav items -->
-              <b-navbar-nav class="ml-auto">
+              <b-navbar-nav class="ms-auto">
                 <b-nav-item href="#">Home</b-nav-item>
                 <b-nav-item href="#">Features</b-nav-item>
                 <b-nav-item href="#">Pricing</b-nav-item>
