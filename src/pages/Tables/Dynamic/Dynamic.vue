@@ -32,7 +32,7 @@
         Another table built with <a href="https://www.npmjs.com/package/vue-tables-2"
           target="_blank" rel="noopener noreferrer">vue-tables-2</a>
       </p>
-      <v-client-table :data="data" :columns="columns" :options="options" class="vue-table"/>
+      <v-client-table :data="data" :columns="columns" :options="options"/>
     </Widget>
   </div>
 </template>
@@ -52,7 +52,7 @@ export default {
         perPage: 10,
         pagination: { chunk: 10, dropdown: false },
         texts: { filter: '', count: '', limit: '' },
-        columnsClasses: { id: 'width-100' },
+        columnsClasses: { id: 'width-100'},
         skin: 'table table-striped',
         sortIcon: {
           base: 'fa text-muted', up: 'fa-chevron-up', down: 'fa-chevron-down', is: 'fa-sort',

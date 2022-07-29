@@ -19,11 +19,12 @@
 }
 
 .VueTables__table.table {
+
+  margin-top: 1rem;
+
   tr {
     th {
-      background: $primary;
-      color: var(--light-color);
-      border: none;
+      color: theme-color('inverse');
     }
     td {
       vertical-align: middle;
@@ -37,7 +38,7 @@
       margin-top: 3px;
 
       &:before {
-        color: var(--light-color);
+        color: theme-color('inverse');
       }
     }
   }
