@@ -164,10 +164,12 @@ small {
 
 .btn-secondary {
   border-color: $gray-400;
-  color: $gray-800;
+  color: $gray-100;
 }
 
 .btn-success,
+.btn-default,
+.btn-gray,
 .btn-info,
 .btn-warning {
   color: $white;

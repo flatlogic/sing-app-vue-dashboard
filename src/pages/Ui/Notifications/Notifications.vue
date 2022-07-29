@@ -39,9 +39,9 @@
           <h5 class="m-t-1">Notification Types</h5>
           <p>Different types of notifications for lots of use cases. Custom classes are also
             supported.</p>
-          <p><b-button variant="info" id="show-info-message" @click="addInfoNotification">Info
+          <p><b-button variant="info" class="text-white" id="show-info-message" @click="addInfoNotification">Info
             Message</b-button></p>
-          <p><b-button variant="danger" id="show-error-message" @click="addErrorNotification">Error
+          <p><b-button variant="danger" class="text-white" id="show-error-message" @click="addErrorNotification">Error
             Message</b-button></p>
           <p><b-button
             variant="success" id="show-success-message" @click="addSuccessNotification"

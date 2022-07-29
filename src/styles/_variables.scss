@@ -50,6 +50,7 @@ $yellow:  #EBB834 !default;
 $green:   #68ca66 !default;
 $teal:    #26CD5F !default;
 $cyan:    #17a2b8 !default;
+$turquoise: #10CFD0 !default;
 $default: #E9ECEF !default;
 $inverse: #002B49 !default;
 $gray-inverse: #30324C !default;
@@ -59,7 +60,7 @@ $theme-colors: (
   primary: $blue,
   secondary: $gray-600,
   success: $teal,
-  info: $purple,
+  info: $turquoise,
   warning: $yellow,
   danger: $red,
   dark: $gray-800,
