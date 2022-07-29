@@ -992,3 +992,35 @@ $slider-handle-size: 26px;
   padding-left: 20px;
   background: $success;
 }
+
+.jumbotron {
+  @include border-radius($widget-border-radius);
+}
+
+.container-fluid .jumbotron, .container .jumbotron {
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 768px)
+{
+  .jumbotron, .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media screen and (min-width: 768px)
+{
+  .jumbotron {
+    padding-bottom: 48px;
+    padding-top: 48px;
+  }
+}
+
+.jumbotron {
+  margin-bottom: 30px;
+  //padding: 30px 60px;
+  background: rgba(233,236,239,1);
+}

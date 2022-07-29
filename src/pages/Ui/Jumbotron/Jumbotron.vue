@@ -12,7 +12,7 @@
           component for calling extra attention to featured content or information."
         >
           <hr class="my-2" />
-          <p>It uses utility classes for typgraphy and spacing to space
+          <p>It uses utility classes for typography and spacing to space
             content out within the larger container.</p>
           <p class="lead">
             <b-button variant="primary">Learn More</b-button>
