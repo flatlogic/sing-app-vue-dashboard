@@ -6,22 +6,22 @@
       <b-col lg='6' md='12'>
         <Widget title="<h6> Inputs </h6>" customHeader settings refresh close>
           <b-form-group>
-            <b-form>
-              <legend><strong>Horizontal</strong> form</legend>
+            <b-form row>
+                  <legend><strong>Horizontal</strong> form</legend>
+                  <b-form-group
+                      horizontal
+                      label="Normal field"
+                      label-for="normal-field"
+                      label-class="text-md-right"
+                      :label-cols="4"
+                      breakpoint="md"
+                  >
+                    <b-form-input type="text" id="normal-field" placeholder="May have placeholder" />
+                  </b-form-group>
               <b-form-group
                 horizontal
-                label="Normal field"
                 label-for="normal-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-form-input type="text" id="normal-field" placeholder="May have placeholder" />
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label-for="normal-field"
-                label-class="text-md-right"
+                label-class="text-start"
                 :label-cols="4"
                 breakpoint="md"
               >
@@ -139,13 +139,13 @@
               </b-form-group>
               <b-form-group
                 horizontal
-                class="form-action bg-transparent pl-1"
+                class="form-action bg-transparent ps-1"
                 label=""
                 label-for="transparent-field"
                 :label-cols="4"
                 breakpoint="md"
               >
-                <b-button variant="primary" type="submit" class="ml-0 mr-3">Save Changes</b-button>
+                <b-button variant="success text-white" type="submit" class="me-3">Save Changes</b-button>
                 <b-button variant="inverse">Cancel</b-button>
               </b-form-group>
             </b-form>
@@ -280,8 +280,8 @@
                   </b-col>
                 </b-row>
               </b-form-group>
-              <b-form-group class="form-action bg-transparent pl-1">
-                <b-button variant="inverse" type="submit" class="mr-xs">Save Changes</b-button>
+              <b-form-group class="form-action bg-transparent ps-1">
+                <b-button variant="success" type="submit" class="me-1">Save Changes</b-button>
                 <b-button variant="default">Cancel</b-button>
               </b-form-group>
             </b-form>
@@ -402,8 +402,8 @@
                   <span class="help-block">With bottom toolbar appended</span>
                 </div>
                 <ckeditor :editor="wygEditor" v-model="wygContent"></ckeditor>
-                <div class="text-md-right mt-sm">
-                  <b-button variant="danger" class="mr-2">Save</b-button>
+                <div class="text-md-end mt-sm">
+                  <b-button variant="success" class="me-2">Save</b-button>
                   <b-button variant="default">Clear</b-button>
                 </div>
             </b-form-group>
@@ -422,7 +422,7 @@
                     <path fill-rule="evenodd" fill="#798892" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"></path>
                   </svg>
                   <!-- eslint-enable -->
-                  <span class="ml-xs">Markdown styling is supported</span>
+                  <span class="ms-1">Markdown styling is supported</span>
                 </a>
             </b-form-group>
           </b-form>
@@ -503,7 +503,7 @@
                 Colored ones <br>
                 <span class="help">A bit of Japanese</span>
               </div>
-              <b-dropdown id="danger-select" :text="dangerDropdownVariant" variant="danger" class="mr-2">
+              <b-dropdown id="danger-select text-white" :text="dangerDropdownVariant" variant="danger" class="me-2">
                 <b-dropdown-item-button
                   @click="changeSelectOption('dangerDropdownVariant', 'Ichi')"
                 >Ichi</b-dropdown-item-button>
@@ -514,7 +514,7 @@
                   @click="changeSelectOption('dangerDropdownVariant', 'San')"
                 >San</b-dropdown-item-button>
               </b-dropdown>
-              <b-dropdown :text="warningDropdownVariant" variant="warning" class="mr-2">
+              <b-dropdown :text="warningDropdownVariant" variant="warning" class="me-2">
                 <b-dropdown-item-button
                   @click="changeSelectOption('warningDropdownVariant', 'Shi')"
                 >Shi</b-dropdown-item-button>
@@ -795,7 +795,7 @@
                   checkbox inputs into beautiful iOS 7 style switches in
                   just few simple steps.
                 </p>
-                <b-form-group class="display-inline-block checkbox-ios mr-2">
+                <b-form-group class="display-inline-block checkbox-ios me-2">
                   <label for="checkbox-ios1" class="switch  form-control-label">
                     <input type="checkbox" id="checkbox-ios1"
                       class="ios form-check-input" value="off">
@@ -873,7 +873,7 @@
                 Phone
                 <span class="help-block">(123) 456-7890</span>
               </div>
-              <b-col md="9" class="pl-0">
+              <b-col md="9" class="ps-0">
                 <input class="form-control" id="phone-mask" type="text"
                   placeholder="(___) ___-____"
                   v-mask="'(###) ###-####'"
@@ -885,7 +885,7 @@
                 International Phone
                 <span class="help-block">+375 123 456 789</span>
               </div>
-              <b-col md="9" class="pl-0">
+              <b-col md="9" class="ps-0">
                 <input class="form-control" id="int-phone-mask" type="text"
                   placeholder="+___ ___ ___ ___"
                   v-mask="'+### ### ### ###'"
@@ -897,7 +897,7 @@
                 Date Format
                 <span class="help-block">07-03-2013</span>
               </div>
-              <b-col md="9" class="pl-0">
+              <b-col md="9" class="ps-0">
                 <input class="form-control"  id="date-mask" type="text"
                   placeholder="__-__-____"
                   v-mask="'##-##-####'"
@@ -909,7 +909,7 @@
                 Time
                 <span class="help-block">13:43</span>
               </div>
-              <b-col md="9" class="pl-0">
+              <b-col md="9" class="ps-0">
                 <input class="form-control" id="time-mask" type="text"
                   placeholder="__:__"
                   v-mask="'##:##'"
@@ -1123,7 +1123,7 @@
                 </div>
               </div>
               <div>
-                <b-button type="button" variant="default" class="mt-sm">
+                <b-button type="button" variant="inverse" class="mt-sm">
                   <label for="fileupload2">
                     Select image
                   </label>

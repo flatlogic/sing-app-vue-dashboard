@@ -1035,3 +1035,43 @@ $slider-handle-size: 26px;
     border-radius: 0.3rem;
   }
 }
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.input-group {
+
+  .input-group-prepend {
+    margin-right: -1px;
+    display: flex;
+
+      .input-group-text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+  }
+
+  .input-group-append {
+      .btn,
+      .input-group-text {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+  }
+
+  .input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle),
+  .input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+
