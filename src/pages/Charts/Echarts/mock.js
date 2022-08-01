@@ -49,7 +49,7 @@ export default {
       }
     },
     series: [{type: 'bar'}, {type: 'bar'}, {type: 'bar'}],
-    color: [primary, success, danger]
+    color: [primary, info, warning]
   },
   pie: {
     tooltip: {
@@ -70,7 +70,7 @@ export default {
         type: 'pie',
         radius: '55%',
         center: ['50%', '60%'],
-        color: [info, danger, warning, success, primary],
+        color: [primary, info, warning, success, primary, danger],
         label: {
           show: false
         },
@@ -185,14 +185,14 @@ export default {
         type: 'line',
         step: 'start',
         data: [120, 132, 101, 134, 90, 230, 210],
-        color: [info]
+        color: [primary]
       },
       {
         name: 'Step Middle',
         type: 'line',
         step: 'middle',
         data: [220, 282, 201, 234, 290, 430, 410],
-        color: [primary]
+        color: [warning]
       },
       {
         name: 'Step End',
@@ -265,7 +265,7 @@ export default {
       }
     },
     series: [{
-      color: [danger],
+      color: [warning],
       name: 'Punch Card',
       type: 'scatter',
       symbolSize: function (val) {
@@ -305,7 +305,7 @@ export default {
         data: [{value: 64, name: 'Rate'}],
         axisLine: {
           lineStyle: {
-            color: [[0.2,success], [0.8,info], [1,danger]],
+            color: [[0.2,success], [0.8,primary], [1,warning]],
           }
         },
       }
