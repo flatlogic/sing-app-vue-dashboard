@@ -64,8 +64,8 @@
           </div>
           <div class="clearfix">
             <div class="float-right">
-              <b-button variant="default" class="mr-3" size="sm">Send to...</b-button>
-              <b-dropdown variant="inverse" class="mr-xs" size="sm" text="Clear" right>
+              <b-button variant="default" class="me-3" size="sm">Send to...</b-button>
+              <b-dropdown variant="inverse" class="me-sm-2" size="sm" text="Clear" right>
                 <b-dropdown-item>Clear</b-dropdown-item>
                 <b-dropdown-item>Move ...</b-dropdown-item>
                 <b-dropdown-item>Something else here</b-dropdown-item>
