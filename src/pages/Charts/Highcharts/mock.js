@@ -167,7 +167,7 @@ export default {
         }
       }
     },
-    colors: [info, success, warning, danger, primary, inverse, '#43adf6'],
+    colors: [primary, info, warning, config.app.colors.default, success, danger, inverse],
     series: [{
       minPointSize: 10,
       innerSize: '20%',
@@ -299,7 +299,7 @@ export default {
         }
       }
     },
-    colors: [inverse, success, warning, danger, primary, gray, info],
+    colors: [primary, success, info, warning, config.app.colors.default, danger, inverse],
     series: [{
       type: "sunburst",
       data: sunburstData,
@@ -351,6 +351,7 @@ export default {
     credits: {
       enabled: false
     },
+    colors: primary,
     title: {
       text: 'Highcharts Vector plot',
       style: {
@@ -402,7 +403,7 @@ export default {
     credits: {
       enabled: false
     },
-    colors: [info, success, warning, danger, primary, inverse],
+    colors: [primary, info, warning, config.app.colors.default, success, danger, inverse],
     exporting: {
       enabled: false
     },
