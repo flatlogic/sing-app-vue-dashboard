@@ -89,7 +89,7 @@ export default {
           }
         }
       },
-      colors: [primary]
+      colors: [config.app.colors.primary]
     }
   },
   area: {
@@ -119,7 +119,7 @@ export default {
       chart: {
         stacked: true,
       },
-      colors: [primary, success, gray],
+      colors: [primary, success, config.app.colors.secondary],
       dataLabels: {
         enabled: false
       },
@@ -166,7 +166,7 @@ export default {
       data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
     }],
     options: {
-      colors: [info],
+      colors: [primary],
       chart: {
         height: 350,
         type: 'bar',
@@ -368,7 +368,7 @@ export default {
       dataLabels: {
         enabled: false
       },
-      colors: [primary, info, success],
+      colors: [primary, config.app.colors.default, success],
       stroke: {
         width: [1, 1, 4]
       },
@@ -426,17 +426,17 @@ export default {
           },
           axisBorder: {
             show: true,
-            color: info
+            color: success
           },
           labels: {
             style: {
-              color: info,
+              color: success,
             }
           },
           title: {
             text: "Operating Cashflow (thousand crores)",
             style: {
-              color: info,
+              color: success,
             }
           },
         },
@@ -448,17 +448,17 @@ export default {
           },
           axisBorder: {
             show: true,
-            color: success
+            color: primary
           },
           labels: {
             style: {
-              color: success,
+              color: primary,
             },
           },
           title: {
             text: "Revenue (thousand crores)",
             style: {
-              color: success,
+              color: primary,
             }
           }
         },
@@ -504,7 +504,7 @@ export default {
         show: false,
         width: 0
       },
-      colors: [info, success, warning, danger, primary],
+      colors: [primary, success, warning, danger, info],
     }
   },
   donut: {
@@ -530,7 +530,7 @@ export default {
         show: false,
         width: 0
       },
-      colors: [info, success, warning, danger, primary],
+      colors: [primary, success, warning, danger, config.app.colors.default],
     }
   },
   radial: {
@@ -543,7 +543,7 @@ export default {
           color: textColor
         }
       },
-      colors: [primary, success, warning, danger],
+      colors: [primary, success, warning, danger, config.app.colors.default],
       plotOptions: {
         radialBar: {
           dataLabels: {
@@ -655,7 +655,7 @@ export default {
               from: -30,
               to: 5,
               name: 'low',
-              color: success
+              color: primary
             },
               {
                 from: 6,
