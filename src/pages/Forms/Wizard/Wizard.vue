@@ -21,13 +21,13 @@
           @on-loading="updateProgress(1, 1)"
         >
           <b-progress class="progress-xs" variant="info" :value="progress" :max="4" />
-          <b-button slot="prev" variant="primary">
+          <b-button slot="prev" variant="primary" class="text-white" >
             <i class="fa fa-caret-left" /> Previous
           </b-button>
-          <b-button slot="next" variant="primary">
+          <b-button slot="next" variant="primary" class="text-white">
             Next <i class="fa fa-caret-right" />
           </b-button>
-          <b-button slot="finish" variant="success">
+          <b-button slot="finish" variant="success" class="text-white">
             Finish <i class="fa fa-check" />
           </b-button>
             <tab-content title="1. Your Details">
