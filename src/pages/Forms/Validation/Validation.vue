@@ -58,7 +58,7 @@
                 </span>
               </b-form-group>
               <legend>
-                <b-badge variant="warning">HTML5</b-badge> input types supported
+                <span class="badge bg-warning">HTML5</span> input types supported
               </legend>
               <b-form-group
                 horizontal
@@ -175,7 +175,7 @@
 
             </fieldset>
             <div class="form-action bg-transparent px-0">
-              <b-button type="submit" variant="success" class="btn-rounded float-right">
+              <b-button type="submit" variant="success" class="btn-rounded float-end">
                 Validate & Submit
               </b-button>
               <b-button type="button" variant="default" class="btn-rounded">
