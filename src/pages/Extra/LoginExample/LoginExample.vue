@@ -13,7 +13,7 @@
         <b-alert class="alert-sm text-center mt-2" variant="secondary" show>
           This is a real app with Node.js backend - use
           <br/>
-          <span class="font-weight-bold">"admin@flatlogic.com / password"</span>
+          <span class="fw-bold">"admin@flatlogic.com / password"</span>
           <br/>
           to login!
         </b-alert>
@@ -27,7 +27,7 @@
           <b-button type="submit" size="sm" class="auth-btn mb-3" variant="info">Login</b-button>
           <p class="widget-auth-info">or sign in with</p>
           <div class="social-buttons">
-            <b-button @click="login" variant="primary" class="social-button mb-2">
+            <b-button @click="login" variant="primary" class="social-button mb-2 text-white">
               <i class="social-icon social-google"></i>
               <p class="social-text">GOOGLE</p>
             </b-button>
