@@ -10,10 +10,10 @@
         <p class="widget-auth-info">
             Use your email to sign in.
         </p>
-        <b-alert class="alert-sm text-center mt-2" variant="secondary" show>
+        <b-alert class="alert-sm text-center mt-2" variant="primary" show>
           This is a real app with Node.js backend - use
           <br/>
-          <span class="font-weight-bold">"admin@flatlogic.com / password"</span>
+          <span class="fw-bold">"admin@flatlogic.com / password"</span>
           <br/>
           to login!
         </b-alert>
@@ -27,14 +27,14 @@
           <div class="form-group">
             <input class="form-control no-border" ref="password" required type="password" name="password" placeholder="Password" />
           </div>
-          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="info">{{this.isFetching ? 'Loading...' : 'Login'}}</b-button>
+          <b-button type="submit" size="sm" class="auth-btn mb-3 text-white" variant="primary">{{this.isFetching ? 'Loading...' : 'Login'}}</b-button>
           <p class="widget-auth-info">or sign in with</p>
           <div class="social-buttons">
-            <b-button @click="googleLogin" variant="primary" class="social-button mb-2">
+            <b-button @click="googleLogin" variant="warning" class="social-button mb-2 text-white">
               <i class="social-icon social-google"></i>
               <p class="social-text">GOOGLE</p>
             </b-button>
-            <b-button @click="microsoftLogin" variant="success" class="social-button">
+            <b-button @click="microsoftLogin" variant="danger" class="social-button text-white">
               <i class="social-icon social-microsoft"></i>
               <p class="social-text">MICROSOFT</p>
             </b-button>
