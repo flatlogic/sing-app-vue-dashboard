@@ -1,7 +1,7 @@
 <template>
   <div class='calendar-page'>
     <b-row>
-      <b-col lg='4' xs='12' md='6'>
+      <b-col lg='4' sm='12' md='6'>
         <h1 class="page-title">
           {{currentMonth}} - <span class="fw-semi-bold">{{currentDay}}</span>
         </h1>
@@ -12,67 +12,67 @@
               class="external-event"
               data-event='{ "classNames": ["bg-success", "text-white"], "title": "Make a tea" }'
           >
-            <i class="fa fa-circle fa-fw text-success ml-xs mr-xs"></i>
+            <i class="fa fa-circle fa-fw text-success ms-1 me-1"></i>
             Make a tea
           </div>
           <div
               class="external-event"
               data-event='{ "classNames": ["bg-warning", "text-white"], "title": "Open windows" }'
           >
-            <i class="fa fa-circle fa-fw text-warning ml-xs mr-xs"></i>
+            <i class="fa fa-circle fa-fw text-warning ms-1 me-1"></i>
             Open windows
           </div>
           <div
               class="external-event"
               data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Some stuff" }'
           >
-            <i class="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs"></i>
+            <i class="fa fa-circle-o fa-fw text-gray-light ms-1 me-1"></i>
             Some stuff
           </div>
           <div
               class="external-event"
               data-event='{ "classNames": ["bg-danger", "text-white"], "title": "Study UX engineering" }'
           >
-            <i class="fa fa-square fa-fw text-danger ml-xs mr-xs"></i>
+            <i class="fa fa-square fa-fw text-danger ms-1 me-1"></i>
             Study UX engineering
           </div>
           <div
               class="external-event"
               data-event='{ "classNames": ["bg-gray", "text-white"], "title": "Another stuff" }'
           >
-            <i class="fa fa-circle-o fa-fw text-gray-light ml-xs mr-xs"></i>
+            <i class="fa fa-circle-o fa-fw text-gray-light ms-1 me-1"></i>
             Another stuff
           </div>
         </div>
       </b-col>
-      <b-col md='6' lg='8' xs='12'>
+      <b-col md='6' lg='8' sm='12'>
         <Widget>
           <b-row class="calendar-controls">
             <b-col md='3'>
-              <b-button-group class="mr-sm">
-                <b-button variant="default" @click="prev">
+              <b-button-group class="me-1">
+                <b-button variant="gray-default" @click="prev">
                   <i class="fa fa-angle-left"></i>
                 </b-button>
-                <b-button variant="default" @click="next">
+                <b-button variant="gray-default" @click="next">
                   <i class="fa fa-angle-right"></i>
                 </b-button>
               </b-button-group>
-              <b-button class="mt-2" variant="default" @click="today">
+              <b-button variant="gray-default" @click="today">
                 Today
               </b-button>
             </b-col>
-            <b-col md='9' class="calendar-controls text-right">
+            <b-col md='9' class="calendar-controls text-end">
               <b-button-group>
                 <b-button
-                  variant="default" @click="changeView('dayGridMonth')"
+                  variant="gray-default" @click="changeView('dayGridMonth')"
                   :class="{ active: calendarView === 'dayGridMonth' }"
                 >Month</b-button>
                 <b-button
-                  variant="default" @click="changeView('timeGridWeek')"
+                  variant="gray-default" @click="changeView('timeGridWeek')"
                   :class="{ active: calendarView === 'timeGridWeek' }"
                 >Week</b-button>
                 <b-button
-                  variant="default" @click="changeView('timeGridDay')"
+                  variant="gray-default" @click="changeView('timeGridDay')"
                   :class="{ active: calendarView === 'timeGridDay' }"
                 >Day</b-button>
               </b-button-group>
@@ -200,7 +200,7 @@ export default {
       const d = date.getDate();
       const m = date.getMonth();
       const y = date.getFullYear();
-      const {info, danger, primary, gray, success, textColor} = this.appConfig.colors;
+      const {info, danger, primary, success, textColor, inverse, warning} = this.appConfig.colors;
       return {
         header: {
           left: '',
@@ -211,7 +211,7 @@ export default {
           {
             title: 'All Day Event',
             start: new Date(y, m, 1),
-            backgroundColor: info,
+            backgroundColor: primary,
             description: 'Will be busy throughout the whole day',
           },
           {
@@ -219,14 +219,14 @@ export default {
             start: new Date(y, m, d + 5),
             end: new Date(y, m, d + 7),
             textColor: textColor,
-            backgroundColor: gray,
+            backgroundColor: primary,
             description: 'This conference should be worse visiting',
           },
           {
             id: 999,
             title: 'Blah Blah Car',
             start: new Date(y, m, d - 3, 16, 0),
-            backgroundColor: gray,
+            backgroundColor: warning,
             textColor: textColor,
             allDay: false,
             description: 'Agree with this guy on arrival time',
@@ -236,21 +236,21 @@ export default {
             title: 'Buy this template',
             start: new Date(y, m, d + 3, 12, 0),
             allDay: false,
-            backgroundColor: primary,
+            backgroundColor: success,
             description: 'Make sure everything is consistent first',
           },
           {
             title: 'Got to school',
             start: new Date(y, m, d + 16, 12, 0),
             end: new Date(y, m, d + 16, 13, 0),
-            backgroundColor: success,
+            backgroundColor: danger,
             description: 'Time to go back',
           },
           {
             title: 'Study some Node',
             start: new Date(y, m, d + 18, 12, 0),
             end: new Date(y, m, d + 18, 13, 0),
-            backgroundColor: info,
+            backgroundColor: inverse,
             description: 'Node.js is a platform built '
               + 'on Chrome\'s JavaScript runtime for easily'
               + ' building fast, scalable network applications.'
@@ -264,7 +264,7 @@ export default {
             start: new Date(y, m, 28),
             end: new Date(y, m, 29),
             url: 'http://flatlogic.com/',
-            backgroundColor: danger,
+            backgroundColor: info,
             description: 'Creative solutions',
           },
         ],
