@@ -5,7 +5,7 @@
       <h1 class="m-0 mb-sm">Vector <span class="fw-semi-bold">Maps</span></h1>
       <p class="page-title fs-sm m-0">
         <span class="fw-semi-bold">1 656 843</span>
-        <span class="ml-xs circle bg-info"><i class="text-white fa fa-circle"/></span>
+        <span class="ml-xs circle bg-primary"><i class="text-white fa fa-circle"/></span>
       </p>
     </header>
   </div>
@@ -20,7 +20,7 @@
   export default {
     name: 'AmchartsMap',
     mounted() {
-      let infoColor = this.appConfig.colors.info;
+      let infoColor = this.appConfig.colors.primary;
       let map = am4core.create(this.$refs.chartdiv, am4maps.MapChart);
       map.geodata = am4geodata_worldLow;
       map.projection = new am4maps.projections.Miller();
