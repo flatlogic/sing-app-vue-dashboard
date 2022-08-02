@@ -52,8 +52,7 @@
             ref="sharesWidget"
             showTooltip :tooltipPlacement="tooltipPlacement"
             title="<h6>
-              <span class='badge badge-primary'><i class'fa fa-facebook' /></span> &nbsp;
-              Latest <span class='fw-semi-bold'>Shares</span>
+              <span class='badge bg-primary rounded-pill me-2'><i class='fa fa-twitter'></i></span>Latest <span class='fw-semi-bold'>Shares</span>
             </h6>"
             close="Close" refresh="Reload" customHeader
             bodyClass="p-0"
@@ -62,14 +61,14 @@
           >
             <div class="list-group list-group-lg">
               <a href="#" class="list-group-item" v-for="item in gridData.shares" :key="item.name" :class="item.extraClass">
-                <span class="thumb-sm mr">
+                <span class="thumb-sm me-1">
                   <img class="rounded-circle" :src="item.img" :alt="item.name" />
                 </span>
                 <div>
                   <h6 class="m-0">{{item.name}}</h6>
                   <small class="text-muted">{{item.comment}}</small>
                 </div>
-                <i class="fa fa-circle ml-auto" :class="'text-' + item.type"></i>
+                <i class="fa fa-circle ms-auto" :class="'text-' + item.type"></i>
               </a>
             </div>
           </Widget>
@@ -135,7 +134,7 @@
                   2000 will refresh widget every 2 seconds.
                 </p>
                 <div class="clearfix">
-                  <div class="btn-toolbar float-right">
+                  <div class="btn-toolbar float-end">
                     <b-button variant="transparent">Cancel</b-button>
                     <b-button variant="success" :class="gridData.autoload.btnExtraClass">&nbsp;Submit&nbsp;</b-button>
                   </div>
@@ -156,7 +155,7 @@
         <draggable v-bind="sortOptions">
           <Widget
             id="news-widget"
-            :title="'<div><h6> News <span class=badge badge-pill badge-success>17</span></h6><span class=text-muted>spinning refresh button close prompt</span></div>'"
+            :title="'<div><h6> News <span class=\'badge rounded-pill bg-success\'>17</span></h6><span class=text-muted>spinning refresh button close prompt</span></div>'"
             customHeader
             refresh collapse close
             bodyClass="p-0"
@@ -182,7 +181,7 @@
             <b-modal :change="toggleModal" v-model="modal"
               id="news-close-modal" title="Sure?" body-bg-variant="white">
               Do you really want to unrevertably remove this super news widget?
-              <div slot="modal-footer" class="w-100 text-right">
+              <div slot="modal-footer" class="w-100 text-end">
                 <b-button variant="default" @click="toggleModal" data-dismiss="modal">
                   No
                   </b-button>&nbsp;
@@ -218,7 +217,7 @@
           class="bg-inverse"
           bodyClass="p-0"
         >
-          <div class="jumbotron handle text-white mb-0">
+          <div class="jumbotron handle text-white py-3">
             <div class="container">
               <h1>Draggable story!</h1>
               <p class="lead">
@@ -226,7 +225,7 @@
                 interfaces! Sit back and relax.
               </p>
               <p class="text-center">
-                <a class="btn btn-danger btn-lg" control="fullscreen" @click="$refs.jumbotronWidget.changeState($event, 'fullscreen')">
+                <a class="btn btn-danger btn-lg text-white" control="fullscreen" @click="$refs.jumbotronWidget.changeState($event, 'fullscreen')">
                   Fullscreen me! &nbsp;
                   <i class="fa fa-check"></i>
                 </a>
@@ -262,6 +261,7 @@ export default {
       widgetFetchingData: {},
       isOpen: false,
       modal: false,
+      classBadge: 'badge bg-success rounded-pill',
       tooltipPlacement: 'bottom',
       sortOptions: {
         group: "grid",
