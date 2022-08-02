@@ -23,6 +23,10 @@ a,
   font-family: $font-family-base;
 }
 
+.dropdown-item {
+  white-space: normal;
+}
+
 th {
   font-weight: 600;
 }

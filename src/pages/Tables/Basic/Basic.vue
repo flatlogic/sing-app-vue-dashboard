@@ -29,7 +29,7 @@
                 <td>
                   {{row.description}}
                   <div v-if="row.label">
-                    <b-badge :variant="row.label.colorClass">{{row.label.text}}</b-badge>
+                    <span :class="row.label.colorClass ? `badge bg-${row.label.colorClass}` : ''" class="text-white">{{row.label.text}}</span>
                   </div>
                 </td>
                 <td>
@@ -63,7 +63,7 @@
             </table>
           </div>
           <div class="clearfix">
-            <div class="float-right">
+            <div class="float-end">
               <b-button variant="default" class="me-3" size="sm">Send to...</b-button>
               <b-dropdown variant="inverse" class="me-sm-2" size="sm" text="Clear" right>
                 <b-dropdown-item>Clear</b-dropdown-item>
@@ -117,7 +117,7 @@
                </td>
                <td>Mark</td>
                <td>Otto</td>
-               <td><b-badge variant="success">Online</b-badge></td>
+               <td><span class="badge bg-success">Online</span></td>
              </tr>
              <tr>
                <td>
@@ -129,9 +129,9 @@
                    <label for="checkbox3" />
                  </div>
                </td>
-               <td>Jacob <b-badge variant="warning" class="text-gray-dark">ALERT!</b-badge></td>
+               <td>Jacob <span class="badge bg-warning text-gray-dark">ALERT!</span></td>
                <td>Thornton</td>
-               <td><b-badge variant="gray">Away</b-badge></td>
+               <td><span class="badge bg-gray">Away</span></td>
              </tr>
              <tr>
                <td>
@@ -145,7 +145,7 @@
                </td>
                <td>Larry</td>
                <td>the Bird</td>
-               <td><b-badge variant="danger">Construct</b-badge></td>
+               <td><span class="badge bg-danger">Construct</span></td>
              </tr>
            </tbody>
          </table>
@@ -169,28 +169,28 @@
                  <td>Mark</td>
                  <td>Otto</td>
                  <td><a href="#">ottoto@example.com</a></td>
-                 <td><b-badge variant="info" pill>Pending</b-badge></td>
+                 <td><span class="badge bg-info rounded-pill">Pending</span></td>
                </tr>
                <tr>
                  <td>2</td>
                  <td>Jacob</td>
                  <td>Thornton</td>
                  <td><a href="#">fat.thor@example.com</a></td>
-                 <td><b-badge variant="warning" pill>Unconfirmed</b-badge></td>
+                 <td><span class="badge bg-warning">Unconfirmed</span></td>
                </tr>
                <tr>
                  <td>3</td>
                  <td>Larry</td>
                  <td>the Bird</td>
                  <td><a href="#">larry@example.com</a></td>
-                 <td><b-badge variant="primary" pill>New</b-badge></td>
+                 <td><span class="badge bg-primary">New</span></td>
                </tr>
                <tr>
                  <td>4</td>
                  <td>Peter</td>
                  <td>Horadnia</td>
                  <td><a href="#">peter@example.com</a></td>
-                 <td><b-badge variant="danger" pill>Active</b-badge></td>
+                 <td><span class="badge bg-danger">Active</span></td>
                </tr>
              </tbody>
            </table>
@@ -206,7 +206,7 @@
           <p>Each row is highlighted. You will never lost there. That&apos;s how
             all of us learned in school the table should look like. Just add
             <code>.table-bordered</code> to it.</p>
-          <table class="table table-bordered table-lg mt-lg mb-0">
+          <table class="table table-bordered table-lg mt-lg-1 mb-0">
             <thead class="text-uppercase">
               <tr>
                 <th>
@@ -219,7 +219,7 @@
                   </div>
                 </th>
                 <th>Product</th>
-                <th class="text-right">Price</th>
+                <th class="text-end">Price</th>
                 <th class="text-center">Sales</th>
               </tr>
             </thead>
@@ -235,7 +235,7 @@
                   </div>
                 </td>
                 <td>On the Road</td>
-                <td class="text-right">$25 224.2</td>
+                <td class="text-end">$25 224.2</td>
                 <td class="text-center">
                   <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
@@ -251,7 +251,7 @@
                   </div>
                 </td>
                 <td>HP Core i7</td>
-                <td class="text-right">$87 346.1</td>
+                <td class="text-end">$87 346.1</td>
                 <td class="text-center">
                   <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
@@ -267,7 +267,7 @@
                   </div>
                 </td>
                 <td>Let&apos;s Dance</td>
-                <td class="text-right">$57 944.6</td>
+                <td class="text-end">$57 944.6</td>
                 <td class="text-center">
                   <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
@@ -283,7 +283,7 @@
                   </div>
                 </td>
                 <td>Air Pro</td>
-                <td class="text-right">$118 533.1</td>
+                <td class="text-end">$118 533.1</td>
                 <td class="text-center">
                   <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
@@ -299,7 +299,7 @@
                   </div>
                 </td>
                 <td>Version Control</td>
-                <td class="text-right">$72 854.5</td>
+                <td class="text-end">$72 854.5</td>
                 <td class="text-center">
                   <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                 </td>
@@ -332,7 +332,7 @@
                     </div>
                   </th>
                   <th>Product</th>
-                  <th class="text-right">Price</th>
+                  <th class="text-end">Price</th>
                   <th class="text-center">Sales</th>
                 </tr>
               </thead>
@@ -348,7 +348,7 @@
                     </div>
                   </td>
                   <td>On the Road</td>
-                  <td class="text-right">$25 224.2</td>
+                  <td class="text-end">$25 224.2</td>
                   <td class="text-center">
                     <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
@@ -364,7 +364,7 @@
                     </div>
                   </td>
                   <td>HP Core i7</td>
-                  <td class="text-right">$87 346.1</td>
+                  <td class="text-end">$87 346.1</td>
                   <td class="text-center">
                     <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
@@ -380,7 +380,7 @@
                     </div>
                   </td>
                   <td>Let&apos;s Dance</td>
-                  <td class="text-right">$57 944.6</td>
+                  <td class="text-end">$57 944.6</td>
                   <td class="text-center">
                     <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
@@ -396,7 +396,7 @@
                     </div>
                   </td>
                   <td>Air Pro</td>
-                  <td class="text-right">$118 533.1</td>
+                  <td class="text-end">$118 533.1</td>
                   <td class="text-center">
                     <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
@@ -412,7 +412,7 @@
                     </div>
                   </td>
                   <td>Version Control</td>
-                  <td class="text-right">$72 854.5</td>
+                  <td class="text-end">$72 854.5</td>
                   <td class="text-center">
                     <Sparklines :data="getRandomData()" :options="getRandomColor()"></Sparklines>
                   </td>
@@ -550,8 +550,8 @@ export default {
       return [{data: result}];
     },
     getRandomColor() {
-      const {primary, success, info, danger} = this.appConfig.colors;
-      const colors = [info, primary, danger, success];
+      const {primary, success, info, danger, inverse, warning, secondary, gray} = this.appConfig.colors;
+      const colors = [info, primary, danger, success, inverse, warning, secondary, gray];
       return {colors: [colors[Math.floor(Math.random() * colors.length)]]}
     }
   },

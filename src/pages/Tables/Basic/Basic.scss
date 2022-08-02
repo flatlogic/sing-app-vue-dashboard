@@ -5,3 +5,9 @@
     font-size: $font-size-sm;
   }
 }
+
+.table-bordered th {
+  background: $blue;
+  color: $gray-default;
+  border: none;
+}
