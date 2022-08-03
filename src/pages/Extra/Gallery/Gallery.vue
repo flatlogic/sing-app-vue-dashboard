@@ -2,24 +2,24 @@
   <div class="gallery-page">
     <div class="d-flex justify-content-between align-items-center">
       <b-button-group class="mb-lg">
-        <b-button variant="default" @click="changeCategory(null)"
+        <b-button variant="gray-default" @click="changeCategory(null)"
           :class="{ active: activeCategory === null }"
         >All</b-button>
-        <b-button variant="default" @click="changeCategory('nature')"
+        <b-button variant="gray-default" @click="changeCategory('nature')"
           :class="{ active: activeCategory === 'nature' }"
         >Nature</b-button>
-        <b-button variant="default" @click="changeCategory('people')"
+        <b-button variant="gray-default" @click="changeCategory('people')"
           :class="{ active: activeCategory === 'people' }"
         >People</b-button>
-        <b-button variant="default" @click="changeCategory('space')"
+        <b-button variant="gray-default" @click="changeCategory('space')"
           :class="{ active: activeCategory === 'space' }"
         >Space</b-button>
       </b-button-group>
       <b-button-group class="mb-lg">
-        <b-button variant="default" @click="desc = false"
+        <b-button variant="gray-default" @click="desc = false"
           :class="{ active: desc === false }"
         ><i class="fa fa-sort-numeric-asc"></i></b-button>
-        <b-button variant="default" @click="desc = true"
+        <b-button variant="gray-default" @click="desc = true"
           :class="{ active: desc }"
         ><i class="fa fa-sort-numeric-desc"></i></b-button>
       </b-button-group>
