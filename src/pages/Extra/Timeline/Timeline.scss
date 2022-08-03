@@ -67,7 +67,7 @@
 
     + li {
       &::before {
-        color: #999;
+        color: $link-color;
         content: '\25cf';
         padding: 0 8px;
       }
@@ -75,7 +75,7 @@
 
     > a {
       text-decoration: none;
-      color: $text-muted;
+      color: $link-color;
 
       :hover {
         color: $text-muted;
