@@ -3,13 +3,13 @@
     <h1 class="page-title">Matching - <span class="fw-semi-bold">Results</span></h1>
     <div class="btn-toolbar justify-content-between">
       <div class="d-inline-flex">
-        <b-dropdown text="Popular" variant="default">
+        <b-dropdown text="Popular" variant="gray-default">
           <b-dropdown-item>All</b-dropdown-item>
           <b-dropdown-item>Popular</b-dropdown-item>
           <b-dropdown-item>Interesting</b-dropdown-item>
           <b-dropdown-item>Latest</b-dropdown-item>
         </b-dropdown>
-        <b-dropdown text="All Time" variant="default">
+        <b-dropdown text="All Time" variant="gray-default">
           <b-dropdown-item>Last 24h</b-dropdown-item>
           <b-dropdown-item>Last Month</b-dropdown-item>
           <b-dropdown-item>Last Month</b-dropdown-item>
@@ -25,17 +25,17 @@
       </b-button-group>
     </div>
     <b-row class="mt-3 d-block">
-      <b-col xl='3' sm='12' class="float-xl-right">
+      <b-col lg='3' sm='12' class="float-lg-end">
         <h5>Results <span class="fw-semi-bold">Filtering</span></h5>
         <p class="text-muted fs-mini">Listed content is categorized by the following groups:</p>
         <b-nav pills class="flex-column nav-stacked searchResultCategories mt">
           <b-nav-item href="#">
             Hot Ideas
-            <b-badge variant="danger" pill class="float-right">34</b-badge>
+            <span class="badge bg-danger rounded-pill float-end">34</span>
           </b-nav-item>
           <b-nav-item href="#">
             Latest Pictures
-            <b-badge variant="success" pill class="float-right">9</b-badge>
+            <span class="badge bg-success rounded-pill float-end">9</span>
           </b-nav-item>
           <b-nav-item href="#">
             Labels of Day
@@ -45,12 +45,12 @@
           </b-nav-item>
            <b-nav-item href="#">
             Globals
-            <b-badge variant="info" pill class="float-right">18</b-badge>
+             <span class="badge bg-info rounded-pill float-end">18</span>
           </b-nav-item>
         </b-nav>
       </b-col>
 
-      <b-col xl='9' sm='12'>
+      <b-col lg='9' sm='12'>
         <p class='searchResultsCount'>About 94 700 000 (0.39 sec.) results</p>
         <section class='searchResultItem'>
           <a class='imageLink' href="#">
@@ -93,7 +93,7 @@
                 <h4 class='searchResultItemHeading'>
                   <a href="#">Try. Posted by Okendoken</a>
                   <small>
-                    <span class="badge badge-pill badge-danger float-right">
+                    <span class="badge bg-pill bg-danger float-end">
                       <span class="fw-normal"> Best Deal!</span>
                     </span>
                   </small>

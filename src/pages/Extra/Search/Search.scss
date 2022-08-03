@@ -81,7 +81,8 @@
       font-weight: $font-weight-normal;
 
       > a {
-        color: $text-color;
+        color: $link-color;
+        text-decoration: none;
       }
 
       @include media-breakpoint-up(md) {
