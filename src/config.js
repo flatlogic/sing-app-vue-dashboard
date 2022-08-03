@@ -16,21 +16,21 @@ export default {
   },
   app: {
     sidebarTransitionTime: 300, //ms
-    sidebarColors: {
-      first: '#3D3D3D',
-      second: '#4B505F',
-      third: '#483CB6',
-      fourth: '#EFF2F5',
-      fifth: '#20AE8C'
-    },
-    navbarColors: {
-      first: '#ffffff',
-      second: '#E2E7EC',
-      third: '#C9D1FB',
-      fourth: '#C1C3CF',
-      fifth: '#0C2236',
-      sixth: '#6FB0F9'
-    },
+    sidebarColors: [
+      ['first', '#3D3D3D'],
+      ['second', '#4B505F'],
+      ['third', '#483CB6'],
+      ['fourth', '#EFF2F5'],
+      ['fifth', '#20AE8C']
+    ],
+    navbarColors: [
+      ['test', '#ffffff'],
+      ['test2', '#E2E7EC'],
+      ['test3', '#C9D1FB'],
+      ['test4', '#C1C3CF'],
+      ['test5', '#0C2236'],
+      ['test6', '#6FB0F9']
+    ],
     colors: {
       dark: "#002B49",
       light: "#FFFFFF",

@@ -25,7 +25,7 @@
 
                     <h5 id="v-step-5">Navbar Color</h5>
                     <colorpicker
-                        :colors="appConfig.themeColors"
+                        :colors="appConfig.navbarColors"
                         :activeColor="navbarColorName"
                         @change="updateLayoutComponentColor({component: layoutComponents.NAVBAR, color: $event})"
                     ></colorpicker>
@@ -48,7 +48,7 @@
 
                     <h5 id="v-step-7">Sidebar Color</h5>
                     <colorpicker
-                        :colors="appConfig.themeColors"
+                        :colors="appConfig.sidebarColors"
                         :activeColor="sidebarColorName"
                         @change="updateLayoutComponentColor({component: layoutComponents.SIDEBAR, color: $event})"
                     ></colorpicker>
@@ -68,7 +68,7 @@
                         Documentation
                     </a>
                 </div>
-                <div class="d-flex justify-content-between mt-lg-1">
+                <div class="d-flex justify-content-between mt-1">
                     <a role="button"
                     target="_blank"
                     href="https://flatlogic.com/forum"
@@ -84,7 +84,7 @@
                         Github
                     </a>
                 </div>
-                <div class="mt-lg d-flex flex-column align-items-center theme-sharing">
+                <div class="mt-1 d-flex flex-column align-items-center theme-sharing">
                     <span class="fs-sm">
                         Thank you for sharing!
                     </span>
