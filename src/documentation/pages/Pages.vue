@@ -64,7 +64,7 @@ routes: [
           on hover action.</p>
         <p>All of this component can be used on any page of the application.</p>
         <p>
-          <router-link class="btn btn-primary mr-sm" to="/app/main/analytics">Analytics</router-link>
+          <router-link class="btn btn-primary me-sm" to="/app/main/analytics">Analytics</router-link>
           <router-link class="btn btn-primary" to="/app/main/visits">Visits</router-link>
         </p>
       </Widget>
@@ -93,8 +93,8 @@ routes: [
           </b-col>
         </b-row>
         <p>
-          <router-link class="btn btn-primary mr-sm" to="/app/ecommerce/management">Management</router-link>
-          <router-link class="btn btn-primary mr-sm" to="/app/ecommerce/products">List</router-link>
+          <router-link class="btn btn-primary me-sm" to="/app/ecommerce/management">Management</router-link>
+          <router-link class="btn btn-primary me-sm" to="/app/ecommerce/products">List</router-link>
           <router-link class="btn btn-primary" to="/app/ecommerce/product">Details</router-link>
         </p>
       </Widget>

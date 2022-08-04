@@ -13,10 +13,10 @@
             <hr/>
             <div class="d-flex justify-content-between mb-3">
               <div class="text-warning">
-                <i class="la la-star mr-xs"></i>
-                <i class="la la-star mr-xs"></i>
-                <i class="la la-star mr-xs"></i>
-                <i class="la la-star mr-xs"></i>
+                <i class="la la-star me-sm-1"></i>
+                <i class="la la-star me-sm-1"></i>
+                <i class="la la-star me-sm-1"></i>
+                <i class="la la-star me-sm-1"></i>
                 <i class="la la-star"></i>
               </div>
               <span class="text-muted"><small>342 REVIEWS</small></span>
@@ -35,10 +35,10 @@
   &lt;hr/&gt;
   &lt;div class=&quot;d-flex justify-content-between mb-3&quot;&gt;
     &lt;div class=&quot;text-warning&quot;&gt;
-      &lt;i class=&quot;la la-star mr-xs&quot;&gt;&lt;/i&gt;
-      &lt;i class=&quot;la la-star mr-xs&quot;&gt;&lt;/i&gt;
-      &lt;i class=&quot;la la-star mr-xs&quot;&gt;&lt;/i&gt;
-      &lt;i class=&quot;la la-star mr-xs&quot;&gt;&lt;/i&gt;
+      &lt;i class=&quot;la la-star me-xs&quot;&gt;&lt;/i&gt;
+      &lt;i class=&quot;la la-star me-xs&quot;&gt;&lt;/i&gt;
+      &lt;i class=&quot;la la-star me-xs&quot;&gt;&lt;/i&gt;
+      &lt;i class=&quot;la la-star me-xs&quot;&gt;&lt;/i&gt;
       &lt;i class=&quot;la la-star&quot;&gt;&lt;/i&gt;
     &lt;/div&gt;
     &lt;span class=&quot;text-muted&quot;&gt;&lt;small&gt;342 REVIEWS&lt;/small&gt;&lt;/span&gt;

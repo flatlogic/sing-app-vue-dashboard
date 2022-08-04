@@ -64,7 +64,7 @@
       <p class="m-0 overflow-hidden">
         User <a href="#">Jeff</a> registered
         &nbsp;&nbsp;
-        <b-button size="xs" variant="success" class="mr-1">Allow</b-button>
+        <b-button size="xs" variant="success" class="me-1">Allow</b-button>
         <b-button size="xs" variant="danger">Deny</b-button>
         <time class="help-block m-0">
           12:18 AM

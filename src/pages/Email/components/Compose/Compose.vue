@@ -5,10 +5,10 @@
       <b-form-input class="mb" type="text" placeholder="To" :value="data && data.from" />
       <b-form-input class="mb" type="text" placeholder="Subject" :value="data && data.theme" />
       <ckeditor :editor="wygEditor" v-model="wygContent"></ckeditor>
-      <div class="text-md-right mt">
-        <b-button class="ml-xs" variant="gray">Discard</b-button>
-        <b-button class="ml-xs" variant="gray">Save</b-button>
-        <b-button class="ml-xs" variant="danger">Send</b-button>
+      <div class="text-md-end mt">
+        <b-button class="ms-sm-1" variant="gray">Discard</b-button>
+        <b-button class="ms-sm-1" variant="gray">Save</b-button>
+        <b-button class="ms-sm-1" variant="danger">Send</b-button>
       </div>
     </div>
   </Widget>

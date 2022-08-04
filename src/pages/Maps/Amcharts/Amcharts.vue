@@ -5,7 +5,7 @@
       <h1 class="m-0 mb-sm">Vector <span class="fw-semi-bold">Maps</span></h1>
       <p class="page-title fs-sm m-0">
         <span class="fw-semi-bold">1 656 843</span>
-        <span class="ml-xs circle bg-primary"><i class="text-white fa fa-circle"/></span>
+        <span class="ms-sm-1 circle bg-primary"><i class="text-white fa fa-circle"/></span>
       </p>
     </header>
   </div>

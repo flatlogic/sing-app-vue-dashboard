@@ -5,9 +5,9 @@
         <strong>You have 13 notifications</strong>
       </div>
       <b-button-group id="notification-b-buttons">
-        <b-button variant="default" @click="changeNotificationsTab(1)">Notifications</b-button>
-        <b-button variant="default" @click="changeNotificationsTab(2)">Messages</b-button>
-        <b-button variant="default" @click="changeNotificationsTab(3)">Progress</b-button>
+        <b-button @click="changeNotificationsTab(1)">Notifications</b-button>
+        <b-button @click="changeNotificationsTab(2)">Messages</b-button>
+        <b-button @click="changeNotificationsTab(3)">Progress</b-button>
       </b-button-group>
     </header>
     <NewNotifictionsList v-if="newNotifications" />
@@ -20,7 +20,7 @@
       <b-button
         variant="link"
         @click="loadNotifications"
-        :class="{disabled: isLoad, 'btnNotificationsReload btn-xs float-right py-0': true}"
+        :class="{disabled: isLoad, 'btnNotificationsReload btn-xs float-end py-0': true}"
       >
         <span v-if="isLoad"><i class="la la-refresh la-spin" /> Loading...</span>
         <i v-else class="la la-refresh" />

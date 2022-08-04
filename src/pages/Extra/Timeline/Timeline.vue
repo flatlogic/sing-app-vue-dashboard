@@ -12,7 +12,7 @@
           <i class="la la-lg la-map-marker" />
         </span>
         <section class="event">
-          <span class="thumb-sm avatar pull-left mr-sm">
+          <span class="thumb-sm avatar pull-left me-sm-1">
             <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="woman" />
           </span>
           <h4 class="eventHeading"><a href="#">Jessica Nilson</a>
@@ -41,7 +41,7 @@
             </ul>
             <ul class="postComments">
               <li>
-                <span class="thumb-xs avatar pull-left mr-sm">
+                <span class="thumb-xs avatar pull-left me-sm-1">
                   <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="woman" />
                 </span>
                 <div class="commentBody">
@@ -53,7 +53,7 @@
                 </div>
               </li>
               <li>
-                <span class="thumb-xs avatar pull-left mr-sm">
+                <span class="thumb-xs avatar pull-left me-sm-1">
                   <img class="rounded-circle" src="../../../assets/people/a4.jpg" alt="man" />
                 </span>
                 <div class="commentBody">
@@ -64,7 +64,7 @@
                 </div>
               </li>
               <li>
-                <span class="thumb-xs avatar pull-left mr-sm">
+                <span class="thumb-xs avatar pull-left me-sm-1">
                   <img class="rounded-circle" src="../../../assets/avatar.png" alt="avatar" />
                 </span>
                 <div class="commentBody">
@@ -85,7 +85,7 @@
           <i class="la la-lg la-comment" />
         </span>
         <section class="event">
-          <span class="thumb-xs avatar pull-left mr-sm">
+          <span class="thumb-xs avatar pull-left me-sm-1">
             <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="man" />
           </span>
           <h5 class="eventHeading"><a href="#">Bob Nilson</a>
@@ -163,7 +163,7 @@
             </div>
             <ul class="postComments mt-sm">
               <li>
-                <span class="thumb-xs avatar pull-left mr-sm">
+                <span class="thumb-xs avatar pull-left me-sm-1">
                   <img class="rounded-circle" src="../../../assets/people/a1.jpg" alt="woman" />
                 </span>
                 <div class="commentBody">
@@ -174,7 +174,7 @@
                 </div>
               </li>
               <li>
-                <span class="thumb-xs avatar pull-left mr-sm">
+                <span class="thumb-xs avatar pull-left me-sm-1">
                   <img class="rounded-circle" src="../../../assets/avatar.png" alt="avatar" />
                 </span>
                 <div class="commentBody">
@@ -194,7 +194,7 @@
           <i class="la la-lg la-user"/>
         </span>
         <section class="event">
-          <span class="thumb-xs avatar pull-left mr-sm">
+          <span class="thumb-xs avatar pull-left me-sm-1">
             <img class="rounded-circle" src="../../../assets/people/a6.jpg" alt="woman" />
           </span>
           <h5 class="eventHeading"><a href="#">Jessica Smith</a>

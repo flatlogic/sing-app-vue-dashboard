@@ -21,7 +21,7 @@
             <b-navbar-brand href="#">Sing</b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
-              <b-navbar-nav class="ml-auto">
+              <b-navbar-nav class="ms-auto">
                 <b-nav-item href="#">Components</b-nav-item>
                 <b-nav-item href="#">Documentation</b-nav-item>
                 <b-nav-item-dropdown text="Options" right>
@@ -55,7 +55,7 @@
           '  <b-navbar-brand href="#">Sing</b-navbar-brand>\n' +
           '  <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>\n' +
           '  <b-collapse id="nav-collapse" is-nav>\n' +
-          '    <b-navbar-nav class="ml-auto">\n' +
+          '    <b-navbar-nav class="ms-auto">\n' +
           '      <b-nav-item href="#">Components</b-nav-item>\n' +
           '      <b-nav-item href="#">Documentation</b-nav-item>\n' +
           '      <b-nav-item-dropdown text="Options" right>\n' +

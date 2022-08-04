@@ -29,7 +29,7 @@
       <b-tabs nav-class="bg-transparent">
         <b-tab title="Example" active>
           <h3>Variations</h3>
-          <b-button class="mr-3" @click="showLong = true" size="lg" variant="danger">Long modal</b-button>
+          <b-button class="me-3" @click="showLong = true" size="lg" variant="danger">Long modal</b-button>
           <b-button @click="showLarge = true" size="lg" variant="success">Large modal</b-button>
 
           <b-modal id="modal-long" title="Long content" v-model="showLong" body-bg-variant="white">

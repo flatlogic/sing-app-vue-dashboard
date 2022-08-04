@@ -47,13 +47,13 @@
             <div class="pb-xlg h-100">
               <Widget class="h-100 mb-0" title="App Perfomance" close :fetchingData="isReceiving">
                 <p class="text-muted d-flex flex-wrap">
-                  <small class="mr-lg d-flex align-items-center">
+                  <small class="me-lg-1 d-flex align-items-center">
                     <span class="circle bg-danger text-danger me-sm-1" style="font-size: 4px;">
                       .
                     </span>
                     This Period
                   </small>
-                  <small class="mr-lg d-flex align-items-center">
+                  <small class="me-lg-1 d-flex align-items-center">
                     <span class="circle bg-primary text-primary me-sm-1" style="font-size: 4px;">
                       .
                     </span>

@@ -213,7 +213,7 @@
                 </div>
               </li>
               <li>
-                <span class="thumb-xs avatar pull-left mr-sm">
+                <span class="thumb-xs avatar pull-left me-sm">
                   <img class="rounded-circle" src='../../assets/avatar.png' alt="avatar" />
                 </span>
                 <div class="comment-body">
@@ -377,14 +377,14 @@
                   <div class="row mt-n-xs mb-xs">
                     <div class="col-6 p-0">
                       <Skycon icon="WIND" color="#999" :options="{ width: '20', height: '20' }" />
-                      <div class="d-inline-block ml-1">
+                      <div class="d-inline-block ms-1">
                         <p class="value6">4</p>
                         <p class="fs-sm m-0 mt-n-xs text-muted fw-normal">MPS</p>
                       </div>
                     </div>
                     <div class="col-6 p-0">
                       <Skycon icon="RAIN" color="#999" :options="{ width: '20', height: '20' }" />
-                      <div class="d-inline-block ml-1">
+                      <div class="d-inline-block ms-1">
                         <p class="value6">52</p>
                         <p class="fs-sm m-0 mt-n-xs text-muted fw-normal">MM</p>
                       </div>

@@ -316,7 +316,7 @@
             </table>
           </div>
           <div class="widget-body mt-xlg chart-overflow-bottom">
-            <area-chart class="area-chart" height="100px" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}, responsive: true}"  :chart-data="dataCollection"></area-chart>
+            <area-chart class="area-chart" :height="height" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}, responsive: true}"  :chart-data="dataCollection"></area-chart>
           </div>
         </Widget>
       </b-col>
@@ -364,7 +364,8 @@ export default {
         }
       },
       checkedArr: [false, false, false],
-      dataCollection: null,
+      dataCollection: {},
+      height: 100
     };
   },
   methods: {

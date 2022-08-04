@@ -44,30 +44,30 @@
         <b-tab title="Example" active>
           <h4>Pill badges</h4>
           <p>
-            <b-badge class="mr-1" variant="primary" pill>Primary</b-badge>
-            <b-badge class="mr-1" variant="info" pill>Info</b-badge>
-            <b-badge class="mr-1" variant="warning" pill>Warning</b-badge>
-            <b-badge class="mr-1" variant="success" pill>Success</b-badge>
-            <b-badge class="mr-1" variant="danger" pill>Danger</b-badge>
-            <b-badge class="mr-1" variant="secondary" pill>Secondary</b-badge>
-            <b-badge class="mr-1" variant="light" pill>Light</b-badge>
-            <b-badge class="mr-1" variant="dark" pill>Dark</b-badge>
+            <b-badge class="me-1" variant="primary" pill>Primary</b-badge>
+            <b-badge class="me-1" variant="info" pill>Info</b-badge>
+            <b-badge class="me-1" variant="warning" pill>Warning</b-badge>
+            <b-badge class="me-1" variant="success" pill>Success</b-badge>
+            <b-badge class="me-1" variant="danger" pill>Danger</b-badge>
+            <b-badge class="me-1" variant="secondary" pill>Secondary</b-badge>
+            <b-badge class="me-1" variant="light" pill>Light</b-badge>
+            <b-badge class="me-1" variant="dark" pill>Dark</b-badge>
           </p>
           <h4>Badges with link</h4>
           <p>
-            <b-badge class="mr-1" href="#" variant="primary">Primary</b-badge>
-            <b-badge class="mr-1" href="#" variant="info">Info</b-badge>
-            <b-badge class="mr-1" href="#" variant="warning">Warning</b-badge>
-            <b-badge class="mr-1" href="#" variant="success">Success</b-badge>
-            <b-badge class="mr-1" href="#" variant="danger">Danger</b-badge>
-            <b-badge class="mr-1" href="#" variant="secondary">Secondary</b-badge>
-            <b-badge class="mr-1" href="#" variant="light">Light</b-badge>
-            <b-badge class="mr-1" href="#" variant="dark">Dark</b-badge>
+            <b-badge class="me-1" href="#" variant="primary">Primary</b-badge>
+            <b-badge class="me-1" href="#" variant="info">Info</b-badge>
+            <b-badge class="me-1" href="#" variant="warning">Warning</b-badge>
+            <b-badge class="me-1" href="#" variant="success">Success</b-badge>
+            <b-badge class="me-1" href="#" variant="danger">Danger</b-badge>
+            <b-badge class="me-1" href="#" variant="secondary">Secondary</b-badge>
+            <b-badge class="me-1" href="#" variant="light">Light</b-badge>
+            <b-badge class="me-1" href="#" variant="dark">Dark</b-badge>
           </p>
         </b-tab>
         <b-tab title="Code">
-          <vue-code-highlight>&lt;b-badge class="mr-1" variant="primary" pill&gt;Primary&lt;/b-badge&gt;
-&lt;b-badge class="mr-1" href="#" variant="primary"&gt;Primary&lt;/b-badge&gt;</vue-code-highlight>
+          <vue-code-highlight>&lt;b-badge class="me-1" variant="primary" pill&gt;Primary&lt;/b-badge&gt;
+&lt;b-badge class="me-1" href="#" variant="primary"&gt;Primary&lt;/b-badge&gt;</vue-code-highlight>
         </b-tab>
       </b-tabs>
     </b-col>

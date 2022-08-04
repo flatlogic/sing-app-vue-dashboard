@@ -11,7 +11,7 @@
           title="<h6>React JS Version</h6>"
           settings collapse close customHeader
         >
-          <img class="rounded pull-left mb-1 mr-3 image"
+          <img class="rounded pull-left mb-1 me-3 image"
             src="../../assets/react-logo.svg" width="80" alt="react" />
           <h3>React JS Version</h3>
           <p class="text-muted">We spent another <span class="fw-semi-bold">500</span> man-hours
@@ -45,7 +45,7 @@
           title="<h6>Angular Version</h6>"
           settings collapse close customHeader
         >
-          <img class="rounded pull-left mb-1 mr-3 image"
+          <img class="rounded pull-left mb-1 me-3 image"
             src="../../assets/angularjs-logo.svg" width="80" alt="angular" />
           <h3>Angular 2+ Version</h3>
           <p class="text-muted">We spent around <span class="fw-semi-bold">500</span> man-hours
@@ -78,7 +78,7 @@
           title="<h6>AngularJS 1.X Version</h6>"
           settings collapse close customHeader
         >
-          <img class="rounded pull-left mb-1 mr-3 image"
+          <img class="rounded pull-left mb-1 me-3 image"
             src="../../assets/angular-logo.svg" width="80" alt="angular" />
           <h3>AngularJS Version</h3>
           <p class="text-muted">We don’t know about you but we’re very
@@ -113,7 +113,7 @@
           title="<h6>Pure HTML5 Version</h6>"
           settings collapse close customHeader
         >
-          <img class="rounded pull-left mb-1 mr-3 image"
+          <img class="rounded pull-left mb-1 me-3 image"
             src="../../assets/js-logo.svg" width="80" alt="js" />
           <h3>HTML5 Version</h3>
           <p class="text-muted">During last 4 years we
@@ -147,7 +147,7 @@
           title="<h6>Vue JS Version</h6>"
           settings collapse close customHeader
         >
-          <img class="rounded pull-left mb-1 mr-3 image"
+          <img class="rounded pull-left mb-1 me-3 image"
             src="../../assets/logo.png" width="80" alt="vue" />
           <h3>VUE JS Version</h3>
           <p class="text-muted">Coming soon version. Seed

@@ -64,16 +64,16 @@
             Four separate sizes available for all use cases:
             from tiny 10px button to large one.
           </p>
-          <b-button variant="default" size="lg" class="mb-2 mr-2">Large button</b-button>
-          <b-button variant="primary" class="mb-2 mr-2">Default button</b-button>
-          <b-button variant="info" size="sm" class="mb-2 mr-2">Small button</b-button>
-          <b-button variant="success" size="xs" class="mb-2 mr-2">Tiny button</b-button>
+          <b-button variant="default" size="lg" class="mb-2 me-2">Large button</b-button>
+          <b-button variant="primary" class="mb-2 me-2">Default button</b-button>
+          <b-button variant="info" size="sm" class="mb-2 me-2">Small button</b-button>
+          <b-button variant="success" size="xs" class="mb-2 me-2">Tiny button</b-button>
         </b-tab>
         <b-tab title="Code">
-          <vue-code-highlight>&lt;b-button variant="default" size="lg" class="mb-2 mr-2"&gt;Large button&lt;/b-button&gt;
-&lt;b-button variant="primary" class="mb-2 mr-2"&gt;Default button&lt;/b-button&gt;
-&lt;b-button variant="info" size="sm" class="mb-2 mr-2"&gt;Small button&lt;/b-button&gt;
-&lt;b-button variant="success" size="xs" class="mb-2 mr-2"&gt;Tiny button&lt;/b-button&gt;</vue-code-highlight>
+          <vue-code-highlight>&lt;b-button variant="default" size="lg" class="mb-2 me-2"&gt;Large button&lt;/b-button&gt;
+&lt;b-button variant="primary" class="mb-2 me-2"&gt;Default button&lt;/b-button&gt;
+&lt;b-button variant="info" size="sm" class="mb-2 me-2"&gt;Small button&lt;/b-button&gt;
+&lt;b-button variant="success" size="xs" class="mb-2 me-2"&gt;Tiny button&lt;/b-button&gt;</vue-code-highlight>
         </b-tab>
       </b-tabs>
     </b-col>

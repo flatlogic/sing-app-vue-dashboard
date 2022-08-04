@@ -3,11 +3,11 @@
     <h3>{{title}}</h3>
     <div class="messageHeaderLine mt-lg mb-lg">
       <div class="messageFrom">
-        <img src="../../../../assets/people/a4.jpg" alt="user" class="rounded-circle mr-xs" />
+        <img src="../../../../assets/people/a4.jpg" alt="user" class="rounded-circle me-sm-1" />
         <div class="messageFromInfo">
           <span>
             <strong>{{name}}</strong>
-            <span class="text-muted fw-thin ml-xs">
+            <span class="text-muted fw-thin ms-sm-1">
               &lt;{{email}}&gt;
             </span>
           </span>
@@ -16,7 +16,7 @@
       </div>
       <div class="messageHeaderDate">
         {{date}}
-        <b-button-group class="ml-sm">
+        <b-button-group class="ms-sm-1">
           <b-button variant="default" @click="changeCompose">
             <i class="fa fa-reply" /> Reply
           </b-button>

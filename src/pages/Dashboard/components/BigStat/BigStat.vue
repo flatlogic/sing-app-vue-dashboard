@@ -6,8 +6,8 @@
     >
       <div class="d-flex justify-content-between flex-wrap px-4">
         <h4 class='d-flex align-items-center pb-1 bigStatTitle'>
-          <span :class="`circle bg-${color} mr-sm`" :style="{ fontSize: '6px' }" />
-            Statistic <span class="fw-normal ml-xs">{{product}}</span>
+          <span :class="`circle bg-${color} me-sm-1`" :style="{ fontSize: '6px' }" />
+            Statistic <span class="fw-normal ms-sm-1">{{product}}</span>
         </h4>
         <b-dropdown :text="text" variant="white" size="sm">
           <b-dropdown-item-button @click="changeText('Daily')">Daily</b-dropdown-item-button>
