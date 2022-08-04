@@ -46,7 +46,7 @@ export default {
   state: {
     sidebarClose: false,
     sidebarStatic: false,
-    sidebarColorName: config.app.sidebarColors[0][0],
+    sidebarColorName: config.app.sidebarColors[3][0],
     navbarColorName: config.app.navbarColors[1][0],
     navbarColorScheme: NavbarColorSchemes.LIGHT,
     navbarType: NavbarTypes.STATIC,

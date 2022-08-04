@@ -304,11 +304,10 @@
 import { mapState, mapActions } from 'vuex';
 import isScreen from '@/core/screenHelper';
 import NavLink from './NavLink/NavLink';
-import Bank from '../../assets/sidebar/Outline/Bank.svg';
 
 export default {
   name: 'Sidebar',
-  components: { NavLink, Bank },
+  components: { NavLink},
   data() {
     return {
       alerts: [
@@ -326,8 +325,7 @@ export default {
           footer: 'Provide required notes',
           color: 'primary',
         },
-      ],
-      Bank
+      ]
     };
   },
   methods: {

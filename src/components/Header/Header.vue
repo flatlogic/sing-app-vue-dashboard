@@ -2,13 +2,13 @@
   <b-navbar class="app-header d-print-none" :class="[navbarTypeClass, 'header-' + navbarColorScheme]">
     <b-nav>
       <b-nav-item id="v-step-0">
-        <a class="d-md-down-none px-2" href="#" @click="toggleSidebarMethod">
+        <a class="d-md-down-none px-1" href="#" @click="toggleSidebarMethod">
           <img
               :src="Menu"
               alt="menu"
           />
         </a>
-        <a class="fs-lg d-lg-none" href="#" @click="switchSidebarMethod">
+        <a class="fs-lg d-md-none" href="#" @click="switchSidebarMethod">
           <img
               :src="Menu"
               alt="menu"
@@ -16,7 +16,7 @@
         </a>
       </b-nav-item>
       <b-nav-item class="d-md-down-none">
-        <a href="#" class="px-2">
+        <a href="#" class="px-1">
           <img
             :src="Exchange"
             alt="exchange"
@@ -33,29 +33,31 @@
       </b-nav-item>
     </b-nav>
     <b-nav>
-      <b-form class="d-sm-down-none ms-5 my-auto" inline>
+      <b-form class="d-md-down-none ms-5 my-auto" inline>
         <b-form-group>
           <b-input-group class="input-group-no-border search-input">
-            <template v-slot:prepend>
-              <b-input-group-text>
-                <div>
-                  <img
-                      :src="Search"
-                      alt="search"
-                  />
+              <template v-slot:prepend>
+                <div class="headerSvgFlipColor">
+                  <b-input-group-text>
+                    <div>
+                      <img
+                          :src="Search"
+                          alt="search"
+                      />
+                    </div>
+                  </b-input-group-text>
                 </div>
-              </b-input-group-text>
-            </template>
+              </template>
             <b-form-input id="search-input" placeholder="Search Dashboard" />
           </b-input-group>
         </b-form-group>
       </b-form>
     </b-nav>
     <a  class="navbarBrand d-md-none">
-      <i class="fa fa-circle text-primary me-sm-1" />
+      <i class="fa fa-circle text-primary me-1" />
       <i class="fa fa-circle text-danger" />
       sing
-      <i class="fa fa-circle text-danger me-sm-1" />
+      <i class="fa fa-circle text-danger me-1" />
       <i class="fa fa-circle text-primary" />
     </a>
     <b-nav class="ms-auto">
@@ -67,7 +69,7 @@
         menu-class="notificationsWrapper py-0 animate__animated animate__animated-fast animate__fadeIn"
         right>
         <template slot="button-content">
-          <span class="avatar rounded-circle thumb-sm float-left me-2">
+          <span class="avatar rounded-circle thumb-sm float-start me-2">
             <img
                 v-if="user.avatar || user.email === 'admin@flatlogic.com'"
                 class="rounded-circle"
@@ -77,7 +79,7 @@
             <span v-else>{{firstUserLetter}}</span>
           </span>
           <span>{{user.name || user.email || 'Philip smith'}}</span>
-          <span class="mx-2 circle bg-dark text-white fw-bold" style="padding: 13px 13px;">9</span>
+          <span class="mx-2 circle bg-danger text-white fw-bold" style="padding: 13px 13px;">9</span>
 <!--          <i :class="['fi flaticon-arrow-down px-2 dropdown-arrow', {active: dropdown}]" />-->
           <img class="px-2 dropdown-arrow"
                :class="{active: dropdown}"
@@ -97,7 +99,7 @@
         </template>
         <b-dropdown-item>
           <img :src="User"
-               class="px-2 mr-3"
+               class="px-2 me-3"
                alt="user"
           />
             My Account
@@ -105,14 +107,14 @@
         <b-dropdown-divider />
         <b-dropdown-item>
           <img :src="Document"
-               class="px-2 mr-2"
+               class="px-2 me-2"
                alt="document"
           />
           Calendar
         </b-dropdown-item>
         <b-dropdown-item href="/inbox">
           <img :src="Envelope"
-               class="px-2 mr-2"
+               class="px-2 me-2"
                alt="envelope"
           />
           Inbox &nbsp;&nbsp;
@@ -121,7 +123,7 @@
         <b-dropdown-divider />
         <b-dropdown-item-button @click="logoutUser">
           <img :src="Cancel"
-               class="px-2 mr-2"
+               class="px-2 me-2"
                alt="cancel"
           />
           Log Out
