@@ -167,6 +167,15 @@
        }
      }
   }
+
+  .headerSvgFlipColor {
+    color: var(--navbar-icon-bg) !important;
+    :global {
+      .bg-primary {
+        background-color: var(--navbar-icon-bg)!important;
+      }
+    }
+  }
 }
 
 
