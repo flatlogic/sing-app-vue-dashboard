@@ -2,21 +2,21 @@
   <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, className}">
     <router-link :to="link" class="sidebar-link">
       <span class="icon">
-        <img v-if="iconImg" :src="require('@/assets/' + iconImg + '')" alt="img">
+        <inline-svg v-if="iconImg" :src="require('@/assets/' + iconImg + '')" fill="currentColor"></inline-svg>
         <i v-else :class="fullIconName"></i>
       </span>
       {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
-      <b-badge v-if="badge" class="badge" variant="info" pill>{{badge}}</b-badge>
+      <span v-if="badge" class="badge rounded-pill bg-danger">{{badge}}</span>
     </router-link>
   </li>
   <li v-else-if="childrenLinks" :class="{headerLink: true, className}">
     <div @click="() => togglePanelCollapse(link)">
       <router-link :to="link" event="" class="d-flex sidebar-link">
         <span class="icon">
-          <img v-if="iconImg" :src="require('@/assets/' + iconImg + '')" alt="img">
+          <inline-svg v-if="iconImg" :src="require('@/assets/' + iconImg + '')" fill="currentColor"> </inline-svg>
           <i v-else :class="fullIconName"></i>
         </span>
-        {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{label}}</sup>
+        {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ms-1 headerLabel">{{label}}</sup>
         <div :class="{caretWrapper: true, carretActive: isActive}">
           <i class="fa fa-angle-right" />
         </div>

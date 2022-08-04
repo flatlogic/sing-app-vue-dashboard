@@ -8641,6 +8641,11 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
 
+vue-inline-svg@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-inline-svg/-/vue-inline-svg-2.1.0.tgz#45f20a34d458636c5caea5da28eef6cad9a87fcb"
+  integrity sha512-80u/BGtjOzXp31yFahXsfvkBrHKHEHKyrkZ42MGoAbD6jHzWpMJLijsyRj66pps7IyKxZcnYkO3ijsJhr4zXsg==
+
 vue-input-tag@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/vue-input-tag/-/vue-input-tag-2.0.7.tgz#daea4db750df34a8c87605f88455dc5f64e1052b"

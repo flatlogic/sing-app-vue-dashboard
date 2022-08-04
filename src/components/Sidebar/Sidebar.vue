@@ -36,7 +36,7 @@
             icon-img="sidebar/Outline/Chat.svg"
             index="chat"
             label="awesome"
-            labelColor="info"
+            labelColor="success"
             isHeader
         />
         <NavLink
@@ -88,7 +88,7 @@
           icon-img="sidebar/Outline/Document.svg"
           index="documentation"
           label="new"
-          labelColor="success"
+          labelColor="info"
           isHeader
         />
         <h5 class="navTitle">TEMPLATE</h5>
@@ -304,10 +304,11 @@
 import { mapState, mapActions } from 'vuex';
 import isScreen from '@/core/screenHelper';
 import NavLink from './NavLink/NavLink';
+import Bank from '../../assets/sidebar/Outline/Bank.svg';
 
 export default {
   name: 'Sidebar',
-  components: { NavLink },
+  components: { NavLink, Bank },
   data() {
     return {
       alerts: [
@@ -326,6 +327,7 @@ export default {
           color: 'primary',
         },
       ],
+      Bank
     };
   },
   methods: {

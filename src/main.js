@@ -19,6 +19,7 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 import bFormSlider from 'vue-bootstrap-slider';
 import { component as VueCodeHighlight } from 'vue-code-highlight';
 import VueTour from 'vue-tour';
+import InlineSvg from 'vue-inline-svg';
 
 import store from './store';
 import router from './Routes';
@@ -63,6 +64,7 @@ Vue.mixin(layoutMixin);
 Vue.mixin(AuthMixin);
 Vue.use(Toasted, {duration: 10000});
 Vue.use(VueTour);
+Vue.component('inline-svg', InlineSvg);
 
 Vue.config.productionTip = false;
 

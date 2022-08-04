@@ -58,6 +58,7 @@
     "vue-echarts": "^4.1.0",
     "vue-form-wizard": "^0.8.4",
     "vue-gallery": "^1.5.0",
+    "vue-inline-svg": "^2.1.0",
     "vue-input-tag": "^2.0.7",
     "vue-router": "^3.5.4",
     "vue-select": "^2.6.4",

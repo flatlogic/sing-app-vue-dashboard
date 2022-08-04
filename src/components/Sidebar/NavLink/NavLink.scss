@@ -87,7 +87,7 @@
   align-items: center;
   margin-left: auto;
   margin-right: 22px;
-  color: var(--sidebar-item-active-bg);
+  color: var(--sidebar-color);
 
   i {
     @include transition(transform 0.3s ease-in-out);

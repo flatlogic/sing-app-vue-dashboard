@@ -1,17 +1,12 @@
 .root {
   &.sing-dashboard {
-    --logo-color: #6C757D;
     --body-bg: #f9fbfd;
     --light-color: #F6F6E9;
 
     --sidebar-bg-color: #ffffff;
     --sidebar-color: #6c757d;
     --sidebar-action-bg: #f9fafe;
-    --sidebar-item-active: #6C757D; //var(--light-color)
-    --sidebar-item-active-bg: #5CB0FF;
-    --sidebar-badge-bg: #1A86D0;
-
-    --sidebar-nav-title-color: #5287B999;
+    --sidebar-item-active: #C1C3CF; //var(--light-color)
 
     --widget-shadow-color: 75, 102, 171;
 
@@ -23,31 +18,41 @@
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
     --sidebar-icon-active: var(--sidebar-bg-color);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
-    --widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
+    //--widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
+
+    --input-bg-color: var(--input-bg);
+    --badge-item-color: var(--badge-item);
+    --important-notification: var(--important-notification-color);
+    --update-notification: var(--update-notification-color);
+    --sidebar-item-active-color: var(--sidebar-item-active);
+    --chat-sidebar-bg-color: var(--sidebar-bg-color);
+    --widget-shadow: 0 23px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
 
     &.sidebar-white,
     &.sidebar-transparent {
+      --sidebar-icon-bg: #4A5056;
       --sidebar-bg-color: #ffffff;
       --sidebar-color: #6c757d;
       --sidebar-action-bg: #f9fafe;
-      --logo-color: #0D2B47;
-      --sidebar-item-active: #14191D;
+      --logo-color: #6C757D;
+      --sidebar-item-active: #6C757D;
+      --sidebar-item-active-color: #FFFFFF;
       --sidebar-item-active-bg: #4A5056;
       --sidebar-nav-title-color: #5287B9;
     }
 
     &.sidebar-first {
-      --sidebar-icon-bg: #5CB0FF;
       --sidebar-bg-color: #3D3D3D;
-      --logo-color: #C1C3CF;
+      --logo-color: #5CB0FF;
       --sidebar-item-active: #F6F6E9;
       --sidebar-action-bg: #2D2D2D;
+      --sidebar-item-active-bg: #5CB0FF;
       --sidebar-color: #F6F6E9;
       --sidebar-nav-title-color: #F6F6E9;
     }
 
     &.sidebar-second {
-      --logo-color: #C1C3CF;
+      --logo-color: #fff;
       --sidebar-color: #fff;
       --sidebar-bg-color: #4B505F;
       --sidebar-action-bg: #373C4D;
@@ -56,8 +61,8 @@
     }
 
     &.sidebar-third {
-      --sidebar-icon-bg: #fff;
-      --logo-color: #0C2236;
+      --sidebar-item-active-bg: #5CB0FF;
+      --logo-color: #fff;
       --sidebar-item-active: #F6F6E9;
       --important-notification-color: #fd5f00;
       --sidebar-bg-color: #483CB6;
@@ -66,56 +71,22 @@
     }
 
     &.sidebar-fourth {
-      --logo-color: #0C2236;
+      --sidebar-icon-bg: #6FB0F9;
+      --logo-color: #6FB0F9;
+      --sidebar-item-active: #5A5D76;
       --sidebar-bg-color: #EFF2F5;
       --sidebar-action-bg: #E2E7EC;
       --sidebar-item-active-bg: #6FB0F9;
     }
 
     &.sidebar-fifth {
-      --logo-color: $white;
+      --sidebar-icon-bg: #0D2B47;
+      --logo-color: #0D2B47;
       --sidebar-bg-color: #20AE8C;
       --sidebar-action-bg: #119475;
+      --sidebar-item-active: #F6F6E9;
       --sidebar-item-active-bg: #0D2B47;
-      --sidebar-color: #F6F6E9 !important;
-    }
-
-    //&.sidebar-sixth {
-    //  --sidebar-bg-color: #13191d;
-    //  --sidebar-color: #f6f6e9;
-    //  --sidebar-action-bg: #080c0f;
-    //  --sidebar-item-active-bg: #5CB0FF;
-    //}
-
-    &.sidebar-seventh {
-      --sidebar-bg-color: #20ae8c;
-      --sidebar-color: #f6f6e9;
-      --sidebar-action-bg: #119375;
-      --sidebar-item-active-bg: #0D2B47;
-      --sidebar-badge-bg: #00395f;
-      --logo-color: #0D2B47;
-    }
-
-    &.sidebar-third,
-    &.sidebar-fourth,
-    &.sidebar-fifth,
-    &.sidebar-sixth,
-    &.sidebar-seventh {
-      --sidebar-color: #004472;
-      --sidebar-item-active: var(--sidebar-color);
-    }
-    &.sidebar-second,
-    &.sidebar-third,
-    &.sidebar-fourth,
-    &.sidebar-fifth,
-    &.sidebar-seventh,
-    &.sidebar-transparent {
-      --sidebar-nav-title-color: rgba(82,135,185, 0.6);
-    }
-
-    &.sidebar-sixth,
-    &.sidebar-seventh {
-      --sidebar-color: #f6f6e9;
+      --sidebar-color: #F6F6E9;
     }
 
     &.sidebar-transparent {
