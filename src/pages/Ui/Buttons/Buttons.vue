@@ -12,7 +12,7 @@
               Use any of the available button classes to quickly create a styled button.
               Semantically distinguishable beauty.
             </p>
-            <p class="text-left">
+            <p class="text-start">
               <b-button variant="default" class="width-100 mb-3 me-3">Default</b-button>
               <b-button variant="primary" class="width-100 mb-3 me-3 text-white">Primary</b-button>
               <b-button variant="info" class="width-100 mb-3 me-3">Info</b-button>

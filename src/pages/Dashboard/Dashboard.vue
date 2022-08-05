@@ -208,7 +208,7 @@
             >
               <div v-for="notification in mock.notifications"
                 class="d-flex align-items-start" :key="notification.id">
-                <i :class="`la la-${notification.icon} mr text-${notification.color}`" />
+                <i :class="`la la-${notification.icon} me-0 text-${notification.color}`" />
                 <p
                   :class="{ 'mb-0': notification.id === mock.notifications.length - 1 }"
                   v-html="notification.content"

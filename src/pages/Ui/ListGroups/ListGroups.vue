@@ -16,8 +16,8 @@
             justify-content-between align-items-center"
             v-for="element in sortableList" :key="element.id">
             <div>
-              <i class="fa fa-sort mr-sm" />
-              <span class="mr-sm">{{element.id}}</span>{{element.text}}
+              <i class="fa fa-sort me-sm-1" />
+              <span class="me-sm-1">{{element.id}}</span>{{element.text}}
             </div>
             <i class="fa fa-times text-muted" />
           </div>
@@ -27,7 +27,7 @@
       title="<h4>Nestable <span class='fw-semi-bold'>List</span></h4>"
       close refresh settings customHeader
     >
-      <p className="fs-mini">
+      <p class="fs-mini">
         There is a scientific theory that you can arrange this list in such way that there will
         be no more saddness
         in the whole world. Can you? Touch devices supported

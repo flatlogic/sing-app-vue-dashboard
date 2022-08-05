@@ -76,11 +76,11 @@
                   </p>
                 </div>
               </div>
-              <div class="col-md-3 text-right">
+              <div class="col-md-3 text-end">
                 <h6 class="text-muted mb-xs">Inqueries</h6>
                 <p class="fw-semi-bold">73 at 14am</p>
               </div>
-              <div class="col-md-4 text-right">
+              <div class="col-md-4 text-end">
                 <h6 class="text-muted mb-xs">Last Updated</h6>
                 <p class="fw-semi-bold">23.06.2013</p>
               </div>

@@ -185,12 +185,12 @@
               <button class="list-group-item text-start">
                 <div class="d-flex flex-row">
                   <div>
-                     <span class="thumb-sm float-left me-2">
+                     <span class="thumb-sm float-start me-1">
                       <img class="rounded-circle" src="../../assets/people/a2.jpg" alt="woman" />
                       <i class="status status-bottom bg-success" />
                      </span>
                   </div>
-                  <div>
+                  <div class="ms-2">
                     <h6 class="m-0">Chris Gray</h6>
                     <p class="help-block text-ellipsis m-0">Hey! What&apos;s up? So many times since we</p>
                   </div>
@@ -199,12 +199,12 @@
               <button class="list-group-item text-start">
                 <div class="d-flex flex-row">
                   <div>
-                    <span class="thumb-sm float-left me-2">
+                    <span class="thumb-sm float-start me-1">
                       <img class="rounded-circle" src="../../assets/people/a4.jpg" alt="woman" />
                       <i class="status status-bottom bg-success" />
                     </span>
                   </div>
-                  <div>
+                  <div class="ms-2">
                     <h6 class="m-0">Jamey Brownlow</h6>
                     <p class="help-block m-0">
                       Good news coming tonight. Seems they agreed to proceed
@@ -215,12 +215,12 @@
               <button class="list-group-item text-start">
                 <div class="d-flex flex-row">
                   <div>
-                    <span class="thumb-sm float-left mr">
+                    <span class="thumb-sm float-start me-1">
                       <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="woman" />
                       <i class="status status-bottom bg-warning" />
                     </span>
                   </div>
-                  <div>
+                  <div class="ms-2">
                     <h6 class="m-0">Livia Walsh</h6>
                     <p class="help-block text-ellipsis m-0">Check my latest email plz!</p>
                   </div>
@@ -229,12 +229,12 @@
               <button class="list-group-item text-start">
                 <div class="d-flex flex-row">
                   <div>
-                     <span class="thumb-sm float-left mr">
+                     <span class="thumb-sm float-start me-1">
                       <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="man" />
                       <i class="status status-bottom bg-danger" />
                     </span>
                   </div>
-                  <div>
+                  <div class="ms-2">
                     <h6 class="m-0">Jaron Fitzroy</h6>
                     <p class="help-block text-ellipsis m-0">What about summer break?</p>
                   </div>
@@ -327,11 +327,11 @@
           <Calendar />
           <div class="list-group fs-mini">
             <a href="#" class="list-group-item text-ellipsis">
-              <span class="badge bg-pill bg-info float-right">6:45</span>
+              <span class="badge bg-pill bg-info float-end">6:45</span>
               Weed out the flower bed
             </a>
             <a href="#" class="list-group-item text-ellipsis">
-              <span class="badge bg-pill bg-success float-right">9:41</span>
+              <span class="badge bg-pill bg-success float-end">9:41</span>
               Stop world water pollution
             </a>
           </div>

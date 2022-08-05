@@ -27,10 +27,10 @@
         <h3>Font-awesome</h3>
         <p>The iconic SVG, font, and CSS toolkit</p>
         <h4>Examples</h4>
-        <i class="fa fa-arrow-left fa-2x mr"></i>
-        <i class="fa fa-github fa-2x mr"></i>
-        <i class="fa fa-bath fa-2x mr"></i>
-        <i class="fa fa-grav fa-2x mr"></i>
+        <i class="fa fa-arrow-left fa-2x me-1"></i>
+        <i class="fa fa-github fa-2x me-1"></i>
+        <i class="fa fa-bath fa-2x me-1"></i>
+        <i class="fa fa-grav fa-2x me-1"></i>
         <i class="fa fa-telegram fa-2x"></i>
         <vue-code-highlight>{{fontAwesomeCode}}</vue-code-highlight>
         <p class="lead">Want to see examples?
@@ -44,10 +44,10 @@
         <h3>Glyphicons-halflings</h3>
         <p>TIncludes over 250 glyphs in font format from the Glyphicon Halflings set</p>
         <h4>Examples</h4>
-        <i class="glyphicon glyphicon-asterisk mr"></i>
-        <i class="glyphicon glyphicon-heart mr"></i>
-        <i class="glyphicon glyphicon-home mr"></i>
-        <i class="glyphicon glyphicon-refresh mr"></i>
+        <i class="glyphicon glyphicon-asterisk me-1"></i>
+        <i class="glyphicon glyphicon-heart me-1"></i>
+        <i class="glyphicon glyphicon-home me-1"></i>
+        <i class="glyphicon glyphicon-refresh me-1"></i>
         <i class="glyphicon glyphicon-camera"></i>
         <vue-code-highlight>{{glyphiconCode}}</vue-code-highlight>
         <p class="lead">Want to see examples?
@@ -61,11 +61,11 @@
         <h3>Line-awesome</h3>
         <p>A single file that replaces Font Awesome with modern line icons.</p>
         <h4>Examples</h4>
-        <i class="la la-arrow-left la-2x mr"></i>
-        <i class="la la-github la-2x mr"></i>
-        <i class="la la-facebook la-2x mr"></i>
+        <i class="la la-arrow-left la-2x me-0"></i>
+        <i class="la la-github la-2x me-0"></i>
+        <i class="la la-facebook la-2x me-0"></i>
         <vue-code-highlight>{{lineAwesomeCode}}</vue-code-highlight>
-        <p className="lead">Want to see examples?
+        <p class="lead">Want to see examples?
           <router-link to="/app/ui/icons">Click</router-link>
         </p>
         <p>For more examples and documentation please refer to <a href="https://github.com/FortAwesome/Font-Awesome"
@@ -78,7 +78,7 @@
         <h4>Example</h4>
         <mavon-editor id="markdown-editor" language="en"/>
         <vue-code-highlight>&lt;mavon-editor id="markdown-editor" language="en" v-model="mdContent"/&gt;</vue-code-highlight>
-        <p className="lead">Want to see examples?
+        <p class="lead">Want to see examples?
           <router-link to="/app/ui/icons">Click</router-link>
         </p>
         <p>For more examples and documentation please refer to <a href="https://github.com/hinesboy/mavonEditor"
@@ -321,19 +321,19 @@
         intPhoneModel: null,
         datepickerText: '',
         defaultSelect: 'Andromeda Galaxy',
-        fontAwesomeCode: '<i class="fa fa-arrow-left fa-2x mr"></i>\n' +
-          '<i class="fa fa-github fa-2x mr"></i>\n' +
-          '<i class="fa fa-bath fa-2x mr"></i>\n' +
-          '<i class="fa fa-grav fa-2x mr"></i>\n' +
+        fontAwesomeCode: '<i class="fa fa-arrow-left fa-2x me-0"></i>\n' +
+          '<i class="fa fa-github fa-2x me-0"></i>\n' +
+          '<i class="fa fa-bath fa-2x me-0"></i>\n' +
+          '<i class="fa fa-grav fa-2x me-0"></i>\n' +
           '<i class="fa fa-telegram fa-2x"></i>',
-        glyphiconCode: '<i class="glyphicon glyphicon-asterisk mr"></i>\n' +
-          '<i class="glyphicon glyphicon-heart mr"></i>\n' +
-          '<i class="glyphicon glyphicon-home mr"></i>\n' +
-          '<i class="glyphicon glyphicon-refresh mr"></i>\n' +
+        glyphiconCode: '<i class="glyphicon glyphicon-asterisk me-0"></i>\n' +
+          '<i class="glyphicon glyphicon-heart me-0"></i>\n' +
+          '<i class="glyphicon glyphicon-home me-0"></i>\n' +
+          '<i class="glyphicon glyphicon-refresh me-0"></i>\n' +
           '<i class="glyphicon glyphicon-camera"></i>',
-        lineAwesomeCode: '<i class="la la-arrow-left la-2x mr"></i>\n' +
-          '<i class="la la-github la-2x mr"></i>\n' +
-          '<i class="la la-facebook la-2x mr"></i>',
+        lineAwesomeCode: '<i class="la la-arrow-left la-2x me-0"></i>\n' +
+          '<i class="la la-github la-2x me-0"></i>\n' +
+          '<i class="la la-facebook la-2x me-0"></i>',
         vueColorCode: '<b-input-group class="colorpicker-wrapper">\n' +
           '  <input type="text" class="form-control" :value="color.hex"/>\n' +
           '  <Chrome\n' +

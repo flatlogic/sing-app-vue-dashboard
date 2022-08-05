@@ -36,7 +36,7 @@
                 rotate-${bounce.profit ? '315' : '45'}`"
               />
             </div>
-            <p class="text-muted mb-0 mr"><small>Bounce Rate</small></p>
+            <p class="text-muted mb-0 me-0"><small>Bounce Rate</small></p>
           </div>
         </div>
       </div>

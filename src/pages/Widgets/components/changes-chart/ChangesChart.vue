@@ -13,7 +13,7 @@
           <p class="h4 m-0">18.7M</p>
           <p class="deemphasize">Shares Traded</p>
         </b-col>
-        <b-col xs='6' class="text-right">
+        <b-col xs='6' class="text-end">
           <p class="h4 m-0">19.9B</p>
           <p class="deemphasize">Market Cap</p>
         </b-col>
@@ -25,7 +25,7 @@
           <p class="h3 m-0 text-success fw-semi-bold">+120.93</p>
           <p class="deemphasize">Yearly Change</p>
         </b-col>
-        <b-col xs='6' class="text-right">
+        <b-col xs='6' class="text-end">
           <Sparklines :data="sparklineData" :options="sparklineOptions" :width="80" :height="25" />
           <p class="deemphasize">GOOG</p>
         </b-col>

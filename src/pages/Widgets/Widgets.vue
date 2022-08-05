@@ -312,7 +312,7 @@
             <h4 class="title text-white">
               <span class="fw-normal">Sunnyvale</span>, CA
             </h4>
-            <div class="info text-right">
+            <div class="info text-end">
               <i class="fa fa-map-marker h1 m-0 me-sm-1" />
               <h6 class="m-0 mt-xs">FLORIDA, USA</h6>
               <p class="fs-sm">9:41 am</p>

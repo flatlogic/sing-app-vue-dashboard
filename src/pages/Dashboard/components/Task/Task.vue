@@ -9,7 +9,7 @@
       />
       <label :for="`checkbox${task.id}`" />
     </div>
-    <div class="task-content pl-2">
+    <div class="task-content ps-2">
       <p class="text-muted mb-xs"><small>{{task.type}}</small></p>
       <h6>{{task.title}}</h6>
       <p class="text-muted"><small>{{task.time}}</small></p>

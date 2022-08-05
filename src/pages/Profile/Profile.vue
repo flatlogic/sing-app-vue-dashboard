@@ -46,15 +46,15 @@
             <b-col md="7" xs="12">
               <div class="stats-row mt-3">
                 <div class="profileStat stat-item">
-                  <p class="profileStatValue value text-right">251</p>
+                  <p class="profileStatValue value text-end">251</p>
                   <h6 class="name">Posts</h6>
                 </div>
                 <div class="profileStat stat-item">
-                  <p class="profileStatValue value text-right">9.38%</p>
+                  <p class="profileStatValue value text-end">9.38%</p>
                   <h6 class="name">Conversion</h6>
                 </div>
                 <div class="profileStat stat-item">
-                  <p class="profileStatValue value text-right">842</p>
+                  <p class="profileStatValue value text-end">842</p>
                   <h6 class="name">Followers</h6>
                 </div>
               </div>

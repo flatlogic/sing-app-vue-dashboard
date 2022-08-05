@@ -74,7 +74,7 @@
                 <td class="messageClip">
                   <i v-show="message.attachments" class="fa fa-paperclip" />
                 </td>
-                <td class="text-right">{{message.date}}</td>
+                <td class="text-end">{{message.date}}</td>
               </tr>
             </tbody>
           </table>
