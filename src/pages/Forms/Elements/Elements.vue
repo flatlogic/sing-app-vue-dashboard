@@ -131,10 +131,12 @@
                 breakpoint="md"
               >
                 <b-input-group id="transparent-field" class="input-group-transparent">
-                  <b-input-group-text class="bg-transparent" slot="append">
-                    <i class="fa fa-camera" />
-                  </b-input-group-text>
                   <b-form-input></b-form-input>
+                  <b-input-group-append>
+                    <b-button class="bg-light">
+                      <i class="fa fa-camera text-black"/>
+                    </b-button>
+                  </b-input-group-append>
                 </b-input-group>
               </b-form-group>
               <b-form-group
@@ -348,9 +350,11 @@
             <b-form-group>
               <b-input-group size="sm">
                 <b-form-input type="text" placeholder="City" />
-                <b-input-group-text slot="append" class="bg-danger text-white">
-                  <i class="la la-code-fork" />
-                </b-input-group-text>
+                <b-input-group-append>
+                  <b-button class="bg-danger text-white">
+                    <i class="la la-code-fork" />
+                  </b-button>
+                </b-input-group-append>
               </b-input-group>
             </b-form-group>
           </b-form>
@@ -823,14 +827,14 @@
             <b-form-group>
               <b-row>
                 <b-col xs="6">
-                  <label for="datetimepicker" class="pr-1">Datepicker</label>
+                  <label for="datetimepicker" class="pe-1">Datepicker</label>
                   <DatePicker lang="en" :placeholder="datepickerText"
                     input-class="form-control" @change="selectDate">
                     <i class="glyphicon glyphicon-th" slot="calendar-icon" />
                   </DatePicker>
                 </b-col>
                 <b-col xs="6">
-                  <label for="datetimepicker" class="pr-1">With time</label>
+                  <label for="datetimepicker" class="pe-1">With time</label>
                   <DatePicker lang="en" type="datetime" :placeholder="datetimepickerText"
                     input-class="form-control" @change="selectDatetime">
                     <i class="fa fa-clock-o" slot="calendar-icon" />
@@ -869,52 +873,60 @@
           <b-form class="form-label-left">
             <legend>Masked inputs</legend>
             <b-form-group horizontal label-for="phone-mask">
-              <div slot="label" md="4" xs="12">
-                Phone
-                <span class="help-block">(123) 456-7890</span>
+              <div class="row">
+                <div slot="label" class="col-md-4 col-sm-12">
+                  Phone
+                  <span class="help-block">(123) 456-7890</span>
+                </div>
+                <b-col md="6" sm="12" class="ps-0">
+                  <input class="form-control" id="phone-mask" type="text"
+                         placeholder="(___) ___-____"
+                         v-mask="'(###) ###-####'"
+                         v-model="phoneModel" />
+                </b-col>
               </div>
-              <b-col md="9" class="ps-0">
-                <input class="form-control" id="phone-mask" type="text"
-                  placeholder="(___) ___-____"
-                  v-mask="'(###) ###-####'"
-                  v-model="phoneModel" />
-              </b-col>
             </b-form-group>
             <b-form-group horizontal label-for="int-phone-mask">
-              <div slot="label" md="4" xs="12">
-                International Phone
-                <span class="help-block">+375 123 456 789</span>
+              <div class="row">
+                <div slot="label" class="col-md-4 col-sm-12">
+                  International Phone
+                  <span class="help-block">+375 123 456 789</span>
+                </div>
+                <b-col md="6" sm="12" class="ps-0">
+                  <input class="form-control" id="int-phone-mask" type="text"
+                         placeholder="+___ ___ ___ ___"
+                         v-mask="'+### ### ### ###'"
+                         v-model="intPhoneModel" />
+                </b-col>
               </div>
-              <b-col md="9" class="ps-0">
-                <input class="form-control" id="int-phone-mask" type="text"
-                  placeholder="+___ ___ ___ ___"
-                  v-mask="'+### ### ### ###'"
-                  v-model="intPhoneModel" />
-              </b-col>
             </b-form-group>
             <b-form-group horizontal label-for="date-mask">
-              <div slot="label" md="4" xs="12">
-                Date Format
-                <span class="help-block">07-03-2013</span>
+              <div class="row">
+                <div slot="label" class="col-md-4 col-sm-12">
+                  Date Format
+                  <span class="help-block">07-03-2013</span>
+                </div>
+                <b-col md="6" sm="12" class="ps-0">
+                  <input class="form-control"  id="date-mask" type="text"
+                         placeholder="__-__-____"
+                         v-mask="'##-##-####'"
+                         v-model="dateModel" />
+                </b-col>
               </div>
-              <b-col md="9" class="ps-0">
-                <input class="form-control"  id="date-mask" type="text"
-                  placeholder="__-__-____"
-                  v-mask="'##-##-####'"
-                  v-model="dateModel" />
-              </b-col>
             </b-form-group>
             <b-form-group horizontal label-for="time-mask">
-              <div slot="label" md="4" xs="12">
-                Time
-                <span class="help-block">13:43</span>
+              <div class="row">
+                <div slot="label" class="col-md-4 col-sm-12">
+                  Time
+                  <span class="help-block">13:43</span>
+                </div>
+                <b-col md="6" sm="12" class="ps-0">
+                  <input class="form-control" id="time-mask" type="text"
+                         placeholder="__:__"
+                         v-mask="'##:##'"
+                         v-model="timeModel" />
+                </b-col>
               </div>
-              <b-col md="9" class="ps-0">
-                <input class="form-control" id="time-mask" type="text"
-                  placeholder="__:__"
-                  v-mask="'##:##'"
-                  v-model="timeModel" />
-              </b-col>
             </b-form-group>
           </b-form>
         </Widget>
