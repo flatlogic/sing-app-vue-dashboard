@@ -1074,4 +1074,158 @@ $slider-handle-size: 26px;
   }
 }
 
+.popover .arrow {
+  width: 1rem;
+  height: 0.5rem;
+  margin: 0 0.55rem;
+}
+
+.popover, .popover .arrow {
+  position: absolute;
+  display: block;
+}
+
+.popover .arrow:after, .popover .arrow:before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
+.popover-bottom > .arrow {
+  top: calc(-0.5rem - 1px);
+}
+
+.bs-popover-auto[x-placement^=bottom]>.arrow:after, .bs-popover-bottom>.arrow:after {
+  top: 1px;
+  border-width: 0 0.5rem 0.5rem;
+  border-bottom-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=bottom]>.arrow, .bs-popover-bottom>.arrow {
+  top: calc(-0.5rem - 1px);
+}
+
+.bs-popover-bottom>.arrow:before {
+  top: 0;
+  border-width: 0 0.5rem 0.5rem;
+  border-bottom-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=bottom], .bs-popover-bottom {
+  margin-top: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=right], .bs-popover-right {
+  margin-left: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=right]>.arrow, .bs-popover-right>.arrow {
+  left: calc(-0.5rem - 1px);
+  width: 0.5rem;
+  height: 1rem;
+  margin: 0.55rem 0;
+}
+
+.bs-popover-auto[x-placement^=right]>.arrow:before, .bs-popover-right>.arrow:before {
+  left: 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-right-color: #ebeff1;
+}
+
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow:before, .bs-popover-end>.popover-arrow:before {
+  left: 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-right-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=right]>.arrow:after, .bs-popover-right>.arrow:after {
+  left: 1px;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-right-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=top], .bs-popover-top {
+  margin-bottom: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=top]>.arrow, .bs-popover-top>.arrow {
+  bottom: calc(-0.5rem - 1px);
+}
+
+.bs-popover-auto[x-placement^=top]>.arrow:before, .bs-popover-top>.arrow:before {
+  bottom: 0;
+  border-width: 0.5rem 0.5rem 0;
+  border-top-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=top]>.arrow:after, .bs-popover-top>.arrow:after {
+  bottom: 1px;
+  border-width: 0.5rem 0.5rem 0;
+  border-top-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=left], .bs-popover-left {
+  margin-right: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=left]>.arrow, .bs-popover-left>.arrow {
+  right: calc(-0.5rem - 1px);
+  width: 0.5rem;
+  height: 1rem;
+  margin: 0.55rem 0;
+}
+
+.bs-popover-auto[x-placement^=left]>.arrow:before, .bs-popover-left>.arrow:before {
+  right: 0;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+  border-left-color: #ebeff1;
+}
+
+.bs-popover-left>.arrow:after {
+  right: 1px;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+  border-left-color: #ebeff1;
+}
+
+
+
+.tooltip .arrow {
+  position: absolute;
+  display: block;
+  width: 0.8rem;
+  height: 0.4rem;
+}
+
+.tooltip.b-tooltip {
+  display: block;
+  opacity: .9;
+  outline: 0;
+}
+
+.tooltip.b-tooltip .arrow {
+  margin: 0 0.25rem;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow, .bs-tooltip-top .arrow {
+  bottom: 0;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow:before, .bs-tooltip-top .arrow:before {
+  top: 0;
+  border-width: 0.4rem 0.4rem 0;
+  border-top-color: #000;
+}
+
+.tooltip .arrow:before {
+  position: absolute;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
+
+
+
 
