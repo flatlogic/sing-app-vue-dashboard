@@ -1208,6 +1208,13 @@ $slider-handle-size: 26px;
   margin: 0 0.25rem;
 }
 
+.tooltip .arrow:before {
+  position: absolute;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
 .bs-tooltip-auto[x-placement^=top] .arrow, .bs-tooltip-top .arrow {
   bottom: 0;
 }
@@ -1215,14 +1222,58 @@ $slider-handle-size: 26px;
 .bs-tooltip-auto[x-placement^=top] .arrow:before, .bs-tooltip-top .arrow:before {
   top: 0;
   border-width: 0.4rem 0.4rem 0;
-  border-top-color: #000;
+  border-top-color: #000 !important;
 }
 
-.tooltip .arrow:before {
-  position: absolute;
-  content: "";
-  border-color: transparent;
-  border-style: solid;
+.bs-tooltip-auto[x-placement^=right], .bs-tooltip-right {
+  padding: 0 0.4rem;
+}
+
+.bs-tooltip-auto[x-placement^=right] .arrow:before, .bs-tooltip-right .arrow:before {
+  right: 0;
+  border-width: 0.4rem 0.4rem 0.4rem 0;
+  border-right-color: #000 !important;
+}
+
+.bs-tooltip-auto[x-placement^=right] .arrow, .bs-tooltip-right .arrow {
+  left: 0;
+  width: 0.4rem;
+  height: 0.8rem;
+}
+
+
+.bs-tooltip-auto[x-placement^=bottom], .bs-tooltip-bottom {
+  padding: 0.4rem 0;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow, .bs-tooltip-bottom .arrow {
+  top: 0;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow:before, .bs-tooltip-bottom .arrow:before {
+  bottom: 0;
+  border-width: 0 0.4rem 0.4rem;
+  border-bottom-color: #000 !important;
+}
+
+.bs-tooltip-auto[x-placement^=left] .arrow:before, .bs-tooltip-left .arrow:before {
+  left: 0;
+  border-width: 0.4rem 0 0.4rem 0.4rem;
+  border-left-color: #000 !important;
+}
+
+.bs-tooltip-auto[x-placement^=left] .arrow, .bs-tooltip-left .arrow {
+  right: 0;
+  width: 0.4rem;
+  height: 0.8rem;
+}
+
+.bs-tooltip-auto[x-placement^=left], .bs-tooltip-left {
+  padding: 0 0.4rem;
+}
+
+.tooltip.b-tooltip.bs-tooltip-left .arrow {
+  margin: 0.25rem 0;
 }
 
 
