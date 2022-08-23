@@ -3,7 +3,7 @@ import usdeur from './usdeur';
 import sunburstData from './sunburstData';
 import config from '../../../config';
 
-const {inverse, info, primary, danger, warning, success, textColor, gray} = config.app.colors;
+const {inverse, info, primary, danger, warning, success, textColor} = config.app.colors;
 const {axisColor} = config.app.chartColors;
 
 let wordCloudText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum erat ac justo sollicitudin, quis lacinia ligula fringilla. Pellentesque hendrerit, nisi vitae posuere condimentum, lectus urna accumsan libero, rutrum commodo mi lacus pretium erat. Phasellus pretium ultrices mi sed semper.';

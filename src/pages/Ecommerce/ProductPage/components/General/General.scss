@@ -31,26 +31,26 @@
 .ratingWrapper {
   display: flex;
 
-  @include media-breakpoint-down(sm) {
-    justify-content: flex-end;
-  }
+  //@include media-breakpoint-down(sm) {
+  //  justify-content: flex-end;
+  //}
 }
 
 .dataWrapper {
   display: flex;
   flex-direction: column;
 
-  @include media-breakpoint-down(sm) {
-    flex-direction: column-reverse;
-    margin-top: -31px;
-
-    & :global .title {
-      margin-bottom: 25px;
-      margin-top: 5px;
-    }
-
-    & :global .subtitle {
-      margin-bottom: 0;
-    }
-  }
+  //@include media-breakpoint-down(sm) {
+  //  flex-direction: column-reverse;
+  //  margin-top: -31px;
+  //
+  //  & :global .title {
+  //    margin-bottom: 25px;
+  //    margin-top: 5px;
+  //  }
+  //
+  //  & :global .subtitle {
+  //    margin-bottom: 0;
+  //  }
+  //}
 }

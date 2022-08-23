@@ -34,7 +34,7 @@
     </b-nav>
     <b-nav>
       <b-form class="d-md-down-none ms-5 my-auto" inline>
-        <b-form-group>
+        <b-form-group class="mb-0">
           <b-input-group class="input-group-no-border search-input">
               <template v-slot:prepend>
                 <div class="headerSvgFlipColor">

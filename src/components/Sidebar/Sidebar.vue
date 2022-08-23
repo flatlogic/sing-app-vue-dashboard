@@ -9,8 +9,6 @@
         <router-link to="/app/main/analytics"><span class="primary-word">Sing</span> <span class="secondary-word"> App</span></router-link>
       </header>
 
-      <a class="generator-link navTitle" target="_blank" href="https://flatlogic.com/generator">Generate App</a>
-
       <h5 class="navTitle first">
         APP
       </h5>

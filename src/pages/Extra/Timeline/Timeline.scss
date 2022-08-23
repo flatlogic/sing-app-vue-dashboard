@@ -5,7 +5,7 @@
   font-size: $font-size-sm;
   padding-left: 0;
 
-  @include clearfix();
+  //@include clearfix();
 
   .postLinks + & {
     margin-top: $spacer / 2;
@@ -16,7 +16,7 @@
     border-top: 1px solid #e7e7e7;
     list-style: none;
 
-    @include clearfix();
+    //@include clearfix();
 
     &:last-child {
       padding-bottom: 0;
@@ -45,12 +45,12 @@
     font-size: 11px;
   }
 
-  :global {
+
     .widget > footer & {
       margin-left: -$widget-padding-horizontal;
       margin-right: -$widget-padding-horizontal;
     }
-  }
+
 }
 
 /*           Post Links            */
@@ -59,7 +59,7 @@
   font-size: $font-size-sm;
   padding-left: 0;
 
-  @include clearfix();
+  //@include clearfix();
 
   > li {
     float: left;
@@ -83,14 +83,14 @@
     }
   }
 
-  :global {
+
     .no-separator > li + li {
       margin-left: 12px;
 
       &::before {
         content: normal;
       }
-    }
+
   }
 }
 
@@ -122,10 +122,10 @@
     margin-left: -4px;
     background-color: $white;
 
-    @include media-breakpoint-up(lg) {
-      left: 50%;
-      margin-left: -4px;
-    }
+    //@include media-breakpoint-up(lg) {
+    //  left: 50%;
+    //  margin-left: -4px;
+    //}
   }
 }
 
@@ -164,31 +164,31 @@
     border-bottom-right-radius: $border-radius;
     background-color: #fafafa;
 
-    @include clearfix();
+    //@include clearfix();
 
-    :global {
+
       .thumb {
         margin-left: 10px;
       }
-    }
+
   }
 
-  @include media-breakpoint-up(lg) {
-    .timeline & {
-      width: 45%;
-    }
-
-    .timeline > li.onLeft & {
-      float: left;
-
-      &::before {
-        right: auto;
-        left: 100%;
-        border-right-color: rgba(0, 0, 0, 0);
-        border-left-color: $white;
-      }
-    }
-  }
+  //@include media-breakpoint-up(lg) {
+  //  .timeline & {
+  //    width: 45%;
+  //  }
+  //
+  //  .timeline > li.onLeft & {
+  //    float: left;
+  //
+  //    &::before {
+  //      right: auto;
+  //      left: 100%;
+  //      border-right-color: rgba(0, 0, 0, 0);
+  //      border-left-color: $white;
+  //    }
+  //  }
+  //}
 }
 
 .eventTime {
@@ -210,24 +210,24 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
-    .timeline & {
-      width: 46%;
-    }
-
-    .timeline > li.onLeft & {
-      float: right;
-      text-align: left;
-    }
-  }
+  //@include media-breakpoint-up(lg) {
+  //  .timeline & {
+  //    width: 46%;
+  //  }
+  //
+  //  .timeline > li.onLeft & {
+  //    float: right;
+  //    text-align: left;
+  //  }
+  //}
 }
 
 .eventIcon {
-  :global {
+
     .glyphicon {
       top: -2px;
     }
-  }
+
 
   .timeline & {
     position: absolute;
@@ -275,9 +275,9 @@
       color: $white;
     }
 
-    @include media-breakpoint-up(lg) {
-      left: 50%;
-    }
+    //@include media-breakpoint-up(lg) {
+    //  left: 50%;
+    //}
 
     > img {
       width: 36px;

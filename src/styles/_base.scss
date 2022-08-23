@@ -109,6 +109,10 @@
   border: none;
 }
 
+table.table tbody {
+  border-top: 1px solid $border-color!important;
+}
+
 table > thead > tr > th {
   border-top: none !important;
   border-bottom-width: 1px !important;

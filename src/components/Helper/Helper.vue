@@ -10,7 +10,7 @@
             <div class="widget-body mt-3">
                 <div class="theme-settings">
                     <h5 style="position: static" id="v-step-4">Navbar Type</h5>
-                    <div class="row my-2">
+                    <div class="row mb-4">
                       <div class="abc-radio col-auto">
                         <input type="radio" name="navbar-type" :value="navbarTypes.STATIC" id="navbar_static"
                                :checked="navbarType === navbarTypes.STATIC" @change="updateLayoutComponentType({component: layoutComponents.NAVBAR, type: navbarTypes.STATIC})">
@@ -31,7 +31,7 @@
                     ></colorpicker>
 
                     <h5 id="v-step-6">Sidebar Type</h5>
-                    <div class="row">
+                    <div class="row mb-4">
                       <div class="abc-radio col-auto">
                         <input type="radio" name="sidebar-type" :value="sidebarTypes.TRANSPARENT" id="sidebar_transparent"
                                :checked="sidebarType === sidebarTypes.TRANSPARENT"
@@ -53,7 +53,7 @@
                         @change="updateLayoutComponentColor({component: layoutComponents.SIDEBAR, color: $event})"
                     ></colorpicker>
                 </div>
-                <div class="mt-4 d-grid">
+                <div class="m-4 d-grid">
                     <a href="https://flatlogic.com/templates/sing-app-vue"
                     id="v-step-8"
                     target="_blank"
@@ -64,7 +64,7 @@
                     <a href="http://demo.flatlogic.com/sing-app-vue/#/documentation/"
                     target="_blank"
                     role="button"
-                    class="btn btn-primary btn-rounded-f btn-block fs-mini mt-4">
+                    class="btn btn-primary btn-rounded-f btn-block fs-mini mt-2">
                         Documentation
                     </a>
                 </div>

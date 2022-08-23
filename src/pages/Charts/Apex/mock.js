@@ -1,6 +1,6 @@
 import config from '../../../config';
 
-const {info, primary, danger, warning, success, textColor, gray} = config.app.colors;
+const {info, primary, danger, warning, success, textColor} = config.app.colors;
 const {axisColor} = config.app.chartColors;
 
 var generateDayWiseTimeSeries = function (baseval, count, yrange) {
