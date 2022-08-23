@@ -1,5 +1,13 @@
 # Changelog
 
+## [v5.5.5] - 23/08/2022
+
+### Updated Bootstrap from 4.6.0 to 5.1.3
+### Updated Bootstrap-vue from 2.21.2 to 2.22.0
+### Updated VUE from 2.6.12 to 2.7.6
+### Updated dependencies
+### Updated theme-colors, colors
+
 ## [v5.5.4] - 22/10/2021
 
 ### Updated
