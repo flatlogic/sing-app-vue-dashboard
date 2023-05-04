@@ -1,5 +1,10 @@
 # Changelog
 
+## [v5.5.6] - 03/05/2023
+
+### Fix dependencies errors
+### Updated dependecies
+
 ## [v5.5.5] - 23/08/2022
 
 ### Updated Bootstrap from 4.6.0 to 5.1.3
