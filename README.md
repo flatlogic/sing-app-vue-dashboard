@@ -1,11 +1,10 @@
 # Sing App Vue Dashboard - free and open source admin dashboard template
-Including responsive layout and high quality UI built with Bootstrap 4.5.
+Including a responsive layout and high-quality UI built with Bootstrap 4.5, this repository offers a glimpse into the [Sing App Vue Dashboard](https://flatlogic.github.io/sing-app-vue-dashboard/#/app/dashboard) through its limited free version. The comprehensive package also includes full versions of [Bootstrap 4](https://flatlogic.com/admin-dashboards/sing-app-html5/demo), [React](https://flatlogic.com/admin-dashboards/sing-app-react/demo) with backend integration, [Vue.js](https://flatlogic.com/admin-dashboards/sing-app-vue/demo),[Angular](https://flatlogic.com/admin-dashboards/sing-app-angular/demo), and [Angular JS](https://flatlogic.com/admin-dashboards/sing-app-angularjs/demo), covering many development needs in the [business software](https://flatlogic.com/) landscape.
+
 
 [View Demo](https://flatlogic.com/templates/sing-app-vue-dashboard/demo) | [Download](https://github.com/flatlogic/sing-app-vue-dashboard/archive/master.zip) | [Available versions](https://flatlogic.github.io/sing-app-vue-dashboard/#/app/dashboard) | [More templates](https://flatlogic.com/admin-dashboards) | [Support forum](https://flatlogic.com/forum)
 
 [![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)](https://flatlogic.github.io/sing-app-vue-dashboard/#/app/dashboard)
-
-This repository contains a limited free version of [Sing App Vue Dashboard](https://flatlogic.github.io/sing-app-vue-dashboard/#/app/dashboard). [Full bootstrap 4](https://flatlogic.com/admin-dashboards/sing-app-html5/demo), [React](https://flatlogic.com/admin-dashboards/sing-app-react/demo) with backend, [Vue.js](https://flatlogic.com/admin-dashboards/sing-app-vue/demo), [Angular](https://flatlogic.com/admin-dashboards/sing-app-angular/demo) and [Angular JS](https://flatlogic.com/admin-dashboards/sing-app-angularjs/demo) versions are also available and are shipped in a full package.
 
 ## Features
 
