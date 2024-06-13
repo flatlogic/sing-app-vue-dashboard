@@ -1,5 +1,5 @@
 <template>
-  <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, className}">
+  <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, [className]: className}">
     <router-link :to="link" class="sidebar-link">
       <span class="icon">
         <i :class="fullIconName"></i>
@@ -8,7 +8,7 @@
       <b-badge v-if="badge" variant="primary" pill>{{badge}}</b-badge>
     </router-link>
   </li>
-  <li v-else-if="childrenLinks" :class="{headerLink: true, className}">
+  <li v-else-if="childrenLinks" :class="{headerLink: true, [className]: className}">
     <div @click="() => togglePanelCollapse(link)">
       <router-link :to="link" event="" class="d-flex sidebar-link">
         <span class="icon">
