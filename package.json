@@ -79,7 +79,7 @@
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-service": "^3.12.0",
-    "node-sass": "^6.0.0",
+    "sass": "1.81.0",
     "sass-loader": "^10",
     "vue-template-compiler": "^2.7.14",
     "webpack": "^5.81.0"

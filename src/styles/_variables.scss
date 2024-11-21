@@ -80,6 +80,7 @@ $theme-colors: (
 $link-color: $blue;
 
 $text-color: #0C2236 !default;
+$text-muted: map-get($theme-colors, secondary);
 
 $font-weight-bold: 700 !default;
 $font-weight-semi-bold: 600 !default;
@@ -174,6 +175,7 @@ $nav-tabs-active-link-hover-color: $gray-700 !default;
 //
 $input-focus-border-color: #4d90fe !default; //webkit focus color
 $input-color: $text-color !default;
+$input-bg: $body-bg;
 
 //*  Popover  */
 $popover-bg: #ebeff1 !default;
