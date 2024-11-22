@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.1] - 22/11/2024
+
+- Fixed dev mode errors
+
 ## [v5.5.6] - 03/05/2023
 
 ### Fix dependencies errors
