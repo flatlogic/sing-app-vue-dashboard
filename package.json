@@ -1,6 +1,6 @@
 {
   "name": "sing-app-vue",
-  "version": "5.5.6",
+  "version": "5.5.7",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve --port 3000",
