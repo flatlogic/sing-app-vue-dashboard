@@ -1,6 +1,6 @@
 {
   "name": "sing-app-vue",
-  "version": "5.5.6",
+  "version": "5.5.7",
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve --port 3000",
@@ -79,7 +79,7 @@
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-service": "^3.12.0",
-    "node-sass": "^6.0.0",
+    "sass": "1.81.0",
     "sass-loader": "^10",
     "vue-template-compiler": "^2.7.14",
     "webpack": "^5.81.0"
