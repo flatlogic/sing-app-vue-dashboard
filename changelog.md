@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.1.9]
+
+### Updated
+- Update dependencies and Fixes
+
 ## [v2.1.8]
 
 ### Updated
