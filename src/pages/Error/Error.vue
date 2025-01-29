@@ -11,14 +11,19 @@
         </p>
         <b-form>
           <b-form-group>
-            <b-form-input class="input-no-border" type="text" placeholder="Search Pages" />
+            <input class="input-no-border" type="text" placeholder="Search Pages" />
           </b-form-group>
           <router-link tag="a" to="/app/extra/search">
             <b-button class="errorBtn" type="submit" variant="success">
-                Search <i class="la la-search ml-xs" />
+                Search <i class="fa fa-search"></i>
             </b-button>
           </router-link>
         </b-form>
+        <router-link class="mt-3 d-block" to="/">
+          <button class="btn btn-primary" type="button">
+            To main page
+          </button>
+        </router-link>
       </div>
       <footer class="pageFooter">
         2019 &copy; Sing App Vue Admin Dashboard Template.

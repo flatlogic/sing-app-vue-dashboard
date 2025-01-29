@@ -4,7 +4,8 @@
   width: $helper-width;
   position: fixed;
   right: -$helper-width;
-  top: 100px;
+  top: 20px;
+  bottom: 20px;
   z-index: 101;
   @include transition(right $sidebar-transition-time ease-in-out);
 
@@ -47,20 +48,23 @@
     box-shadow: $widget-shadow-designated;
   }
 
-  .theme-helper-header {
-    padding-top: 0;
+  .theme-helper-content {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    overflow: auto;
+    box-shadow: $widget-shadow-designated;
+    height: 100%;
+  }
 
-    h6 {
-      margin: auto;
+  .theme-settings {
+    .form-group, .colors-list {
+      margin-bottom: $spacer * 2;
     }
   }
 
-  .theme-helper-content {
-    box-shadow: $widget-shadow-designated;
-    border-radius: 0;
-  }
-
-  .theme-sharing, .theme-switcher {
+  .theme-sharing {
     font-size: $font-size-lg;
     cursor: pointer;
   }
@@ -71,6 +75,18 @@
 
   .abc-radio-secondary input[type="radio"]:not(:checked) + label::before {
     background-color: theme-color('secondary');
+  }
+
+  .abc-radio {
+    & > label {
+      padding-left: 25px;
+
+      &:before, &:after {
+        outline: none !important;
+        transition: $transition-base;
+        margin-left: 4px;
+      }
+    }
   }
 
   @keyframes spin {
@@ -89,9 +105,5 @@
     50% {
       transform: rotate(-360deg);
     }
-  }
-
-  .btn i.glyphicon-headphones {
-    top: 0;
   }
 }

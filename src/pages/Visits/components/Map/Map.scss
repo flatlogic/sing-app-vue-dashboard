@@ -1,0 +1,19 @@
+@import '../../../../styles/app';
+
+.map {
+  position: relative;
+  margin: (-$widget-padding-vertical) (-$widget-padding-horizontal) 0;
+  height: 400px;
+
+  @include media-breakpoint-down(sm) {
+    height: 300px;
+  }
+}
+
+.stats {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin: 5% 10%;
+}

@@ -2,7 +2,7 @@
   <b-list-group class="listGroup thin-scroll">
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a3.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a3.jpg" alt="woman" />
       </span>
       <p class="m-0 overflow-hidden">
         1 new user just signed up! Check out
@@ -36,12 +36,12 @@
     </b-list-group-item>
     <b-list-group-item class="listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="..." />
+        <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="man" />
       </span>
       <p class="m-0 overflow-hidden">
         User <a href="#">Jeff</a> registered
         &nbsp;&nbsp;
-        <b-button size="xs" variant="success" class="mr-1">Allow</b-button>
+        <b-button size="xs" variant="success" class="me-1">Allow</b-button>
         <b-button size="xs" variant="danger">Deny</b-button>
         <time class="help-block m-0">
           12:18 AM

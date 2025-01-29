@@ -371,16 +371,17 @@ export const chartData = {
       },
       plotOptions: {
         series: {
+          fillOpacity: 1,
           marker: {
             enabled: false,
             symbol: 'circle'
           }
         }
       },
-      colors: [success, warning, info],
+      colors: [success, danger, info],
 
       series: [{
-        name: "Winter 2017-2018",
+        name: "Winter 2014-2015",
         data: [
           [Date.UTC(1970, 10, 25), 0],
           [Date.UTC(1970, 11, 6), 0.25],
@@ -411,7 +412,7 @@ export const chartData = {
           [Date.UTC(1971, 6, 4), 0]
         ]
       }, {
-        name: "Winter 2018-2019",
+        name: "Winter 2015-2016",
         type: 'areaspline',
         data: [
           [Date.UTC(1970, 10, 9), 0],
@@ -439,7 +440,7 @@ export const chartData = {
           [Date.UTC(1971, 5, 7), 0]
         ]
       }, {
-        name: "Winter 2019-2020",
+        name: "Winter 2016-2017",
         type: 'areaspline',
         data: [
           [Date.UTC(1970, 9, 15), 0],

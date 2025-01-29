@@ -20,7 +20,7 @@ $font-size-larger:        1.1rem;
 $font-size-mini:          0.9rem;
 $font-size-index:         0.7rem;
 
-$font-family-base: 'Montserrat', sans-serif;
+$font-family-base: 'Poppins', sans-serif;
 
 // Color system
 //
@@ -35,34 +35,41 @@ $gray-600: #798892 !default;
 $gray-700: #495057 !default;
 $gray-800: #3c484f !default;
 $gray-900: #29323a !default;
+$gray-default: #5A5D76 !default;
 $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
-$blue:    #3E86CA !default;
+$blue:    #6FB0F9 !default;
+$blue-300: rgba($blue, 0.3) !default;
 $indigo:  #7f3ddb !default;
-$purple:  #9964e3 !default;
+$purple:  #6f42c1 !default;
 $pink:    #e54e9a !default;
-$red:     #FD5F00 !default;
+$red:     #FF5574 !default;
 $orange:  #ff7d47 !default;
-$yellow:  #FDA700 !default;
+$yellow:  #EBB834 !default;
 $green:   #68ca66 !default;
-$teal:    #21AE8C !default;
-$cyan:    #1A86D0 !default;
+$teal:    #26CD5F !default;
+$cyan:    #17a2b8 !default;
+$turquoise: #10CFD0 !default;
 $default: #E9ECEF !default;
-$inverse: #0D2B47 !default;
+$inverse: #002B49 !default;
+$gray-inverse: #30324C !default;
+$light-red: #FF5574 !default;
 
 $theme-colors: (
   primary: $blue,
   secondary: $gray-600,
   success: $teal,
-  info: $cyan,
+  info: $turquoise,
   warning: $yellow,
   danger: $red,
   dark: $gray-800,
-  inverse: $inverse,
-  gray: $gray-300,
+  inverse: $gray-inverse,
+  gray: $gray-default,
   light: $gray-100,
-  default: $default,
+  default: #9083F7,
+  gray-default: $gray-default,
+  primary-300: $blue-300,
   primary-light: #dee4ee,
   success-light: #ecfaec,
   info-light: #f2fafa,
@@ -70,9 +77,10 @@ $theme-colors: (
   danger-light: #fff2ef,
 );
 
-$link-color: $cyan;
+$link-color: $blue;
 
-$text-color: $gray-700 !default;
+$text-color: #0C2236 !default;
+$text-muted: map-get($theme-colors, secondary);
 
 $font-weight-bold: 700 !default;
 $font-weight-semi-bold: 600 !default;
@@ -99,6 +107,11 @@ $border-radius:          0.5rem !default;
 $border-radius-lg:       0.55rem !default;
 $border-radius-sm:       0.45rem !default;
 
+//== Chat
+//
+$chat-component-padding: 21px;
+$chat-section-width: 330px;
+
 //== Sidebar
 //
 
@@ -114,8 +127,9 @@ $breadcrumb-padding-y: 0;
 $breadcrumb-bg: transparent;
 
 $widget-bg: #fff;
-$widget-title-color: #444;
+$widget-title-color: $text-color;
 $widget-shadow-designated: -1px 0 8px rgba(0,0,0,.2);
+$widget-border-radius: $border-radius-lg;
 
 $input-btn-line-height: 1.5;
 
@@ -149,7 +163,7 @@ $dropdown-link-color: $text-color;
 // Widgets
 // -------------------------
 $widget-padding-vertical: 15px !default;
-$widget-padding-horizontal: 20px !default;
+$widget-padding-horizontal: 15px !default;
 $widget-bg-color: $white;
 
 //== Navs
@@ -161,6 +175,7 @@ $nav-tabs-active-link-hover-color: $gray-700 !default;
 //
 $input-focus-border-color: #4d90fe !default; //webkit focus color
 $input-color: $text-color !default;
+$input-bg: $body-bg;
 
 //*  Popover  */
 $popover-bg: #ebeff1 !default;
@@ -222,3 +237,9 @@ $padding-small-horizontal:  0.75rem !default;
 // -------------------------
 
 $screen-lg-height: 670px !default;
+
+$blockquote-small-color:      $gray-600 !default;
+$hr-border-color:             rgba($black, .1) !default;
+$table-cell-padding:          .75rem !default;
+$emphasized-link-hover-darken-percentage: 15% !default;
+$badge-focus-width:          .2rem !default;

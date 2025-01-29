@@ -36,13 +36,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-i.fi {
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .flaticon-add::before { content: '\f100'; }
 
 .flaticon-add-1::before { content: '\f101'; }
@@ -74,10 +67,6 @@ i.fi {
 .flaticon-archive-3::before { content: '\f10e'; }
 
 .flaticon-attachment::before { content: '\f10f'; }
-
-.flaticon-arrow-down {
-  background-image: url('../../src/assets/icons/arrow-down.svg');
-}
 
 .flaticon-back::before { content: '\f110'; }
 
@@ -137,6 +126,8 @@ i.fi {
 
 .flaticon-calendar-7::before { content: '\f12c'; }
 
+.flaticon-calendar-8::before { content: '\f12c'; }
+
 .flaticon-checked::before { content: '\f12d'; }
 
 .flaticon-checked-1::before { content: '\f12e'; }
@@ -144,10 +135,6 @@ i.fi {
 .flaticon-clock::before { content: '\f12f'; }
 
 .flaticon-clock-1::before { content: '\f130'; }
-
-.flaticon-close {
-  background-image: url('../../src/assets/icons/close.svg');
-}
 
 .flaticon-cloud::before { content: '\f132'; }
 
@@ -230,22 +217,6 @@ i.fi {
 .flaticon-eject-1::before { content: '\f159'; }
 
 .flaticon-equal::before { content: '\f15a'; }
-
-.router-link-active .flaticon-equal-1 {
-  background-image: url('../../src/assets/icons/layout.svg');
-}
-
-.flaticon-equal-1 {
-  background-image: url('../../src/assets/icons/layout-blue.svg');
-}
-
-.router-link-active .flaticon-bell {
-  background-image: url('../../src/assets/icons/bell.svg');
-}
-
-.flaticon-bell {
-  background-image: url('../../src/assets/icons/bell-blue.svg');
-}
 
 .flaticon-equal-2::before { content: '\f15c'; }
 
@@ -345,22 +316,6 @@ i.fi {
 
 .flaticon-hold::before { content: '\f18c'; }
 
-.router-link-active .flaticon-home {
-  background-image: url('../../src/assets/icons/home.svg');
-}
-
-.flaticon-home {
-  background-image: url('../../src/assets/icons/home-blue.svg');
-}
-
-.flaticon-menu {
-  background-image: url('../../src/assets/icons/menu.svg');
-}
-
-.flaticon-flip {
-  background-image: url('../../src/assets/icons/flip.svg');
-}
-
 .flaticon-home-1::before { content: '\f18e'; }
 
 .flaticon-home-2::before { content: '\f18f'; }
@@ -412,14 +367,6 @@ i.fi {
 .flaticon-like-2::before { content: '\f1a6'; }
 
 .flaticon-link::before { content: '\f1a7'; }
-
-.router-link-active .flaticon-list {
-  background-image: url('../../src/assets/icons/text.svg');
-}
-
-.flaticon-list {
-  background-image: url('../../src/assets/icons/text-blue.svg');
-}
 
 .flaticon-list-1::before { content: '\f1a9'; }
 
@@ -504,14 +451,6 @@ i.fi {
 .flaticon-navigation::before { content: '\f1d2'; }
 
 .flaticon-navigation-1::before { content: '\f1d3'; }
-
-.router-link-active .flaticon-network {
-  background-image: url('../../src/assets/icons/cube.svg');
-}
-
-.flaticon-network {
-  background-image: url('../../src/assets/icons/cube-blue.svg');
-}
 
 .flaticon-newspaper::before { content: '\f1d5'; }
 
@@ -619,10 +558,6 @@ i.fi {
 
 .flaticon-search-1::before { content: '\f209'; }
 
-.flaticon-search-2 {
-  background-image: url('../../src/assets/icons/search-2.svg');
-}
-
 .flaticon-send::before { content: '\f20a'; }
 
 .flaticon-server::before { content: '\f20b'; }
@@ -652,10 +587,6 @@ i.fi {
 .flaticon-settings-8::before { content: '\f217'; }
 
 .flaticon-settings-9::before { content: '\f218'; }
-
-.flaticon-settings-10 {
-  background-image: url('../../src/assets/icons/settings-10.svg');
-}
 
 .flaticon-share::before { content: '\f219'; }
 
@@ -854,15 +785,6 @@ i.fi {
 .flaticon-zoom-in::before { content: '\f27a'; }
 
 .flaticon-zoom-out::before { content: '\f27b'; }
-
-.flaticon-person {
-  background-image: url('../../src/assets/icons/person.svg');
-}
-.flaticon-calendar-9 { background-image: url('../../src/assets/icons/calendar.svg'); }
-.flaticon-power-1 { background-image: url('../../src/assets/icons/power.svg'); }
-.flaticon-email {
-  background-image: url('../../src/assets/icons/email-blue.svg');
-}
 
 $font-Flaticon-add: '\f100';
 $font-Flaticon-add-1: '\f101';

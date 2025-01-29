@@ -1,0 +1,15 @@
+@import '../../../styles/app';
+
+.invoice-page {
+  .invoiceLogo {
+    max-height: 50px;
+  }
+
+  .invoiceBody {
+    margin-top: 70px;
+  }
+
+  .widget {
+    padding: 20px 40px;
+  }
+}

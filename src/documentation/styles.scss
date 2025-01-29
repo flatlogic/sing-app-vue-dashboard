@@ -1,0 +1,138 @@
+@import '../styles/app';
+
+$body-bg: #FFFBF8;
+$doc-navbar-height: 80px;
+
+.documentation-page {
+  position: relative;
+
+   .content {
+      background-color: #FFFBF8;
+      padding-top: calc(#{$doc-navbar-height} + #{2 * $spacer});
+      min-height: 100vh;
+
+      & :global(.widget) {
+        box-shadow: none;
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+     @include media-breakpoint-up(md) {
+       margin-left: $sidebar-width-open;
+     }
+
+     @include media-breakpoint-down(sm) {
+       padding-top: $doc-navbar-height / 2;
+     }
+  }
+
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    height: $doc-navbar-height;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    z-index: 100;
+  }
+
+  .company {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    width: inherit;
+    max-width: inherit;
+
+    color: #495057;
+    font-size: 11px;
+    font-weight: 400;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    background-size: contain;
+    border-radius: 50px;
+    padding: 0 25px;
+
+    img {
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: -4px;
+      width: 50px;
+    }
+  }
+
+  .sidebar {
+    padding-top: $doc-navbar-height;
+    width: $sidebar-width-open;
+    background: #fff;
+    position: absolute;
+
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      width: auto;
+      background: transparent;
+    }
+
+    @include media-breakpoint-up(md) {
+      height: 100%;
+      left: 0;
+      top: 0;
+
+      .nav {
+        padding: $spacer 0;
+        position: fixed;
+        width: inherit;
+        max-width: inherit;
+        overflow-y: auto;
+        max-height: calc(100vh - 200px);
+      }
+    }
+
+    .headerLink {
+      .sidebar-link {
+        padding-left: 25px;
+        font-weight: $font-weight-semi-bold;
+        color: #6c757d;
+
+        &:hover {
+          background: $body-bg;
+        }
+
+        .icon {
+          display: none;
+        }
+      }
+
+      .sub-menu {
+        background: $body-bg;
+      }
+    }
+
+    .sidebar-link.router-link-exact-active,
+    .sub-menu .router-link-active {
+      color: theme-color('warning');
+    }
+  }
+  .scrollspy {
+    color: #32373b;
+    position: fixed;
+    overflow-y: auto;
+    max-height: calc(100vh - 130px);
+
+    .list-group-item {
+      border: none;
+      padding: 5px 0;
+      transition: $transition-base;
+
+      &:hover {
+        color: #32373b;
+        background: none;
+      }
+
+      &.active {
+        color: theme-color('warning');
+      }
+    }
+  }
+}

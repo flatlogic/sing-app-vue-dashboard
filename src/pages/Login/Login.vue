@@ -10,6 +10,13 @@
         <p class="widget-auth-info">
             Use your email to sign in.
         </p>
+        <b-alert class="alert-sm text-center mt-2" variant="primary" show>
+          This is a real app with Node.js backend - use
+          <br/>
+          <span class="fw-bold">"admin@flatlogic.com / password"</span>
+          <br/>
+          to login!
+        </b-alert>
         <form class="mt" @submit.prevent="login">
           <b-alert class="alert-sm" variant="danger" :show="!!errorMessage">
             {{errorMessage}}
@@ -20,14 +27,14 @@
           <div class="form-group">
             <input class="form-control no-border" ref="password" required type="password" name="password" placeholder="Password" />
           </div>
-          <b-button type="submit" size="sm" class="auth-btn mb-3" variant="inverse">Login</b-button>
+          <b-button type="submit" size="sm" class="auth-btn mb-3 text-white" variant="primary">{{this.isFetching ? 'Loading...' : 'Login'}}</b-button>
           <p class="widget-auth-info">or sign in with</p>
           <div class="social-buttons">
-            <b-button variant="primary" class="social-button mb-2">
+            <b-button @click="googleLogin" variant="warning" class="social-button mb-2 text-white">
               <i class="social-icon social-google"></i>
               <p class="social-text">GOOGLE</p>
             </b-button>
-            <b-button variant="success" class="social-button">
+            <b-button @click="microsoftLogin" variant="danger" class="social-button text-white">
               <i class="social-icon social-microsoft"></i>
               <p class="social-text">MICROSOFT</p>
             </b-button>
@@ -36,41 +43,59 @@
         <p class="widget-auth-info">
           Don't have an account? Sign up now!
         </p>
-        <router-link class="d-block text-center" to="login">Create an Account</router-link>
+        <router-link class="d-block text-center" to="register">Create an Account</router-link>
       </Widget>
     </b-container>
     <footer class="auth-footer">
-      2019 &copy; Sing App Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com/">Flatlogic</a>
+      2021 &copy; Sing App - Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com/">Flatlogic</a>
     </footer>
   </div>
 </template>
 
 <script>
 import Widget from '@/components/Widget/Widget';
+import {mapState, mapActions} from 'vuex';
+
+import config from '../../config';
 
 export default {
   name: 'LoginPage',
   components: { Widget },
-  data() {
-    return {
-      errorMessage: null,
-    };
+  computed: {
+    ...mapState('auth', {
+      isFetching: state => state.isFetching,
+      errorMessage: state => state.errorMessage,
+    }),
   },
   methods: {
+    ...mapActions('auth', ['loginUser', 'receiveToken', 'receiveLogin']),
     login() {
       const email = this.$refs.email.value;
       const password = this.$refs.password.value;
 
       if (email.length !== 0 && password.length !== 0) {
-        window.localStorage.setItem('authenticated', true);
-        this.$router.push('/app/dashboard');
+        this.loginUser({email, password});
       }
     },
-  },
-  created() {
-    if (window.localStorage.getItem('authenticated') === 'true') {
-      this.$router.push('/app/main/analytics');
+    googleLogin() {
+      this.loginUser({social: "google"});
+    },
+    microsoftLogin() {
+      this.loginUser({social: "microsoft"});
     }
   },
+  created() {
+    const token = this.$route.query.token;
+    if (token) {
+      this.receiveToken(token);
+    } else if (this.isAuthenticated(localStorage.getItem('token'))) {
+      this.receiveLogin();
+    }
+  },
+  mounted() {
+    const creds = config.auth;
+    this.$refs.email.value = creds.email;
+    this.$refs.password.value = creds.password;
+  }
 };
 </script>

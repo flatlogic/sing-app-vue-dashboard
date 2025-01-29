@@ -2,7 +2,8 @@
  * Customized version of bootstrap using variables from _variables.scss.
  * This file is loaded via separate loader thus allowing to use original bootstrap classes (e.g. .btn-default) through out the app.
  */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800');
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
 
 @import '../../node_modules/bootstrap/scss/functions';
 @import 'variables';
@@ -12,13 +13,19 @@
 @import '../../node_modules/glyphicons-halflings/scss/glyphicons-halflings';
 @import '../../node_modules/font-awesome/css/font-awesome.css';
 @import '../../node_modules/line-awesome/dist/line-awesome/css/line-awesome.css';
-@import '../../node_modules/rickshaw/rickshaw.css';
+@import "../../node_modules/mavon-editor/dist/css/index.css";
+@import '../../node_modules/vue2-dropzone/dist/vue2Dropzone.min.css';
+@import '../../node_modules/vue-form-wizard/dist/vue-form-wizard.min.css';
 @import '../fonts/flaticon/flaticon';
 @import '../../node_modules/animate.css/animate';
 @import '../../node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox';
+@import '../../node_modules/rickshaw/rickshaw.css';
+@import '../../node_modules/vue-code-highlight/themes/prism-tomorrow.css';
+@import '../../node_modules/vue-tour/dist/vue-tour.css';
 @import 'mixins';
 @import 'base';
 @import 'auth';
 @import 'overrides';
 @import 'general';
 @import 'utils';
+@import 'icons';

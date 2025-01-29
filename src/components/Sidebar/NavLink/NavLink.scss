@@ -11,7 +11,7 @@
 
   a {
     display: block;
-    color: var(--sidebar-color-item);
+    color: var(--sidebar-color);
     text-decoration: none;
     cursor: pointer;
   }
@@ -30,7 +30,6 @@
     font-size: 14px;
     font-weight: $font-weight-normal;
 
-
     &:hover {
       background-color: var(--sidebar-item-hover-bg-color);
     }
@@ -46,7 +45,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 3px;
+    top: 10px;
     left: 16px;
     width: 32px;
     height: 32px;
@@ -61,19 +60,21 @@
 
   .badge {
     float: right;
-    line-height: 8px;
-    margin-top: 6px;
-    margin-right: 15px;
-    padding: 7px;
+    line-height: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 0.875em;
     background: var(--sidebar-badge-bg);
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       margin-top: 16px;
     }
   }
-
   .collapse > ul > li a {
     padding-left: 50px;
+  }
+  #collapsemenu > ul > li a {
+    padding-bottom: 14px;
   }
 }
 
@@ -86,12 +87,13 @@
   align-items: center;
   margin-left: auto;
   margin-right: 22px;
-  color: #5CB0FF;
+  color: var(--sidebar-color);
 
   i {
     @include transition(transform 0.3s ease-in-out);
   }
 }
+
 .caretWrapper i {
   font-size: $font-size-larger;
 }
@@ -99,7 +101,7 @@
   transform: rotate(90deg);
 }
 
-a.router-link-active {
+div a.router-link-active {
   color: var(--sidebar-item-active);
   font-size: $font-size-larger;
   font-weight: $font-weight-semi-bold;
@@ -126,7 +128,7 @@ a.router-link-active {
 
     &.router-link-active {
       font-weight: $font-weight-semi-bold;
-      color: var(--sidebar-color);
+      color: var(--sidebar-item-active);
     }
   }
 

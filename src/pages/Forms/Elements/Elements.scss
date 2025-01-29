@@ -1,0 +1,204 @@
+@import '../../../styles/app';
+
+.forms-elements {
+  
+  .v-note-wrapper {
+    .v-note-op.shadow,
+    .v-note-panel {
+      border: 1px solid $table-border-color !important;
+      box-shadow: none !important;
+    }
+  }
+  
+  .abc-checkbox,
+  .abc-radio {
+    .form-check-input {
+      position: relative;
+      margin: 0;
+    }
+  }
+  
+  .display-inline-block {
+    display: inline-block;
+  }
+  
+  .display-none {
+    display: none;
+  }
+
+  .dropdown.v-select.single.searchable {
+    .dropdown-toggle {
+      .vs__actions {
+        .clear {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+
+  #simple-select {
+    .btn.dropdown-toggle {
+      padding-right: 0;
+      &::after {
+        margin: 0 16px 0 16px;
+      }
+    }
+
+  }
+
+  .form-row.form-group {
+    .bv-no-focus-ring {
+      .dropdown.b-dropdown {
+        .btn.dropdown-toggle {
+          padding-right: 0;
+          &::after {
+            margin: 0 16px 0 16px;
+          }
+        }
+      }
+    }
+  }
+
+  /*  file input */
+  
+  .fileinput.fileinput-new {
+    .thumbnail {
+      padding: $thumbnail-padding;
+      line-height: $line-height-base;
+      background-color: $thumbnail-bg;
+      border: $thumbnail-border-width solid $thumbnail-border-color;
+      border-radius: $thumbnail-border-radius;
+      transition: all 0.2s ease-in-out;
+  
+      @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.075));
+    }
+  
+    &.fileinput-fix {
+      width: 200px;
+      height: 150px;
+    }
+  }
+  
+  .btn {
+    label {
+      margin-bottom: 0;
+    }
+  }
+  
+  .fileinput-preview.fileinput-exists {
+    border: 1px solid $input-border-color;
+    border-radius: $border-radius;
+    padding: 5px;
+  }
+  
+  .fileinput.input-group {
+    display: flex;
+  }
+  
+  .fileinput-new.input-group .btn-file,
+  .fileinput-new .input-group .btn-file {
+    border-radius: 0 $border-radius $border-radius 0;
+  
+    &.btn-xs,
+    &.btn-sm {
+      border-radius: 0 $border-radius-sm $border-radius-sm 0;
+    }
+  
+    &.btn-lg {
+      border-radius: 0 $border-radius-lg $border-radius-lg 0;
+    }
+  }
+  
+  .form-group.has-warning .fileinput {
+    .fileinput-preview {
+      color: #fff;
+    }
+  
+    .thumbnail {
+      border-color: theme-color('warning');
+    }
+  }
+  
+  .form-group.has-error .fileinput {
+    .fileinput-preview {
+      color: #fff;
+    }
+  
+    .thumbnail {
+      border-color: theme-color('danger');
+    }
+  }
+  
+  .form-group.has-success .fileinput {
+    .fileinput-preview {
+      color: #fff;
+    }
+  
+    .thumbnail {
+      border-color: theme-color('success');
+    }
+  }
+  
+  .btn-label {
+    background: transparent;
+    left: 2px;
+    padding: 1px 6px;
+  }
+  
+  // Opposite alignment of blockquote
+  .blockquote {
+    padding: ($spacer / 2) $spacer;
+    margin-bottom: $spacer;
+    font-size: $blockquote-font-size;
+    border-left: 0.25rem solid $gray-300;
+  }
+  
+  .blockquote footer {
+    display: block;
+    font-size: 80%; // back to default font-size
+    color: $blockquote-small-color;
+  
+    &::before {
+      content: '\2014 \00A0'; // em dash, nbsp
+    }
+  }
+  
+  .blockquote-reverse {
+    padding-right: $spacer;
+    padding-left: 0;
+    text-align: right;
+    border-right: 0.25rem solid $gray-300;
+    border-left: 0;
+  }
+  
+  .blockquote-reverse footer {
+    &::before {
+      content: '';
+    }
+  
+    &::after {
+      content: '\00A0 \2014'; // nbsp, em dash
+    }
+  }
+  
+  .image-preview {
+    width: 191px;
+    height: 141px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .dropzone .dz-preview.dz-error .dz-error-message {
+    display: none;
+  }
+  
+  .vue-dropzone .dz-preview {
+    .dz-error-mark {
+      opacity: 0 !important;
+    }
+  
+    .dz-success-mark {
+      opacity: 1;
+    }
+  }
+}

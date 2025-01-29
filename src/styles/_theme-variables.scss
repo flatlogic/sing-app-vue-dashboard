@@ -1,18 +1,12 @@
 .root {
   &.sing-dashboard {
-    --logo-color: #5CB0FF;
     --body-bg: #f9fbfd;
     --light-color: #F6F6E9;
 
-    --sidebar-bg-color: #002B49;
-    --sidebar-color: #C2C2C2;
-    --sidebar-color-item: #FFFFFF;
-    --sidebar-action-bg: #042338;
-    --sidebar-item-active: var(--light-color);
-    --sidebar-item-active-bg: #5CB0FF;
-    --sidebar-badge-bg: #005792;
-
-    --sidebar-nav-title-color: var(--light-color);
+    --sidebar-bg-color: #ffffff;
+    --sidebar-color: #6c757d;
+    --sidebar-action-bg: #f9fafe;
+    --sidebar-item-active: #C1C3CF; //var(--light-color)
 
     --widget-shadow-color: 75, 102, 171;
 
@@ -24,6 +18,119 @@
     --sidebar-progress-bg-color: var(--sidebar-action-bg);
     --sidebar-icon-active: var(--sidebar-bg-color);
     --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
-    --widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
+    //--widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
+
+    --input-bg-color: var(--input-bg);
+    --badge-item-color: var(--badge-item);
+    --important-notification: var(--important-notification-color);
+    --update-notification: var(--update-notification-color);
+    --sidebar-item-active-color: var(--sidebar-item-active);
+    --chat-sidebar-bg-color: var(--sidebar-bg-color);
+    --widget-shadow: 0 23px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+
+    &.sidebar-white,
+    &.sidebar-transparent {
+      --sidebar-icon-bg: #4A5056;
+      --sidebar-bg-color: #ffffff;
+      --sidebar-color: #6c757d;
+      --sidebar-action-bg: #f9fafe;
+      --logo-color: #6C757D;
+      --sidebar-item-active: #6C757D;
+      --sidebar-item-active-color: #FFFFFF;
+      --sidebar-item-active-bg: #4A5056;
+      --sidebar-nav-title-color: #5287B9;
+    }
+
+    &.sidebar-first {
+      --sidebar-bg-color: #3D3D3D;
+      --logo-color: #5CB0FF;
+      //--sidebar-item-active: #F6F6E9;
+      --sidebar-action-bg: #2D2D2D;
+      --sidebar-item-active-bg: #5CB0FF;
+      --sidebar-color: #F6F6E9;
+      --sidebar-nav-title-color: #F6F6E9;
+    }
+
+    &.sidebar-second {
+      --logo-color: #fff;
+      --sidebar-color: #fff;
+      --sidebar-bg-color: #4B505F;
+      --sidebar-action-bg: #373C4D;
+      --sidebar-item-active-bg: #dedede;
+      //--sidebar-item-active: #F6F6E9;
+    }
+
+    &.sidebar-third {
+      --sidebar-item-active-bg: #5CB0FF;
+      --logo-color: #fff;
+      //--sidebar-item-active: #F6F6E9;
+      --important-notification-color: #fd5f00;
+      --sidebar-bg-color: #483CB6;
+      --sidebar-color: #F6F6E9;
+      --sidebar-action-bg: #332A87;
+    }
+
+    &.sidebar-fourth {
+      --sidebar-icon-bg: #6FB0F9;
+      --logo-color: #6FB0F9;
+      --sidebar-item-active: #5A5D76;
+      --sidebar-bg-color: #EFF2F5;
+      --sidebar-action-bg: #E2E7EC;
+      --sidebar-item-active-bg: #6FB0F9;
+    }
+
+    &.sidebar-fifth {
+      --sidebar-icon-bg: #0D2B47;
+      --logo-color: #0D2B47;
+      --sidebar-bg-color: #20AE8C;
+      --sidebar-action-bg: #119475;
+      //--sidebar-item-active: #F6F6E9;
+      --sidebar-item-active-bg: #0D2B47;
+      --sidebar-color: #F6F6E9;
+    }
+
+    &.sidebar-transparent {
+      --sidebar-bg-color: transparent;
+      --sidebar-action-bg: transparent;
+      --sidebar-color: #6c757d;
+    }
   }
+
+  .header-ffffff {
+    --input-bg: #F4F4F5;
+    --input-color: #0C2236;
+    --navbar-bg: #FFFFFF;
+    --navbar-icon-bg: #0C2236;
+  }
+  .header-E2E7EC {
+    --input-bg: #F4F4F5;
+    --input-color: #0C2236;
+    --navbar-bg: #E2E7EC;
+    --navbar-icon-bg: #0C2236;
+  }
+  .header-C9D1FB {
+    --input-bg: rgba(255, 255, 255, 0.5);;
+    --input-color: #0C2236;
+    --navbar-bg: #C9D1FB;
+    --navbar-icon-bg: #0C2236;
+  }
+  .header-C1C3CF {
+    --input-bg: rgba(255, 255, 255, 0.5);
+    --input-color: #0C2236;
+    --navbar-bg: #C1C3CF;
+    --navbar-icon-bg: #0C2236;
+  }
+  .header-0C2236 {
+    --input-bg: rgba(255, 255, 255, 0.3);
+    --input-color: #0C2236;
+    --navbar-bg: #0C2236;
+    --navbar-icon-bg: #C1C3CF;
+  }
+  .header-6FB0F9 {
+    --input-bg: rgba(255, 255, 255, 0.3);
+    --input-color: #0C2236;
+    --navbar-bg: rgba(111, 176, 249, 0.4);
+    --navbar-icon-bg: #0C2236;
+  }
+
 }

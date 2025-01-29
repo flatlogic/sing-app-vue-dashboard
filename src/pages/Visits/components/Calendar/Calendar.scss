@@ -1,0 +1,54 @@
+@import '../../../../styles/app';
+
+/*
+ * Vue calendar
+ */
+
+.sing-calendar .vc-container {
+  border: none;
+  font-family: $font-family-base;
+  color: $text-color;
+  border-radius: 0;
+
+  .vc-header {
+    padding: $widget-padding-vertical $widget-padding-horizontal 0;
+
+    .vc-title {
+      color: $text-color;
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .vc-weekday {
+    font-weight: $font-weight-normal;
+    color: $text-muted;
+  }
+
+  .vc-day {
+    .vc-dots {
+      .vc-bg-red-600 {
+        background-color: theme-color("danger");
+      }
+
+      .vc-bg-green-600 {
+        background-color: theme-color("success");
+      }
+
+      .vc-bg-blue-600 {
+        background-color: theme-color("primary");
+      }
+    }
+  }
+
+  .vc-day-popover-row-content {
+    display: block;
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: darken($white, 20%);
+      }
+    }
+  }
+}

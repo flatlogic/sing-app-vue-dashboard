@@ -2,19 +2,21 @@
   <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, className}">
     <router-link :to="link" class="sidebar-link">
       <span class="icon">
-        <i :class="fullIconName"></i>
+        <inline-svg v-if="iconImg" :src="require('@/assets/' + iconImg + '')" fill="currentColor"></inline-svg>
+        <i v-else :class="fullIconName"></i>
       </span>
       {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
-      <b-badge v-if="badge" variant="primary" pill>{{badge}}</b-badge>
+      <span v-if="badge" class="badge rounded-pill bg-danger">{{badge}}</span>
     </router-link>
   </li>
   <li v-else-if="childrenLinks" :class="{headerLink: true, className}">
     <div @click="() => togglePanelCollapse(link)">
       <router-link :to="link" event="" class="d-flex sidebar-link">
         <span class="icon">
-          <i :class="fullIconName"></i>
+          <inline-svg v-if="iconImg" :src="require('@/assets/' + iconImg + '')" fill="currentColor"> </inline-svg>
+          <i v-else :class="fullIconName"></i>
         </span>
-        {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{label}}</sup>
+        {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ms-1 headerLabel">{{label}}</sup>
         <div :class="{caretWrapper: true, carretActive: isActive}">
           <i class="fa fa-angle-right" />
         </div>
@@ -22,13 +24,13 @@
     </div>
     <b-collapse :id="'collapse' + index" :visible="isActive">
       <ul class="sub-menu">
-        <NavLink v-for="link in childrenLinks"
+        <NavLink v-for="childrenLink in childrenLinks"
           :activeItem="activeItem"
-          :header="link.header"
-          :index="link.index"
-          :link="link.link"
-          :childrenLinks="link.childrenLinks"
-          :key="link.link"
+          :header="childrenLink.header"
+          :index="childrenLink.index"
+          :link="childrenLink.link"
+          :childrenLinks="childrenLink.childrenLinks"
+          :key="childrenLink.link"
         />
       </ul>
     </b-collapse>
@@ -49,7 +51,7 @@ export default {
     badge: { type: String, default: '' },
     header: { type: String, default: '' },
     iconName: { type: String, default: '' },
-    c: { type: String, default: '' },
+    iconImg: {type: String, default: ''},
     headerLink: { type: String, default: '' },
     link: { type: String, default: '' },
     childrenLinks: { type: Array, default: null },
@@ -59,7 +61,7 @@ export default {
     activeItem: { type: String, default: '' },
     label: { type: String },
     labelColor: { type: String, default: 'warning' },
-    index: { type: String },
+    index: { type: String }
   },
   data() {
     return {
@@ -68,6 +70,7 @@ export default {
   },
   methods: {
     ...mapActions('layout', ['changeSidebarActive']),
+    ...mapActions('auth', ['logoutUser']),
     togglePanelCollapse(link) {
       this.changeSidebarActive(link);
       this.headerLinkWasClicked = !this.headerLinkWasClicked

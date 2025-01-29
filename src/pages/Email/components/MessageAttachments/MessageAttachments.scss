@@ -1,0 +1,14 @@
+@import '../../../../styles/app';
+
+.messageAttachments {
+  width: 50%;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.attachmentsInfo,
+.attachmentButtons {
+  margin: -5px 0 10px;
+}

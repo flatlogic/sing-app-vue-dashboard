@@ -1,8 +1,13 @@
+import { NavbarTypes, SidebarTypes, LayoutComponents, NavbarColorSchemes } from '../store/layout';
 import config from '../config';
 
 export default {
     data: () => {
         return {
+            navbarTypes: NavbarTypes,
+            navbarColorSchemes: NavbarColorSchemes,
+            sidebarTypes: SidebarTypes,
+            layoutComponents: LayoutComponents,
             appConfig: config.app,
         }
     },

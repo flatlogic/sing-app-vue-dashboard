@@ -1,0 +1,52 @@
+@import "../../../../styles/app";
+
+.chat-message {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: $spacer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .message-body {
+    border-radius: $border-radius;
+    padding: $spacer/2 $spacer;
+    line-height: 2;
+    margin-bottom: $spacer / 2;
+    background: $white;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 90%;
+
+    &.message-attachment {
+      padding: 0;
+      max-width: 70%;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .message-avatar {
+    position: absolute;
+    top: 0;
+    left: 10px;
+  }
+
+  &.owner {
+    padding-left: 0;
+    padding-right: 60px;
+    align-items: flex-end;
+
+    .message-body {
+      background: lighten($info, 15%);
+      color: $white;
+    }
+
+    .message-avatar {
+      left: unset;
+      right: 10px;
+    }
+  }
+}

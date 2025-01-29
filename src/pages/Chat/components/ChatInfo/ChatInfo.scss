@@ -1,0 +1,228 @@
+@import "../../../../styles/app";
+
+$chat-info-padding: 3 * $spacer;
+
+.chat-info-section {
+  display: flex;
+  flex-direction: column;
+
+  .chat-info-header {
+    position: relative;
+    color: $white;
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+
+      .social-link {
+        a {
+          background: $white;
+          border-radius: 50%;
+          color: $info;
+          font-size: 18px;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+
+          .fa-facebook {
+            margin: auto;
+            font-size: 22px;
+          }
+        }
+      }
+
+      .social-link + .social-link {
+        margin-left: $spacer / 1.2;
+      }
+    }
+
+    .avatars-row {
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+      margin-bottom: 0;
+
+      li {
+        width: 15px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .chat-info-body {
+    overflow: auto;
+    margin-bottom: 0;
+    @include chat-scrollbar($text-muted, 0);
+    flex: 1;
+
+    .chat-info-list {
+      margin: 0 (-$chat-component-padding) 0 0;
+
+      .chat-info-item + .chat-info-item {
+        padding: $spacer * 1.5 $chat-component-padding 0 0;
+        border-top: 1px solid $border-color;
+      }
+
+      .chat-info-item {
+        padding-right: $chat-component-padding;
+
+        .item-header {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          margin-bottom: $spacer * 1.5;
+          position: relative;
+
+          .title {
+            padding-left: $chat-info-padding;
+            margin-bottom: 0;
+          }
+
+          .icon {
+            position: absolute;
+            top: 50%;
+            left: $chat-info-padding / 3;
+            transform: translate(-50%, -50%);
+          }
+
+          .la {
+            transition: $transition-base;
+            font-size: $font-size-lg;
+          }
+
+          &.collapsed {
+            .la-angle-up {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+
+        .item-body {
+          padding-left: $chat-info-padding;
+
+          .help-block {
+            margin-top: 0;
+            margin-bottom: $spacer;
+          }
+
+          .files-list {
+            .file-item {
+              position: relative;
+
+              .download-icon {
+                position: absolute;
+                top: 50%;
+                left: calc(#{-$chat-info-padding} + 5px);
+                transform: translateY(-50%);
+              }
+
+              a {
+                color: $text-muted;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: block;
+              }
+            }
+
+            .file-item + .file-item {
+              margin-top: $spacer;
+            }
+          }
+        }
+      }
+    }
+
+    .switch {
+      i {
+        height: 12px;
+        padding-right: 15px;
+      }
+
+      i::before {
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-top: -2px;
+        box-shadow: none;
+        border: 1px solid $border-color;
+      }
+
+      :checked + i {
+        padding-right: 0;
+        padding-left: 15px;
+        background: darken($success, 15%);
+      }
+    }
+  }
+}
+
+.group-list-modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  z-index: 1000;
+
+  .group-list-modal {
+    overflow-y: auto;
+    max-height: 450px;
+
+    @include chat-scrollbar(rgba($text-muted, 0.3), 3px);
+
+    width: 300px;
+    color: $text-color;
+
+    .group-list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $spacer;
+
+      .la-lg {
+        vertical-align: middle;
+      }
+    }
+
+    .group-list {
+      margin: 0;
+      padding: 0;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        border-radius: $border-radius;
+        padding: $spacer / 2;
+
+        &:hover {
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.01);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    left: 0;
+
+    .group-list-modal {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+    z-index: -1;
+  }
+}
+

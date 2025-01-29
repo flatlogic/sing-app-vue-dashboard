@@ -1,8 +1,6 @@
 @import '../../styles/app';
 .sidebar {
   position: absolute;
-  top: 0;
-  left: 0;
   width: $sidebar-width-open;
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
@@ -14,13 +12,16 @@
   left: 0;
   top: 0;
   bottom: 0;
-  height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   width: $sidebar-width-open;
   transition: width $sidebar-transition-time ease-in-out, left $sidebar-transition-time ease-in-out;
 
   @include sidebar-scrollbar();
+}
+
+.sidebar-transparent .sidebar-wrapper:hover::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 .sidebarClose .sidebar-wrapper {
@@ -41,8 +42,8 @@
   width: 100%;
   font-weight: $font-weight-normal;
   text-align: center;
-  transition: width $sidebar-transition-time ease-in-out;
   text-shadow: 4px 4px 15px rgba(92, 176, 255, 0.6);
+  transition: width $sidebar-transition-time ease-in-out;
   text-transform: uppercase;
 
   a {
@@ -96,7 +97,7 @@
   font-size: $font-size-mini;
   font-weight: $font-weight-bold;
   transition: opacity $sidebar-transition-time ease-in-out;
-  color: rgba(#5287B9, 0.6);
+  color: var(--sidebar-nav-title-color);
 
   &.first {
     margin-top: 46px;
@@ -107,11 +108,9 @@
   }
 }
 
-
 .sidebarClose .navTitle {
   opacity: 0;
 }
-
 
 .sidebarStatic .navTitle {
   opacity: 1;
@@ -132,8 +131,8 @@
 
 .labelName {
   opacity: 1;
-  color: white;
   font-size: $font-size-base;
+  color: var(--sidebar-item-active);
   transition: opacity $sidebar-transition-time ease-in-out;
 }
 
@@ -165,8 +164,8 @@
 
     > i {
       font-size: 11px;
-      margin-right: 20px;
       vertical-align: 1px;
+      margin-right: 20px;
       color: var(--sidebar-item-active);
       transition: margin-left $sidebar-transition-time ease-in-out;
     }
@@ -190,7 +189,7 @@
   margin-bottom: $spacer * 2;
   transition: opacity $sidebar-transition-time ease-in-out;
   opacity: 1;
-  color: $widget-bg;
+  color: var(--sidebar-item-active);
   font-size: 13px;
   font-weight: 400;
 }
@@ -204,7 +203,7 @@
   transition: none;
 }
 
-.alert.sidebarAlert {
+.sidebarAlert {
   background: transparent;
   margin-bottom: 0;
   padding-right: 22px;

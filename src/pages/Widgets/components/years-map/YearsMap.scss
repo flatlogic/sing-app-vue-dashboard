@@ -1,0 +1,29 @@
+@import '../../../../styles/app';
+
+.years-map {
+  .map {
+    position: relative;
+    margin: (-$widget-padding-vertical) (-$widget-padding-horizontal) 0;
+  }
+
+  .stats {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin: 5% 10%;
+  }
+
+  .map-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $gray-light;
+
+    .btn:first-child, .btn:last-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

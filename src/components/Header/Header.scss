@@ -11,6 +11,13 @@
   font-weight: 500;
   justify-content: flex-start;
 
+  .dropdown-arrow {
+    transition: transform .3s;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
   .nav {
     height: 100%;
     padding: 0;
@@ -85,6 +92,7 @@
     width: 300px;
     input {
       background-color: #F9FAFE;
+      border-radius: 0;
       &::placeholder {
         color: #4A5056;
         font-weight: $font-weight-normal;
@@ -98,8 +106,8 @@
       border: none;
       background-color: #F9FAFE!important;
       transition: background-color ease-in-out 0.15s;
+      border-radius: 0;
     }
-
   }
 
   .avatar {
@@ -152,10 +160,19 @@
     .dropdown-item:focus {
       outline: none;
     }
-    ul {
-      width: 12rem;
-      li {
-        padding: 4px 0;
+     ul {
+       width: 12rem;
+       li {
+         padding: 4px 0;
+       }
+     }
+  }
+
+  .headerSvgFlipColor {
+    color: var(--navbar-icon-bg) !important;
+    :global {
+      .bg-primary {
+        background-color: var(--navbar-icon-bg)!important;
       }
     }
   }

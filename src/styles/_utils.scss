@@ -314,11 +314,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 @include keyframes('bg-attention') {
   0% {
-    background-color: lighten(theme-color('primary'), 63%);
+    background-color: lighten(theme-color('warning'), 43%);
   }
 
   5% {
-    background-color: lighten(theme-color('primary'), 53%);
+    background-color: lighten(theme-color('warning'), 33%);
   }
 
   0% {
@@ -448,7 +448,10 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   .form-control:focus,
   .form-control:focus + .input-group-addon,
   &.focus .input-group-addon {
-    background-color: $gray-100;
+    @extend .input-no-border;
+    &:focus {
+      border: none;
+    }
   }
 }
 

@@ -60,6 +60,7 @@ legend {
   font-size: $font-size-sm;
 
   .close {
+    font-size: 20px!important;
     color: #fff;
   }
 }
@@ -81,9 +82,10 @@ legend {
 /*  Badge */
 // Add colors for badges
 .badge {
-  padding: 4px 8px;
+  padding: 4px 12px;
   font-weight: $font-weight-semi-bold;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 19px;
 }
 
 .badge-success,
@@ -102,6 +104,10 @@ legend {
 }
 
 .badge {
+  &.badge-pill {
+    font-weight: 700;
+  }
+
   .list-group-item > & {
     margin-top: 2px;
   }
@@ -158,10 +164,12 @@ small {
 
 .btn-secondary {
   border-color: $gray-400;
-  color: $gray-800;
+  color: $gray-100;
 }
 
 .btn-success,
+.btn-default,
+.btn-gray,
 .btn-info,
 .btn-warning {
   color: $white;
@@ -179,7 +187,7 @@ small {
 
 .btn-default {
   border-color: $gray-400;
-  color: $gray-800;
+  color: $gray-100;
 }
 
 .btn-xs {
@@ -498,6 +506,7 @@ h6,
 .h4,
 .h5,
 .h6 {
+  font-weight: $font-weight-normal;
   small,
   .small {
     font-weight: $font-weight-thin;
@@ -612,8 +621,8 @@ h6,
 
 code {
   font-size: 85%;
-  background-color: theme-color('danger-light');
-  color: $pink;
+  background-color: theme-color('light');
+  color: $teal;
   padding: 0;
 }
 
@@ -703,7 +712,7 @@ pre {
 
 ////// VUE TOASTED //////
 .toasted-container {
-  .toasted.toasted-primary {
+  .toasted {
     box-shadow: none;
     font-size: $font-size-sm;
     border-radius: $border-radius;
@@ -730,13 +739,545 @@ pre {
     }
 
     .action {
-      color: white;
+      color: $text-color;
     }
   }
 }
 
-
-////// ECharts //////
-.echarts {
-  width: 100%;
+/////// CK Editor /////////
+.ck-content {
+  min-height: 200px;
 }
+
+/////// Vue Bootstrap Slider /////////
+/* slider */
+
+$slider-line-height: 8px;
+$slider-handle-size: 26px;
+
+.slider {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  .slider-handle {
+    position: absolute;
+    width: $slider-handle-size;
+    height: $slider-handle-size;
+    background: $white;
+    border: 0 solid transparent;
+
+    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 5));
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.round {
+      border-radius: 50%;
+    }
+
+    &.triangle {
+      background: transparent none;
+    }
+  }
+
+  &.slider-horizontal {
+    width: 210px;
+    height: $slider-line-height;
+
+    .slider-track {
+      height: $slider-line-height/2;
+      width: 100%;
+      margin-top: -$slider-line-height/4;
+      top: 50%;
+      left: 0;
+    }
+
+    .slider-selection {
+      height: 100%;
+      top: 0;
+      bottom: 0;
+    }
+
+    .slider-handle {
+      margin-left: -$slider-handle-size/2;
+      margin-top: -$slider-handle-size*3/8;
+
+      &.triangle {
+        border-width: 0 $slider-line-height/2 $slider-line-height/2 $slider-line-height/2;
+        width: 0;
+        height: 0;
+        border-bottom-color: #0480be;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &.slider-vertical {
+    height: 210px;
+    width: $slider-line-height;
+
+    .slider-track {
+      width: $slider-line-height/2;
+      height: 100%;
+      margin-left: -$slider-line-height/4;
+      left: 50%;
+      top: 0;
+    }
+
+    .slider-selection {
+      width: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .slider-handle {
+      margin-left: -$slider-handle-size*3/8;
+      margin-top: -$slider-handle-size/2;
+
+      &.triangle {
+        border-width: $slider-line-height/2 0 $slider-line-height/2 $slider-line-height/2;
+        width: 1px;
+        height: 1px;
+        border-left-color: #0480be;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.slider-disabled {
+    .slider-handle {
+      //     @include gradient-y(#dfdfdf, #bebebe);
+    }
+
+    .slider-track {
+      @include gradient-y(#e5e5e5, #e9e9e9);
+
+      cursor: not-allowed;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  .tooltip-inner {
+    white-space: nowrap;
+  }
+}
+
+.slider-selection {
+  position: absolute;
+  background: theme-color('primary');
+
+  @include box-shadow(inset 0 -1px 0 rgba(0, 0, 0, 0.15));
+
+  box-sizing: border-box;
+  border-radius: $border-radius;
+}
+
+.slider-danger .slider .slider-selection {
+  background: theme-color('danger'); // $brand-danger;
+}
+
+.slider-success .slider .slider-selection {
+  background: theme-color('success'); // $brand-success;
+}
+
+.slider-warning .slider .slider-selection {
+  background: theme-color('warning'); // $brand-warning;
+}
+
+.slider-info .slider .slider-selection {
+  background: theme-color('info'); // $brand-info;
+}
+
+.slider-inverse .slider .slider-selection {
+  background: $gray-700; // $gray;
+}
+
+.slider-track {
+  position: absolute;
+  cursor: pointer;
+  border-radius: $border-radius;
+
+  @include gradient-y(#eee, #f8f8f8);
+  @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+
+//////// Vue Color /////////
+.colorpicker-wrapper {
+  position: relative;
+
+  .colorpicker {
+    position: absolute;
+    z-index: 99999;
+    right: 0;
+    top: -250px;
+  }
+
+  .rect {
+    border: 1px solid #fff;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+//////// Mavon Editor ////////
+.v-note-wrapper {
+  z-index: 50;
+}
+
+
+/////// Vue Tour //////////
+.v-tour {
+  .v-step {
+    background: $white !important;
+    z-index: 102;
+    max-width: 240px !important;
+    color: $text-color !important;
+
+    filter: drop-shadow(0 0 2px rgba(var(--widget-shadow-color), .2)) !important;
+  }
+
+  .v-step[x-placement^=left] {
+    .v-step__arrow {
+      border-left-color: $white !important;
+    }
+  }
+
+
+  .v-step[x-placement^=bottom] .v-step__arrow {
+    border-bottom-color: $white !important;
+  }
+}
+
+
+//////// Switch /////////
+
+.switch {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch i {
+  display: inline-block;
+  cursor: pointer;
+  padding-right: 20px;
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  border-radius: 20px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.switch i::before {
+  display: block;
+  content: '';
+  width: 30px;
+  height: 30px;
+  padding: 1px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.switch :checked + i {
+  padding-right: 0;
+  padding-left: 20px;
+  background: $success;
+}
+
+.jumbotron {
+  @include border-radius($widget-border-radius);
+}
+
+.container-fluid .jumbotron, .container .jumbotron {
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 768px)
+{
+  .jumbotron, .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media screen and (min-width: 768px)
+{
+  .jumbotron {
+    padding-bottom: 48px;
+    padding-top: 48px;
+  }
+}
+
+.jumbotron {
+  margin-bottom: 30px;
+  //padding: 30px 60px;
+  background: rgba(233,236,239,1);
+}
+
+.modal-content {
+  .close {
+    box-sizing: content-box;
+    border: 0;
+    background-color: transparent;
+    border-radius: 0.3rem;
+  }
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.input-group {
+
+  .input-group-prepend {
+    margin-right: -1px;
+    display: flex;
+
+      .input-group-text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+  }
+
+  .input-group-append {
+      .btn,
+      .input-group-text {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+  }
+
+  .input-group-append:last-child>.btn:not(:last-child):not(.dropdown-toggle),
+  .input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.popover .arrow {
+  width: 1rem;
+  height: 0.5rem;
+  margin: 0 0.55rem;
+}
+
+.popover, .popover .arrow {
+  position: absolute;
+  display: block;
+}
+
+.popover .arrow:after, .popover .arrow:before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
+.popover-bottom > .arrow {
+  top: calc(-0.5rem - 1px);
+}
+
+.bs-popover-auto[x-placement^=bottom]>.arrow:after, .bs-popover-bottom>.arrow:after {
+  top: 1px;
+  border-width: 0 0.5rem 0.5rem;
+  border-bottom-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=bottom]>.arrow, .bs-popover-bottom>.arrow {
+  top: calc(-0.5rem - 1px);
+}
+
+.bs-popover-bottom>.arrow:before {
+  top: 0;
+  border-width: 0 0.5rem 0.5rem;
+  border-bottom-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=bottom], .bs-popover-bottom {
+  margin-top: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=right], .bs-popover-right {
+  margin-left: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=right]>.arrow, .bs-popover-right>.arrow {
+  left: calc(-0.5rem - 1px);
+  width: 0.5rem;
+  height: 1rem;
+  margin: 0.55rem 0;
+}
+
+.bs-popover-auto[x-placement^=right]>.arrow:before, .bs-popover-right>.arrow:before {
+  left: 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-right-color: #ebeff1;
+}
+
+.bs-popover-auto[data-popper-placement^=right]>.popover-arrow:before, .bs-popover-end>.popover-arrow:before {
+  left: 0;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-right-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=right]>.arrow:after, .bs-popover-right>.arrow:after {
+  left: 1px;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-right-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=top], .bs-popover-top {
+  margin-bottom: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=top]>.arrow, .bs-popover-top>.arrow {
+  bottom: calc(-0.5rem - 1px);
+}
+
+.bs-popover-auto[x-placement^=top]>.arrow:before, .bs-popover-top>.arrow:before {
+  bottom: 0;
+  border-width: 0.5rem 0.5rem 0;
+  border-top-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=top]>.arrow:after, .bs-popover-top>.arrow:after {
+  bottom: 1px;
+  border-width: 0.5rem 0.5rem 0;
+  border-top-color: #ebeff1;
+}
+
+.bs-popover-auto[x-placement^=left], .bs-popover-left {
+  margin-right: 0.5rem;
+}
+
+.bs-popover-auto[x-placement^=left]>.arrow, .bs-popover-left>.arrow {
+  right: calc(-0.5rem - 1px);
+  width: 0.5rem;
+  height: 1rem;
+  margin: 0.55rem 0;
+}
+
+.bs-popover-auto[x-placement^=left]>.arrow:before, .bs-popover-left>.arrow:before {
+  right: 0;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+  border-left-color: #ebeff1;
+}
+
+.bs-popover-left>.arrow:after {
+  right: 1px;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+  border-left-color: #ebeff1;
+}
+
+
+
+.tooltip .arrow {
+  position: absolute;
+  display: block;
+  width: 0.8rem;
+  height: 0.4rem;
+}
+
+.tooltip.b-tooltip {
+  display: block;
+  opacity: .9;
+  outline: 0;
+}
+
+.tooltip.b-tooltip .arrow {
+  margin: 0 0.25rem;
+}
+
+.tooltip .arrow:before {
+  position: absolute;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow, .bs-tooltip-top .arrow {
+  bottom: 0;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow:before, .bs-tooltip-top .arrow:before {
+  top: 0;
+  border-width: 0.4rem 0.4rem 0;
+  border-top-color: #000 !important;
+}
+
+.bs-tooltip-auto[x-placement^=right], .bs-tooltip-right {
+  padding: 0 0.4rem;
+}
+
+.bs-tooltip-auto[x-placement^=right] .arrow:before, .bs-tooltip-right .arrow:before {
+  right: 0;
+  border-width: 0.4rem 0.4rem 0.4rem 0;
+  border-right-color: #000 !important;
+}
+
+.bs-tooltip-auto[x-placement^=right] .arrow, .bs-tooltip-right .arrow {
+  left: 0;
+  width: 0.4rem;
+  height: 0.8rem;
+}
+
+
+.bs-tooltip-auto[x-placement^=bottom], .bs-tooltip-bottom {
+  padding: 0.4rem 0;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow, .bs-tooltip-bottom .arrow {
+  top: 0;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow:before, .bs-tooltip-bottom .arrow:before {
+  bottom: 0;
+  border-width: 0 0.4rem 0.4rem;
+  border-bottom-color: #000 !important;
+}
+
+.bs-tooltip-auto[x-placement^=left] .arrow:before, .bs-tooltip-left .arrow:before {
+  left: 0;
+  border-width: 0.4rem 0 0.4rem 0.4rem;
+  border-left-color: #000 !important;
+}
+
+.bs-tooltip-auto[x-placement^=left] .arrow, .bs-tooltip-left .arrow {
+  right: 0;
+  width: 0.4rem;
+  height: 0.8rem;
+}
+
+.bs-tooltip-auto[x-placement^=left], .bs-tooltip-left {
+  padding: 0 0.4rem;
+}
+
+.tooltip.b-tooltip.bs-tooltip-left .arrow {
+  margin: 0.25rem 0;
+}
+
+
+
+
+

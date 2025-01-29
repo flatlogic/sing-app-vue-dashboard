@@ -25,7 +25,7 @@ export default {
         },
         plotOptions: {
           bar: {
-            columnWidth: '60%'
+            columnWidth: '20%'
           }
         },
         xaxis: {
