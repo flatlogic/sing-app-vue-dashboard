@@ -1,4 +1,4 @@
-# 🚀 Sing App Vue Dashboard - A Free Admin Dashboard Template!
+# 🚀 Sing App Vue - A Free Admin Dashboard Template!
 
 [View Demo](https://flatlogic.com/templates/sing-app-vue-dashboard/demo) | [Download](https://github.com/flatlogic/sing-app-vue-dashboard/archive/refs/heads/master.zip) | [More Templates](https://flatlogic.com/templates) | [Discord Community](https://discord.gg/flatlogic-community) | [Support Forum](https://flatlogic.com/forum)
 
@@ -80,6 +80,23 @@ yarn run lint
 - Analytics Integration
 - User Profile
 - Navigation
+
+---
+
+## 🌍 Available Variants
+
+|               | **Material**                                              | **Transparent**                                         | **Classic**                                          | **Sofia**                                          | **Flatlogic**                                      |
+|---------------|-----------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
+| **React**     | [React Material Admin](https://github.com/flatlogic/react-material-admin) | [Light Blue React](https://github.com/flatlogic/light-blue-react) | [Sing App React](https://github.com/flatlogic/sing-app-react) | [Sofia React](https://github.com/flatlogic/sofia-react) | [One React](https://github.com/flatlogic/one-react) |
+| **Angular**   | [Angular Material Admin](https://github.com/flatlogic/angular-material-admin-full) | [Light Blue Angular](https://github.com/flatlogic/light-blue-angular) | [Sing App Angular](https://github.com/flatlogic/sing-app-angular) | - | - |
+| **Vue**       | [Material Vue](https://github.com/flatlogic/material-vue-full) | [Light Blue Vue](https://github.com/flatlogic/light-blue-vue) | [Sing App Vue](https://github.com/flatlogic/sing-app-vue-dashboard) | - | - |
+| **Bootstrap** | - | [Light Blue HTML5](https://github.com/flatlogic/light-blue-html5) | [Sing App HTML5](https://github.com/flatlogic/sing-app-html5) | - | [One Bootstrap](https://github.com/flatlogic/one-bootstrap-template-full) |
+
+
+Additionally, these templates are tailored for specific business needs:
+- [E-Commerce Frontend (React)](https://github.com/flatlogic/ecommerce-frontend) - A complete e-commerce solution.
+- [Bookkeeper UI (React)](https://github.com/flatlogic/bookkeeper-ui) - Accounting dashboard for finance management.
+- [User Management Template (React)](https://github.com/flatlogic/user-management-template) - User authentication and management.
 
 ---
 
