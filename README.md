@@ -1,10 +1,10 @@
 # 🚀 Sing App Vue - A Free Admin Dashboard Template!
 
-[View Demo](https://flatlogic.com/templates/sing-app-vue-dashboard/demo) | [Download](https://github.com/flatlogic/sing-app-vue-dashboard/archive/refs/heads/master.zip) | [More Templates](https://flatlogic.com/templates) | [Discord Community](https://discord.gg/flatlogic-community) | [Support Forum](https://flatlogic.com/forum)
+[View Demo](https://flatlogic.com/templates/sing-app-vue/demo) | [Download](https://github.com/flatlogic/sing-app-vue-dashboard/archive/refs/heads/master.zip) | [More Templates](https://flatlogic.com/templates) | [Discord Community](https://discord.gg/flatlogic-community) | [Support Forum](https://flatlogic.com/forum)
 
 **Originally a premium product, now available for free!** 🎉
 
-[![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)](https://flatlogic.github.io/sing-app-vue-dashboard/#/app/dashboard)
+[![header_illustration_fb](https://user-images.githubusercontent.com/36201579/40110692-554a4650-5909-11e8-8cde-30a0dd1f65ad.jpg)](https://flatlogic.com/templates/sing-app-vue/demo)
 
 Looking for a perfect codebase generator for your Startup? Try [Flatlogic AI Web App Generator](https://flatlogic.com/generator) - our new tool, sort of a template++.
 
