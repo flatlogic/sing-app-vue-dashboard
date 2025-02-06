@@ -1,5 +1,5 @@
 <template>
-  <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, className}">
+  <li v-if="!childrenLinks && isHeader" :class="{headerLink: true, [className]: className}">
     <router-link :to="link" class="sidebar-link">
       <span class="icon">
         <inline-svg v-if="iconImg" :src="require('@/assets/' + iconImg + '')" fill="currentColor"></inline-svg>
@@ -9,7 +9,7 @@
       <span v-if="badge" class="badge rounded-pill bg-danger">{{badge}}</span>
     </router-link>
   </li>
-  <li v-else-if="childrenLinks" :class="{headerLink: true, className}">
+  <li v-else-if="childrenLinks" :class="{headerLink: true, [className]: className}">
     <div @click="() => togglePanelCollapse(link)">
       <router-link :to="link" event="" class="d-flex sidebar-link">
         <span class="icon">
