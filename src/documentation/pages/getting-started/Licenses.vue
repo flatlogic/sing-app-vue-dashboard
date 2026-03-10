@@ -1,6 +1,6 @@
 <template>
-  <b-row>
-    <b-col lg="9" xs="12">
+  <div class="row">
+    <div class="col-lg-9 col-12">
       <Widget id="Licences">
         <h2>Licences</h2>
         <p class="lead">
@@ -12,33 +12,45 @@
         </p>
         <table class="table">
           <thead>
-          <tr>
-            <th></th>
-            <th>Single</th>
-            <th>Extended</th>
-          </tr>
+            <tr>
+              <th />
+              <th>Single</th>
+              <th>Extended</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Hundreds unique components</td>
-            <td class="text-success fw-bold">+</td>
-            <td class="text-success fw-bold">+</td>
-          </tr>
-          <tr>
-            <td>All pages</td>
-            <td class="text-success fw-bold">+</td>
-            <td class="text-success fw-bold">+</td>
-          </tr>
-          <tr>
-            <td>Free Updates</td>
-            <td>3 months</td>
-            <td>6 months</td>
-          </tr>
-          <tr>
-            <td>Paying users allowed</td>
-            <td class="text-danger fw-bold">-</td>
-            <td class="text-success fw-bold">+</td>
-          </tr>
+            <tr>
+              <td>Hundreds unique components</td>
+              <td class="text-success fw-bold">
+                +
+              </td>
+              <td class="text-success fw-bold">
+                +
+              </td>
+            </tr>
+            <tr>
+              <td>All pages</td>
+              <td class="text-success fw-bold">
+                +
+              </td>
+              <td class="text-success fw-bold">
+                +
+              </td>
+            </tr>
+            <tr>
+              <td>Free Updates</td>
+              <td>3 months</td>
+              <td>6 months</td>
+            </tr>
+            <tr>
+              <td>Paying users allowed</td>
+              <td class="text-danger fw-bold">
+                -
+              </td>
+              <td class="text-success fw-bold">
+                +
+              </td>
+            </tr>
           </tbody>
         </table>
       </Widget>
@@ -58,26 +70,29 @@
           Your use of the item is restricted to a single application.
           You may use the item in work which you are creating for your own
           purposes or for your clients. You are licensed to use the Item to create one single
-          End Product for yourself or for one client (a “single application”), and the
+          End Product for yourself or for one client (a "single application"), and the
           End Product may be Sold and users may be charged for using it (e.g. you are building
           SAAS application).
         </p>
       </Widget>
       <p class="mt">
         In case if you need any clarifications considering licenses feel free
-        to contact us via email: <a class="text-warning" href="mailto:support@flatlogic.com">support@flatlogic.com</a>.
+        to contact us via email: <a
+          class="text-warning"
+          href="mailto:support@flatlogic.com"
+        >support@flatlogic.com</a>.
       </p>
-    </b-col>
-    <b-col lg="3" xs="12">
+    </div>
+    <div class="col-lg-3 col-12">
       <Scrollspy
-          title="LICENCES"
-          :ids="['Licences', 'Single', 'Extended',]"
-      ></Scrollspy>
-    </b-col>
-  </b-row>
+        title="LICENCES"
+        :ids="['Licences', 'Single', 'Extended',]"
+      />
+    </div>
+  </div>
 </template>
-<script>
-  export default {
-    name: 'DocLicenses'
-  }
+
+<script setup>
+import Widget from '@/components/Widget/Widget.vue'
+import Scrollspy from '@/documentation/components/Scrollspy/Scrollspy.vue'
 </script>

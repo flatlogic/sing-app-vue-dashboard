@@ -1,77 +1,51 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue';
-import BootstrapVue from 'bootstrap-vue';
-import * as VueGoogleMaps from 'vue2-google-maps';
-import VueTouch from 'vue-touch';
-import Trend from 'vuetrend';
-import { ClientTable } from 'vue-tables-2';
-import VueTextareaAutosize from 'vue-textarea-autosize';
-import mavonEditor from 'mavon-editor';
-import { VueMaskDirective } from 'v-mask';
-import VeeValidate from 'vee-validate';
-import VueFormWizard from 'vue-form-wizard';
-import axios from 'axios';
-import Toasted from 'vue-toasted';
-import VCalendar from 'v-calendar';
-import VueApexCharts from 'vue-apexcharts';
-import CKEditor from '@ckeditor/ckeditor5-vue';
-import bFormSlider from 'vue-bootstrap-slider';
-import { component as VueCodeHighlight } from 'vue-code-highlight';
-import VueTour from 'vue-tour';
-import InlineSvg from 'vue-inline-svg';
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import axios from 'axios'
+import Toast from 'vue-toastification'
+import 'vue-toastification/dist/index.css'
+import 'driver.js/dist/driver.css'
+import VueApexCharts from 'vue3-apexcharts'
+import * as bootstrap from 'bootstrap'
 
-import store from './store';
-import router from './Routes';
-import App from './App';
-import layoutMixin from './mixins/layout';
-import { AuthMixin } from './mixins/auth';
-import config from './config';
-import Widget from './components/Widget/Widget';
-import Scrollspy from './documentation/pages/ScrollSpyComponent';
+// Expose bootstrap globally for data-api attributes to work
+window.bootstrap = bootstrap
 
-axios.defaults.baseURL = config.baseURLApi;
-axios.defaults.headers.common['Content-Type'] = "application/json";
-const token = localStorage.getItem('token');
+import App from './App.vue'
+import router from './router'
+import config from './config'
+
+// Global components
+import Widget from './components/Widget/Widget.vue'
+
+// Configure axios defaults
+axios.defaults.baseURL = config.baseURLApi
+axios.defaults.headers.common['Content-Type'] = "application/json"
+const token = localStorage.getItem('token')
 if (token) {
-    axios.defaults.headers.common['Authorization'] = "Bearer " + token;
+  axios.defaults.headers.common['Authorization'] = "Bearer " + token
 }
 
-Vue.use(BootstrapVue);
-Vue.use(VCalendar, {
-  firstDayOfWeek: 2
-});
-Vue.use(VueTouch);
-Vue.use(Trend);
-Vue.component('vue-code-highlight', VueCodeHighlight);
-Vue.component('Widget', Widget);
-Vue.component('Scrollspy', Scrollspy);
-Vue.use(bFormSlider);
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg',
-  },
-});
-Vue.use(ClientTable, { theme: 'bootstrap4' });
-Vue.use(VueTextareaAutosize);
-Vue.use(CKEditor);
-Vue.use(mavonEditor);
-Vue.component('apexchart', VueApexCharts);
-Vue.directive('mask', VueMaskDirective);
-Vue.use(VeeValidate, { fieldsBagName: 'fieldsbag' });
-Vue.use(VueFormWizard);
-Vue.mixin(layoutMixin);
-Vue.mixin(AuthMixin);
-Vue.use(Toasted, {duration: 10000});
-Vue.use(VueTour);
-Vue.component('inline-svg', InlineSvg);
+// Create Vue app
+const app = createApp(App)
 
-Vue.config.productionTip = false;
+// Create Pinia instance
+const pinia = createPinia()
+app.use(pinia)
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  store,
-  router,
-  render: h => h(App),
-});
+// Use router
+app.use(router)
+
+// Use ApexCharts
+app.use(VueApexCharts)
+
+// Provide global app configuration
+app.provide('appConfig', config.app)
+
+// Toast configuration
+app.use(Toast, { timeout: 10000 })
+
+// Register global components
+app.component('Widget', Widget)
+
+// Mount the app
+app.mount('#app')

@@ -1,137 +1,181 @@
 <template>
   <div class="d-flex flex-column">
-    <div class="d-lg-none chat-mobile-navigation px-0" @click="changeMobileState(mobileChatStates.LIST)">
-      <i class="la la-angle-left la-lg"></i>
+    <div
+      class="d-lg-none chat-mobile-navigation px-0"
+      @click="changeMobileState(mobileChatStates.LIST)"
+    >
+      <i class="la la-angle-left la-lg" />
       Chats
     </div>
     <header class="chat-dialog-header">
       <div>
-        <h5 class="fw-normal mb-0">{{title}}</h5>
+        <h5 class="fw-normal mb-0">
+          {{ title }}
+        </h5>
         <small v-if="!chat.isGroup">
-          <online-status :user="interlocutor"></online-status>
+          <OnlineStatus :user="interlocutor" />
         </small>
       </div>
-      <i class="info-icon la la-ellipsis-v d-none d-xl-inline-block"></i>
-      <i class="info-icon la la-ellipsis-v d-xl-none" @click="changeMobileState(mobileChatStates.INFO)"></i>
+      <i class="info-icon la la-ellipsis-v d-none d-xl-inline-block" />
+      <i
+        class="info-icon la la-ellipsis-v d-xl-none"
+        @click="changeMobileState(mobileChatStates.INFO)"
+      />
     </header>
-    <div class="chat-dialog-body" ref="chatDialogBody">
-      <div v-for="(part, i) of dialogParts" :key="i">
-        <div v-if="isTimeDivider(part)" class="dialog-divider">
-          {{part[0]}}
+    <div
+      ref="chatDialogBody"
+      class="chat-dialog-body"
+    >
+      <div
+        v-for="(part, i) of dialogParts"
+        :key="i"
+      >
+        <div
+          v-if="isTimeDivider(part)"
+          class="dialog-divider"
+        >
+          {{ part[0] }}
         </div>
-        <div v-else class="dialog-messages">
+        <div
+          v-else
+          class="dialog-messages"
+        >
           <ChatMessage
-              v-for="(message, j) of part"
-              :user="message.userId === user.id ? user : findUser(message.userId)"
-              :key="message.id"
-              :message="message"
-              :owner="message.userId === user.id"
-              :showAvatar="showAvatar(part, message, j)"
-          ></ChatMessage>
+            v-for="(message, j) of part"
+            :key="message.id"
+            :user="message.userId === user.id ? user : findUser(message.userId)"
+            :message="message"
+            :owner="message.userId === user.id"
+            :show-avatar="showAvatar(part, message, j)"
+          />
         </div>
       </div>
     </div>
-    <form class="chat-section new-message mb-0 mx-0" @submit="sendMessage($event)">
-      <b-button class="attachment" variant="transparent p-0"><i class="la la-plus"></i></b-button>
-      <b-input v-model="newMessage" placeholder="Type Your Message"></b-input>
-      <b-button variant="danger" class="px-4 new-message-btn text-white" type="submit">
-        <Loader v-if="sendingMessage"></Loader>
+    <form
+      class="chat-section new-message mb-0 mx-0"
+      @submit.prevent="sendMessage"
+    >
+      <button
+        type="button"
+        class="btn btn-transparent p-0 attachment"
+      >
+        <i class="la la-plus" />
+      </button>
+      <input
+        v-model="newMessage"
+        class="form-control"
+        placeholder="Type Your Message"
+      >
+      <button
+        type="submit"
+        class="btn btn-danger px-4 new-message-btn text-white"
+      >
+        <Loader v-if="sendingMessage" />
         <span v-else>Send</span>
-      </b-button>
+      </button>
     </form>
   </div>
 </template>
 
-<script>
-  import {mapState, mapActions} from 'vuex';
-  import moment from 'moment';
-  import ChatMessage from './ChatMessage';
-  import Loader from '../../../../components/Loader/Loader';
-  import { ChatMixin } from '@/mixins/chat';
-  import OnlineStatus from '../OnlineStatus/OnlineStatus';
+<script setup>
+import { ref, computed, watch, onMounted } from 'vue'
+import { format, isToday, isYesterday, parseISO } from 'date-fns'
+import ChatMessage from './ChatMessage.vue'
+import Loader from '@/components/Loader/Loader.vue'
+import OnlineStatus from '../OnlineStatus/OnlineStatus.vue'
+import { useChat } from '@/composables/useChat'
 
-  export default {
-    name: 'ChatDialog',
-    components: {OnlineStatus, ChatMessage, Loader},
-    mixins: [ChatMixin],
-    data() {
-      return {
-        newMessage: ''
-      }
-    },
-    computed: {
-      ...mapState('chat', ['activeChatId', 'user', 'sendingMessage', 'chats']),
-      chat() {
-        return this.chats.find(chat => chat.id === this.activeChatId) || {};
-      },
-      dialogParts() {
-        if (!this.chat.id) {
-          return [];
-        }
-        let firstMessage = this.chat.messages[0];
-        let dialogParts = [[this.shortCalendarDate(firstMessage.timestamp)],[firstMessage]];
-        let messagesLength = this.chat.messages.length;
+const {
+  user,
+  chats,
+  activeChatId,
+  sendingMessage,
+  mobileChatStates,
+  changeMobileState,
+  findUser,
+  findInterlocutor,
+  newMessageRequest
+} = useChat()
 
-        for (let i = 1; i < messagesLength; i++) {
-          let lastDialogPart = dialogParts[dialogParts.length - 1];
-          let prevMessage = lastDialogPart[lastDialogPart.length - 1];
-          let message = this.chat.messages[i];
-          let messageDate = moment(message.timestamp).format('YYYY MM dd');
-          let prevMessageDate = moment(prevMessage.timestamp).format('YYYY MM dd');
-          if (messageDate === prevMessageDate) {
-            lastDialogPart.push(message);
-          } else {
-            dialogParts.push([this.shortCalendarDate(message.timestamp)], [message]);
-          }
-        }
+const chatDialogBody = ref(null)
+const newMessage = ref('')
 
-        return dialogParts;
-      },
-      interlocutor() {
-        if (this.chat.isGroup) {
-          return;
-        }
-        return this.findInterlocutor(this.chat) || {};
-      },
-      title() {
-        return this.chat.isGroup ? this.chat.name : `${this.interlocutor.name} ${this.interlocutor.surname}`
-      }
-    },
-    watch: {
-      dialogParts() {
-        this.newMessage = '';
-        setTimeout(() => {
-          this.$refs.chatDialogBody.scrollTop = this.$refs.chatDialogBody.scrollHeight;
-        })
-      }
-    },
-    mounted() {
-      this.$refs.chatDialogBody.scrollTop = this.$refs.chatDialogBody.scrollHeight;
-    },
-    methods: {
-      ...mapActions('chat', ['newMessageRequest']),
-      sendMessage(event) {
-        event.preventDefault();
-        this.newMessageRequest({message: this.newMessage});
-      },
-      shortCalendarDate(date) {
-        return moment(date).calendar(null, {
-          sameDay: '[Today]',
-          nextDay: '[Tomorrow]',
-          nextWeek: 'dddd',
-          lastDay: '[Yesterday]',
-          lastWeek: '[Last] dddd',
-          sameElse: 'dddd, MMMM Do'
-        })
-      },
-      isTimeDivider(dialogPart) {
-        return typeof dialogPart[0] === 'string';
-      },
-      showAvatar(dialogPart, message, index) {
-        return index === 0 || dialogPart[index - 1].userId !== message.userId;
-      },
+const chat = computed(() => {
+  return chats.value.find(c => c.id === activeChatId.value) || {}
+})
+
+const dialogParts = computed(() => {
+  if (!chat.value.id) {
+    return []
+  }
+  const firstMessage = chat.value.messages[0]
+  const parts = [[shortCalendarDate(firstMessage.timestamp)], [firstMessage]]
+  const messagesLength = chat.value.messages.length
+
+  for (let i = 1; i < messagesLength; i++) {
+    const lastDialogPart = parts[parts.length - 1]
+    const prevMessage = lastDialogPart[lastDialogPart.length - 1]
+    const message = chat.value.messages[i]
+    const messageDate = format(parseISO(message.timestamp), 'yyyy MM dd')
+    const prevMessageDate = format(parseISO(prevMessage.timestamp), 'yyyy MM dd')
+    if (messageDate === prevMessageDate) {
+      lastDialogPart.push(message)
+    } else {
+      parts.push([shortCalendarDate(message.timestamp)], [message])
     }
   }
+
+  return parts
+})
+
+const interlocutor = computed(() => {
+  if (chat.value.isGroup) {
+    return null
+  }
+  return findInterlocutor(chat.value) || {}
+})
+
+const title = computed(() => {
+  return chat.value.isGroup ? chat.value.name : `${interlocutor.value?.name || ''} ${interlocutor.value?.surname || ''}`
+})
+
+watch(dialogParts, () => {
+  newMessage.value = ''
+  setTimeout(() => {
+    if (chatDialogBody.value) {
+      chatDialogBody.value.scrollTop = chatDialogBody.value.scrollHeight
+    }
+  })
+})
+
+onMounted(() => {
+  if (chatDialogBody.value) {
+    chatDialogBody.value.scrollTop = chatDialogBody.value.scrollHeight
+  }
+})
+
+function sendMessage() {
+  newMessageRequest({ message: newMessage.value })
+}
+
+function shortCalendarDate(dateStr) {
+  const date = parseISO(dateStr)
+  if (isToday(date)) {
+    return 'Today'
+  } else if (isYesterday(date)) {
+    return 'Yesterday'
+  } else {
+    return format(date, 'EEEE, MMMM do')
+  }
+}
+
+function isTimeDivider(dialogPart) {
+  return typeof dialogPart[0] === 'string'
+}
+
+function showAvatar(dialogPart, message, index) {
+  return index === 0 || dialogPart[index - 1].userId !== message.userId
+}
 </script>
 
 <style src="./ChatDialog.scss" lang="scss" scoped></style>

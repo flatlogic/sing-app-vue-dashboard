@@ -533,6 +533,19 @@ h6,
   background: $gray-200;
 }
 
+.modal {
+  z-index: 1055;
+
+  .modal-dialog {
+    pointer-events: auto;
+    z-index: 1060;
+  }
+}
+
+.modal-backdrop {
+  z-index: 1050;
+}
+
 // Navs
 // --------------------------------------------------
 
@@ -923,36 +936,6 @@ $slider-handle-size: 26px;
     border: 1px solid #fff;
     width: 20px;
     height: 20px;
-  }
-}
-
-
-//////// Mavon Editor ////////
-.v-note-wrapper {
-  z-index: 50;
-}
-
-
-/////// Vue Tour //////////
-.v-tour {
-  .v-step {
-    background: $white !important;
-    z-index: 102;
-    max-width: 240px !important;
-    color: $text-color !important;
-
-    filter: drop-shadow(0 0 2px rgba(var(--widget-shadow-color), .2)) !important;
-  }
-
-  .v-step[x-placement^=left] {
-    .v-step__arrow {
-      border-left-color: $white !important;
-    }
-  }
-
-
-  .v-step[x-placement^=bottom] .v-step__arrow {
-    border-bottom-color: $white !important;
   }
 }
 

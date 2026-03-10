@@ -1,10 +1,12 @@
 <template>
   <div>
-    <b-row>
-      <b-col xs='12' md='6'>
+    <div class="row">
+      <div class="col-12 col-md-6">
         <Widget
           title="<h5>Base <span class='fw-semi-bold'>Nav</span></h5>"
-          close collapse customHeader
+          close
+          collapse
+          custom-header
         >
           <p>
             Navigation available in Bootstrap share general markup and styles,
@@ -12,131 +14,205 @@
             modifier classes to switch between each style.
           </p>
           <div class="bg-light p-3">
-            <b-nav>
-              <b-nav-item href="#">
-                Link
-              </b-nav-item>
-              <b-nav-item href="#">
-                Link
-              </b-nav-item>
-              <b-nav-item href="#">
-                Another Link
-              </b-nav-item>
-              <b-nav-item href="#" disabled>
-                Disabled Link
-              </b-nav-item>
-            </b-nav>
+            <ul class="nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Another Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                >Disabled Link</a>
+              </li>
+            </ul>
             <pre class="bg-light border-0 w-100 h-100">
-              <code class="text-danger">{{'&lt;b-nav&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item href="#"&gt;'}}</code>
-              <code>{{'    Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item href="#"&gt;'}}</code>
-              <code>{{'    Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item href="#"&gt;'}}</code>
-              <code>{{'    Another Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item isabled href="#"&gt;'}}</code>
-              <code>{{'    Disabled Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-danger">{{'&lt;/b-nav&gt;'}}</code>
+              <code class="text-danger">{{ '&lt;ul class="nav"&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;' }}</code>
+              <code>{{ '    Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;' }}</code>
+              <code>{{ '    Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;' }}</code>
+              <code>{{ '    Another Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link disabled" href="#"&gt;' }}</code>
+              <code>{{ '    Disabled Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-danger">{{ '&lt;/ul&gt;' }}</code>
             </pre>
           </div>
-          <h5 class="mt">With dropdown</h5>
-          <b-nav class="bg-light p-2">
-            <b-nav-item href="#">
-              Link
-            </b-nav-item>
-            <b-nav-item-dropdown text="Dropdown">
-              <b-dropdown-item>Action</b-dropdown-item>
-              <b-dropdown-item>Another action</b-dropdown-item>
-              <b-dropdown-item>Something else here</b-dropdown-item>
-              <b-dropdown-divider />
-              <b-dropdown-item>Separated link</b-dropdown-item>
-            </b-nav-item-dropdown>
-            <b-nav-item href="#">
-              Another Link
-            </b-nav-item>
-            <b-nav-item disabled href="#">
-              Disabled Link
-            </b-nav-item>
-          </b-nav>
+          <h5 class="mt">
+            With dropdown
+          </h5>
+          <ul class="nav bg-light p-2">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+              >Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >Dropdown</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                  >Action</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                  >Another action</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                  >Something else here</a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                  >Separated link</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+              >Another Link</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+              >Disabled Link</a>
+            </li>
+          </ul>
         </Widget>
-      </b-col>
-      <b-col xs='12' md='6'>
+      </div>
+      <div class="col-12 col-md-6">
         <Widget
           title="<h5>Tabs & Pills</h5>"
-          close collapse customHeader
+          close
+          collapse
+          custom-header
         >
           <p>
-            Takes the basic <code>&lt;b-nav&gt;</code> from above
-            and adds the <code>tabs</code> property to generate a
+            Takes the basic <code>&lt;ul class="nav"&gt;</code> from above
+            and adds the <code>nav-tabs</code> class to generate a
             tabbed interface. Use them to create tabbable regions with our tab
             JavaScript plugin.
           </p>
           <div class="bg-light p-3">
-            <b-nav tabs>
-              <b-nav-item href="#" active>
-                Link
-              </b-nav-item>
-              <b-nav-item href="#">
-                Link
-              </b-nav-item>
-              <b-nav-item href="#">
-                Another Link
-              </b-nav-item>
-              <b-nav-item href="#" disabled>
-                Disabled Link
-              </b-nav-item>
-            </b-nav>
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Another Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                >Disabled Link</a>
+              </li>
+            </ul>
             <pre class="bg-light border-0 w-100 h-100">
-              <code class="text-danger">{{'&lt;b-nav tabs&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item href="#"&gt;'}}</code>
-              <code>{{'    Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item href="#"&gt;'}}</code>
-              <code>{{'    Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item href="#"&gt;'}}</code>
-              <code>{{'    Another Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-info">{{'  &lt;b-nav-item isabled href="#"&gt;'}}</code>
-              <code>{{'    Disabled Link'}}</code>
-              <code class="text-info">{{'  &lt;/b-nav-item&gt;'}}</code>
-              <code class="text-danger">{{'&lt;/b-nav&gt;'}}</code>
+              <code class="text-danger">{{ '&lt;ul class="nav nav-tabs"&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link active" href="#"&gt;' }}</code>
+              <code>{{ '    Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;' }}</code>
+              <code>{{ '    Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;' }}</code>
+              <code>{{ '    Another Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-info">{{ '  &lt;li class="nav-item"&gt;&lt;a class="nav-link disabled" href="#"&gt;' }}</code>
+              <code>{{ '    Disabled Link' }}</code>
+              <code class="text-info">{{ '  &lt;/a&gt;&lt;/li&gt;' }}</code>
+              <code class="text-danger">{{ '&lt;/ul&gt;' }}</code>
             </pre>
           </div>
-          <p class="mt">Do the same thing with the <code>pills</code> property.</p>
+          <p class="mt">
+            Do the same thing with the <code>nav-pills</code> class.
+          </p>
           <div class="bg-light p-3">
-            <b-nav pills>
-              <b-nav-item href="#" active>
-                Link
-              </b-nav-item>
-              <b-nav-item href="#">
-                Link
-              </b-nav-item>
-              <b-nav-item href="#">
-                Another Link
-              </b-nav-item>
-              <b-nav-item href="#" disabled>
-                Disabled Link
-              </b-nav-item>
-            </b-nav>
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Another Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                >Disabled Link</a>
+              </li>
+            </ul>
           </div>
         </Widget>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-import Widget from '@/components/Widget/Widget';
-
-export default {
-  name: 'NavPage',
-  components: { Widget },
-};
+<script setup>
+import Widget from '@/components/Widget/Widget.vue';
 </script>
 
 <style>

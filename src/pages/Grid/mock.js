@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { format } from 'date-fns';
 
 export default {
   mainData: {
@@ -59,7 +59,7 @@ export default {
         icon: 'eye',
         title: 'No more spying',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        date: moment().format('MMM DD, hh:mm:ss')
+        date: format(new Date(), 'MMM dd, HH:mm:ss')
       }
     ]
   },
@@ -73,7 +73,7 @@ export default {
         value: 'A timestamp this widget was created: Apr 24, 19:07:07'
       },
       {
-        value: 'A timestamp this widget was updated: ' + moment().format('MMM DD, hh:mm:ss')
+        value: 'A timestamp this widget was updated: ' + format(new Date(), 'MMM dd, HH:mm:ss')
       },
     ],
     shares: [
@@ -141,7 +141,7 @@ export default {
         icon: 'eye',
         title: 'No more spying',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        date: moment().format('MMM DD, hh:mm:ss')
+        date: format(new Date(), 'MMM dd, HH:mm:ss')
       }
     ]
   }

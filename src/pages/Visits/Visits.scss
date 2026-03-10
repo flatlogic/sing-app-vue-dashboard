@@ -25,7 +25,7 @@
 }
 
 .table-row {
-  :global(.table.table-sm) {
+  .table.table-sm {
     td {
       font-size: 1rem;
       vertical-align: middle;

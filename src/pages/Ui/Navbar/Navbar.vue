@@ -1,103 +1,254 @@
 <template>
   <div>
-    <b-row>
-      <b-col sm='12'>
+    <div class="row">
+      <div class="col-12">
         <Widget
           title="<h5>Navbar <span className='fw-semi-bold'>Example</span></h5>"
-          close collapse customHeader
+          close
+          collapse
+          custom-header
         >
-          <p>Here’s what you need to know before getting started with the navbar:</p>
+          <p>Here's what you need to know before getting started with the navbar:</p>
           <ul>
-            <li>Navbars require a wrapping <code>&lt;b-navbar&gt;</code>
-              with <code>toggleable=&quot;*&quot;</code> for
-              responsive collapsing and color scheme classes.</li>
-            <li>Navbars and their contents are fluid by default. Use optional containers
-              to limit their horizontal width.</li>
-            <li>Use our spacing and flex utility classes for controlling
-              spacing and alignment within navbars.</li>
-            <li>Navbars are responsive by default, but you can
+            <li>
+              Navbars require a wrapping <code>&lt;nav class="navbar"&gt;</code>
+              with <code>navbar-expand-*</code> for
+              responsive collapsing and color scheme classes.
+            </li>
+            <li>
+              Navbars and their contents are fluid by default. Use optional containers
+              to limit their horizontal width.
+            </li>
+            <li>
+              Use our spacing and flex utility classes for controlling
+              spacing and alignment within navbars.
+            </li>
+            <li>
+              Navbars are responsive by default, but you can
               easily modify them to change that. Responsive
-              behavior depends on our Collapse JavaScript plugin.</li>
-            <li>Navbars are hidden by default when printing. Force
+              behavior depends on our Collapse JavaScript plugin.
+            </li>
+            <li>
+              Navbars are hidden by default when printing. Force
               them to be printed by adding <code>.d-print</code>
-            to the <code>.navbar</code>. See the display utility class.</li>
+              to the <code>.navbar</code>. See the display utility class.
+            </li>
           </ul>
-          <b-navbar class="mt px-3" toggleable="md" type="light" variant="light" style="height: 60px">
-            <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ms-auto" target="nav_collapse1"></b-navbar-toggle>
-            <b-collapse is-nav id="nav_collapse1">
-              <!-- Right aligned nav items -->
-              <b-navbar-nav class="ms-auto">
-                <b-nav-item href="#">Home</b-nav-item>
-                <b-nav-item href="#">Features</b-nav-item>
-                <b-nav-item href="#">Pricing</b-nav-item>
-                <b-nav-item href="#" disabled>Disabled</b-nav-item>
-              </b-navbar-nav>
-            </b-collapse>
-          </b-navbar>
+          <nav
+            class="navbar navbar-expand-md navbar-light bg-light mt px-3"
+            style="height: 60px"
+          >
+            <a
+              class="navbar-brand"
+              href="#"
+            >Navbar</a>
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#nav_collapse1"
+            >
+              <span class="navbar-toggler-icon" />
+            </button>
+            <div
+              id="nav_collapse1"
+              class="collapse navbar-collapse"
+            >
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Home</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Features</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                  >Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </Widget>
-      </b-col>
-      <b-col sm='12'>
+      </div>
+      <div class="col-12">
         <Widget
           title="<h5>Navbar <span className='fw-semi-bold'>Example</span></h5>"
-          close collapse customHeader
+          close
+          collapse
+          custom-header
         >
-          <p>Theming the navbar has never been easier thanks to the combination of
+          <p>
+            Theming the navbar has never been easier thanks to the combination of
             theming classes and background-color utilities.
-            Choose from <code>color=&quot;light&quot;</code>
+            Choose from <code>navbar-light</code>
             for use with light background colors, or
-            <code>color=&quot;dark&quot;</code> for dark background
-            colors. Then, customize with <code>.bg-*</code> utilities.</p>
-          <b-navbar class="mt px-3" toggleable="md" type="dark" variant="inverse" style="height: 60px;">
-            <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ms-auto" target="nav_collapse2"></b-navbar-toggle>
-            <b-collapse is-nav id="nav_collapse2">
-              <!-- Right aligned nav items -->
-              <b-navbar-nav class="ms-auto">
-                <b-nav-item href="#">Home</b-nav-item>
-                <b-nav-item href="#">Features</b-nav-item>
-                <b-nav-item href="#">Pricing</b-nav-item>
-                <b-nav-item href="#" disabled>Disabled</b-nav-item>
-              </b-navbar-nav>
-            </b-collapse>
-          </b-navbar>
-          <b-navbar class="mt px-3" toggleable="md" type="dark" variant="primary" style="height: 60px;">
-            <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ms-auto" target="nav_collapse3"></b-navbar-toggle>
-            <b-collapse is-nav id="nav_collapse3">
-              <!-- Right aligned nav items -->
-              <b-navbar-nav class="ms-auto">
-                <b-nav-item href="#">Home</b-nav-item>
-                <b-nav-item href="#">Features</b-nav-item>
-                <b-nav-item href="#">Pricing</b-nav-item>
-                <b-nav-item href="#" disabled>Disabled</b-nav-item>
-              </b-navbar-nav>
-            </b-collapse>
-          </b-navbar>
-          <b-navbar class="mt px-3" toggleable="md" type="light" variant="light" style="height: 60px;">
-            <b-navbar-brand href="#">Navbar</b-navbar-brand>
-            <b-navbar-toggle class="ms-auto" target="nav_collapse4"></b-navbar-toggle>
-            <b-collapse is-nav id="nav_collapse4">
-              <!-- Right aligned nav items -->
-              <b-navbar-nav class="ms-auto">
-                <b-nav-item href="#">Home</b-nav-item>
-                <b-nav-item href="#">Features</b-nav-item>
-                <b-nav-item href="#">Pricing</b-nav-item>
-                <b-nav-item href="#" disabled>Disabled</b-nav-item>
-              </b-navbar-nav>
-            </b-collapse>
-          </b-navbar>
+            <code>navbar-dark</code> for dark background
+            colors. Then, customize with <code>.bg-*</code> utilities.
+          </p>
+          <nav
+            class="navbar navbar-expand-md navbar-dark bg-dark mt px-3"
+            style="height: 60px;"
+          >
+            <a
+              class="navbar-brand"
+              href="#"
+            >Navbar</a>
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#nav_collapse2"
+            >
+              <span class="navbar-toggler-icon" />
+            </button>
+            <div
+              id="nav_collapse2"
+              class="collapse navbar-collapse"
+            >
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Home</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Features</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                  >Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <nav
+            class="navbar navbar-expand-md navbar-dark bg-primary mt px-3"
+            style="height: 60px;"
+          >
+            <a
+              class="navbar-brand"
+              href="#"
+            >Navbar</a>
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#nav_collapse3"
+            >
+              <span class="navbar-toggler-icon" />
+            </button>
+            <div
+              id="nav_collapse3"
+              class="collapse navbar-collapse"
+            >
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Home</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Features</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                  >Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <nav
+            class="navbar navbar-expand-md navbar-light bg-light mt px-3"
+            style="height: 60px;"
+          >
+            <a
+              class="navbar-brand"
+              href="#"
+            >Navbar</a>
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#nav_collapse4"
+            >
+              <span class="navbar-toggler-icon" />
+            </button>
+            <div
+              id="nav_collapse4"
+              class="collapse navbar-collapse"
+            >
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Home</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Features</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                  >Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                  >Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </Widget>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-import Widget from '@/components/Widget/Widget';
-
-export default {
-  name: 'NavbarPage',
-  components: { Widget },
-};
+<script setup>
+import Widget from '@/components/Widget/Widget.vue';
 </script>

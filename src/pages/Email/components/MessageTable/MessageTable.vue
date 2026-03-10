@@ -1,224 +1,275 @@
 <template>
-  <div class="col-lg-9 col-xl-10 col-xs-12 d-flex flex-column">
-    <b-pagination v-if="openedMessage === null && !compose"
-                  v-model="currentPage"
-                  :total-rows="rows"
-                  :per-page="perPage"
-                  class="ms-auto"
-    ></b-pagination>
+  <div class="col-lg-9 col-xl-10 col-12 d-flex flex-column">
+    <nav
+      v-if="openedMessage === null && !compose"
+      aria-label="Page navigation"
+      class="ms-auto"
+    >
+      <ul class="pagination">
+        <li
+          class="page-item"
+          :class="{ disabled: currentPage === 1 }"
+        >
+          <a
+            class="page-link"
+            href="#"
+            @click.prevent="currentPage > 1 && currentPage--"
+          >Previous</a>
+        </li>
+        <li
+          v-for="page in totalPages"
+          :key="page"
+          class="page-item"
+          :class="{ active: page === currentPage }"
+        >
+          <a
+            class="page-link"
+            href="#"
+            @click.prevent="currentPage = page"
+          >{{ page }}</a>
+        </li>
+        <li
+          class="page-item"
+          :class="{ disabled: currentPage === totalPages }"
+        >
+          <a
+            class="page-link"
+            href="#"
+            @click.prevent="currentPage < totalPages && currentPage++"
+          >Next</a>
+        </li>
+      </ul>
+    </nav>
     <span v-else>
-      <b-button variant="default" class="mb" @click="openMessage(null)">
-        <i class="fa fa-angle-left fa-lg"></i>
-      </b-button>
+      <button
+        class="btn btn-default mb"
+        @click="openMessage(null)"
+      >
+        <i class="fa fa-angle-left fa-lg" />
+      </button>
     </span>
     <Widget v-if="openedMessage === null && !compose">
-        <MessageTableHeader
-          :search="search"
-          :chooseAll="chooseAll"
-          :chooseNone="chooseNone"
-          :chooseRead="chooseRead"
-          :chooseUnread="chooseUnread"
-          :markRead="markRead"
-          :markUnread="markUnread"
-          :deleteMsg="deleteMsg"
-        />
-        <div class="table-responsive">
-          <table class="table table-striped table-hover mb-0">
-            <thead>
-              <tr>
-                <th>
-                  <div class="abc-checkbox">
-                    <input
-                      type="checkbox"
-                      id="checkbox"
-                      @click="isMainChecked ? chooseNone() : chooseAll()"
-                      :checked="isMainChecked"
-                    />
-                    <label for="checkbox" />
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                v-for="message in dataToDisplay"
-                v-show="_searchable(message)"
-                :key="message.id"
-                :class="{ unreadedMessage: message.unreaded }"
+      <MessageTableHeader
+        :search="search"
+        :choose-all="chooseAll"
+        :choose-none="chooseNone"
+        :choose-read="chooseRead"
+        :choose-unread="chooseUnread"
+        :mark-read="markRead"
+        :mark-unread="markUnread"
+        :delete-msg="deleteMsg"
+      />
+      <div class="table-responsive">
+        <table class="table table-striped table-hover mb-0">
+          <thead>
+            <tr>
+              <th>
+                <div class="abc-checkbox">
+                  <input
+                    id="checkbox"
+                    type="checkbox"
+                    :checked="isMainChecked"
+                    @click="isMainChecked ? chooseNone() : chooseAll()"
+                  >
+                  <label for="checkbox" />
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="message in dataToDisplay"
+              v-show="_searchable(message)"
+              :key="message.id"
+              :class="{ unreadedMessage: message.unreaded }"
+            >
+              <td class="messageCheckbox">
+                <div class="abc-checkbox">
+                  <input
+                    :id="`checkbox${message.id}`"
+                    type="checkbox"
+                    :checked="checkedIds.indexOf(message.id) !== -1"
+                    @change="changeChoosed(message.id)"
+                  >
+                  <label :for="`checkbox${message.id}`" />
+                </div>
+              </td>
+              <td
+                class="messageStar"
+                @click="starItem(message.id)"
               >
-                <td class="messageCheckbox">
-                  <div class="abc-checkbox">
-                    <input
-                      type="checkbox"
-                      :id="`checkbox${message.id}`"
-                      :checked="checkedIds.indexOf(message.id) !== -1"
-                      @change="changeChoosed(message.id)"
-                    />
-                    <label :for="`checkbox${message.id}`" />
-                  </div>
-                </td>
-                <td
-                  class="messageStar"
-                  @click="starItem(message.id)"
+                <span
+                  v-if="message.starred"
+                  class="messageStarred"
                 >
-                    <span v-if="message.starred" class="messageStarred">
-                      <i class="la la-star" />
-                    </span>
-                    <span v-else><i class="la la-star-o" /></span>
-                </td>
-                <td
-                  class="messageFrom"
-                  @click="handleOpenMessage(message.id)"
-                >{{message.from}}</td>
-                <td @click="handleOpenMessage(message.id)">{{message.theme}}</td>
-                <td class="messageClip">
-                  <i v-show="message.attachments" class="fa fa-paperclip" />
-                </td>
-                <td class="text-end">{{message.date}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </Widget>
-    <Compose v-else-if="compose" :data="composeData" />
-    <Message v-else :changeCompose="changeCompose" :message="messages[openedMessage]" />
+                  <i class="la la-star" />
+                </span>
+                <span v-else><i class="la la-star-o" /></span>
+              </td>
+              <td
+                class="messageFrom"
+                @click="handleOpenMessage(message.id)"
+              >
+                {{ message.from }}
+              </td>
+              <td @click="handleOpenMessage(message.id)">
+                {{ message.theme }}
+              </td>
+              <td class="messageClip">
+                <i
+                  v-show="message.attachments"
+                  class="fa fa-paperclip"
+                />
+              </td>
+              <td class="text-end">
+                {{ message.date }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </Widget>
+    <Compose
+      v-else-if="compose"
+      :data="composeData"
+    />
+    <Message
+      v-else
+      :change-compose="changeCompose"
+      :message="messages[openedMessage]"
+    />
   </div>
 </template>
 
-<script>
-import Vue from 'vue';
+<script setup>
+import { ref, computed, watch } from 'vue'
+import Widget from '@/components/Widget/Widget.vue'
+import MessageTableHeader from '../MessageTableHeader/MessageTableHeader.vue'
+import Message from '../Message/Message.vue'
+import Compose from '../Compose/Compose.vue'
+import mock from '../../mock'
 
-import Widget from '@/components/Widget/Widget';
-import MessageTableHeader from '../MessageTableHeader/MessageTableHeader';
-import Message from '../Message/Message';
-import Compose from '../Compose/Compose';
+const props = defineProps({
+  filter: [String, null],
+  openedMessage: [Number, null],
+  openMessage: Function,
+  composeData: Object,
+  changeCompose: Function,
+  compose: Boolean
+})
 
-import mock from '../../mock';
+const messages = ref([...mock])
+const checkedIds = ref([])
+const searchString = ref('')
+const currentPage = ref(1)
+const perPage = ref(10)
+const rows = ref(96)
 
-export default {
-  name: 'MessageTable',
-  components: {
-    Widget, MessageTableHeader, Message, Compose,
-  },
-  props: ['filter', 'openedMessage', 'openMessage', 'composeData', 'changeCompose', 'compose'],
-  data() {
-    return {
-      messages: mock,
-      checkedIds: [],
-      searchString: '',
-      currentPage: 1,
-      perPage: 10,
-      rows: 96
-    };
-  },
-  methods: {
-    changeChoosed(id) {
-      const index = this.checkedIds.indexOf(id);
+const totalPages = computed(() => Math.ceil(rows.value / perPage.value))
 
-      if (index === -1) {
-        this.checkedIds.push(id);
-      } else {
-        this.checkedIds.splice(index, 1);
-      }
-    },
-    chooseAll() {
-      this.chooseNone();
+function changeChoosed(id) {
+  const index = checkedIds.value.indexOf(id)
+  if (index === -1) {
+    checkedIds.value.push(id)
+  } else {
+    checkedIds.value.splice(index, 1)
+  }
+}
 
-      const { messages, filter, checkedIds } = this;
+function chooseAll() {
+  chooseNone()
+  if (props.filter) {
+    messages.value
+      .filter(message => message[props.filter])
+      .forEach(message => checkedIds.value.push(message.id))
+  } else {
+    messages.value.forEach(message => checkedIds.value.push(message.id))
+  }
+}
 
-      if (filter) {
-        messages
-          .filter(message => message[filter])
-          .forEach(message => checkedIds.push(message.id));
-      } else {
-        messages.forEach(message => checkedIds.push(message.id));
-      }
-    },
-    chooseNone() {
-      this.checkedIds = [];
-    },
-    chooseRead() {
-      this.chooseNone();
+function chooseNone() {
+  checkedIds.value = []
+}
 
-      this.messages.forEach((message) => {
-        if (!message.unreaded) {
-          this.checkedIds.push(message.id);
-        }
-      });
-    },
-    chooseUnread() {
-      this.chooseNone();
+function chooseRead() {
+  chooseNone()
+  messages.value.forEach((message) => {
+    if (!message.unreaded) {
+      checkedIds.value.push(message.id)
+    }
+  })
+}
 
-      this.messages.forEach((message) => {
-        if (message.unreaded) {
-          this.checkedIds.push(message.id);
-        }
-      });
-    },
-    markUnread() {
-      this.messages.map((message) => {
-        if (this.checkedIds.indexOf(message.id) !== -1) {
-          message.unreaded = true; // eslint-disable-line
-        }
+function chooseUnread() {
+  chooseNone()
+  messages.value.forEach((message) => {
+    if (message.unreaded) {
+      checkedIds.value.push(message.id)
+    }
+  })
+}
 
-        return message;
-      });
-    },
-    markRead() {
-      this.messages.map((message) => {
-        if (this.checkedIds.indexOf(message.id) !== -1) {
-          message.unreaded = false; // eslint-disable-line
-        }
+function markUnread() {
+  messages.value.forEach((message) => {
+    if (checkedIds.value.indexOf(message.id) !== -1) {
+      message.unreaded = true
+    }
+  })
+}
 
-        return message;
-      });
-    },
-    deleteMsg() {
-      this.messages = this.messages.filter(m => this.checkedIds.indexOf(m.id) === -1);
-      this.chooseNone();
-    },
-    starItem(id) {
-      const message = this.messages.find(m => m.id === id);
+function markRead() {
+  messages.value.forEach((message) => {
+    if (checkedIds.value.indexOf(message.id) !== -1) {
+      message.unreaded = false
+    }
+  })
+}
 
-      message.starred = !message.starred;
-    },
-    handleOpenMessage(id) {
-      this.messages.find(m => m.id === id).unreaded = false;
+function deleteMsg() {
+  messages.value = messages.value.filter(m => checkedIds.value.indexOf(m.id) === -1)
+  chooseNone()
+}
 
-      this.openMessage(id);
-    },
-    search(value) {
-      Vue.set(this, 'searchString', value.toLowerCase());
-    },
-    _searchable(m) {
-      if (this.searchString) {
-        return (m.content.toLowerCase().indexOf(this.searchString) !== -1
-          || m.from.toLowerCase().indexOf(this.searchString) !== -1
-          || m.theme.toLowerCase().indexOf(this.searchString) !== -1);
-      }
+function starItem(id) {
+  const message = messages.value.find(m => m.id === id)
+  message.starred = !message.starred
+}
 
-      return true;
-    },
-  },
-  computed: {
-    filteredMessages() {
-      return this.messages.filter(message => message[this.filter]);
-    },
-    dataToDisplay() {
-      return this.filter ? this.filteredMessages : this.messages;
-    },
-    isMainChecked() {
-      return this.dataToDisplay.length === this.checkedIds.length;
-    },
-  },
-  watch: {
-    filter(newVal, oldVal) {
-      if (oldVal !== newVal) {
-        this.chooseNone();
-      }
-    },
-  },
-};
+function handleOpenMessage(id) {
+  messages.value.find(m => m.id === id).unreaded = false
+  props.openMessage(id)
+}
+
+function search(value) {
+  searchString.value = value.toLowerCase()
+}
+
+function _searchable(m) {
+  if (searchString.value) {
+    return (m.content.toLowerCase().indexOf(searchString.value) !== -1
+      || m.from.toLowerCase().indexOf(searchString.value) !== -1
+      || m.theme.toLowerCase().indexOf(searchString.value) !== -1)
+  }
+  return true
+}
+
+const filteredMessages = computed(() => {
+  return messages.value.filter(message => message[props.filter])
+})
+
+const dataToDisplay = computed(() => {
+  return props.filter ? filteredMessages.value : messages.value
+})
+
+const isMainChecked = computed(() => {
+  return dataToDisplay.value.length === checkedIds.value.length
+})
+
+watch(() => props.filter, (newVal, oldVal) => {
+  if (oldVal !== newVal) {
+    chooseNone()
+  }
+})
 </script>
 
 <style src="./MessageTable.scss" lang="scss" scoped />

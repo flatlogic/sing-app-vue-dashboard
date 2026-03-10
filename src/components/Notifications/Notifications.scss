@@ -2,28 +2,44 @@
 
 .notifications {
   @include media-breakpoint-up(md) {
-   width: 343px;
- }
+    width: 343px;
+  }
 
   height: 100%;
   border: none;
-}
 
-.cardHeader {
-  border-radius: 0;
-}
+  .cardHeader {
+    border-radius: 0;
+    padding: 1rem;
+    border-bottom: none;
 
-.cardFooter {
-  padding-top: 14px;
-  padding-bottom: 14px;
-  border-top: none;
-}
+    .btn-group {
+      display: flex;
+      justify-content: center;
+    }
+  }
 
-.btnNotificationsReload {
-  color: $navbar-link-color;
-  outline: none;
+  .listGroup {
+    .listGroupItem:first-child {
+      border: none;
+    }
 
-  i::before {
-    top: 2px;
+    .listGroupItem:nth-child(2) {
+      border-top: none;
+    }
+  }
+
+  .cardFooter {
+    padding: 14px 1rem;
+    border-top: none;
+  }
+
+  .btnNotificationsReload {
+    color: $navbar-link-color;
+    outline: none;
+
+    i::before {
+      top: 2px;
+    }
   }
 }

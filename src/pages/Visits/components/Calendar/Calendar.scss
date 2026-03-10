@@ -5,17 +5,39 @@
  */
 
 .sing-calendar .vc-container {
-  border: none;
+  --vc-bg: transparent;
+  --vc-border: transparent;
+  --vc-header-arrow-color: #{$text-muted};
+  --vc-header-arrow-hover-bg: transparent;
+  --vc-header-title-color: #{$text-color};
+  border: none !important;
   font-family: $font-family-base;
   color: $text-color;
   border-radius: 0;
+  width: 100%;
+
+  &.vc-bordered {
+    border: none !important;
+    border-radius: 0;
+  }
 
   .vc-header {
     padding: $widget-padding-vertical $widget-padding-horizontal 0;
+    margin-top: 0;
+    height: auto;
 
     .vc-title {
       color: $text-color;
       font-weight: $font-weight-normal;
+    }
+
+    .vc-arrow {
+      color: $text-muted;
+      background: transparent;
+
+      &:hover {
+        background: transparent;
+      }
     }
   }
 

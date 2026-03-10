@@ -4,66 +4,81 @@
       <div class="text-center mb-sm">
         <strong>You have 13 notifications</strong>
       </div>
-      <b-button-group id="notification-b-buttons">
-        <b-button @click="changeNotificationsTab(1)">Notifications</b-button>
-        <b-button @click="changeNotificationsTab(2)">Messages</b-button>
-        <b-button @click="changeNotificationsTab(3)">Progress</b-button>
-      </b-button-group>
+      <div
+        id="notification-b-buttons"
+        class="btn-group"
+        role="group"
+      >
+        <button
+          type="button"
+          class="btn btn-secondary"
+          @click.stop="changeNotificationsTab(1)"
+        >
+          Notifications
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          @click.stop="changeNotificationsTab(2)"
+        >
+          Messages
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          @click.stop="changeNotificationsTab(3)"
+        >
+          Progress
+        </button>
+      </div>
     </header>
-    <NewNotifictionsList v-if="newNotifications" />
-    <NotifictionsList v-else-if="notificationsTabSelected === 1" />
+    <NewNotificationsList v-if="newNotifications" />
+    <NotificationsList v-else-if="notificationsTabSelected === 1" />
     <Messages v-else-if="notificationsTabSelected === 2" />
     <Progress v-else-if="notificationsTabSelected === 3" />
-    <NotifictionsList v-else/>
+    <NotificationsList v-else />
     <footer class="cardFooter text-sm card-footer">
-      <span class="fs-mini">Synced at: 21 Apr 2014 18:36</span>
-      <b-button
-        variant="link"
-        @click="loadNotifications"
-        :class="{disabled: isLoad, 'btnNotificationsReload btn-xs float-end py-0': true}"
+      <span class="fs-mini">Synced at: 5 Mar 2026 10:30</span>
+      <button
+        type="button"
+        class="btn btn-link btnNotificationsReload btn-xs float-end py-0"
+        :class="{ disabled: isLoad }"
+        @click.stop="loadNotifications"
       >
         <span v-if="isLoad"><i class="la la-refresh la-spin" /> Loading...</span>
-        <i v-else class="la la-refresh" />
-      </b-button>
+        <i
+          v-else
+          class="la la-refresh"
+        />
+      </button>
     </footer>
   </section>
 </template>
 
-<script>
-import Vue from 'vue';
+<script setup>
+import { ref } from 'vue'
+import NotificationsList from './NotificationsDemo/NotificationsList.vue'
+import NewNotificationsList from './NotificationsDemo/NewNotificationsList.vue'
+import Messages from './NotificationsDemo/Messages.vue'
+import Progress from './NotificationsDemo/Progress.vue'
 
-import NotifictionsList from './NotificationsDemo/NotificationsList';
-import NewNotifictionsList from './NotificationsDemo/NewNotificationsList';
-import Messages from './NotificationsDemo/Messages';
-import Progress from './NotificationsDemo/Progress';
+const notificationsTabSelected = ref(1)
+const newNotifications = ref(null)
+const isLoad = ref(false)
 
-export default {
-  name: 'Notification',
-  components: {
-    NotifictionsList, NewNotifictionsList, Messages, Progress,
-  },
-  data() {
-    return {
-      notificationsTabSelected: 1,
-      newNotifications: null,
-      isLoad: false,
-    };
-  },
-  methods: {
-    changeNotificationsTab(tab) {
-      Vue.set(this, 'notificationsTabSelected', tab);
-      Vue.set(this, 'newNotifications', null);
-    },
-    loadNotifications() {
-      Vue.set(this, 'isLoad', true);
+function changeNotificationsTab(tab) {
+  notificationsTabSelected.value = tab
+  newNotifications.value = null
+}
 
-      setTimeout(() => {
-        Vue.set(this, 'newNotifications', 'new notifications component');
-        Vue.set(this, 'isLoad', false);
-      }, 1500);
-    },
-  },
-};
+function loadNotifications() {
+  isLoad.value = true
+
+  setTimeout(() => {
+    newNotifications.value = 'new notifications component'
+    isLoad.value = false
+  }, 1500)
+}
 </script>
 
 <style src="./Notifications.scss" lang="scss" />

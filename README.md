@@ -20,6 +20,8 @@ Looking for a perfect codebase generator for your Startup? Try [Flatlogic AI Web
 
 ## 🚀 Quick Start
 
+Requires Node.js >= 20
+
 ### Project setup
 ```bash
 yarn install
@@ -55,7 +57,7 @@ yarn run lint
 ## 🧩 Features
 
 - Fully Responsive
-- Built with Vue.js and Bootstrap 4
+- Built with Vue 3 and Bootstrap 5
 - Ready-to-use Components
 - Modular Architecture
 - Authentication System
@@ -66,12 +68,12 @@ yarn run lint
 ---
 
 ## 🛠 Built With
-- Vue.js
-- Vue Router
-- Vuex
-- Bootstrap 4
+- Vue 3
+- Vue Router 4
+- Pinia
+- Bootstrap 5
 - SCSS
-- Webpack
+- Vite
 
 ---
 

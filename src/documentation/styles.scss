@@ -11,7 +11,7 @@ $doc-navbar-height: 80px;
       padding-top: calc(#{$doc-navbar-height} + #{2 * $spacer});
       min-height: 100vh;
 
-      & :global(.widget) {
+      .widget {
         box-shadow: none;
         background: transparent;
         padding-left: 0;

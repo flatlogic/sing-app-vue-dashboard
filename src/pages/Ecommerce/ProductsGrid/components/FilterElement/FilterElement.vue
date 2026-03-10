@@ -1,33 +1,44 @@
 <template>
   <div class="filterElement">
-    <div class="filterElementLable">{{defaultLabel}}</div>
-    <b-dropdown class="me-sm-1" :text="currentOption.toString()" color="light" variant="gray-default">
-      <b-dropdown-item-button
-        v-for="option in options"
-        @click="changeCurrent(option)"
-        :key="option"
-      >{{option}}</b-dropdown-item-button>
-    </b-dropdown>
+    <div class="filterElementLable">
+      {{ defaultLabel }}
+    </div>
+    <div class="dropdown me-sm-1">
+      <button
+        class="btn btn-gray-default dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+      >
+        {{ currentOption }}
+      </button>
+      <ul class="dropdown-menu">
+        <li
+          v-for="option in options"
+          :key="option"
+        >
+          <button
+            class="dropdown-item"
+            type="button"
+            @click="changeCurrent(option)"
+          >
+            {{ option }}
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
-<script>
-import Vue from 'vue';
+<script setup>
+import { ref } from 'vue'
 
-export default {
-  name: 'FilterElement',
-  props: ['options', 'defaultLabel'],
-  data() {
-    return {
-      currentOption: this.options[0],
-    };
-  },
-  methods: {
-    changeCurrent(item) {
-      Vue.set(this, 'currentOption', item);
-    },
-  },
-};
+const props = defineProps(['options', 'defaultLabel'])
+
+const currentOption = ref(props.options?.[0] || '')
+
+function changeCurrent(item) {
+  currentOption.value = item
+}
 </script>
 
 <style src="./FilterElement.scss" lang="scss" scoped />

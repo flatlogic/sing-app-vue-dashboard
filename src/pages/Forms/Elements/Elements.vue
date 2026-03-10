@@ -1,303 +1,496 @@
 <template>
   <div class="forms-elements">
-    <h1 class="page-title">Form - <span class="fw-semi-bold">Inputs & Controls</span>
+    <h1 class="page-title">
+      Form - <span class="fw-semi-bold">Inputs &amp; Controls</span>
     </h1>
-    <b-row>
-      <b-col lg='6' md='12'>
-        <Widget title="<h6> Inputs </h6>" customHeader settings refresh close>
-          <b-form-group>
-            <b-form row>
-                  <legend><strong>Horizontal</strong> form</legend>
-                  <b-form-group
-                      horizontal
-                      label="Normal field"
-                      label-for="normal-field"
-                      label-class="text-md-right"
-                      :label-cols="4"
-                      breakpoint="md"
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <Widget
+          title="<h6> Inputs </h6>"
+          custom-header
+          settings
+          refresh
+          close
+        >
+          <div class="mb-3">
+            <form>
+              <legend><strong>Horizontal</strong> form</legend>
+              <div class="row mb-3">
+                <label
+                  for="normal-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Normal field</label>
+                <div class="col-md-8">
+                  <input
+                    id="normal-field"
+                    type="text"
+                    class="form-control"
+                    placeholder="May have placeholder"
                   >
-                    <b-form-input type="text" id="normal-field" placeholder="May have placeholder" />
-                  </b-form-group>
-              <b-form-group
-                horizontal
-                label-for="normal-field"
-                label-class="text-start"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <div slot="label">
-                  Label hint
-                  <span class="help-block">Some help text</span>
                 </div>
-                <b-form-input type="text" id="label-hint"/>
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Tooltip enabled"
-                label-for="tooltip-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-form-input
-                  type="text" id="tooltip-field"
-                  v-b-tooltip.hover title="Some explanation text here"
-                />
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Disabled input"
-                label-for="disabled-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-form-input type="text" id="disabled-field" disabled value="Default value" />
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Max length"
-                label-for="length-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-form-input
-                  type="text"
-                  id="length-field"
-                  :formatter="(v) => v.length <= 3 ? v : v.substring(0, 3)"
-                  placeholder="Max length 3 characters"/>
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Prepended input"
-                label-for="prepended-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-input-group id="prepended-field">
-                  <b-input-group-text slot="prepend">
-                    <i class="fa fa-user" />
-                  </b-input-group-text>
-                  <b-form-input></b-form-input>
-                </b-input-group>
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Password"
-                label-for="password-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-input-group id="password-field">
-                  <b-input-group-text slot="prepend">
-                    <i class="fa fa-lock" />
-                  </b-input-group-text>
-                  <b-form-input type="password"></b-form-input>
-                </b-input-group>
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Appended input"
-                label-for="append-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-input-group id="append-field" append=".00">
-                  <b-form-input></b-form-input>
-                </b-input-group>
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Combined input"
-                label-for="combined-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-input-group id="combined-field" append=".00" prepend="$">
-                  <b-form-input></b-form-input>
-                </b-input-group>
-              </b-form-group>
-              <b-form-group
-                horizontal
-                label="Append Transparent"
-                label-for="transparent-field"
-                label-class="text-md-right"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-input-group id="transparent-field" class="input-group-transparent">
-                  <b-form-input></b-form-input>
-                  <b-input-group-append>
-                    <b-button class="bg-light">
-                      <i class="fa fa-camera text-black"/>
-                    </b-button>
-                  </b-input-group-append>
-                </b-input-group>
-              </b-form-group>
-              <b-form-group
-                horizontal
-                class="form-action bg-transparent ps-1"
-                label=""
-                label-for="transparent-field"
-                :label-cols="4"
-                breakpoint="md"
-              >
-                <b-button variant="success text-white" type="submit" class="me-3">Save Changes</b-button>
-                <b-button variant="inverse">Cancel</b-button>
-              </b-form-group>
-            </b-form>
-          </b-form-group>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4 text-start">
+                  <label
+                    for="label-hint"
+                    class="col-form-label"
+                  >
+                    Label hint
+                    <span class="help-block">Some help text</span>
+                  </label>
+                </div>
+                <div class="col-md-8">
+                  <input
+                    id="label-hint"
+                    type="text"
+                    class="form-control"
+                  >
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="tooltip-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Tooltip enabled</label>
+                <div class="col-md-8">
+                  <input
+                    id="tooltip-field"
+                    type="text"
+                    class="form-control"
+                    title="Some explanation text here"
+                  >
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="disabled-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Disabled input</label>
+                <div class="col-md-8">
+                  <input
+                    id="disabled-field"
+                    type="text"
+                    class="form-control"
+                    disabled
+                    value="Default value"
+                  >
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="length-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Max length</label>
+                <div class="col-md-8">
+                  <input
+                    id="length-field"
+                    type="text"
+                    class="form-control"
+                    maxlength="3"
+                    placeholder="Max length 3 characters"
+                  >
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="prepended-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Prepended input</label>
+                <div class="col-md-8">
+                  <div
+                    id="prepended-field"
+                    class="input-group"
+                  >
+                    <span class="input-group-text">
+                      <i class="fa fa-user" />
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="password-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Password</label>
+                <div class="col-md-8">
+                  <div
+                    id="password-field"
+                    class="input-group"
+                  >
+                    <span class="input-group-text">
+                      <i class="fa fa-lock" />
+                    </span>
+                    <input
+                      type="password"
+                      class="form-control"
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="append-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Appended input</label>
+                <div class="col-md-8">
+                  <div
+                    id="append-field"
+                    class="input-group"
+                  >
+                    <input
+                      type="text"
+                      class="form-control"
+                    >
+                    <span class="input-group-text">.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="combined-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Combined input</label>
+                <div class="col-md-8">
+                  <div
+                    id="combined-field"
+                    class="input-group"
+                  >
+                    <span class="input-group-text">$</span>
+                    <input
+                      type="text"
+                      class="form-control"
+                    >
+                    <span class="input-group-text">.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label
+                  for="transparent-field"
+                  class="col-md-4 col-form-label text-md-end"
+                >Append Transparent</label>
+                <div class="col-md-8">
+                  <div
+                    id="transparent-field"
+                    class="input-group input-group-transparent"
+                  >
+                    <input
+                      type="text"
+                      class="form-control"
+                    >
+                    <button
+                      class="btn bg-light"
+                      type="button"
+                    >
+                      <i class="fa fa-camera text-black" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3 form-action bg-transparent ps-1">
+                <div class="col-md-4" />
+                <div class="col-md-8">
+                  <button
+                    class="btn btn-success text-white me-3"
+                    type="submit"
+                  >
+                    Save Changes
+                  </button>
+                  <button
+                    class="btn btn-inverse"
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </Widget>
-      </b-col>
-      <b-col lg='6' md='12'>
+      </div>
+      <div class="col-lg-6 col-md-12">
         <Widget
           title="<h6> Prepended and appended inputs </h6>"
-          customHeader settings refresh close
+          custom-header
+          settings
+          refresh
+          close
         >
-          <b-form-group>
-            <b-form>
+          <div class="mb-3">
+            <form>
               <legend><strong>Default</strong> form</legend>
-              <b-form-group
-                label="Search type input"
-                label-for="search-field"
-                breakpoint="md"
-                >
-                <b-row>
-                  <b-col md="8">
-                    <b-input-group>
-                      <b-form-input id="search-field" type="text"></b-form-input>
-                      <b-input-group-append>
-                        <b-btn variant="default">Search</b-btn>
-                      </b-input-group-append>
-                    </b-input-group>
-                  </b-col>
-                </b-row>
-              </b-form-group>
-              <b-form-group
-                label="Whole bar appended"
-                label-for="bar-field"
-                breakpoint="md"
-                >
-                <b-row>
-                  <b-col md="8">
-                    <b-input-group>
-                      <b-form-input id="bar-field" type="text"></b-form-input>
-                      <b-input-group-append>
-                        <b-btn variant="danger"><i class="la la-pencil"/></b-btn>
-                        <b-btn variant="warning"><i class="la la-plus"/></b-btn>
-                        <b-btn variant="success"><i class="la la-refresh"/></b-btn>
-                      </b-input-group-append>
-                    </b-input-group>
-                  </b-col>
-                </b-row>
-              </b-form-group>
-              <b-form-group
-                label="Actions dropdown"
-                label-for="actions-field"
-                breakpoint="md"
-                >
-                <b-row>
-                  <b-col md="8">
-                    <b-input-group>
-                      <b-form-input id="actions-field" type="text"></b-form-input>
-                      <b-input-group-append>
-                        <b-dropdown text="Action" variant="success">
-                          <b-dropdown-item href="#">Action</b-dropdown-item>
-                          <b-dropdown-item href="#">Another action</b-dropdown-item>
-                          <b-dropdown-item href="#">Something else here</b-dropdown-item>
-                          <b-dropdown-divider />
-                          <b-dropdown-item href="#">Separated link</b-dropdown-item>
-                        </b-dropdown>
-                      </b-input-group-append>
-                    </b-input-group>
-                  </b-col>
-                </b-row>
-              </b-form-group>
-              <b-form-group
-                label="Segmented dropdown"
-                label-for="segmented-field"
-                description="Anything can be appended to the right"
-                breakpoint="md"
-                >
-                <b-row>
-                  <b-col md="8">
-                    <b-input-group>
-                      <b-form-input id="segmented-field" type="text"></b-form-input>
-                      <b-input-group-append>
-                        <b-button variant="warning">Action</b-button>
-                        <b-dropdown variant="warning">
-                          <b-dropdown-item href="#">Action</b-dropdown-item>
-                          <b-dropdown-item href="#">Another action</b-dropdown-item>
-                          <b-dropdown-item href="#">Something else here</b-dropdown-item>
-                          <b-dropdown-divider />
-                          <b-dropdown-item href="#">Separated link</b-dropdown-item>
-                        </b-dropdown>
-                      </b-input-group-append>
-                    </b-input-group>
-                  </b-col>
-                </b-row>
-              </b-form-group>
-              <b-form-group
-                label="Types dropdown"
-                label-for="types-field"
-                description="You can select some type of a field just right in the place."
-                breakpoint="md"
-                >
-                <b-row>
-                  <b-col md="8">
-                    <b-input-group>
-                      <b-form-input id="types-field" type="text"></b-form-input>
-                      <b-input-group-append>
-                        <b-dropdown variant="primary" :text="typesDropdown">
-                          <b-dropdown-item-button @click="changeTypesDropdown('Another type')">
+              <div class="mb-3">
+                <label
+                  for="search-field"
+                  class="form-label"
+                >Search type input</label>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <input
+                        id="search-field"
+                        class="form-control"
+                        type="text"
+                      >
+                      <button
+                        class="btn btn-secondary"
+                        type="button"
+                      >
+                        Search
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="bar-field"
+                  class="form-label"
+                >Whole bar appended</label>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <input
+                        id="bar-field"
+                        class="form-control"
+                        type="text"
+                      >
+                      <button
+                        class="btn btn-danger"
+                        type="button"
+                      >
+                        <i class="la la-pencil" />
+                      </button>
+                      <button
+                        class="btn btn-warning"
+                        type="button"
+                      >
+                        <i class="la la-plus" />
+                      </button>
+                      <button
+                        class="btn btn-success"
+                        type="button"
+                      >
+                        <i class="la la-refresh" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="actions-field"
+                  class="form-label"
+                >Actions dropdown</label>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <input
+                        id="actions-field"
+                        class="form-control"
+                        type="text"
+                      >
+                      <button
+                        class="btn btn-success dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        Action
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Action</a>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Another action</a>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Something else here</a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Separated link</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="segmented-field"
+                  class="form-label"
+                >Segmented dropdown</label>
+                <div class="form-text">
+                  Anything can be appended to the right
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <input
+                        id="segmented-field"
+                        class="form-control"
+                        type="text"
+                      >
+                      <button
+                        class="btn btn-warning"
+                        type="button"
+                      >
+                        Action
+                      </button>
+                      <button
+                        class="btn btn-warning dropdown-toggle dropdown-toggle-split"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      />
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Action</a>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Another action</a>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Something else here</a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                          >Separated link</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="types-field"
+                  class="form-label"
+                >Types dropdown</label>
+                <div class="form-text">
+                  You can select some type of a field just right in the place.
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="input-group">
+                      <input
+                        id="types-field"
+                        class="form-control"
+                        type="text"
+                      >
+                      <button
+                        class="btn btn-primary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        {{ typesDropdown }}
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <button
+                            class="dropdown-item"
+                            @click="typesDropdown = 'Another type'"
+                          >
                             Another type
-                          </b-dropdown-item-button>
-                          <b-dropdown-item-button @click="changeTypesDropdown('Type one')">
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            class="dropdown-item"
+                            @click="typesDropdown = 'Type one'"
+                          >
                             Type one
-                          </b-dropdown-item-button>
-                          <b-dropdown-item-button @click="changeTypesDropdown('Next type')">
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            class="dropdown-item"
+                            @click="typesDropdown = 'Next type'"
+                          >
                             Next type
-                          </b-dropdown-item-button>
-                        </b-dropdown>
-                      </b-input-group-append>
-                    </b-input-group>
-                  </b-col>
-                </b-row>
-              </b-form-group>
-              <b-form-group
-                label="Transparent input"
-                label-for="transparent-field"
-                description="With gray-light background. White by default."
-                breakpoint="md"
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label
+                  for="transparent-search"
+                  class="form-label"
+                >Transparent input</label>
+                <div class="form-text">
+                  With gray-light background. White by default.
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <input
+                      id="transparent-search"
+                      class="form-control input-no-border bg-gray-lighter"
+                      type="text"
+                      placeholder="Search Dashboard"
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3 form-action bg-transparent ps-1">
+                <button
+                  class="btn btn-success me-1"
+                  type="submit"
                 >
-                <b-row>
-                  <b-col md="8">
-                    <b-form-input id="tranparent-field" class="input-no-border bg-gray-lighter"
-                      type="text" placeholder="Search Dashboard"></b-form-input>
-                  </b-col>
-                </b-row>
-              </b-form-group>
-              <b-form-group class="form-action bg-transparent ps-1">
-                <b-button variant="success" type="submit" class="me-1">Save Changes</b-button>
-                <b-button variant="default">Cancel</b-button>
-              </b-form-group>
-            </b-form>
-          </b-form-group>
+                  Save Changes
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
         </Widget>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col lg='8' md='12'>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
         <Widget
           title="<h6> Form <span class='fw-semi-bold'>Options</span></h6>"
-          settingsInverse refresh close customHeader
+          settings-inverse
+          refresh
+          close
+          custom-header
         >
-          <b-form>
+          <form>
             <legend>Control sizing</legend>
             <p class="mb-0">
               Set input heights using parameters like <code>size=&apos;lg&apos;</code> and
@@ -305,281 +498,500 @@
               Also works with <code>type=&apos;search&apos;</code> inputs, input groups and
               selects.
             </p>
-            <br />
-            <b-form-group>
-              <b-form-input type="text" placeholder='size="lg"' size="lg" />
-            </b-form-group>
-            <b-form-group>
-              <b-form-input type="text" placeholder="default input" />
-            </b-form-group>
-            <b-form-group>
-              <b-form-input type="text" placeholder='size="sm"' size="sm" />
-            </b-form-group>
-          </b-form>
+            <br>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="size=&quot;lg&quot;"
+              >
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="default input"
+              >
+            </div>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                placeholder="size=&quot;sm&quot;"
+              >
+            </div>
+          </form>
         </Widget>
-      </b-col>
-      <b-col lg='4' md='12'>
+      </div>
+      <div class="col-lg-4 col-md-12">
         <Widget
           title="<h6> Form <span class='fw-semi-bold'>Options</span></h6>"
-          settingsInverse refresh close customHeader
+          settings-inverse
+          refresh
+          close
+          custom-header
         >
-          <b-form>
+          <form>
             <legend> Input Groups</legend>
             <p class="mb-0">
-              Different colors & sizes for any elements including input groups. Elements may be
+              Different colors &amp; sizes for any elements including input groups. Elements may be
               easily styled with classes like <code>.bg-primary</code> or
               <code>.bg-transparent</code>
             </p>
-            <br />
-            <b-form-group>
-              <b-input-group>
-                <b-input-group-text slot="prepend" class="bg-transparent">
+            <br>
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text bg-transparent">
                   <i class="la la-github-alt" />
-                </b-input-group-text>
-                <b-form-input type="text" placeholder="First Name" size="16" />
-              </b-input-group>
-            </b-form-group>
-            <b-form-group>
-              <b-input-group size="lg">
-                <b-input-group-text slot="prepend">
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First Name"
+                >
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="input-group input-group-lg">
+                <span class="input-group-text">
                   <i class="la la-bars" />
-                </b-input-group-text>
-                <b-form-input type="text" placeholder="Username" size="16" />
-              </b-input-group>
-            </b-form-group>
-            <b-form-group>
-              <b-input-group size="sm">
-                <b-form-input type="text" placeholder="City" />
-                <b-input-group-append>
-                  <b-button class="bg-danger text-white">
-                    <i class="la la-code-fork" />
-                  </b-button>
-                </b-input-group-append>
-              </b-input-group>
-            </b-form-group>
-          </b-form>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                >
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="input-group input-group-sm">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="City"
+                >
+                <button
+                  class="btn bg-danger text-white"
+                  type="button"
+                >
+                  <i class="la la-code-fork" />
+                </button>
+              </div>
+            </div>
+          </form>
         </Widget>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col lg='6' md='12'>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
         <Widget
           title="<h6>Textareas</h6>"
-          customHeader settings refresh close
+          custom-header
+          settings
+          refresh
+          close
         >
-          <b-form>
+          <form>
             <legend>Small form</legend>
-            <b-form-group
-                horizontal
-                label="Default textarea"
-                label-for="default-textarea"
-                label-class="text-md-right"
-                :label-cols="3"
-                breakpoint="md"
-              >
-                <b-form-textarea :rows="3" id="default-textarea"/>
-            </b-form-group>
-            <b-form-group
-                horizontal
-                label="Auto-growing textarea"
-                label-for="autosize-textarea"
-                label-class="text-md-right"
-                :label-cols="3"
-                breakpoint="md"
-              >
-                <textarea-autosize
-                  placeholder="Try to add few new lines..."
+            <div class="row mb-3">
+              <label
+                for="default-textarea"
+                class="col-md-3 col-form-label text-md-end"
+              >Default textarea</label>
+              <div class="col-md-9">
+                <textarea
+                  id="default-textarea"
                   class="form-control"
-                  :min-height="75"
-                  id="autosize-textarea"
+                  rows="3"
                 />
-            </b-form-group>
-            <b-form-group
-                horizontal
-                label-for="wysiwyg-textarea"
-                label-class="text-md-right"
-                :label-cols="3"
-                breakpoint="md"
-              >
-                <div slot="label">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label
+                for="autosize-textarea"
+                class="col-md-3 col-form-label text-md-end"
+              >Auto-growing textarea</label>
+              <div class="col-md-9">
+                <textarea
+                  id="autosize-textarea"
+                  class="form-control"
+                  placeholder="Try to add few new lines..."
+                  rows="3"
+                  @input="autoResize"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-3 text-md-end">
+                <label class="col-form-label">
                   Wysiwyg
                   <span class="help-block">With bottom toolbar appended</span>
+                </label>
+              </div>
+              <div class="col-md-9">
+                <div class="wysiwyg-wrapper border rounded p-2">
+                  <EditorContent
+                    :editor="editor"
+                    class="wysiwyg-editor"
+                  />
                 </div>
-                <ckeditor :editor="wygEditor" v-model="wygContent"></ckeditor>
                 <div class="text-md-end mt-sm">
-                  <b-button variant="success" class="me-2">Save</b-button>
-                  <b-button variant="default">Clear</b-button>
+                  <button
+                    class="btn btn-success me-2"
+                    type="button"
+                  >
+                    Save
+                  </button>
+                  <button
+                    class="btn btn-secondary"
+                    type="button"
+                  >
+                    Clear
+                  </button>
                 </div>
-            </b-form-group>
-            <b-form-group
-                horizontal
-                label="Markdown Editor"
-                label-for="markdown-editor"
-                label-class="text-md-right"
-                :label-cols="3"
-                breakpoint="md"
-              >
-                <mavon-editor id="markdown-editor" language="en" v-model="mdContent"/>
-                <a class="text-muted d-flex align-items-center mt-sm" href="http://commonmark.org/help/" target="_blank" rel="noopener noreferrer">
-                  <!-- eslint-disable -->
-                  <svg aria-hidden="true" class="markdown-help-svg" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-                    <path fill-rule="evenodd" fill="#798892" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"></path>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label
+                for="markdown-editor"
+                class="col-md-3 col-form-label text-md-end"
+              >Markdown Editor</label>
+              <div class="col-md-9">
+                <MdEditor
+                  v-model="mdContent"
+                  language="en-US"
+                  :preview="false"
+                />
+                <a
+                  class="text-muted d-flex align-items-center mt-sm"
+                  href="http://commonmark.org/help/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="markdown-help-svg"
+                    height="16"
+                    version="1.1"
+                    viewBox="0 0 16 16"
+                    width="16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      fill="#798892"
+                      d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"
+                    />
                   </svg>
-                  <!-- eslint-enable -->
                   <span class="ms-1">Markdown styling is supported</span>
                 </a>
-            </b-form-group>
-          </b-form>
+              </div>
+            </div>
+          </form>
         </Widget>
-      </b-col>
-      <b-col lg='6' md='12'>
+      </div>
+      <div class="col-lg-6 col-md-12">
         <Widget
           title="<h6> Selects </h6>"
-          refresh close settings customHeader
+          refresh
+          close
+          settings
+          custom-header
         >
-          <b-form class="form-label-left">
+          <form class="form-label-left">
             <legend>Default form with labels on left</legend>
-            <b-form-group
-              horizontal
-              label="Default select"
-              label-for="default-select"
-              :label-cols="4"
-            >
-              <b-row>
-                <b-col md='9'>
-                  <v-select
-                    id="default-select"
-                    v-model="defaultSelect"
-                    :options="['Large Magellanic Cloud', 'Andromeda Galaxy', 'SextansA']"
-                  />
-                </b-col>
-              </b-row>
-            </b-form-group>
-            <b-form-group
-              horizontal
-              label="Select with search"
-              label-for="search-select"
-              :label-cols="4"
-            >
-              <b-row>
-                <b-col md='9'>
-                  <v-select
-                    id="search-select"
-                    v-model="searchSelect"
-                    :options="[
-                      'Dallas Cowboys',
-                      'New York Giants',
-                      'Philadelphia Eagles',
-                      'Washington Redskins'
-                    ]"
-                  />
-                </b-col>
-              </b-row>
-            </b-form-group>
-          </b-form>
-          <b-form>
-            <legend>Dropdown based colored selects</legend>
-            <b-form-group
-              horizontal
-              label="Simple select"
-              label-for="simple-select"
-              description="Auto size"
-              :label-cols="4"
-            >
-              <b-dropdown id="simple-select" :text="simpleDropdownVariant" variant="default">
-                <b-dropdown-item-button
-                  @click="changeSelectOption('simpleDropdownVariant', 'Option One')"
-                >Option One</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('simpleDropdownVariant', 'Option Two')"
-                >Option Two</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('simpleDropdownVariant', 'Option Three')"
-                >Option Three</b-dropdown-item-button>
-              </b-dropdown>
-            </b-form-group>
-            <b-form-group
-              horizontal
-              label-for="danger-select"
-              :label-cols="4"
-            >
-              <div slot="label">
-                Colored ones <br>
-                <span class="help">A bit of Japanese</span>
+            <div class="row mb-3">
+              <label
+                for="default-select"
+                class="col-md-4 col-form-label"
+              >Default select</label>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-9">
+                    <select
+                      id="default-select"
+                      v-model="defaultSelect"
+                      class="form-select"
+                    >
+                      <option value="Large Magellanic Cloud">
+                        Large Magellanic Cloud
+                      </option>
+                      <option value="Andromeda Galaxy">
+                        Andromeda Galaxy
+                      </option>
+                      <option value="SextansA">
+                        SextansA
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <b-dropdown id="danger-select text-white" :text="dangerDropdownVariant" variant="danger" class="me-2">
-                <b-dropdown-item-button
-                  @click="changeSelectOption('dangerDropdownVariant', 'Ichi')"
-                >Ichi</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('dangerDropdownVariant', 'Ni')"
-                >Ni</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('dangerDropdownVariant', 'San')"
-                >San</b-dropdown-item-button>
-              </b-dropdown>
-              <b-dropdown :text="warningDropdownVariant" variant="warning" class="me-2">
-                <b-dropdown-item-button
-                  @click="changeSelectOption('warningDropdownVariant', 'Shi')"
-                >Shi</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('warningDropdownVariant', 'Go')"
-                >Go</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('warningDropdownVariant', 'Roku')"
-                >Roku</b-dropdown-item-button>
-              </b-dropdown>
-              <b-dropdown :text="successDropdownVariant" variant="success">
-                <b-dropdown-item-button
-                  @click="changeSelectOption('successDropdownVariant', 'Hichi')"
-                >Hichi</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('successDropdownVariant', 'Hachi')"
-                >Hachi</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('successDropdownVariant', 'Ku')"
-                >Ku</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('successDropdownVariant', 'Ju')"
-                >Ju</b-dropdown-item-button>
-              </b-dropdown>
-            </b-form-group>
-            <b-form-group
-              horizontal
-              label-for="big-select"
-              :label-cols="4"
-            >
-              <div slot="label">
+            </div>
+            <div class="row mb-3">
+              <label
+                for="search-select"
+                class="col-md-4 col-form-label"
+              >Select with search</label>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-9">
+                    <select
+                      id="search-select"
+                      v-model="searchSelect"
+                      class="form-select"
+                    >
+                      <option value="Dallas Cowboys">
+                        Dallas Cowboys
+                      </option>
+                      <option value="New York Giants">
+                        New York Giants
+                      </option>
+                      <option value="Philadelphia Eagles">
+                        Philadelphia Eagles
+                      </option>
+                      <option value="Washington Redskins">
+                        Washington Redskins
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <form>
+            <legend>Dropdown based colored selects</legend>
+            <div class="row mb-3">
+              <label
+                for="simple-select"
+                class="col-md-4 col-form-label"
+              >Simple select</label>
+              <div class="col-md-8">
+                <div class="dropdown">
+                  <button
+                    id="simple-select"
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    {{ simpleDropdownVariant }}
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="simpleDropdownVariant = 'Option One'"
+                      >
+                        Option One
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="simpleDropdownVariant = 'Option Two'"
+                      >
+                        Option Two
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="simpleDropdownVariant = 'Option Three'"
+                      >
+                        Option Three
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="form-text">
+                  Auto size
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label class="col-form-label">
+                  Colored ones <br>
+                  <span class="help">A bit of Japanese</span>
+                </label>
+              </div>
+              <div class="col-md-8">
+                <div class="dropdown d-inline-block me-2">
+                  <button
+                    class="btn btn-danger dropdown-toggle text-white"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    {{ dangerDropdownVariant }}
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="dangerDropdownVariant = 'Ichi'"
+                      >
+                        Ichi
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="dangerDropdownVariant = 'Ni'"
+                      >
+                        Ni
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="dangerDropdownVariant = 'San'"
+                      >
+                        San
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="dropdown d-inline-block me-2">
+                  <button
+                    class="btn btn-warning dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    {{ warningDropdownVariant }}
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="warningDropdownVariant = 'Shi'"
+                      >
+                        Shi
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="warningDropdownVariant = 'Go'"
+                      >
+                        Go
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="warningDropdownVariant = 'Roku'"
+                      >
+                        Roku
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="dropdown d-inline-block">
+                  <button
+                    class="btn btn-success dropdown-toggle text-white"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    {{ successDropdownVariant }}
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="successDropdownVariant = 'Hichi'"
+                      >
+                        Hichi
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="successDropdownVariant = 'Hachi'"
+                      >
+                        Hachi
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="successDropdownVariant = 'Ku'"
+                      >
+                        Ku
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="successDropdownVariant = 'Ju'"
+                      >
+                        Ju
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label class="col-form-label">
                   Big one <br>
                   <span class="help-block">
-                    Size can be controlled with <code>size='lg'</code> & <code>size='sm'</code>
+                    Size can be controlled with <code>size='lg'</code> &amp; <code>size='sm'</code>
                   </span>
+                </label>
+              </div>
+              <div class="col-md-8">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary btn-lg dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    {{ bigDropdownVariant }}
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="bigDropdownVariant = 'Fourth Item'"
+                      >
+                        Fourth Item
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="bigDropdownVariant = 'Fifth Item'"
+                      >
+                        Fifth Item
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        @click="bigDropdownVariant = 'Sixth Item'"
+                      >
+                        Sixth Item
+                      </button>
+                    </li>
+                  </ul>
                 </div>
-              <b-dropdown id="big-select" size="lg" :text="bigDropdownVariant" variant="default">
-                <b-dropdown-item-button
-                  @click="changeSelectOption('bigDropdownVariant', 'Fourth Item')"
-                >Fourth Item</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('bigDropdownVariant', 'Fifth Item')"
-                >Fifth Item</b-dropdown-item-button>
-                <b-dropdown-item-button
-                  @click="changeSelectOption('bigDropdownVariant', 'Sixth Item')"
-                >Sixth Item</b-dropdown-item-button>
-              </b-dropdown>
-            </b-form-group>
-          </b-form>
+              </div>
+            </div>
+          </form>
         </Widget>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col md="12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
         <Widget
           title="<h6> Checkbox <strong>Controls</strong></h6>"
-          settingsInverse refresh lose customHeader
+          settings-inverse
+          refresh
+          close
+          custom-header
         >
-          <b-row>
-            <b-col lg='4'>
-              <b-form>
+          <div class="row">
+            <div class="col-lg-4">
+              <form>
                 <legend>Basic</legend>
                 <p>
                   Supports bootstrap brand colors: <code>.abc-checkbox-primary</code>,
@@ -589,661 +1001,847 @@
                   javascript.
                   Let your checkboxes shine!
                 </p>
-                <b-form-group class="abc-checkbox">
+                <div class="mb-3 abc-checkbox">
                   <input
-                    type="checkbox"
                     id="checkbox-default"
-                  />
+                    type="checkbox"
+                  >
                   <label for="checkbox-default">Default</label>
-                </b-form-group>
-                <b-form-group class="abc-checkbox abc-checkbox-primary">
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-primary">
                   <input
-                    type="checkbox"
                     id="checkbox-primary"
-                    :checked="true"
-                  />
+                    type="checkbox"
+                    checked
+                  >
                   <label for="checkbox-primary">Primary</label>
-                </b-form-group>
-                 <b-form-group class="abc-checkbox abc-checkbox-success">
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-success">
                   <input
-                    type="checkbox"
                     id="checkbox-success"
-                  />
+                    type="checkbox"
+                  >
                   <label for="checkbox-success">Success</label>
-                </b-form-group>
-                <b-form-group class="abc-checkbox abc-checkbox-info">
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-info">
                   <input
-                    type="checkbox"
                     id="checkbox-info"
-                    :checked="true"
-                  />
+                    type="checkbox"
+                    checked
+                  >
                   <label for="checkbox-info">Info</label>
-                </b-form-group>
-                <b-form-group class="abc-checkbox abc-checkbox-warning">
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-warning">
                   <input
-                    type="checkbox"
                     id="checkbox-warning"
-                    :checked="true"
-                  />
-                  <label for="checkbox-warning">Warning</label>
-                </b-form-group>
-                <b-form-group class="abc-checkbox abc-checkbox-danger">
-                  <input
                     type="checkbox"
+                    checked
+                  >
+                  <label for="checkbox-warning">Warning</label>
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-danger">
+                  <input
                     id="checkbox-danger"
-                    :checked="true"
-                  />
+                    type="checkbox"
+                    checked
+                  >
                   <label for="checkbox-danger">Check me out</label>
-                </b-form-group>
-              </b-form>
-            </b-col>
-
-            <b-col lg="4">
-              <b-form>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4">
+              <form>
                 <legend>Circled</legend>
                 <p>
                   <code>.abc-checkbox-circle</code> for roundness. No more sad controls
                   controls.
                   Check out this brand-new rounded checkboxes!
                 </p>
-                <b-form-group class="abc-checkbox abc-checkbox abc-checkbox-circle ">
+                <div class="mb-3 abc-checkbox abc-checkbox-circle">
                   <input
-                    type="checkbox"
                     id="checkbox-circle"
-                  />
-                  <label for="checkbox-circle">Simle Rounded</label>
-                </b-form-group>
-                <b-form-group class="abc-checkbox abc-checkbox-info abc-checkbox-circle ">
-                  <input
                     type="checkbox"
+                  >
+                  <label for="checkbox-circle">Simple Rounded</label>
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-info abc-checkbox-circle">
+                  <input
                     id="checkbox-circle-info"
-                    :checked="true"
-                  />
+                    type="checkbox"
+                    checked
+                  >
                   <label for="checkbox-circle-info">Me too</label>
-                </b-form-group>
-              </b-form>
-            </b-col>
-            <b-col lg='4'>
-              <b-form>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4">
+              <form>
                 <legend>Disabled</legend>
                 <p>
                   Disabled state also supported. Full stack checkbox functionality.
                 </p>
-                <b-form-group class="abc-checkbox">
+                <div class="mb-3 abc-checkbox">
                   <input
-                    type="checkbox"
                     id="checkbox-disabled"
+                    type="checkbox"
                     disabled
-                  />
+                  >
                   <label for="checkbox-disabled">Can't check this</label>
-                </b-form-group>
-                <b-form-group class="abc-checkbox abc-checkbox-success">
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-success">
                   <input
-                    type="checkbox"
                     id="checkbox-disabled-success"
-                    :checked="true"
-                    disabled
-                  />
-                  <label for="checkbox-disabled-success">This too</label>
-                </b-form-group>
-                <b-form-group class="abc-checkbox abc-checkbox-warning">
-                  <input
                     type="checkbox"
-                    id="checkbox-disabled-warning"
-                    :checked="true"
+                    checked
                     disabled
-                  />
+                  >
+                  <label for="checkbox-disabled-success">This too</label>
+                </div>
+                <div class="mb-3 abc-checkbox abc-checkbox-warning">
+                  <input
+                    id="checkbox-disabled-warning"
+                    type="checkbox"
+                    checked
+                    disabled
+                  >
                   <label for="checkbox-disabled-warning">And this</label>
-                </b-form-group>
-              </b-form>
-            </b-col>
-          </b-row>
-          <p class="fs-mini">Built with <a
-            href="https://github.com/flatlogic/awesome-bootstrap-checkbox"
-            rel="noopener noreferrer" target="_blank"
-          >awesome-bootstrap-checkbox</a>.
+                </div>
+              </form>
+            </div>
+          </div>
+          <p class="fs-mini">
+            Built with <a
+              href="https://github.com/flatlogic/awesome-bootstrap-checkbox"
+              rel="noopener noreferrer"
+              target="_blank"
+            >awesome-bootstrap-checkbox</a>.
           </p>
         </Widget>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col md="12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
         <Widget
           title="<h6>Radio <strong>Controls</strong></h6>"
-          settingsInverse refresh lose customHeader
+          settings-inverse
+          refresh
+          close
+          custom-header
         >
-          <b-row>
-            <b-col lg='4'>
-              <b-form>
+          <div class="row">
+            <div class="col-lg-4">
+              <form>
                 <legend>Basic</legend>
                 <p>
                   Supports bootstrap brand colors: <code>.abc-radio-primary</code>,
                   <code>.abc-radio-danger</code> etc. Pure css solution with no
                   javascript. Let your radios shine!
                 </p>
-                <b-row>
-                  <b-col md="6">
-                    <b-form-group class="radio abc-radio">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3 radio abc-radio">
                       <input
-                        type="radio"
-                        name="radio1"
                         id="radio-small"
-                        checked
-                      />
-                      <label for="radio-small">Small</label>
-                    </b-form-group>
-                    <b-form-group class="radio abc-radio">
-                      <input
                         type="radio"
                         name="radio1"
-                        id="radio-big"
-                      />
-                      <label for="radio-big">Big</label>
-                    </b-form-group>
-                  </b-col>
-                  <b-col md="6">
-                    <b-form-group class="radio abc-radio abc-radio-danger">
-                      <input
-                        type="radio"
-                        name="radio2"
-                        id="radio-next"
-                      />
-                      <label for="radio-next">Next</label>
-                    </b-form-group>
-                    <b-form-group class="radio abc-radio abc-radio-danger">
-                      <input
-                        type="radio"
-                        name="radio2"
-                        id="radio-one"
                         checked
-                      />
+                      >
+                      <label for="radio-small">Small</label>
+                    </div>
+                    <div class="mb-3 radio abc-radio">
+                      <input
+                        id="radio-big"
+                        type="radio"
+                        name="radio1"
+                      >
+                      <label for="radio-big">Big</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3 radio abc-radio abc-radio-danger">
+                      <input
+                        id="radio-next"
+                        type="radio"
+                        name="radio2"
+                      >
+                      <label for="radio-next">Next</label>
+                    </div>
+                    <div class="mb-3 radio abc-radio abc-radio-danger">
+                      <input
+                        id="radio-one"
+                        type="radio"
+                        name="radio2"
+                        checked
+                      >
                       <label for="radio-one">One</label>
-                    </b-form-group>
-                  </b-col>
-                </b-row>
-              </b-form>
-            </b-col>
-
-            <b-col lg="4">
-              <b-form>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4">
+              <form>
                 <legend>Disabled</legend>
                 <p>
                   Disabled state also supported. Full stack radios functionality.
                 </p>
-                <b-form-group class="radio abc-radio">
+                <div class="mb-3 radio abc-radio">
                   <input
-                    type="radio"
-                    name="radio3"
                     id="radio-disabled-next"
-                    disabled
-                  />
-                  <label for="radio-disabled-next">Next</label>
-                </b-form-group>
-                <b-form-group class="radio abc-radio abc-radio-warning">
-                  <input
                     type="radio"
                     name="radio3"
+                    disabled
+                  >
+                  <label for="radio-disabled-next">Next</label>
+                </div>
+                <div class="mb-3 radio abc-radio abc-radio-warning">
+                  <input
                     id="radio-disabled-one"
+                    type="radio"
+                    name="radio3"
                     disabled
                     checked
-                  />
+                  >
                   <label for="radio-disabled-one">One</label>
-                </b-form-group>
-              </b-form>
-            </b-col>
-            <b-col lg='4'>
-              <b-form>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4">
+              <form>
                 <legend>Cool iOS-like switches</legend>
                 <p>
                   Simple component that helps you turn your default HTML
                   checkbox inputs into beautiful iOS 7 style switches in
                   just few simple steps.
                 </p>
-                <b-form-group class="display-inline-block checkbox-ios me-2">
-                  <label for="checkbox-ios1" class="switch  form-control-label">
-                    <input type="checkbox" id="checkbox-ios1"
-                      class="ios form-check-input" value="off">
-                    <i></i>
+                <div class="d-inline-block checkbox-ios me-2 mb-3">
+                  <label
+                    for="checkbox-ios1"
+                    class="switch form-control-label"
+                  >
+                    <input
+                      id="checkbox-ios1"
+                      type="checkbox"
+                      class="ios form-check-input"
+                    >
+                    <i />
                   </label>
-                </b-form-group>
-                <b-form-group class="display-inline-block checkbox-ios">
-                  <label for="checkbox-ios2" class="switch  form-control-label">
-                    <input type="checkbox" id="checkbox-ios2"
-                      class="ios form-check-input" value="on" checked="">
-                    <i></i>
+                </div>
+                <div class="d-inline-block checkbox-ios mb-3">
+                  <label
+                    for="checkbox-ios2"
+                    class="switch form-control-label"
+                  >
+                    <input
+                      id="checkbox-ios2"
+                      type="checkbox"
+                      class="ios form-check-input"
+                      checked
+                    >
+                    <i />
                   </label>
-                </b-form-group>
-              </b-form>
-            </b-col>
-          </b-row>
+                </div>
+              </form>
+            </div>
+          </div>
         </Widget>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col lg="6" md="12">
-        <Widget title="<h6>Pickers</h6>" customHeader close refresh settingsInverse>
-          <b-form>
-            <legend>Date & Time</legend>
-            <b-form-group>
-              <b-row>
-                <b-col xs="6">
-                  <label for="datetimepicker" class="pe-1">Datepicker</label>
-                  <DatePicker lang="en" :placeholder="datepickerText"
-                    input-class="form-control" @change="selectDate">
-                    <i class="glyphicon glyphicon-th" slot="calendar-icon" />
-                  </DatePicker>
-                </b-col>
-                <b-col xs="6">
-                  <label for="datetimepicker" class="pe-1">With time</label>
-                  <DatePicker lang="en" type="datetime" :placeholder="datetimepickerText"
-                    input-class="form-control" @change="selectDatetime">
-                    <i class="fa fa-clock-o" slot="calendar-icon" />
-                  </DatePicker>
-                </b-col>
-              </b-row>
-            </b-form-group>
-          </b-form>
-          <b-form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <Widget
+          title="<h6>Pickers</h6>"
+          custom-header
+          close
+          refresh
+          settings-inverse
+        >
+          <form>
+            <legend>Date &amp; Time</legend>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col-6">
+                  <label
+                    for="datepicker"
+                    class="form-label pe-1"
+                  >Datepicker</label>
+                  <VueDatePicker
+                    id="datepicker"
+                    v-model="datepickerValue"
+                    :enable-time-picker="false"
+                    auto-apply
+                    placeholder="Select date"
+                  />
+                </div>
+                <div class="col-6">
+                  <label
+                    for="datetimepicker"
+                    class="form-label pe-1"
+                  >With time</label>
+                  <VueDatePicker
+                    id="datetimepicker"
+                    v-model="datetimepickerValue"
+                    auto-apply
+                    placeholder="Select date and time"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <form>
             <legend>Colors</legend>
-            <b-form-group>
-              <label for="colorpickeri">
+            <div class="mb-3">
+              <label
+                for="colorpicker"
+                class="form-label"
+              >
                 Simple select
                 <span class="help-block">
-                  Colorpicker widget powered by
-                  <a href="https://github.com/xiaokaike/vue-color" target="_blank">vue-color</a> plugin
+                  Color picker widget
                 </span>
-                <b-input-group class="colorpicker-wrapper">
-                  <input type="text" class="form-control" :value="color.hex" />
-                  <Chrome
-                    :class="{ colorpicker: true, 'd-none': !isPickerActive }"
-                    v-model="color"
-                  />
-                  <b-input-group-text @click="isPickerActive = !isPickerActive" slot="append">
-                    <div class="rect" :style="{ backgroundColor: color.hex }"/>
-                  </b-input-group-text>
-                </b-input-group>
               </label>
-            </b-form-group>
-          </b-form>
+              <div
+                class="input-group colorpicker-wrapper"
+                style="max-width: 300px;"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  :value="color"
+                >
+                <input
+                  v-model="color"
+                  type="color"
+                  class="form-control form-control-color"
+                >
+              </div>
+            </div>
+          </form>
         </Widget>
-      </b-col>
-      <b-col lg="6" md="12">
-        <Widget title="<h6> Input <strong>Masks</strong></h6>"
-          customHeader close settingsInverse refresh>
-          <b-form class="form-label-left">
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <Widget
+          title="<h6> Input <strong>Masks</strong></h6>"
+          custom-header
+          close
+          settings-inverse
+          refresh
+        >
+          <form class="form-label-left">
             <legend>Masked inputs</legend>
-            <b-form-group horizontal label-for="phone-mask">
-              <div class="row">
-                <div slot="label" class="col-md-4 col-sm-12">
+            <div class="row mb-3">
+              <div class="col-md-4 col-sm-12">
+                <label
+                  for="phone-mask"
+                  class="col-form-label"
+                >
                   Phone
                   <span class="help-block">(123) 456-7890</span>
-                </div>
-                <b-col md="6" sm="12" class="ps-0">
-                  <input class="form-control" id="phone-mask" type="text"
-                         placeholder="(___) ___-____"
-                         v-mask="'(###) ###-####'"
-                         v-model="phoneModel" />
-                </b-col>
+                </label>
               </div>
-            </b-form-group>
-            <b-form-group horizontal label-for="int-phone-mask">
-              <div class="row">
-                <div slot="label" class="col-md-4 col-sm-12">
+              <div class="col-md-6 col-sm-12 ps-0">
+                <input
+                  id="phone-mask"
+                  v-model="phoneModel"
+                  v-maska
+                  class="form-control"
+                  type="text"
+                  placeholder="(___) ___-____"
+                  data-maska="(###) ###-####"
+                >
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-4 col-sm-12">
+                <label
+                  for="int-phone-mask"
+                  class="col-form-label"
+                >
                   International Phone
                   <span class="help-block">+375 123 456 789</span>
-                </div>
-                <b-col md="6" sm="12" class="ps-0">
-                  <input class="form-control" id="int-phone-mask" type="text"
-                         placeholder="+___ ___ ___ ___"
-                         v-mask="'+### ### ### ###'"
-                         v-model="intPhoneModel" />
-                </b-col>
+                </label>
               </div>
-            </b-form-group>
-            <b-form-group horizontal label-for="date-mask">
-              <div class="row">
-                <div slot="label" class="col-md-4 col-sm-12">
+              <div class="col-md-6 col-sm-12 ps-0">
+                <input
+                  id="int-phone-mask"
+                  v-model="intPhoneModel"
+                  v-maska
+                  class="form-control"
+                  type="text"
+                  placeholder="+___ ___ ___ ___"
+                  data-maska="+### ### ### ###"
+                >
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-4 col-sm-12">
+                <label
+                  for="date-mask"
+                  class="col-form-label"
+                >
                   Date Format
                   <span class="help-block">07-03-2013</span>
-                </div>
-                <b-col md="6" sm="12" class="ps-0">
-                  <input class="form-control"  id="date-mask" type="text"
-                         placeholder="__-__-____"
-                         v-mask="'##-##-####'"
-                         v-model="dateModel" />
-                </b-col>
+                </label>
               </div>
-            </b-form-group>
-            <b-form-group horizontal label-for="time-mask">
-              <div class="row">
-                <div slot="label" class="col-md-4 col-sm-12">
+              <div class="col-md-6 col-sm-12 ps-0">
+                <input
+                  id="date-mask"
+                  v-model="dateModel"
+                  v-maska
+                  class="form-control"
+                  type="text"
+                  placeholder="__-__-____"
+                  data-maska="##-##-####"
+                >
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-4 col-sm-12">
+                <label
+                  for="time-mask"
+                  class="col-form-label"
+                >
                   Time
                   <span class="help-block">13:43</span>
-                </div>
-                <b-col md="6" sm="12" class="ps-0">
-                  <input class="form-control" id="time-mask" type="text"
-                         placeholder="__:__"
-                         v-mask="'##:##'"
-                         v-model="timeModel" />
-                </b-col>
+                </label>
               </div>
-            </b-form-group>
-          </b-form>
+              <div class="col-md-6 col-sm-12 ps-0">
+                <input
+                  id="time-mask"
+                  v-model="timeModel"
+                  v-maska
+                  class="form-control"
+                  type="text"
+                  placeholder="__:__"
+                  data-maska="##:##"
+                >
+              </div>
+            </div>
+          </form>
         </Widget>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col xs="12">
-        <Widget title="<h6>Sliders</h6>"
-          customHeader settingsInverse close refresh>
-          <b-row>
-            <b-col lg="4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <Widget
+          title="<h6>Sliders</h6>"
+          custom-header
+          settings-inverse
+          close
+          refresh
+        >
+          <div class="row">
+            <div class="col-lg-4">
               <h4>Color Options</h4>
-              <p>Sing extends Vue Bootstrap Slider and provides different color options:</p>
-              <b-form>
-                <div class="mb-sm">
-                  <b-form-slider
-                    :value='14'
-                    :max='20'
-                  />
+              <p>Sing extends Bootstrap Slider and provides different color options:</p>
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="range"
+                    class="form-range"
+                    :value="70"
+                    min="0"
+                    max="100"
+                  >
                 </div>
-                <div class="slider-danger mb-sm">
-                  <b-form-slider
-                    :value='18'
-                    :max='20'
-                  />
+                <div class="mb-3 slider-danger">
+                  <input
+                    type="range"
+                    class="form-range"
+                    :value="90"
+                    min="0"
+                    max="100"
+                  >
                 </div>
-                <div class="slider-warning mb-sm">
-                 <b-form-slider
-                    :value='7'
-                    :max='20'
-                  />
+                <div class="mb-3 slider-warning">
+                  <input
+                    type="range"
+                    class="form-range"
+                    :value="35"
+                    min="0"
+                    max="100"
+                  >
                 </div>
-                <div class="slider-success mb-sm">
-                  <b-form-slider
-                    :value='11'
-                    :max='20'
-                  />
+                <div class="mb-3 slider-success">
+                  <input
+                    type="range"
+                    class="form-range"
+                    :value="55"
+                    min="0"
+                    max="100"
+                  >
                 </div>
-                <div class="slider-inverse mb-sm">
-                  <b-form-slider
-                    :value='4'
-                    :max='20'
-                  />
+                <div class="mb-3 slider-inverse">
+                  <input
+                    type="range"
+                    class="form-range"
+                    :value="20"
+                    min="0"
+                    max="100"
+                  >
                 </div>
-              </b-form>
-            </b-col>
-            <b-col lg="4">
+              </form>
+            </div>
+            <div class="col-lg-4">
               <h4>Slider Orientation</h4>
               <p>
-                Vertical orientation is also possible. Simply changing <strong>
-                orientation </strong>
-                attribute does the thing.
+                Vertical orientation is also possible using CSS transforms.
               </p>
-              <b-row>
-                <b-col md="8">
-                  <span class="">
-                    <b-form-slider
-                      :value='14'
-                      :max='20'
-                      orientation="vertical"
-                    />
-                  </span>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    <b-form-slider
-                      :value='18'
-                      :max='20'
-                      orientation="vertical"
-                    />
-                  </span>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span class="">
-                    <b-form-slider
-                      :value='7'
-                      :max='20'
-                      orientation="vertical"
-                    />
-                  </span>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    <b-form-slider
-                      :value='11'
-                      :max='20'
-                      orientation="vertical"
-                    />
-                  </span>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span class="">
-                    <b-form-slider
-                      :value='4'
-                      :max='20'
-                      orientation="vertical"
-                    />
-                  </span>
-                </b-col>
-              </b-row>
-            </b-col>
-            <b-col lg="4">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="d-flex gap-4">
+                    <input
+                      type="range"
+                      class="form-range form-range-vertical"
+                      orient="vertical"
+                      :value="70"
+                      min="0"
+                      max="100"
+                    >
+                    <input
+                      type="range"
+                      class="form-range form-range-vertical"
+                      orient="vertical"
+                      :value="90"
+                      min="0"
+                      max="100"
+                    >
+                    <input
+                      type="range"
+                      class="form-range form-range-vertical"
+                      orient="vertical"
+                      :value="35"
+                      min="0"
+                      max="100"
+                    >
+                    <input
+                      type="range"
+                      class="form-range form-range-vertical"
+                      orient="vertical"
+                      :value="55"
+                      min="0"
+                      max="100"
+                    >
+                    <input
+                      type="range"
+                      class="form-range form-range-vertical"
+                      orient="vertical"
+                      :value="20"
+                      min="0"
+                      max="100"
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
               <h4>Range Selector</h4>
-              <p>Range selector, options specified via <strong>value</strong>
+              <p>
+                Range selector, options specified via <strong>value</strong>
                 attribute as
-                an array. Price range selector:</p>
-              <span class="slider-danger">
-                <b-form-slider
-                  :max="2000"
-                  :value="[200, 1547]" range
-                />
-                &nbsp;
-              </span>
-            </b-col>
-          </b-row>
+                an array. Price range selector:
+              </p>
+              <div class="slider-danger">
+                <div class="d-flex align-items-center gap-2">
+                  <input
+                    v-model.number="rangeMin"
+                    type="number"
+                    class="form-control form-control-sm"
+                    style="width: 80px;"
+                  >
+                  <input
+                    v-model.number="rangeMax"
+                    type="range"
+                    class="form-range flex-grow-1"
+                    min="0"
+                    max="2000"
+                  >
+                  <input
+                    v-model.number="rangeMax"
+                    type="number"
+                    class="form-control form-control-sm"
+                    style="width: 80px;"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </Widget>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col lg="6" md={12}>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
         <Widget
           title="<h6>Simple <strong>file uploads</strong></h6>"
-          customHeader settingsInverse close refresh
+          custom-header
+          settings-inverse
+          close
+          refresh
         >
-          <b-form>
+          <form>
             <blockquote class="blockquote blockquote-reverse">
-              <p>The man who is really serious, with the urge to find out what truth is, has no
-                style at all. He lives only in what is.</p>
+              <p>
+                The man who is really serious, with the urge to find out what truth is, has no
+                style at all. He lives only in what is.
+              </p>
               <footer>Bruce Lee</footer>
             </blockquote>
 
-            <b-form-group
-              horizontal
-              label="File input widget"
-              :label-cols="4"
-              label-for="fileupload1"
-              label-text-align="right"
-              breakpoint="md"
-            >
-              <b-input-group class="fileinput fileinput-new">
-                <input
-                  @change="onChangeInputFiles"
-                  id="fileupload1"
-                  type="file" name="file" class="display-none"
-                />
-                <label for="fileupload1" class="form-control">
-                  <div v-if="inputFiles.length > 0">
-                    <span v-for="file in inputFiles"
-                      :key="`select-id-${file.name.split('.')[0].toString()}`"
-                    >
-                      {{file.name}}
-                    </span>
-                  </div>
-                  <span v-else />
-                </label>
-                <b-input-group-append v-if="inputFiles.length === 0">
-                  <b-button type="button" variant="default" class="btn-file">
-                    <label for="fileupload1">Select file</Label>
-                  </b-button>
-                </b-input-group-append>
-                <b-input-group-append v-else>
-                  <b-button type="button" variant="default">
-                    <Label for="fileupload1">Change file</Label>
-                  </b-button>
-                  <b-button
-                    type="reset" variant="default"
-                    @click="removeFiles"
+            <div class="row mb-3">
+              <label
+                for="fileupload1"
+                class="col-md-4 col-form-label text-md-end"
+              >File input widget</label>
+              <div class="col-md-8">
+                <div class="input-group fileinput fileinput-new">
+                  <input
+                    id="fileupload1"
+                    type="file"
+                    name="file"
+                    class="d-none"
+                    @change="onChangeInputFiles"
                   >
-                    <label>Remove file</label>
-                  </b-button>
-                </b-input-group-append>
-              </b-input-group>
-              <span class="help-block">
-                Awesome file input plugin allows you to create a visually appealing
-                file or image inputs.
-              </span>
-            </b-form-group>
-            <b-form-group
-              horizontal
-              label="Image upload widget"
-              label-for="fileupload2"
-              label-text-align="right"
-              :label-cols="4"
-            >
-              <input
-                accept="image/*" @change="onChangeInputImage"
-                id="fileupload2"
-                type="file" name="file" class="display-none"
-              />
-              <div class="fileinput fileinput-new fileinput-fix">
-                <div class="fileinput-new thumbnail">
-                  <div v-if="imageFiles.length > 0">
-                    <div
-                      class="image-preview"
-                      v-for="image in imageFiles"
-                      :key="`img-id-${image.toString()}`"
-                      :style="{ backgroundImage: `url(${image.preview})`}"
-                    />
-                  </div>
-                  <img v-else
-                    alt="picture"
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5v
-                    cmcvMjAwMC9zdmciIHdpZHRoPSIxOTEiIGhlaWdodD0iMTQxIj48cmVjdCB3aWR0aD0
-                    iMTkxIiBoZWlnaHQ9IjE0MSIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPS
-                    JtaWRkbGUiIHg9Ijk1LjUiIHk9IjcwLjUiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13Z
-                    WlnaHQ6Ym9sZDtmb250LXNpemU6MTJweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRp
-                    Y2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4xOTF4MTQxPC9
-                    0ZXh0Pjwvc3ZnPg=="
-                  />
-                </div>
-              </div>
-              <div>
-                <b-button type="button" variant="inverse" class="mt-sm">
-                  <label for="fileupload2">
-                    Select image
+                  <label
+                    for="fileupload1"
+                    class="form-control"
+                  >
+                    <span v-if="inputFiles.length > 0">
+                      <span
+                        v-for="file in inputFiles"
+                        :key="file.name"
+                      >
+                        {{ file.name }}
+                      </span>
+                    </span>
+                    <span v-else />
                   </label>
-                </b-button>
+                  <button
+                    v-if="inputFiles.length === 0"
+                    type="button"
+                    class="btn btn-secondary btn-file"
+                  >
+                    <label
+                      for="fileupload1"
+                      class="mb-0"
+                    >Select file</label>
+                  </button>
+                  <template v-else>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                    >
+                      <label
+                        for="fileupload1"
+                        class="mb-0"
+                      >Change file</label>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      @click="removeFiles"
+                    >
+                      Remove file
+                    </button>
+                  </template>
+                </div>
+                <span class="help-block">
+                  Awesome file input plugin allows you to create a visually appealing
+                  file or image inputs.
+                </span>
               </div>
-              <span class="help-block">
-                Showing a thumbnail instead of the filename when uploading an image.
-              </span>
-            </b-form-group>
-          </b-form>
+            </div>
+            <div class="row mb-3">
+              <label
+                for="fileupload2"
+                class="col-md-4 col-form-label text-md-end"
+              >Image upload widget</label>
+              <div class="col-md-8">
+                <input
+                  id="fileupload2"
+                  accept="image/*"
+                  type="file"
+                  name="file"
+                  class="d-none"
+                  @change="onChangeInputImage"
+                >
+                <div class="fileinput fileinput-new fileinput-fix">
+                  <div class="fileinput-new thumbnail">
+                    <div v-if="imageFiles.length > 0">
+                      <div
+                        v-for="image in imageFiles"
+                        :key="image.name"
+                        class="image-preview"
+                        :style="{ backgroundImage: `url(${image.preview})`}"
+                      />
+                    </div>
+                    <img
+                      v-else
+                      alt="picture"
+                      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTEiIGhlaWdodD0iMTQxIj48cmVjdCB3aWR0aD0iMTkxIiBoZWlnaHQ9IjE0MSIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijk1LjUiIHk9IjcwLjUiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTJweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4xOTF4MTQxPC90ZXh0Pjwvc3ZnPg=="
+                    >
+                  </div>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-inverse mt-sm"
+                  >
+                    <label
+                      for="fileupload2"
+                      class="mb-0"
+                    >
+                      Select image
+                    </label>
+                  </button>
+                </div>
+                <span class="help-block">
+                  Showing a thumbnail instead of the filename when uploading an image.
+                </span>
+              </div>
+            </div>
+          </form>
         </Widget>
-      </b-col>
-      <b-col lg="6" md={12}>
+      </div>
+      <div class="col-lg-6 col-md-12">
         <Widget
           title="<h6><strong>Drop</strong> Zone</h6>"
-          customHeader settingsInverse refresh close
+          custom-header
+          settings-inverse
+          refresh
+          close
         >
-          <div>
-            <vue-dropzone id="dropzone" :options="{ url: '/' }" />
+          <div
+            class="dropzone"
+            :class="{ 'dropzone-active': isDragOver }"
+            @dragover.prevent="isDragOver = true"
+            @dragleave.prevent="isDragOver = false"
+            @drop.prevent="handleDrop"
+          >
+            <div class="dropzone-content text-center p-5">
+              <i class="fa fa-cloud-upload fa-3x text-muted mb-3" />
+              <p class="mb-2">
+                Drop files here or click to upload
+              </p>
+              <input
+                id="dropzone-input"
+                type="file"
+                multiple
+                class="d-none"
+                @change="handleDropzoneFiles"
+              >
+              <label
+                for="dropzone-input"
+                class="btn btn-primary"
+              >Select Files</label>
+              <div
+                v-if="droppedFiles.length > 0"
+                class="mt-3"
+              >
+                <div
+                  v-for="file in droppedFiles"
+                  :key="file.name"
+                  class="badge bg-secondary me-1"
+                >
+                  {{ file.name }}
+                </div>
+              </div>
+            </div>
           </div>
         </Widget>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-import Vue from 'vue';
-import vSelect from 'vue-select';
-import DatePicker from 'vue2-datepicker';
-import vueDropzone from 'vue2-dropzone';
-import { Chrome } from 'vue-color';
-import Widget from '@/components/Widget/Widget';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+<script setup>
+import { ref, onUnmounted } from 'vue'
+import Widget from '@/components/Widget/Widget.vue'
+import { VueDatePicker } from '@vuepic/vue-datepicker'
+import '@vuepic/vue-datepicker/dist/main.css'
+import { MdEditor } from 'md-editor-v3'
+import 'md-editor-v3/lib/style.css'
+import { useEditor, EditorContent } from '@tiptap/vue-3'
+import StarterKit from '@tiptap/starter-kit'
+import { vMaska } from 'maska/vue'
 
-export default {
-  name: 'FormElements',
-  components: {
-    Widget, vSelect, DatePicker, vueDropzone, Chrome,
-  },
-  data() {
-    return {
-      wygEditor: ClassicEditor,
-      typesDropdown: 'Type one',
-      wygContent: '',
-      mdContent: '',
-      defaultSelect: 'Andromeda Galaxy',
-      searchSelect: 'Dallas Cowboys',
-      simpleDropdownVariant: 'Option One',
-      dangerDropdownVariant: 'Ichi',
-      warningDropdownVariant: 'Shi',
-      successDropdownVariant: 'Hichi',
-      bigDropdownVariant: 'Fourth Item',
-      datepickerText: '',
-      datetimepickerText: '',
-      timeModel: null,
-      dateModel: null,
-      intPhoneModel: null,
-      phoneModel: null,
-      inputFiles: [],
-      imageFiles: [],
-      color: {
-        hex: '#cccccc',
-      },
-      isPickerActive: false,
-    };
-  },
-  methods: {
-    changeTypesDropdown(value) {
-      Vue.set(this, 'typesDropdown', value);
-    },
-    changeSelectOption(field, value) {
-      Vue.set(this, field, value);
-    },
-    selectDate(val) {
-      Vue.set(this, 'datepickerText', val.toLocaleDateString());
-    },
-    selectDatetime(val) {
-      Vue.set(this, 'datetimepickerText', new Date(Date.parse(val)).toLocaleString());
-    },
-    onChangeInputFiles(e) {
-      const files = [];
-      let i = 0;
-      for (i; i < e.target.files.length; i += 1) {
-        files.push(e.target.files[i]);
-      }
+const typesDropdown = ref('Type one')
+const defaultSelect = ref('Andromeda Galaxy')
+const searchSelect = ref('Dallas Cowboys')
+const simpleDropdownVariant = ref('Option One')
+const dangerDropdownVariant = ref('Ichi')
+const warningDropdownVariant = ref('Shi')
+const successDropdownVariant = ref('Hichi')
+const bigDropdownVariant = ref('Fourth Item')
 
-      Vue.set(this, 'inputFiles', files);
-    },
-    onChangeInputImage(e) {
-      const files = [];
-      const reader = new FileReader();
-      files.push(e.target.files[0]);
-      reader.onloadend = () => {
-        files[0].preview = reader.result;
-        files[0].toUpload = true;
-        Vue.set(this, 'imageFiles', files);
-      };
-      reader.readAsDataURL(e.target.files[0]);
-    },
-    removeFiles() {
-      Vue.set(this, 'inputFiles', []);
-    },
-    changeColor(e) {
-      Vue.set(this, 'color', { hex: e.value });
-    },
-  },
-};
+const datepickerValue = ref(null)
+const datetimepickerValue = ref(null)
+const timeModel = ref(null)
+const dateModel = ref(null)
+const intPhoneModel = ref(null)
+const phoneModel = ref(null)
+const inputFiles = ref([])
+const imageFiles = ref([])
+const color = ref('#cccccc')
+
+const mdContent = ref('')
+
+const rangeMin = ref(200)
+const rangeMax = ref(1547)
+
+const isDragOver = ref(false)
+const droppedFiles = ref([])
+
+const editor = useEditor({
+  content: '',
+  extensions: [StarterKit]
+})
+
+function autoResize(event) {
+  const textarea = event.target
+  textarea.style.height = 'auto'
+  textarea.style.height = textarea.scrollHeight + 'px'
+}
+
+function onChangeInputFiles(e) {
+  const files = []
+  for (let i = 0; i < e.target.files.length; i++) {
+    files.push(e.target.files[i])
+  }
+  inputFiles.value = files
+}
+
+function onChangeInputImage(e) {
+  const files = []
+  const reader = new FileReader()
+  files.push(e.target.files[0])
+  reader.onloadend = () => {
+    files[0].preview = reader.result
+    files[0].toUpload = true
+    imageFiles.value = files
+  }
+  reader.readAsDataURL(e.target.files[0])
+}
+
+function removeFiles() {
+  inputFiles.value = []
+}
+
+function handleDrop(e) {
+  isDragOver.value = false
+  const files = Array.from(e.dataTransfer.files)
+  droppedFiles.value = [...droppedFiles.value, ...files]
+}
+
+function handleDropzoneFiles(e) {
+  const files = Array.from(e.target.files)
+  droppedFiles.value = [...droppedFiles.value, ...files]
+}
+
+onUnmounted(() => {
+  if (editor.value) {
+    editor.value.destroy()
+  }
+})
 </script>
 
 <style src="./Elements.scss" lang="scss" />

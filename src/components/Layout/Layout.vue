@@ -1,156 +1,116 @@
 <template>
-<div :class="[{root: true, sidebarClose, sidebarStatic}, 'sing-dashboard', 'sidebar-' + sidebarColorName, 'sidebar-' + sidebarType, 'navbar-' + navbarColorName]">
-  <Sidebar />
-  <Helper />
-  <div class="wrap">
-    <Header />
-    <v-touch class="content" @swipe="handleSwipe" :swipe-options="{direction: 'horizontal'}">
-      <breadcrumb-history :exclude="['chat']"></breadcrumb-history>
-      <transition name="router-animation">
-        <router-view />
-      </transition>
-      <footer class="contentFooter">
-        Sing App Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
+  <div :class="['root', 'sing-dashboard', { sidebarClose, sidebarStatic }, 'sidebar-' + sidebarColorName, 'sidebar-' + sidebarType, 'navbar-' + navbarColorName]">
+    <Sidebar />
+    <Helper />
+    <div class="wrap">
+      <Header />
+      <div
+        class="content"
+        @touchstart="handleTouchStart"
+        @touchend="handleTouchEnd"
+      >
+        <BreadcrumbHistory :exclude="['chat']" />
+        <router-view v-slot="{ Component }">
+          <Transition
+            name="router-animation"
+            mode="out-in"
+          >
+            <component :is="Component" />
+          </Transition>
+        </router-view>
+        <footer class="contentFooter">
+          Sing App Vue Admin Dashboard Template - Made by <a
+            href="https://flatlogic.com"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >Flatlogic</a>
         </footer>
-    </v-touch>
+      </div>
+    </div>
   </div>
-  <v-tour name="app-tour" :steps="steps" :options="tourOptions">
-    <template slot-scope="tour">
-      <transition name="fade">
-        <v-step
-            v-if="tour.currentStep === index"
-            v-for="(step, index) of tour.steps"
-            :key="index"
-            :step="step"
-            v-bind="tour"
-        >
-          <div slot="actions" class="d-flex">
-            <b-button v-if="tour.currentStep !== tour.steps.length - 1" @click="tour.stop" variant="outline-secondary" size="xs">Stop</b-button>
-            <div class="ms-auto">
-              <b-button v-if="tour.currentStep !== 0 && tour.currentStep !== tour.steps.length - 1"
-                        @click="tour.currentStep !== 4 ? tour.previousStep() : tourBackOutFromThemeCustomizer(tour)" variant="outline-secondary" size="xs" class="me-2"
-              >Back</b-button>
-              <b-button v-if="tour.currentStep !== tour.steps.length - 1"
-                        @click="tour.currentStep !== 3 ? tour.nextStep() : tourContinueWithinThemeCustomizer(tour)"
-                        variant="success" size="xs"
-              >Next</b-button>
-              <b-button v-else @click="stopTour(tour)" variant="success" size="xs">Finish</b-button>
-            </div>
-
-          </div>
-        </v-step>
-      </transition>
-    </template>
-  </v-tour>
-</div>
 </template>
 
-<script>
-import { createNamespacedHelpers } from 'vuex';
-const { mapState, mapActions } = createNamespacedHelpers('layout');
+<script setup>
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useLayoutStore } from '@/stores/layout'
+import { useTour } from '@/composables/useTour'
+import Sidebar from '@/components/Sidebar/Sidebar.vue'
+import Header from '@/components/Header/Header.vue'
+import Helper from '@/components/Helper/Helper.vue'
+import BreadcrumbHistory from '@/components/BreadcrumbHistory/BreadcrumbHistory.vue'
 
-import Sidebar from '@/components/Sidebar/Sidebar';
-import Header from '@/components/Header/Header';
-import Helper from '@/components/Helper/Helper';
-import BreadcrumbHistory from '@/components/BreadcrumbHistory/BreadcrumbHistory';
+const layoutStore = useLayoutStore()
+const { startTour, shouldShowTour } = useTour(layoutStore)
 
-import TourSteps from './tourSteps';
+const touchStartX = ref(0)
+const touchEndX = ref(0)
 
-export default {
-  name: 'Layout',
-  components: { Sidebar, Header, Helper, BreadcrumbHistory },
-  data() {
-    return {
-      tourStartTimeout: 500
-    }
-  },
-  methods: {
-    ...mapActions(['switchSidebar', 'handleSwipe', 'changeSidebarActive', 'toggleSidebar', 'toggleHelper', 'applyTourStep']),
-    handleWindowResize() {
-      const width = window.innerWidth;
+const sidebarClose = computed(() => layoutStore.sidebarClose)
+const sidebarStatic = computed(() => layoutStore.sidebarStatic)
+const sidebarColorName = computed(() => layoutStore.sidebarColorName)
+const navbarColorName = computed(() => layoutStore.navbarColorName)
+const sidebarType = computed(() => layoutStore.sidebarType)
 
-      if (width <= 768 && this.sidebarStatic) {
-        this.toggleSidebar();
-        this.changeSidebarActive(null);
-      }
-    },
-    tourContinueWithinThemeCustomizer(tour) {
-      if (this.helperOpened) {
-        tour.nextStep();
-      } else {
-        tour.stop();
-        this.toggleHelper(true);
-        setTimeout(() => {
-          const tour = this.$tours['app-tour'];
-          tour.options.startTimeout = 0;
-          tour.start(4);
-        }, 400);
-      }
-    },
-    tourBackOutFromThemeCustomizer(tour) {
-      if (!this.helperOpened) {
-        tour.previousStep();
-      } else {
-        tour.stop();
-        this.toggleHelper(false);
-        setTimeout(() => {
-          const tour = this.$tours['app-tour'];
-          tour.options.startTimeout = 0;
-          tour.start(3);
-        }, 400);
-      }
-    },
-    stopTour(tour) {
-      tour.stop();
-      this.applyTourStep(null);
-    }
-  },
-  computed: {
-    ...mapState(["sidebarClose", "sidebarStatic", "sidebarColorName", 'navbarColorName', "sidebarType", "helperOpened", "tourInstance"]),
-    steps() {
-      return TourSteps(this.applyTourStep)
-    },
-    tourOptions() {
-      return {
-        startTimeout: this.tourStartTimeout,
-        labels: {
-          buttonSkip: 'Skip',
-          buttonPrevious: 'Back',
-          buttonNext: 'Next',
-          buttonStop: 'Finish'
-        }
-      }
-    }
-  },
-  created() {
-    const staticSidebar = JSON.parse(localStorage.getItem('sidebarStatic'));
+function handleWindowResize() {
+  const width = window.innerWidth
 
-    if (staticSidebar) {
-      this.$store.state.layout.sidebarStatic = true;
-    } else if (!this.sidebarClose) {
-      setTimeout(() => {
-        this.switchSidebar(true);
-        this.changeSidebarActive(null);
-      }, 2500);
-    }
-
-    this.handleWindowResize();
-    window.addEventListener('resize', this.handleWindowResize);
-  },
-  mounted() {
-    this.$tours['app-tour'].start();
-    // fixes issue when sidebar is closing on initial entrance but user is on another tab and then returns back
-    // and sees that first tour step has been misplaced
-    window.addEventListener('focus', () => {
-      if (this.tourInstance) {
-        this.tourInstance.scheduleUpdate();
-      }
-    })
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleWindowResize);
+  if (width <= 768 && sidebarStatic.value) {
+    layoutStore.toggleSidebar()
+    layoutStore.changeSidebarActive(null)
   }
-};
+}
+
+function handleTouchStart(e) {
+  touchStartX.value = e.changedTouches[0].screenX
+}
+
+function handleTouchEnd(e) {
+  touchEndX.value = e.changedTouches[0].screenX
+  handleSwipe()
+}
+
+function handleSwipe() {
+  const diff = touchEndX.value - touchStartX.value
+  const threshold = 50
+
+  if ('ontouchstart' in window) {
+    // Swipe right (open sidebar)
+    if (diff > threshold) {
+      layoutStore.switchSidebar(false)
+    }
+    // Swipe left (close sidebar)
+    if (diff < -threshold && !sidebarClose.value) {
+      layoutStore.switchSidebar(true)
+    }
+  }
+}
+
+onMounted(() => {
+  const staticSidebar = JSON.parse(localStorage.getItem('sidebarStatic'))
+
+  if (staticSidebar) {
+    layoutStore.sidebarStatic = true
+  } else if (!sidebarClose.value) {
+    setTimeout(() => {
+      layoutStore.switchSidebar(true)
+      layoutStore.changeSidebarActive(null)
+    }, 2500)
+  }
+
+  handleWindowResize()
+  window.addEventListener('resize', handleWindowResize)
+
+  // Start onboarding tour if not completed
+  if (shouldShowTour()) {
+    setTimeout(() => {
+      startTour()
+    }, 3000)
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleWindowResize)
+})
 </script>
 
 <style src="./Layout.scss" lang="scss" />
