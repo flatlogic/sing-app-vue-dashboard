@@ -1,64 +1,56 @@
 <template>
   <Widget
-    className="mb-xlg pb-2"
-    bodyClass="task-container mt"
-    :title="`
-      <div>
-        <h4>Today&apos;s Tasks
-          <span class='badge rounded-pill bg-primary fw-normal pull-right mt-xs fs-6'>
-            ${tasks.length}
-          </span>
-        </h4>
-        <p class='text-primary mb-0'><small>
-          ${tasks.filter(t => t.completed).length} of ${tasks.length} completed
-        </small></p>
-      </div>`"
-    customHeader
+    class-name="mb-xlg pb-2"
+    body-class="task-container mt"
+    :title="taskTitle"
+    custom-header
   >
     <Task
       v-for="task in tasks"
+      :key="task.id"
       :task="task"
       :completed="task.completed"
       :toggle="toggleTaskState"
-      :key="task.id"
     />
-    <b-button variant="transparent" class="bg-white w-100 text-center text-primary">
+    <button
+      type="button"
+      class="btn btn-transparent bg-white w-100 text-center text-primary"
+    >
       See All <i class="la la-arrow-down" />
-    </b-button>
+    </button>
   </Widget>
 </template>
 
-<script>
-import Vue from 'vue';
-import Widget from '@/components/Widget/Widget';
-import Task from '../Task/Task';
+<script setup>
+import { ref, computed } from 'vue'
+import Widget from '@/components/Widget/Widget.vue'
+import Task from '../Task/Task.vue'
 
-export default {
-  name: 'TaskContainer',
-  props: ['data'],
-  components: { Widget, Task },
-  data() {
-    return {
-      tasks: this.data,
-    };
-  },
-  methods: {
-    toggleTaskState(index) {
-      const task = this.tasks.find(({ id }) => id === index);
-      task.completed = !task.completed;
+const props = defineProps({
+  data: { type: Array, default: () => [] }
+})
 
-      Vue.set(this.tasks, index, task);
-    },
-  },
-  created() {
-    const tasks = this.data;
+const tasks = ref(props.data.map(task => ({ ...task, completed: false })))
 
-    tasks.map((task) => {
-      task.completed = false; // eslint-disable-line
-      return task;
-    });
+const taskTitle = computed(() => {
+  const completedCount = tasks.value.filter(t => t.completed).length
+  return `
+    <div>
+      <h4>Today's Tasks
+        <span class='badge rounded-pill bg-primary fw-normal pull-right mt-xs fs-6'>
+          ${tasks.value.length}
+        </span>
+      </h4>
+      <p class='text-primary mb-0'><small>
+        ${completedCount} of ${tasks.value.length} completed
+      </small></p>
+    </div>`
+})
 
-    this.tasks = tasks;
-  },
-};
+function toggleTaskState(index) {
+  const taskIndex = tasks.value.findIndex(({ id }) => id === index)
+  if (taskIndex !== -1) {
+    tasks.value[taskIndex].completed = !tasks.value[taskIndex].completed
+  }
+}
 </script>

@@ -1,0 +1,76 @@
+@import '../../styles/app';
+
+/*
+ * Vue calendar - Shared component styles
+ */
+
+.sing-calendar .vc-container {
+  --vc-bg: transparent;
+  --vc-border: transparent;
+  --vc-header-arrow-color: #{$text-muted};
+  --vc-header-arrow-hover-bg: transparent;
+  --vc-header-title-color: #{$text-color};
+  border: none !important;
+  font-family: $font-family-base;
+  color: $text-color;
+  border-radius: 0;
+  width: 100%;
+
+  &.vc-bordered {
+    border: none !important;
+    border-radius: 0;
+  }
+
+  .vc-header {
+    padding: $widget-padding-vertical $widget-padding-horizontal 0;
+    margin-top: 0;
+    height: auto;
+
+    .vc-title {
+      color: $text-color;
+      font-weight: $font-weight-normal;
+    }
+
+    .vc-arrow {
+      color: $text-muted;
+      background: transparent;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  .vc-weekday {
+    font-weight: $font-weight-normal;
+    color: $text-muted;
+  }
+
+  .vc-day {
+    .vc-dots {
+      .vc-bg-red-600 {
+        background-color: theme-color("danger");
+      }
+
+      .vc-bg-green-600 {
+        background-color: theme-color("success");
+      }
+
+      .vc-bg-blue-600 {
+        background-color: theme-color("primary");
+      }
+    }
+  }
+
+  .vc-day-popover-row-content {
+    display: block;
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: darken($white, 20%);
+      }
+    }
+  }
+}

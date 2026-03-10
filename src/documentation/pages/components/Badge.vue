@@ -1,85 +1,184 @@
 <template>
-  <b-row>
-    <b-col lg="9" xs="12">
+  <div class="row">
+    <div class="col-lg-9 col-12">
       <h2>Badges</h2>
-      <p class="mb-4">Documentation and examples for badges, our small count and labeling component.</p>
-      <vue-code-highlight>import { BBadge } from 'bootstrap-vue';</vue-code-highlight>
-      <b-tabs nav-class="bg-transparent" class="mb-5">
-        <b-tab title="Example" active>
-          <h1>Example heading <b-badge variant="primary">Primary</b-badge></h1>
-          <h2>Example heading <b-badge variant="info">Info</b-badge></h2>
-          <h3>Example heading <b-badge variant="warning">Warning</b-badge></h3>
-          <h4>Example heading <b-badge variant="success">Success</b-badge></h4>
-          <h5>Example heading <b-badge variant="danger">Danger</b-badge></h5>
-          <h6>Example heading <b-badge variant="secondary">Secondary</b-badge></h6>
-          <p>Badges can be used as part of links or buttons to provide a counter.</p>
-          <b-button variant="primary">Notifications <b-badge variant="danger">4</b-badge></b-button>
-        </b-tab>
-        <b-tab title="Code">
-          <vue-code-highlight>&lt;h1&gt;Example heading
-  &lt;b-badge variant="primary"&gt;Primary&lt;/b-badge&gt;
+      <p class="mb-4">
+        Documentation and examples for badges, our small count and labeling component.
+      </p>
+      <pre><code>// Bootstrap 5 native badges
+&lt;span class="badge bg-primary"&gt;Primary&lt;/span&gt;</code></pre>
+
+      <!-- Example 1: Heading Badges -->
+      <div class="mb-5">
+        <ul
+          class="nav nav-tabs bg-transparent"
+          role="tablist"
+        >
+          <li class="nav-item">
+            <button
+              class="nav-link active"
+              data-bs-toggle="tab"
+              data-bs-target="#badge-example-1"
+              type="button"
+            >
+              Example
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#badge-code-1"
+              type="button"
+            >
+              Code
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div
+            id="badge-example-1"
+            class="tab-pane fade show active"
+          >
+            <h1>Example heading <span class="badge bg-primary">Primary</span></h1>
+            <h2>Example heading <span class="badge bg-info">Info</span></h2>
+            <h3>Example heading <span class="badge bg-warning">Warning</span></h3>
+            <h4>Example heading <span class="badge bg-success">Success</span></h4>
+            <h5>Example heading <span class="badge bg-danger">Danger</span></h5>
+            <h6>Example heading <span class="badge bg-secondary">Secondary</span></h6>
+            <p>Badges can be used as part of links or buttons to provide a counter.</p>
+            <button class="btn btn-primary">
+              Notifications <span class="badge bg-danger">4</span>
+            </button>
+          </div>
+          <div
+            id="badge-code-1"
+            class="tab-pane fade"
+          >
+            <pre><code>&lt;h1&gt;Example heading
+  &lt;span class="badge bg-primary"&gt;Primary&lt;/span&gt;
 &lt;/h1&gt;
 &lt;h2&gt;Example heading
-  &lt;b-badge variant="info"&gt;Info&lt;/b-badge&gt;
+  &lt;span class="badge bg-info"&gt;Info&lt;/span&gt;
 &lt;/h2&gt;
 &lt;h3&gt;Example heading
-  &lt;b-badge variant="warning"&gt;Warning&lt;/b-badge&gt;
+  &lt;span class="badge bg-warning"&gt;Warning&lt;/span&gt;
 &lt;/h3&gt;
 &lt;h4&gt;Example heading
-  &lt;b-badge variant="success"&gt;Success&lt;/b-badge&gt;
+  &lt;span class="badge bg-success"&gt;Success&lt;/span&gt;
 &lt;/h4&gt;
 &lt;h5&gt;Example heading
-  &lt;b-badge variant="danger"&gt;Danger&lt;/b-badge&gt;
+  &lt;span class="badge bg-danger"&gt;Danger&lt;/span&gt;
 &lt;/h5&gt;
 &lt;h6&gt;Example heading
-  &lt;b-badge variant="secondary"&gt;Secondary&lt;/b-badge&gt;
+  &lt;span class="badge bg-secondary"&gt;Secondary&lt;/span&gt;
 &lt;/h6&gt;
 &lt;p&gt;Badges can be used as part of links or buttons to provide a counter.&lt;/p&gt;
-&lt;b-button variant="primary"&gt;
-  Notifications &lt;b-badge variant="danger"&gt;4&lt;/b-badge&gt;
-&lt;/b-button&gt;</vue-code-highlight>
-        </b-tab>
-      </b-tabs>
-      <b-tabs nav-class="bg-transparent">
-        <b-tab title="Example" active>
-          <h4>Pill badges</h4>
-          <p>
-            <b-badge class="me-1" variant="primary" pill>Primary</b-badge>
-            <b-badge class="me-1" variant="info" pill>Info</b-badge>
-            <b-badge class="me-1" variant="warning" pill>Warning</b-badge>
-            <b-badge class="me-1" variant="success" pill>Success</b-badge>
-            <b-badge class="me-1" variant="danger" pill>Danger</b-badge>
-            <b-badge class="me-1" variant="secondary" pill>Secondary</b-badge>
-            <b-badge class="me-1" variant="light" pill>Light</b-badge>
-            <b-badge class="me-1" variant="dark" pill>Dark</b-badge>
-          </p>
-          <h4>Badges with link</h4>
-          <p>
-            <b-badge class="me-1" href="#" variant="primary">Primary</b-badge>
-            <b-badge class="me-1" href="#" variant="info">Info</b-badge>
-            <b-badge class="me-1" href="#" variant="warning">Warning</b-badge>
-            <b-badge class="me-1" href="#" variant="success">Success</b-badge>
-            <b-badge class="me-1" href="#" variant="danger">Danger</b-badge>
-            <b-badge class="me-1" href="#" variant="secondary">Secondary</b-badge>
-            <b-badge class="me-1" href="#" variant="light">Light</b-badge>
-            <b-badge class="me-1" href="#" variant="dark">Dark</b-badge>
-          </p>
-        </b-tab>
-        <b-tab title="Code">
-          <vue-code-highlight>&lt;b-badge class="me-1" variant="primary" pill&gt;Primary&lt;/b-badge&gt;
-&lt;b-badge class="me-1" href="#" variant="primary"&gt;Primary&lt;/b-badge&gt;</vue-code-highlight>
-        </b-tab>
-      </b-tabs>
-    </b-col>
-    <p class="p-4">For more examples please refer to <a href="https://bootstrap-vue.js.org/docs/components/badge/"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer">Bootstrap Vue Badge</a></p>
-  </b-row>
+&lt;button class="btn btn-primary"&gt;
+  Notifications &lt;span class="badge bg-danger"&gt;4&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 2: Pill Badges and Links -->
+      <div>
+        <ul
+          class="nav nav-tabs bg-transparent"
+          role="tablist"
+        >
+          <li class="nav-item">
+            <button
+              class="nav-link active"
+              data-bs-toggle="tab"
+              data-bs-target="#badge-example-2"
+              type="button"
+            >
+              Example
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#badge-code-2"
+              type="button"
+            >
+              Code
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div
+            id="badge-example-2"
+            class="tab-pane fade show active"
+          >
+            <h4>Pill badges</h4>
+            <p>
+              <span class="badge rounded-pill bg-primary me-1">Primary</span>
+              <span class="badge rounded-pill bg-info me-1">Info</span>
+              <span class="badge rounded-pill bg-warning me-1">Warning</span>
+              <span class="badge rounded-pill bg-success me-1">Success</span>
+              <span class="badge rounded-pill bg-danger me-1">Danger</span>
+              <span class="badge rounded-pill bg-secondary me-1">Secondary</span>
+              <span class="badge rounded-pill bg-light text-dark me-1">Light</span>
+              <span class="badge rounded-pill bg-dark me-1">Dark</span>
+            </p>
+            <h4>Badges with link</h4>
+            <p>
+              <a
+                href="#"
+                class="badge bg-primary me-1"
+              >Primary</a>
+              <a
+                href="#"
+                class="badge bg-info me-1"
+              >Info</a>
+              <a
+                href="#"
+                class="badge bg-warning me-1"
+              >Warning</a>
+              <a
+                href="#"
+                class="badge bg-success me-1"
+              >Success</a>
+              <a
+                href="#"
+                class="badge bg-danger me-1"
+              >Danger</a>
+              <a
+                href="#"
+                class="badge bg-secondary me-1"
+              >Secondary</a>
+              <a
+                href="#"
+                class="badge bg-light text-dark me-1"
+              >Light</a>
+              <a
+                href="#"
+                class="badge bg-dark me-1"
+              >Dark</a>
+            </p>
+          </div>
+          <div
+            id="badge-code-2"
+            class="tab-pane fade"
+          >
+            <pre><code>&lt;span class="badge rounded-pill bg-primary"&gt;Primary&lt;/span&gt;
+&lt;a href="#" class="badge bg-primary"&gt;Primary&lt;/a&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="p-4">
+      For more examples please refer to <a
+        href="https://getbootstrap.com/docs/5.3/components/badge/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Bootstrap 5 Badge</a>
+    </p>
+  </div>
 </template>
-<script>
 
-
-  export default {
-    name: 'DocBadges',
-  }
+<script setup>
 </script>

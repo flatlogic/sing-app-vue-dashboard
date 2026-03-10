@@ -57,15 +57,11 @@
 }
 
 /*          SHARES LIST          */
-:global {
-  .shares-widget {
-    :global {
-      .list-group {
-        .list-group-item {
-          display: flex;
-          align-items: center;
-        }
-      }
+.shares-widget {
+  .list-group {
+    .list-group-item {
+      display: flex;
+      align-items: center;
     }
   }
 }

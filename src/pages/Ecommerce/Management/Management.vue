@@ -1,127 +1,189 @@
 <template>
   <div class="product-management">
     <div class="page-top-line">
-      <h1 class="page-title">Product - <span class="fw-semi-bold">Management</span></h1>
-      <b-alert
-          color="warning"
-          class='promo-alert'
-          :class="{'show-alert': showAlert}"
-          show
+      <h1 class="page-title">
+        Product - <span class="fw-semi-bold">Management</span>
+      </h1>
+      <div
+        class="alert alert-warning promo-alert"
+        :class="{ 'show-alert': showAlert }"
+        role="alert"
       >
-        This page is only available in <a class="text-white font-weight-bold" rel="noreferrer noopener"
-                                          href="https://flatlogic.com/templates/sing-app-vue-node-js"
-                                          target="_blank">Sing App Vue with Node.js</a> integration!
-      </b-alert>
+        This page is only available in <a
+          class="text-white fw-bold"
+          rel="noreferrer noopener"
+          href="https://flatlogic.com/templates/sing-app-vue-node-js"
+          target="_blank"
+        >Sing App Vue with Node.js</a> integration!
+      </div>
     </div>
-    <Widget title="List of Products" collapse close :fetchingData="isReceiving">
-      <b-button variant="success" @click="createNewProduct()" class="mb-3">Create Product</b-button>
-      <v-client-table :data="this.products" :columns="columnsDatatable" :options="optionsDatatable">
-        <div slot="img" slot-scope="props">
-          <img :src="props.row.img" :alt="props.row.title || 'image'" class="image" title="image"/>
-        </div>
-        <div slot="title" slot-scope="props">
-          <router-link :to="'/app/ecommerce/product/' + props.row.id">
-            {{props.row.title ? (props.row.title[0].toUpperCase() + props.row.title.slice(1)) : "No Title"}}
-          </router-link>
-        </div>
-        <div slot="rating" slot-scope="props">
-          <Rating :rating="parseFloat(props.row.rating)"></Rating>
-        </div>
-        <template slot="api" slot-scope="props">
-          <b-button-toolbar>
-            <b-button variant="info" size="xs" @click="$router.push('/app/ecommerce/management/' + props.row.id)">
-              <span class="d-none d-md-inline-block">Edit</span>
-              <span class="d-md-none"><i class='la la-edit'></i></span>
-            </b-button>
-            <b-button :id="'popoverDelete_' + props.row.id" variant="danger" size="xs">
-              <Loader v-if="isDeleting && idToDelete === props.row.id" :size="14"/>
-              <span v-else>
-                <span class="d-none d-md-inline-block text-white">Delete</span>
-                <span class="d-md-none"><i class='la la-remove'></i></span>
-              </span>
-            </b-button>
-            <b-popover class="popover-danger"
-                       triggers="focus"
-                       :target="'popoverDelete_' + props.row.id"
-                       :show.sync="popovers[props.row.id]"
-                       placement="top"
-              >
-              <template slot="title">
-                <div class="px-5">Are you sure</div>
-              </template>
-              <div class="px-5 d-flex justify-content-center">
-                <b-button-toolbar>
-                  <b-button variant="success" size="xs" @click="deleteProductRequest({id:props.row.id, $toasted})">
-                    Yes
-                  </b-button>
-                  <b-button variant="danger" size="xs" @click="closePopover(props.row.id)">
-                    No
-                  </b-button>
-                </b-button-toolbar>
-              </div>
-            </b-popover>
-          </b-button-toolbar>
-        </template>
-      </v-client-table>
+    <Widget
+      title="List of Products"
+      collapse
+      close
+      :fetching-data="productsStore.isReceiving"
+    >
+      <button
+        class="btn btn-success mb-3"
+        @click="createNewProduct()"
+      >
+        Create Product
+      </button>
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="width-100">
+                ID
+              </th>
+              <th>Image</th>
+              <th>Title</th>
+              <th class="d-none d-md-table-cell">
+                Subtitle
+              </th>
+              <th class="d-none d-md-table-cell">
+                Price
+              </th>
+              <th class="d-none d-md-table-cell">
+                Rating
+              </th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="product in productsStore.products"
+              :key="product.id"
+            >
+              <td>{{ product.id }}</td>
+              <td>
+                <img
+                  :src="product.img"
+                  :alt="product.title || 'image'"
+                  class="image"
+                  title="image"
+                >
+              </td>
+              <td>
+                <router-link :to="'/app/ecommerce/product/' + product.id">
+                  {{ product.title ? (product.title[0].toUpperCase() + product.title.slice(1)) : "No Title" }}
+                </router-link>
+              </td>
+              <td class="d-none d-md-table-cell">
+                {{ product.subtitle }}
+              </td>
+              <td class="d-none d-md-table-cell">
+                {{ product.price }}
+              </td>
+              <td class="d-none d-md-table-cell">
+                <Rating :rating="parseFloat(product.rating)" />
+              </td>
+              <td>
+                <div class="btn-toolbar">
+                  <button
+                    class="btn btn-info btn-xs me-1"
+                    @click="$router.push('/app/ecommerce/management/' + product.id)"
+                  >
+                    <span class="d-none d-md-inline-block">Edit</span>
+                    <span class="d-md-none"><i class="la la-edit" /></span>
+                  </button>
+                  <div class="dropdown d-inline-block">
+                    <button
+                      :id="'deleteBtn_' + product.id"
+                      class="btn btn-danger btn-xs"
+                      @click="togglePopover(product.id)"
+                    >
+                      <Loader
+                        v-if="productsStore.isDeleting && productsStore.idToDelete === product.id"
+                        :size="14"
+                      />
+                      <span v-else>
+                        <span class="d-none d-md-inline-block text-white">Delete</span>
+                        <span class="d-md-none"><i class="la la-remove" /></span>
+                      </span>
+                    </button>
+                    <div
+                      v-if="popovers[product.id]"
+                      class="popover popover-danger bs-popover-top"
+                      :class="{ show: popovers[product.id] }"
+                      style="position: absolute; transform: translate(-50%, -100%); margin-top: -10px;"
+                    >
+                      <div class="popover-header px-5">
+                        Are you sure
+                      </div>
+                      <div class="popover-body px-5 d-flex justify-content-center">
+                        <div class="btn-toolbar">
+                          <button
+                            class="btn btn-success btn-xs me-1"
+                            @click="handleDelete(product.id)"
+                          >
+                            Yes
+                          </button>
+                          <button
+                            class="btn btn-danger btn-xs"
+                            @click="closePopover(product.id)"
+                          >
+                            No
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </Widget>
   </div>
 </template>
 
-<script>
-  import {mapActions, mapState} from 'vuex';
-  import Widget from '../../../components/Widget/Widget';
-  import Loader from '../../../components/Loader/Loader';
-  import Rating from '../ProductPage/components/Rating/Rating';
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { useToast } from 'vue-toastification'
+import { useProductsStore } from '@/stores/products'
+import Widget from '@/components/Widget/Widget.vue'
+import Loader from '@/components/Loader/Loader.vue'
+import Rating from '@/components/Rating/Rating.vue'
 
-  export default {
-    name: "ProductManagement",
-    data() {
-      return {
-        popovers: {},
-        showAlert: false,
-        columnsDatatable: ['id', 'img', 'title', 'subtitle', 'price', 'rating', 'api'],
-        optionsDatatable: {
-          perPage: 10,
-          pagination: {chunk: 10, dropdown: false},
-          texts: {
-            filter: '',
-            count: '',
-            limit: ''
-          },
-          columnsClasses: {id: 'width-100'},
-          skin: 'table table-striped',
-          sortIcon: {
-            base: 'fa text-muted', up: 'fa-chevron-up', down: 'fa-chevron-down', is: 'fa-sort',
-          },
-          columnsDisplay: {
-            subtitle: "not_mobile",
-            price: "not_mobile",
-            rating: "not_mobile",
-          },
-          sortable: []
-        }
-      }
-    },
-    components: {Widget, Loader, Rating},
-    mounted() {
-      this.getProductsRequest();
-      setTimeout(() => {
-        this.showAlert = true;
-      }, 100);
-    },
-    computed: {
-      ...mapState("products", ["products", "isReceiving", "isDeleting", "idToDelete"])
-    },
-    methods: {
-      ...mapActions("products", ["getProductsRequest", "deleteProductRequest"]),
-      createNewProduct() {
-        this.$router.push("/app/ecommerce/management/create");
-      },
-      closePopover(id) {
-        this.popovers[id] = false;
-      }
-    }
+const router = useRouter()
+const toast = useToast()
+const productsStore = useProductsStore()
+
+const popovers = ref({})
+const showAlert = ref(false)
+
+onMounted(() => {
+  productsStore.getProductsRequest()
+  setTimeout(() => {
+    showAlert.value = true
+  }, 100)
+})
+
+function createNewProduct() {
+  router.push('/app/ecommerce/management/create')
+}
+
+function togglePopover(id) {
+  popovers.value[id] = !popovers.value[id]
+}
+
+function closePopover(id) {
+  popovers.value[id] = false
+}
+
+async function handleDelete(id) {
+  closePopover(id)
+  const result = await productsStore.deleteProductRequest({ id })
+  if (result.success && result.message) {
+    toast.success(result.message)
+  } else if (!result.success && result.error) {
+    toast.error(result.error)
   }
+}
 </script>
 
-<style src="./Management.scss" lang="scss"/>
+<style src="./Management.scss" lang="scss" />

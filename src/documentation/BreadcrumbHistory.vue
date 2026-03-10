@@ -1,25 +1,42 @@
 <template>
   <div>
-    <b-breadcrumb :items="tree"></b-breadcrumb>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li
+          v-for="(item, index) in tree"
+          :key="index"
+          class="breadcrumb-item"
+          :class="{ active: index === tree.length - 1 }"
+        >
+          <a
+            v-if="index !== tree.length - 1"
+            href="#"
+          >{{ item }}</a>
+          <template v-else>
+            {{ item }}
+          </template>
+        </li>
+      </ol>
+    </nav>
   </div>
 </template>
-<script>
-  export default {
-    name: 'BreadcrumbHistory',
-    computed: {
-      tree() {
-        // debugger;
-        return ['YOU ARE HERE']
-          .concat(this.$route.path
-            .split('/')
-            .slice(1)
-            .map(route => route
-              .split('-')
-              .map(word => word[0].toUpperCase() + word.slice(1))
-              .join(' ')
-            )
-          );
-      }
-    }
-  }
+
+<script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+const tree = computed(() => {
+  return ['YOU ARE HERE']
+    .concat(route.path
+      .split('/')
+      .slice(1)
+      .map(routePart => routePart
+        .split('-')
+        .map(word => word[0].toUpperCase() + word.slice(1))
+        .join(' ')
+      )
+    );
+});
 </script>

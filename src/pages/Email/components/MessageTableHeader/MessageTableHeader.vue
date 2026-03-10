@@ -1,33 +1,132 @@
 <template>
   <div class="messageTableHeader">
     <div>
-      <b-dropdown text="Select" variant="gray-default" size="sm">
-        <b-dropdown-item-button @click="chooseAll">All</b-dropdown-item-button>
-        <b-dropdown-item-button @click="chooseNone">None</b-dropdown-item-button>
-        <b-dropdown-divider />
-        <b-dropdown-item-button @click="chooseRead">Read</b-dropdown-item-button>
-        <b-dropdown-item-button @click="chooseUnread">Unread</b-dropdown-item-button>
-      </b-dropdown>
-      <b-dropdown text="Actions" variant="gray-default" size="sm" class="ms-2">
-        <b-dropdown-item-button>Reply</b-dropdown-item-button>
-        <b-dropdown-item-button>Forward</b-dropdown-item-button>
-        <b-dropdown-item-button>Archive</b-dropdown-item-button>
-        <b-dropdown-divider />
-        <b-dropdown-item-button @click="markRead">Mark As Read</b-dropdown-item-button>
-        <b-dropdown-item-button @click="markUnread">Mark As Unread</b-dropdown-item-button>
-        <b-dropdown-divider />
-        <b-dropdown-item-button @click="deleteMsg">Delete</b-dropdown-item-button>
-      </b-dropdown>
+      <div class="dropdown d-inline-block">
+        <button
+          class="btn btn-gray-default btn-sm dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Select
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+              @click="chooseAll"
+            >
+              All
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+              @click="chooseNone"
+            >
+              None
+            </button>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+              @click="chooseRead"
+            >
+              Read
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+              @click="chooseUnread"
+            >
+              Unread
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown d-inline-block ms-2">
+        <button
+          class="btn btn-gray-default btn-sm dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Actions
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              Reply
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              Forward
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+            >
+              Archive
+            </button>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+              @click="markRead"
+            >
+              Mark As Read
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+              @click="markUnread"
+            >
+              Mark As Unread
+            </button>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <button
+              class="dropdown-item"
+              type="button"
+              @click="deleteMsg"
+            >
+              Delete
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <b-form-input placeholder="Search Messages" size="sm" @input="search" />
+    <input
+      type="text"
+      class="form-control form-control-sm"
+      placeholder="Search Messages"
+      @input="search"
+    >
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MessageTableHeader',
-  props: ['search', 'chooseAll', 'chooseNone', 'chooseRead', 'chooseUnread', 'markRead', 'markUnread', 'deleteMsg'],
-};
+<script setup>
+defineProps(['search', 'chooseAll', 'chooseNone', 'chooseRead', 'chooseUnread', 'markRead', 'markUnread', 'deleteMsg']);
 </script>
 
 <style src="./MessageTableHeader.scss" lang="scss" />

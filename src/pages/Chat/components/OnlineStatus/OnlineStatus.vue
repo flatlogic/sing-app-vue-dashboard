@@ -1,28 +1,34 @@
 <template>
   <p class="text-muted mb-0">
-    <span v-if="user.isOnline" class="text-info">
+    <span
+      v-if="user.isOnline"
+      class="text-info"
+    >
       Online
     </span>
-    <span v-else>{{'Last seen ' + wasOnline}}</span>
+    <span v-else>{{ 'Last seen ' + wasOnline }}</span>
   </p>
 </template>
 
-<script>
-  import moment from 'moment';
+<script setup>
+import { computed } from 'vue'
+import { formatDistanceToNow, isToday, isYesterday, format } from 'date-fns'
 
-  export default {
-    name: 'OnlineStatus',
-    props: {
-      user: Object
-    },
-    computed: {
-      wasOnline() {
-        let calendarDate = moment(this.user.prevOnline).calendar();
-        let firstLetter = calendarDate[0].toLowerCase();
-        let substring = calendarDate.substr(1);
+const props = defineProps({
+  user: Object
+})
 
-        return firstLetter + substring;
-      }
-    }
+const wasOnline = computed(() => {
+  if (!props.user?.prevOnline) return ''
+
+  const date = new Date(props.user.prevOnline)
+
+  if (isToday(date)) {
+    return 'today at ' + format(date, 'h:mm a')
+  } else if (isYesterday(date)) {
+    return 'yesterday at ' + format(date, 'h:mm a')
+  } else {
+    return formatDistanceToNow(date, { addSuffix: true })
   }
+})
 </script>

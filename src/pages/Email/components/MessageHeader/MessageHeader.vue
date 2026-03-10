@@ -1,54 +1,93 @@
 <template>
   <div class="messageHeader">
-    <h3>{{title}}</h3>
+    <h3>{{ title }}</h3>
     <div class="messageHeaderLine mt-lg mb-lg">
       <div class="messageFrom">
-        <img src="../../../../assets/people/a4.jpg" alt="user" class="rounded-circle me-sm-1" />
+        <img
+          src="../../../../assets/people/a4.jpg"
+          alt="user"
+          class="rounded-circle me-sm-1"
+        >
         <div class="messageFromInfo">
           <span>
-            <strong>{{name}}</strong>
+            <strong>{{ name }}</strong>
             <span class="text-muted fw-thin ms-sm-1">
-              &lt;{{email}}&gt;
+              &lt;{{ email }}&gt;
             </span>
           </span>
-          <span class="text-muted">to {{to}}</span>
+          <span class="text-muted">to {{ to }}</span>
         </div>
       </div>
       <div class="messageHeaderDate">
-        {{date}}
-        <b-button-group class="ms-sm-1">
-          <b-button variant="default" @click="changeCompose">
+        {{ date }}
+        <div class="btn-group ms-sm-1">
+          <button
+            type="button"
+            class="btn btn-default"
+            @click="changeCompose"
+          >
             <i class="fa fa-reply" /> Reply
-          </b-button>
-          <b-dropdown variant="default" size="sm" right>
-            <b-dropdown-item-button @click="changeCompose">
-              <i class="fa fa-reply" /> Reply
-            </b-dropdown-item-button>
-            <b-dropdown-item-button>
-              <i class="fa fa-arrow-right" /> Forward
-            </b-dropdown-item-button>
-            <b-dropdown-item-button>
-              <i class="fa fa-print" /> Print
-            </b-dropdown-item-button>
-            <b-dropdown-divider />
-            <b-dropdown-item-button>
-              <i class="fa fa-ban" /> Spam
-            </b-dropdown-item-button>
-            <b-dropdown-item-button>
-              <i class="fa fa-trash" /> Delete
-            </b-dropdown-item-button>
-          </b-dropdown>
-        </b-button-group>
+          </button>
+          <button
+            type="button"
+            class="btn btn-default btn-sm dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button
+                class="dropdown-item"
+                type="button"
+                @click="changeCompose"
+              >
+                <i class="fa fa-reply" /> Reply
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                type="button"
+              >
+                <i class="fa fa-arrow-right" /> Forward
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                type="button"
+              >
+                <i class="fa fa-print" /> Print
+              </button>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <button
+                class="dropdown-item"
+                type="button"
+              >
+                <i class="fa fa-ban" /> Spam
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                type="button"
+              >
+                <i class="fa fa-trash" /> Delete
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MessageHeader',
-  props: ['title', 'name', 'photo', 'email', 'to', 'date', 'changeCompose'],
-};
+<script setup>
+defineProps(['title', 'name', 'photo', 'email', 'to', 'date', 'changeCompose']);
 </script>
 
 <style src="./MessageHeader.scss" lang="scss" scoped />

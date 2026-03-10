@@ -1,15 +1,16 @@
-const hostApi = process.env.NODE_ENV === "development" ? "http://localhost" : "https://sing-generator-node.herokuapp.com";
-const portApi = process.env.NODE_ENV === "development" ? 8080 : "";
+const isDev = import.meta.env.DEV;
+const hostApi = isDev ? "http://localhost" : "https://sing-generator-node.flatlogic.com";
+const portApi = isDev ? 8080 : "";
 const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}/api`;
-const redirectUrl = process.env.NODE_ENV === "development" ? "http://localhost:3000/sing-app-vue" : "https://demo.flatlogic.com/sing-app-vue";
+const redirectUrl = isDev ? "http://localhost:3000/sing-app-vue" : "https://demo.flatlogic.com/sing-app-vue";
 
 export default {
   hostApi,
   portApi,
   baseURLApi,
   redirectUrl,
-  remote: "https://sing-generator-node.herokuapp.com",
-  isBackend: process.env.VUE_APP_BACKEND,
+  remote: "https://sing-generator-node.flatlogic.com",
+  isBackend: import.meta.env.VITE_BACKEND,
   auth: {
       email: 'admin@flatlogic.com',
       password: 'password'

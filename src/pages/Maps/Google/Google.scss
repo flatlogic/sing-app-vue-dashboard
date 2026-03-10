@@ -1,13 +1,36 @@
+@import '../../../styles/app';
+
+// Full-bleed map page - extends to fill content area
+.mapPage {
+  // Use negative margins to extend into content padding
+  margin: (-$content-padding) (-$content-padding) (-$content-padding - 20px);
+  // Calculate height: viewport - navbar height
+  height: calc(100vh - #{$navbar-height});
+  position: relative;
+
+  @media (max-width: breakpoint-max(sm)) {
+    margin: (-20px) (-$content-padding-sm) (-$content-padding - 30px);
+  }
+}
+
 .mapContainer {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  height: 100%;
 }
 
 .mapTitle {
-  position: relative;
+  position: absolute;
+  top: $content-padding;
+  left: $content-padding;
   z-index: 2;
+  color: $white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: breakpoint-max(sm)) {
+    top: 20px;
+    left: $content-padding-sm;
+  }
 }

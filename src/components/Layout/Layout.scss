@@ -56,3 +56,86 @@
   bottom: 15px;
   color: $text-muted;
 }
+
+// Tour styles - using sing-tour-popover class for specificity
+
+.sing-tour-popover {
+  &.driver-popover {
+    background: $white;
+    z-index: 1000002;
+    max-width: 240px;
+    color: $text-color;
+    border-radius: $border-radius;
+    filter: drop-shadow(0 0 2px rgba(var(--widget-shadow-color), .2));
+    padding: 15px;
+  }
+
+  .driver-popover-title {
+    display: none;
+  }
+
+  .driver-popover-description {
+    font-size: 15px;
+    color: $text-color;
+    text-align: center;
+    padding: 10px 0 15px;
+  }
+
+  .driver-popover-footer {
+    justify-content: space-between;
+  }
+
+  .driver-popover-navigation-btns {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .driver-popover-prev-btn,
+  .driver-popover-next-btn {
+    text-shadow: none;
+  }
+
+  .driver-popover-prev-btn {
+    background-color: transparent;
+    color: $gray-600;
+    border: 1px solid $gray-400;
+    border-radius: $border-radius;
+    padding: 5px 12px;
+    font-size: 12px;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+
+  .driver-popover-next-btn {
+    background-color: $success;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    padding: 5px 12px;
+    font-size: 12px;
+
+    &:hover {
+      background-color: darken($success, 10%);
+    }
+  }
+
+  .driver-popover-close-btn {
+    color: $gray-600;
+    text-shadow: none;
+
+    &:hover {
+      color: $gray-800;
+    }
+  }
+
+  .driver-popover-arrow-side-bottom,
+  .driver-popover-arrow-side-top,
+  .driver-popover-arrow-side-left,
+  .driver-popover-arrow-side-right {
+    border-color: $white;
+  }
+}

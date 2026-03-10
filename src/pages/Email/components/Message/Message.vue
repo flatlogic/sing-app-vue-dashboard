@@ -6,21 +6,20 @@
       :email="message.fromEmail"
       :to="message.to"
       :date="message.date"
-      :changeCompose="() => changeCompose(true, { from: message.from, theme: message.theme })"
+      :change-compose="() => changeCompose(true, { from: message.from, theme: message.theme })"
     />
-    <div v-html="message.content"></div>
-    <MessageAttachments v-if="message.attachments" :attachments="message.attachments" />
+    <div v-html="message.content" />
+    <MessageAttachments
+      v-if="message.attachments"
+      :attachments="message.attachments"
+    />
   </Widget>
 </template>
 
-<script>
-import Widget from '@/components/Widget/Widget';
-import MessageHeader from '../MessageHeader/MessageHeader';
-import MessageAttachments from '../MessageAttachments/MessageAttachments';
+<script setup>
+import Widget from '@/components/Widget/Widget.vue'
+import MessageHeader from '../MessageHeader/MessageHeader.vue'
+import MessageAttachments from '../MessageAttachments/MessageAttachments.vue'
 
-export default {
-  name: 'Message',
-  components: { Widget, MessageHeader, MessageAttachments },
-  props: ['message', 'changeCompose'],
-};
+defineProps(['message', 'changeCompose'])
 </script>

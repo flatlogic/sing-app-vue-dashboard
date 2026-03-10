@@ -1,99 +1,105 @@
 <template>
   <div>
-    <h1 class="page-title">Visual - <span class="fw-semi-bold">Highcharts</span></h1>
+    <h1 class="page-title">
+      Visual - <span class="fw-semi-bold">Highcharts</span>
+    </h1>
     <p>For more information please read full <a href="https://github.com/highcharts/highcharts-vue">documentation</a></p>
-    <b-row>
-      <b-col xs='12' lg='12'>
+    <div class="row">
+      <div class="col-12 col-lg-12">
         <Widget
-            title="<h5>Highcharts <span class='fw-semi-bold'>Line Chart</span></h5>"
-            close collapse customHeader
+          title="<h5>Highcharts <span class='fw-semi-bold'>Line Chart</span></h5>"
+          close
+          collapse
+          custom-header
         >
-          <highcharts :options="cd.line"></highcharts>
+          <highcharts :options="cd.line" />
         </Widget>
-      </b-col>
-      <b-col xs='12' lg='6'>
+      </div>
+      <div class="col-12 col-lg-6">
         <Widget
-            title="<h5>Highcharts <span class='fw-semi-bold'>Pie Chart</span></h5>"
-            close collapse customHeader
+          title="<h5>Highcharts <span class='fw-semi-bold'>Pie Chart</span></h5>"
+          close
+          collapse
+          custom-header
         >
-          <highcharts :options="cd.pie"></highcharts>
+          <highcharts :options="cd.pie" />
         </Widget>
-      </b-col>
-      <b-col xs='12' lg='6'>
+      </div>
+      <div class="col-12 col-lg-6">
         <Widget
-            title="<h5>Highcharts <span class='fw-semi-bold'>Column 3D Chart</span></h5>"
-            close collapse customHeader
+          title="<h5>Highcharts <span class='fw-semi-bold'>Column 3D Chart</span></h5>"
+          close
+          collapse
+          custom-header
         >
-          <highcharts :options="cd.column3D"></highcharts>
+          <highcharts :options="cd.column3D" />
         </Widget>
-      </b-col>
-      <b-col xs='12' lg='5'>
-        <b-row>
-          <b-col xs="12" lg="12">
+      </div>
+      <div class="col-12 col-lg-5">
+        <div class="row">
+          <div class="col-12 col-lg-12">
             <Widget
-                title="<h5>Highcharts <span class='fw-semi-bold'>Vector Chart</span></h5>"
-                close collapse customHeader
+              title="<h5>Highcharts <span class='fw-semi-bold'>Vector Chart</span></h5>"
+              close
+              collapse
+              custom-header
             >
-              <highcharts :options="cd.vector"></highcharts>
+              <highcharts :options="cd.vector" />
             </Widget>
-          </b-col>
-          <b-col xs="12" lg="12">
+          </div>
+          <div class="col-12 col-lg-12">
             <Widget
-                title="<h5>Highcharts <span class='fw-semi-bold'>Sunburst Chart</span></h5>"
-                close collapse customHeader
+              title="<h5>Highcharts <span class='fw-semi-bold'>Word Cloud</span></h5>"
+              close
+              collapse
+              custom-header
             >
-              <highcharts :options="cd.wordCloud"></highcharts>
+              <highcharts :options="cd.wordCloud" />
             </Widget>
-          </b-col>
-        </b-row>
-      </b-col>
-      <b-col xs='12' lg='7'>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
         <Widget
-            title="<h5>Highcharts <span class='fw-semi-bold'>Sunburst Chart</span></h5>"
-            close collapse customHeader
+          title="<h5>Highcharts <span class='fw-semi-bold'>Sunburst Chart</span></h5>"
+          close
+          collapse
+          custom-header
         >
-          <highcharts :options="cd.sunburst"></highcharts>
+          <highcharts :options="cd.sunburst" />
         </Widget>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-  import Widget from '@/components/Widget/Widget';
-  import Highcharts from 'highcharts';
-  import variablePie from 'highcharts/modules/variable-pie';
-  import exporting from 'highcharts/modules/exporting';
-  import exportData from 'highcharts/modules/export-data';
-  import accessibility from 'highcharts/modules/accessibility';
-  import highcharts3d from 'highcharts/highcharts-3d';
-  import sunburst from 'highcharts/modules/sunburst';
-  import vector from 'highcharts/modules/vector';
-  import wordcloud from 'highcharts/modules/wordcloud';
+<script setup>
+import Widget from '@/components/Widget/Widget.vue'
+import Highcharts from 'highcharts'
+import variablePie from 'highcharts/modules/variable-pie'
+import exporting from 'highcharts/modules/exporting'
+import exportData from 'highcharts/modules/export-data'
+import accessibility from 'highcharts/modules/accessibility'
+import highcharts3d from 'highcharts/highcharts-3d'
+import sunburst from 'highcharts/modules/sunburst'
+import vector from 'highcharts/modules/vector'
+import wordcloud from 'highcharts/modules/wordcloud'
+import { Chart as HighchartsChart } from 'highcharts-vue'
 
-  variablePie(Highcharts);
-  exporting(Highcharts);
-  exportData(Highcharts);
-  accessibility(Highcharts);
-  highcharts3d(Highcharts);
-  sunburst(Highcharts);
-  vector(Highcharts);
-  wordcloud(Highcharts);
+// Register component for template use
+const highcharts = HighchartsChart
 
-  import { Chart } from 'highcharts-vue';
+import chartsData from './mock'
 
-  import chartsData from './mock';
+// Initialize Highcharts modules
+variablePie(Highcharts)
+exporting(Highcharts)
+exportData(Highcharts)
+accessibility(Highcharts)
+highcharts3d(Highcharts)
+sunburst(Highcharts)
+vector(Highcharts)
+wordcloud(Highcharts)
 
-  export default {
-    data() {
-      return {
-        cd: chartsData
-      }
-    },
-    name: 'Chartkick',
-    components: {
-      Widget,
-      highcharts: Chart
-    },
-  };
+const cd = chartsData
 </script>

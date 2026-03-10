@@ -1,20 +1,26 @@
 <template>
-  <b-row>
-    <b-col lg="9" xs="12">
+  <div class="row">
+    <div class="col-lg-9 col-12">
       <Widget>
         <h5>Requirements:</h5>
         <ol>
           <li>1. Mac OS X, Windows, or Linux</li>
-          <li>2. Yarn package + Node.js v6.5 or newer</li>
-          <li>3. Running our <a href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer"
-                                target="_blank">Node.js backend</a>
-            <span class="small text-muted"> (Required only in full stack version)</span></li>
+          <li>2. Yarn package + Node.js v20 or newer</li>
+          <li>
+            3. Running our <a
+              href="https://github.com/flatlogic/nodejs-backend"
+              rel="noopener noreferrer"
+              target="_blank"
+            >Node.js backend</a>
+            <span class="small text-muted"> (Required only in full stack version)</span>
+          </li>
         </ol>
         <h5>Quick Start:</h5>
         <ol>
           <li>1. Run <code>yarn install</code></li>
           <li>2. Run <code>yarn start</code></li>
-          <li>2.1 For running the app with backend support please run <code>yarn start:backend</code>
+          <li>
+            2.1 For running the app with backend support please run <code>yarn start:backend</code>
             <span class="small text-muted"> (Required only in full stack version)</span>
           </li>
         </ol>
@@ -25,11 +31,10 @@
         </ul>
       </Widget>
       <p>For more instruction please refer to Sing App Vue readme.md.</p>
-    </b-col>
-  </b-row>
+    </div>
+  </div>
 </template>
-<script>
-  export default {
-    name: 'DocQuickStart'
-  }
+
+<script setup>
+import Widget from '@/components/Widget/Widget.vue'
 </script>

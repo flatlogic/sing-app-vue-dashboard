@@ -8,7 +8,7 @@
       background-color: $white;
       margin: 0 -15px;
 
-      & :global .hideon-sm {
+      .hideon-sm {
         display: none;
       }
     }

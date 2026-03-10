@@ -8,8 +8,8 @@ const {axisColor} = config.app.chartColors;
 
 let wordCloudText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum erat ac justo sollicitudin, quis lacinia ligula fringilla. Pellentesque hendrerit, nisi vitae posuere condimentum, lectus urna accumsan libero, rutrum commodo mi lacus pretium erat. Phasellus pretium ultrices mi sed semper.';
 let wordCloudLines = wordCloudText.split(/[,. ]+/g),
-  wordCloudData = Highcharts.reduce(wordCloudLines, function (arr, word) {
-    var obj = Highcharts.find(arr, function (obj) {
+  wordCloudData = wordCloudLines.reduce(function (arr, word) {
+    var obj = arr.find(function (obj) {
       return obj.name === word;
     });
     if (obj) {
@@ -108,7 +108,7 @@ export default {
           },
           stops: [
             [0, info],
-            [1, Highcharts.Color(info).setOpacity(0).get('rgba')]
+            [1, new Highcharts.Color(info).setOpacity(0).get('rgba')]
           ]
         },
         marker: {
@@ -285,7 +285,7 @@ export default {
       }
     },
     subtitle: {
-      text: 'Source <href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>',
+      text: 'Source <a href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>',
       style: {
         color: textColor
       }

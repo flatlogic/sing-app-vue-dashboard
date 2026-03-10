@@ -1,19 +1,19 @@
 <template>
   <div class="chat-search">
-    <b-input placeholder="Search" v-model="search"></b-input>
-    <i class="la la-search"></i>
+    <input
+      v-model="search"
+      type="text"
+      class="form-control"
+      placeholder="Search"
+    >
+    <i class="la la-search" />
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'ChatSearch',
-    data() {
-      return {
-        search: ''
-      }
-    }
-  }
+<script setup>
+import { ref } from 'vue';
+
+const search = ref('');
 </script>
 
 <style src="./ChatSearch.scss" lang="scss" scoped></style>

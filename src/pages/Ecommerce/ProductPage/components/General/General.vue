@@ -4,21 +4,17 @@
       <Rating :rating="rating" />
     </div>
     <div class="dataWrapper">
-      <span class="title">{{title}}</span>
-      <span class="subtitle">{{subtitle}}</span>
+      <span class="title">{{ title }}</span>
+      <span class="subtitle">{{ subtitle }}</span>
     </div>
-    <span class="price">${{price}}</span>
+    <span class="price">${{ price }}</span>
   </div>
 </template>
 
-<script>
-import Rating from '../Rating/Rating';
+<script setup>
+import Rating from '../Rating/Rating.vue'
 
-export default {
-  name: 'General',
-  props: ['rating', 'title', 'subtitle', 'price'],
-  components: { Rating },
-};
+defineProps(['rating', 'title', 'subtitle', 'price'])
 </script>
 
 <style src="./General.scss" lang="scss" scoped />

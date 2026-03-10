@@ -1,5 +1,17 @@
 # Changelog
 
+## [6.0.0] - 09/03/2026
+
+### Major Upgrade: Vue 2 to Vue 3 Migration
+
+- **Vue 3.5** with Composition API and `<script setup>` syntax
+- **Vite 6** replaces Webpack (faster dev server and builds)
+- **Pinia** replaces Vuex for state management
+- **Vue Router 4** with lazy-loaded routes
+- **Bootstrap 5** replaces Bootstrap 4
+
+---
+
 ## [v5.5.7] - 22/11/2024
 
 - Fixed dev mode errors
@@ -26,7 +38,7 @@
 
 ### Updated
 ### Update dependencies
-  
+
     @amcharts/amcharts4: 1.6.0 -> 4.10.17
     @ckeditor/ckeditor5-vue: 1.0.2 -> 1.0.3
     apexcharts: 3.24.0 -> 3.26.0

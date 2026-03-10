@@ -1,6 +1,6 @@
 <template>
-  <b-list-group class="listGroup thin-scroll">
-    <b-list-group-item class="listGroupItem bg-attention">
+  <ul class="list-group listGroup thin-scroll">
+    <li class="list-group-item listGroupItem bg-attention">
       <span class="notificationIcon thumb-sm">
         <i class="fa fa-check text-success fa-lg" />
       </span>
@@ -11,10 +11,14 @@
           just now
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem bg-attention">
+    </li>
+    <li class="list-group-item listGroupItem bg-attention">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a4.jpg" alt="man" />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a4.jpg"
+          alt="man"
+        >
       </span>
       <p class="m-0 overflow-hidden">
         <a href="#">Jeniffer Willington</a>has just endorsed you with 50 points!
@@ -22,10 +26,14 @@
           30 sec ago
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem">
+    </li>
+    <li class="list-group-item listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a3.jpg" alt="woman" />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a3.jpg"
+          alt="woman"
+        >
       </span>
       <p class="m-0 overflow-hidden">
         1 new user just signed up! Check out
@@ -34,8 +42,8 @@
           2 mins ago
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem">
+    </li>
+    <li class="list-group-item listGroupItem">
       <span class="notificationIcon thumb-sm">
         <i class="fa fa-angle-double-up fa-2x" />
       </span>
@@ -45,8 +53,8 @@
           5h ago
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem">
+    </li>
+    <li class="list-group-item listGroupItem">
       <span class="notificationIcon thumb-sm">
         <i class="fa fa-bolt fa-lg" />
       </span>
@@ -56,22 +64,30 @@
           7h ago
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem">
+    </li>
+    <li class="list-group-item listGroupItem">
       <span class="notificationIcon thumb-sm">
-        <img class="rounded-circle" src="../../../assets/people/a5.jpg" alt="man" />
+        <img
+          class="rounded-circle"
+          src="../../../assets/people/a5.jpg"
+          alt="man"
+        >
       </span>
       <p class="m-0 overflow-hidden">
         User <a href="#">Jeff</a> registered
         &nbsp;&nbsp;
-        <b-button size="xs" variant="success" class="me-1">Allow</b-button>
-        <b-button size="xs" variant="danger">Deny</b-button>
+        <button class="btn btn-xs btn-success me-1">
+          Allow
+        </button>
+        <button class="btn btn-xs btn-danger">
+          Deny
+        </button>
         <time class="help-block m-0">
           12:18 AM
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem">
+    </li>
+    <li class="list-group-item listGroupItem">
       <span class="notificationIcon thumb-sm">
         <i class="fa fa-shield fa-lg" />
       </span>
@@ -82,8 +98,8 @@
           12:18 AM
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem">
+    </li>
+    <li class="list-group-item listGroupItem">
       <span class="notificationIcon thumb-sm">
         <span class="rounded bg-primary rounded-lg">
           <i class="fa fa-facebook text-white" />
@@ -95,8 +111,8 @@
           15 Apr 2014
         </time>
       </p>
-    </b-list-group-item>
-    <b-list-group-item class="listGroupItem">
+    </li>
+    <li class="list-group-item listGroupItem">
       <span class="notificationIcon thumb-sm">
         <span class="circle circle-lg bg-gray-dark">
           <i class="fa fa-circle-o text-white" />
@@ -108,14 +124,12 @@
           15 Apr 2014
         </time>
       </p>
-    </b-list-group-item>
-  </b-list-group>
+    </li>
+  </ul>
 </template>
 
-<script>
-export default {
-  name: 'NewNotificationsList',
-};
+<script setup>
+// NewNotificationsList component
 </script>
 
 <style src="./ListGroup.scss" lang="scss" />

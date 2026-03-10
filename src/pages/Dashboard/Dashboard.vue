@@ -1,123 +1,214 @@
 <template>
   <div class="dashboard-page">
-    <h1 class="page-title">Analytics</h1>
+    <h1 class="page-title">
+      Analytics
+    </h1>
     <div class="sidesWrapper">
       <div class="analyticsSide">
-        <b-row>
-          <b-col lg="3" sm="6" xs="12">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-12">
             <div class="pb-xlg h-100">
               <Widget
-                  class="h-100 mb-0"
-                  body-class="mt-lg"
-                  title="Visits Today"
-                  close
-                  :fetchingData="isReceiving"
+                class="h-100 mb-0"
+                body-class="mt-lg"
+                title="Visits Today"
+                close
+                :fetching-data="isReceiving"
               >
                 <div class="d-flex justify-content-between align-items-center mb h3">
-                  <h2>{{visits.count}}</h2>
+                  <h2>{{ visits.count }}</h2>
                   <i class="la la-arrow-right text-success rotate-315" />
                 </div>
                 <div class="d-flex flex-wrap justify-content-between">
                   <div class="mt-3">
-                    <h6>+{{visits.logins}}</h6><p class="text-muted mb-0 me-1"><small>Logins</small></p>
+                    <h6>+{{ visits.logins }}</h6><p class="text-muted mb-0 me-1">
+                      <small>Logins</small>
+                    </p>
                   </div>
                   <div class="mt-3">
-                    <h6>{{visits.sign_out_pct}}%</h6><p class="text-muted mb-0"><small>Sign Out</small></p>
+                    <h6>{{ visits.sign_out_pct }}%</h6><p class="text-muted mb-0">
+                      <small>Sign Out</small>
+                    </p>
                   </div>
                   <div class="mt-3">
-                    <h6>{{visits.rate_pct}}%</h6><p class="text-muted mb-0 me-1"><small>Rate</small></p>
+                    <h6>{{ visits.rate_pct }}%</h6><p class="text-muted mb-0 me-1">
+                      <small>Rate</small>
+                    </p>
                   </div>
                 </div>
               </Widget>
             </div>
-          </b-col>
-          <b-col lg="3" sm="6" xs="12">
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
             <div class="pb-xlg h-100">
               <Widget
-                  class="h-100 mb-0"
-                  title="Revenue Breakdown"
-                  close
-                  :fetchingData="isReceiving"
+                class="h-100 mb-0"
+                title="Revenue Breakdown"
+                close
+                :fetching-data="isReceiving"
               >
-                <highcharts :options="donut"></highcharts>
+                <apexchart
+                  v-if="revenue.length > 0"
+                  type="donut"
+                  height="120"
+                  :options="donutOptions"
+                  :series="donutSeries"
+                />
               </Widget>
             </div>
-          </b-col>
-          <b-col lg="3" sm="6" xs="12">
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="App Perfomance" close :fetchingData="isReceiving">
+              <Widget
+                class="h-100 mb-0"
+                title="App Perfomance"
+                close
+                :fetching-data="isReceiving"
+              >
                 <p class="text-muted d-flex flex-wrap">
                   <small class="me-lg-1 d-flex align-items-center">
-                    <span class="circle bg-danger text-danger me-sm-1" style="font-size: 4px;">
+                    <span
+                      class="circle bg-danger text-danger me-sm-1"
+                      style="font-size: 4px;"
+                    >
                       .
                     </span>
                     This Period
                   </small>
                   <small class="me-lg-1 d-flex align-items-center">
-                    <span class="circle bg-primary text-primary me-sm-1" style="font-size: 4px;">
+                    <span
+                      class="circle bg-primary text-primary me-sm-1"
+                      style="font-size: 4px;"
+                    >
                       .
                     </span>
                     Last Period
                   </small>
                 </p>
                 <h6>SDK</h6>
-                <b-progress class="mb-xs" style="height: 5px"
-                  variant="danger" :value="performance.sdk.this_period_pct" :max="100" />
-                <b-progress class="mb" style="height: 5px"
-                  variant="primary" :value="performance.sdk.last_period_pct" :max="100" />
+                <div
+                  class="progress mb-1"
+                  style="height: 5px"
+                >
+                  <div
+                    class="progress-bar bg-danger"
+                    role="progressbar"
+                    :style="{ width: performance.sdk.this_period_pct + '%' }"
+                    :aria-valuenow="performance.sdk.this_period_pct"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  />
+                </div>
+                <div
+                  class="progress mb-3"
+                  style="height: 5px"
+                >
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    :style="{ width: performance.sdk.last_period_pct + '%' }"
+                    :aria-valuenow="performance.sdk.last_period_pct"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  />
+                </div>
                 <h6>Integration</h6>
-                <b-progress class="mb-xs" style="height: 5px"
-                  variant="danger" :value="performance.integration.this_period_pct" :max="100" />
-                <b-progress style="height: 5px"
-                  variant="primary" :value="performance.integration.last_period_pct" :max="100" />
+                <div
+                  class="progress mb-1"
+                  style="height: 5px"
+                >
+                  <div
+                    class="progress-bar bg-danger"
+                    role="progressbar"
+                    :style="{ width: performance.integration.this_period_pct + '%' }"
+                    :aria-valuenow="performance.integration.this_period_pct"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  />
+                </div>
+                <div
+                  class="progress"
+                  style="height: 5px"
+                >
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    :style="{ width: performance.integration.last_period_pct + '%' }"
+                    :aria-valuenow="performance.integration.last_period_pct"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  />
+                </div>
               </Widget>
             </div>
-          </b-col>
-          <b-col lg="3" sm="6" xs="12">
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
             <div class="pb-xlg h-100">
-              <Widget class="h-100 mb-0" title="Server Overview" close :fetchingData="isReceiving">
+              <Widget
+                class="h-100 mb-0"
+                title="Server Overview"
+                close
+                :fetching-data="isReceiving"
+              >
                 <div class="d-flex align-items-center mb-sm">
-                  <p class="width-150 mb-0"><small>{{server[1].pct}}% / {{server[1].temp}}°С / {{server[1].frequency}} Ghz</small></p>
+                  <p class="width-150 mb-0">
+                    <small>60% / 37°С / 3.3 Ghz</small>
+                  </p>
                   <div style="width: calc(100% - 150px)">
-                    <trend
-                      :data="getRandomData()"
-                      :gradient="[appConfig.colors.danger]"
-                      :height="40"
-                      stroke-width="4"
-                      smooth />
+                    <apexchart
+                      v-if="isMounted"
+                      type="line"
+                      height="40"
+                      :options="getSparklineOptions(appConfig.colors.danger)"
+                      :series="[{data: getRandomData()}]"
+                    />
                   </div>
                 </div>
                 <div class="d-flex align-items-center mb-sm">
-                  <p class="width-150 mb-0"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
+                  <p class="width-150 mb-0">
+                    <small>54% / 31°С / 3.3 Ghz</small>
+                  </p>
                   <div style="width: calc(100% - 150px)">
-                    <trend
-                      :data="getRandomData()"
-                      :gradient="[appConfig.colors.info]"
-                      :height="40"
-                      stroke-width="4"
-                      smooth />
+                    <apexchart
+                      v-if="isMounted"
+                      type="line"
+                      height="40"
+                      :options="getSparklineOptions(appConfig.colors.info)"
+                      :series="[{data: getRandomData()}]"
+                    />
                   </div>
                 </div>
                 <div class="d-flex align-items-center">
-                  <p class="width-150 mb-0"><small>{{server[2].pct}}% / {{server[2].temp}}°С / {{server[2].frequency}} Ghz</small></p>
+                  <p class="width-150 mb-0">
+                    <small>57% / 21°С / 3.3 Ghz</small>
+                  </p>
                   <div style="width: calc(100% - 150px)">
-                    <trend
-                      :data="getRandomData()"
-                      :gradient="[appConfig.colors.primary]"
-                      :height="40"
-                      stroke-width="4"
-                      smooth />
+                    <apexchart
+                      v-if="isMounted"
+                      type="line"
+                      height="40"
+                      :options="getSparklineOptions(appConfig.colors.primary)"
+                      :series="[{data: getRandomData()}]"
+                    />
                   </div>
                 </div>
               </Widget>
             </div>
-          </b-col>
-          <b-col xs="12">
-            <MainChart :data="mainChart" :isReceiving="isReceiving" />
-          </b-col>
-        </b-row>
-        <b-row>
-          <b-col xs="12" lg="6" xl="4" v-for="stat in mock.bigStat" :key="stat.id">
+          </div>
+          <div class="col-12">
+            <MainChart
+              v-if="mainChart.length > 0"
+              :data="mainChart"
+              :is-receiving="isReceiving"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div
+            v-for="stat in mock.bigStat"
+            :key="stat.id"
+            class="col-12 col-lg-6 col-xl-4"
+          >
             <BigStat
               :product="stat.product"
               :color="stat.color"
@@ -125,14 +216,14 @@
               :registrations="stat.registrations"
               :bounce="stat.bounce"
             />
-          </b-col>
-        </b-row>
-        <b-row>
-          <b-col xs="12">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
             <Widget
               title="<h5>Support <span class='fw-semi-bold'>Requests</span></h5>"
-              bodyClass="widget-table-overflow"
-              customHeader
+              body-class="widget-table-overflow"
+              custom-header
             >
               <div class="table-responsive">
                 <table class="table table-striped table-lg mb-0 requests-table">
@@ -152,232 +243,227 @@
                       v-for="row in table"
                       :key="row.id"
                     >
-                      <td>{{row.name}}</td>
-                      <td>{{row.email}}</td>
-                      <td>{{row.product}}</td>
-                      <td>{{row.price}}</td>
-                      <td>{{row.date}}</td>
-                      <td>{{row.city}}</td>
+                      <td>{{ row.name }}</td>
+                      <td>{{ row.email }}</td>
+                      <td>{{ row.product }}</td>
+                      <td>{{ row.price }}</td>
+                      <td>{{ row.date }}</td>
+                      <td>{{ row.city }}</td>
                       <td>
-<!--                        <b-badge-->
-<!--                          :variant="row.status === 'Pending'-->
-<!--                            ? 'success'-->
-<!--                            : row.status === 'Declined' ? 'danger' : 'info'"-->
-<!--                          class="m-1 mx-3">-->
-<!--                          {{row.status}}-->
-<!--                        </b-badge>-->
-                        <b-button
-                            :variant="row.status === 'Pending'
-                            ? 'success'
-                            : row.status === 'Declined' ? 'danger' : 'info'"
-                            class="m-1 text-white"
+                        <button
+                          type="button"
+                          :class="['btn', 'm-1', 'text-white',
+                                   row.status === 'Pending' ? 'btn-success'
+                                   : row.status === 'Declined' ? 'btn-danger' : 'btn-info']"
                         >
-                          {{row.status}}
-                        </b-button>
+                          {{ row.status }}
+                        </button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </Widget>
-          </b-col>
-        </b-row>
+          </div>
+        </div>
       </div>
       <div class="analyticsSide">
-        <b-row>
-          <b-col xs="12" md="6" xl="12" class="lastSideElement">
-            <Widget bodyClass="p-0 mt-0" class="mb-xlg pt-0">
+        <div class="row">
+          <div class="col-12 col-md-6 col-xl-12 lastSideElement">
+            <Widget
+              body-class="p-0 mt-0"
+              class="mb-xlg pt-0"
+            >
               <Calendar white />
             </Widget>
-          </b-col>
-          <b-col xs="12" md="6" xl="12" class="lastSideElement">
-            <TaskContainer :data="mock.tasks"/>
-          </b-col>
-          <b-col xs="12" md="6" xl="12" class="lastSideElement">
+          </div>
+          <div class="col-12 col-md-6 col-xl-12 lastSideElement">
+            <TaskContainer :data="mock.tasks" />
+          </div>
+          <div class="col-12 col-md-6 col-xl-12 lastSideElement">
             <Widget
-              className="widget"
-              bodyClass="notifications w-100 mt-lg"
-              :title="`
-                <h4>Notifications
-                  <span class='badge rounded-pill bg-primary fw-normal pull-right mt-xs'>
-                    ${mock.notifications.length}
-                  </span>
-                </h4>
-              `"
-              customHeader
+              class-name="widget"
+              body-class="notifications w-100 mt-lg"
+              :title="notificationsTitle"
+              custom-header
             >
-              <div v-for="notification in mock.notifications"
-                class="d-flex align-items-start" :key="notification.id">
-                <i :class="`la la-${notification.icon} me-0 text-${notification.color}`" />
+              <div
+                v-for="notification in mock.notifications"
+                :key="notification.id"
+                class="d-flex align-items-start"
+              >
+                <i :class="`la la-${notification.icon} me-2 text-${notification.color}`" />
                 <p
                   :class="{ 'mb-0': notification.id === mock.notifications.length - 1 }"
                   v-html="notification.content"
                 />
               </div>
             </Widget>
-          </b-col>
-        </b-row>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import {mapState, mapActions} from 'vuex';
-import Widget from '@/components/Widget/Widget';
-import MainChart from './components/MainChart/MainChart';
-import BigStat from './components/BigStat/BigStat';
-import Calendar from '../Visits/components/Calendar/Calendar';
-import TaskContainer from './components/TaskContainer/TaskContainer';
-import mock from './mock';
+<script setup>
+import { ref, computed, inject, onMounted } from 'vue'
+import { useDashboardStore } from '@/stores/dashboard'
+import Widget from '@/components/Widget/Widget.vue'
+import MainChart from './components/MainChart/MainChart.vue'
+import BigStat from './components/BigStat/BigStat.vue'
+import Calendar from '@/components/Calendar/Calendar.vue'
+import TaskContainer from './components/TaskContainer/TaskContainer.vue'
+import mock from './mock'
 
-import { Chart } from 'highcharts-vue';
+const dashboardStore = useDashboardStore()
+const appConfig = inject('appConfig')
 
-export default {
-  name: 'Dashboard',
-  components: {
-    Widget, MainChart, BigStat, Calendar, TaskContainer, highcharts: Chart
+// Mount state for delayed chart rendering
+const isMounted = ref(false)
+
+// State from store
+const visits = computed(() => dashboardStore.visits)
+const performance = computed(() => dashboardStore.performance)
+const revenue = computed(() => dashboardStore.revenue)
+const mainChart = computed(() => dashboardStore.mainChart)
+const isReceiving = computed(() => dashboardStore.isReceiving)
+
+const notificationsTitle = computed(() => `
+  <h4>Notifications
+    <span class='badge rounded-pill bg-primary fw-normal pull-right mt-xs'>
+      ${mock.notifications.length}
+    </span>
+  </h4>
+`)
+
+const table = ref([
+  {
+    id: 0,
+    name: 'Mark Otto',
+    email: 'ottoto@wxample.com',
+    product: 'ON the Road',
+    price: '$25 224.2',
+    date: '11 May 2017',
+    city: 'Otsego',
+    status: 'Sent',
   },
-  data() {
-    return {
-      mock,
-      table: [{
-        id: 0,
-        name: 'Mark Otto',
-        email: 'ottoto@wxample.com',
-        product: 'ON the Road',
-        price: '$25 224.2',
-        date: '11 May 2017',
-        city: 'Otsego',
-        status: 'Sent',
-      },
-      {
-        id: 1,
-        name: 'Jacob Thornton',
-        email: 'thornton@wxample.com',
-        product: 'HP Core i7',
-        price: '$1 254.2',
-        date: '4 Jun 2017',
-        city: 'Fivepointville',
-        status: 'Sent',
-      },
-      {
-        id: 2,
-        name: 'Larry the Bird',
-        email: 'bird@wxample.com',
-        product: 'Air Pro',
-        price: '$1 570.0',
-        date: '27 Aug 2017',
-        city: 'Leadville North',
-        status: 'Pending',
-      },
-      {
-        id: 3,
-        name: 'Joseph May',
-        email: 'josephmay@wxample.com',
-        product: 'Version Control',
-        price: '$5 224.5',
-        date: '19 Feb 2018',
-        city: 'Seaforth',
-        status: 'Declined',
-      },
-      {
-        id: 4,
-        name: 'Peter Horadnia',
-        email: 'horadnia@wxample.com',
-        product: 'Let\'s Dance',
-        price: '$43 594.7',
-        date: '1 Mar 2018',
-        city: 'Hanoverton',
-        status: 'Sent',
-      }]
-    };
+  {
+    id: 1,
+    name: 'Jacob Thornton',
+    email: 'thornton@wxample.com',
+    product: 'HP Core i7',
+    price: '$1 254.2',
+    date: '4 Jun 2017',
+    city: 'Fivepointville',
+    status: 'Sent',
   },
-  methods: {
-    ...mapActions('dashboard', ['receiveDataRequest']),
-    getRandomData() {
-      const arr = [];
+  {
+    id: 2,
+    name: 'Larry the Bird',
+    email: 'bird@wxample.com',
+    product: 'Air Pro',
+    price: '$1 570.0',
+    date: '27 Aug 2017',
+    city: 'Leadville North',
+    status: 'Pending',
+  },
+  {
+    id: 3,
+    name: 'Joseph May',
+    email: 'josephmay@wxample.com',
+    product: 'Version Control',
+    price: '$5 224.5',
+    date: '19 Feb 2018',
+    city: 'Seaforth',
+    status: 'Declined',
+  },
+  {
+    id: 4,
+    name: 'Peter Horadnia',
+    email: 'horadnia@wxample.com',
+    product: 'Let\'s Dance',
+    price: '$43 594.7',
+    date: '1 Mar 2018',
+    city: 'Hanoverton',
+    status: 'Sent',
+  }
+])
 
-      for (let i = 0; i < 25; i += 1) {
-        arr.push(Math.random().toFixed(1) * 10);
-      }
-
-      return arr;
+// ApexCharts donut configuration
+const donutOptions = computed(() => ({
+  chart: {
+    type: 'donut',
+    height: 120
+  },
+  labels: revenue.value.map(s => s.label),
+  colors: [appConfig.colors.danger, appConfig.colors.warning, appConfig.colors.primary],
+  legend: {
+    position: 'right',
+    fontSize: '12px',
+    fontFamily: 'Montserrat',
+    fontWeight: 400,
+    markers: {
+      width: 12,
+      height: 12,
+      radius: 0
     },
-  },
-  computed: {
-  ...mapState('dashboard', [
-      'visits',
-      'performance',
-      'server',
-      'revenue',
-      'mainChart',
-      'isReceiving',
-    ]),
-    donut() {
-      let {danger, warning, primary} = this.appConfig.colors;
-      let series = [
-        {
-          name: 'Revenue',
-          data: this.revenue.map(s => {
-            return {
-              name: s.label,
-              y: s.data
-            }
-          })
-        }
-      ];
-      return {
-        chart: {
-          type: 'pie',
-          height: 120
-        },
-        credits: {
-          enabled: false
-        },
-        title: false,
-        plotOptions: {
-          pie: {
-            dataLabels: {
-              enabled: false
-            },
-            borderColor: null,
-            showInLegend: true,
-            innerSize: 60,
-            size: 100,
-            states: {
-              hover: {
-                halo: {
-                  size: 1
-                }
-              }
-            }
-          }
-        },
-        colors: [danger, warning, primary],
-        legend: {
-          align: 'right',
-          verticalAlign: 'middle',
-          layout: 'vertical',
-          itemStyle: {
-            color: '#495057',
-            fontWeight: 100,
-            fontFamily: 'Montserrat'
-          },
-          itemMarginBottom: 5,
-          symbolRadius: 0
-        },
-        exporting: {
-          enabled: false
-        },
-        series
-      };
+    itemMargin: {
+      vertical: 5
     }
   },
-  mounted() {
-    this.receiveDataRequest();
+  plotOptions: {
+    pie: {
+      donut: {
+        size: '60%'
+      }
+    }
   },
-};
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    show: false
+  },
+  tooltip: {
+    enabled: true
+  }
+}))
+
+const donutSeries = computed(() => revenue.value.map(s => s.data))
+
+// Sparkline chart options for server overview
+function getSparklineOptions(color) {
+  return {
+    chart: {
+      type: 'line',
+      sparkline: {
+        enabled: true
+      }
+    },
+    stroke: {
+      curve: 'smooth',
+      width: 4
+    },
+    colors: [color],
+    tooltip: {
+      enabled: false
+    }
+  }
+}
+
+function getRandomData() {
+  const arr = []
+  for (let i = 0; i < 25; i += 1) {
+    arr.push(Math.random().toFixed(1) * 10)
+  }
+  return arr
+}
+
+onMounted(() => {
+  isMounted.value = true
+  dashboardStore.receiveDataRequest()
+})
 </script>
 
 <style src="./Dashboard.scss" lang="scss" />

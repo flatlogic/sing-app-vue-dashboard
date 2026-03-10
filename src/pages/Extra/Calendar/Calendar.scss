@@ -1,13 +1,11 @@
 @import '../../../styles/app';
-@import '../../../../node_modules/@fullcalendar/core/main.css';
-@import '../../../../node_modules/@fullcalendar/daygrid/main.css';
-@import '../../../../node_modules/@fullcalendar/timegrid/main.css';
 
 .calendar-page {
   .fc {
     .fc-event {
       border: none;
-      padding: 2px;
+      border-radius: 4px;
+      padding: 2px 4px;
       background-color: $gray-200;
       color: $white;
 
@@ -16,12 +14,55 @@
       }
     }
 
-    .fc-today {
-      background-color: rgba($info, .2);
+    // FullCalendar v6 block event styling
+    .fc-daygrid-event {
+      border-radius: 4px;
+      padding: 2px 4px;
     }
 
-    .fc-content {
+    .fc-daygrid-block-event {
+      .fc-event-time {
+        font-weight: normal;
+      }
+
+      .fc-event-title {
+        font-weight: normal;
+      }
+    }
+
+    // FullCalendar v6 uses .fc-day-today instead of .fc-today
+    .fc-day-today {
+      background-color: rgba($info, .2) !important;
+    }
+
+    // FullCalendar v6 uses .fc-event-title instead of .fc-content
+    .fc-event-title {
       text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    // Fix day header anchors styling (v6 uses <a> instead of <span>)
+    // Weekday headers are non-functional anchors, so use default cursor
+    .fc-col-header-cell-cushion {
+      color: inherit;
+      text-decoration: none;
+      cursor: default;
+
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    // Fix day number anchors in cells
+    .fc-daygrid-day-number {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
     }
   }
 

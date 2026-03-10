@@ -53,7 +53,7 @@
     bottom: 0;
     width: 100%;
 
-    :global .list-group-item {
+    .list-group-item {
       border: 0;
       padding: 10px 20px;
       z-index: 1;
@@ -94,10 +94,10 @@
     left: -100%;
     transition: left 0.2s ease-in-out;
 
-    :global .list-group {
+    .list-group {
       margin-top: 10px;
 
-      :global .list-group-item {
+      .list-group-item {
         cursor: pointer;
       }
     }
@@ -116,7 +116,7 @@
     transition: right 0.2s ease-in-out;
     background-color: $gray-light;
 
-    :global .list-group {
+    .list-group {
       position: absolute;
       top: 134px; // header height
       bottom: 47px; // footer height
@@ -126,11 +126,11 @@
 
       @include scroll-bar(rgba($white, 0.3));
 
-      :global .list-group-item {
+      .list-group-item {
         align-items: flex-start;
       }
 
-      :global .thumb-sm {
+      .thumb-sm {
         float: left;
       }
     }
@@ -160,7 +160,7 @@
     .fromMe {
       flex-direction: row-reverse;
 
-      :global .thumb-sm {
+      .thumb-sm {
         float: right;
       }
 
@@ -206,29 +206,29 @@
   }
 
   .chatSidebarUserGroup {
-    :global .list-group-item {
+    .list-group-item {
       transition: $transition-base;
     }
 
-    :global .list-group-item.active {
+    .list-group-item.active {
       background: rgba($white, 0.1);
     }
 
-    :global .list-group-item.active h6 {
+    .list-group-item.active h6 {
       color: theme-color('warning');
       font-weight: $badge-font-weight;
     }
 
-    :global .list-group-item:hover {
+    .list-group-item:hover {
       background: $gray-100;
     }
 
-    :global .badge {
+    .badge {
       margin: 8px 5px 0 0;
       padding: 3px 5px;
     }
 
-    :global .fa {
+    .fa {
       margin-top: 11px;
     }
   }

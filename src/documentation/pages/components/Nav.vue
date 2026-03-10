@@ -1,81 +1,276 @@
 <template>
-  <b-row>
-    <b-col lg="9" xs="12">
+  <div class="row">
+    <div class="col-lg-9 col-12">
       <h2>Nav</h2>
-      <p class="mb-4">Change the style of Nav component with modifiers and utilities. Mix and match as needed, or build
-        your own.</p>
-      <vue-code-highlight>import { BNav, BNavItem } from 'bootstrap-vue';</vue-code-highlight>
-      <b-tabs nav-class="bg-transparent" class="mb-5">
-        <b-tab title="Example" active>
-          <b-nav>
-            <b-nav-item active>Active</b-nav-item>
-            <b-nav-item>Link</b-nav-item>
-            <b-nav-item>Another Link</b-nav-item>
-            <b-nav-item disabled>Disabled</b-nav-item>
-          </b-nav>
-        </b-tab>
-        <b-tab title="Code">
-          <vue-code-highlight>{{decodeHtml(navCode1)}}</vue-code-highlight>
-        </b-tab>
-      </b-tabs>
-      <b-tabs nav-class="bg-transparent" class="mb-5">
-        <b-tab title="Example" active>
-          <b-nav vertical>
-            <b-nav-item active>Active</b-nav-item>
-            <b-nav-item>Link</b-nav-item>
-            <b-nav-item>Another Link</b-nav-item>
-            <b-nav-item disabled>Disabled</b-nav-item>
-          </b-nav>
-        </b-tab>
-        <b-tab title="Code">
-          <vue-code-highlight>{{decodeHtml(navCode2)}}</vue-code-highlight>
-        </b-tab>
-      </b-tabs>
-      <b-tabs nav-class="bg-transparent">
-        <b-tab title="Example" active>
-          <b-nav pills>
-            <b-nav-item active>Active</b-nav-item>
-            <b-nav-item>Link</b-nav-item>
-            <b-nav-item>Another Link</b-nav-item>
-            <b-nav-item disabled>Disabled</b-nav-item>
-          </b-nav>
-        </b-tab>
-        <b-tab title="Code">
-          <vue-code-highlight>{{decodeHtml(navCode3)}}</vue-code-highlight>
-        </b-tab>
-      </b-tabs>
-    </b-col>
-    <p class="p-4">For more examples please refer to <a href="https://bootstrap-vue.js.org/docs/components/nav/"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer">Bootstrap Vue Nav</a></p>
-  </b-row>
+      <p class="mb-4">
+        Change the style of Nav component with modifiers and utilities. Mix and match as needed, or build
+        your own.
+      </p>
+      <pre><code>// Bootstrap 5 native nav
+&lt;ul class="nav"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+      <!-- Example 1: Basic Nav -->
+      <div class="mb-5">
+        <ul
+          class="nav nav-tabs bg-transparent"
+          role="tablist"
+        >
+          <li class="nav-item">
+            <button
+              class="nav-link active"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-example-1"
+              type="button"
+            >
+              Example
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-code-1"
+              type="button"
+            >
+              Code
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div
+            id="nav-example-1"
+            class="tab-pane fade show active"
+          >
+            <ul class="nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#"
+                >Active</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Another Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                >Disabled</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            id="nav-code-1"
+            class="tab-pane fade"
+          >
+            <pre><code>&lt;ul class="nav"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Another Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled" href="#"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 2: Vertical Nav -->
+      <div class="mb-5">
+        <ul
+          class="nav nav-tabs bg-transparent"
+          role="tablist"
+        >
+          <li class="nav-item">
+            <button
+              class="nav-link active"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-example-2"
+              type="button"
+            >
+              Example
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-code-2"
+              type="button"
+            >
+              Code
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div
+            id="nav-example-2"
+            class="tab-pane fade show active"
+          >
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#"
+                >Active</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Another Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                >Disabled</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            id="nav-code-2"
+            class="tab-pane fade"
+          >
+            <pre><code>&lt;ul class="nav flex-column"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Another Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled" href="#"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example 3: Pills Nav -->
+      <div>
+        <ul
+          class="nav nav-tabs bg-transparent"
+          role="tablist"
+        >
+          <li class="nav-item">
+            <button
+              class="nav-link active"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-example-3"
+              type="button"
+            >
+              Example
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-code-3"
+              type="button"
+            >
+              Code
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div
+            id="nav-example-3"
+            class="tab-pane fade show active"
+          >
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#"
+                >Active</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                >Another Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                >Disabled</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            id="nav-code-3"
+            class="tab-pane fade"
+          >
+            <pre><code>&lt;ul class="nav nav-pills"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Another Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled" href="#"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="p-4">
+      For more examples please refer to <a
+        href="https://getbootstrap.com/docs/5.3/components/navs-tabs/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Bootstrap 5 Nav</a>
+    </p>
+  </div>
 </template>
-<script>
 
-
-  export default {
-    name: 'DocNav',
-    data() {
-      return {
-        navCode1: '<b-nav>\n' +
-          '  <b-nav-item active>Active</b-nav-item>\n' +
-          '  <b-nav-item>Link</b-nav-item>\n' +
-          '  <b-nav-item>Another Link</b-nav-item>\n' +
-          '  <b-nav-item disabled>Disabled</b-nav-item>\n' +
-          '</b-nav>',
-        navCode2: '<b-nav vertical>\n' +
-          '  <b-nav-item active>Active</b-nav-item>\n' +
-          '  <b-nav-item>Link</b-nav-item>\n' +
-          '  <b-nav-item>Another Link</b-nav-item>\n' +
-          '  <b-nav-item disabled>Disabled</b-nav-item>\n' +
-          '</b-nav>',
-        navCode3: '<b-nav pills>\n' +
-          '  <b-nav-item active>Active</b-nav-item>\n' +
-          '  <b-nav-item>Link</b-nav-item>\n' +
-          '  <b-nav-item>Another Link</b-nav-item>\n' +
-          '  <b-nav-item disabled>Disabled</b-nav-item>\n' +
-          '</b-nav>'
-      }
-    }
-  }
+<script setup>
 </script>

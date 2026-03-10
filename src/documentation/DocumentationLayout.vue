@@ -1,23 +1,18 @@
 <template>
   <div class="documentation-page">
-    <DocHeader></DocHeader>
-    <DocSidebar></DocSidebar>
+    <DocHeader />
+    <DocSidebar />
     <div class="content">
-      <breadcrumb-history></breadcrumb-history>
-      <router-view></router-view>
+      <BreadcrumbHistory />
+      <router-view />
     </div>
   </div>
 </template>
-<script>
-  import DocHeader from './DocumentationHeader';
-  import DocSidebar from './DocumentationSidebar';
-  import BreadcrumbHistory from './BreadcrumbHistory';
 
-  export default {
-    name: 'DocLayout',
-    components: {
-      DocHeader, DocSidebar, BreadcrumbHistory
-    }
-  }
+<script setup>
+import DocHeader from './DocumentationHeader.vue'
+import DocSidebar from './DocumentationSidebar.vue'
+import BreadcrumbHistory from './BreadcrumbHistory.vue'
 </script>
-<style src="./styles.scss" lang="scss"/>
+
+<style src="./styles.scss" lang="scss" />

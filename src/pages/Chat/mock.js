@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { subHours, subDays, subMinutes, formatISO } from 'date-fns';
 
 import p1 from '../../assets/chat/1.png';
 import p2 from '../../assets/chat/2.png';
@@ -58,7 +58,7 @@ const userCommonData = (username) => {
       twitter: `https://twitter.com/${username}_lorem_ipsum`,
       linkedin: `https://www.linkedin.com/in/${username}_lorem_ipsum/`
     },
-    prevOnline: moment().subtract(1, 'h')
+    prevOnline: subHours(new Date(), 1)
   }
 };
 
@@ -129,7 +129,7 @@ export const chats = [
     name: 'Light Blue Group',
     users: [2,3,4,5,1,6],
     ...dialogCommonData,
-    createdAt: moment().subtract(1, 'd').subtract(5, 'm').format(),
+    createdAt: formatISO(subMinutes(subDays(new Date(), 1), 5)),
     createdBy: 3,
     isGroup: true,
     messages: [
@@ -137,13 +137,13 @@ export const chats = [
         id: 1,
         userId: 6,
         text: 'Hello, @John. Can you help me with Light Blue project? I cannot understand how it works.',
-        timestamp: moment().subtract(1, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 5))
       },
       {
         id: 2,
         userId: 4,
         text: 'Hi, @Darrell. It\'s too easy. I can explain it too you if you have some minutes.',
-        timestamp: moment().subtract(1, 'd').subtract(3, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 3))
       },
       {
         id: 3,
@@ -156,13 +156,13 @@ export const chats = [
             src: awesome_image
           }
         ],
-        timestamp: moment().subtract(1, 'd').subtract(2, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 2))
       },
       {
         id: 4,
         userId: 1,
         text: 'Guys did you see the new update of the Sing App from our competitors?',
-        timestamp: moment().subtract(2, 'm').format()
+        timestamp: formatISO(subMinutes(new Date(), 2))
       }
     ]
   },
@@ -171,7 +171,7 @@ export const chats = [
     name: 'React Native',
     users: [1, 4, 6],
     ...dialogCommonData,
-    createdAt: moment().subtract(1, 'd').subtract(5, 'm').format(),
+    createdAt: formatISO(subMinutes(subDays(new Date(), 1), 5)),
     createdBy: 4,
     isGroup: true,
     messages: [
@@ -179,13 +179,13 @@ export const chats = [
         id: 1,
         userId: 6,
         text: 'Hello, @John. Can you help me with Light Blue project? I cannot understand how it works.',
-        timestamp: moment().subtract(1, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 5))
       },
       {
         id: 2,
         userId: 4,
         text: 'Hi, @Darrell. It\'s too easy. I can explain it too you if you have some minutes.',
-        timestamp: moment().subtract(1, 'd').subtract(3, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 3))
       }
     ]
   },
@@ -194,7 +194,7 @@ export const chats = [
     name: 'Common',
     users: [1, 4, 6],
     ...dialogCommonData,
-    createdAt: moment().subtract(1, 'd').subtract(5, 'm').format(),
+    createdAt: formatISO(subMinutes(subDays(new Date(), 1), 5)),
     createdBy: 6,
     isGroup: true,
     messages: [
@@ -202,13 +202,13 @@ export const chats = [
         id: 1,
         userId: 6,
         text: 'Hello, @John. Can you help me with Light Blue project? I cannot understand how it works.',
-        timestamp: moment().subtract(1, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 5))
       },
       {
         id: 2,
         userId: 4,
         text: 'Hi, @Darrell. It\'s too easy. I can explain it too you if you have some minutes.',
-        timestamp: moment().subtract(1, 'd').subtract(3, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 3))
       }
     ]
   },
@@ -217,7 +217,7 @@ export const chats = [
     name: 'Bugs and Issues',
     users: [1, 2, 3],
     ...dialogCommonData,
-    createdAt: moment().subtract(1, 'd').subtract(5, 'm').format(),
+    createdAt: formatISO(subMinutes(subDays(new Date(), 1), 5)),
     createdBy: 6,
     isGroup: true,
     messages: [
@@ -225,13 +225,13 @@ export const chats = [
         id: 1,
         userId: 6,
         text: 'Hello, @John. Can you help me with Light Blue project? I cannot understand how it works.',
-        timestamp: moment().subtract(1, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 5))
       },
       {
         id: 2,
         userId: 4,
         text: 'Hi, @Darrell. It\'s too easy. I can explain it too you if you have some minutes.',
-        timestamp: moment().subtract(1, 'd').subtract(3, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 3))
       }
     ]
   },
@@ -243,33 +243,33 @@ export const chats = [
       {
         id: 1,
         userId: 1,
-        text: 'How can we help? We’re here for you!',
-        timestamp: moment().subtract(1, 'd').subtract(5, 'm').format()
+        text: "How can we help? We're here for you!",
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 5))
       },
       {
         id: 2,
         userId: 2,
         text: 'Hey John, I am looking for the best admin template.\n' +
           'Could you help me to find it out?',
-        timestamp: moment().subtract(1, 'd').subtract(3, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 3))
       },
       {
         id: 3,
         userId: 2,
         text: 'It should be Bootstrap 4 compatible',
-        timestamp: moment().subtract(1, 'd').subtract(2, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 1), 2))
       },
       {
         id: 4,
         userId: 1,
         text: 'Absolutely!',
-        timestamp: moment().subtract(2, 'm').format()
+        timestamp: formatISO(subMinutes(new Date(), 2))
       },
       {
         id: 5,
         userId: 1,
         text: 'Modern admin is the responsive bootstrap 4 admin template!',
-        timestamp: moment().subtract(1, 'm').format()
+        timestamp: formatISO(subMinutes(new Date(), 1))
       }
     ]
   },
@@ -282,7 +282,7 @@ export const chats = [
         id: 1,
         userId: 3,
         text: 'If it takes long you can mail m...',
-        timestamp: moment().subtract(2, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 2), 5))
       }
     ]
   },
@@ -295,7 +295,7 @@ export const chats = [
         id: 1,
         userId: 4,
         text: 'If it takes long you can mail m...',
-        timestamp: moment().subtract(3, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 3), 5))
       }
     ]
   },
@@ -308,7 +308,7 @@ export const chats = [
         id: 1,
         userId: 5,
         text: 'If it takes long you can mail m...',
-        timestamp: moment().subtract(4, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 4), 5))
       }
     ]
   },
@@ -321,7 +321,7 @@ export const chats = [
         id: 1,
         userId: 5,
         text: 'If it takes long you can mail m...',
-        timestamp: moment().subtract(5, 'd').subtract(5, 'm').format()
+        timestamp: formatISO(subMinutes(subDays(new Date(), 5), 5))
       }
     ]
   },

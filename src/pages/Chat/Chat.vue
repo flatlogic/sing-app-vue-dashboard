@@ -1,28 +1,25 @@
 <template>
-  <div class="chat-page" :class="{
-    'list-state': mobileState === mobileChatStates.LIST,
-    'chat-state': mobileState === mobileChatStates.CHAT,
-    'info-state': mobileState === mobileChatStates.INFO,
-  }">
-    <ChatList class="chat-list-section"></ChatList>
-    <ChatDialog class="chat-dialog-section"></ChatDialog>
-    <ChatInfo class="chat-info-section"></ChatInfo>
+  <div
+    class="chat-page"
+    :class="{
+      'list-state': mobileState === mobileChatStates.LIST,
+      'chat-state': mobileState === mobileChatStates.CHAT,
+      'info-state': mobileState === mobileChatStates.INFO,
+    }"
+  >
+    <ChatList class="chat-list-section" />
+    <ChatDialog class="chat-dialog-section" />
+    <ChatInfo class="chat-info-section" />
   </div>
 </template>
 
-<script>
-  import ChatDialog from './components/ChatDialog/ChatDialog';
-  import ChatInfo from './components/ChatInfo/ChatInfo';
-  import ChatList from './components/ChatList/ChatList';
-  import { ChatMixin } from '../../mixins/chat';
+<script setup>
+import ChatDialog from './components/ChatDialog/ChatDialog.vue'
+import ChatInfo from './components/ChatInfo/ChatInfo.vue'
+import ChatList from './components/ChatList/ChatList.vue'
+import { useChat } from '@/composables/useChat'
 
-  export default {
-    name: 'Chat',
-    mixins: [ChatMixin],
-    components: {
-      ChatDialog, ChatInfo, ChatList
-    }
-  }
+const { mobileState, mobileChatStates } = useChat()
 </script>
 
 <style src="./Chat.scss" lang="scss"></style>

@@ -1,2988 +1,4109 @@
 <!-- eslint-disable max-len -->
 <template>
   <section>
-    <h1 class="page-title">UI - <span class="fw-semi-bold">Icons</span></h1>
-    <b-tabs>
-      <b-tab title="Glyphicons" active>
+    <h1 class="page-title">
+      UI - <span class="fw-semi-bold">Icons</span>
+    </h1>
+    <ul
+      class="nav nav-tabs mb-3"
+      role="tablist"
+    >
+      <li class="nav-item">
+        <button
+          class="nav-link active"
+          data-bs-toggle="tab"
+          data-bs-target="#icons-glyphicons"
+          type="button"
+        >
+          Glyphicons
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#icons-fa"
+          type="button"
+        >
+          FA 4.7.0 <span class="badge bg-danger">new</span>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#icons-web-app"
+          type="button"
+        >
+          Web Application
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#icons-spinner"
+          type="button"
+        >
+          Spinner
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#icons-text-editor"
+          type="button"
+        >
+          Text Editor
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#icons-brand"
+          type="button"
+        >
+          Brand
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#icons-other"
+          type="button"
+        >
+          Other
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div
+        id="icons-glyphicons"
+        class="tab-pane fade show active"
+      >
         <h4>Built-in <span class="fw-semi-bold">Glyphicons</span></h4>
-        <b-row class="icon-list">
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-asterisk"/>asterisk
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-plus"/>plus</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-euro"/>euro</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-minus"/>minus</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-cloud"/>cloud</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-envelope"/>envelope
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-asterisk" />asterisk
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-plus" />plus
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-euro" />euro
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-minus" />minus
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-cloud" />cloud
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-envelope" />envelope
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-pencil"
-          />pencil
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glass"/>glass</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-music"/>music</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />pencil
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glass" />glass
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-music" />music
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-search"
-          />search
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-heart"/>heart</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-star"/>star</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-star-empty"/>star-empty
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-user"/>user</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-film"/>film</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-th-large"/>th-large
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-th"/>th</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />search
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-heart" />heart
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-star" />star
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-star-empty" />star-empty
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-user" />user
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-film" />film
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-th-large" />th-large
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-th" />th
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-th-list"
-          />th-list
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-ok"/>ok</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />th-list
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-ok" />ok
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-remove"
-          />remove
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />remove
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-zoom-in"
-          />zoom-in
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-zoom-out"/>zoom-out
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-off"/>off</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />zoom-in
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-zoom-out" />zoom-out
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-off" />off
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-signal"
-          />signal
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-cog"/>cog</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-trash"/>trash</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-home"/>home</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-file"/>file</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-time"/>time</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-road"/>road</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-download-alt"/>download-alt
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-download"/>download
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />signal
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-cog" />cog
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-trash" />trash
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-home" />home
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-file" />file
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-time" />time
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-road" />road
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-download-alt" />download-alt
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-download" />download
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-upload"
-          />upload
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-inbox"/>inbox</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-play-circle"/>play-circle
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />upload
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-inbox" />inbox
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-play-circle" />play-circle
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-repeat"
-          />repeat
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />repeat
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-refresh"
-          />refresh
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-list-alt"/>list-alt
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />refresh
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-list-alt" />list-alt
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-glyph-lock"
-          />lock
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-flag"/>flag</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-headphones"/>headphones
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-volume-off"/>volume-off
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-volume-down"/>volume-down
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-volume-up"/>volume-up
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />lock
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-flag" />flag
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-headphones" />headphones
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-volume-off" />volume-off
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-volume-down" />volume-down
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-volume-up" />volume-up
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-qrcode"
-          />qrcode
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />qrcode
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-barcode"
-          />barcode
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-tag"/>tag</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-tags"/>tags</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-book"/>book</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glyph-bookmark"/>bookmark
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-print"/>print</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glyph-camera"/>camera
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-font"/>font</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-bold"/>bold</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />barcode
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-tag" />tag
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-tags" />tags
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-book" />book
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glyph-bookmark" />bookmark
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-print" />print
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glyph-camera" />camera
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-font" />font
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-bold" />bold
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-italic"
-          />italic
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-text-height"/>text-height
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-text-width"/>text-width
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-align-left"/>align-left
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-align-center"/>align-center
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-align-right"/>align-right
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-align-justify"/>align-justify
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-list"/>list</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-indent-left"/>indent-left
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-indent-right"/>indent-right
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-facetime-video"/>facetime-video
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />italic
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-text-height" />text-height
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-text-width" />text-width
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-align-left" />align-left
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-align-center" />align-center
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-align-right" />align-right
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-align-justify" />align-justify
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-list" />list
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-indent-left" />indent-left
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-indent-right" />indent-right
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-facetime-video" />facetime-video
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-picture"
-          />picture
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-map-marker"/>map-marker
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />picture
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-map-marker" />map-marker
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-adjust"
-          />adjust
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-tint"/>tint</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-edit"/>edit</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-share"/>share</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-check"/>check</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-move"/>move</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-step-backward"/>step-backward
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-fast-backward"/>fast-backward
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-backward"/>backward
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-play"/>play</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-pause"/>pause</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-stop"/>stop</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />adjust
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-tint" />tint
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-edit" />edit
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-share" />share
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-check" />check
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-move" />move
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-step-backward" />step-backward
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-fast-backward" />fast-backward
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-backward" />backward
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-play" />play
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-pause" />pause
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-stop" />stop
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-forward"
-          />forward
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-fast-forward"/>fast-forward
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-step-forward"/>step-forward
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-eject"/>eject</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-chevron-left"/>chevron-left
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-chevron-right"/>chevron-right
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-plus-sign"/>plus-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-minus-sign"/>minus-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-remove-sign"/>remove-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />forward
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-fast-forward" />fast-forward
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-step-forward" />step-forward
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-eject" />eject
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-chevron-left" />chevron-left
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-chevron-right" />chevron-right
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-plus-sign" />plus-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-minus-sign" />minus-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-remove-sign" />remove-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-ok-sign"
-          />ok-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-question-sign"/>question-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-info-sign"/>info-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-screenshot"/>screenshot
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-remove-circle"/>remove-circle
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-ok-circle"/>ok-circle
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-ban-circle"/>ban-circle
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-arb-row-left"/>arb-row-left
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-arb-row-right"/>arb-row-right
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-arb-row-up"/>arb-row-up
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-arb-row-down"/>arb-row-down
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-share-alt"/>share-alt
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-resize-full"/>resize-full
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-resize-small"/>resize-small
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-exclamation-sign"/>exclamation-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-gift"/>gift</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-leaf"/>leaf</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />ok-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-question-sign" />question-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-info-sign" />info-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-screenshot" />screenshot
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-remove-circle" />remove-circle
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-ok-circle" />ok-circle
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-ban-circle" />ban-circle
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-arb-row-left" />arb-row-left
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-arb-row-right" />arb-row-right
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-arb-row-up" />arb-row-up
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-arb-row-down" />arb-row-down
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-share-alt" />share-alt
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-resize-full" />resize-full
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-resize-small" />resize-small
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-exclamation-sign" />exclamation-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-gift" />gift
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-leaf" />leaf
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-glyph-fire"
-          />fire
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-eye-open"/>eye-open
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-eye-close"/>eye-close
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-warning-sign"/>warning-sign
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-plane"/>plane</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glyph-calendar"/>calendar
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />fire
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-eye-open" />eye-open
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-eye-close" />eye-close
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-warning-sign" />warning-sign
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-plane" />plane
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glyph-calendar" />calendar
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-random"
-          />random
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />random
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-comment"
-          />comment
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />comment
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-magnet"
-          />magnet
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-chevron-up"/>chevron-up
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-chevron-down"/>chevron-down
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />magnet
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-chevron-up" />chevron-up
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-chevron-down" />chevron-down
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-retweet"
-          />retweet
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-shopping-cart"/>shopping-cart
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-folder-close"/>folder-close
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-folder-open"/>folder-open
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-resize-vertical"/>resize-vertical
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-resize-horizontal"/>resize-horizontal
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-hdd"/>hdd</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-bullhorn"/>bullhorn
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />retweet
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-shopping-cart" />shopping-cart
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-folder-close" />folder-close
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-folder-open" />folder-open
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-resize-vertical" />resize-vertical
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-resize-horizontal" />resize-horizontal
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-hdd" />hdd
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-bullhorn" />bullhorn
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-glyph-bell"
-          />bell
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-certificate"/>certificate
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-thumbs-up"/>thumbs-up
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-thumbs-down"/>thumbs-down
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-hand-right"/>hand-right
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-hand-left"/>hand-left
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />bell
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-certificate" />certificate
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-thumbs-up" />thumbs-up
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-thumbs-down" />thumbs-down
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-hand-right" />hand-right
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-hand-left" />hand-left
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-hand-top"
-          />hand-up
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-hand-down"/>hand-down
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />hand-up
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-hand-down" />hand-down
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-circle-arb-row-right"
-          />circle-arb-row-right
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-circle-arb-row-left"/>circle-arb-row-left
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-circle-arb-row-top"/>circle-arb-row-up
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-circle-arb-row-down"/>circle-arb-row-down
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-globe"/>globe</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glyph-wrench"/>wrench
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-tasks"/>tasks</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />circle-arb-row-right
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-circle-arb-row-left" />circle-arb-row-left
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-circle-arb-row-top" />circle-arb-row-up
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-circle-arb-row-down" />circle-arb-row-down
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-globe" />globe
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glyph-wrench" />wrench
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-tasks" />tasks
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-filter"
-          />filter
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glyph-briefcase"/>briefcase
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-fullscreen"/>fullscreen
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-dashboard"/>dashboard
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glyph-paperclip"/>paperclip
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-heart-empty"/>heart-empty
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-link"/>link</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-phone"/>phone</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-glyph-pushpin"/>pushpin
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-usd"/>usd</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-gbp"/>gbp</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-sort"/>sort</b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-sort-by-alphabet"/>sort-by-alphabet
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />filter
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glyph-briefcase" />briefcase
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-fullscreen" />fullscreen
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-dashboard" />dashboard
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glyph-paperclip" />paperclip
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-heart-empty" />heart-empty
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-link" />link
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-phone" />phone
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-glyph-pushpin" />pushpin
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-usd" />usd
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-gbp" />gbp
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-sort" />sort
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-sort-by-alphabet" />sort-by-alphabet
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-sort-by-alphabet-alt"
-          />sort-by-alphabet-alt
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-sort-by-order"/>sort-by-order
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-sort-by-order-alt"/>sort-by-order-alt
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />sort-by-alphabet-alt
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-sort-by-order" />sort-by-order
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-sort-by-order-alt" />sort-by-order-alt
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-sort-by-attributes"
-          />sort-by-attributes
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />sort-by-attributes
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-sort-by-attributes-alt"
-          />sort-by-attributes-alt
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-unchecked"/>unchecked
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
+            />sort-by-attributes-alt
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-unchecked" />unchecked
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span
               class="glyphicon glyphicon-expand"
-          />expand
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-collapse"/>collapse-down
-          </b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span class="glyphicon glyphicon-collapse-top"/>collapse-up
-          </b-col>
-        </b-row>
-      </b-tab>
-      <b-tab>
-        <template slot="title">
-          FA 4.7.0
-          <b-badge class="bg-danger">new</b-badge>
-        </template>
+            />expand
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-collapse" />collapse-down
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span class="glyphicon glyphicon-collapse-top" />collapse-up
+          </div>
+        </div>
+      </div>
+      <div
+        id="icons-fa"
+        class="tab-pane fade"
+      >
         <h4>Awesome <span class="fw-semi-bold">Font Awesome</span></h4>
-        <b-row class="icon-list">
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bed"
-          /> bed</span></b-col>
+            /> bed</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-          ><i class="fa fa-bank"/> bank <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-bank" /> bank <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-behance"
-          /> behance</span></b-col>
+            /> behance</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item">
-            <span><i class="fa fa-behance-square"/> behance-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-behance-square" /> behance-square</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bomb"
-          /> bomb</span></b-col>
+            /> bomb</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-building"
-          /> building</span></b-col>
+            /> building</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cab"
-          /> cab <span class="text-muted">(alias)</span></span></b-col>
+            /> cab <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-car"
-          /> car</span></b-col>
+            /> car</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-child"
-          /> child</span></b-col>
+            /> child</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-circle-o-notch"/> circle-o-notch</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-circle-o-notch" /> circle-o-notch</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-circle-thin"
-          /> circle-thin</span></b-col>
+            /> circle-thin</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-codepen"
-          /> codepen</span></b-col>
+            /> codepen</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cube"
-          /> cube</span></b-col>
+            /> cube</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cubes"
-          /> cubes</span></b-col>
+            /> cubes</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-database"
-          /> database</span></b-col>
+            /> database</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-delicious"
-          /> delicious</span></b-col>
+            /> delicious</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-deviantart"/> deviantart</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-deviantart" /> deviantart</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-digg"
-          /> digg</span></b-col>
+            /> digg</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-drupal"
-          /> drupal</span></b-col>
+            /> drupal</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-empire"
-          /> empire</span></b-col>
+            /> empire</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-envelope-square"/>
-            envelope-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-envelope-square" />
+              envelope-square</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-fax"
-          /> fax</span></b-col>
+            /> fax</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-archive-o"/> file-archive-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-archive-o" /> file-archive-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-audio-o"/>
-            file-audio-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-audio-o" />
+              file-audio-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-code-o"
-          /> file-code-o</span></b-col>
+            /> file-code-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-excel-o"/>
-            file-excel-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-excel-o" />
+              file-excel-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-image-o"/>
-            file-image-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-image-o" />
+              file-image-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-movie-o"/> file-movie-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-movie-o" /> file-movie-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-pdf-o"/> file-pdf-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-pdf-o" /> file-pdf-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-photo-o"/> file-photo-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-photo-o" /> file-photo-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-picture-o"/> file-picture-o
-            <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-picture-o" /> file-picture-o
+              <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-powerpoint-o"/>
-            file-powerpoint-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-powerpoint-o" />
+              file-powerpoint-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-sound-o"/> file-sound-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-sound-o" /> file-sound-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-video-o"/>
-            file-video-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-video-o" />
+              file-video-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-word-o"
-          /> file-word-o</span></b-col>
+            /> file-word-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-file-zip-o"/> file-zip-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-zip-o" /> file-zip-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ge"
-          /> ge <span class="text-muted">(alias)</span></span></b-col>
+            /> ge <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-git"
-          /> git</span></b-col>
+            /> git</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-git-square"/> git-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-git-square" /> git-square</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-google"
-          /> google</span></b-col>
+            /> google</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-graduation-cap"/> graduation-cap</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-graduation-cap" /> graduation-cap</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-hacker-news"
-          /> hacker-news</span></b-col>
+            /> hacker-news</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-header"
-          /> header</span></b-col>
+            /> header</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-history"
-          /> history</span></b-col>
+            /> history</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-institution"/> institution <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-institution" /> institution <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-joomla"
-          /> joomla</span></b-col>
+            /> joomla</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-jsfiddle"
-          /> jsfiddle</span></b-col>
+            /> jsfiddle</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-language"
-          /> language</span></b-col>
+            /> language</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-life-bouy"
-          /> life-bouy <span
+            /> life-bouy <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-life-ring"
-          /> life-ring</span></b-col>
+            /> life-ring</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-life-saver"
-          /> life-saver <span
+            /> life-saver <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-mortar-board"/> mortar-board
-            <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-mortar-board" /> mortar-board
+              <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-openid"
-          /> openid</span></b-col>
+            /> openid</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paper-plane"
-          /> paper-plane</span></b-col>
+            /> paper-plane</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-paper-plane-o"/>
-            paper-plane-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-paper-plane-o" />
+              paper-plane-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paragraph"
-          /> paragraph</span></b-col>
+            /> paragraph</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paw"
-          /> paw</span></b-col>
+            /> paw</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-pied-piper"/> pied-piper</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pied-piper" /> pied-piper</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-pied-piper-alt"/> pied-piper-alt</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pied-piper-alt" /> pied-piper-alt</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-pied-piper-square"/>
-            pied-piper-square <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pied-piper-square" />
+              pied-piper-square <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-qq"
-          /> qq</span></b-col>
+            /> qq</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ra"
-          /> ra <span class="text-muted">(alias)</span></span></b-col>
+            /> ra <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rebel"
-          /> rebel</span></b-col>
+            /> rebel</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-recycle"
-          /> recycle</span></b-col>
+            /> recycle</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-reddit"
-          /> reddit</span></b-col>
+            /> reddit</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-reddit-square"/>
-            reddit-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-reddit-square" />
+              reddit-square</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-send"
-          /> send <span
+            /> send <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-send-o"/> send-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-send-o" /> send-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-share-alt"
-          /> share-alt</span></b-col>
+            /> share-alt</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-share-alt-square"/>
-            share-alt-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-share-alt-square" />
+              share-alt-square</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-slack"
-          /> slack</span></b-col>
+            /> slack</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sliders"
-          /> sliders</span></b-col>
+            /> sliders</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-soundcloud"/> soundcloud</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-soundcloud" /> soundcloud</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-space-shuttle"/>
-            space-shuttle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-space-shuttle" />
+              space-shuttle</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-spoon"
-          /> spoon</span></b-col>
+            /> spoon</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-spotify"
-          /> spotify</span></b-col>
+            /> spotify</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-steam"
-          /> steam</span></b-col>
+            /> steam</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-steam-square"/>
-            steam-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-steam-square" />
+              steam-square</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-stumbleupon"
-          /> stumbleupon</span></b-col>
+            /> stumbleupon</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-stumbleupon-circle"/>
-            stumbleupon-circle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-stumbleupon-circle" />
+              stumbleupon-circle</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-support"
-          /> support <span
+            /> support <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-taxi"
-          /> taxi</span></b-col>
+            /> taxi</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-tencent-weibo"/>
-            tencent-weibo</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-tencent-weibo" />
+              tencent-weibo</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tree"
-          /> tree</span></b-col>
+            /> tree</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-university"/> university</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-university" /> university</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-vine"
-          /> vine</span></b-col>
+            /> vine</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-wechat"
-          /> wechat <span class="text-muted">(alias)</span></span></b-col>
+            /> wechat <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-weixin"
-          /> weixin</span></b-col>
+            /> weixin</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-wordpress"
-          /> wordpress</span></b-col>
+            /> wordpress</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-yahoo"
-          /> yahoo</span></b-col>
-        </b-row>
-      </b-tab>
-      <b-tab title="Web Application">
-        <b-row class="icon-list">
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+            /> yahoo</span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="icons-web-app"
+        class="tab-pane fade"
+      >
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-adjust"
-          /> adjust</span></b-col>
+            /> adjust</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-anchor"
-          /> anchor</span></b-col>
+            /> anchor</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-archive"
-          /> archive</span></b-col>
+            /> archive</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-arrows"
-          /> arrows</span></b-col>
+            /> arrows</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-arrows-h"
-          /> arrows-h</span></b-col>
+            /> arrows-h</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-arrows-v"
-          /> arrows-v</span></b-col>
+            /> arrows-v</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-asterisk"
-          /> asterisk</span></b-col>
+            /> asterisk</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-automobile"
-          /> automobile <span
+            /> automobile <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ban"
-          /> ban</span></b-col>
+            /> ban</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-bank"/> bank <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-bank" /> bank <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bar-chart-o"
-          /> bar-chart-o</span></b-col>
+            /> bar-chart-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-barcode"
-          /> barcode</span></b-col>
+            /> barcode</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bars"
-          /> bars</span></b-col>
+            /> bars</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-beer"
-          /> beer</span></b-col>
+            /> beer</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bell"
-          /> bell</span></b-col>
+            /> bell</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bell-o"
-          /> bell-o</span></b-col>
+            /> bell-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bolt"
-          /> bolt</span></b-col>
+            /> bolt</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bomb"
-          /> bomb</span></b-col>
+            /> bomb</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-book"
-          /> book</span></b-col>
+            /> book</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bookmark"
-          /> bookmark</span></b-col>
+            /> bookmark</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-bookmark-o"/> bookmark-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-bookmark-o" /> bookmark-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-briefcase"
-          /> briefcase</span></b-col>
+            /> briefcase</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bug"
-          /> bug</span></b-col>
+            /> bug</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-building"
-          /> building</span></b-col>
+            /> building</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-building-o"/> building-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-building-o" /> building-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bullhorn"
-          /> bullhorn</span></b-col>
+            /> bullhorn</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bullseye"
-          /> bullseye</span></b-col>
+            /> bullseye</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cab"
-          /> cab <span class="text-muted">(alias)</span></span></b-col>
+            /> cab <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-calendar"
-          /> calendar</span></b-col>
+            /> calendar</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-calendar-o"/> calendar-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-calendar-o" /> calendar-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-camera"
-          /> camera</span></b-col>
+            /> camera</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-camera-retro"/>
-            camera-retro</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-camera-retro" />
+              camera-retro</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-car"
-          /> car</span></b-col>
+            /> car</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-caret-square-o-down"/>
-            caret-square-o-down</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-caret-square-o-down" />
+              caret-square-o-down</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-caret-square-o-left"/>
-            caret-square-o-left</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-caret-square-o-left" />
+              caret-square-o-left</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-caret-square-o-right"/>
-            caret-square-o-right</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-caret-square-o-right" />
+              caret-square-o-right</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-caret-square-o-up"/>
-            caret-square-o-up</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-caret-square-o-up" />
+              caret-square-o-up</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-certificate"
-          /> certificate</span></b-col>
+            /> certificate</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-check"
-          /> check</span></b-col>
+            /> check</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-check-circle"/>
-            check-circle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-check-circle" />
+              check-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-check-circle-o"/> check-circle-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-check-circle-o" /> check-circle-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-check-square"/>
-            check-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-check-square" />
+              check-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-check-square-o"/> check-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-check-square-o" /> check-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-child"
-          /> child</span></b-col>
+            /> child</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-circle"
-          /> circle</span></b-col>
+            /> circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-circle-o"
-          /> circle-o</span></b-col>
+            /> circle-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-circle-o-notch"/> circle-o-notch</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-circle-o-notch" /> circle-o-notch</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-circle-thin"
-          /> circle-thin</span></b-col>
+            /> circle-thin</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-clock-o"
-          /> clock-o</span></b-col>
+            /> clock-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cloud"
-          /> cloud</span></b-col>
+            /> cloud</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-cloud-download"/> cloud-download</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-cloud-download" /> cloud-download</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-cloud-upload"/>
-            cloud-upload</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-cloud-upload" />
+              cloud-upload</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-code"
-          /> code</span></b-col>
+            /> code</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-code-fork"
-          /> code-fork</span></b-col>
+            /> code-fork</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-coffee"
-          /> coffee</span></b-col>
+            /> coffee</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cog"
-          /> cog</span></b-col>
+            /> cog</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cogs"
-          /> cogs</span></b-col>
+            /> cogs</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-comment"
-          /> comment</span></b-col>
+            /> comment</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-comment-o"
-          /> comment-o</span></b-col>
+            /> comment-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-comments"
-          /> comments</span></b-col>
+            /> comments</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-comments-o"/> comments-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-comments-o" /> comments-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-compass"
-          /> compass</span></b-col>
+            /> compass</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-credit-card"
-          /> credit-card</span></b-col>
+            /> credit-card</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-crop"
-          /> crop</span></b-col>
+            /> crop</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-crosshairs"/> crosshairs</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-crosshairs" /> crosshairs</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cube"
-          /> cube</span></b-col>
+            /> cube</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cubes"
-          /> cubes</span></b-col>
+            /> cubes</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cutlery"
-          /> cutlery</span></b-col>
+            /> cutlery</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-dashboard"/> dashboard <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-dashboard" /> dashboard <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-database"
-          /> database</span></b-col>
+            /> database</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-desktop"
-          /> desktop</span></b-col>
+            /> desktop</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-dot-circle-o"/>
-            dot-circle-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-dot-circle-o" />
+              dot-circle-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-download"
-          /> download</span></b-col>
+            /> download</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-edit"/> edit <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-edit" /> edit <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-ellipsis-h"/> ellipsis-h</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-ellipsis-h" /> ellipsis-h</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-ellipsis-v"/> ellipsis-v</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-ellipsis-v" /> ellipsis-v</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-envelope"
-          /> envelope</span></b-col>
+            /> envelope</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-envelope-o"/> envelope-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-envelope-o" /> envelope-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-envelope-square"/>
-            envelope-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-envelope-square" />
+              envelope-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-eraser"
-          /> eraser</span></b-col>
+            /> eraser</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-exchange"
-          /> exchange</span></b-col>
+            /> exchange</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-exclamation"
-          /> exclamation</span></b-col>
+            /> exclamation</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-exclamation-circle"/>
-            exclamation-circle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-exclamation-circle" />
+              exclamation-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-exclamation-triangle"/>
-            exclamation-triangle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-exclamation-triangle" />
+              exclamation-triangle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-external-link"/>
-            external-link</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-external-link" />
+              external-link</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-external-link-square"/>
-            external-link-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-external-link-square" />
+              external-link-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-eye"
-          /> eye</span></b-col>
+            /> eye</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-eye-slash"
-          /> eye-slash</span></b-col>
+            /> eye-slash</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-fax"
-          /> fax</span></b-col>
+            /> fax</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-female"
-          /> female</span></b-col>
+            /> female</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-fighter-jet"
-          /> fighter-jet</span></b-col>
+            /> fighter-jet</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-archive-o"/> file-archive-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-archive-o" /> file-archive-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-audio-o"/>
-            file-audio-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-audio-o" />
+              file-audio-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-code-o"
-          /> file-code-o</span></b-col>
+            /> file-code-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-excel-o"/>
-            file-excel-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-excel-o" />
+              file-excel-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-image-o"/>
-            file-image-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-image-o" />
+              file-image-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-movie-o"/> file-movie-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-movie-o" /> file-movie-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-pdf-o"/> file-pdf-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-pdf-o" /> file-pdf-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-photo-o"/> file-photo-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-photo-o" /> file-photo-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-picture-o"/> file-picture-o
-            <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-picture-o" /> file-picture-o
+              <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-powerpoint-o"/>
-            file-powerpoint-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-powerpoint-o" />
+              file-powerpoint-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-sound-o"/> file-sound-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-sound-o" /> file-sound-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-video-o"/>
-            file-video-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-video-o" />
+              file-video-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-word-o"
-          /> file-word-o</span></b-col>
+            /> file-word-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-zip-o"/> file-zip-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-zip-o" /> file-zip-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-film"
-          /> film</span></b-col>
+            /> film</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-filter"
-          /> filter</span></b-col>
+            /> filter</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-fire"
-          /> fire</span></b-col>
+            /> fire</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-fire-extinguisher"/>
-            fire-extinguisher</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-fire-extinguisher" />
+              fire-extinguisher</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-flag"
-          /> flag</span></b-col>
+            /> flag</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-flag-checkered"/> flag-checkered</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-flag-checkered" /> flag-checkered</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-flag-o"
-          /> flag-o</span></b-col>
+            /> flag-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-flash"
-          /> flash <span
+            /> flash <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-flask"
-          /> flask</span></b-col>
+            /> flask</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-folder"
-          /> folder</span></b-col>
+            /> folder</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-folder-o"
-          /> folder-o</span></b-col>
+            /> folder-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-folder-open"
-          /> folder-open</span></b-col>
+            /> folder-open</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-folder-open-o"/>
-            folder-open-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-folder-open-o" />
+              folder-open-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-frown-o"
-          /> frown-o</span></b-col>
+            /> frown-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gamepad"
-          /> gamepad</span></b-col>
+            /> gamepad</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gavel"
-          /> gavel</span></b-col>
+            /> gavel</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gear"
-          /> gear <span
+            /> gear <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gears"
-          /> gears <span
+            /> gears <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gift"
-          /> gift</span></b-col>
+            /> gift</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-glass"
-          /> glass</span></b-col>
+            /> glass</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-globe"
-          /> globe</span></b-col>
+            /> globe</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-graduation-cap"/> graduation-cap</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-graduation-cap" /> graduation-cap</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-group"
-          /> group <span
+            /> group <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-hdd-o"
-          /> hdd-o</span></b-col>
+            /> hdd-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-headphones"/> headphones</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-headphones" /> headphones</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-heart"
-          /> heart</span></b-col>
+            /> heart</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-heart-o"
-          /> heart-o</span></b-col>
+            /> heart-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-history"
-          /> history</span></b-col>
+            /> history</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-home"
-          /> home</span></b-col>
+            /> home</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-image"
-          /> image <span
+            /> image <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-inbox"
-          /> inbox</span></b-col>
+            /> inbox</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-info"
-          /> info</span></b-col>
+            /> info</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-info-circle"
-          /> info-circle</span></b-col>
+            /> info-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-institution"/> institution <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-institution" /> institution <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-key"
-          /> key</span></b-col>
+            /> key</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-keyboard-o"/> keyboard-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-keyboard-o" /> keyboard-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-language"
-          /> language</span></b-col>
+            /> language</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-laptop"
-          /> laptop</span></b-col>
+            /> laptop</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-leaf"
-          /> leaf</span></b-col>
+            /> leaf</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-legal"
-          /> legal <span
+            /> legal <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-lemon-o"
-          /> lemon-o</span></b-col>
+            /> lemon-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-level-down"/> level-down</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-level-down" /> level-down</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-level-up"
-          /> level-up</span></b-col>
+            /> level-up</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-life-bouy"
-          /> life-bouy <span
+            /> life-bouy <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-life-ring"
-          /> life-ring</span></b-col>
+            /> life-ring</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-life-saver"
-          /> life-saver <span
+            /> life-saver <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-lightbulb-o"
-          /> lightbulb-o</span></b-col>
+            /> lightbulb-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-location-arrow"/> location-arrow</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-location-arrow" /> location-arrow</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-lock"
-          /> lock</span></b-col>
+            /> lock</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-magic"
-          /> magic</span></b-col>
+            /> magic</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-magnet"
-          /> magnet</span></b-col>
+            /> magnet</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-mail-forward"
-          /> mail-forward <span
+            /> mail-forward <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-mail-reply"
-          /> mail-reply <span
+            /> mail-reply <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-mail-reply-all"
-          /> mail-reply-all <span class="text-muted">(alias)</span></span></b-col>
+            /> mail-reply-all <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-male"
-          /> male</span></b-col>
+            /> male</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-map-marker"/> map-marker</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-map-marker" /> map-marker</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-meh-o"
-          /> meh-o</span></b-col>
+            /> meh-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-microphone"/> microphone</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-microphone" /> microphone</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-microphone-slash"/>
-            microphone-slash</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-microphone-slash" />
+              microphone-slash</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-minus"
-          /> minus</span></b-col>
+            /> minus</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-minus-circle"/>
-            minus-circle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-minus-circle" />
+              minus-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-minus-square"/>
-            minus-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-minus-square" />
+              minus-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-minus-square-o"/> minus-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-minus-square-o" /> minus-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-mobile"
-          /> mobile</span></b-col>
+            /> mobile</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-mobile-phone"
-          /> mobile-phone <span
+            /> mobile-phone <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-money"
-          /> money</span></b-col>
+            /> money</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-moon-o"
-          /> moon-o</span></b-col>
+            /> moon-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-mortar-board"/> mortar-board
-            <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-mortar-board" /> mortar-board
+              <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-music"
-          /> music</span></b-col>
+            /> music</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-navicon"
-          /> navicon <span
+            /> navicon <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paper-plane"
-          /> paper-plane</span></b-col>
+            /> paper-plane</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-paper-plane-o"/>
-            paper-plane-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-paper-plane-o" />
+              paper-plane-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paw"
-          /> paw</span></b-col>
+            /> paw</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-pencil"
-          /> pencil</span></b-col>
+            /> pencil</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-pencil-square"/>
-            pencil-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pencil-square" />
+              pencil-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-pencil-square-o"/>
-            pencil-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pencil-square-o" />
+              pencil-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-phone"
-          /> phone</span></b-col>
+            /> phone</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-phone-square"/>
-            phone-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-phone-square" />
+              phone-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-photo"
-          /> photo <span
+            /> photo <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-picture-o"
-          /> picture-o</span></b-col>
+            /> picture-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-plane"
-          /> plane</span></b-col>
+            /> plane</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-plus"
-          /> plus</span></b-col>
+            /> plus</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-plus-circle"
-          /> plus-circle</span></b-col>
+            /> plus-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-plus-square"
-          /> plus-square</span></b-col>
+            /> plus-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-plus-square-o"/>
-            plus-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-plus-square-o" />
+              plus-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-power-off"
-          /> power-off</span></b-col>
+            /> power-off</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-print"
-          /> print</span></b-col>
+            /> print</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-puzzle-piece"/>
-            puzzle-piece</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-puzzle-piece" />
+              puzzle-piece</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-qrcode"
-          /> qrcode</span></b-col>
+            /> qrcode</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-question"
-          /> question</span></b-col>
+            /> question</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-question-circle"/>
-            question-circle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-question-circle" />
+              question-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-quote-left"/> quote-left</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-quote-left" /> quote-left</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-quote-right"
-          /> quote-right</span></b-col>
+            /> quote-right</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-random"
-          /> random</span></b-col>
+            /> random</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-recycle"
-          /> recycle</span></b-col>
+            /> recycle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-refresh"
-          /> refresh</span></b-col>
+            /> refresh</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-reorder"
-          /> reorder <span
+            /> reorder <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-reply"
-          /> reply</span></b-col>
+            /> reply</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-reply-all"
-          /> reply-all</span></b-col>
+            /> reply-all</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-retweet"
-          /> retweet</span></b-col>
+            /> retweet</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-road"
-          /> road</span></b-col>
+            /> road</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rocket"
-          /> rocket</span></b-col>
+            /> rocket</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rss"
-          /> rss</span></b-col>
+            /> rss</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-rss-square"/> rss-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-rss-square" /> rss-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-search"
-          /> search</span></b-col>
+            /> search</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-search-minus"/>
-            search-minus</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-search-minus" />
+              search-minus</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-search-plus"
-          /> search-plus</span></b-col>
+            /> search-plus</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-send"
-          /> send <span
+            /> send <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-send-o"/> send-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-send-o" /> send-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-share"
-          /> share</span></b-col>
+            /> share</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-share-alt"
-          /> share-alt</span></b-col>
+            /> share-alt</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-share-alt-square"/>
-            share-alt-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-share-alt-square" />
+              share-alt-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-share-square"/>
-            share-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-share-square" />
+              share-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-share-square-o"/> share-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-share-square-o" /> share-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-shield"
-          /> shield</span></b-col>
+            /> shield</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-shopping-cart"/>
-            shopping-cart</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-shopping-cart" />
+              shopping-cart</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sign-in"
-          /> sign-in</span></b-col>
+            /> sign-in</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sign-out"
-          /> sign-out</span></b-col>
+            /> sign-out</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-signal"
-          /> signal</span></b-col>
+            /> signal</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sitemap"
-          /> sitemap</span></b-col>
+            /> sitemap</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sliders"
-          /> sliders</span></b-col>
+            /> sliders</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-smile-o"
-          /> smile-o</span></b-col>
+            /> smile-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sort"
-          /> sort</span></b-col>
+            /> sort</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-sort-alpha-asc"/> sort-alpha-asc</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-sort-alpha-asc" /> sort-alpha-asc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-sort-alpha-desc"/>
-            sort-alpha-desc</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-sort-alpha-desc" />
+              sort-alpha-desc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-sort-amount-asc"/>
-            sort-amount-asc</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-sort-amount-asc" />
+              sort-amount-asc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-sort-amount-desc"/>
-            sort-amount-desc</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-sort-amount-desc" />
+              sort-amount-desc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sort-asc"
-          /> sort-asc</span></b-col>
+            /> sort-asc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sort-desc"
-          /> sort-desc</span></b-col>
+            /> sort-desc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sort-down"
-          /> sort-down <span
+            /> sort-down <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-sort-numeric-asc"/>
-            sort-numeric-asc</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-sort-numeric-asc" />
+              sort-numeric-asc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-sort-numeric-desc"/>
-            sort-numeric-desc</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-sort-numeric-desc" />
+              sort-numeric-desc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sort-up"
-          /> sort-up <span
+            /> sort-up <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-space-shuttle"/>
-            space-shuttle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-space-shuttle" />
+              space-shuttle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-spinner"
-          /> spinner</span></b-col>
+            /> spinner</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-spoon"
-          /> spoon</span></b-col>
+            /> spoon</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-square"
-          /> square</span></b-col>
+            /> square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-square-o"
-          /> square-o</span></b-col>
+            /> square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-star"
-          /> star</span></b-col>
+            /> star</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-star-half"
-          /> star-half</span></b-col>
+            /> star-half</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-star-half-empty"
-          /> star-half-empty <span class="text-muted">(alias)</span></span></b-col>
+            /> star-half-empty <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-star-half-full"
-          /> star-half-full <span class="text-muted">(alias)</span></span></b-col>
+            /> star-half-full <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-star-half-o"
-          /> star-half-o</span></b-col>
+            /> star-half-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-star-o"
-          /> star-o</span></b-col>
+            /> star-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-suitcase"
-          /> suitcase</span></b-col>
+            /> suitcase</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-sun-o"
-          /> sun-o</span></b-col>
+            /> sun-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-support"
-          /> support <span
+            /> support <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tablet"
-          /> tablet</span></b-col>
+            /> tablet</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-tachometer"/> tachometer</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-tachometer" /> tachometer</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tag"
-          /> tag</span></b-col>
+            /> tag</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tags"
-          /> tags</span></b-col>
+            /> tags</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tasks"
-          /> tasks</span></b-col>
+            /> tasks</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-taxi"
-          /> taxi</span></b-col>
+            /> taxi</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-terminal"
-          /> terminal</span></b-col>
+            /> terminal</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-thumb-tack"/> thumb-tack</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-thumb-tack" /> thumb-tack</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-thumbs-down"
-          /> thumbs-down</span></b-col>
+            /> thumbs-down</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-thumbs-o-down"/>
-            thumbs-o-down</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-thumbs-o-down" />
+              thumbs-o-down</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-thumbs-o-up"
-          /> thumbs-o-up</span></b-col>
+            /> thumbs-o-up</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-thumbs-up"
-          /> thumbs-up</span></b-col>
+            /> thumbs-up</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ticket"
-          /> ticket</span></b-col>
+            /> ticket</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-times"
-          /> times</span></b-col>
+            /> times</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-times-circle"/>
-            times-circle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-times-circle" />
+              times-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-times-circle-o"/> times-circle-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-times-circle-o" /> times-circle-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tint"
-          /> tint</span></b-col>
+            /> tint</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-toggle-down"/> toggle-down
-            <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-toggle-down" /> toggle-down
+              <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-toggle-left"/> toggle-left
-            <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-toggle-left" /> toggle-left
+              <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-toggle-right"/>
-            toggle-right <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-toggle-right" />
+              toggle-right <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-toggle-up"/> toggle-up <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-toggle-up" /> toggle-up <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-trash-o"
-          /> trash-o</span></b-col>
+            /> trash-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tree"
-          /> tree</span></b-col>
+            /> tree</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-trophy"
-          /> trophy</span></b-col>
+            /> trophy</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-truck"
-          /> truck</span></b-col>
+            /> truck</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-umbrella"
-          /> umbrella</span></b-col>
+            /> umbrella</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-university"/> university</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-university" /> university</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-unlock"
-          /> unlock</span></b-col>
+            /> unlock</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-unlock-alt"/> unlock-alt</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-unlock-alt" /> unlock-alt</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-unsorted"
-          /> unsorted <span class="text-muted">(alias)</span></span></b-col>
+            /> unsorted <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-upload"
-          /> upload</span></b-col>
+            /> upload</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-user"
-          /> user</span></b-col>
+            /> user</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-users"
-          /> users</span></b-col>
+            /> users</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-video-camera"/>
-            video-camera</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-video-camera" />
+              video-camera</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-volume-down"
-          /> volume-down</span></b-col>
+            /> volume-down</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-volume-off"/> volume-off</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-volume-off" /> volume-off</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-volume-up"
-          /> volume-up</span></b-col>
+            /> volume-up</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-warning"/> warning <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-warning" /> warning <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-wheelchair"/> wheelchair</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-wheelchair" /> wheelchair</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-wrench"
-          /> wrench</span></b-col>
-        </b-row>
-      </b-tab>
-      <b-tab title="Spinner">
-        <b-row class="icon-list">
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-circle-o-notch"/> circle-o-notch</span></b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+            /> wrench</span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="icons-spinner"
+        class="tab-pane fade"
+      >
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-circle-o-notch" /> circle-o-notch</span>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cog"
-          /> cog</span></b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+            /> cog</span>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gear"
-          /> gear <span
+            /> gear <span
               class="text-muted"
-          >(alias)</span></span></b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+            >(alias)</span></span>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-refresh"
-          /> refresh</span></b-col>
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+            /> refresh</span>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-spinner"
-          /> spinner</span></b-col>
-        </b-row>
-      </b-tab>
-      <b-tab title="Text Editor">
-        <b-row class="icon-list">
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-align-center"/>
-            align-center</span></b-col>
+            /> spinner</span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="icons-text-editor"
+        class="tab-pane fade"
+      >
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-align-center" />
+              align-center</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-align-justify"/>
-            align-justify</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-align-justify" />
+              align-justify</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-align-left"/> align-left</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-align-left" /> align-left</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-align-right"
-          /> align-right</span></b-col>
+            /> align-right</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bold"
-          /> bold</span></b-col>
+            /> bold</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-chain"
-          /> chain <span
+            /> chain <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-chain-broken"/>
-            chain-broken</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-chain-broken" />
+              chain-broken</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-clipboard"
-          /> clipboard</span></b-col>
+            /> clipboard</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-columns"
-          /> columns</span></b-col>
+            /> columns</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-copy"
-          /> copy <span
+            /> copy <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cut"
-          /> cut <span class="text-muted">(alias)</span></span></b-col>
+            /> cut <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-dedent"
-          /> dedent <span class="text-muted">(alias)</span></span></b-col>
+            /> dedent <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-eraser"
-          /> eraser</span></b-col>
+            /> eraser</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file"
-          /> file</span></b-col>
+            /> file</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-o"
-          /> file-o</span></b-col>
+            /> file-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-text"
-          /> file-text</span></b-col>
+            /> file-text</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-text-o"
-          /> file-text-o</span></b-col>
+            /> file-text-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-files-o"
-          /> files-o</span></b-col>
+            /> files-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-floppy-o"
-          /> floppy-o</span></b-col>
+            /> floppy-o</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-font"
-          /> font</span></b-col>
+            /> font</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-header"
-          /> header</span></b-col>
+            /> header</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-indent"
-          /> indent</span></b-col>
+            /> indent</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-italic"
-          /> italic</span></b-col>
+            /> italic</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-link"
-          /> link</span></b-col>
+            /> link</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-list"
-          /> list</span></b-col>
+            /> list</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-list-alt"
-          /> list-alt</span></b-col>
+            /> list-alt</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-list-ol"
-          /> list-ol</span></b-col>
+            /> list-ol</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-list-ul"
-          /> list-ul</span></b-col>
+            /> list-ul</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-outdent"
-          /> outdent</span></b-col>
+            /> outdent</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paperclip"
-          /> paperclip</span></b-col>
+            /> paperclip</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paragraph"
-          /> paragraph</span></b-col>
+            /> paragraph</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-paste"
-          /> paste <span
+            /> paste <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-repeat"
-          /> repeat</span></b-col>
+            /> repeat</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rotate-left"
-          /> rotate-left <span
+            /> rotate-left <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rotate-right"
-          /> rotate-right <span
+            /> rotate-right <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-save"
-          /> save <span
+            /> save <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-scissors"
-          /> scissors</span></b-col>
+            /> scissors</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-strikethrough"/>
-            strikethrough</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-strikethrough" />
+              strikethrough</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-subscript"
-          /> subscript</span></b-col>
+            /> subscript</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-superscript"
-          /> superscript</span></b-col>
+            /> superscript</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-table"
-          /> table</span></b-col>
+            /> table</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-text-height"
-          /> text-height</span></b-col>
+            /> text-height</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-text-width"/> text-width</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-text-width" /> text-width</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-th"
-          /> th</span></b-col>
+            /> th</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-th-large"
-          /> th-large</span></b-col>
+            /> th-large</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-th-list"
-          /> th-list</span></b-col>
+            /> th-list</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-underline"
-          /> underline</span></b-col>
+            /> underline</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-undo"
-          /> undo</span></b-col>
+            /> undo</span>
+          </div>
 
-          <b-col md="4" lg="3" xs="12" class="icon-list-item"><span
-              
-          ><i class="fa fa-unlink"/> unlink <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-unlink" /> unlink <span
               class="text-muted"
-          >(alias)</span></span></b-col>
-        </b-row>
-      </b-tab>
-      <b-tab title="Brand">
-        <b-row class="icon-list">
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+            >(alias)</span></span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="icons-brand"
+        class="tab-pane fade"
+      >
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-adn"
-          /> adn</span></b-col>
+            /> adn</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-android"
-          /> android</span></b-col>
+            /> android</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-apple"
-          /> apple</span></b-col>
+            /> apple</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-behance"
-          /> behance</span></b-col>
+            /> behance</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-behance-square"/> behance-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-behance-square" /> behance-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bitbucket"
-          /> bitbucket</span></b-col>
+            /> bitbucket</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-bitbucket-square"/>
-            bitbucket-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-bitbucket-square" />
+              bitbucket-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bitcoin"
-          /> bitcoin <span
+            /> bitcoin <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-btc"
-          /> btc</span></b-col>
+            /> btc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-codepen"
-          /> codepen</span></b-col>
+            /> codepen</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-css3"
-          /> css3</span></b-col>
+            /> css3</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-delicious"
-          /> delicious</span></b-col>
+            /> delicious</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-deviantart"/> deviantart</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-deviantart" /> deviantart</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-digg"
-          /> digg</span></b-col>
+            /> digg</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-dribbble"
-          /> dribbble</span></b-col>
+            /> dribbble</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-dropbox"
-          /> dropbox</span></b-col>
+            /> dropbox</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-drupal"
-          /> drupal</span></b-col>
+            /> drupal</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-empire"
-          /> empire</span></b-col>
+            /> empire</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-facebook"
-          /> facebook</span></b-col>
+            /> facebook</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-facebook-square"/>
-            facebook-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-facebook-square" />
+              facebook-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-flickr"
-          /> flickr</span></b-col>
+            /> flickr</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-foursquare"/> foursquare</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-foursquare" /> foursquare</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ge"
-          /> ge <span class="text-muted">(alias)</span></span></b-col>
+            /> ge <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-git"
-          /> git</span></b-col>
+            /> git</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-git-square"/> git-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-git-square" /> git-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-github"
-          /> github</span></b-col>
+            /> github</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-github-alt"/> github-alt</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-github-alt" /> github-alt</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-github-square"/>
-            github-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-github-square" />
+              github-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gittip"
-          /> gittip</span></b-col>
+            /> gittip</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-google"
-          /> google</span></b-col>
+            /> google</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-google-plus"
-          /> google-plus</span></b-col>
+            /> google-plus</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-google-plus-square"/>
-            google-plus-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-google-plus-square" />
+              google-plus-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-hacker-news"
-          /> hacker-news</span></b-col>
+            /> hacker-news</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-html5"
-          /> html5</span></b-col>
+            /> html5</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-instagram"
-          /> instagram</span></b-col>
+            /> instagram</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-joomla"
-          /> joomla</span></b-col>
+            /> joomla</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-jsfiddle"
-          /> jsfiddle</span></b-col>
+            /> jsfiddle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-linkedin"
-          /> linkedin</span></b-col>
+            /> linkedin</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-linkedin-square"/>
-            linkedin-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-linkedin-square" />
+              linkedin-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-linux"
-          /> linux</span></b-col>
+            /> linux</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-maxcdn"
-          /> maxcdn</span></b-col>
+            /> maxcdn</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-openid"
-          /> openid</span></b-col>
+            /> openid</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-pagelines"
-          /> pagelines</span></b-col>
+            /> pagelines</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-pied-piper"/> pied-piper</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pied-piper" /> pied-piper</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-pied-piper-alt"/> pied-piper-alt</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pied-piper-alt" /> pied-piper-alt</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-pied-piper-square"/>
-            pied-piper-square <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pied-piper-square" />
+              pied-piper-square <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-pinterest"
-          /> pinterest</span></b-col>
+            /> pinterest</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-pinterest-square"/>
-            pinterest-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-pinterest-square" />
+              pinterest-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-qq"
-          /> qq</span></b-col>
+            /> qq</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ra"
-          /> ra <span class="text-muted">(alias)</span></span></b-col>
+            /> ra <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rebel"
-          /> rebel</span></b-col>
+            /> rebel</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-reddit"
-          /> reddit</span></b-col>
+            /> reddit</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-reddit-square"/>
-            reddit-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-reddit-square" />
+              reddit-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-renren"
-          /> renren</span></b-col>
+            /> renren</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-share-alt"
-          /> share-alt</span></b-col>
+            /> share-alt</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-share-alt-square"/>
-            share-alt-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-share-alt-square" />
+              share-alt-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-skype"
-          /> skype</span></b-col>
+            /> skype</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-slack"
-          /> slack</span></b-col>
+            /> slack</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-soundcloud"/> soundcloud</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-soundcloud" /> soundcloud</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-spotify"
-          /> spotify</span></b-col>
+            /> spotify</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-stack-exchange"/> stack-exchange</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-stack-exchange" /> stack-exchange</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-stack-overflow"/> stack-overflow</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-stack-overflow" /> stack-overflow</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-steam"
-          /> steam</span></b-col>
+            /> steam</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-steam-square"/>
-            steam-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-steam-square" />
+              steam-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-stumbleupon"
-          /> stumbleupon</span></b-col>
+            /> stumbleupon</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-stumbleupon-circle"/>
-            stumbleupon-circle</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-stumbleupon-circle" />
+              stumbleupon-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-tencent-weibo"/>
-            tencent-weibo</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-tencent-weibo" />
+              tencent-weibo</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-trello"
-          /> trello</span></b-col>
+            /> trello</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-tumblr"
-          /> tumblr</span></b-col>
+            /> tumblr</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-tumblr-square"/>
-            tumblr-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-tumblr-square" />
+              tumblr-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-twitter"
-          /> twitter</span></b-col>
+            /> twitter</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-twitter-square"/> twitter-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-twitter-square" /> twitter-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-vimeo-square"/>
-            vimeo-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-vimeo-square" />
+              vimeo-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-vine"
-          /> vine</span></b-col>
+            /> vine</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-vk"
-          /> vk</span></b-col>
+            /> vk</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-wechat"
-          /> wechat <span class="text-muted">(alias)</span></span></b-col>
+            /> wechat <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-weibo"
-          /> weibo</span></b-col>
+            /> weibo</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-weixin"
-          /> weixin</span></b-col>
+            /> weixin</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-windows"
-          /> windows</span></b-col>
+            /> windows</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-wordpress"
-          /> wordpress</span></b-col>
+            /> wordpress</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-xing"
-          /> xing</span></b-col>
+            /> xing</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-xing-square"
-          /> xing-square</span></b-col>
+            /> xing-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-yahoo"
-          /> yahoo</span></b-col>
+            /> yahoo</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-youtube"
-          /> youtube</span></b-col>
+            /> youtube</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-youtube-play"/>
-            youtube-play</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-youtube-play" />
+              youtube-play</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-youtube-square"/> youtube-square</span></b-col>
-        </b-row>
-      </b-tab>
-      <b-tab title="Other">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-youtube-square" /> youtube-square</span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="icons-other"
+        class="tab-pane fade"
+      >
         <h4>File Type <span class="fw-semi-bold">Icons</span></h4>
-        <b-row class="icon-list">
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file"
-          /> file</span></b-col>
+            /> file</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-archive-o"/> file-archive-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-archive-o" /> file-archive-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-audio-o"/>
-            file-audio-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-audio-o" />
+              file-audio-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-code-o"
-          /> file-code-o</span></b-col>
+            /> file-code-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-excel-o"/>
-            file-excel-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-excel-o" />
+              file-excel-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-image-o"/>
-            file-image-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-image-o" />
+              file-image-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-movie-o"/> file-movie-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-movie-o" /> file-movie-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-o"
-          /> file-o</span></b-col>
+            /> file-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-pdf-o"/> file-pdf-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-pdf-o" /> file-pdf-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-photo-o"/> file-photo-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-photo-o" /> file-photo-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-picture-o"/> file-picture-o
-            <span class="text-muted">(alias)</span></span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-picture-o" /> file-picture-o
+              <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-powerpoint-o"/>
-            file-powerpoint-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-powerpoint-o" />
+              file-powerpoint-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-sound-o"/> file-sound-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-sound-o" /> file-sound-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-text"
-          /> file-text</span></b-col>
+            /> file-text</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-text-o"
-          /> file-text-o</span></b-col>
+            /> file-text-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-video-o"/>
-            file-video-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-video-o" />
+              file-video-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-file-word-o"
-          /> file-word-o</span></b-col>
+            /> file-word-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-file-zip-o"/> file-zip-o <span
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-file-zip-o" /> file-zip-o <span
               class="text-muted"
-          >(alias)</span></span></b-col>
-        </b-row>
+            >(alias)</span></span>
+          </div>
+        </div>
 
-        <h4 class="mt-3">Form Control <span class="fw-semi-bold">Icons</span></h4>
-        <b-row class="icon-list">
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-check-square"/>
-            check-square</span></b-col>
+        <h4 class="mt-3">
+          Form Control <span class="fw-semi-bold">Icons</span>
+        </h4>
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-check-square" />
+              check-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-check-square-o"/> check-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-check-square-o" /> check-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-circle"
-          /> circle</span></b-col>
+            /> circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-circle-o"
-          /> circle-o</span></b-col>
+            /> circle-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-dot-circle-o"/>
-            dot-circle-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-dot-circle-o" />
+              dot-circle-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-minus-square"/>
-            minus-square</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-minus-square" />
+              minus-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-minus-square-o"/> minus-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-minus-square-o" /> minus-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-plus-square"
-          /> plus-square</span></b-col>
+            /> plus-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-plus-square-o"/>
-            plus-square-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-plus-square-o" />
+              plus-square-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-square"
-          /> square</span></b-col>
+            /> square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-square-o"
-          /> square-o</span></b-col>
-        </b-row>
+            /> square-o</span>
+          </div>
+        </div>
 
-        <h4 class="mt-3">Currency <span class="fw-semi-bold">Icons</span></h4>
-        <b-row class="icon-list">
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+        <h4 class="mt-3">
+          Currency <span class="fw-semi-bold">Icons</span>
+        </h4>
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-bitcoin"
-          /> bitcoin <span
+            /> bitcoin <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-btc"
-          /> btc</span></b-col>
+            /> btc</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-cny"
-          /> cny <span class="text-muted">(alias)</span></span></b-col>
+            /> cny <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-dollar"
-          /> dollar <span class="text-muted">(alias)</span></span></b-col>
+            /> dollar <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-eur"
-          /> eur</span></b-col>
+            /> eur</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-euro"
-          /> euro <span
+            /> euro <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-gbp"
-          /> gbp</span></b-col>
+            /> gbp</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-inr"
-          /> inr</span></b-col>
+            /> inr</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-jpy"
-          /> jpy</span></b-col>
+            /> jpy</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-krw"
-          /> krw</span></b-col>
+            /> krw</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-money"
-          /> money</span></b-col>
+            /> money</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rmb"
-          /> rmb <span class="text-muted">(alias)</span></span></b-col>
+            /> rmb <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rouble"
-          /> rouble <span class="text-muted">(alias)</span></span></b-col>
+            /> rouble <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rub"
-          /> rub</span></b-col>
+            /> rub</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ruble"
-          /> ruble <span
+            /> ruble <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-rupee"
-          /> rupee <span
+            /> rupee <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-try"
-          /> try</span></b-col>
+            /> try</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-turkish-lira"
-          /> turkish-lira <span
+            /> turkish-lira <span
               class="text-muted"
-          >(alias)</span></span></b-col>
+            >(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-usd"
-          /> usd</span></b-col>
+            /> usd</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-won"
-          /> won <span class="text-muted">(alias)</span></span></b-col>
+            /> won <span class="text-muted">(alias)</span></span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-yen"
-          /> yen <span class="text-muted">(alias)</span></span></b-col>
-        </b-row>
+            /> yen <span class="text-muted">(alias)</span></span>
+          </div>
+        </div>
 
-        <h4 class="mt-3">Video Player <span class="fw-semi-bold">Icons</span></h4>
-        <b-row class="icon-list">
+        <h4 class="mt-3">
+          Video Player <span class="fw-semi-bold">Icons</span>
+        </h4>
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-arrows-alt" /> arrows-alt</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-arrows-alt"/> arrows-alt</span></b-col>
-
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-backward"
-          /> backward</span></b-col>
+            /> backward</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-compress"
-          /> compress</span></b-col>
+            /> compress</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-eject"
-          /> eject</span></b-col>
+            /> eject</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-expand"
-          /> expand</span></b-col>
+            /> expand</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-fast-backward"/>
-            fast-backward</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-fast-backward" />
+              fast-backward</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-fast-forward"/>
-            fast-forward</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-fast-forward" />
+              fast-forward</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-forward"
-          /> forward</span></b-col>
+            /> forward</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-pause"
-          /> pause</span></b-col>
+            /> pause</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-play"
-          /> play</span></b-col>
+            /> play</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-play-circle"
-          /> play-circle</span></b-col>
+            /> play-circle</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-play-circle-o"/>
-            play-circle-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-play-circle-o" />
+              play-circle-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-step-backward"/>
-            step-backward</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-step-backward" />
+              step-backward</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-step-forward"/>
-            step-forward</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-step-forward" />
+              step-forward</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-stop"
-          /> stop</span></b-col>
+            /> stop</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-youtube-play"/>
-            youtube-play</span></b-col>
-        </b-row>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-youtube-play" />
+              youtube-play</span>
+          </div>
+        </div>
 
-        <h4 class="mt-3">Medical <span class="fw-semi-bold">Icons</span></h4>
-        <b-row class="icon-list">
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+        <h4 class="mt-3">
+          Medical <span class="fw-semi-bold">Icons</span>
+        </h4>
+        <div class="row icon-list">
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-ambulance"
-          /> ambulance</span></b-col>
+            /> ambulance</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-h-square"
-          /> h-square</span></b-col>
+            /> h-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-hospital-o"/> hospital-o</span></b-col>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-hospital-o" /> hospital-o</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-medkit"
-          /> medkit</span></b-col>
+            /> medkit</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-plus-square"
-          /> plus-square</span></b-col>
+            /> plus-square</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-stethoscope"
-          /> stethoscope</span></b-col>
+            /> stethoscope</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span ><i
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i
               class="fa fa-user-md"
-          /> user-md</span></b-col>
+            /> user-md</span>
+          </div>
 
-          <b-col class="icon-list-item" lg="3" md="4" xs="12"><span
-              
-          ><i class="fa fa-wheelchair"/> wheelchair</span></b-col>
-        </b-row>
-      </b-tab>
-    </b-tabs>
+          <div class="col-12 col-md-4 col-lg-3 icon-list-item">
+            <span><i class="fa fa-wheelchair" /> wheelchair</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
-<script>
-export default {
-  name: 'Icons',
-};
+<script setup>
 </script>
 
-<style src="./Icons.scss" lang="scss" scoped/>
+<style src="./Icons.scss" lang="scss" scoped />

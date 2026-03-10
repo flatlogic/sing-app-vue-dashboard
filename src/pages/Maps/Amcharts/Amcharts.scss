@@ -1,7 +1,34 @@
+@import '../../../styles/app';
+
+// Full-bleed map page - extends to fill content area
+.mapPage {
+  // Use negative margins to extend into content padding
+  margin: (-$content-padding) (-$content-padding) (-$content-padding - 20px);
+  // Calculate height: viewport - navbar height
+  height: calc(100vh - #{$navbar-height});
+  position: relative;
+
+  @media (max-width: breakpoint-max(sm)) {
+    margin: (-20px) (-$content-padding-sm) (-$content-padding - 30px);
+  }
+}
+
 .amchartsMap {
   position: absolute !important;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.mapTitle {
+  position: absolute;
+  top: $content-padding;
+  left: $content-padding;
+  z-index: 2;
+
+  @media (max-width: breakpoint-max(sm)) {
+    top: 20px;
+    left: $content-padding-sm;
+  }
 }

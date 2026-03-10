@@ -4,18 +4,21 @@
     @click="onClick()"
   >
     <span>
-      <img src='../../../../../assets/check.svg' alt="check" />
+      <img
+        src="../../../../../assets/check.svg"
+        alt="check"
+      >
     </span>
-    {{option}}
+    {{ option }}
   </li>
 </template>
 
-<script>
-export default {
-  name: 'MobileMenuOption',
-  props: ['option', 'active', 'onClick'],
-
-};
+<script setup>
+defineProps({
+  option: [String, Number],
+  active: Boolean,
+  onClick: Function
+})
 </script>
 
 <style src="./MobileMenuOption.scss" lang="scss" scoped />

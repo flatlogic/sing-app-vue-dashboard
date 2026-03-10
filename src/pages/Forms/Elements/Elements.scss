@@ -1,15 +1,6 @@
 @import '../../../styles/app';
 
 .forms-elements {
-  
-  .v-note-wrapper {
-    .v-note-op.shadow,
-    .v-note-panel {
-      border: 1px solid $table-border-color !important;
-      box-shadow: none !important;
-    }
-  }
-  
   .abc-checkbox,
   .abc-radio {
     .form-check-input {
