@@ -30,6 +30,7 @@
             custom-header
           >
             <VChart
+              theme="v5"
               :option="cd.echarts.line"
               :init-options="initEchartsOptions"
               style="height: 370px"
@@ -124,6 +125,7 @@
                 custom-header
               >
                 <VChart
+                  theme="v5"
                   :option="cd.echarts.donut"
                   :init-options="initEchartsOptions"
                   style="height: 175px"
@@ -158,6 +160,7 @@
             custom-header
           >
             <VChart
+              theme="v5"
               :option="cd.echarts.river"
               :init-options="initEchartsOptions"
               style="height: 350px;"
@@ -173,6 +176,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, inject, nextTick } from 'vue'
 import { use } from 'echarts/core'
+import 'echarts/theme/v5'
 import { CanvasRenderer } from 'echarts/renderers'
 import { LineChart, PieChart, ThemeRiverChart } from 'echarts/charts'
 import { TooltipComponent, LegendComponent, GridComponent, SingleAxisComponent } from 'echarts/components'

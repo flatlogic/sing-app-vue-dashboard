@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [
     vue(),
     svgLoader({
+      defaultImport: 'url',
       svgoConfig: {
         plugins: [
           {
