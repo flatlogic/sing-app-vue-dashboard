@@ -144,6 +144,9 @@ GitHub Pages serves the tracked `docs/` directory from `master`. Refresh the com
 npm ci
 NODE_OPTIONS=--max-old-space-size=3072 npm run build -- --base=/sing-app-vue-dashboard/ --outDir=docs
 cp docs/index.html docs/404.html
+touch docs/.nojekyll
 ```
 
 The generated `404.html` lets GitHub Pages load direct application routes with the same repository base path. Commit the rebuilt assets together with `index.html` and remove obsolete hashed chunks.
+
+The `.nojekyll` marker disables Jekyll processing so Pages serves Vite chunks whose filenames start with an underscore.
