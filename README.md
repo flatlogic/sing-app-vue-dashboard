@@ -20,36 +20,36 @@ Looking for a perfect codebase generator for your Startup? Try [Flatlogic AI Web
 
 ## 🚀 Quick Start
 
-Requires Node.js >= 20
+Requires Node.js 22.22.2+, 24.15+, or 26+ (matching the supported LTS ranges in `package.json`).
 
 ### Project setup
 ```bash
-yarn install
+npm ci
 ```
 
 ### Compiles and hot-reloads for development
 ```bash
-yarn run start
+npm run start
 ```
 
 ### If you use app with backend support, please use
 ```bash
-yarn run start:backend
+npm run start:backend
 ```
 
 ### Compiles and minifies for production
 ```bash
-yarn run build
+npm run build
 ```
 
 ### Run your tests
 ```bash
-yarn run test
+npm run test:run
 ```
 
 ### Lints and fixes files
 ```bash
-yarn run lint
+npm run lint
 ```
 
 ---
@@ -119,3 +119,21 @@ Additionally, these templates are tailored for specific business needs:
 > **Questions or feedback?**  
 > Join our [Flatlogic Community Discord](https://discord.gg/flatlogic-community) or visit our [support forum](https://flatlogic.com/forum). We might even reply!
 
+
+## Dependency security maintenance (2026-11-05)
+
+Use npm with the committed `package-lock.json`. The obsolete Yarn lock was removed so installs and security scans use one dependency graph. The lockfile was regenerated from the actual manifest; the previous npm lock also contained unrelated root dependencies and could not pass `npm ci` because its ApexCharts versions violated their peer contract.
+
+The update keeps Vue 3, Bootstrap 5, the routes, and the existing dashboard features. Security fixes require Tiptap 3, ECharts 6, Swiper 14, Markdown Editor 7, Vitest 4, and Happy DOM 21. ECharts explicitly uses the v5 theme to preserve the existing colors and chart layout. Swiper 14 requires modern browsers (Chrome/Edge 110+, Safari 16.4+, Firefox 110+).
+
+Two scoped test-tool overrides upgrade the `glob` used by `js-beautify` and the `minimatch` used by `editorconfig`. Upstream Vue Test Utils still constrains these dependencies below the patched releases. Tooling regression tests exercise formatting, filesystem glob expansion, and EditorConfig matching; application dependencies are not overridden. Remove these overrides when upstream accepts patched versions.
+
+Upgrade references: [Tiptap 3](https://tiptap.dev/docs/guides/upgrade-tiptap-v2), [ECharts 6](https://echarts.apache.org/handbook/en/basics/release-note/v6-upgrade-guide/), [Swiper 14](https://swiperjs.com/blog/swiper-v14), [Vue Test Utils dependency issue](https://github.com/vuejs/test-utils/issues/2738).
+
+The production router uses Vite's deployment base (`/sing-app-vue/`) so direct visits and navigation resolve within the built application. A regression test covers login and dashboard link generation under this base.
+
+SVG image imports resolve to asset URLs; sidebar icons explicitly request Vue components. This keeps both image elements and dynamic sidebar icons working with the SVG loader.
+
+Verified on Node.js 22.23.0 / npm 10.9.8: clean `npm ci`, `npm audit` (0 vulnerabilities), `npm ls --all`, 613 unit tests, 3 tooling compatibility tests, and the production build. The large AmCharts bundle was built with a 3 GB Node heap. ESLint reports no errors and 15 existing unused-variable warnings in tests; Sass deprecation and bundle-size warnings remain visible.
+
+Production Chrome checks cover login/logout and route protection, dashboard/ApexCharts, ECharts, Highcharts, rich-text and Markdown editing, product carousel navigation, and product SVG images. No browser console errors or warnings were observed. The rich-text editor keeps a usable width with Bootstrap's `w-100` utility.

@@ -1,6 +1,9 @@
 import { beforeEach, afterEach, expect, vi } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
 
+// Happy DOM does not implement blocking browser dialogs.
+window.alert = vi.fn()
+
 // Mock localStorage
 const localStorageMock = (() => {
   let store = {}

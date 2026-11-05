@@ -97,7 +97,7 @@ import { useRoute } from 'vue-router'
 import { useLayoutStore } from '@/stores/layout'
 
 // Import all sidebar SVGs as Vue components
-const svgModules = import.meta.glob('@/assets/sidebar/**/*.svg', { eager: true, import: 'default' })
+const svgModules = import.meta.glob('@/assets/sidebar/**/*.svg', { eager: true, import: 'default', query: '?component' })
 
 const props = defineProps({
   badge: { type: String, default: '' },

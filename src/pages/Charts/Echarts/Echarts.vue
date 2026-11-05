@@ -13,6 +13,7 @@
           custom-header
         >
           <VChart
+            theme="v5"
             :option="ed.bar"
             :init-options="initOptions"
             autoresize
@@ -28,6 +29,7 @@
           custom-header
         >
           <VChart
+            theme="v5"
             :option="ed.pie"
             :init-options="initOptions"
             autoresize
@@ -43,6 +45,7 @@
           custom-header
         >
           <VChart
+            theme="v5"
             :option="ed.polar"
             :init-options="initOptions"
             autoresize
@@ -58,6 +61,7 @@
           custom-header
         >
           <VChart
+            theme="v5"
             :option="ed.line"
             :init-options="initOptions"
             autoresize
@@ -73,6 +77,7 @@
           custom-header
         >
           <VChart
+            theme="v5"
             :option="ed.scatter"
             :init-options="initOptions"
             autoresize
@@ -88,6 +93,7 @@
           custom-header
         >
           <VChart
+            theme="v5"
             :option="ed.gauge"
             :init-options="initOptions"
             autoresize
@@ -101,6 +107,7 @@
 
 <script setup>
 import { use } from 'echarts/core'
+import 'echarts/theme/v5'
 import { CanvasRenderer } from 'echarts/renderers'
 import { BarChart, PieChart, LineChart, ScatterChart, GaugeChart } from 'echarts/charts'
 import { TitleComponent, TooltipComponent, LegendComponent, PolarComponent, GridComponent, ToolboxComponent, DatasetComponent } from 'echarts/components'

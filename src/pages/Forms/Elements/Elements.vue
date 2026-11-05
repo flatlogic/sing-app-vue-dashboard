@@ -629,7 +629,7 @@
                 </label>
               </div>
               <div class="col-md-9">
-                <div class="wysiwyg-wrapper border rounded p-2">
+                <div class="wysiwyg-wrapper border rounded p-2 w-100">
                   <EditorContent
                     :editor="editor"
                     class="wysiwyg-editor"
