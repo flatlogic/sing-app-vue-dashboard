@@ -137,3 +137,13 @@ SVG image imports resolve to asset URLs; sidebar icons explicitly request Vue co
 Verified on Node.js 22.23.0 / npm 10.9.8: clean `npm ci`, `npm audit` (0 vulnerabilities), `npm ls --all`, 613 unit tests, 3 tooling compatibility tests, and the production build. The large AmCharts bundle was built with a 3 GB Node heap. ESLint reports no errors and 15 existing unused-variable warnings in tests; Sass deprecation and bundle-size warnings remain visible.
 
 Production Chrome checks cover login/logout and route protection, dashboard/ApexCharts, ECharts, Highcharts, rich-text and Markdown editing, product carousel navigation, and product SVG images. No browser console errors or warnings were observed. The rich-text editor keeps a usable width with Bootstrap's `w-100` utility.
+
+GitHub Pages serves the tracked `docs/` directory from `master`. Refresh the complete generated demo after source/dependency updates, preserving any human-authored files:
+
+```bash
+npm ci
+NODE_OPTIONS=--max-old-space-size=3072 npm run build -- --base=/sing-app-vue-dashboard/ --outDir=docs
+cp docs/index.html docs/404.html
+```
+
+The generated `404.html` lets GitHub Pages load direct application routes with the same repository base path. Commit the rebuilt assets together with `index.html` and remove obsolete hashed chunks.
